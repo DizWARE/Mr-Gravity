@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 
+/*A NOOB MADE THIS CODE*/
 namespace GravityShift
 {
     /// <summary>
