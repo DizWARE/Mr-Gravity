@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\WindowsGame1\bin\x86\Debug\Content\Level1.xnb</Output>
-      <Time>2010-09-20T23:05:06.4447605-06:00</Time>
+      <Time>2010-09-20T23:05:08-06:00</Time>
     </Item>
     <Item>
       <Source>Player.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\WindowsGame1\bin\x86\Debug\Content\Player.xnb</Output>
-      <Time>2010-09-18T19:18:10.8369882-06:00</Time>
+      <Time>2010-09-18T19:18:12-06:00</Time>
     </Item>
     <Item>
       <Source>Level1Overlay.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\WindowsGame1\bin\x86\Debug\Content\Level1Overlay.xnb</Output>
-      <Time>2010-09-14T01:42:24.436777-06:00</Time>
+      <Time>2010-09-14T01:42:26-06:00</Time>
     </Item>
     <Item>
       <Source>defaultFont.spritefont</Source>
@@ -35,7 +35,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\WindowsGame1\bin\x86\Debug\Content\defaultFont.xnb</Output>
-      <Time>2010-09-18T19:37:31.4363706-06:00</Time>
+      <Time>2010-09-18T19:37:32-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
