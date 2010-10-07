@@ -1,2 +1,0 @@
-C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\WindowsGame1\Content\obj\x86\Debug\ResolveAssemblyReference.cache
