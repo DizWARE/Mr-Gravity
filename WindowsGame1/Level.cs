@@ -13,6 +13,10 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace GravityShift
 {
+    /// <summary>
+    /// MAJOR TODO - This class needs to be completely retooled. There is a major problem with a lot of the decisions I made here.
+    /// It was only kept for the use of the demonstration
+    /// </summary>
     class Level
     {
         private Texture2D colorMap;
@@ -25,7 +29,7 @@ namespace GravityShift
         { get { return overlay; } }
 
         /// <summary>
-        /// Constructs a new level for the game. 
+        /// Constructs a new level for the game.
         /// 
         /// TODO - Figure out if this will be used
         /// </summary>
