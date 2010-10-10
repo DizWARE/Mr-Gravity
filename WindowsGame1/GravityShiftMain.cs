@@ -99,7 +99,6 @@ namespace GravityShift
             Random rand = new Random();
             PhysicsEnvironment environment = new PhysicsEnvironment();
             environment.TerminalSpeed = rand.Next(100)+1;
-            environment.GravityDirection = (GravityDirections)(rand.Next()%4);
             environment.GravityMagnitude = rand.Next(3)+1;
             if (keyboard.IsKeyDown(Keys.N))
             {
@@ -113,7 +112,7 @@ namespace GravityShift
             {
                 pObject.Update(gameTime);
                 if (pObject is Player) ChangeValues((Player)pObject, keyboard);
-                pObject.fixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
             }
 
             base.Update(gameTime);

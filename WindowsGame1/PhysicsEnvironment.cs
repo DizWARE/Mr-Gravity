@@ -108,7 +108,7 @@ namespace GravityShift
             set { mErosionFactor = value; }
         }
 
-        private GravityDirections mGravityDirection = GravityDirections.Down;
+        private static GravityDirections mGravityDirection = GravityDirections.Down;
         public GravityDirections GravityDirection
         {
             get { return mGravityDirection; }
