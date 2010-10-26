@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 Casey Spencer 
 Phone: 801-694-5630
 Email: billanddspencer@gmail.com
+---------------------------------
+Jeremy Heintz (801) 979-8586
 ---------------------------------
 Tyler Robinson
 Phone: 801-420-8668
 Email: tydiz936@gmail.com
 ---------------------------------
+<<<<<<< HEAD
+
+=======
 Nate Bradford
 Phone: 801-891-0941
 Email: lmntalking@gmail.com
 ---------------------------------
+>>>>>>> nate/master
