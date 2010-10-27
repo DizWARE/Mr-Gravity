@@ -106,7 +106,7 @@ namespace GravityShift
         /// <summary>
         /// TEMP METHOD - WILL GIVE THE PLAYER THE ABILITY TO FALL FROM ONE END OF THE SCREEN TO THE OTHER
         /// </summary>
-        public void fixForBounds(int width, int height)
+        public void FixForBounds(int width, int height)
         {
             if (mPosition.X < 0) mPosition.X += width;
             if (mPosition.Y < 0) mPosition.Y += height;
