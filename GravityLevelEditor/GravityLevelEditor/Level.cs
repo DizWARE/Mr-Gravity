@@ -62,11 +62,15 @@ namespace GravityLevelEditor
          * 
          * Entity entity: entity to be added to the level.
          */
-        public void AddEntity(Entity entity)
+        public ArrayList AddEntity(Entity entity, Point location)
         {
             mUndoHistory.Clear();
             mHistory.Push(new AddEntity(entity, this));
             mEntities.Add(entity);
+
+            entity.MoveEntity(location);
+
+            return SelectEntities(location, location);
         }
 
         /*
@@ -94,15 +98,10 @@ namespace GravityLevelEditor
          * 
          * Point location: new location of the entity.
          */
-        public void PlaceEntity(Entity entity, Point location)
+        public void MoveEntity(Entity entity, Size offset)
         {
-            mUndoHistory.Clear();
-            if(location.X >= 0 && location.Y >= 0)
-                mHistory.Push(new PlaceEntity(entity, entity.Location));
-            entity.MoveEntity(location);
+            Point.Add(entity.Location, offset);
         }
-
-        public 
 
         /*
          * Redo
@@ -140,9 +139,9 @@ namespace GravityLevelEditor
             //TODO - Draw background using a viewport?
             g.DrawImage(mBackground, new Point(0, 0));
 
-            foreach (Entity e in mEntities)
+            foreach (Entity entity in mEntities)
             {
-                e.Draw(g);
+                entity.Draw(g);
             }
         }
 
