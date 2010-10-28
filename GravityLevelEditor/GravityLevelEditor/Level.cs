@@ -143,6 +143,32 @@ namespace GravityLevelEditor
             }
         }
 
+        /***
+         * SelectEntities
+         * 
+         * Selects all entities that are within the given vector boundaries(grid coordanates)
+         * 
+         * Point topLeft - Top left corner of the selection rectangle
+         * Point bottomRight - Bottom right corner of the selection rectangle
+         */
+        public ArrayList SelectEntities(Point topLeft, Point bottomRight)
+        {
+            Point diff = new Point(bottomRight.X - topLeft.X, bottomRight.Y - topLeft.Y);
+            Rectangle selection = new Rectangle(topLeft, new Size(diff));
+            ArrayList selectedEntities = new ArrayList();
+
+            foreach(Entity entity in mEntities)
+            {
+                Rectangle entityLocation = new Rectangle(entity.Location, new Size(GridSpace.SIZE));
+                if (selection.IntersectsWith(entityLocation))
+                {
+                    entity.ToggleSelect();
+                    selectedEntities.Add(entity);
+                }
+            }
+            return selectedEntities;
+        }
+
         //TODO - Add Load/Save functions
     }
 }
