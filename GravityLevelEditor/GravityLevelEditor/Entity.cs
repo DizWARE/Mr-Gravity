@@ -31,10 +31,13 @@ namespace GravityLevelEditor
 
         private Dictionary<string, string> mProperties;
 
-        /// <summary>
-        /// Creates an exact copy(different ID) of the given entity
-        /// </summary>
-        /// <param name="original">Initial entity to be copied</param>
+        /*
+         * Entity
+         * 
+         * Constructor to create an exact copy of the given entity.
+         * 
+         * Entity original: Initial entity to be copied.
+         */
         public Entity(Entity original)
         {
             mType = original.mType;
@@ -45,14 +48,17 @@ namespace GravityLevelEditor
             mTexture = original.mTexture;
         }
 
-        /// <summary>
-        /// Creates an Entity from scratch with the given properties
-        /// </summary>
-        /// <param name="type">Type of Entitiy(i.e. Wall, PlayerStart, etc)</param>
-        /// <param name="visibility">If false, entity will not be visible in the game</param>
-        /// <param name="paintable">Whether or not the entity is allowed to be painted across tiles</param>
-        /// <param name="properties">Additional properties for this entity</param>
-        /// <param name="texture">The image used to represent this entity in the level editor</param>
+        /*
+         * Entity
+         * 
+         * Constructor that creates an entity from with the given properties
+         * 
+         * string type: type of entity (i.e. Wall, PlayerStart, etc).
+         * bool visibility: whether or not the entity will be visible in-game.
+         * bool paintable: whether or not the given entity is paintable.
+         * Dictionary<string, string> properties: additional properties for this entity.
+         * Image texture: image used to represent this entity in the level editor.
+         */
         public Entity(string type, bool visibility, 
             bool paintable, Dictionary<string, string> properties, Image texture)
         {
@@ -68,35 +74,45 @@ namespace GravityLevelEditor
 
         //TODO - Constructor from Xml file
 
-        /// <summary>
-        /// Moves the entity to the given location
-        /// </summary>
-        /// <param name="where">Location to move the entity to</param>
+        /*
+         * MoveEntity
+         * 
+         * Moves the entity to the given location.
+         * 
+         * Point where: location to move the entity to.
+         */
         public void MoveEntity(Point where)
         {
             mLocation = where;
         }
         
-        /// <summary>
-        /// Selects or deselects this entity
-        /// </summary>
+        /*
+         * ToggleSelect
+         * 
+         * Selects or deselects this entity.
+         */
         public void ToggleSelect()
         {
             mSelected = !mSelected;
         }
 
-        /// <summary>
-        /// Marks this entity as visible or invisible for in-game play
-        /// </summary>
+        /*
+         * ToggleVisibility
+         * 
+         * Marks this entity as visible or invisible for in-game play.
+         */
         public void ToggleVisibility()
         {
             mVisible = !mVisible;
         }
 
-        /// <summary>
-        /// Draws this entity on screen
-        /// </summary>
-        /// <param name="g">The Graphics Device to draw to</param>
+        /*
+         * Draw
+         * 
+         * Draws this entity in the editor.
+         * 
+         * Graphics g: the Graphics Device to draw to.
+         */
         public void Draw(Graphics g)
         {
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
@@ -105,20 +121,27 @@ namespace GravityLevelEditor
             //Draw selected outline here
         }
 
-        /// <summary>
-        /// Copies this entity
-        /// </summary>
-        /// <returns>An exact copy of this object(IDs will be different)</returns>
+        /*
+         * Copy
+         * 
+         * Copies this entity, creating a clone with the same properties.
+         * 
+         * Return Value: copied entity.
+         */
         public Entity Copy()
         {
             return new Entity(this);
         }
 
-        /// <summary>
-        /// Checks to see if the given object is equal to this entity
-        /// </summary>
-        /// <param name="obj">Object we are comparing to this</param>
-        /// <returns>True if they are equal, false otherwise</returns>
+        /*
+         * Equals
+         * 
+         * Checks to see if the given object is equal to this entity.
+         * 
+         * object obj: object we are comparing against.
+         * 
+         * Return Value: true if equal, false otherwise.
+         */
         public override bool Equals(object obj)
         {
             return obj is Entity && ((Entity)obj).mID == mID;

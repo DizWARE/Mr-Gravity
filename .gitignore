@@ -4,3 +4,6 @@ WindowsGame1/Content/bin/*
 WindowsGame1/Content/obj/*
 WindowsGame1/Gravity Shift Prototype.csproj.Debug.cachefile
 Gravity Shift Prototype.suo
+GravityLevelEditor/GravityLevelEditor/bin/*
+GravityLevelEditor/GravityLevelEditor/obj/*
+WindowsGame1/Gravity Shift Prototype.csproj.Release.cachefile
