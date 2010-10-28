@@ -6,3 +6,11 @@ C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLe
 C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.csproj.GenerateResource.Cache
 C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.exe
 C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.pdb
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.exe
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.pdb
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\bin\Debug\GravityLevelEditor.exe
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\bin\Debug\GravityLevelEditor.pdb
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\ResolveAssemblyReference.cache
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.MainForm.resources
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.Properties.Resources.resources
+c:\Users\Jeremy\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.csproj.GenerateResource.Cache

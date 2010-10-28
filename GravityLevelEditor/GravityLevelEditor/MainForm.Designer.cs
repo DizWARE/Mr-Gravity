@@ -49,6 +49,7 @@
             this.mi_view = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_zoomIn = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_zoomOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.menu.Size = new System.Drawing.Size(1184, 24);
             this.menu.TabIndex = 0;
             this.menu.Text = "Menu";
+            this.menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menu_ItemClicked);
             // 
             // mi_file
             // 
@@ -194,16 +196,25 @@
             this.mi_zoomOut.Size = new System.Drawing.Size(152, 22);
             this.mi_zoomOut.Text = "Zoom &Out";
             // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Location = new System.Drawing.Point(974, 0);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(210, 167);
+            this.propertyGrid1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 662);
+            this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -233,6 +244,7 @@
         private System.Windows.Forms.ToolStripMenuItem mi_paste;
         private System.Windows.Forms.ToolStripMenuItem mi_zoomIn;
         private System.Windows.Forms.ToolStripMenuItem mi_zoomOut;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
     }
 }
 
