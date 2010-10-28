@@ -81,11 +81,12 @@ namespace GravityLevelEditor
          * 
          * Entity entity: entity to be removed from the level.
          */
-        public void RemoveEntity(Entity entity)
+        public void RemoveEntity(ArrayList entities)
         {
             mUndoHistory.Clear();
-            mHistory.Push(new RemoveEntity(entity, this));
-            mEntities.Remove(entity);
+            mHistory.Push(new RemoveEntity(entities, this));
+            foreach (Entity entity in entities)
+                mEntities.Remove(entity);
         }
 
         /*

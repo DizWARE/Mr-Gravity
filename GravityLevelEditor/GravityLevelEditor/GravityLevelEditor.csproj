@@ -65,7 +65,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoveEntity.cs" />
+    <Compile Include="PlaceEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ImportForm.resx">
@@ -95,6 +95,14 @@
     </Compile>
     <Compile Include="RemoveEntity.cs" />
     <Compile Include="SelectEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\add.png" />
+    <Content Include="Content\depaint.png" />
+    <Content Include="Content\multi.png" />
+    <Content Include="Content\paint.png" />
+    <Content Include="Content\remove.png" />
+    <Content Include="Content\select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
