@@ -32,14 +32,15 @@
             this.BrowseButton = new System.Windows.Forms.Button();
             this.imageLocBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.loadButton = new System.Windows.Forms.Button();
             this.previewBox = new System.Windows.Forms.PictureBox();
             this.folderLabel = new System.Windows.Forms.Label();
             this.folderBox = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.imageViewer = new System.Windows.Forms.ListView();
+            this.successfulLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +70,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter the location of the image";
             // 
-            // imageList1
+            // imageList
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // nameLabel
             // 
@@ -129,20 +130,30 @@
             this.folderBox.Size = new System.Drawing.Size(236, 21);
             this.folderBox.TabIndex = 11;
             // 
-            // listView1
+            // imageViewer
             // 
-            this.listView1.Location = new System.Drawing.Point(26, 21);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(415, 309);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.imageViewer.Location = new System.Drawing.Point(26, 21);
+            this.imageViewer.Name = "imageViewer";
+            this.imageViewer.Size = new System.Drawing.Size(415, 309);
+            this.imageViewer.TabIndex = 12;
+            this.imageViewer.UseCompatibleStateImageBehavior = false;
+            // 
+            // successfulLabel
+            // 
+            this.successfulLabel.AutoSize = true;
+            this.successfulLabel.Location = new System.Drawing.Point(619, 340);
+            this.successfulLabel.Name = "successfulLabel";
+            this.successfulLabel.Size = new System.Drawing.Size(59, 13);
+            this.successfulLabel.TabIndex = 13;
+            this.successfulLabel.Text = "Successful";
             // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 462);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.successfulLabel);
+            this.Controls.Add(this.imageViewer);
             this.Controls.Add(this.folderBox);
             this.Controls.Add(this.folderLabel);
             this.Controls.Add(this.previewBox);
@@ -165,13 +176,14 @@
         private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.TextBox imageLocBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.PictureBox previewBox;
         private System.Windows.Forms.Label folderLabel;
         private System.Windows.Forms.ComboBox folderBox;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView imageViewer;
+        private System.Windows.Forms.Label successfulLabel;
     }
 }
