@@ -49,7 +49,6 @@
             this.mi_view = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_zoomIn = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_zoomOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,47 +83,47 @@
             // mi_new
             // 
             this.mi_new.Name = "mi_new";
-            this.mi_new.Size = new System.Drawing.Size(152, 22);
+            this.mi_new.Size = new System.Drawing.Size(114, 22);
             this.mi_new.Text = "&New";
             // 
             // mi_open
             // 
             this.mi_open.Name = "mi_open";
-            this.mi_open.Size = new System.Drawing.Size(152, 22);
+            this.mi_open.Size = new System.Drawing.Size(114, 22);
             this.mi_open.Text = "&Open";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(111, 6);
             // 
             // mi_save
             // 
             this.mi_save.Name = "mi_save";
-            this.mi_save.Size = new System.Drawing.Size(152, 22);
+            this.mi_save.Size = new System.Drawing.Size(114, 22);
             this.mi_save.Text = "&Save";
             // 
             // mi_saveAs
             // 
             this.mi_saveAs.Name = "mi_saveAs";
-            this.mi_saveAs.Size = new System.Drawing.Size(152, 22);
+            this.mi_saveAs.Size = new System.Drawing.Size(114, 22);
             this.mi_saveAs.Text = "Save &As";
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(111, 6);
             // 
             // mi_play
             // 
             this.mi_play.Name = "mi_play";
-            this.mi_play.Size = new System.Drawing.Size(152, 22);
+            this.mi_play.Size = new System.Drawing.Size(114, 22);
             this.mi_play.Text = "&Play!";
             // 
             // mi_quit
             // 
             this.mi_quit.Name = "mi_quit";
-            this.mi_quit.Size = new System.Drawing.Size(152, 22);
+            this.mi_quit.Size = new System.Drawing.Size(114, 22);
             this.mi_quit.Text = "&Quit";
             // 
             // mi_edit
@@ -143,36 +142,36 @@
             // mi_undo
             // 
             this.mi_undo.Name = "mi_undo";
-            this.mi_undo.Size = new System.Drawing.Size(152, 22);
+            this.mi_undo.Size = new System.Drawing.Size(103, 22);
             this.mi_undo.Text = "&Undo";
             // 
             // mi_redo
             // 
             this.mi_redo.Name = "mi_redo";
-            this.mi_redo.Size = new System.Drawing.Size(152, 22);
+            this.mi_redo.Size = new System.Drawing.Size(103, 22);
             this.mi_redo.Text = "&Redo";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 6);
             // 
             // mi_cut
             // 
             this.mi_cut.Name = "mi_cut";
-            this.mi_cut.Size = new System.Drawing.Size(152, 22);
+            this.mi_cut.Size = new System.Drawing.Size(103, 22);
             this.mi_cut.Text = "&Cut";
             // 
             // mi_copy
             // 
             this.mi_copy.Name = "mi_copy";
-            this.mi_copy.Size = new System.Drawing.Size(152, 22);
+            this.mi_copy.Size = new System.Drawing.Size(103, 22);
             this.mi_copy.Text = "C&opy";
             // 
             // mi_paste
             // 
             this.mi_paste.Name = "mi_paste";
-            this.mi_paste.Size = new System.Drawing.Size(152, 22);
+            this.mi_paste.Size = new System.Drawing.Size(103, 22);
             this.mi_paste.Text = "&Paste";
             // 
             // mi_view
@@ -187,28 +186,20 @@
             // mi_zoomIn
             // 
             this.mi_zoomIn.Name = "mi_zoomIn";
-            this.mi_zoomIn.Size = new System.Drawing.Size(152, 22);
+            this.mi_zoomIn.Size = new System.Drawing.Size(129, 22);
             this.mi_zoomIn.Text = "Zoom &In";
             // 
             // mi_zoomOut
             // 
             this.mi_zoomOut.Name = "mi_zoomOut";
-            this.mi_zoomOut.Size = new System.Drawing.Size(152, 22);
+            this.mi_zoomOut.Size = new System.Drawing.Size(129, 22);
             this.mi_zoomOut.Text = "Zoom &Out";
-            // 
-            // propertyGrid1
-            // 
-            this.propertyGrid1.Location = new System.Drawing.Point(974, 0);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(210, 167);
-            this.propertyGrid1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 662);
-            this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
@@ -244,7 +235,6 @@
         private System.Windows.Forms.ToolStripMenuItem mi_paste;
         private System.Windows.Forms.ToolStripMenuItem mi_zoomIn;
         private System.Windows.Forms.ToolStripMenuItem mi_zoomOut;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
     }
 }
 
