@@ -6,3 +6,5 @@ C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLe
 C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.csproj.GenerateResource.Cache
 C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.exe
 C:\Users\Nate\Documents\Visual Studio 2008\Projects\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.pdb
+C:\Users\Nate\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.exe
+C:\Users\Nate\Gravity-Shift\GravityLevelEditor\GravityLevelEditor\obj\Debug\GravityLevelEditor.pdb

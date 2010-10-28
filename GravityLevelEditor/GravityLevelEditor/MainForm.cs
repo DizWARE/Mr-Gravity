@@ -11,6 +11,11 @@ namespace GravityLevelEditor
 {
     public partial class MainForm : Form
     {
+        /*
+         * MainForm()
+         *
+         * Constructor for GUI portion of Level Editor.
+         */
         public MainForm()
         {
             InitializeComponent();

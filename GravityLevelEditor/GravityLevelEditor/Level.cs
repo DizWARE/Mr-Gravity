@@ -30,9 +30,19 @@ namespace GravityLevelEditor
         private Stack<IOperation> mHistory;
         private Stack<IOperation> mUndoHistory;
 
-        /// <summary>
-        /// Create a new Level with given settings
-        /// </summary>
+        /*
+         * Level
+         * 
+         * Constructor for Level with given settings.
+         * 
+         * string name: name of the level.
+         * 
+         * Point size: tile-based size of the level.
+         * 
+         * Color color: color scheme of the level.
+         * 
+         * Image background: background image to be drawn for the level.
+         */
         public Level(string name, Point size, Color color, Image background)
         {
             mEntities = new ArrayList();
@@ -44,10 +54,14 @@ namespace GravityLevelEditor
 
         //TODO - Add constructor for loading a level from an Xml file
 
-        /// <summary>
-        /// Add an entity to the level
-        /// </summary>
-        /// <param name="entity">Entity to be added</param>
+        /*
+         * AddEntity
+         * 
+         * Adds an entity to the current level and add the
+         * add entity operation to the history.
+         * 
+         * Entity entity: entity to be added to the level.
+         */
         public void AddEntity(Entity entity)
         {
             mUndoHistory.Clear();
@@ -55,10 +69,14 @@ namespace GravityLevelEditor
             mEntities.Add(entity);
         }
 
-        /// <summary>
-        /// Remove an entity from the level
-        /// </summary>
-        /// <param name="entity">Entity to be removed</param>
+        /*
+         * RemoveEntity
+         * 
+         * Remove an entity from the level and add the
+         * remove entity operation to the history.
+         * 
+         * Entity entity: entity to be removed from the level.
+         */
         public void RemoveEntity(Entity entity)
         {
             mUndoHistory.Clear();
@@ -66,11 +84,16 @@ namespace GravityLevelEditor
             mEntities.Remove(entity);
         }
 
-        /// <summary>
-        /// Place an entity on the level at the given grid location
-        /// </summary>
-        /// <param name="entity">Entity to be placed</param>
-        /// <param name="location">Grid location where entity should be pointed</param>
+        /*
+         * PlaceEntity
+         * 
+         * Move an entity to another location on the given level
+         * and add the place entity operation to the history.
+         * 
+         * Entity entity: entity to be moved.
+         * 
+         * Point location: new location of the entity.
+         */
         public void PlaceEntity(Entity entity, Point location)
         {
             mUndoHistory.Clear();
@@ -78,19 +101,11 @@ namespace GravityLevelEditor
             entity.MoveEntity(location);
         }
 
-        /// <summary>
-        /// Undo the last modification made to the level
-        /// </summary>
-        public void Undo()
-        {
-            IOperation operation = mHistory.Pop();
-            operation.Undo();
-            mUndoHistory.Push(operation);
-        }
-
-        /// <summary>
-        /// Redo the last undo (if any)
-        /// </summary>
+        /*
+         * Redo
+         * 
+         * Redo the last undone operation (if any).
+         */
         public void Redo()
         {
             IOperation operation = mUndoHistory.Pop();
@@ -98,10 +113,25 @@ namespace GravityLevelEditor
             mHistory.Push(operation);
         }
 
-        /// <summary>
-        /// Draw the level background, then tell all entities to draw themselves
-        /// </summary>
-        /// <param name="g">The Graphics Device to draw to</param>
+        /*
+         * Undo
+         * 
+         * Undo the last operation to the level.
+         */
+        public void Undo()
+        {
+            IOperation operation = mHistory.Pop();
+            operation.Undo();
+            mUndoHistory.Push(operation);
+        }
+
+        /*
+         * Draw
+         * 
+         * Draw the background of the level, then tell all entities to draw themselves.
+         * 
+         * Graphics g: the Graphics Device to draw to.
+         */
         public void Draw(Graphics g)
         {
             //TODO - Draw background using a viewport?
