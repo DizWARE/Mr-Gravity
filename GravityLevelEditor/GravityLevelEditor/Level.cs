@@ -97,9 +97,12 @@ namespace GravityLevelEditor
         public void PlaceEntity(Entity entity, Point location)
         {
             mUndoHistory.Clear();
-            mHistory.Push(new PlaceEntity(entity, entity.Location));
+            if(location.X >= 0 && location.Y >= 0)
+                mHistory.Push(new PlaceEntity(entity, entity.Location));
             entity.MoveEntity(location);
         }
+
+        public 
 
         /*
          * Redo
@@ -166,6 +169,8 @@ namespace GravityLevelEditor
                     selectedEntities.Add(entity);
                 }
             }
+
+            mHistory.Push(new SelectEntity(selectedEntities));
             return selectedEntities;
         }
 
