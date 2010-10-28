@@ -19,8 +19,7 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            foreach (Entity e in mEntities)
-                mLevel.RemoveEntity(e);
+            mLevel.RemoveEntity(mEntities);
         }
 
         /*
