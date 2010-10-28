@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Collections;
 
 namespace GravityLevelEditor
 {
-    class PlaceEntity : IOperation
+    class MoveEntity : IOperation
     {
-        private Entity mEntity;
-        private Point mOldPosition;
-        private Point mNewPosition;
+        private ArrayList mEntities;
+        private Point mOffset;
 
         /*
          * Redo
@@ -20,19 +20,21 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            mEntity.Location = mNewPosition;
+            foreach (Entity e in mEntities)
+                e.Location += mOffset;
         }
 
         /*
          * Undo
          *
          * Implemented function from interface IOperation.
-         * Undoes a place entity operation, moving the entity
-         * to its previous location on the level.
+         * Undoes a place entity operation, moving the entities
+         * to their previous location on the level.
          */
         public void Undo()
         {
-            mEntity.Location = mOldPosition;
+            foreach (Entity e in mEntities)
+                e.Location -= mOffset;
         }
 
         /*
@@ -41,15 +43,14 @@ namespace GravityLevelEditor
          * Constructor for place entity operation. Holds all
          * data required to either undo or redo the given operation.
          * 
-         * Entity entity: the entity that is being placed on the level.
+         * ArrayList entities: the entities that are being placed on the level.
          * 
-         * Point position: the old position of the entity.
+         * Point offset: the difference between the entities' old and new locations.
          */
-        public PlaceEntity(Entity entity, Point position)
+        public MoveEntity(ArrayList entity, Point offset)
         {
             mEntity = entity;
-            mOldPosition = position;
-            mNewPosition = mEntity.Location;
+            mOffset = offset;
         }
     }
 }

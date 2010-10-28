@@ -62,11 +62,15 @@ namespace GravityLevelEditor
          * 
          * Entity entity: entity to be added to the level.
          */
-        public void AddEntity(Entity entity)
+        public ArrayList AddEntity(Entity entity, Point location)
         {
             mUndoHistory.Clear();
             mHistory.Push(new AddEntity(entity, this));
             mEntities.Add(entity);
+
+            entity.MoveEntity(location);
+
+            return SelectEntities(location, location);
         }
 
         /*
@@ -77,11 +81,12 @@ namespace GravityLevelEditor
          * 
          * Entity entity: entity to be removed from the level.
          */
-        public void RemoveEntity(Entity entity)
+        public void RemoveEntity(ArrayList entities)
         {
             mUndoHistory.Clear();
-            mHistory.Push(new RemoveEntity(entity, this));
-            mEntities.Remove(entity);
+            mHistory.Push(new RemoveEntity(entities, this));
+            foreach (Entity entity in entities)
+                mEntities.Remove(entity);
         }
 
         /*
@@ -94,11 +99,9 @@ namespace GravityLevelEditor
          * 
          * Point location: new location of the entity.
          */
-        public void PlaceEntity(Entity entity, Point location)
+        public void MoveEntity(Entity entity, Size offset)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new PlaceEntity(entity, entity.Location));
-            entity.MoveEntity(location);
+            Point.Add(entity.Location, offset);
         }
 
         /*
@@ -137,10 +140,38 @@ namespace GravityLevelEditor
             //TODO - Draw background using a viewport?
             g.DrawImage(mBackground, new Point(0, 0));
 
-            foreach (Entity e in mEntities)
+            foreach (Entity entity in mEntities)
             {
-                e.Draw(g);
+                entity.Draw(g);
             }
+        }
+
+        /***
+         * SelectEntities
+         * 
+         * Selects all entities that are within the given vector boundaries(grid coordanates)
+         * 
+         * Point topLeft - Top left corner of the selection rectangle
+         * Point bottomRight - Bottom right corner of the selection rectangle
+         */
+        public ArrayList SelectEntities(Point topLeft, Point bottomRight)
+        {
+            Point diff = new Point(bottomRight.X - topLeft.X, bottomRight.Y - topLeft.Y);
+            Rectangle selection = new Rectangle(topLeft, new Size(diff));
+            ArrayList selectedEntities = new ArrayList();
+
+            foreach(Entity entity in mEntities)
+            {
+                Rectangle entityLocation = new Rectangle(entity.Location, new Size(GridSpace.SIZE));
+                if (selection.IntersectsWith(entityLocation))
+                {
+                    entity.ToggleSelect();
+                    selectedEntities.Add(entity);
+                }
+            }
+
+            mHistory.Push(new SelectEntity(selectedEntities));
+            return selectedEntities;
         }
 
         //TODO - Add Load/Save functions

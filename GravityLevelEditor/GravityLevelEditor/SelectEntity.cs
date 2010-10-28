@@ -6,50 +6,45 @@ using System.Collections;
 
 namespace GravityLevelEditor
 {
-    class RemoveEntity : IOperation
+    class SelectEntity : IOperation
     {
         private ArrayList mEntities;
-        private Level mLevel;
 
         /*
          * Redo
          *
          * Implemented function from interface IOperation.
-         * Redoes a previously undone remove entity operation.
+         * Reselects previously unselected entities.
          */
         public void Redo()
         {
             foreach (Entity e in mEntities)
-                mLevel.RemoveEntity(e);
+                e.ToggleSelect();
         }
 
         /*
          * Undo
          *
          * Implemented function from interface IOperation.
-         * Undoes a remove entity operation, adding the entities
-         * back onto the level.
+         * Deselects last selected entities.
          */
         public void Undo()
         {
             foreach (Entity e in mEntities)
-                mLevel.AddEntity(e, e.Location);
+                e.ToggleSelect();
         }
 
         /*
-         * RemoveEntity
+         * SelectEntity
          * 
-         * Constructor for remove entity operation. Holds all
+         * Constructor for select entity operation. Holds all
          * data required to either undo or redo the given operation.
          * 
-         * ArrayList entities: the entities that are being removed from the level.
-         * 
-         * Level level: the level that is having the entity removed.
+         * ArrayList entities: list of entities being selected
          */
-        public RemoveEntity(ArrayList entities, Level level)
+        public SelectEntity(ArrayList entities)
         {
             mEntities = entities;
-            mLevel = level;
         }
     }
 }
