@@ -97,7 +97,7 @@ namespace GravityLevelEditor
         public void PlaceEntity(Entity entity, Point location)
         {
             mUndoHistory.Clear();
-            mHistory.Push(new PlaceEntity(entity, entity.Location));
+            mHistory.Push(new MoveEntity(entity, entity.Location));
             entity.MoveEntity(location);
         }
 

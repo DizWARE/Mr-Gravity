@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace GravityLevelEditor
 {
     class RemoveEntity : IOperation
     {
-        private Entity mEntity;
+        private ArrayList mEntities;
         private Level mLevel;
 
         /*
@@ -18,19 +19,21 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            mLevel.RemoveEntity(mEntity);
+            foreach (Entity e in mEntities)
+                mLevel.RemoveEntity(e);
         }
 
         /*
          * Undo
          *
          * Implemented function from interface IOperation.
-         * Undoes a remove entity operation, adding the entity
+         * Undoes a remove entity operation, adding the entities
          * back onto the level.
          */
         public void Undo()
         {
-            mLevel.AddEntity(mEntity);
+            foreach (Entity e in mEntities)
+                mLevel.AddEntity(e, e.Location);
         }
 
         /*
@@ -39,13 +42,13 @@ namespace GravityLevelEditor
          * Constructor for remove entity operation. Holds all
          * data required to either undo or redo the given operation.
          * 
-         * Entity entity: the entity that is being removed from the level.
+         * ArrayList entities: the entities that are being removed from the level.
          * 
          * Level level: the level that is having the entity removed.
          */
-        public RemoveEntity(Entity entity, Level level)
+        public RemoveEntity(ArrayList entities, Level level)
         {
-            mEntity = entity;
+            mEntities = entities;
             mLevel = level;
         }
     }
