@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace GravityLevelEditor
 {
@@ -18,7 +19,7 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            mLevel.AddEntity(mEntity);
+            mLevel.AddEntity(mEntity, mEntity.Location);
         }
 
         /*
@@ -30,7 +31,9 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            mLevel.RemoveEntity(mEntity);
+            ArrayList e = new ArrayList();
+            e.Add(mEntity);
+            mLevel.RemoveEntity(e);
         }
 
         /*

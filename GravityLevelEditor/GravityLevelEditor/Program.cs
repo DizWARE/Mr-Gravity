@@ -17,7 +17,7 @@ namespace GravityLevelEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImportForm());
+            Application.Run(new MainForm());
         }
     }
 }
