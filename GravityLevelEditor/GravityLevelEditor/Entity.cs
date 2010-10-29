@@ -147,6 +147,22 @@ namespace GravityLevelEditor
             return obj is Entity && ((Entity)obj).mID == mID;
         }
 
+        /*
+         * GetHashCode
+         * 
+         * Gets a hash representation of this object
+         * 
+         * Return Value: An integer representing this objects hash code 
+         */
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            foreach (char c in (mType))
+                hash += c * 71;
+
+            return base.GetHashCode() + hash;
+        }
+
         //TODO - Import/Export methods
     }
 }

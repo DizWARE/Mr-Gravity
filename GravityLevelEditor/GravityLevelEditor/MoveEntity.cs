@@ -10,7 +10,7 @@ namespace GravityLevelEditor
     class MoveEntity : IOperation
     {
         private ArrayList mEntities;
-        private Point mOffset;
+        private Size mOffset;
 
         /*
          * Redo
@@ -20,8 +20,8 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            foreach (Entity e in mEntities)
-                e.Location += mOffset;
+            foreach (Entity entity in mEntities)
+                entity.MoveEntity(Point.Add(entity.Location, mOffset));
         }
 
         /*
@@ -33,8 +33,8 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            foreach (Entity e in mEntities)
-                e.Location -= mOffset;
+            foreach (Entity entity in mEntities)
+                entity.MoveEntity(Point.Subtract(entity.Location, mOffset));
         }
 
         /*
@@ -47,9 +47,9 @@ namespace GravityLevelEditor
          * 
          * Point offset: the difference between the entities' old and new locations.
          */
-        public MoveEntity(ArrayList entity, Point offset)
+        public MoveEntity(ArrayList entities, Size offset)
         {
-            mEntity = entity;
+            mEntities = entities;
             mOffset = offset;
         }
     }

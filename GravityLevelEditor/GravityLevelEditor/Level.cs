@@ -27,8 +27,8 @@ namespace GravityLevelEditor
         private Image mBackground;
         public Image Background { set { mBackground = value; } }
 
-        private Stack<IOperation> mHistory;
-        private Stack<IOperation> mUndoHistory;
+        private Stack<IOperation> mHistory = new Stack<IOperation>();
+        private Stack<IOperation> mUndoHistory = new Stack<IOperation>();
 
         /*
          * Level
@@ -61,6 +61,8 @@ namespace GravityLevelEditor
          * add entity operation to the history.
          * 
          * Entity entity: entity to be added to the level.
+         * 
+         * Point location: location where we are placing this Entity
          */
         public ArrayList AddEntity(Entity entity, Point location)
         {
@@ -74,12 +76,33 @@ namespace GravityLevelEditor
         }
 
         /*
+         * AddEntities
+         * 
+         * Add a list of entities to the level(i.e. a paste of a group of entities)
+         * All entities in the list are required to have locations already preset
+         * -Adds an IOperation onto the history stack
+         * 
+         * ArrayList entities: List of entities. Must have preset locations
+         * 
+         * Return Value: Rereturns the list for editor selection
+         */
+        public ArrayList AddEntities(ArrayList entities)
+        {
+            mUndoHistory.Clear();
+            mHistory.Push(new AddEntity(entities, this));
+            foreach (Entity entity in entities)
+                mEntities.Add(entity);            
+
+            return entities;
+        }
+
+        /*
          * RemoveEntity
          * 
-         * Remove an entity from the level and add the
+         * Remove a list of entities from the level and add the
          * remove entity operation to the history.
          * 
-         * Entity entity: entity to be removed from the level.
+         * ArrayList entities: entities to be removed from the level.
          */
         public void RemoveEntity(ArrayList entities)
         {
@@ -90,18 +113,22 @@ namespace GravityLevelEditor
         }
 
         /*
-         * PlaceEntity
+         * MoveEntity
          * 
-         * Move an entity to another location on the given level
-         * and add the place entity operation to the history.
+         * Offset a list of entities to another location on the level
+         * and add the move entity operation to the history.
          * 
-         * Entity entity: entity to be moved.
+         * ArrayList entities: entities to be moved.
          * 
-         * Point location: new location of the entity.
+         * Size offset: The difference that needs to be added to the entities current location
          */
-        public void MoveEntity(Entity entity, Size offset)
+        public void MoveEntity(ArrayList entities, Size offset)
         {
-            Point.Add(entity.Location, offset);
+            mUndoHistory.Clear();
+            mHistory.Push(new MoveEntity(entities, offset));
+
+            foreach(Entity entity in entities)
+                entity.MoveEntity(Point.Add(entity.Location, offset));
         }
 
         /*
@@ -149,21 +176,22 @@ namespace GravityLevelEditor
         /***
          * SelectEntities
          * 
-         * Selects all entities that are within the given vector boundaries(grid coordanates)
+         * Selects all entities that are within the given vector boundaries(grid coordinates)
          * 
          * Point topLeft - Top left corner of the selection rectangle
          * Point bottomRight - Bottom right corner of the selection rectangle
          */
-        public ArrayList SelectEntities(Point topLeft, Point bottomRight)
+        public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
         {
-            Point diff = new Point(bottomRight.X - topLeft.X, bottomRight.Y - topLeft.Y);
-            Rectangle selection = new Rectangle(topLeft, new Size(diff));
+            Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
+            Rectangle selection = new Rectangle(firstPoint, new Size(diff));
             ArrayList selectedEntities = new ArrayList();
 
+            //For every entity, check if it is within the selection bounds. 
+                //If it is, select it, and add it to the selection list
             foreach(Entity entity in mEntities)
             {
-                Rectangle entityLocation = new Rectangle(entity.Location, new Size(GridSpace.SIZE));
-                if (selection.IntersectsWith(entityLocation))
+                if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
                 {
                     entity.ToggleSelect();
                     selectedEntities.Add(entity);

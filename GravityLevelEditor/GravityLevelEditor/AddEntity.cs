@@ -8,7 +8,7 @@ namespace GravityLevelEditor
 {
     class AddEntity : IOperation
     {
-        private Entity mEntity;
+        private ArrayList mEntities;
         private Level mLevel;
 
         /*
@@ -19,7 +19,8 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            mLevel.AddEntity(mEntity, mEntity.Location);
+            foreach(Entity entity in mEntities)
+                mLevel.AddEntity(entity, entity.Location);
         }
 
         /*
@@ -31,9 +32,23 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            ArrayList e = new ArrayList();
-            e.Add(mEntity);
-            mLevel.RemoveEntity(e);
+            mLevel.RemoveEntity(mEntities);
+        }
+
+        /*
+         * AddEntity
+         * 
+         * Constructor for add entity operation. Holds all
+         * data required to either undo or redo the given operation.
+         * 
+         * ArrayList entities: the entities that are being added to the level.
+         * 
+         * Level level: the level that is having the entities added.
+         */
+        public AddEntity(ArrayList entities, Level level)
+        {
+            mEntities = entities;
+            mLevel = level;
         }
 
         /*
@@ -48,7 +63,8 @@ namespace GravityLevelEditor
          */
         public AddEntity(Entity entity, Level level)
         {
-            mEntity = entity;
+            mEntities = new ArrayList();
+            mEntities.Add(entity);
             mLevel = level;
         }
     }
