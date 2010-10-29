@@ -12,17 +12,20 @@ namespace GravityLevelEditor
         private int mID = ObjectID++;
         public int ID { get { return mID; } }
 
+        private string mName;
+        public string Name { get {  return mName;   }   }
+
         private string mType;
-        public string Type { get {return mType;}  }
+        public string Type { get {  return mType;   }   }
 
         private Point mLocation;
         public Point Location { get { return mLocation; } set { mLocation = value; } }
         
         private bool mVisible;
-        public bool Visible { get { return mVisible; } }
+        public bool Visible { get { return mVisible;    }  }
 
         private bool mPaintable;
-        public bool Paintable { get { return mPaintable; } }
+        public bool Paintable { get { return mPaintable;}  }
 
         private bool mSelected = false;
         public bool Selected { get { return mSelected; } }
@@ -41,6 +44,7 @@ namespace GravityLevelEditor
         public Entity(Entity original)
         {
             mType = original.mType;
+            mName = original.mName;
             mVisible = original.mVisible;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
@@ -59,10 +63,11 @@ namespace GravityLevelEditor
          * Dictionary<string, string> properties: additional properties for this entity.
          * Image texture: image used to represent this entity in the level editor.
          */
-        public Entity(string type, bool visibility, 
+        public Entity(string type, string name, bool visibility,
             bool paintable, Dictionary<string, string> properties, Image texture)
         {
             mType = type;
+            mName = name;
             mLocation = new Point(-100, -100);
             mVisible = visibility;
             mPaintable = paintable;
@@ -116,9 +121,11 @@ namespace GravityLevelEditor
         public void Draw(Graphics g)
         {
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
-            g.DrawImage(mTexture, mLocation);
+            g.DrawImage(mTexture, GridSpace.GetDrawingRegion(mLocation));
             
             //Draw selected outline here
+            if (mSelected)
+                g.DrawRectangle(new Pen(Brushes.Blue, 2), GridSpace.GetDrawingRegion(mLocation));
         }
 
         /*
@@ -150,17 +157,29 @@ namespace GravityLevelEditor
         /*
          * GetHashCode
          * 
-         * Gets a hash representation of this object
+         * Gets a hash representation of this object.
          * 
-         * Return Value: An integer representing this objects hash code 
+         * Return Value: An integer representing this objects hash code. 
          */
         public override int GetHashCode()
         {
             int hash = 0;
-            foreach (char c in (mType))
+            foreach (char c in (mType + "/" + mName))
                 hash += c * 71;
 
             return base.GetHashCode() + hash;
+        }
+
+        /*
+         * ToString
+         * 
+         * Gets the string representation of this Entity.
+         * 
+         * Return Value: The string representation fo this entity.
+         */
+        public override string ToString()
+        {
+            return mType + "/" + mName;
         }
 
         //TODO - Import/Export methods
