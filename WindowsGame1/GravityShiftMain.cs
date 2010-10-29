@@ -73,7 +73,7 @@ namespace GravityShift
 
             player = new Player(Content, "Player", 
                 new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment , new KeyboardControl());
-
+                                                                                               //new ControllerControl(PlayerIndex.One)
             mObjects.Add(player);
     }
 
