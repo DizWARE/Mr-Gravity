@@ -28,11 +28,11 @@ namespace GravityLevelEditor
         /*
          * GetDrawingCoord
          * 
-         * Converts grid coordinates into scaled pixel coordinates for drawing to the screen
+         * Converts grid coordinates into scaled pixel coordinates for drawing to the screen.
          * 
-         * Point gridCoord: Grid coordinates that need to be converted
+         * Point gridCoord: Grid coordinates that need to be converted.
          * 
-         * Return Value: The Point location that represents the pixel coordinates of the location
+         * Return Value: The Point location that represents the pixel coordinates of the location.
          */
         public static Point GetDrawingCoord(Point gridCoord)
         {
@@ -46,9 +46,9 @@ namespace GravityLevelEditor
          * Converts grid coordinates into pixel coordinates for exporting to file.
          * --No scaling factor is used here.
          * 
-         * Point gridCoord: Grid coordinates that need to be converted
+         * Point gridCoord: Grid coordinates that need to be converted.
          * 
-         * Return Value: The Point location that represents the pixel coordinates of the location
+         * Return Value: The Point location that represents the pixel coordinates of the location.
          */
         public static Point GetPixelCoord(Point gridCoord)
         {
@@ -57,7 +57,14 @@ namespace GravityLevelEditor
         }
 
         /*
+         * GetDrawingRegion
          * 
+         * Gets the drawing rectangle (pixel based) for the given coordinate.
+         * 
+         * Point gridCoord: Grid coordinates that need to be converted.
+         * 
+         * Return Value: The pixel based rectangle where the entity at gridCoord
+         *               should be drawn.
          */
         public static Rectangle GetDrawingRegion(Point gridCoord)
         {
