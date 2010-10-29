@@ -71,5 +71,39 @@ namespace GravityLevelEditor
             return new Rectangle(GetDrawingCoord(gridCoord), 
                 new Size((int)(SIZE.X * SCALE_FACTOR), (int)(SIZE.Y * SCALE_FACTOR)));
         }
+
+        /*
+         * GetScaledGridCoord
+         * 
+         * Gets the row and column that the pixel coord represents. The pixel coordanates should
+         * be based off of the Zoomed In or Zoomed Out location on the grid(Otherwise you will
+         * get incorrect results)
+         * 
+         * Point pixelCoord: The Pixel Coordinate that we want converted
+         * 
+         * Return Value: The Grid Coordinates for this location
+         */
+        public static Point GetScaledGridCoord(Point pixelCoord)
+        {
+            return new Point((int)(pixelCoord.X / SIZE.X / SCALE_FACTOR),
+                (int)(pixelCoord.Y / SIZE.Y / SCALE_FACTOR));
+        }
+
+        /*
+         * GetGridCoord
+         * 
+         * Converts a pixel coordinate into Grid Coordinates. The pixel coordinates should be 
+         * based off the unmodified zoom factor(100%). Use GetScaledGridCoord if the scale factor
+         * plays affect to the results.
+         * 
+         * Point pixelCoord: Coordinates we plan on converting
+         * 
+         * Return Value: Gets the Grid coordinates on the level
+         */
+        public static Point GetGridCoord(Point pixelCoord)
+        {
+            return new Point((int)(pixelCoord.X / SIZE.X),
+                 (int)(pixelCoord.Y / SIZE.Y)); 
+        }
     }
 }
