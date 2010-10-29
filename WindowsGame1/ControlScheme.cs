@@ -22,28 +22,28 @@ namespace GravityShift
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isLeftPressed(GameTime gametime);
+        bool isLeftPressed();
 
         /// <summary>
         /// Checks to see if the control for Right has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isRightPressed(GameTime gametime);
+        bool isRightPressed();
 
         /// <summary>
         /// Checks to see if the control for Down has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isDownPressed(GameTime gametime);
+        bool isDownPressed();
 
         /// <summary>
         /// Checks to see if the control for Up has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isUpPressed(GameTime gametime);
+        bool isUpPressed();
 
         /// <summary>
         /// Gets the type of control scheme this is
@@ -72,7 +72,7 @@ namespace GravityShift
         /// </summary>
         /// <param name="key">Key to be checked</param>
         /// <returns>True if the key is pressed, false otherwise</returns>
-        private bool isPressed(Keys key, GameTime gametime)
+        private bool isPressed(Keys key)
         {
             KeyboardState state = Keyboard.GetState();
             return state.IsKeyDown(key);
@@ -83,9 +83,9 @@ namespace GravityShift
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isLeftPressed(GameTime gametime)
+        public bool isLeftPressed()
         {
-            if (isPressed(Keys.Left, gametime))
+            if (isPressed(Keys.Left))
             {
                 leftIsPushed = true;
             }
@@ -107,9 +107,9 @@ namespace GravityShift
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isRightPressed(GameTime gametime)
+        public bool isRightPressed()
         {
-            if (isPressed(Keys.Right, gametime))
+            if (isPressed(Keys.Right))
             {
                 rightIsPushed = true;
             }
@@ -131,9 +131,9 @@ namespace GravityShift
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isDownPressed(GameTime gametime)
+        public bool isDownPressed()
         {
-            if (isPressed(Keys.Down, gametime))
+            if (isPressed(Keys.Down))
             {
                 downIsPushed = true;
             }
@@ -155,9 +155,9 @@ namespace GravityShift
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isUpPressed(GameTime gametime)
+        public bool isUpPressed()
         {
-            if (isPressed(Keys.Up, gametime))
+            if (isPressed(Keys.Up))
             {
                 upIsPushed = true;
             }
@@ -222,7 +222,7 @@ namespace GravityShift
         /// Checks to see if the control for left has been interacted with
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isLeftPressed(GameTime gametime)
+        public bool isLeftPressed()
         {
             if (isPressed(Buttons.DPadLeft) || isPressed(Buttons.LeftThumbstickLeft) || isPressed(Buttons.X))
             {
@@ -244,7 +244,7 @@ namespace GravityShift
         /// Checks to see if the control for Right has been interacted with
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isRightPressed(GameTime gametime)
+        public bool isRightPressed()
         {
             if (isPressed(Buttons.DPadRight) || isPressed(Buttons.LeftThumbstickRight) || isPressed(Buttons.B))
             {
@@ -267,7 +267,7 @@ namespace GravityShift
         /// Checks to see if the control for Down has been interacted with
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isDownPressed(GameTime gametime)
+        public bool isDownPressed()
         {
             if (isPressed(Buttons.DPadDown) || isPressed(Buttons.LeftThumbstickDown) || isPressed(Buttons.A))
             {
@@ -290,7 +290,7 @@ namespace GravityShift
         /// Checks to see if the control for Up has been interacted with
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isUpPressed(GameTime gametime)
+        public bool isUpPressed()
         {
             if (isPressed(Buttons.DPadDown) || isPressed(Buttons.LeftThumbstickDown) || isPressed(Buttons.Y))
             {
