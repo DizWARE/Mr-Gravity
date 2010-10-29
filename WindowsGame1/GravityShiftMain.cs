@@ -71,8 +71,8 @@ namespace GravityShift
 
             mDefaultFont = Content.Load<SpriteFont>("defaultFont");
 
-            player = new Player(Content, "Player", 
-                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment , new KeyboardControl());
+            player = new Player(Content, "Player",
+                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new ControllerControl(PlayerIndex.One));
                                                                                                //new ControllerControl(PlayerIndex.One)
             mObjects.Add(player);
     }

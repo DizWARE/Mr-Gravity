@@ -173,8 +173,7 @@ namespace GravityShift
             return false;
         }
 
-        
-
+       
         /// <summary>
         /// Gets the type of control scheme this is
         /// </summary>
@@ -220,6 +219,7 @@ namespace GravityShift
 
         /// <summary>
         /// Checks to see if the control for left has been interacted with
+        /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isLeftPressed()
@@ -242,6 +242,7 @@ namespace GravityShift
 
         /// <summary>
         /// Checks to see if the control for Right has been interacted with
+        /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isRightPressed()
@@ -265,6 +266,7 @@ namespace GravityShift
 
         /// <summary>
         /// Checks to see if the control for Down has been interacted with
+        /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isDownPressed()
@@ -288,11 +290,12 @@ namespace GravityShift
 
         /// <summary>
         /// Checks to see if the control for Up has been interacted with
+        /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isUpPressed()
         {
-            if (isPressed(Buttons.DPadDown) || isPressed(Buttons.LeftThumbstickDown) || isPressed(Buttons.Y))
+            if (isPressed(Buttons.DPadUp) || isPressed(Buttons.LeftThumbstickUp) || isPressed(Buttons.Y))
             {
                 upIsPushed = true;
             }
@@ -306,6 +309,39 @@ namespace GravityShift
             }
             upWasPushed = upIsPushed;
             return false;
+            
+        }
+        /// <summary>
+        /// Checks to see if the left thumbstick is currently left
+        /// </summary>
+        /// <returns>True if it is; false if it is not</returns>
+        private bool LeftThumbStickIsLeft()
+        {
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X == -1.0f);
+        }
+        /// <summary>
+        /// Checks to see if the left thumbstick is currently right
+        /// </summary>
+        /// <returns>True if it is; false if it is not</returns>
+        private bool LeftThumbStickIsRight()
+        {
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X == 1.0f);
+        }
+        /// <summary>
+        /// Checks to see if the left thumbstick is currently Down
+        /// </summary>
+        /// <returns>True if it is; false if it is not</returns>
+        private bool LeftThumbStickIsDown()
+        {
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == 1.0f);
+        }
+        /// <summary>
+        /// Checks to see if the left thumbstick is currently Up
+        /// </summary>
+        /// <returns>True if it is; false if it is not</returns>
+        private bool LeftThumbStickIsUp()
+        {
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == -1.0f);
         }
 
         /// <summary>
