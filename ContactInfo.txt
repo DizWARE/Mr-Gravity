@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Casey Spencer 
 Phone: 801-694-5630
 Email: billanddspencer@gmail.com
@@ -13,11 +12,15 @@ Kamron Egan
 Phone: 801-390-3222
 Email: k.egan@utah.edu
 ---------------------------------
-<<<<<<< HEAD
-
-=======
+Curtis Taylor
+Phone: 801-644-4243
+Email: curtis.taylor.b@gmail.com
+---------------------------------
 Nate Bradford
 Phone: 801-891-0941
 Email: lmntalking@gmail.com
 ---------------------------------
->>>>>>> nate/master
+Morgan Reynolds
+Phone: 801-809-5779
+Email: morganreyn@gmail.com
+---------------------------------

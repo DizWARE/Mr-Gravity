@@ -46,10 +46,10 @@ namespace GravityShift
         {
             base.Update(gametime);
 
-            if (mControls.isDownPressed(gametime)) mEnvironment.GravityDirection = GravityDirections.Down;
-            else if (mControls.isUpPressed(gametime)) mEnvironment.GravityDirection = GravityDirections.Up;
-            else if (mControls.isLeftPressed(gametime)) mEnvironment.GravityDirection = GravityDirections.Left;
-            else if (mControls.isRightPressed(gametime)) mEnvironment.GravityDirection = GravityDirections.Right;
+            if (mControls.isDownPressed()) mEnvironment.GravityDirection = GravityDirections.Down;
+            else if (mControls.isUpPressed()) mEnvironment.GravityDirection = GravityDirections.Up;
+            else if (mControls.isLeftPressed()) mEnvironment.GravityDirection = GravityDirections.Left;
+            else if (mControls.isRightPressed()) mEnvironment.GravityDirection = GravityDirections.Right;
         }
 
         /// <summary>
