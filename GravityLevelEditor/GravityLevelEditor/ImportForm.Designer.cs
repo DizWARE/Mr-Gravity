@@ -100,7 +100,7 @@
             this.loadButton.TabIndex = 7;
             this.loadButton.Text = "Load Image";
             this.loadButton.UseVisualStyleBackColor = true;
-            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            this.loadButton.Click += new System.EventHandler(this.LoadButton_Click);
             // 
             // previewBox
             // 

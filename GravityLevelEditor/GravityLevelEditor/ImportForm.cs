@@ -55,7 +55,7 @@ namespace GravityLevelEditor
          *
          * object send: Not sure what this is, it was auto populated by forms.
          * …
-         * EventArgs e: I believe this is for error checking, but again it was auto populated.
+         * EventArgs e: Event arguments sent from clicking BrowseButton.
          *
          * Return Value: Void.
          */
@@ -76,12 +76,25 @@ namespace GravityLevelEditor
                 /* Set the text to be the location of the file */
                 imageLocBox.Text = importFileDialog.FileName;
                 /* Preview the image the user selected */
-                previewBox.Load(importFileDialog.FileName);
+                Image previewImage = Image.FromFile(importFileDialog.FileName);
+                Image.GetThumbnailImageAbort myCallback = new Image.GetThumbnailImageAbort(ThumbnailCallback);
+                previewBox.Image = previewImage.GetThumbnailImage(200, 165, myCallback, IntPtr.Zero);
             }
+        }
+        /*
+         * ThumbnailCallback
+         * 
+         * Required to get a thumbnail of the preview image.
+         * 
+         * Return Value: always false.
+         */
+        public bool ThumbnailCallback()
+        {
+            return false;
         }
 
         /*
-         * loadButton_Click
+         * LoadButton_Click
          *
          * This function will be called when the load button is clicked (obviously).
          * It will first do error checking:
@@ -97,13 +110,13 @@ namespace GravityLevelEditor
          * Once everything is saved, shows the successful label and return everything
          * to its default state.
          * 
-         * object send: Not sure what this is, it was auto populated by forms.
+         * object sender: Not sure what this is, it was auto populated by forms.
          * …
-         * EventArgs e: I believe this is for error checking, but again it was auto populated.
+         * EventArgs e: Event arguments sent from clicking BrowseButton.
          *
          * Return Value: Void.
          */
-        private void loadButton_Click(object sender, EventArgs e)
+        private void LoadButton_Click(object sender, EventArgs e)
         {
             /* If the user has not selected an image */
             if (previewBox.Image == null)
