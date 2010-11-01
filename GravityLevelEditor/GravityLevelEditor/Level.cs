@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Drawing;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace GravityLevelEditor
 {
@@ -25,7 +27,7 @@ namespace GravityLevelEditor
         public Color Color { get { return mColor; } set { mColor = value; } }
 
         private Image mBackground;
-        public Image Background { set { mBackground = value; } }
+        public Image Background { get { return mBackground; } set { mBackground = value; } }
 
         private Stack<IOperation> mHistory = new Stack<IOperation>();
         private Stack<IOperation> mUndoHistory = new Stack<IOperation>();
@@ -203,5 +205,25 @@ namespace GravityLevelEditor
         }
 
         //TODO - Add Load/Save functions
+
+        public void Save(string filename)
+        {
+
+            XElement entityTree = new XElement("Entities");
+            foreach (Entity entity in mEntities) {
+                entityTree.Add(entity.Export());
+            }
+            XDocument xDoc = new XDocument(
+                new XElement("Level",
+                    new XElement("Name", this.Name),
+                    new XElement("Size",
+                        new XAttribute("X", this.Size.X),
+                        new XAttribute("Y", this.Size.Y)),
+                    new XElement("Background", this.Background.ToString()),
+                    new XElement("Color", this.Color.ToString()),
+                    entityTree));
+
+            xDoc.Save(filename);
+        }
     }
 }

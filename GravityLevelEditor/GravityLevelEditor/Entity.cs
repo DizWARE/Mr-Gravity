@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace GravityLevelEditor
 {
@@ -183,5 +185,21 @@ namespace GravityLevelEditor
         }
 
         //TODO - Import/Export methods
+
+        public XElement Export()
+        {
+            XElement entityTree = new XElement("Entity",
+                new XElement("ID", this.ID),
+                new XElement("Name", this.Name),
+                new XElement("Type", this.Type),
+                new XElement("Location",
+                    new XAttribute("X", this.Location.X),
+                    new XAttribute("Y", this.Location.Y)),
+                new XElement("Visible", this.Visible.ToString()),
+                new XElement("Paintable", this.Paintable.ToString()),
+                new XElement("Texture", this.mTexture.ToString()));
+
+            return entityTree;
+        }
     }
 }
