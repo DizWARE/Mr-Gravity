@@ -36,7 +36,17 @@ namespace GravityLevelEditor
         {
             InitializeComponent();
 
+            string curr = Application.StartupPath;
+            if (curr.EndsWith("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug"))
+            {
+                int trimLoc = curr.LastIndexOf("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug");
+                if (trimLoc > 0)
+                {
+                    curr = curr.Substring(0, trimLoc);
+                }
+            }
             /* Adds default items to the folder list */
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(curr + "WindowsGame1\\Content\\Images\\");
             folders.Add("Tiles");
             folders.Add("Background");
             folders.Add("Character");

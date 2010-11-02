@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Textures));
             this.importButton = new System.Windows.Forms.Button();
             this.propertiesLabel = new System.Windows.Forms.Label();
             this.textureNameBox = new System.Windows.Forms.TextBox();
@@ -114,6 +115,7 @@
             this.Controls.Add(this.textureNameBox);
             this.Controls.Add(this.propertiesLabel);
             this.Controls.Add(this.importButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Textures";
             this.Text = "Textures";
             ((System.ComponentModel.ISupportInitialize)(this.textureBox)).EndInit();
