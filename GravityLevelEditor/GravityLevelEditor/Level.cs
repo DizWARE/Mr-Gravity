@@ -49,6 +49,7 @@ namespace GravityLevelEditor
         public Level(string name, Point size, Color color, Image background)
         {
             mEntities = new ArrayList();
+            mClipboard = new ArrayList();
             mName = name;
             mSize = size;
             mColor = color;
