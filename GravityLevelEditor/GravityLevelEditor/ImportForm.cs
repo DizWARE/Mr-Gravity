@@ -41,7 +41,7 @@ namespace GravityLevelEditor
             folders.Add("Background");
             folders.Add("Character");
             folderBox.DataSource = folders;
-
+            
             /* If the images folder does not exist in the content folder yet */
             if (imageLocation.IndexOf("Images") == -1)
             {
