@@ -49,6 +49,7 @@ namespace GravityLevelEditor
         public Level(string name, Point size, Color color, Image background)
         {
             mEntities = new ArrayList();
+            mClipboard = new ArrayList();
             mName = name;
             mSize = size;
             mColor = color;
@@ -198,11 +199,9 @@ namespace GravityLevelEditor
                     minPoint = entity.Location;
 
             foreach (Entity entity in mClipboard)
-            {
                 entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
-                mEntities.Add(entity);
-            }
 
+            AddEntities(mClipboard);
         }
 
         /*
@@ -223,6 +222,20 @@ namespace GravityLevelEditor
                     tile.Insert(0, entity);
 
             return tile;
+        }
+
+        /*
+         * SelectEntity
+         * 
+         * Select the top most entity at this grid location
+         * 
+         * Point gridLocation: Location we want to select
+         * 
+         * Return Value: The entity that is at the top
+         */
+        public Entity SelectEntity(Point gridLocation)
+        {
+            return (Entity)InTile(gridLocation)[0];
         }
 
         /*

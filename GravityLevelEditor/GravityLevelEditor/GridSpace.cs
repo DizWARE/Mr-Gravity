@@ -8,7 +8,7 @@ namespace GravityLevelEditor
 {
     static class GridSpace
     {
-        private static Point SIZE = new Point(10, 10);
+        private static Point SIZE = new Point(64, 64);
         private static float SCALE_FACTOR = 1.0f;
 
         /*
