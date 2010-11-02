@@ -203,7 +203,7 @@ namespace GravityLevelEditor
                 mEntities.Add(entity);
             }
 
-        }
+        }        
 
         /*
          * Draw
