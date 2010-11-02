@@ -47,10 +47,10 @@ namespace GravityLevelEditor
             }
             /* Adds default items to the folder list */
             System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(curr + "WindowsGame1\\Content\\Images\\");
-            folders.Add("Tiles");
-            folders.Add("Background");
-            folders.Add("Character");
-            folderBox.DataSource = folders;
+//            folders.Add("Tiles");
+//            folders.Add("Background");
+//            folders.Add("Character");
+            folderBox.DataSource = dir.GetDirectories();
             
             /* If the images folder does not exist in the content folder yet */
             if (imageLocation.IndexOf("Images") == -1)
