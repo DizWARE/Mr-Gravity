@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -287,8 +288,22 @@ namespace GravityLevelEditor
 
         //TODO - Add Load/Save functions
 
-        public void Save(string filename)
+        public void Save()
         {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            if (currentDirectory.EndsWith("bin\\Debug"))
+            {
+                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
+                if (trimLoc >= 0)
+                {
+                    currentDirectory = currentDirectory.Substring(0, trimLoc);
+                }
+            }
+            if (currentDirectory.IndexOf("Levels") == -1)
+            {
+                System.IO.Directory.CreateDirectory(currentDirectory + "Levels\\");
+                currentDirectory += "Levels\\";
+            }
 
             XElement entityTree = new XElement("Entities");
             foreach (Entity entity in mEntities) {
@@ -304,7 +319,7 @@ namespace GravityLevelEditor
                     new XElement("Color", this.Color.ToString()),
                     entityTree));
 
-            xDoc.Save(filename);
+            xDoc.Save(currentDirectory + this.Name + ".xml");
         }
     }
 }
