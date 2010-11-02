@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -199,11 +200,43 @@ namespace GravityLevelEditor
                     minPoint = entity.Location;
 
             foreach (Entity entity in mClipboard)
-            {
                 entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
-                mEntities.Add(entity);
-            }
 
+            AddEntities(mClipboard);
+        }
+
+        /*
+         * InTile
+         * 
+         * Gets all the entities in the current Grid Tile
+         * 
+         * Point gridLocation: The location that we want all the entities
+         * 
+         * Return Value: Return a list of all the Entities at the given grid tile. Will return 
+         * a list that is in top down order(The entity that is drawn on top is at the top of the list
+         */
+        public ArrayList InTile(Point gridLocation)
+        {
+            ArrayList tile = new ArrayList();
+            foreach (Entity entity in mEntities)
+                if (entity.Location.Equals(gridLocation))
+                    tile.Insert(0, entity);
+
+            return tile;
+        }
+
+        /*
+         * SelectEntity
+         * 
+         * Select the top most entity at this grid location
+         * 
+         * Point gridLocation: Location we want to select
+         * 
+         * Return Value: The entity that is at the top
+         */
+        public Entity SelectEntity(Point gridLocation)
+        {
+            return (Entity)InTile(gridLocation)[0];
         }
 
         /*
@@ -255,8 +288,22 @@ namespace GravityLevelEditor
 
         //TODO - Add Load/Save functions
 
-        public void Save(string filename)
+        public void Save()
         {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            if (currentDirectory.EndsWith("bin\\Debug"))
+            {
+                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
+                if (trimLoc >= 0)
+                {
+                    currentDirectory = currentDirectory.Substring(0, trimLoc);
+                }
+            }
+            if (currentDirectory.IndexOf("Levels") == -1)
+            {
+                System.IO.Directory.CreateDirectory(currentDirectory + "Levels\\");
+                currentDirectory += "Levels\\";
+            }
 
             XElement entityTree = new XElement("Entities");
             foreach (Entity entity in mEntities) {
@@ -272,7 +319,7 @@ namespace GravityLevelEditor
                     new XElement("Color", this.Color.ToString()),
                     entityTree));
 
-            xDoc.Save(filename);
+            xDoc.Save(currentDirectory + this.Name + ".xml");
         }
     }
 }
