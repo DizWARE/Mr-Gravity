@@ -75,7 +75,7 @@ namespace GravityLevelEditor
             /* TODO */
             // Get the initial directory set to the images directory
 //            selectTextureDialog.InitialDirectory = @"c:\";
-            selectTextureDialog.InitialDirectory = Application.StartupPath;          
+//            selectTextureDialog.InitialDirectory = Application.StartupPath;          
             /* Restrict the search for only .png files*/
             selectTextureDialog.Filter = "PNG Files|*.png";
             /* Add a title, so the user knows to only look for .png files */
