@@ -203,7 +203,27 @@ namespace GravityLevelEditor
                 mEntities.Add(entity);
             }
 
-        }        
+        }
+
+        /*
+         * InTile
+         * 
+         * Gets all the entities in the current Grid Tile
+         * 
+         * Point gridLocation: The location that we want all the entities
+         * 
+         * Return Value: Return a list of all the Entities at the given grid tile. Will return 
+         * a list that is in top down order(The entity that is drawn on top is at the top of the list
+         */
+        public ArrayList InTile(Point gridLocation)
+        {
+            ArrayList tile = new ArrayList();
+            foreach (Entity entity in mEntities)
+                if (entity.Location.Equals(gridLocation))
+                    tile.Insert(0, entity);
+
+            return tile;
+        }
 
         /*
          * Draw
