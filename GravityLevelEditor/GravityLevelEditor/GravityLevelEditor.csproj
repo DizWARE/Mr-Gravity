@@ -12,6 +12,7 @@
     <AssemblyName>GravityLevelEditor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,9 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddEntity.cs" />
+    <Compile Include="EditorData.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="GridSpace.cs" />
+    <Compile Include="GuiTools\AddEntity.cs" />
     <Compile Include="GuiTools\ITool.cs" />
+    <Compile Include="GuiTools\MultiSelect.cs" />
+    <Compile Include="GuiTools\RemoveEntity.cs" />
     <Compile Include="GuiTools\SingleSelect.cs" />
     <Compile Include="ImportForm.cs">
       <SubType>Form</SubType>

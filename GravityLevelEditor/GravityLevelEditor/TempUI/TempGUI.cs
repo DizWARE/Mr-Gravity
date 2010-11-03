@@ -7,13 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using GravityLevelEditor.GuiTools;
 
 namespace GravityLevelEditor
 {
     public partial class TempGUI : Form
     {
-        Level mLevel;
-        ArrayList mSelectedEntites;
+        EditorData mData;
+
+        private static GuiTools.SingleSelect TOOL_SELECT = new GuiTools.SingleSelect();
+        private static GuiTools.MultiSelect TOOL_MULTISELECT = new GuiTools.MultiSelect();
+        private static GuiTools.AddEntity TOOL_ADD = new GuiTools.AddEntity();
+        private static GuiTools.RemoveEntity TOOL_REMOVE = new GuiTools.RemoveEntity();
+        ITool mCurrentTool = TOOL_SELECT;
 
         /*
          * TempGUI
@@ -23,10 +29,9 @@ namespace GravityLevelEditor
         public TempGUI()
         {
             InitializeComponent();
-            mLevel = new Level("New Level", new Point(10, 10), Color.Red,
-                     Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png"));
-            mSelectedEntites = new ArrayList();
-               
+            mData = new EditorData(new ArrayList(), null, 
+                new Level("New Level", new Point(10, 10), Color.Red,
+                     Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
         }
 
         /*
@@ -41,12 +46,12 @@ namespace GravityLevelEditor
          */
         private void ApplyChanges(object sender, EventArgs e)
         {
-            mLevel.Name = tb_name.Text;
+            mData.Level.Name = tb_name.Text;
 
-            mLevel.Resize(int.Parse(tb_rows.Text), 
+            mData.Level.Resize(int.Parse(tb_rows.Text), 
                           int.Parse(tb_cols.Text));
 
-            Point pixelSize = GridSpace.GetPixelCoord(mLevel.Size);
+            Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
         }
 
@@ -103,18 +108,17 @@ namespace GravityLevelEditor
         {
             Panel p = (Panel)sender;
             Graphics g = e.Graphics;
-            g.ResetClip();
             Pen pen = new Pen(Brushes.Gray);
 
-            mLevel.Draw(g);
+            mData.Level.Draw(g);
 
-            for (int i = 1; i <= mLevel.Size.X; i++)
+            for (int i = 0; i <= mData.Level.Size.X; i++)
                 g.DrawLine(pen, GridSpace.GetPixelCoord(new Point(i, 0)),
-                    GridSpace.GetPixelCoord(new Point(i, mLevel.Size.Y)));
+                    GridSpace.GetPixelCoord(new Point(i, mData.Level.Size.Y)));
 
-            for (int i = 1; i <= mLevel.Size.Y; i++)
+            for (int i = 0; i <= mData.Level.Size.Y; i++)
                 g.DrawLine(pen, GridSpace.GetPixelCoord(new Point(0, i)),
-                    GridSpace.GetPixelCoord(new Point(mLevel.Size.X,i)));
+                    GridSpace.GetPixelCoord(new Point(mData.Level.Size.X,i)));
         }
 
         /*
@@ -129,7 +133,7 @@ namespace GravityLevelEditor
          */
         private void UpdatePaint(object sender, ScrollEventArgs e)
         {
-            sc_Properties.Panel1.Invalidate();
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -150,13 +154,14 @@ namespace GravityLevelEditor
                 FormClosingEventArgs f = (FormClosingEventArgs)e;
                 result = MessageBox.Show("Do you want to save?", "Quit", MessageBoxButtons.YesNoCancel);
                 if (result == DialogResult.Yes)
-                    mLevel.Save();
+                    mData.Level.Save();
 
                 if (result == DialogResult.Cancel)
                     f.Cancel = true;
             }
             catch (Exception ex)
             {
+                System.Console.WriteLine(ex.ToString());
                 this.Close();
             }
         }
@@ -173,7 +178,7 @@ namespace GravityLevelEditor
          */
         private void Save(object sender, EventArgs e)
         {
-            mLevel.Save();
+            mData.Level.Save();
         }
 
         /*
@@ -191,17 +196,17 @@ namespace GravityLevelEditor
         {
             DialogResult result = MessageBox.Show("Do you want to save?", "New", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
-                mLevel.Save();
+                mData.Level.Save();
 
             if (result != DialogResult.Cancel)
             {
-                mLevel = new Level("New Level", new Point(10, 10), Color.Red,
+                mData.Level = new Level("New Level", new Point(10, 10), Color.Red,
                          Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png"));
-                mSelectedEntites.Clear();
+                mData.SelectedEntities.Clear();
                 tb_cols.Text = tb_rows.Text = "10";
                 tb_name.Text = "New Level";
                 sc_Properties.Panel1.Invalidate();
-                Point pixelSize = GridSpace.GetPixelCoord(mLevel.Size);
+                Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
                 sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
             }
         }
@@ -220,12 +225,12 @@ namespace GravityLevelEditor
         {
             DialogResult result = MessageBox.Show("Do you want to save?", "Open", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
-                mLevel.Save();
+                mData.Level.Save();
 
             if (result != DialogResult.Cancel)
             {
                 //TODO: Add pointer to Xml load code in Level.cs
-                mSelectedEntites.Clear();
+                mData.SelectedEntities.Clear();
             }
         }
 
@@ -241,7 +246,7 @@ namespace GravityLevelEditor
          */
         private void Play(object sender, EventArgs e)
         {
-            mLevel.Save();
+            mData.Level.Save();
 
             //TODO: Add code to launch game with sample level as a parameter
         }
@@ -257,7 +262,7 @@ namespace GravityLevelEditor
          */
         private void Undo(object sender, EventArgs e)
         {
-            mLevel.Undo();
+            mData.Level.Undo();
         }
 
         /*
@@ -271,7 +276,7 @@ namespace GravityLevelEditor
          */
         private void Redo(object sender, EventArgs e)
         {
-            mLevel.Redo();
+            mData.Level.Redo();
         }
 
         /*
@@ -285,7 +290,8 @@ namespace GravityLevelEditor
          */
         private void Cut(object sender, EventArgs e)
         {
-            mLevel.Cut(mSelectedEntites);
+            mData.Level.Cut(mData.SelectedEntities);
+            mData.SelectedEntities.Clear();
         }
 
         /*
@@ -299,7 +305,7 @@ namespace GravityLevelEditor
          */
         private void Copy(object sender, EventArgs e)
         {
-            mLevel.Copy(mSelectedEntites);
+            mData.Level.Copy(mData.SelectedEntities);
         }
 
         /*
@@ -313,7 +319,7 @@ namespace GravityLevelEditor
          */
         private void Paste(object sender, EventArgs e)
         {
-            mLevel.Paste();
+            mData.Level.Paste();
         }
 
         /*
@@ -342,6 +348,111 @@ namespace GravityLevelEditor
         private void ZoomOut(object sender, EventArgs e)
         {
             //TODO: Add zoom out code
+        }
+
+        private Point MousePosToGrid(Panel p, MouseEventArgs e)
+        {
+            return new Point(-p.DisplayRectangle.X + e.X,
+                             -p.DisplayRectangle.Y + e.Y);
+        }
+
+        /*
+         * GridMouseDown
+         * 
+         * Invoked when user presses the left or right mouse buttons on the grid. Calls its
+         * respective method in the current tool
+         * 
+         * Standard Mouse Event parameters
+         */
+        private void GridMouseDown(object sender, MouseEventArgs e)
+        {
+            Panel p = (Panel)sender;
+            if (e.Button == MouseButtons.Left)
+                mCurrentTool.LeftMouseDown(ref mData, MousePosToGrid(p, e));
+            else if(e.Button == MouseButtons.Right)
+                mCurrentTool.RightMouseDown(ref mData, MousePosToGrid(p, e));
+        }
+
+        /*
+         * GridMouseUp
+         * 
+         * Invoked when user releases the left or right mouse buttons on the grid. Calls its
+         * respective method in the current tool
+         * 
+         * Standard Mouse Event parameters
+         */
+        private void GridMouseUp(object sender, MouseEventArgs e)
+        {
+            Panel p = (Panel)sender;
+            if (e.Button == MouseButtons.Left)
+                mCurrentTool.LeftMouseUp(ref mData, MousePosToGrid(p, e));
+            else if (e.Button == MouseButtons.Right)
+                mCurrentTool.RightMouseUp(ref mData, MousePosToGrid(p, e));
+        }
+
+        /*
+         * GridMouseDown
+         * 
+         * Invoked when user moves the mouse on the grid. Calls its
+         * respective method in the current tool
+         * 
+         * Standard Mouse Event parameters
+         */
+        private void GridMouseMove(object sender, MouseEventArgs e)
+        {
+            Panel p = (Panel)sender;
+            mCurrentTool.MouseMove(ref mData, MousePosToGrid(p, e));
+        }
+
+        /*
+         * SelectTool
+         * 
+         * Switches the current tool to select
+         * 
+         * Normal Event parameters
+         */
+        private void SelectTool(object sender, EventArgs e)
+        {
+            mCurrentTool = TOOL_SELECT;
+        }
+
+
+        /*
+         * MulitSelectTool
+         * 
+         * Switches the current tool to multiselect
+         * 
+         * Normal Event parameters
+         */
+        private void MultiSelectTool(object sender, EventArgs e)
+        {
+            mCurrentTool = TOOL_MULTISELECT;
+        }
+
+
+        /*
+         * AddTool
+         * 
+         * Switches the current tool to add entity
+         * 
+         * Normal Event parameters
+         */
+        private void AddTool(object sender, EventArgs e)
+        {
+            mCurrentTool = TOOL_ADD;
+        }
+
+
+        /*
+         * RemoveTool
+         * 
+         * Switches the current tool to remove entity
+         * 
+         * Normal Event parameters
+         */
+        private void RemoveTool(object sender, EventArgs e)
+        {
+            mCurrentTool = TOOL_REMOVE;
         }
     }
 }

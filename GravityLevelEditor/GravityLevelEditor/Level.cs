@@ -15,9 +15,6 @@ namespace GravityLevelEditor
         private ArrayList mEntities;
         private ArrayList mClipboard;
 
-        //TODO-Change if needed
-        private ArrayList mSelected;
-
         private bool mSaved = false;
         public bool Saved { get { return mSaved; } }
 
@@ -136,7 +133,8 @@ namespace GravityLevelEditor
             mHistory.Push(new MoveEntity(entities, offset));
 
             foreach(Entity entity in entities)
-                entity.MoveEntity(Point.Add(entity.Location, offset));
+                if(entity != null)
+                    entity.MoveEntity(Point.Add(entity.Location, offset));
         }
 
         /*
@@ -216,7 +214,7 @@ namespace GravityLevelEditor
          * 
          * Pastes the entities on the screen. Currently, they drop down starting at the upper left corner
          */
-        public void Paste()
+        public ArrayList Paste()
         {
             Point minPoint = ((Entity)mClipboard[0]).Location;
             foreach(Entity entity in mClipboard)
@@ -227,6 +225,7 @@ namespace GravityLevelEditor
                 entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
 
             AddEntities(mClipboard);
+            return mClipboard;
         }
 
         /*
@@ -271,18 +270,6 @@ namespace GravityLevelEditor
         }
 
         /*
-         * GetSelectedEntities
-         * 
-         * Gets the list of all the currently selected entities
-         * 
-         * Return Value: The selected entities
-         */
-        public ArrayList GetSelectedEntities()
-        {
-            return mSelected;
-        }
-
-        /*
          * Draw
          * 
          * Draw the background of the level, then tell all entities to draw themselves.
@@ -291,12 +278,11 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g)
         {
-            g.DrawImage(mBackground, new Point(0, 0));
+            g.DrawImage(mBackground, new Rectangle(new Point(0,0),
+                new Size(GridSpace.GetPixelCoord(this.mSize))));
 
             foreach (Entity entity in mEntities)
-            {
                 entity.Draw(g);
-            }
         }
 
         /***
@@ -311,16 +297,7 @@ namespace GravityLevelEditor
         {
             Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
             Rectangle selection = new Rectangle(firstPoint, new Size(diff));
-            mSelected = new ArrayList();
-
-            //If this is a single select, select the very top entity in the tile and return
-            if (firstPoint.Equals(secondPoint))
-            { 
-                Entity entity = SelectEntity(firstPoint);
-                if (entity.Selected) mSelected.Add(entity);
-                else mSelected.Remove(entity);
-                return mSelected; 
-            }
+            ArrayList selected = new ArrayList();
 
             //For every entity, check if it is within the selection bounds. 
                 //If it is, select it, and add it to the selection list
@@ -329,13 +306,12 @@ namespace GravityLevelEditor
                 if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
                 {
                     entity.ToggleSelect();
-                    if(entity.Selected) mSelected.Add(entity);
-                    else    mSelected.Remove(entity);
+                    selected.Add(entity);
                 }
             }
 
-            mHistory.Push(new SelectEntity(mSelected));
-            return mSelected;
+            mHistory.Push(new SelectEntity(selected));
+            return selected;
         }
 
         //TODO - Add Load/Save functions

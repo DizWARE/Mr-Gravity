@@ -8,10 +8,10 @@ namespace GravityLevelEditor.GuiTools
 {
     interface ITool
     {
-        void LeftMouseDown(Level level, Point gridPosition);
-        void LeftMouseUp(Level level, Point gridPosition);
-        void RightMouseDown(Level level, Point gridPosition);
-        void RightMouseUp(Level level, Point gridPosition);
-        void MouseMove(Level level, Point gridPosition);
+        void LeftMouseDown(ref EditorData data, Point gridPosition);
+        void LeftMouseUp(ref EditorData data, Point gridPosition);
+        void RightMouseDown(ref EditorData data, Point gridPosition);
+        void RightMouseUp(ref EditorData data, Point gridPosition);
+        void MouseMove(ref EditorData data, Point gridPosition);
     }
 }
