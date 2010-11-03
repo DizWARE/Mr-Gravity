@@ -27,7 +27,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GravityShift.GenericObject" Collapsed="true">
-    <Position X="3.75" Y="3.75" Width="1.5" />
+    <Position X="2.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GenericObject.cs</FileName>
@@ -55,14 +55,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GravityShift.PhysicsObject" Collapsed="true">
-    <Position X="5" Y="2.5" Width="1.5" />
+    <Position X="3.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQgAACBAEAEAIQEAAIAAAAAAAACAAACAAkCAAIABgE=</HashCode>
       <FileName>PhysicsObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GravityShift.Player" Collapsed="true">
-    <Position X="6" Y="3.75" Width="1.5" />
+    <Position X="4.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAECCAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
@@ -76,10 +76,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GravityShift.GameObject" Collapsed="true">
-    <Position X="5" Y="1.5" Width="1.5" />
+    <Position X="4.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAgAAAAAAAggBAwAAAAAYAACAAAIAAAAgAAAAAAgA=</HashCode>
       <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GravityShift.StaticObject" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StaticObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GravityShift.Tile">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="GravityShift.IControlScheme" Collapsed="true">

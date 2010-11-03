@@ -54,13 +54,9 @@ namespace GravityShift
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5)</param>
         /// <param name="initialPosition">Position of where this object starts in the level</param>
         public PhysicsObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment)
+            :base(content,name,scalingFactors,initialPosition)
         {
-            mName = name;
-            Load(content, name);
             mEnvironment = environment;
-
-            mPosition = initialPosition;
-            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
 
             UpdateBoundingBoxes();
         }

@@ -16,6 +16,14 @@ namespace GravityShift
 {
     abstract class GameObject
     {
+        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition)
+        {
+            mName = name;
+            Load(content, name);
+
+            mPosition = initialPosition;
+            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
+        }
         public static int ID_CREATER = 0;
 
         //Creates a unique identifier for every Physics object
