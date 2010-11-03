@@ -53,6 +53,7 @@ namespace GravityLevelEditor
 
             Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -161,7 +162,6 @@ namespace GravityLevelEditor
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine(ex.ToString());
                 this.Close();
             }
         }
