@@ -194,7 +194,12 @@ namespace GravityShift
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
         }
 
-        public virtual void CollideBox(PhysicsObject otherObject)
+
+        /// <summary>
+        /// Handles collision for two boxes (this, and other)
+        /// </summary>
+        /// <returns>nothing</returns>
+        public virtual void HandleCollideBox(PhysicsObject otherObject)
         {
             //Find Current Velocity (Direction) and Reverse
             Vector2 reverse = new Vector2((-1) * mVelocity.X, (-1) * mVelocity.Y);
@@ -206,10 +211,15 @@ namespace GravityShift
             Vector2 colDepth = GetCollitionDepth(otherObject);
             if (colDepth != Vector2.Zero)
             {
-                mPosition -= colDepth;
+                mPosition = Vector2.Subtract(mPosition,colDepth);
             }
+            // stop moving object
+            this.mVelocity = Vector2.Zero;
         }
-
+        /// <summary>
+        /// finds how deep they are intersecting (That is what she said!)
+        /// </summary>
+        /// <returns>vector decribing depth</returns>
         public Vector2 GetCollitionDepth(PhysicsObject otherObject)
         {
             //Find Center
