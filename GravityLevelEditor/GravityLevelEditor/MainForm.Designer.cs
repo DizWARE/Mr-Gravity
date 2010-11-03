@@ -96,47 +96,47 @@
             // mi_new
             // 
             this.mi_new.Name = "mi_new";
-            this.mi_new.Size = new System.Drawing.Size(152, 22);
+            this.mi_new.Size = new System.Drawing.Size(114, 22);
             this.mi_new.Text = "&New";
             // 
             // mi_open
             // 
             this.mi_open.Name = "mi_open";
-            this.mi_open.Size = new System.Drawing.Size(152, 22);
+            this.mi_open.Size = new System.Drawing.Size(114, 22);
             this.mi_open.Text = "&Open";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(111, 6);
             // 
             // mi_save
             // 
             this.mi_save.Name = "mi_save";
-            this.mi_save.Size = new System.Drawing.Size(152, 22);
+            this.mi_save.Size = new System.Drawing.Size(114, 22);
             this.mi_save.Text = "&Save";
             // 
             // mi_saveAs
             // 
             this.mi_saveAs.Name = "mi_saveAs";
-            this.mi_saveAs.Size = new System.Drawing.Size(152, 22);
+            this.mi_saveAs.Size = new System.Drawing.Size(114, 22);
             this.mi_saveAs.Text = "Save &As";
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(111, 6);
             // 
             // mi_play
             // 
             this.mi_play.Name = "mi_play";
-            this.mi_play.Size = new System.Drawing.Size(152, 22);
+            this.mi_play.Size = new System.Drawing.Size(114, 22);
             this.mi_play.Text = "&Play!";
             // 
             // mi_quit
             // 
             this.mi_quit.Name = "mi_quit";
-            this.mi_quit.Size = new System.Drawing.Size(152, 22);
+            this.mi_quit.Size = new System.Drawing.Size(114, 22);
             this.mi_quit.Text = "&Quit";
             // 
             // mi_edit
@@ -314,7 +314,11 @@
             this.MainMenuStrip = this.menu;
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.MainForm_Load);
+=======
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+>>>>>>> upstream/master
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);

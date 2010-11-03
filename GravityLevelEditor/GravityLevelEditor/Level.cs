@@ -27,12 +27,22 @@ namespace GravityLevelEditor
         private Image mBackground;
         public Image Background { set { mBackground = value; } }
 
-        private Stack<IOperation> mHistory;
-        private Stack<IOperation> mUndoHistory;
+        private Stack<IOperation> mHistory = new Stack<IOperation>();
+        private Stack<IOperation> mUndoHistory = new Stack<IOperation>();
 
-        /// <summary>
-        /// Create a new Level with given settings
-        /// </summary>
+        /*
+         * Level
+         * 
+         * Constructor for Level with given settings.
+         * 
+         * string name: name of the level.
+         * 
+         * Point size: tile-based size of the level.
+         * 
+         * Color color: color scheme of the level.
+         * 
+         * Image background: background image to be drawn for the level.
+         */
         public Level(string name, Point size, Color color, Image background)
         {
             mEntities = new ArrayList();
@@ -44,53 +54,88 @@ namespace GravityLevelEditor
 
         //TODO - Add constructor for loading a level from an Xml file
 
-        /// <summary>
-        /// Add an entity to the level
-        /// </summary>
-        /// <param name="entity">Entity to be added</param>
-        public void AddEntity(Entity entity)
+        /*
+         * AddEntity
+         * 
+         * Adds an entity to the current level and add the
+         * add entity operation to the history.
+         * 
+         * Entity entity: entity to be added to the level.
+         * 
+         * Point location: location where we are placing this Entity
+         */
+        public ArrayList AddEntity(Entity entity, Point location)
         {
             mUndoHistory.Clear();
             mHistory.Push(new AddEntity(entity, this));
             mEntities.Add(entity);
-        }
 
-        /// <summary>
-        /// Remove an entity from the level
-        /// </summary>
-        /// <param name="entity">Entity to be removed</param>
-        public void RemoveEntity(Entity entity)
-        {
-            mUndoHistory.Clear();
-            mHistory.Push(new RemoveEntity(entity, this));
-            mEntities.Remove(entity);
-        }
-
-        /// <summary>
-        /// Place an entity on the level at the given grid location
-        /// </summary>
-        /// <param name="entity">Entity to be placed</param>
-        /// <param name="location">Grid location where entity should be pointed</param>
-        public void PlaceEntity(Entity entity, Point location)
-        {
-            mUndoHistory.Clear();
-            mHistory.Push(new PlaceEntity(entity, entity.Location));
             entity.MoveEntity(location);
+
+            return SelectEntities(location, location);
         }
 
-        /// <summary>
-        /// Undo the last modification made to the level
-        /// </summary>
-        public void Undo()
+        /*
+         * AddEntities
+         * 
+         * Add a list of entities to the level(i.e. a paste of a group of entities)
+         * All entities in the list are required to have locations already preset
+         * -Adds an IOperation onto the history stack
+         * 
+         * ArrayList entities: List of entities. Must have preset locations
+         * 
+         * Return Value: Rereturns the list for editor selection
+         */
+        public ArrayList AddEntities(ArrayList entities)
         {
-            IOperation operation = mHistory.Pop();
-            operation.Undo();
-            mUndoHistory.Push(operation);
+            mUndoHistory.Clear();
+            mHistory.Push(new AddEntity(entities, this));
+            foreach (Entity entity in entities)
+                mEntities.Add(entity);            
+
+            return entities;
         }
 
-        /// <summary>
-        /// Redo the last undo (if any)
-        /// </summary>
+        /*
+         * RemoveEntity
+         * 
+         * Remove a list of entities from the level and add the
+         * remove entity operation to the history.
+         * 
+         * ArrayList entities: entities to be removed from the level.
+         */
+        public void RemoveEntity(ArrayList entities)
+        {
+            mUndoHistory.Clear();
+            mHistory.Push(new RemoveEntity(entities, this));
+            foreach (Entity entity in entities)
+                mEntities.Remove(entity);
+        }
+
+        /*
+         * MoveEntity
+         * 
+         * Offset a list of entities to another location on the level
+         * and add the move entity operation to the history.
+         * 
+         * ArrayList entities: entities to be moved.
+         * 
+         * Size offset: The difference that needs to be added to the entities current location
+         */
+        public void MoveEntity(ArrayList entities, Size offset)
+        {
+            mUndoHistory.Clear();
+            mHistory.Push(new MoveEntity(entities, offset));
+
+            foreach(Entity entity in entities)
+                entity.MoveEntity(Point.Add(entity.Location, offset));
+        }
+
+        /*
+         * Redo
+         * 
+         * Redo the last undone operation (if any).
+         */
         public void Redo()
         {
             IOperation operation = mUndoHistory.Pop();
@@ -98,19 +143,63 @@ namespace GravityLevelEditor
             mHistory.Push(operation);
         }
 
-        /// <summary>
-        /// Draw the level background, then tell all entities to draw themselves
-        /// </summary>
-        /// <param name="g">The Graphics Device to draw to</param>
+        /*
+         * Undo
+         * 
+         * Undo the last operation to the level.
+         */
+        public void Undo()
+        {
+            IOperation operation = mHistory.Pop();
+            operation.Undo();
+            mUndoHistory.Push(operation);
+        }
+
+        /*
+         * Draw
+         * 
+         * Draw the background of the level, then tell all entities to draw themselves.
+         * 
+         * Graphics g: the Graphics Device to draw to.
+         */
         public void Draw(Graphics g)
         {
             //TODO - Draw background using a viewport?
             g.DrawImage(mBackground, new Point(0, 0));
 
-            foreach (Entity e in mEntities)
+            foreach (Entity entity in mEntities)
             {
-                e.Draw(g);
+                entity.Draw(g);
             }
+        }
+
+        /***
+         * SelectEntities
+         * 
+         * Selects all entities that are within the given vector boundaries(grid coordinates)
+         * 
+         * Point topLeft - Top left corner of the selection rectangle
+         * Point bottomRight - Bottom right corner of the selection rectangle
+         */
+        public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
+        {
+            Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
+            Rectangle selection = new Rectangle(firstPoint, new Size(diff));
+            ArrayList selectedEntities = new ArrayList();
+
+            //For every entity, check if it is within the selection bounds. 
+                //If it is, select it, and add it to the selection list
+            foreach(Entity entity in mEntities)
+            {
+                if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
+                {
+                    entity.ToggleSelect();
+                    selectedEntities.Add(entity);
+                }
+            }
+
+            mHistory.Push(new SelectEntity(selectedEntities));
+            return selectedEntities;
         }
 
         //TODO - Add Load/Save functions
