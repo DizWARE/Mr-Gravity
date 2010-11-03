@@ -17,13 +17,8 @@ namespace GravityShift
     /// <summary>
     /// Represents an object that has rules based on physics
     /// </summary>
-    abstract class PhysicsObject
+    abstract class PhysicsObject : GameObject
     {
-        public static int ID_CREATER = 0;
-
-        //Creates a unique identifier for every Physics object
-        public int ID = PhysicsObject.ID_CREATER++;
-
         protected PhysicsEnvironment mEnvironment;
         
         //All forces applied to this physicsObject
@@ -32,30 +27,6 @@ namespace GravityShift
         private Vector2 mAdditionalForces = new Vector2(0, 0);
 
         private Vector2 mVelocity = new Vector2(0, 0);
-        private Vector2 mPosition;
-        private Vector2 mSize;
-
-        private Texture2D mTexture;
-        private Rectangle mBoundingBox;
-
-        private String mName;
-
-        /// <summary>
-        /// Gets the unique identifier for this object
-        /// </summary>
-        public int ObjectID
-        {
-            get { return ID; }
-        }
-
-        /// <summary>
-        /// Gets the bounding box of this object
-        /// </summary>
-        public Rectangle BoundingBox
-        {
-            get { return mBoundingBox;  }
-            set { mBoundingBox = value; }
-        }
 
         /// <summary>
         /// Directional force on this object
@@ -83,13 +54,9 @@ namespace GravityShift
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5)</param>
         /// <param name="initialPosition">Position of where this object starts in the level</param>
         public PhysicsObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment)
+            :base(content,name,scalingFactors,initialPosition)
         {
-            mName = name;
-            Load(content, name);
             mEnvironment = environment;
-
-            mPosition = initialPosition;
-            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
 
             UpdateBoundingBoxes();
         }
@@ -194,7 +161,12 @@ namespace GravityShift
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
         }
 
-        public virtual void CollideBox(PhysicsObject otherObject)
+
+        /// <summary>
+        /// Handles collision for two boxes (this, and other)
+        /// </summary>
+        /// <returns>nothing</returns>
+        public virtual void HandleCollideBox(PhysicsObject otherObject)
         {
             //Find Current Velocity (Direction) and Reverse
             Vector2 reverse = new Vector2((-1) * mVelocity.X, (-1) * mVelocity.Y);
@@ -206,10 +178,15 @@ namespace GravityShift
             Vector2 colDepth = GetCollitionDepth(otherObject);
             if (colDepth != Vector2.Zero)
             {
-                mPosition -= colDepth;
+                mPosition = Vector2.Subtract(mPosition,colDepth);
             }
+            // stop moving object
+            this.mVelocity = Vector2.Zero;
         }
-
+        /// <summary>
+        /// finds how deep they are intersecting (That is what she said!)
+        /// </summary>
+        /// <returns>vector decribing depth</returns>
         public Vector2 GetCollitionDepth(PhysicsObject otherObject)
         {
             //Find Center
@@ -258,44 +235,6 @@ namespace GravityShift
             }
 
             return new Vector2(depthX, depthY);
-        }
-        /// <summary>
-        /// Checks to see if the other object is equal to this object
-        /// </summary>
-        /// <param name="obj">The other object</param>
-        /// <returns>True if they are equal; false otherwise</returns>
-        public override bool Equals(object obj)
-        {
-            if(obj is PhysicsObject)
-                return ObjectID == ((PhysicsObject)obj).ObjectID;
-            return false;
-        }
-
-        /// <summary>
-        /// Returns the Unique Object ID for this object. This should map the object in a "perfect" hashed, hash table
-        /// </summary>
-        /// <returns>The unique Object ID</returns>
-        public override int GetHashCode()
-        {
-            return ObjectID;
-        }
-
-        /// <summary>
-        /// Loads the visual representation of this character 
-        /// </summary>
-        /// <param name="content"></param>
-        /// <param name="name"></param>
-        public virtual void Load(ContentManager content, String name)
-        {   mTexture = content.Load<Texture2D>(name);   }
-
-        /// <summary>
-        /// Draws the physics object to the screen
-        /// </summary>
-        /// <param name="canvas">Canvas that the game is being drawn on</param>
-        /// <param name="gametime">The current gametime</param>
-        public virtual void Draw(SpriteBatch canvas, GameTime gametime)
-        {
-            canvas.Draw(mTexture, mBoundingBox, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
         }
 
         public abstract void Kill();

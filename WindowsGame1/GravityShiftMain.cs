@@ -22,7 +22,7 @@ namespace GravityShift
         SpriteBatch mSpriteBatch;
 
         //List of objects that comform to the game physics
-        List<PhysicsObject> mObjects;
+        List<GameObject> mObjects;
 
         Player player;
 
@@ -52,7 +52,7 @@ namespace GravityShift
             mGraphics.ToggleFullScreen();
             mGraphics.ApplyChanges();
 
-            mObjects = new List<PhysicsObject>();
+            mObjects = new List<GameObject>();
             mCurrentLevel = new Level();
             mPhysicsEnvironment = new PhysicsEnvironment();
 
@@ -74,6 +74,7 @@ namespace GravityShift
             player = new Player(Content, "Player",
                 new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new ControllerControl(PlayerIndex.One));
             mObjects.Add(player);
+
     }
 
         /// <summary>
