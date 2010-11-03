@@ -25,7 +25,7 @@ namespace GravityLevelEditor
         public string Name { get { return mName; } set { mName = value; } }
 
         private Point mSize;
-        public Point Size { get { return mSize; } set { mSize = value; } }
+        public Point Size { get { return mSize; }}
         //TODO - Anchor for modifying level size
 
         private Color mColor;
@@ -140,15 +140,33 @@ namespace GravityLevelEditor
         }
 
         /*
+         * Resize
+         * 
+         * Resizes the level.
+         * 
+         * int rows: new row size.
+         * 
+         * int cols: new column size.
+         */
+        public void Resize(int rows, int cols)
+        {
+            mSize.X = rows;
+            mSize.Y = cols;
+        }
+
+        /*
          * Redo
          * 
          * Redo the last undone operation (if any).
          */
         public void Redo()
         {
-            IOperation operation = mUndoHistory.Pop();
-            operation.Redo();
-            mHistory.Push(operation);
+            if (mUndoHistory.Count > 0)
+            {
+                IOperation operation = mUndoHistory.Pop();
+                operation.Redo();
+                mHistory.Push(operation);
+            }
         }
 
         /*
@@ -158,9 +176,12 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            IOperation operation = mHistory.Pop();
-            operation.Undo();
-            mUndoHistory.Push(operation);
+            if (mHistory.Count > 0)
+            {
+                IOperation operation = mHistory.Pop();
+                operation.Undo();
+                mUndoHistory.Push(operation);
+            }
         }
 
         /*
@@ -270,7 +291,6 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g)
         {
-            //TODO - Draw background using a viewport?
             g.DrawImage(mBackground, new Point(0, 0));
 
             foreach (Entity entity in mEntities)
