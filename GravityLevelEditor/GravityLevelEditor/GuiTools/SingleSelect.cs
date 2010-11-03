@@ -12,62 +12,43 @@ namespace GravityLevelEditor.GuiTools
         Point mInitial;
         Point mPrevious;
 
+        bool mouseDown = false;
+
         #region ITool Members
 
-        /*
-         * LeftMouseDown
-         * 
-         * Starts watching the changes when user presses the left mouse button down
-         * 
-         * Level level: Level we are editing
-         * Point gridPosition: Position where our mouse is, currently
-         */
-        public void LeftMouseDown(Level level, Point gridPosition)
+        public void LeftMouseDown(ref EditorData data, Point gridPosition)
         {
             mInitial = gridPosition;
             mPrevious = mInitial;
+            mouseDown = true;
         }
 
-        /*
-         * LeftMouseUp
-         * 
-         * If the mouse when left button released, has not moved tiles, 
-         * then select the top entity at this position 
-         * 
-         * Level level: Level we are editing
-         * Point gridPosition: Position where our mouse is, currently
-         */
-        public void LeftMouseUp(Level level, Point gridPosition)
+        public void LeftMouseUp(ref EditorData data, Point gridPosition)
         {
-            ArrayList entities = level.GetSelectedEntities();
             if (mInitial.Equals(gridPosition))
-                level.SelectEntities(gridPosition, gridPosition);
-        }
-
-        public void RightMouseDown(Level level, Point gridPosition)
-        {
-            //Implement me
-        }
-
-        public void RightMouseUp(Level level, Point gridPosition)
-        {
-            //Implement me
-        }
-
-        /*
-         * MouseMove
-         * 
-         * Move the selected entities from their previous grid point to the given grid point
-         * 
-         * Level level: Level we are editing
-         * Point gridPosition: Position where our mouse is, currently
-         */
-        public void MouseMove(Level level, Point gridPosition)
-        {
-            if (!mPrevious.Equals(gridPosition))
             {
-                //Keep an eye on this. The GetSelectedEntities can return an empty list
-                level.MoveEntity(level.GetSelectedEntities(),
+                data.SelectedEntities.Clear();
+                data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+            }
+            mouseDown = false;
+        }
+
+        public void RightMouseDown(ref EditorData data, Point gridPosition)
+        {
+            
+        }
+
+        public void RightMouseUp(ref EditorData data, Point gridPosition)
+        {
+            
+        }
+
+        public void MouseMove(ref EditorData data, Point gridPosition)
+        {
+            if (!mPrevious.Equals(gridPosition) && mouseDown)
+            {
+                //Keep an eye on this. The SelectedEntities can return an empty list
+                data.Level.MoveEntity(data.SelectedEntities,
                     new Size(Point.Subtract(gridPosition, new Size(mInitial))));
                 mPrevious = gridPosition;
             }

@@ -58,12 +58,18 @@
             this.lbl_cols = new System.Windows.Forms.Label();
             this.lbl_rows = new System.Windows.Forms.Label();
             this.b_modifyLevel = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsb_select = new System.Windows.Forms.ToolStripButton();
+            this.tsb_multi = new System.Windows.Forms.ToolStripButton();
+            this.tsb_add = new System.Windows.Forms.ToolStripButton();
+            this.tsb_remove = new System.Windows.Forms.ToolStripButton();
             this.menu.SuspendLayout();
             this.pnl_Level.SuspendLayout();
             this.sc_Properties.Panel2.SuspendLayout();
             this.sc_Properties.SuspendLayout();
             this.sc_PropertiesHorizontal.Panel2.SuspendLayout();
             this.sc_PropertiesHorizontal.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -229,9 +235,12 @@
             // sc_Properties.Panel1
             // 
             this.sc_Properties.Panel1.AutoScroll = true;
+            this.sc_Properties.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
+            this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
             this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.UpdatePaint);
-            this.sc_Properties.Panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GridSpaceClick);
+            this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
+            this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             // 
             // sc_Properties.Panel2
             // 
@@ -353,18 +362,74 @@
             this.b_modifyLevel.UseVisualStyleBackColor = true;
             this.b_modifyLevel.Click += new System.EventHandler(this.ApplyChanges);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsb_select,
+            this.tsb_multi,
+            this.tsb_add,
+            this.tsb_remove});
+            this.toolStrip1.Location = new System.Drawing.Point(132, -2);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(135, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsb_select
+            // 
+            this.tsb_select.BackColor = System.Drawing.SystemColors.Menu;
+            this.tsb_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_select.Image = ((System.Drawing.Image)(resources.GetObject("tsb_select.Image")));
+            this.tsb_select.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_select.Name = "tsb_select";
+            this.tsb_select.Size = new System.Drawing.Size(23, 22);
+            this.tsb_select.Text = "Single Select/Move";
+            this.tsb_select.Click += new System.EventHandler(this.SelectTool);
+            // 
+            // tsb_multi
+            // 
+            this.tsb_multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_multi.Image = ((System.Drawing.Image)(resources.GetObject("tsb_multi.Image")));
+            this.tsb_multi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_multi.Name = "tsb_multi";
+            this.tsb_multi.Size = new System.Drawing.Size(23, 22);
+            this.tsb_multi.Text = "MultiSelect";
+            this.tsb_multi.Click += new System.EventHandler(this.MultiSelectTool);
+            // 
+            // tsb_add
+            // 
+            this.tsb_add.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_add.Image = ((System.Drawing.Image)(resources.GetObject("tsb_add.Image")));
+            this.tsb_add.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_add.Name = "tsb_add";
+            this.tsb_add.Size = new System.Drawing.Size(23, 22);
+            this.tsb_add.Text = "Add Entity";
+            this.tsb_add.Click += new System.EventHandler(this.AddTool);
+            // 
+            // tsb_remove
+            // 
+            this.tsb_remove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_remove.Image = ((System.Drawing.Image)(resources.GetObject("tsb_remove.Image")));
+            this.tsb_remove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_remove.Name = "tsb_remove";
+            this.tsb_remove.Size = new System.Drawing.Size(23, 22);
+            this.tsb_remove.Text = "Remove Entity";
+            this.tsb_remove.Click += new System.EventHandler(this.RemoveTool);
+            // 
             // TempGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 662);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pnl_Level);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TempGUI";
             this.Text = "TempGUI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quit);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.pnl_Level.ResumeLayout(false);
@@ -373,6 +438,8 @@
             this.sc_PropertiesHorizontal.Panel2.ResumeLayout(false);
             this.sc_PropertiesHorizontal.Panel2.PerformLayout();
             this.sc_PropertiesHorizontal.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +476,10 @@
         private System.Windows.Forms.TextBox tb_cols;
         private System.Windows.Forms.Label lbl_levelName;
         private System.Windows.Forms.TextBox tb_name;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsb_select;
+        private System.Windows.Forms.ToolStripButton tsb_multi;
+        private System.Windows.Forms.ToolStripButton tsb_add;
+        private System.Windows.Forms.ToolStripButton tsb_remove;
     }
 }
