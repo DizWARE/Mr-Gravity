@@ -17,13 +17,8 @@ namespace GravityShift
     /// <summary>
     /// Represents an object that has rules based on physics
     /// </summary>
-    abstract class PhysicsObject
+    abstract class PhysicsObject : GameObject
     {
-        public static int ID_CREATER = 0;
-
-        //Creates a unique identifier for every Physics object
-        public int ID = PhysicsObject.ID_CREATER++;
-
         protected PhysicsEnvironment mEnvironment;
         
         //All forces applied to this physicsObject
@@ -32,30 +27,6 @@ namespace GravityShift
         private Vector2 mAdditionalForces = new Vector2(0, 0);
 
         private Vector2 mVelocity = new Vector2(0, 0);
-        private Vector2 mPosition;
-        private Vector2 mSize;
-
-        private Texture2D mTexture;
-        private Rectangle mBoundingBox;
-
-        private String mName;
-
-        /// <summary>
-        /// Gets the unique identifier for this object
-        /// </summary>
-        public int ObjectID
-        {
-            get { return ID; }
-        }
-
-        /// <summary>
-        /// Gets the bounding box of this object
-        /// </summary>
-        public Rectangle BoundingBox
-        {
-            get { return mBoundingBox;  }
-            set { mBoundingBox = value; }
-        }
 
         /// <summary>
         /// Directional force on this object
@@ -268,44 +239,6 @@ namespace GravityShift
             }
 
             return new Vector2(depthX, depthY);
-        }
-        /// <summary>
-        /// Checks to see if the other object is equal to this object
-        /// </summary>
-        /// <param name="obj">The other object</param>
-        /// <returns>True if they are equal; false otherwise</returns>
-        public override bool Equals(object obj)
-        {
-            if(obj is PhysicsObject)
-                return ObjectID == ((PhysicsObject)obj).ObjectID;
-            return false;
-        }
-
-        /// <summary>
-        /// Returns the Unique Object ID for this object. This should map the object in a "perfect" hashed, hash table
-        /// </summary>
-        /// <returns>The unique Object ID</returns>
-        public override int GetHashCode()
-        {
-            return ObjectID;
-        }
-
-        /// <summary>
-        /// Loads the visual representation of this character 
-        /// </summary>
-        /// <param name="content"></param>
-        /// <param name="name"></param>
-        public virtual void Load(ContentManager content, String name)
-        {   mTexture = content.Load<Texture2D>(name);   }
-
-        /// <summary>
-        /// Draws the physics object to the screen
-        /// </summary>
-        /// <param name="canvas">Canvas that the game is being drawn on</param>
-        /// <param name="gametime">The current gametime</param>
-        public virtual void Draw(SpriteBatch canvas, GameTime gametime)
-        {
-            canvas.Draw(mTexture, mBoundingBox, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
         }
 
         public abstract void Kill();

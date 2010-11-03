@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Comment CommentText="Helper functions">
+  <Comment CommentText="Helper Classes">
     <Position X="1.235" Y="0.5" Height="0.347" Width="1.7" />
   </Comment>
   <Class Name="GravityShift.ColorCodes" Collapsed="true">
@@ -57,7 +57,7 @@
   <Class Name="GravityShift.PhysicsObject" Collapsed="true">
     <Position X="5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQggACBAEAEgoREwAIAAAYAACACAIACAAkCAAIABgE=</HashCode>
+      <HashCode>AAQgAACBAEAEAIQEAAIAAAAAAAACAAACAAkCAAIABgE=</HashCode>
       <FileName>PhysicsObject.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,6 +73,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GravityShift.GameObject" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAAAAAAggBAwAAAAAYAACAAAIAAAAgAAAAAAgA=</HashCode>
+      <FileName>GameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="GravityShift.IControlScheme" Collapsed="true">

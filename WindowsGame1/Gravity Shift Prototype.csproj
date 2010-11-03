@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="ColorCodes.cs" />
     <Compile Include="ControlScheme.cs" />
+    <Compile Include="GameObject.cs" />
     <Compile Include="GenericObject.cs" />
     <Compile Include="GravityDirections.cs" />
     <Compile Include="Level.cs" />
