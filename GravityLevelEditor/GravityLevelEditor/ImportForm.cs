@@ -14,9 +14,9 @@ namespace GravityLevelEditor
     {
         #region Member Variables
 
-        public MainForm FirstForm { get; set; }
+        public Textures FirstForm { get; set; }
 
-        private string imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\";
+        public string imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\";
 
         private string invalidFileMessage = "Please select a valid PNG file.";
         private string fileExistsMessage = "File already exists.";
@@ -36,12 +36,29 @@ namespace GravityLevelEditor
         {
             InitializeComponent();
 
+            string curr = Application.StartupPath;
+            if (curr.EndsWith("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug"))
+            {
+                int trimLoc = curr.LastIndexOf("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug");
+                if (trimLoc > 0)
+                {
+                    curr = curr.Substring(0, trimLoc);
+                }
+            }
             /* Adds default items to the folder list */
-            folders.Add("Tiles");
-            folders.Add("Background");
-            folders.Add("Character");
-            folderBox.DataSource = folders;
-
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(curr + "WindowsGame1\\Content\\Images\\");
+//            folders.Add("Tiles");
+//            folders.Add("Background");
+//            folders.Add("Character");
+            folderBox.DataSource = dir.GetDirectories();
+            
+            /* If the images folder does not exist in the content folder yet */
+            if (imageLocation.IndexOf("Images") == -1)
+            {
+                System.IO.Directory.CreateDirectory(imageLocation + "Images\\");
+                imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\Images\\";
+            }
+            
             /* Hide the successful label - only want this to show later */
             successfulLabel.Hide();
         }
@@ -55,7 +72,7 @@ namespace GravityLevelEditor
          *
          * object send: Not sure what this is, it was auto populated by forms.
          * …
-         * EventArgs e: Event arguments sent from clicking BrowseButton.
+         * EventArgs e: I believe this is for error checking, but again it was auto populated.
          *
          * Return Value: Void.
          */
@@ -76,25 +93,12 @@ namespace GravityLevelEditor
                 /* Set the text to be the location of the file */
                 imageLocBox.Text = importFileDialog.FileName;
                 /* Preview the image the user selected */
-                Image previewImage = Image.FromFile(importFileDialog.FileName);
-                Image.GetThumbnailImageAbort myCallback = new Image.GetThumbnailImageAbort(ThumbnailCallback);
-                previewBox.Image = previewImage.GetThumbnailImage(200, 165, myCallback, IntPtr.Zero);
+                previewBox.Load(importFileDialog.FileName);
             }
-        }
-        /*
-         * ThumbnailCallback
-         * 
-         * Required to get a thumbnail of the preview image.
-         * 
-         * Return Value: always false.
-         */
-        public bool ThumbnailCallback()
-        {
-            return false;
         }
 
         /*
-         * LoadButton_Click
+         * loadButton_Click
          *
          * This function will be called when the load button is clicked (obviously).
          * It will first do error checking:
@@ -110,13 +114,13 @@ namespace GravityLevelEditor
          * Once everything is saved, shows the successful label and return everything
          * to its default state.
          * 
-         * object sender: Not sure what this is, it was auto populated by forms.
+         * object send: Not sure what this is, it was auto populated by forms.
          * …
-         * EventArgs e: Event arguments sent from clicking BrowseButton.
+         * EventArgs e: I believe this is for error checking, but again it was auto populated.
          *
          * Return Value: Void.
          */
-        private void LoadButton_Click(object sender, EventArgs e)
+        private void loadButton_Click(object sender, EventArgs e)
         {
             /* If the user has not selected an image */
             if (previewBox.Image == null)
@@ -136,13 +140,6 @@ namespace GravityLevelEditor
                 return;
             }
 
-            /* If the images folder does not exist in the content folder yet */
-            if (imageLocation.IndexOf("Images") == -1)
-            {
-                System.IO.Directory.CreateDirectory(imageLocation + "Images\\");
-                imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\Images\\";
-            }
-
             /* If the folder selected in the combo box does not exist yet */
             if (imageLocation.IndexOf(folderBox.Text) == -1)
             {
@@ -156,10 +153,61 @@ namespace GravityLevelEditor
             previewBox.Image.Save(imageLocation + folderBox.Text + "\\" +
                    nameBox.Text + ".png");
             successfulLabel.Show();
+
             /* Reset everything */
             imageLocBox.Text = "";
             previewBox.Image = null;
             nameBox.Text = null;
+        }
+
+        /*
+         * loadAndExitButton_Click
+         *
+         *  This function does the same thing as the loadButton_Click function, except
+         *  if the user clicks this button, it will exit the form after loading the files
+         * 
+         * object send: Not sure what this is, it was auto populated by forms.
+         * …
+         * EventArgs e: I believe this is for error checking, but again it was auto populated.
+         *
+         * Return Value: Void.
+         */
+        private void loadAndExitButton_Click(object sender, EventArgs e)
+        {
+            /* If the user has not selected an image */
+            if (previewBox.Image == null)
+            {
+                MessageBox.Show(invalidFileMessage);
+                return;
+            }
+
+            /* If the file already exists in the designated folder */
+            if (System.IO.File.Exists(imageLocation + folderBox.Text + "\\" +
+                nameBox.Text + ".png"))
+            {
+                MessageBox.Show(fileExistsMessage);
+                imageLocBox.Text = "";
+                previewBox.Image = null;
+                nameBox.Text = null;
+                return;
+            }
+
+            /* If the folder selected in the combo box does not exist yet */
+            if (imageLocation.IndexOf(folderBox.Text) == -1)
+            {
+                System.IO.Directory.CreateDirectory(imageLocation + folderBox.Text + "\\");
+                folders.Add(folderBox.Text);
+            }
+            /* Save the file at the desired location */
+            previewBox.Image.Save(imageLocation + folderBox.Text + "\\" +
+                   nameBox.Text + ".png");
+            successfulLabel.Show();
+
+            /* Reset everything */
+            imageLocBox.Text = "";
+            previewBox.Image = null;
+            nameBox.Text = null;
+            ImportForm.ActiveForm.Close();
         }
 
         /* TODO */

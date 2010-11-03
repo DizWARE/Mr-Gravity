@@ -173,7 +173,7 @@ namespace GravityShift
             return false;
         }
 
-       
+
         /// <summary>
         /// Gets the type of control scheme this is
         /// </summary>
@@ -224,7 +224,7 @@ namespace GravityShift
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isLeftPressed()
         {
-            if (isPressed(Buttons.DPadLeft) || isPressed(Buttons.LeftThumbstickLeft) || isPressed(Buttons.X))
+            if (isPressed(Buttons.DPadLeft) || LeftThumbStickIsLeft() || isPressed(Buttons.X))
             {
                 leftIsPushed = true;
             }
@@ -247,7 +247,7 @@ namespace GravityShift
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isRightPressed()
         {
-            if (isPressed(Buttons.DPadRight) || isPressed(Buttons.LeftThumbstickRight) || isPressed(Buttons.B))
+            if (isPressed(Buttons.DPadRight) || LeftThumbStickIsRight() || isPressed(Buttons.B))
             {
                 rightIsPushed = true;
             }
@@ -271,7 +271,7 @@ namespace GravityShift
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isDownPressed()
         {
-            if (isPressed(Buttons.DPadDown) || isPressed(Buttons.LeftThumbstickDown) || isPressed(Buttons.A))
+            if (isPressed(Buttons.DPadDown) || LeftThumbStickIsDown() || isPressed(Buttons.A))
             {
                 downIsPushed = true;
             }
@@ -295,7 +295,7 @@ namespace GravityShift
         /// <returns>True if it has been pressed; false otherwise</returns>
         public bool isUpPressed()
         {
-            if (isPressed(Buttons.DPadUp) || isPressed(Buttons.LeftThumbstickUp) || isPressed(Buttons.Y))
+            if (isPressed(Buttons.DPadUp) || LeftThumbStickIsUp() || isPressed(Buttons.Y))
             {
                 upIsPushed = true;
             }
@@ -309,7 +309,7 @@ namespace GravityShift
             }
             upWasPushed = upIsPushed;
             return false;
-            
+
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently left
@@ -317,7 +317,9 @@ namespace GravityShift
         /// <returns>True if it is; false if it is not</returns>
         private bool LeftThumbStickIsLeft()
         {
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X == -1.0f);
+            // the value of .7 was attained by black magic, if you would like me to explain
+            // please ask me (Curtis Taylor)
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < -.7f);
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently right
@@ -325,7 +327,9 @@ namespace GravityShift
         /// <returns>True if it is; false if it is not</returns>
         private bool LeftThumbStickIsRight()
         {
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X == 1.0f);
+            // the value of .7 was attained by black magic, if you would like me to explain
+            // please ask me (Curtis Taylor)
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > .7f);
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently Down
@@ -333,7 +337,9 @@ namespace GravityShift
         /// <returns>True if it is; false if it is not</returns>
         private bool LeftThumbStickIsDown()
         {
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == 1.0f);
+            // the value of .7 was attained by black magic, if you would like me to explain
+            // please ask me (Curtis Taylor)
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < -.7f);
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently Up
@@ -341,7 +347,9 @@ namespace GravityShift
         /// <returns>True if it is; false if it is not</returns>
         private bool LeftThumbStickIsUp()
         {
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y == -1.0f);
+            // the value of .7 was attained by black magic, if you would like me to explain
+            // please ask me (Curtis Taylor)
+            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > .7f);
         }
 
         /// <summary>

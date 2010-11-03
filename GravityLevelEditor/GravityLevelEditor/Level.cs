@@ -1,15 +1,19 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Drawing;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace GravityLevelEditor
 {
     class Level
     {
         private ArrayList mEntities;
+        private ArrayList mClipboard;
 
         private bool mSaved = false;
         public bool Saved { get { return mSaved; } }
@@ -18,14 +22,14 @@ namespace GravityLevelEditor
         public string Name { get { return mName; } set { mName = value; } }
 
         private Point mSize;
-        public Point Size { get { return mSize; } set { mSize = value; } }
+        public Point Size { get { return mSize; }}
         //TODO - Anchor for modifying level size
 
         private Color mColor;
         public Color Color { get { return mColor; } set { mColor = value; } }
 
         private Image mBackground;
-        public Image Background { set { mBackground = value; } }
+        public Image Background { get { return mBackground; } set { mBackground = value; } }
 
         private Stack<IOperation> mHistory = new Stack<IOperation>();
         private Stack<IOperation> mUndoHistory = new Stack<IOperation>();
@@ -46,6 +50,7 @@ namespace GravityLevelEditor
         public Level(string name, Point size, Color color, Image background)
         {
             mEntities = new ArrayList();
+            mClipboard = new ArrayList();
             mName = name;
             mSize = size;
             mColor = color;
@@ -128,7 +133,23 @@ namespace GravityLevelEditor
             mHistory.Push(new MoveEntity(entities, offset));
 
             foreach(Entity entity in entities)
-                entity.MoveEntity(Point.Add(entity.Location, offset));
+                if(entity != null)
+                    entity.MoveEntity(Point.Add(entity.Location, offset));
+        }
+
+        /*
+         * Resize
+         * 
+         * Resizes the level.
+         * 
+         * int rows: new row size.
+         * 
+         * int cols: new column size.
+         */
+        public void Resize(int rows, int cols)
+        {
+            mSize.X = rows;
+            mSize.Y = cols;
         }
 
         /*
@@ -138,9 +159,12 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            IOperation operation = mUndoHistory.Pop();
-            operation.Redo();
-            mHistory.Push(operation);
+            if (mUndoHistory.Count > 0)
+            {
+                IOperation operation = mUndoHistory.Pop();
+                operation.Redo();
+                mHistory.Push(operation);
+            }
         }
 
         /*
@@ -150,9 +174,99 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            IOperation operation = mHistory.Pop();
-            operation.Undo();
-            mUndoHistory.Push(operation);
+            if (mHistory.Count > 0)
+            {
+                IOperation operation = mHistory.Pop();
+                operation.Undo();
+                mUndoHistory.Push(operation);
+            }
+        }
+
+        /*
+         * Copy
+         * 
+         * Copies a list of entities
+         * 
+         * ArrayList entities: List of selected entities
+         */
+        public void Copy(ArrayList entities)
+        {
+            mClipboard.Clear();
+            foreach (Entity entity in entities)
+                mClipboard.Add(entity.Copy());
+        }
+
+        /*
+         * Cut
+         * 
+         * Copies and remove a list of entities
+         * 
+         * ArrayList entities: List of selected entities
+         */
+        public void Cut(ArrayList entities)
+        {
+            RemoveEntity(entities);
+            Copy(entities);
+        }
+
+        /*
+         * Paste
+         * 
+         * Pastes the entities on the screen. Currently, they drop down starting at the upper left corner
+         */
+        public ArrayList Paste()
+        {
+            Point minPoint = ((Entity)mClipboard[0]).Location;
+            foreach(Entity entity in mClipboard)
+                if (minPoint.X >= entity.Location.X && minPoint.Y >= entity.Location.Y)
+                    minPoint = entity.Location;
+
+            foreach (Entity entity in mClipboard)
+                entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
+
+            AddEntities(mClipboard);
+            return mClipboard;
+        }
+
+        /*
+         * InTile
+         * 
+         * Gets all the entities in the current Grid Tile
+         * 
+         * Point gridLocation: The location that we want all the entities
+         * 
+         * Return Value: Return a list of all the Entities at the given grid tile. Will return 
+         * a list that is in top down order(The entity that is drawn on top is at the top of the list
+         */
+        public ArrayList InTile(Point gridLocation)
+        {
+            ArrayList tile = new ArrayList();
+            foreach (Entity entity in mEntities)
+                if (entity.Location.Equals(gridLocation))
+                    tile.Insert(0, entity);
+
+            return tile;
+        }
+
+        /*
+         * SelectEntity
+         * 
+         * Select the top most entity at this grid location
+         * 
+         * Point gridLocation: Location we want to select
+         * 
+         * Return Value: The entity that is at the top
+         */
+        public Entity SelectEntity(Point gridLocation)
+        {
+            ArrayList inTile = InTile(gridLocation);
+            if (inTile.Count > 0)
+            {
+                Entity selectedEntity = (Entity)inTile[0];
+                selectedEntity.ToggleSelect();
+                return selectedEntity;
+            }
+            return null;
         }
 
         /*
@@ -164,13 +278,11 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g)
         {
-            //TODO - Draw background using a viewport?
-            g.DrawImage(mBackground, new Point(0, 0));
+            g.DrawImage(mBackground, new Rectangle(new Point(0,0),
+                new Size(GridSpace.GetPixelCoord(this.mSize))));
 
             foreach (Entity entity in mEntities)
-            {
                 entity.Draw(g);
-            }
         }
 
         /***
@@ -185,7 +297,7 @@ namespace GravityLevelEditor
         {
             Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
             Rectangle selection = new Rectangle(firstPoint, new Size(diff));
-            ArrayList selectedEntities = new ArrayList();
+            ArrayList selected = new ArrayList();
 
             //For every entity, check if it is within the selection bounds. 
                 //If it is, select it, and add it to the selection list
@@ -194,14 +306,48 @@ namespace GravityLevelEditor
                 if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
                 {
                     entity.ToggleSelect();
-                    selectedEntities.Add(entity);
+                    selected.Add(entity);
                 }
             }
 
-            mHistory.Push(new SelectEntity(selectedEntities));
-            return selectedEntities;
+            mHistory.Push(new SelectEntity(selected));
+            return selected;
         }
 
         //TODO - Add Load/Save functions
+
+        public void Save()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            if (currentDirectory.EndsWith("bin\\Debug"))
+            {
+                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
+                if (trimLoc >= 0)
+                {
+                    currentDirectory = currentDirectory.Substring(0, trimLoc);
+                }
+            }
+            if (currentDirectory.IndexOf("Levels") == -1)
+            {
+                System.IO.Directory.CreateDirectory(currentDirectory + "Levels\\");
+                currentDirectory += "Levels\\";
+            }
+
+            XElement entityTree = new XElement("Entities");
+            foreach (Entity entity in mEntities) {
+                entityTree.Add(entity.Export());
+            }
+            XDocument xDoc = new XDocument(
+                new XElement("Level",
+                    new XElement("Name", this.Name),
+                    new XElement("Size",
+                        new XAttribute("X", this.Size.X),
+                        new XAttribute("Y", this.Size.Y)),
+                    new XElement("Background", this.Background.ToString()),
+                    new XElement("Color", this.Color.ToString()),
+                    entityTree));
+
+            xDoc.Save(currentDirectory + this.Name + ".xml");
+        }
     }
 }
