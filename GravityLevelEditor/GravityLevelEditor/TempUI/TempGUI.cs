@@ -110,16 +110,26 @@ namespace GravityLevelEditor
             Panel p = (Panel)sender;
             Graphics g = e.Graphics;
             Pen pen = new Pen(Brushes.Gray);
+            Point p1, p2;
+            Point offset = new Point(p.DisplayRectangle.X, p.DisplayRectangle.Y);
 
-            mData.Level.Draw(g);
+            mData.Level.Draw(g, offset);
 
             for (int i = 0; i <= mData.Level.Size.X; i++)
-                g.DrawLine(pen, GridSpace.GetPixelCoord(new Point(i, 0)),
-                    GridSpace.GetPixelCoord(new Point(i, mData.Level.Size.Y)));
+            {
+                p1 = GridSpace.GetPixelCoord(new Point(i, 0));
+                p2 = GridSpace.GetPixelCoord(new Point(i, mData.Level.Size.Y));
+                g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
+                    new Point(p2.X + offset.X, p2.Y + offset.Y));
+            }
 
             for (int i = 0; i <= mData.Level.Size.Y; i++)
-                g.DrawLine(pen, GridSpace.GetPixelCoord(new Point(0, i)),
-                    GridSpace.GetPixelCoord(new Point(mData.Level.Size.X,i)));
+            {
+                p1 = GridSpace.GetPixelCoord(new Point(0, i));
+                p2 = GridSpace.GetPixelCoord(new Point(mData.Level.Size.X, i));
+                g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
+                    new Point(p2.X + offset.X, p2.Y + offset.Y));
+            }
         }
 
         /*

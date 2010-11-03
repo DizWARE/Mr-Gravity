@@ -119,8 +119,10 @@ namespace GravityLevelEditor
          * Draws this entity in the editor.
          * 
          * Graphics g: the Graphics Device to draw to.
+         * 
+         * Point offset: the offset that the level editor is at.
          */
-        public void Draw(Graphics g)
+        public void Draw(Graphics g, Point offset)
         {
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
             g.DrawImage(mTexture, GridSpace.GetDrawingRegion(mLocation));

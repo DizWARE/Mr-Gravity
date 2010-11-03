@@ -275,14 +275,16 @@ namespace GravityLevelEditor
          * Draw the background of the level, then tell all entities to draw themselves.
          * 
          * Graphics g: the Graphics Device to draw to.
+         * 
+         * Point offset: the offset that the level editor is at.
          */
-        public void Draw(Graphics g)
+        public void Draw(Graphics g, Point offset)
         {
-            g.DrawImage(mBackground, new Rectangle(new Point(0,0),
+            g.DrawImage(mBackground, new Rectangle(offset,
                 new Size(GridSpace.GetPixelCoord(this.mSize))));
 
             foreach (Entity entity in mEntities)
-                entity.Draw(g);
+                entity.Draw(g, offset);
         }
 
         /***
