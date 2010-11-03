@@ -80,6 +80,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TempUI\TempGUI.resx">
+      <DependentUpon>TempGUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Textures.resx">
       <DependentUpon>Textures.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -99,6 +103,12 @@
     </Compile>
     <Compile Include="RemoveEntity.cs" />
     <Compile Include="SelectEntity.cs" />
+    <Compile Include="TempUI\TempGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TempUI\TempGUI.Designer.cs">
+      <DependentUpon>TempGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Textures.cs">
       <SubType>Form</SubType>
     </Compile>

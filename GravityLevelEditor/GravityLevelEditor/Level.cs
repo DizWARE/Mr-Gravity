@@ -21,7 +21,7 @@ namespace GravityLevelEditor
         public string Name { get { return mName; } set { mName = value; } }
 
         private Point mSize;
-        public Point Size { get { return mSize; } set { mSize = value; } }
+        public Point Size { get { return mSize; }}
         //TODO - Anchor for modifying level size
 
         private Color mColor;
@@ -133,6 +133,21 @@ namespace GravityLevelEditor
 
             foreach(Entity entity in entities)
                 entity.MoveEntity(Point.Add(entity.Location, offset));
+        }
+
+        /*
+         * Resize
+         * 
+         * Resizes the level.
+         * 
+         * int rows: new row size.
+         * 
+         * int cols: new column size.
+         */
+        public void Resize(int rows, int cols)
+        {
+            mSize.X = rows;
+            mSize.Y = cols;
         }
 
         /*
