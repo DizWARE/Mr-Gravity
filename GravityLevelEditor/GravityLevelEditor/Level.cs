@@ -158,9 +158,12 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            IOperation operation = mUndoHistory.Pop();
-            operation.Redo();
-            mHistory.Push(operation);
+            if (mUndoHistory.Count > 0)
+            {
+                IOperation operation = mUndoHistory.Pop();
+                operation.Redo();
+                mHistory.Push(operation);
+            }
         }
 
         /*
@@ -170,9 +173,12 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            IOperation operation = mHistory.Pop();
-            operation.Undo();
-            mUndoHistory.Push(operation);
+            if (mHistory.Count > 0)
+            {
+                IOperation operation = mHistory.Pop();
+                operation.Undo();
+                mUndoHistory.Push(operation);
+            }
         }
 
         /*
@@ -263,7 +269,6 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g)
         {
-            //TODO - Draw background using a viewport?
             g.DrawImage(mBackground, new Point(0, 0));
 
             foreach (Entity entity in mEntities)
