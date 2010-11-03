@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportForm));
             this.BrowseButton = new System.Windows.Forms.Button();
             this.imageLocBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -158,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.imageLocBox);
             this.Controls.Add(this.BrowseButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImportForm";
             this.Text = "Import Image";
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).EndInit();

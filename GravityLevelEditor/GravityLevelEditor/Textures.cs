@@ -72,10 +72,19 @@ namespace GravityLevelEditor
         {
 
             OpenFileDialog selectTextureDialog = new OpenFileDialog();
-            /* TODO */
-            // Get the initial directory set to the images directory
-//            selectTextureDialog.InitialDirectory = @"c:\";
-//            selectTextureDialog.InitialDirectory = Application.StartupPath;          
+
+            /* Set up the initial directory to the images folder */
+            string curr = Application.StartupPath;
+            if (curr.EndsWith("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug"))
+            {
+                int trimLoc = curr.LastIndexOf("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug");
+                if (trimLoc > 0)
+                {
+                    curr = curr.Substring(0, trimLoc);
+                }
+            }
+            selectTextureDialog.InitialDirectory = curr + "WindowsGame1\\Content\\Images\\";
+
             /* Restrict the search for only .png files*/
             selectTextureDialog.Filter = "PNG Files|*.png";
             /* Add a title, so the user knows to only look for .png files */

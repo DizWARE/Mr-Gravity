@@ -194,6 +194,71 @@ namespace GravityShift
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
         }
 
+        public virtual void CollideBox(PhysicsObject otherObject)
+        {
+            //Find Current Velocity (Direction) and Reverse
+            Vector2 reverse = new Vector2((-1) * mVelocity.X, (-1) * mVelocity.Y);
+
+            //Reset Velocity to 0
+            mVelocity = Vector2.Zero;
+
+            //Move object back
+            Vector2 colDepth = GetCollitionDepth(otherObject);
+            if (colDepth != Vector2.Zero)
+            {
+                mPosition -= colDepth;
+            }
+        }
+
+        public Vector2 GetCollitionDepth(PhysicsObject otherObject)
+        {
+            //Find Center
+            int halfHeight1 = this.BoundingBox.Height / 2;
+            int halfWidth1 = this.BoundingBox.Width / 2;
+
+            //Calculate Center Position
+            Vector2 center1 = new Vector2(this.BoundingBox.Left + halfWidth1, this.BoundingBox.Top + halfHeight1);
+            
+            //Find Center of otherObject
+            int halfHeight2 = otherObject.BoundingBox.Height / 2;
+            int halfWidth2 = otherObject.BoundingBox.Width / 2;
+
+            //Calculate Center Position
+            Vector2 center2 = new Vector2(this.BoundingBox.Left + halfWidth2, this.BoundingBox.Top + halfHeight2);
+            
+            //Center distances between both objects
+            float distX = center1.X - center2.X;
+            float distY = center1.Y - center2.Y;
+
+            //Minimum distance 
+            float minDistX = halfWidth1 + halfWidth2;
+            float minDistY = halfHeight1 + halfHeight2;
+
+            if (!IsColliding(otherObject))
+            {
+                return Vector2.Zero;
+            }
+
+            float depthX, depthY;
+            if (distX > 0)
+            {
+                depthX = minDistX - distX;
+            }
+            else
+            {
+                depthX = -minDistX - distX;
+            }
+            if (distY > 0)
+            {
+                depthY = minDistY - distY;
+            }
+            else
+            {
+                depthY = -minDistY - distY;
+            }
+
+            return new Vector2(depthX, depthY);
+        }
         /// <summary>
         /// Checks to see if the other object is equal to this object
         /// </summary>
