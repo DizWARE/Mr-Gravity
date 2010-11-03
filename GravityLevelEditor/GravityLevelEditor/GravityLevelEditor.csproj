@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -51,6 +51,8 @@
     <Compile Include="AddEntity.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="GridSpace.cs" />
+    <Compile Include="GuiTools\ITool.cs" />
+    <Compile Include="GuiTools\SingleSelect.cs" />
     <Compile Include="ImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +82,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TempUI\TempGUI.resx">
+      <DependentUpon>TempGUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Textures.resx">
       <DependentUpon>Textures.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="RemoveEntity.cs" />
     <Compile Include="SelectEntity.cs" />
+    <Compile Include="TempUI\TempGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TempUI\TempGUI.Designer.cs">
+      <DependentUpon>TempGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Textures.cs">
       <SubType>Form</SubType>
     </Compile>

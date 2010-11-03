@@ -15,6 +15,9 @@ namespace GravityLevelEditor
         private ArrayList mEntities;
         private ArrayList mClipboard;
 
+        //TODO-Change if needed
+        private ArrayList mSelected;
+
         private bool mSaved = false;
         public bool Saved { get { return mSaved; } }
 
@@ -22,7 +25,7 @@ namespace GravityLevelEditor
         public string Name { get { return mName; } set { mName = value; } }
 
         private Point mSize;
-        public Point Size { get { return mSize; } set { mSize = value; } }
+        public Point Size { get { return mSize; }}
         //TODO - Anchor for modifying level size
 
         private Color mColor;
@@ -137,15 +140,33 @@ namespace GravityLevelEditor
         }
 
         /*
+         * Resize
+         * 
+         * Resizes the level.
+         * 
+         * int rows: new row size.
+         * 
+         * int cols: new column size.
+         */
+        public void Resize(int rows, int cols)
+        {
+            mSize.X = rows;
+            mSize.Y = cols;
+        }
+
+        /*
          * Redo
          * 
          * Redo the last undone operation (if any).
          */
         public void Redo()
         {
-            IOperation operation = mUndoHistory.Pop();
-            operation.Redo();
-            mHistory.Push(operation);
+            if (mUndoHistory.Count > 0)
+            {
+                IOperation operation = mUndoHistory.Pop();
+                operation.Redo();
+                mHistory.Push(operation);
+            }
         }
 
         /*
@@ -155,9 +176,12 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            IOperation operation = mHistory.Pop();
-            operation.Undo();
-            mUndoHistory.Push(operation);
+            if (mHistory.Count > 0)
+            {
+                IOperation operation = mHistory.Pop();
+                operation.Undo();
+                mUndoHistory.Push(operation);
+            }
         }
 
         /*
@@ -236,7 +260,26 @@ namespace GravityLevelEditor
          */
         public Entity SelectEntity(Point gridLocation)
         {
-            return (Entity)InTile(gridLocation)[0];
+            ArrayList inTile = InTile(gridLocation);
+            if (inTile.Count > 0)
+            {
+                Entity selectedEntity = (Entity)inTile[0];
+                selectedEntity.ToggleSelect();
+                return selectedEntity;
+            }
+            return null;
+        }
+
+        /*
+         * GetSelectedEntities
+         * 
+         * Gets the list of all the currently selected entities
+         * 
+         * Return Value: The selected entities
+         */
+        public ArrayList GetSelectedEntities()
+        {
+            return mSelected;
         }
 
         /*
@@ -248,7 +291,6 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g)
         {
-            //TODO - Draw background using a viewport?
             g.DrawImage(mBackground, new Point(0, 0));
 
             foreach (Entity entity in mEntities)
@@ -269,7 +311,16 @@ namespace GravityLevelEditor
         {
             Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
             Rectangle selection = new Rectangle(firstPoint, new Size(diff));
-            ArrayList selectedEntities = new ArrayList();
+            mSelected = new ArrayList();
+
+            //If this is a single select, select the very top entity in the tile and return
+            if (firstPoint.Equals(secondPoint))
+            { 
+                Entity entity = SelectEntity(firstPoint);
+                if (entity.Selected) mSelected.Add(entity);
+                else mSelected.Remove(entity);
+                return mSelected; 
+            }
 
             //For every entity, check if it is within the selection bounds. 
                 //If it is, select it, and add it to the selection list
@@ -278,12 +329,13 @@ namespace GravityLevelEditor
                 if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
                 {
                     entity.ToggleSelect();
-                    selectedEntities.Add(entity);
+                    if(entity.Selected) mSelected.Add(entity);
+                    else    mSelected.Remove(entity);
                 }
             }
 
-            mHistory.Push(new SelectEntity(selectedEntities));
-            return selectedEntities;
+            mHistory.Push(new SelectEntity(mSelected));
+            return mSelected;
         }
 
         //TODO - Add Load/Save functions
