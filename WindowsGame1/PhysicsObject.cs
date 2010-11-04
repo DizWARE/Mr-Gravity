@@ -173,38 +173,25 @@ namespace GravityShift
             {
                 return;
             }
-
-            /*String movingVert = "up";
-            String movingHorz = "right";
-
             //Find Current Velocity (Direction) and Reverse
-            //Vector2 reverse = new Vector2((-1) * mVelocity.X, (-1) * mVelocity.Y);
-
+            Vector2 reverse;
             if (mVelocity.X > 0)// positive
             {
-                movingHorz = "right";
+                reverse.X = -1;//negate
             }
-            else if (mVelocity.X < 0)// negative
+            else
             {
-                movingHorz = "left";
+                reverse.X = 1;
             }
-            else//zero
+            if (mVelocity.Y > 0)
             {
-                movingHorz = "none";
+                reverse.Y = -1;
             }
-
-            if (mVelocity.X > 0)// positive
+            else
             {
-                movingHorz = "right";
+                reverse.Y = 1;
             }
-            else if (mVelocity.X < 0)// negative
-            {
-                movingHorz = "left";
-            }
-            else//zero
-            {
-                movingHorz = "none";
-            }*/
+            reverse = Vector2.Add(reverse, new Vector2((-2) * mVelocity.X, (-2) * mVelocity.Y));
             //Reset Velocity to 0
             mVelocity = Vector2.Zero;
 
@@ -212,7 +199,7 @@ namespace GravityShift
             Vector2 colDepth = GetCollitionDepth(otherObject);
             if (colDepth != Vector2.Zero)
             {
-                mPosition = Vector2.Subtract(mPosition,colDepth);
+                mPosition = Vector2.Add(mPosition,reverse);
                 // take absolute value of depth vector
                 //Vector2 posDepth = new Vector2(Math.Abs(colDepth.X), Math.Abs(colDepth.Y));
             }
