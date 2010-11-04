@@ -19,6 +19,7 @@ namespace GravityShift
         public Tile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition)
             : base(content, name, scalingFactors, initialPosition)
         {
+
         }
     }
 }

@@ -156,7 +156,7 @@ namespace GravityShift
         /// </summary>
         /// <param name="otherObject">The other object to test against</param>
         /// <returns>True if they are colliding with each other; False otherwise</returns>
-        public virtual bool IsColliding(PhysicsObject otherObject)
+        public virtual bool IsColliding(GameObject otherObject)
         {
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
         }
@@ -166,11 +166,45 @@ namespace GravityShift
         /// Handles collision for two boxes (this, and other)
         /// </summary>
         /// <returns>nothing</returns>
-        public virtual void HandleCollideBox(PhysicsObject otherObject)
+        public virtual void HandleCollideBox(GameObject otherObject)
         {
-            //Find Current Velocity (Direction) and Reverse
-            Vector2 reverse = new Vector2((-1) * mVelocity.X, (-1) * mVelocity.Y);
+            //TODO: Change collision to handle physicsobj & staticobj
+            if (!IsColliding(otherObject))
+            {
+                return;
+            }
 
+            /*String movingVert = "up";
+            String movingHorz = "right";
+
+            //Find Current Velocity (Direction) and Reverse
+            //Vector2 reverse = new Vector2((-1) * mVelocity.X, (-1) * mVelocity.Y);
+
+            if (mVelocity.X > 0)// positive
+            {
+                movingHorz = "right";
+            }
+            else if (mVelocity.X < 0)// negative
+            {
+                movingHorz = "left";
+            }
+            else//zero
+            {
+                movingHorz = "none";
+            }
+
+            if (mVelocity.X > 0)// positive
+            {
+                movingHorz = "right";
+            }
+            else if (mVelocity.X < 0)// negative
+            {
+                movingHorz = "left";
+            }
+            else//zero
+            {
+                movingHorz = "none";
+            }*/
             //Reset Velocity to 0
             mVelocity = Vector2.Zero;
 
@@ -179,6 +213,8 @@ namespace GravityShift
             if (colDepth != Vector2.Zero)
             {
                 mPosition = Vector2.Subtract(mPosition,colDepth);
+                // take absolute value of depth vector
+                //Vector2 posDepth = new Vector2(Math.Abs(colDepth.X), Math.Abs(colDepth.Y));
             }
             // stop moving object
             this.mVelocity = Vector2.Zero;
@@ -187,7 +223,7 @@ namespace GravityShift
         /// finds how deep they are intersecting (That is what she said!)
         /// </summary>
         /// <returns>vector decribing depth</returns>
-        public Vector2 GetCollitionDepth(PhysicsObject otherObject)
+        public Vector2 GetCollitionDepth(GameObject otherObject)
         {
             //Find Center
             int halfHeight1 = this.BoundingBox.Height / 2;

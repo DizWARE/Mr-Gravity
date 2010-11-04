@@ -75,6 +75,9 @@ namespace GravityShift
                 new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new ControllerControl(PlayerIndex.One));
             mObjects.Add(player);
 
+            Tile tile = new Tile(Content,"Tile",Vector2.One,new Vector2(200,200));
+            mObjects.Add(tile);
+
     }
 
         /// <summary>
@@ -107,12 +110,33 @@ namespace GravityShift
                 mObjects.Add(new GenericObject(Content, "Player",
                         new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment));
             }
-
-            foreach (PhysicsObject pObject in mObjects)
+            // handle collisions
+            foreach (GameObject gObject in mObjects)
             {
-                pObject.Update(gameTime);
-                if (pObject is Player) ChangeValues((Player)pObject, keyboard);
-                pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                if (gObject is PhysicsObject)
+                {
+                    PhysicsObject physObj = (PhysicsObject)gObject;
+                    foreach (GameObject obj in mObjects)
+                    {
+                        if (!obj.Equals(gObject))
+                        {
+                            if (physObj.IsColliding(obj))
+                            {
+                                physObj.HandleCollideBox(obj);
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (GameObject gObject in mObjects)
+            {
+                if (gObject is PhysicsObject)
+                {
+                    PhysicsObject pObject = (PhysicsObject)gObject;
+                    pObject.Update(gameTime);
+                    if (pObject is Player) ChangeValues((Player)pObject, keyboard);
+                    pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                }
             }
 
             base.Update(gameTime);
@@ -160,8 +184,10 @@ namespace GravityShift
             mSpriteBatch.Begin();
 
             //mCurrentLevel.Draw(mSpriteBatch);
-            foreach (PhysicsObject pObject in mObjects)
-                pObject.Draw(mSpriteBatch,gameTime);
+            foreach (GameObject gObject in mObjects)
+            {
+                gObject.Draw(mSpriteBatch, gameTime);
+            }
 
             DrawHUD(gameTime);
 
@@ -180,9 +206,13 @@ namespace GravityShift
             Rectangle titleSafeArea = GraphicsDevice.Viewport.TitleSafeArea;
 
             Player player = null;
-            foreach(PhysicsObject obj in mObjects)
-                if(obj is Player)
+            foreach (GameObject obj in mObjects)
+            {
+                if (obj is Player)
+                {
                     player = (Player)obj;
+                }
+            }
             
             Vector2 location = new Vector2(titleSafeArea.X+10,titleSafeArea.Y+5);            
 

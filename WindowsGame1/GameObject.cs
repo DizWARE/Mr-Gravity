@@ -23,6 +23,8 @@ namespace GravityShift
 
             mPosition = initialPosition;
             mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
+
+            mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
         }
         public static int ID_CREATER = 0;
 
@@ -33,7 +35,7 @@ namespace GravityShift
         protected Vector2 mSize;
 
         protected Texture2D mTexture;
-        protected Rectangle mBoundingBox;
+        public Rectangle mBoundingBox;
 
         protected String mName;
 
