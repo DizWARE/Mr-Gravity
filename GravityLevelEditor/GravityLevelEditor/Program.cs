@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using GravityLevelEditor.EntityCreationForm;
 
 namespace GravityLevelEditor
 {
@@ -18,7 +19,8 @@ namespace GravityLevelEditor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Textures());
-            Application.Run(new TempGUI());
+            //Application.Run(new TempGUI());
+            Application.Run(new CreateEntity());
         }
     }
 }

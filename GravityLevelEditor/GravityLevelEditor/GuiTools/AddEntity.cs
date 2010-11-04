@@ -17,7 +17,8 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseUp(ref EditorData data, System.Drawing.Point gridPosition)
         {
-            data.Level.AddEntity(data.OnDeck.Copy(), gridPosition);
+            if(data.OnDeck != null)
+                data.Level.AddEntity(data.OnDeck.Copy(), gridPosition);
         }
 
         public void RightMouseDown(ref EditorData data, System.Drawing.Point gridPosition)
