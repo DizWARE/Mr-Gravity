@@ -57,7 +57,6 @@ namespace GravityShift
             :base(content,name,scalingFactors,initialPosition)
         {
             mEnvironment = environment;
-
             UpdateBoundingBoxes();
         }
 
@@ -145,8 +144,8 @@ namespace GravityShift
         public virtual void Update(GameTime gametime)
         {
             UpdateVelocities();
-            UpdateBoundingBoxes();
             mPosition = Vector2.Add(mPosition, mVelocity);
+            UpdateBoundingBoxes();
         }
 
         /// <summary>
@@ -168,43 +167,20 @@ namespace GravityShift
         /// <returns>nothing</returns>
         public virtual void HandleCollideBox(GameObject otherObject)
         {
-            //TODO: Change collision to handle physicsobj & staticobj
             if (!IsColliding(otherObject))
             {
                 return;
             }
-            //Find Current Velocity (Direction) and Reverse
-            Vector2 reverse;
-            if (mVelocity.X > 0)// positive
-            {
-                reverse.X = -1;//negate
-            }
-            else
-            {
-                reverse.X = 1;
-            }
-            if (mVelocity.Y > 0)
-            {
-                reverse.Y = -1;
-            }
-            else
-            {
-                reverse.Y = 1;
-            }
-            reverse = Vector2.Add(reverse, new Vector2((-2) * mVelocity.X, (-2) * mVelocity.Y));
+            
+            Vector2 reverse = Vector2.Multiply(mVelocity,-1);
+
             //Reset Velocity to 0
             mVelocity = Vector2.Zero;
 
-            //Move object back
-            Vector2 colDepth = GetCollitionDepth(otherObject);
-            if (colDepth != Vector2.Zero)
-            {
-                mPosition = Vector2.Add(mPosition,reverse);
-                // take absolute value of depth vector
-                //Vector2 posDepth = new Vector2(Math.Abs(colDepth.X), Math.Abs(colDepth.Y));
-            }
-            // stop moving object
-            this.mVelocity = Vector2.Zero;
+            // set position back to where it was before collision
+            mPosition = Vector2.Add(mPosition, reverse);
+            UpdateBoundingBoxes();
+
         }
         /// <summary>
         /// finds how deep they are intersecting (That is what she said!)

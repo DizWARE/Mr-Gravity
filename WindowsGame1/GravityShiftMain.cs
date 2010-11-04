@@ -72,10 +72,10 @@ namespace GravityShift
             mDefaultFont = Content.Load<SpriteFont>("defaultFont");
 
             player = new Player(Content, "Player",
-                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new ControllerControl(PlayerIndex.One));
+                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new KeyboardControl());
             mObjects.Add(player);
 
-            Tile tile = new Tile(Content,"Tile",Vector2.One,new Vector2(200,200));
+            Tile tile = new Tile(Content,"Tile",Vector2.One,new Vector2(590,590));
             mObjects.Add(tile);
 
     }
@@ -110,24 +110,9 @@ namespace GravityShift
                 mObjects.Add(new GenericObject(Content, "Player",
                         new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment));
             }
-            // handle collisions
-            foreach (GameObject gObject in mObjects)
-            {
-                if (gObject is PhysicsObject)
-                {
-                    PhysicsObject physObj = (PhysicsObject)gObject;
-                    foreach (GameObject obj in mObjects)
-                    {
-                        if (!obj.Equals(gObject))
-                        {
-                            if (physObj.IsColliding(obj))
-                            {
-                                physObj.HandleCollideBox(obj);
-                            }
-                        }
-                    }
-                }
-            }
+
+            HandleCollisions();
+
             foreach (GameObject gObject in mObjects)
             {
                 if (gObject is PhysicsObject)
@@ -143,7 +128,7 @@ namespace GravityShift
         }
 
         /// <summary>
-        /// TODO - REMOVE WHEN NO LONGER A DEMONSTRACTION
+        /// TODO - REMOVE WHEN NO LONGER A DEMONSTRACTION (Demonstraction? HAHA!)
         /// </summary>
         /// <param name="player"></param>
         /// <param name="keyboardState"></param>
@@ -243,6 +228,25 @@ namespace GravityShift
                 " Total Force Y: " + player.TotalForce.Y, location, Color.Black);
             location = Vector2.Add(location, new Vector2(0, 20));
             mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
+        }
+
+        private void HandleCollisions()
+        {
+            // handle collisions
+            foreach (GameObject gObject in mObjects)
+            {
+                if (gObject is PhysicsObject)
+                {
+                    PhysicsObject physObj = (PhysicsObject)gObject;
+                    foreach (GameObject obj in mObjects)
+                    {
+                        if (physObj.IsColliding(obj))
+                        {
+                            physObj.HandleCollideBox(obj);
+                        }
+                    }
+                }
+            }
         }
     }
 }
