@@ -292,8 +292,9 @@ namespace GravityLevelEditor
          * 
          * Selects all entities that are within the given vector boundaries(grid coordinates)
          * 
-         * Point topLeft - Top left corner of the selection rectangle
-         * Point bottomRight - Bottom right corner of the selection rectangle
+         * Point topLeft: Top left corner of the selection rectangle
+         * 
+         * Point bottomRight: Bottom right corner of the selection rectangle
          */
         public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
         {
@@ -305,7 +306,7 @@ namespace GravityLevelEditor
                 //If it is, select it, and add it to the selection list
             foreach(Entity entity in mEntities)
             {
-                if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
+                if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location, new Point(0,0))))
                 {
                     entity.ToggleSelect();
                     selected.Add(entity);

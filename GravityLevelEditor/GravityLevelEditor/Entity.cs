@@ -124,12 +124,14 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g, Point offset)
         {
+            Rectangle drawLocation = GridSpace.GetDrawingRegion(mLocation, offset);
+
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
-            g.DrawImage(mTexture, GridSpace.GetDrawingRegion(mLocation));
+            g.DrawImage(mTexture, drawLocation);
             
             //Draw selected outline here
             if (mSelected)
-                g.DrawRectangle(new Pen(Brushes.Blue, 2), GridSpace.GetDrawingRegion(mLocation));
+                g.DrawRectangle(new Pen(Brushes.Blue, 2), drawLocation);
         }
 
         /*
