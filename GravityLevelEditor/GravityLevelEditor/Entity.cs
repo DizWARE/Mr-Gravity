@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
+using System.Drawing.Imaging;
 
 namespace GravityLevelEditor
 {
@@ -15,26 +16,28 @@ namespace GravityLevelEditor
         public int ID { get { return mID; } }
 
         private string mName;
-        public string Name { get {  return mName;   }   }
+        public string Name { get { return mName; } set { mName = value; } }
 
         private string mType;
-        public string Type { get {  return mType;   }   }
+        public string Type { get { return mType; } set { mType = value; } }
 
         private Point mLocation;
         public Point Location { get { return mLocation; } set { mLocation = value; } }
         
         private bool mVisible;
-        public bool Visible { get { return mVisible;    }  }
+        public bool Visible { get { return mVisible; } set { mVisible = value; } }
 
         private bool mPaintable;
-        public bool Paintable { get { return mPaintable;}  }
+        public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
 
         private bool mSelected = false;
-        public bool Selected { get { return mSelected; } }
+        public bool Selected { get { return mSelected; } set { mSelected = true; } }
 
         private Image mTexture;
+        public Image Texture { get { return mTexture; } set { mTexture = value; } }
 
         private Dictionary<string, string> mProperties;
+        public Dictionary<string, string> Properties { get { return mProperties; } set { mProperties = value; } } 
 
         /*
          * Entity

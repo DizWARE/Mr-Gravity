@@ -25,10 +25,15 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseUp(ref EditorData data, Point gridPosition)
         {
-            if (mInitial.Equals(gridPosition))
+            if (mInitial.Equals(gridPosition)&&data.SelectedEntities.Count > 0)
             {
+                //TODO - Deselect all selected entities
+
                 data.SelectedEntities.Clear();
-                data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+                Entity selected = data.Level.SelectEntity(gridPosition);
+
+                if(selected != null)
+                    data.SelectedEntities.Add(selected);
             }
             mouseDown = false;
         }
@@ -49,7 +54,7 @@ namespace GravityLevelEditor.GuiTools
             {
                 //Keep an eye on this. The SelectedEntities can return an empty list
                 data.Level.MoveEntity(data.SelectedEntities,
-                    new Size(Point.Subtract(gridPosition, new Size(mInitial))));
+                    new Size(Point.Subtract(gridPosition, new Size(mPrevious))));
                 mPrevious = gridPosition;
             }
         }

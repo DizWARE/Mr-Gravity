@@ -19,6 +19,7 @@ namespace GravityLevelEditor
         private static GuiTools.MultiSelect TOOL_MULTISELECT = new GuiTools.MultiSelect();
         private static GuiTools.AddEntity TOOL_ADD = new GuiTools.AddEntity();
         private static GuiTools.RemoveEntity TOOL_REMOVE = new GuiTools.RemoveEntity();
+
         ITool mCurrentTool = TOOL_SELECT;
 
         /*
@@ -32,7 +33,25 @@ namespace GravityLevelEditor
             mData = new EditorData(new ArrayList(), null, 
                 new Level("New Level", new Point(10, 10), Color.Red,
                      Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
+
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer |
+            ControlStyles.AllPaintingInWmPaint | ControlStyles.SupportsTransparentBackColor,
+            true);
+
+            this.DoubleBuffered = true;
+            
+            time_updater.Start();
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        } 
 
         /*
          * ApplyChanges
@@ -115,6 +134,7 @@ namespace GravityLevelEditor
 
             mData.Level.Draw(g, offset);
 
+
             for (int i = 0; i <= mData.Level.Size.X; i++)
             {
                 p1 = GridSpace.GetPixelCoord(new Point(i, 0));
@@ -130,21 +150,6 @@ namespace GravityLevelEditor
                 g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
             }
-        }
-
-        /*
-         * UpdatePaint
-         * 
-         * Invalidate the level panel whenever we scroll it, forcing it
-         * to draw again.
-         * 
-         * object sender: the level panel.
-         * 
-         * ScrollEventArgs e: scroll event arguments.
-         */
-        private void UpdatePaint(object sender, ScrollEventArgs e)
-        {
-            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -362,8 +367,8 @@ namespace GravityLevelEditor
 
         private Point MousePosToGrid(Panel p, MouseEventArgs e)
         {
-            return new Point(-p.DisplayRectangle.X + e.X,
-                             -p.DisplayRectangle.Y + e.Y);
+            return GridSpace.GetGridCoord(new Point(-p.DisplayRectangle.X + e.X,
+                             -p.DisplayRectangle.Y + e.Y));
         }
 
         /*
@@ -463,6 +468,11 @@ namespace GravityLevelEditor
         private void RemoveTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_REMOVE;
+        }
+
+        private void UpdateGraphics(object sender, EventArgs e)
+        {
+            sc_Properties.Panel1.Refresh();
         }
     }
 }
