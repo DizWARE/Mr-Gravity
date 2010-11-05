@@ -5,6 +5,8 @@ using System.Text;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
+using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor
 {
@@ -15,26 +17,28 @@ namespace GravityLevelEditor
         public int ID { get { return mID; } }
 
         private string mName;
-        public string Name { get {  return mName;   }   }
+        public string Name { get { return mName; } set { mName = value; } }
 
         private string mType;
-        public string Type { get {  return mType;   }   }
+        public string Type { get { return mType; } set { mType = value; } }
 
         private Point mLocation;
         public Point Location { get { return mLocation; } set { mLocation = value; } }
         
         private bool mVisible;
-        public bool Visible { get { return mVisible;    }  }
+        public bool Visible { get { return mVisible; } set { mVisible = value; } }
 
         private bool mPaintable;
-        public bool Paintable { get { return mPaintable;}  }
+        public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
 
         private bool mSelected = false;
-        public bool Selected { get { return mSelected; } }
+        public bool Selected { get { return mSelected; } set { mSelected = true; } }
 
         private Image mTexture;
+        public Image Texture { get { return mTexture; } set { mTexture = value; } }
 
         private Dictionary<string, string> mProperties;
+        public Dictionary<string, string> Properties { get { return mProperties; } set { mProperties = value; } } 
 
         /*
          * Entity
@@ -75,8 +79,6 @@ namespace GravityLevelEditor
             mPaintable = paintable;
             mProperties = properties;
             mTexture = texture;
-
-            //Export to Entity List
         }
 
         //TODO - Constructor from Xml file
@@ -124,12 +126,14 @@ namespace GravityLevelEditor
          */
         public void Draw(Graphics g, Point offset)
         {
+            Rectangle drawLocation = GridSpace.GetDrawingRegion(mLocation, offset);
+
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
-            g.DrawImage(mTexture, GridSpace.GetDrawingRegion(mLocation));
+            g.DrawImage(mTexture, drawLocation);
             
             //Draw selected outline here
             if (mSelected)
-                g.DrawRectangle(new Pen(Brushes.Blue, 2), GridSpace.GetDrawingRegion(mLocation));
+                g.DrawRectangle(new Pen(Brushes.Blue, 2), drawLocation);
         }
 
         /*
@@ -190,6 +194,10 @@ namespace GravityLevelEditor
 
         public XElement Export()
         {
+
+            if (mTexture.Tag == null)
+            { MessageBox.Show("Failed to save " + ToString() + ID + ". Invalid image."); return null; }
+
             XElement entityTree = new XElement("Entity",
                 new XElement("ID", this.ID),
                 new XElement("Name", this.Name),
@@ -199,7 +207,7 @@ namespace GravityLevelEditor
                     new XAttribute("Y", this.Location.Y)),
                 new XElement("Visible", this.Visible.ToString()),
                 new XElement("Paintable", this.Paintable.ToString()),
-                new XElement("Texture", this.mTexture.ToString()));
+                new XElement("Texture", this.mTexture.Tag.ToString()));
 
             return entityTree;
         }

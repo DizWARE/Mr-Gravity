@@ -63,12 +63,14 @@ namespace GravityLevelEditor
          * 
          * Point gridCoord: Grid coordinates that need to be converted.
          * 
+         * Point offset: level panel scroll value.
+         * 
          * Return Value: The pixel based rectangle where the entity at gridCoord
          *               should be drawn.
          */
-        public static Rectangle GetDrawingRegion(Point gridCoord)
+        public static Rectangle GetDrawingRegion(Point gridCoord, Point offset)
         {
-            return new Rectangle(GetDrawingCoord(gridCoord), 
+            return new Rectangle(new Point(GetDrawingCoord(gridCoord).X + offset.X, GetDrawingCoord(gridCoord).Y + offset.Y), 
                 new Size((int)(SIZE.X * SCALE_FACTOR), (int)(SIZE.Y * SCALE_FACTOR)));
         }
 

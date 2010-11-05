@@ -7,6 +7,7 @@ using System.Collections;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor
 {
@@ -292,22 +293,23 @@ namespace GravityLevelEditor
          * 
          * Selects all entities that are within the given vector boundaries(grid coordinates)
          * 
-         * Point topLeft - Top left corner of the selection rectangle
-         * Point bottomRight - Bottom right corner of the selection rectangle
+         * Point topLeft: Top left corner of the selection rectangle
+         * 
+         * Point bottomRight: Bottom right corner of the selection rectangle
          */
         public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
-        {
+        {              
             Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
-            Rectangle selection = new Rectangle(firstPoint, new Size(diff));
+            Rectangle selection = new Rectangle(firstPoint, new Size(Point.Add(firstPoint,new Size(diff))));
             ArrayList selected = new ArrayList();
 
             //For every entity, check if it is within the selection bounds. 
                 //If it is, select it, and add it to the selection list
             foreach(Entity entity in mEntities)
-            {
-                if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location)))
+            {               
+                if (selection.IntersectsWith(new Rectangle(entity.Location, new Size(GridSpace.SIZE))))
                 {
-                    entity.ToggleSelect();
+                    entity.Selected = true;
                     selected.Add(entity);
                 }
             }
@@ -335,6 +337,9 @@ namespace GravityLevelEditor
                 currentDirectory += "Levels\\";
             }
 
+            if (mBackground.Tag == null)
+            { MessageBox.Show("Failed to save \"" + Name + "\". Invalid background image."); return; }
+
             XElement entityTree = new XElement("Entities");
             foreach (Entity entity in mEntities) {
                 entityTree.Add(entity.Export());
@@ -345,7 +350,7 @@ namespace GravityLevelEditor
                     new XElement("Size",
                         new XAttribute("X", this.Size.X),
                         new XAttribute("Y", this.Size.Y)),
-                    new XElement("Background", this.Background.ToString()),
+                    new XElement("Background", this.Background.Tag.ToString()),
                     new XElement("Color", this.Color.ToString()),
                     entityTree));
 

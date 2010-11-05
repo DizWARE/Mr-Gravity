@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TempGUI));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.mi_file = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +64,9 @@
             this.tsb_multi = new System.Windows.Forms.ToolStripButton();
             this.tsb_add = new System.Windows.Forms.ToolStripButton();
             this.tsb_remove = new System.Windows.Forms.ToolStripButton();
+            this.time_updater = new System.Windows.Forms.Timer(this.components);
+            this.pb_bg = new System.Windows.Forms.PictureBox();
+            this.b_bg = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.pnl_Level.SuspendLayout();
             this.sc_Properties.Panel2.SuspendLayout();
@@ -70,6 +74,7 @@
             this.sc_PropertiesHorizontal.Panel2.SuspendLayout();
             this.sc_PropertiesHorizontal.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -238,7 +243,6 @@
             this.sc_Properties.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
             this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
-            this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.UpdatePaint);
             this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
             this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             // 
@@ -265,6 +269,8 @@
             // sc_PropertiesHorizontal.Panel2
             // 
             this.sc_PropertiesHorizontal.Panel2.AutoScroll = true;
+            this.sc_PropertiesHorizontal.Panel2.Controls.Add(this.b_bg);
+            this.sc_PropertiesHorizontal.Panel2.Controls.Add(this.pb_bg);
             this.sc_PropertiesHorizontal.Panel2.Controls.Add(this.tb_name);
             this.sc_PropertiesHorizontal.Panel2.Controls.Add(this.lbl_levelName);
             this.sc_PropertiesHorizontal.Panel2.Controls.Add(this.tb_cols);
@@ -354,7 +360,7 @@
             // b_modifyLevel
             // 
             this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.b_modifyLevel.Location = new System.Drawing.Point(55, 143);
+            this.b_modifyLevel.Location = new System.Drawing.Point(57, 297);
             this.b_modifyLevel.Name = "b_modifyLevel";
             this.b_modifyLevel.Size = new System.Drawing.Size(75, 23);
             this.b_modifyLevel.TabIndex = 0;
@@ -373,7 +379,7 @@
             this.tsb_remove});
             this.toolStrip1.Location = new System.Drawing.Point(132, -2);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(135, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(104, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -418,6 +424,32 @@
             this.tsb_remove.Text = "Remove Entity";
             this.tsb_remove.Click += new System.EventHandler(this.RemoveTool);
             // 
+            // time_updater
+            // 
+            this.time_updater.Tick += new System.EventHandler(this.UpdateGraphics);
+            // 
+            // pb_bg
+            // 
+            this.pb_bg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pb_bg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_bg.Location = new System.Drawing.Point(20, 133);
+            this.pb_bg.Name = "pb_bg";
+            this.pb_bg.Size = new System.Drawing.Size(151, 83);
+            this.pb_bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_bg.TabIndex = 11;
+            this.pb_bg.TabStop = false;
+            // 
+            // b_bg
+            // 
+            this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.b_bg.Location = new System.Drawing.Point(24, 222);
+            this.b_bg.Name = "b_bg";
+            this.b_bg.Size = new System.Drawing.Size(143, 23);
+            this.b_bg.TabIndex = 12;
+            this.b_bg.Text = "Change Background";
+            this.b_bg.UseVisualStyleBackColor = true;
+            this.b_bg.Click += new System.EventHandler(this.ChangeBackground);
+            // 
             // TempGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +472,7 @@
             this.sc_PropertiesHorizontal.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +514,8 @@
         private System.Windows.Forms.ToolStripButton tsb_multi;
         private System.Windows.Forms.ToolStripButton tsb_add;
         private System.Windows.Forms.ToolStripButton tsb_remove;
+        private System.Windows.Forms.Timer time_updater;
+        private System.Windows.Forms.Button b_bg;
+        private System.Windows.Forms.PictureBox pb_bg;
     }
 }

@@ -19,6 +19,9 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseUp(ref EditorData data, Point gridPosition)
         {
+            foreach (Entity entity in data.SelectedEntities)
+                entity.Selected = false;
+
             data.SelectedEntities = data.Level.SelectEntities(mInitial, gridPosition);
         }
 
