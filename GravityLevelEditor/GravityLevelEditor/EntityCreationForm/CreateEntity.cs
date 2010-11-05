@@ -39,12 +39,55 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void CreateNew(object sender, EventArgs e)
         {
-            mAllEntities.Add(new Entity("", "New", true, true, 
-                new Dictionary<string, string>(), 
+            mAllEntities.Add(new Entity("", "New", true, true,
+                new Dictionary<string, string>(),
                 Image.FromFile("..\\..\\Content\\defaultImage.png")));
             mSelectedIndex = mAllEntities.Count - 1;
             lb_entitySelect.Items.Add(mAllEntities[mSelectedIndex]);
             lb_entitySelect.SelectedItem = SelectedEntity;
+        }
+
+        /*
+         * SelectEntity
+         * 
+         * Event for when an Entity option is selected
+         * 
+         * Updates all form data with what is stored in entity
+         */
+        private void SelectEntity(object sender, EventArgs e)
+        {
+            if (lb_entitySelect.SelectedIndex < 0 || 
+                mAllEntities[lb_entitySelect.SelectedIndex] == null) return;
+
+            mSelectedIndex = lb_entitySelect.SelectedIndex;
+
+            tb_name.Text = SelectedEntity.Name;
+            if (SelectedEntity.Type != "")
+                cb_type.Text = SelectedEntity.Type;
+            else
+                cb_type.Text = "Select Type";
+            ckb_visible.Checked = SelectedEntity.Visible;
+            ckb_paintable.Checked = SelectedEntity.Paintable;
+            pb_texture.Image = SelectedEntity.Texture;
+        }
+
+        /*
+         * DeleteSelected
+         * 
+         * Removes the selected entity from the Entity list
+         */
+        private void DeleteSelected(object sender, EventArgs e)
+        {
+            if (mAllEntities.Count == 0 || SelectedEntity == null) return;
+            int index = lb_entitySelect.SelectedIndex;
+            lb_entitySelect.Items.Remove(SelectedEntity);
+            mAllEntities.Remove(SelectedEntity);
+            if (index < lb_entitySelect.Items.Count)
+                lb_entitySelect.SelectedIndex = index;
+            else
+                lb_entitySelect.SelectedIndex = lb_entitySelect.Items.Count - 1;
+
+            mSelectedIndex = lb_entitySelect.SelectedIndex;
         }
 
         /*
@@ -63,48 +106,6 @@ namespace GravityLevelEditor.EntityCreationForm
         }
 
         /*
-         * DeleteSelected
-         * 
-         * Removes the selected entity from the Entity list
-         */
-        private void DeleteSelected(object sender, EventArgs e)
-        {
-            if (SelectedEntity == null) return;
-            int index = lb_entitySelect.SelectedIndex;
-            lb_entitySelect.Items.Remove(SelectedEntity);
-            mAllEntities.Remove(SelectedEntity);
-            if (index < lb_entitySelect.Items.Count)
-                lb_entitySelect.SelectedIndex = index;
-            else
-                lb_entitySelect.SelectedIndex = index - 1;
-
-            mSelectedIndex = lb_entitySelect.SelectedIndex;
-        }
-
-        /*
-         * SelectEntity
-         * 
-         * Event for when an Entity option is selected
-         * 
-         * Updates all form data with what is stored in entity
-         */
-        private void SelectEntity(object sender, EventArgs e)
-        {
-            if (lb_entitySelect.SelectedIndex < 0 || SelectedEntity == null) return; 
-
-            mSelectedIndex = lb_entitySelect.SelectedIndex;
-
-            tb_name.Text = SelectedEntity.Name;
-            if (SelectedEntity.Type != "")
-                cb_type.Text = SelectedEntity.Type;
-            else
-                cb_type.Text = "Select Type";
-            ckb_visible.Checked = SelectedEntity.Visible;
-            ckb_paintable.Checked = SelectedEntity.Paintable;
-            pb_texture.Image = SelectedEntity.Texture;
-        }
-
-        /*
          * OK
          * 
          * Handles the click event when the ok button is pressed
@@ -119,15 +120,37 @@ namespace GravityLevelEditor.EntityCreationForm
             this.Close();
         }
 
-        private void UpdateView()
+        /*
+         * NameChange
+         * 
+         * Handles changes on the TextBox
+         * Changes the Entity name
+         */
+        private void NameChange(object sender, EventArgs e)
         {
-            int index = lb_entitySelect.SelectedIndex;
-            if (index < 0) return;
-            lb_entitySelect.Items.Insert(index + 1, SelectedEntity);
-            lb_entitySelect.Items.RemoveAt(index);
-            lb_entitySelect.SelectedIndex = index;
+            if(lb_entitySelect.SelectedIndex > -1)
+                SelectedEntity.Name = tb_name.Text;
         }
 
+        /*
+         * EnterDown
+         * 
+         * Commits the name change in the text box when user presses enter
+         */
+        private void EnterDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cb_type.Focus();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        /*
+         * TypeChanged
+         * 
+         * Handles when the user changes the Type
+         */
         private void TypeChanged(object sender, EventArgs e)
         {
             if (lb_entitySelect.SelectedIndex > -1)
@@ -137,42 +160,62 @@ namespace GravityLevelEditor.EntityCreationForm
             }
         }
 
-        private void EnterDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                UpdateView();
-                cb_type.Focus();
-                e.SuppressKeyPress = true;
-            }
-        }
-
+        /*
+         * SetVisible
+         * 
+         * Sets if this entity will be visible in the game
+         */
         private void SetVisible(object sender, EventArgs e)
         {
             if (lb_entitySelect.SelectedIndex > -1)
                 SelectedEntity.Visible = ckb_visible.Checked;
         }
 
+        /*
+         * SetPaintable
+         * 
+         * Sets whether this entity is paintable or not
+         */
         private void SetPaintable(object sender, EventArgs e)
         {
             if (lb_entitySelect.SelectedIndex > -1)
                 SelectedEntity.Paintable = ckb_paintable.Checked;
         }
 
-        private void NameChange(object sender, EventArgs e)
-        {
-            if(lb_entitySelect.SelectedIndex > -1)
-                SelectedEntity.Name = tb_name.Text;
-        }
-
+        /*
+         * Rename
+         * 
+         * Push the name change onto the Entity list when leaving the Text Box
+         */
         private void Rename(object sender, EventArgs e)
         {
             UpdateView();
         }
 
+        /*
+         * UpdateView
+         * 
+         * Updates the list view with the text wise changes
+         */
+        private void UpdateView()
+        {
+            int index = lb_entitySelect.SelectedIndex;
+            if (index < 0) return;
+            lb_entitySelect.Items.Insert(index + 1, SelectedEntity);
+            lb_entitySelect.Items.RemoveAt(index);
+            lb_entitySelect.SelectedIndex = index;
+        }
+
+        /*
+         * FilterSelected
+         * 
+         * Filter the Entities that are in view by type
+         */
         private void FilterSelected(object sender, EventArgs e)
         {
             lb_entitySelect.Items.Clear();
+            
+            //If (None) than show all items, Othewise only show of the selected type
             if("(None)".Equals(lb_filter.SelectedItem))
                 foreach (Entity entity in mAllEntities)
                     lb_entitySelect.Items.Add(entity);
@@ -188,6 +231,11 @@ namespace GravityLevelEditor.EntityCreationForm
 
         }
 
+        /*
+         * ClearProperties
+         * 
+         * Clears the Form values for the entity properties
+         */
         private void ClearProperties()
         {
             lb_entitySelect.SelectedItem = " ";
