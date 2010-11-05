@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using System.Xml.Linq;
 
 namespace GravityLevelEditor.EntityCreationForm
 {
@@ -82,6 +83,8 @@ namespace GravityLevelEditor.EntityCreationForm
             int index = lb_entitySelect.SelectedIndex;
             lb_entitySelect.Items.Remove(SelectedEntity);
             mAllEntities.Remove(SelectedEntity);
+
+            //Correct the entity selection after the delete
             if (index < lb_entitySelect.Items.Count)
                 lb_entitySelect.SelectedIndex = index;
             else
@@ -241,8 +244,32 @@ namespace GravityLevelEditor.EntityCreationForm
             lb_entitySelect.SelectedItem = " ";
             tb_name.Text = "";
             cb_type.Text = "Select Type";
+            pb_texture.Image = null;
             ckb_paintable.Checked = false;
             ckb_visible.Checked = false;
+        }
+
+        private void ChangeImage(object sender, EventArgs e)
+        {
+            ImportForm artSelector = new ImportForm();
+            if (lb_entitySelect.SelectedIndex != -1 &&
+                artSelector.ShowDialog() == DialogResult.OK)
+            {
+                pb_texture.Image = artSelector.SelectedImage;
+                SelectedEntity.Texture = pb_texture.Image;
+            }
+        }
+
+        
+        /***These two methods are for Kameron***/
+        private void ImportEntityList(XDocument entityList)
+        {
+
+        }
+
+        private void ExportEntityList()
+        {
+
         }
     }
 }

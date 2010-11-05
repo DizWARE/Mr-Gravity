@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdditionalProperties));
             this.b_add = new System.Windows.Forms.Button();
             this.b_remove = new System.Windows.Forms.Button();
             this.lb_properties = new System.Windows.Forms.ListBox();
@@ -132,6 +133,7 @@
             this.Controls.Add(this.lb_properties);
             this.Controls.Add(this.b_remove);
             this.Controls.Add(this.b_add);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdditionalProperties";
             this.Text = "AdditionalProperties";
             this.ResumeLayout(false);

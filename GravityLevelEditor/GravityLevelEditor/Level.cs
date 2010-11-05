@@ -7,6 +7,7 @@ using System.Collections;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor
 {
@@ -336,6 +337,9 @@ namespace GravityLevelEditor
                 currentDirectory += "Levels\\";
             }
 
+            if (mBackground.Tag == null)
+            { MessageBox.Show("Failed to save \"" + Name + "\". Invalid background image."); return; }
+
             XElement entityTree = new XElement("Entities");
             foreach (Entity entity in mEntities) {
                 entityTree.Add(entity.Export());
@@ -346,7 +350,7 @@ namespace GravityLevelEditor
                     new XElement("Size",
                         new XAttribute("X", this.Size.X),
                         new XAttribute("Y", this.Size.Y)),
-                    new XElement("Background", this.Background.ToString()),
+                    new XElement("Background", this.Background.Tag.ToString()),
                     new XElement("Color", this.Color.ToString()),
                     entityTree));
 

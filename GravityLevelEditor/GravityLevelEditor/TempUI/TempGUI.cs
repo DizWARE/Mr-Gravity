@@ -71,8 +71,10 @@ namespace GravityLevelEditor
                           int.Parse(tb_cols.Text));
 
             Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
+            if(pb_bg.Image != null)
+                mData.Level.Background = pb_bg.Image;
+
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -473,6 +475,21 @@ namespace GravityLevelEditor
         private void UpdateGraphics(object sender, EventArgs e)
         {
             sc_Properties.Panel1.Refresh();
+        }
+
+        private void ChangeBackground(object sender, EventArgs e)
+        {
+            ImportForm imageSelectDialog = new ImportForm();
+            if(imageSelectDialog.ShowDialog() == DialogResult.OK)
+            {
+                pb_bg.Image = imageSelectDialog.SelectedImage;
+                float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
+                pb_bg.Width = 75;
+                pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
+
+                int xLoc = sc_PropertiesHorizontal.Panel2.Width / 2 - pb_bg.Width /2;
+                pb_bg.Location = new Point(xLoc,pb_bg.Location.Y);
+            }
         }
     }
 }

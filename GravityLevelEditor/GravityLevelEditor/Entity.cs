@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor
 {
@@ -78,8 +79,6 @@ namespace GravityLevelEditor
             mPaintable = paintable;
             mProperties = properties;
             mTexture = texture;
-
-            //Export to Entity List
         }
 
         //TODO - Constructor from Xml file
@@ -195,6 +194,10 @@ namespace GravityLevelEditor
 
         public XElement Export()
         {
+
+            if (mTexture.Tag == null)
+            { MessageBox.Show("Failed to save " + ToString() + ID + ". Invalid image."); return null; }
+
             XElement entityTree = new XElement("Entity",
                 new XElement("ID", this.ID),
                 new XElement("Name", this.Name),
@@ -204,7 +207,7 @@ namespace GravityLevelEditor
                     new XAttribute("Y", this.Location.Y)),
                 new XElement("Visible", this.Visible.ToString()),
                 new XElement("Paintable", this.Paintable.ToString()),
-                new XElement("Texture", this.mTexture.ToString()));
+                new XElement("Texture", this.mTexture.Tag.ToString()));
 
             return entityTree;
         }

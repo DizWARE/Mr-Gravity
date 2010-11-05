@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateEntity));
             this.lb_entitySelect = new System.Windows.Forms.ListBox();
             this.b_createNew = new System.Windows.Forms.Button();
             this.lbl_entitySelect = new System.Windows.Forms.Label();
@@ -222,8 +223,10 @@
             this.pb_texture.Location = new System.Drawing.Point(386, 233);
             this.pb_texture.Name = "pb_texture";
             this.pb_texture.Size = new System.Drawing.Size(64, 64);
+            this.pb_texture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_texture.TabIndex = 15;
             this.pb_texture.TabStop = false;
+            this.pb_texture.Click += new System.EventHandler(this.ChangeImage);
             // 
             // b_ok
             // 
@@ -268,6 +271,7 @@
             this.Controls.Add(this.lbl_entitySelect);
             this.Controls.Add(this.b_createNew);
             this.Controls.Add(this.lb_entitySelect);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateEntity";
             this.Text = "Create Entity";
             ((System.ComponentModel.ISupportInitialize)(this.pb_texture)).EndInit();

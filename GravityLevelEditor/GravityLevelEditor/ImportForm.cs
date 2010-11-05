@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GravityLevelEditor
 {
@@ -16,12 +17,24 @@ namespace GravityLevelEditor
 
         public Textures FirstForm { get; set; }
 
-        public string imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\";
+        public string imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\Images";
 
         private string invalidFileMessage = "Please select a valid PNG file.";
         private string fileExistsMessage = "File already exists.";
 
         private ArrayList folders = new ArrayList();
+
+        public Image SelectedImage
+        {
+            get
+            {
+                string filename = 
+                    imageLocation + "\\" + cb_folder.SelectedValue + "\\" + lb_images.SelectedItem;
+                Image selectedImage = Image.FromFile(filename);
+                selectedImage.Tag = filename;
+                return selectedImage;
+            }
+        }
 
         #endregion
 
@@ -36,28 +49,13 @@ namespace GravityLevelEditor
         {
             InitializeComponent();
 
-            string curr = Application.StartupPath;
-            if (curr.EndsWith("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug"))
-            {
-                int trimLoc = curr.LastIndexOf("GravityLevelEditor\\GravityLevelEditor\\bin\\Debug");
-                if (trimLoc > 0)
-                {
-                    curr = curr.Substring(0, trimLoc);
-                }
-            }
             /* Adds default items to the folder list */
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(curr + "WindowsGame1\\Content\\Images\\");
-//            folders.Add("Tiles");
-//            folders.Add("Background");
-//            folders.Add("Character");
+            DirectoryInfo dir = new DirectoryInfo(imageLocation);
+            if (!dir.Exists)
+                dir.Create();
+
             folderBox.DataSource = dir.GetDirectories();
-            
-            /* If the images folder does not exist in the content folder yet */
-            if (imageLocation.IndexOf("Images") == -1)
-            {
-                System.IO.Directory.CreateDirectory(imageLocation + "Images\\");
-                imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\Images\\";
-            }
+            cb_folder.DataSource = dir.GetDirectories();            
             
             /* Hide the successful label - only want this to show later */
             successfulLabel.Hide();
@@ -94,6 +92,7 @@ namespace GravityLevelEditor
                 imageLocBox.Text = importFileDialog.FileName;
                 /* Preview the image the user selected */
                 previewBox.Load(importFileDialog.FileName);
+                previewBox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
@@ -143,14 +142,14 @@ namespace GravityLevelEditor
             /* If the folder selected in the combo box does not exist yet */
             if (imageLocation.IndexOf(folderBox.Text) == -1)
             {
-                System.IO.Directory.CreateDirectory(imageLocation + folderBox.Text + "\\");
+                System.IO.Directory.CreateDirectory(imageLocation + "\\" + folderBox.Text + "\\");
                 folders.Add(folderBox.Text);
 
                 /* TODO */
                 /* Make the combo box refresh if the user creates a new folder */
             }
             /* Save the file at the desired location */
-            previewBox.Image.Save(imageLocation + folderBox.Text + "\\" +
+            previewBox.Image.Save(imageLocation + "\\" + folderBox.Text + "\\" +
                    nameBox.Text + ".png");
             successfulLabel.Show();
 
@@ -158,57 +157,42 @@ namespace GravityLevelEditor
             imageLocBox.Text = "";
             previewBox.Image = null;
             nameBox.Text = null;
+
+            RefreshImageList();
         }
 
-        /*
-         * loadAndExitButton_Click
-         *
-         *  This function does the same thing as the loadButton_Click function, except
-         *  if the user clicks this button, it will exit the form after loading the files
-         * 
-         * object send: Not sure what this is, it was auto populated by forms.
-         * …
-         * EventArgs e: I believe this is for error checking, but again it was auto populated.
-         *
-         * Return Value: Void.
-         */
-        private void loadAndExitButton_Click(object sender, EventArgs e)
+        private void SelectImage(object sender, EventArgs e)
         {
-            /* If the user has not selected an image */
-            if (previewBox.Image == null)
-            {
-                MessageBox.Show(invalidFileMessage);
-                return;
-            }
-
-            /* If the file already exists in the designated folder */
-            if (System.IO.File.Exists(imageLocation + folderBox.Text + "\\" +
-                nameBox.Text + ".png"))
-            {
-                MessageBox.Show(fileExistsMessage);
-                imageLocBox.Text = "";
-                previewBox.Image = null;
-                nameBox.Text = null;
-                return;
-            }
-
-            /* If the folder selected in the combo box does not exist yet */
-            if (imageLocation.IndexOf(folderBox.Text) == -1)
-            {
-                System.IO.Directory.CreateDirectory(imageLocation + folderBox.Text + "\\");
-                folders.Add(folderBox.Text);
-            }
-            /* Save the file at the desired location */
-            previewBox.Image.Save(imageLocation + folderBox.Text + "\\" +
-                   nameBox.Text + ".png");
-            successfulLabel.Show();
-
-            /* Reset everything */
-            imageLocBox.Text = "";
-            previewBox.Image = null;
-            nameBox.Text = null;
-            ImportForm.ActiveForm.Close();
+            LoadPreviewImage();
         }
+
+        private void SelectDirectory(object sender, EventArgs e)
+        {
+            RefreshImageList();
+        }
+
+        private void RefreshImageList()
+        {
+            DirectoryInfo dir = new DirectoryInfo(imageLocation + "\\" + cb_folder.SelectedValue);
+            lb_images.DataSource = dir.GetFiles();
+            pb_selectPreview.Image = null;
+            if (lb_images.Items.Count > 0) { lb_images.SelectedIndex = 0; LoadPreviewImage(); }
+        }
+
+        private void LoadPreviewImage()
+        {
+            if (lb_images.SelectedIndex != -1)
+                pb_selectPreview.Image =
+                    Image.FromFile(imageLocation + "\\" + cb_folder.SelectedValue + "\\" + lb_images.SelectedItem);
+        }
+
+        private void OK(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        
 
         /* TODO */
         /* Make the folders and files show as thumbnail views in the listview */
