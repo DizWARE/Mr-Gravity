@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
+using System.Drawing.Imaging;
 
 namespace GravityLevelEditor
 {
@@ -30,7 +31,7 @@ namespace GravityLevelEditor
         public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
 
         private bool mSelected = false;
-        public bool Selected { get { return mSelected; } }
+        public bool Selected { get { return mSelected; } set { mSelected = true; } }
 
         private Image mTexture;
         public Image Texture { get { return mTexture; } set { mTexture = value; } }

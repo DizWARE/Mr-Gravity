@@ -297,18 +297,18 @@ namespace GravityLevelEditor
          * Point bottomRight: Bottom right corner of the selection rectangle
          */
         public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
-        {
+        {              
             Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
-            Rectangle selection = new Rectangle(firstPoint, new Size(diff));
+            Rectangle selection = new Rectangle(firstPoint, new Size(Point.Add(firstPoint,new Size(diff))));
             ArrayList selected = new ArrayList();
 
             //For every entity, check if it is within the selection bounds. 
                 //If it is, select it, and add it to the selection list
             foreach(Entity entity in mEntities)
-            {
-                if (selection.IntersectsWith(GridSpace.GetDrawingRegion(entity.Location, new Point(0,0))))
+            {               
+                if (selection.IntersectsWith(new Rectangle(entity.Location, new Size(GridSpace.SIZE))))
                 {
-                    entity.ToggleSelect();
+                    entity.Selected = true;
                     selected.Add(entity);
                 }
             }

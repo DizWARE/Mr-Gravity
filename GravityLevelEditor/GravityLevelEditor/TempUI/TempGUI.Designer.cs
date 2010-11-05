@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TempGUI));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.mi_file = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +64,7 @@
             this.tsb_multi = new System.Windows.Forms.ToolStripButton();
             this.tsb_add = new System.Windows.Forms.ToolStripButton();
             this.tsb_remove = new System.Windows.Forms.ToolStripButton();
+            this.time_updater = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.pnl_Level.SuspendLayout();
             this.sc_Properties.Panel2.SuspendLayout();
@@ -238,7 +240,6 @@
             this.sc_Properties.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
             this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
-            this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.UpdatePaint);
             this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
             this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             // 
@@ -373,7 +374,7 @@
             this.tsb_remove});
             this.toolStrip1.Location = new System.Drawing.Point(132, -2);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(135, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(104, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -417,6 +418,10 @@
             this.tsb_remove.Size = new System.Drawing.Size(23, 22);
             this.tsb_remove.Text = "Remove Entity";
             this.tsb_remove.Click += new System.EventHandler(this.RemoveTool);
+            // 
+            // time_updater
+            // 
+            this.time_updater.Tick += new System.EventHandler(this.UpdateGraphics);
             // 
             // TempGUI
             // 
@@ -481,5 +486,6 @@
         private System.Windows.Forms.ToolStripButton tsb_multi;
         private System.Windows.Forms.ToolStripButton tsb_add;
         private System.Windows.Forms.ToolStripButton tsb_remove;
+        private System.Windows.Forms.Timer time_updater;
     }
 }
