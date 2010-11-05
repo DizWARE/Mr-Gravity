@@ -36,7 +36,7 @@
   <Class Name="GravityShift.GravityShiftMain" Collapsed="true">
     <Position X="7" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACQiUAAAAhAACwAAAAAAAAAAAAAAAACBAAAAAAAAAAQ=</HashCode>
+      <HashCode>ACQiUAIAAhAACwAAAAAAAAAAAAAAAACBAAAAAAAAAAQ=</HashCode>
       <FileName>GravityShiftMain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -89,7 +89,7 @@
       <FileName>StaticObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GravityShift.Tile">
+  <Class Name="GravityShift.Tile" Collapsed="true">
     <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>

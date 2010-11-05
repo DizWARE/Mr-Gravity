@@ -32,7 +32,7 @@ namespace GravityShift
         /// <param name="controlScheme">Controller scheme for the player(Controller or keyboard)</param>
         public Player(ContentManager content, String name, Vector2 scalingFactors, 
             Vector2 initialPosition,ref PhysicsEnvironment environment, IControlScheme controlScheme) 
-            : base(content, name, scalingFactors, initialPosition,ref environment)
+            : base(content, name, scalingFactors, initialPosition,ref environment,.8f)
         {
             mControls = controlScheme;
             mSpawnPoint = initialPosition;

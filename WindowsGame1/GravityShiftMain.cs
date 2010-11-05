@@ -49,7 +49,7 @@ namespace GravityShift
         {
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
-            mGraphics.ToggleFullScreen();
+            //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
             mObjects = new List<GameObject>();
@@ -75,8 +75,30 @@ namespace GravityShift
                 new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new KeyboardControl());
             mObjects.Add(player);
 
-            Tile tile = new Tile(Content,"Tile",Vector2.One,new Vector2(590,590));
-            mObjects.Add(tile);
+            // create floor
+            for (int i = 0; i < 20; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(i*64, 704), .8f);
+                mObjects.Add(tile);
+            }
+            // create left wall
+            for (int i = 0; i < 11; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(0, i*64), .8f);
+                mObjects.Add(tile);
+            }
+            // create right wall
+            for (int i = 0; i < 10; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(1216,64+ i * 64), .8f);
+                mObjects.Add(tile);
+            }
+            // create top
+            for (int i = 0; i < 19; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f);
+                mObjects.Add(tile);
+            }
 
     }
 
@@ -101,17 +123,15 @@ namespace GravityShift
 
             Random rand = new Random();
             PhysicsEnvironment environment = new PhysicsEnvironment();
-            environment.TerminalSpeed = rand.Next(100)+1;
-            environment.GravityMagnitude = rand.Next(3)+1;
+            environment.TerminalSpeed = 20;
+            environment.GravityMagnitude = 1;
             if (keyboard.IsKeyDown(Keys.N))
             {
                 if (rand.Next() % 3 == 0)
                     environment = mPhysicsEnvironment;
                 mObjects.Add(new GenericObject(Content, "Player",
-                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment));
+                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment,.8f));
             }
-
-            HandleCollisions();
 
             foreach (GameObject gObject in mObjects)
             {
@@ -123,7 +143,7 @@ namespace GravityShift
                     pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
                 }
             }
-
+            HandleCollisions();
             base.Update(gameTime);
         }
 
@@ -232,12 +252,14 @@ namespace GravityShift
 
         private void HandleCollisions()
         {
-            // handle collisions
+            // handle collisions for all game objects
             foreach (GameObject gObject in mObjects)
             {
                 if (gObject is PhysicsObject)
                 {
                     PhysicsObject physObj = (PhysicsObject)gObject;
+                    // This makes sure that the objects that detect collisions are always physics obects
+                    // this way we do not need static objects checking for collisions
                     foreach (GameObject obj in mObjects)
                     {
                         if (physObj.IsColliding(obj))

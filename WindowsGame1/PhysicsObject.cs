@@ -53,8 +53,8 @@ namespace GravityShift
         /// <param name="name">Name of the physics object so that it can be loaded</param>
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5)</param>
         /// <param name="initialPosition">Position of where this object starts in the level</param>
-        public PhysicsObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment)
-            :base(content,name,scalingFactors,initialPosition)
+        public PhysicsObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction)
+            :base(content,name,scalingFactors,initialPosition, friction)
         {
             mEnvironment = environment;
             UpdateBoundingBoxes();
@@ -171,16 +171,29 @@ namespace GravityShift
             {
                 return;
             }
-            
-            Vector2 reverse = Vector2.Multiply(mVelocity,-1);
 
-            //Reset Velocity to 0
-            mVelocity = Vector2.Zero;
+            Vector2 colDepth = GetCollitionDepth(otherObject);
 
-            // set position back to where it was before collision
-            mPosition = Vector2.Add(mPosition, reverse);
-            UpdateBoundingBoxes();
-
+            if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))
+            {
+                //Reset Y Velocity to 0
+                mVelocity.Y = 0;
+                // reduce x velocity for friction
+                mVelocity.X *= otherObject.mFriction;
+                // place the Y pos just so it is not colliding. 
+                mPosition.Y += colDepth.Y;
+                UpdateBoundingBoxes();
+            }
+            else
+            {
+                //Reset X Velocity to 0
+                mVelocity.X = 0;
+                // reduce Y velocity for friction
+                mVelocity.Y *= otherObject.mFriction;
+                // place the X pos just so it is not colliding.
+                mPosition.X += colDepth.X;
+                UpdateBoundingBoxes();
+            }
         }
         /// <summary>
         /// finds how deep they are intersecting (That is what she said!)
@@ -200,7 +213,7 @@ namespace GravityShift
             int halfWidth2 = otherObject.BoundingBox.Width / 2;
 
             //Calculate Center Position
-            Vector2 center2 = new Vector2(this.BoundingBox.Left + halfWidth2, this.BoundingBox.Top + halfHeight2);
+            Vector2 center2 = new Vector2(otherObject.BoundingBox.Left + halfWidth2, otherObject.BoundingBox.Top + halfHeight2);
             
             //Center distances between both objects
             float distX = center1.X - center2.X;
