@@ -31,8 +31,8 @@ namespace GravityShift
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5))</param>
         /// <param name="controlScheme">Controller scheme for the player(Controller or keyboard)</param>
         public Player(ContentManager content, String name, Vector2 scalingFactors, 
-            Vector2 initialPosition,ref PhysicsEnvironment environment, IControlScheme controlScheme) 
-            : base(content, name, scalingFactors, initialPosition,ref environment,.8f)
+            Vector2 initialPosition,ref PhysicsEnvironment environment, IControlScheme controlScheme, float friction) 
+            : base(content, name, scalingFactors, initialPosition,ref environment,friction)
         {
             mControls = controlScheme;
             mSpawnPoint = initialPosition;

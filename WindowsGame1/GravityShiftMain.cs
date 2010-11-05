@@ -72,9 +72,12 @@ namespace GravityShift
             mDefaultFont = Content.Load<SpriteFont>("defaultFont");
 
             player = new Player(Content, "Player",
-                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new KeyboardControl());
+                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), 
+                ref mPhysicsEnvironment, new KeyboardControl(),.8f);
             mObjects.Add(player);
 
+            MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f);
+            mObjects.Add(movTile);
             // create floor
             for (int i = 0; i < 20; i++)
             {
@@ -139,11 +142,12 @@ namespace GravityShift
                 {
                     PhysicsObject pObject = (PhysicsObject)gObject;
                     pObject.Update(gameTime);
+                    // handle collision right after you move
+                    HandleCollisions(pObject);
                     if (pObject is Player) ChangeValues((Player)pObject, keyboard);
                     pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
                 }
             }
-            HandleCollisions();
             base.Update(gameTime);
         }
 
@@ -249,24 +253,18 @@ namespace GravityShift
             location = Vector2.Add(location, new Vector2(0, 20));
             mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
         }
-
-        private void HandleCollisions()
+        /// <summary>
+        /// Checks to see if given object is colliding with any other object and handles the collision
+        /// </summary>
+        /// <param name="PhysicsObject"></param>
+        private void HandleCollisions(PhysicsObject physObj)
         {
-            // handle collisions for all game objects
-            foreach (GameObject gObject in mObjects)
+            // handle collisions for each physics object
+            foreach (GameObject obj in mObjects)
             {
-                if (gObject is PhysicsObject)
+                if (physObj.IsColliding(obj))
                 {
-                    PhysicsObject physObj = (PhysicsObject)gObject;
-                    // This makes sure that the objects that detect collisions are always physics obects
-                    // this way we do not need static objects checking for collisions
-                    foreach (GameObject obj in mObjects)
-                    {
-                        if (physObj.IsColliding(obj))
-                        {
-                            physObj.HandleCollideBox(obj);
-                        }
-                    }
+                    physObj.HandleCollideBox(obj);
                 }
             }
         }

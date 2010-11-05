@@ -150,7 +150,7 @@ namespace GravityShift
 
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
-        /// 
+        /// (only good for 2 boxes) (no circles yet)
         /// TODO - Add pixel perfect collision
         /// </summary>
         /// <param name="otherObject">The other object to test against</param>
@@ -167,11 +167,6 @@ namespace GravityShift
         /// <returns>nothing</returns>
         public virtual void HandleCollideBox(GameObject otherObject)
         {
-            if (!IsColliding(otherObject))
-            {
-                return;
-            }
-
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))
@@ -182,7 +177,6 @@ namespace GravityShift
                 mVelocity.X *= otherObject.mFriction;
                 // place the Y pos just so it is not colliding. 
                 mPosition.Y += colDepth.Y;
-                UpdateBoundingBoxes();
             }
             else
             {
@@ -192,8 +186,8 @@ namespace GravityShift
                 mVelocity.Y *= otherObject.mFriction;
                 // place the X pos just so it is not colliding.
                 mPosition.X += colDepth.X;
-                UpdateBoundingBoxes();
             }
+            UpdateBoundingBoxes();
         }
         /// <summary>
         /// finds how deep they are intersecting (That is what she said!)
