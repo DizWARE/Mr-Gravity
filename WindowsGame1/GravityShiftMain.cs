@@ -49,7 +49,7 @@ namespace GravityShift
         {
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
-            mGraphics.ToggleFullScreen();
+            //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
             mObjects = new List<GameObject>();
@@ -72,11 +72,36 @@ namespace GravityShift
             mDefaultFont = Content.Load<SpriteFont>("defaultFont");
 
             player = new Player(Content, "Player",
-                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), ref mPhysicsEnvironment, new KeyboardControl());
+                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), 
+                ref mPhysicsEnvironment, new KeyboardControl(),.8f);
             mObjects.Add(player);
 
-            Tile tile = new Tile(Content,"Tile",Vector2.One,new Vector2(590,590));
-            mObjects.Add(tile);
+            MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f);
+            mObjects.Add(movTile);
+            // create floor
+            for (int i = 0; i < 20; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(i*64, 704), .8f);
+                mObjects.Add(tile);
+            }
+            // create left wall
+            for (int i = 0; i < 11; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(0, i*64), .8f);
+                mObjects.Add(tile);
+            }
+            // create right wall
+            for (int i = 0; i < 10; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(1216,64+ i * 64), .8f);
+                mObjects.Add(tile);
+            }
+            // create top
+            for (int i = 0; i < 19; i++)
+            {
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f);
+                mObjects.Add(tile);
+            }
 
     }
 
@@ -101,17 +126,15 @@ namespace GravityShift
 
             Random rand = new Random();
             PhysicsEnvironment environment = new PhysicsEnvironment();
-            environment.TerminalSpeed = rand.Next(100)+1;
-            environment.GravityMagnitude = rand.Next(3)+1;
+            environment.TerminalSpeed = 20;
+            environment.GravityMagnitude = 1;
             if (keyboard.IsKeyDown(Keys.N))
             {
                 if (rand.Next() % 3 == 0)
                     environment = mPhysicsEnvironment;
                 mObjects.Add(new GenericObject(Content, "Player",
-                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment));
+                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment,.8f));
             }
-
-            HandleCollisions();
 
             foreach (GameObject gObject in mObjects)
             {
@@ -119,11 +142,12 @@ namespace GravityShift
                 {
                     PhysicsObject pObject = (PhysicsObject)gObject;
                     pObject.Update(gameTime);
+                    // handle collision right after you move
+                    HandleCollisions(pObject);
                     if (pObject is Player) ChangeValues((Player)pObject, keyboard);
                     pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
                 }
             }
-
             base.Update(gameTime);
         }
 
@@ -229,22 +253,18 @@ namespace GravityShift
             location = Vector2.Add(location, new Vector2(0, 20));
             mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
         }
-
-        private void HandleCollisions()
+        /// <summary>
+        /// Checks to see if given object is colliding with any other object and handles the collision
+        /// </summary>
+        /// <param name="PhysicsObject"></param>
+        private void HandleCollisions(PhysicsObject physObj)
         {
-            // handle collisions
-            foreach (GameObject gObject in mObjects)
+            // handle collisions for each physics object
+            foreach (GameObject obj in mObjects)
             {
-                if (gObject is PhysicsObject)
+                if (physObj.IsColliding(obj))
                 {
-                    PhysicsObject physObj = (PhysicsObject)gObject;
-                    foreach (GameObject obj in mObjects)
-                    {
-                        if (physObj.IsColliding(obj))
-                        {
-                            physObj.HandleCollideBox(obj);
-                        }
-                    }
+                    physObj.HandleCollideBox(obj);
                 }
             }
         }

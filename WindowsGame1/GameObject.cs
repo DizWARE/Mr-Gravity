@@ -16,16 +16,6 @@ namespace GravityShift
 {
     abstract class GameObject
     {
-        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition)
-        {
-            mName = name;
-            Load(content, name);
-
-            mPosition = initialPosition;
-            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
-
-            mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
-        }
         public static int ID_CREATER = 0;
 
         //Creates a unique identifier for every Physics object
@@ -38,6 +28,26 @@ namespace GravityShift
         public Rectangle mBoundingBox;
 
         protected String mName;
+
+        /// <summary>
+        /// float that acts as a multiplier per frame 
+        /// 0.0f = 100% friction
+        /// 1.0f = 0% friction
+        /// </summary>
+        public float mFriction;
+
+        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction)
+        {
+            mName = name;
+            mFriction = friction;
+            Load(content, name);
+
+            mPosition = initialPosition;
+            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
+
+            mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
+        }
+        
 
         /// <summary>
         /// Gets the unique identifier for this object

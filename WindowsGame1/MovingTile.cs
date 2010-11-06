@@ -15,12 +15,12 @@ using Microsoft.Xna.Framework.Storage;
 namespace GravityShift
 {
     /// <summary>
-    /// Just a proof of concept class. Used to show that many objects can be added and handled in the game
+    /// Moving tile
     /// </summary>
-    class GenericObject : PhysicsObject
+    class MovingTile : PhysicsObject
     {
-        public GenericObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction) : 
-            base(content, name, scalingFactors, initialPosition, ref environment,friction)
+        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction) :
+            base(content, name, scalingFactors, initialPosition, ref environment, friction)
         {
 
         }
