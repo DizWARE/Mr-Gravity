@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 Casey Spencer 
 Phone: 801-694-5630
 Email: billanddspencer@gmail.com
@@ -24,3 +26,4 @@ Morgan Reynolds
 Phone: 801-809-5779
 Email: morganreyn@gmail.com
 ---------------------------------
+>>>>>>> upstream/master
