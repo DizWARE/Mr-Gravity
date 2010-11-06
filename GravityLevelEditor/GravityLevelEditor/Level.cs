@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace GravityLevelEditor
 {
@@ -264,7 +265,6 @@ namespace GravityLevelEditor
             if (inTile.Count > 0)
             {
                 Entity selectedEntity = (Entity)inTile[0];
-                selectedEntity.ToggleSelect();
                 return selectedEntity;
             }
             return null;
@@ -280,9 +280,9 @@ namespace GravityLevelEditor
          * Point offset: the offset that the level editor is at.
          */
         public void Draw(Graphics g, Point offset)
-        {
+        {            
             g.DrawImage(mBackground, new Rectangle(offset,
-                new Size(GridSpace.GetPixelCoord(this.mSize))));
+                new Size(GridSpace.GetDrawingCoord(this.mSize))));
 
             foreach (Entity entity in mEntities)
                 entity.Draw(g, offset);
@@ -298,18 +298,22 @@ namespace GravityLevelEditor
          * Point bottomRight: Bottom right corner of the selection rectangle
          */
         public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
-        {              
-            Point diff = new Point(secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y);
-            Rectangle selection = new Rectangle(firstPoint, new Size(Point.Add(firstPoint,new Size(diff))));
+        {
+            Point min = new Point(Math.Min(firstPoint.X,secondPoint.X),
+                                    Math.Min(firstPoint.Y,secondPoint.Y));
+
+            Point max = new Point(Math.Max(firstPoint.X, secondPoint.X)+1,
+                                    Math.Max(firstPoint.Y, secondPoint.Y)+1);
+            Point diff = new Point(max.X - min.X, max.Y - min.Y);
+            Rectangle selection = new Rectangle(min, new Size(diff));
             ArrayList selected = new ArrayList();
 
             //For every entity, check if it is within the selection bounds. 
                 //If it is, select it, and add it to the selection list
             foreach(Entity entity in mEntities)
             {               
-                if (selection.IntersectsWith(new Rectangle(entity.Location, new Size(GridSpace.SIZE))))
+                if (selection.IntersectsWith(new Rectangle(entity.Location, new Size(1,1))))
                 {
-                    entity.Selected = true;
                     selected.Add(entity);
                 }
             }

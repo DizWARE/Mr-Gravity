@@ -31,8 +31,8 @@ namespace GravityLevelEditor
         private bool mPaintable;
         public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
 
-        private bool mSelected = false;
-        public bool Selected { get { return mSelected; } set { mSelected = true; } }
+        //private bool mSelected = false;
+        //public bool Selected { get { return mSelected; } set { mSelected = true; } }
 
         private Image mTexture;
         public Image Texture { get { return mTexture; } set { mTexture = value; } }
@@ -94,16 +94,6 @@ namespace GravityLevelEditor
         {
             mLocation = where;
         }
-        
-        /*
-         * ToggleSelect
-         * 
-         * Selects or deselects this entity.
-         */
-        public void ToggleSelect()
-        {
-            mSelected = !mSelected;
-        }
 
         /*
          * ToggleVisibility
@@ -130,10 +120,6 @@ namespace GravityLevelEditor
 
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
             g.DrawImage(mTexture, drawLocation);
-            
-            //Draw selected outline here
-            if (mSelected)
-                g.DrawRectangle(new Pen(Brushes.Blue, 2), drawLocation);
         }
 
         /*

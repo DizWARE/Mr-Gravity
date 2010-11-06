@@ -29,6 +29,8 @@ namespace GravityLevelEditor.GuiTools
             Entity entity = data.OnDeck.Copy();
             entity.Location = gridPosition;
             data.Level.AddEntity(entity, gridPosition);
+            data.SelectedEntities.Clear();
+            data.SelectedEntities.Add(entity);
         }
 
         public void RightMouseDown(ref EditorData data, System.Drawing.Point gridPosition)
@@ -41,7 +43,7 @@ namespace GravityLevelEditor.GuiTools
             
         }
 
-        public void MouseMove(ref EditorData data, System.Drawing.Point gridPosition)
+        public void MouseMove(ref EditorData data, Panel panel, System.Drawing.Point gridPosition)
         {
             
         }

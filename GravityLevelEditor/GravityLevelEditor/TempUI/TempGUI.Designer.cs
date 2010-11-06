@@ -51,6 +51,8 @@
             this.pnl_Level = new System.Windows.Forms.Panel();
             this.sc_Properties = new System.Windows.Forms.SplitContainer();
             this.sc_PropertiesHorizontal = new System.Windows.Forms.SplitContainer();
+            this.b_bg = new System.Windows.Forms.Button();
+            this.pb_bg = new System.Windows.Forms.PictureBox();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.lbl_levelName = new System.Windows.Forms.Label();
             this.tb_cols = new System.Windows.Forms.TextBox();
@@ -65,16 +67,14 @@
             this.tsb_add = new System.Windows.Forms.ToolStripButton();
             this.tsb_remove = new System.Windows.Forms.ToolStripButton();
             this.time_updater = new System.Windows.Forms.Timer(this.components);
-            this.pb_bg = new System.Windows.Forms.PictureBox();
-            this.b_bg = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.pnl_Level.SuspendLayout();
             this.sc_Properties.Panel2.SuspendLayout();
             this.sc_Properties.SuspendLayout();
             this.sc_PropertiesHorizontal.Panel2.SuspendLayout();
             this.sc_PropertiesHorizontal.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -283,6 +283,28 @@
             this.sc_PropertiesHorizontal.SplitterDistance = 298;
             this.sc_PropertiesHorizontal.TabIndex = 0;
             // 
+            // b_bg
+            // 
+            this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.b_bg.Location = new System.Drawing.Point(24, 222);
+            this.b_bg.Name = "b_bg";
+            this.b_bg.Size = new System.Drawing.Size(143, 23);
+            this.b_bg.TabIndex = 12;
+            this.b_bg.Text = "Change Background";
+            this.b_bg.UseVisualStyleBackColor = true;
+            this.b_bg.Click += new System.EventHandler(this.ChangeBackground);
+            // 
+            // pb_bg
+            // 
+            this.pb_bg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pb_bg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_bg.Location = new System.Drawing.Point(20, 133);
+            this.pb_bg.Name = "pb_bg";
+            this.pb_bg.Size = new System.Drawing.Size(151, 83);
+            this.pb_bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_bg.TabIndex = 11;
+            this.pb_bg.TabStop = false;
+            // 
             // tb_name
             // 
             this.tb_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -426,29 +448,8 @@
             // 
             // time_updater
             // 
+            this.time_updater.Interval = 1000;
             this.time_updater.Tick += new System.EventHandler(this.UpdateGraphics);
-            // 
-            // pb_bg
-            // 
-            this.pb_bg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pb_bg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_bg.Location = new System.Drawing.Point(20, 133);
-            this.pb_bg.Name = "pb_bg";
-            this.pb_bg.Size = new System.Drawing.Size(151, 83);
-            this.pb_bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_bg.TabIndex = 11;
-            this.pb_bg.TabStop = false;
-            // 
-            // b_bg
-            // 
-            this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.b_bg.Location = new System.Drawing.Point(24, 222);
-            this.b_bg.Name = "b_bg";
-            this.b_bg.Size = new System.Drawing.Size(143, 23);
-            this.b_bg.TabIndex = 12;
-            this.b_bg.Text = "Change Background";
-            this.b_bg.UseVisualStyleBackColor = true;
-            this.b_bg.Click += new System.EventHandler(this.ChangeBackground);
             // 
             // TempGUI
             // 
@@ -470,9 +471,9 @@
             this.sc_PropertiesHorizontal.Panel2.ResumeLayout(false);
             this.sc_PropertiesHorizontal.Panel2.PerformLayout();
             this.sc_PropertiesHorizontal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

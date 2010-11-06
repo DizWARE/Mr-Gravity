@@ -18,8 +18,9 @@ namespace GravityLevelEditor
          */
         public void Redo()
         {
-            foreach (Entity e in mEntities)
-                e.ToggleSelect();
+            //TODO - FIGURE OUT SOMETHING ELSE
+            //foreach (Entity e in mEntities)
+            //    e.ToggleSelect();
         }
 
         /*
@@ -30,8 +31,9 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            foreach (Entity e in mEntities)
-                e.ToggleSelect();
+            //TODO - Find a new way to do this with new system
+            //foreach (Entity e in mEntities)
+            //    e.ToggleSelect();
         }
 
         /*
