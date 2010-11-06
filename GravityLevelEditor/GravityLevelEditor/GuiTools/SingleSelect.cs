@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor.GuiTools
 {
@@ -28,7 +29,10 @@ namespace GravityLevelEditor.GuiTools
             if (mInitial.Equals(gridPosition))
             {
                 data.SelectedEntities.Clear();
-                data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+                Entity selected = data.Level.SelectEntity(gridPosition);
+
+                if(selected != null)
+                    data.SelectedEntities.Add(selected);
             }
             mouseDown = false;
         }
@@ -43,14 +47,15 @@ namespace GravityLevelEditor.GuiTools
             
         }
 
-        public void MouseMove(ref EditorData data, Point gridPosition)
+        public void MouseMove(ref EditorData data, Panel panel, Point gridPosition)
         {
-            if (!mPrevious.Equals(gridPosition) && mouseDown)
+            if (!mPrevious.Equals(gridPosition) && data.SelectedEntities.Count > 0 && mouseDown)
             {
                 //Keep an eye on this. The SelectedEntities can return an empty list
                 data.Level.MoveEntity(data.SelectedEntities,
-                    new Size(Point.Subtract(gridPosition, new Size(mInitial))));
+                    new Size(Point.Subtract(gridPosition, new Size(mPrevious))));
                 mPrevious = gridPosition;
+                panel.Refresh();
             }
         }
 

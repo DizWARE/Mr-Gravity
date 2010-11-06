@@ -5,6 +5,8 @@ using System.Text;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
+using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor
 {
@@ -29,8 +31,8 @@ namespace GravityLevelEditor
         private bool mPaintable;
         public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
 
-        private bool mSelected = false;
-        public bool Selected { get { return mSelected; } }
+        //private bool mSelected = false;
+        //public bool Selected { get { return mSelected; } set { mSelected = true; } }
 
         private Image mTexture;
         public Image Texture { get { return mTexture; } set { mTexture = value; } }
@@ -77,8 +79,6 @@ namespace GravityLevelEditor
             mPaintable = paintable;
             mProperties = properties;
             mTexture = texture;
-
-            //Export to Entity List
         }
 
         //TODO - Constructor from Xml file
@@ -93,16 +93,6 @@ namespace GravityLevelEditor
         public void MoveEntity(Point where)
         {
             mLocation = where;
-        }
-        
-        /*
-         * ToggleSelect
-         * 
-         * Selects or deselects this entity.
-         */
-        public void ToggleSelect()
-        {
-            mSelected = !mSelected;
         }
 
         /*
@@ -130,10 +120,6 @@ namespace GravityLevelEditor
 
             //This won't work with grid space without being scaled to pixel format TODO - Fix it
             g.DrawImage(mTexture, drawLocation);
-            
-            //Draw selected outline here
-            if (mSelected)
-                g.DrawRectangle(new Pen(Brushes.Blue, 2), drawLocation);
         }
 
         /*
@@ -194,6 +180,10 @@ namespace GravityLevelEditor
 
         public XElement Export()
         {
+
+            if (mTexture.Tag == null)
+            { MessageBox.Show("Failed to save " + ToString() + ID + ". Invalid image."); return null; }
+
             XElement entityTree = new XElement("Entity",
                 new XElement("ID", this.ID),
                 new XElement("Name", this.Name),
@@ -203,7 +193,7 @@ namespace GravityLevelEditor
                     new XAttribute("Y", this.Location.Y)),
                 new XElement("Visible", this.Visible.ToString()),
                 new XElement("Paintable", this.Paintable.ToString()),
-                new XElement("Texture", this.mTexture.ToString()));
+                new XElement("Texture", this.mTexture.Tag.ToString()));
 
             return entityTree;
         }

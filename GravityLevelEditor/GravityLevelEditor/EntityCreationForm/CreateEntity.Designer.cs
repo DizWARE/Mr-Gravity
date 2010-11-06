@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateEntity));
             this.lb_entitySelect = new System.Windows.Forms.ListBox();
             this.b_createNew = new System.Windows.Forms.Button();
             this.lbl_entitySelect = new System.Windows.Forms.Label();
@@ -96,6 +97,7 @@
             this.lb_filter.Name = "lb_filter";
             this.lb_filter.Size = new System.Drawing.Size(206, 82);
             this.lb_filter.TabIndex = 3;
+            this.lb_filter.SelectedIndexChanged += new System.EventHandler(this.FilterSelected);
             // 
             // lbl_filter
             // 
@@ -159,10 +161,14 @@
             // 
             // tb_name
             // 
+            this.tb_name.AcceptsReturn = true;
             this.tb_name.Location = new System.Drawing.Point(329, 156);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(121, 20);
             this.tb_name.TabIndex = 10;
+            this.tb_name.TextChanged += new System.EventHandler(this.NameChange);
+            this.tb_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterDown);
+            this.tb_name.Leave += new System.EventHandler(this.Rename);
             // 
             // cb_type
             // 
@@ -178,6 +184,8 @@
             this.cb_type.Size = new System.Drawing.Size(121, 21);
             this.cb_type.TabIndex = 11;
             this.cb_type.Text = "Select Type";
+            this.cb_type.SelectedIndexChanged += new System.EventHandler(this.TypeChanged);
+            this.cb_type.Leave += new System.EventHandler(this.Rename);
             // 
             // ckb_visible
             // 
@@ -187,6 +195,7 @@
             this.ckb_visible.Size = new System.Drawing.Size(15, 14);
             this.ckb_visible.TabIndex = 12;
             this.ckb_visible.UseVisualStyleBackColor = true;
+            this.ckb_visible.CheckedChanged += new System.EventHandler(this.SetVisible);
             // 
             // ckb_paintable
             // 
@@ -196,6 +205,7 @@
             this.ckb_paintable.Size = new System.Drawing.Size(15, 14);
             this.ckb_paintable.TabIndex = 13;
             this.ckb_paintable.UseVisualStyleBackColor = true;
+            this.ckb_paintable.CheckedChanged += new System.EventHandler(this.SetPaintable);
             // 
             // b_additional
             // 
@@ -213,8 +223,10 @@
             this.pb_texture.Location = new System.Drawing.Point(386, 233);
             this.pb_texture.Name = "pb_texture";
             this.pb_texture.Size = new System.Drawing.Size(64, 64);
+            this.pb_texture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_texture.TabIndex = 15;
             this.pb_texture.TabStop = false;
+            this.pb_texture.Click += new System.EventHandler(this.ChangeImage);
             // 
             // b_ok
             // 
@@ -259,6 +271,7 @@
             this.Controls.Add(this.lbl_entitySelect);
             this.Controls.Add(this.b_createNew);
             this.Controls.Add(this.lb_entitySelect);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateEntity";
             this.Text = "Create Entity";
             ((System.ComponentModel.ISupportInitialize)(this.pb_texture)).EndInit();

@@ -118,6 +118,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,10 +148,11 @@
     <Content Include="Content\add.png" />
     <Content Include="Content\defaultBG.png" />
     <Content Include="Content\defaultImage.png" />
+    <Content Include="Content\addentity.png" />
     <Content Include="Content\depaint.png" />
-    <Content Include="Content\multi.png" />
+    <Content Include="Content\multiselect.png" />
     <Content Include="Content\paint.png" />
-    <Content Include="Content\remove.png" />
+    <Content Include="Content\removeentity.png" />
     <Content Include="Content\select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

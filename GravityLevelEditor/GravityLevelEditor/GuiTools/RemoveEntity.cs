@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor.GuiTools
 {
@@ -41,7 +42,7 @@ namespace GravityLevelEditor.GuiTools
             
         }
 
-        public void MouseMove(ref EditorData data, System.Drawing.Point gridPosition)
+        public void MouseMove(ref EditorData data, Panel panel, System.Drawing.Point gridPosition)
         {
             
         }

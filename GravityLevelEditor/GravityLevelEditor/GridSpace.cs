@@ -16,14 +16,14 @@ namespace GravityLevelEditor
          * 
          * Zooms in by 25% of its original size factor.
          */
-        public static void ZoomIn() {   SCALE_FACTOR += .25f;   }
+        public static void ZoomIn() {   SCALE_FACTOR += .10f;   }
 
         /*
          * ZoomOut
          * 
          * Zooms out by 25% of its original size factor.
          */
-        public static void ZoomOut()    {  SCALE_FACTOR -= .25f;   }
+        public static void ZoomOut()    {  SCALE_FACTOR -= .10f;   }
 
         /*
          * GetDrawingCoord
@@ -87,8 +87,8 @@ namespace GravityLevelEditor
          */
         public static Point GetScaledGridCoord(Point pixelCoord)
         {
-            return new Point((int)(pixelCoord.X / SIZE.X / SCALE_FACTOR),
-                (int)(pixelCoord.Y / SIZE.Y / SCALE_FACTOR));
+            return new Point((int)(((float)pixelCoord.X / SIZE.X) / SCALE_FACTOR),
+                (int)(((float)pixelCoord.Y / SIZE.Y) / SCALE_FACTOR));
         }
 
         /*

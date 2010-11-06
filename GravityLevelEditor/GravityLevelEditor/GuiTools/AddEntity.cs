@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GravityLevelEditor.EntityCreationForm;
+using System.Windows.Forms;
 
 namespace GravityLevelEditor.GuiTools
 {
@@ -12,13 +14,23 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseDown(ref EditorData data, System.Drawing.Point gridPosition)
         {
-            if(data.OnDeck == null) {/*launch the Entity select dialog*/}
+            if (data.OnDeck == null) 
+            {
+                CreateEntity entityDialog = new CreateEntity();
+                if (entityDialog.ShowDialog() == DialogResult.OK)
+                    data.OnDeck = entityDialog.SelectedEntity;
+
+            }
         }
 
         public void LeftMouseUp(ref EditorData data, System.Drawing.Point gridPosition)
         {
-            if(data.OnDeck != null)
-                data.Level.AddEntity(data.OnDeck.Copy(), gridPosition);
+            if (data.OnDeck == null) return;
+            Entity entity = data.OnDeck.Copy();
+            entity.Location = gridPosition;
+            data.Level.AddEntity(entity, gridPosition);
+            data.SelectedEntities.Clear();
+            data.SelectedEntities.Add(entity);
         }
 
         public void RightMouseDown(ref EditorData data, System.Drawing.Point gridPosition)
@@ -31,7 +43,7 @@ namespace GravityLevelEditor.GuiTools
             
         }
 
-        public void MouseMove(ref EditorData data, System.Drawing.Point gridPosition)
+        public void MouseMove(ref EditorData data, Panel panel, System.Drawing.Point gridPosition)
         {
             
         }

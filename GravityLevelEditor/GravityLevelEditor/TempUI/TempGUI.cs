@@ -15,10 +15,12 @@ namespace GravityLevelEditor
     {
         EditorData mData;
 
+        /**Editor tools**/
         private static GuiTools.SingleSelect TOOL_SELECT = new GuiTools.SingleSelect();
         private static GuiTools.MultiSelect TOOL_MULTISELECT = new GuiTools.MultiSelect();
         private static GuiTools.AddEntity TOOL_ADD = new GuiTools.AddEntity();
         private static GuiTools.RemoveEntity TOOL_REMOVE = new GuiTools.RemoveEntity();
+
         ITool mCurrentTool = TOOL_SELECT;
 
         /*
@@ -32,7 +34,25 @@ namespace GravityLevelEditor
             mData = new EditorData(new ArrayList(), null, 
                 new Level("New Level", new Point(10, 10), Color.Red,
                      Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
+
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer |
+            ControlStyles.AllPaintingInWmPaint,
+            true);
+
+            this.DoubleBuffered = true;
+            
+            time_updater.Start();
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        } 
 
         /*
          * ApplyChanges
@@ -51,8 +71,12 @@ namespace GravityLevelEditor
             mData.Level.Resize(int.Parse(tb_rows.Text), 
                           int.Parse(tb_cols.Text));
 
-            Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
+            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
+            if(pb_bg.Image != null)
+                mData.Level.Background = pb_bg.Image;
+
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
+
             sc_Properties.Panel1.Refresh();
         }
 
@@ -77,24 +101,6 @@ namespace GravityLevelEditor
         }
 
         /*
-         * GridSpaceClick
-         * 
-         * Figure out which grid location we have clicked on.
-         * 
-         * object sender: the level panel.
-         * 
-         * MouseEventArgs e: status of the mouse.
-         */
-        private void GridSpaceClick(object sender, MouseEventArgs e)
-        {
-            Panel p = (Panel)sender;
-
-            Point mouseLocation = new Point(-p.DisplayRectangle.X + e.X,
-                                            -p.DisplayRectangle.Y + e.Y);
-            MessageBox.Show(GridSpace.GetGridCoord(mouseLocation).ToString());
-        }
-
-        /*
          * GridPaint
          * 
          * Draw method for the level panel. Draws the background image and
@@ -115,36 +121,26 @@ namespace GravityLevelEditor
 
             mData.Level.Draw(g, offset);
 
+            Pen pen2 = new Pen(Color.FromArgb(55, Color.Blue));
+            
+            foreach(Entity selectedEntity in mData.SelectedEntities)
+                g.FillRectangle(pen2.Brush,GridSpace.GetDrawingRegion(selectedEntity.Location,offset));
+            
             for (int i = 0; i <= mData.Level.Size.X; i++)
             {
-                p1 = GridSpace.GetPixelCoord(new Point(i, 0));
-                p2 = GridSpace.GetPixelCoord(new Point(i, mData.Level.Size.Y));
+                p1 = GridSpace.GetDrawingCoord(new Point(i, 0));
+                p2 = GridSpace.GetDrawingCoord(new Point(i, mData.Level.Size.Y));
                 g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
             }
 
             for (int i = 0; i <= mData.Level.Size.Y; i++)
             {
-                p1 = GridSpace.GetPixelCoord(new Point(0, i));
-                p2 = GridSpace.GetPixelCoord(new Point(mData.Level.Size.X, i));
+                p1 = GridSpace.GetDrawingCoord(new Point(0, i));
+                p2 = GridSpace.GetDrawingCoord(new Point(mData.Level.Size.X, i));
                 g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
             }
-        }
-
-        /*
-         * UpdatePaint
-         * 
-         * Invalidate the level panel whenever we scroll it, forcing it
-         * to draw again.
-         * 
-         * object sender: the level panel.
-         * 
-         * ScrollEventArgs e: scroll event arguments.
-         */
-        private void UpdatePaint(object sender, ScrollEventArgs e)
-        {
-            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -219,6 +215,8 @@ namespace GravityLevelEditor
                 Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
                 sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
             }
+
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -242,6 +240,8 @@ namespace GravityLevelEditor
                 //TODO: Add pointer to Xml load code in Level.cs
                 mData.SelectedEntities.Clear();
             }
+
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -273,6 +273,7 @@ namespace GravityLevelEditor
         private void Undo(object sender, EventArgs e)
         {
             mData.Level.Undo();
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -287,6 +288,7 @@ namespace GravityLevelEditor
         private void Redo(object sender, EventArgs e)
         {
             mData.Level.Redo();
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -302,6 +304,7 @@ namespace GravityLevelEditor
         {
             mData.Level.Cut(mData.SelectedEntities);
             mData.SelectedEntities.Clear();
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -330,6 +333,7 @@ namespace GravityLevelEditor
         private void Paste(object sender, EventArgs e)
         {
             mData.Level.Paste();
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -343,7 +347,10 @@ namespace GravityLevelEditor
          */
         private void ZoomIn(object sender, EventArgs e)
         {
-            //TODO: Add zoom in code
+            GridSpace.ZoomIn();
+            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
+            sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -357,13 +364,16 @@ namespace GravityLevelEditor
          */
         private void ZoomOut(object sender, EventArgs e)
         {
-            //TODO: Add zoom out code
+            GridSpace.ZoomOut();
+            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
+            sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
+            sc_Properties.Panel1.Refresh();
         }
 
         private Point MousePosToGrid(Panel p, MouseEventArgs e)
         {
-            return new Point(-p.DisplayRectangle.X + e.X,
-                             -p.DisplayRectangle.Y + e.Y);
+            return GridSpace.GetScaledGridCoord(new Point(p.DisplayRectangle.X + e.X,
+                             p.DisplayRectangle.Y + e.Y));
         }
 
         /*
@@ -381,6 +391,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseDown(ref mData, MousePosToGrid(p, e));
             else if(e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseDown(ref mData, MousePosToGrid(p, e));
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -398,6 +409,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseUp(ref mData, MousePosToGrid(p, e));
             else if (e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseUp(ref mData, MousePosToGrid(p, e));
+            sc_Properties.Panel1.Refresh();
         }
 
         /*
@@ -411,7 +423,7 @@ namespace GravityLevelEditor
         private void GridMouseMove(object sender, MouseEventArgs e)
         {
             Panel p = (Panel)sender;
-            mCurrentTool.MouseMove(ref mData, MousePosToGrid(p, e));
+            mCurrentTool.MouseMove(ref mData, p, MousePosToGrid(p, e));
         }
 
         /*
@@ -463,6 +475,26 @@ namespace GravityLevelEditor
         private void RemoveTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_REMOVE;
+        }
+
+        private void UpdateGraphics(object sender, EventArgs e)
+        {
+            sc_Properties.Panel1.Refresh();
+        }
+
+        private void ChangeBackground(object sender, EventArgs e)
+        {
+            ImportForm imageSelectDialog = new ImportForm();
+            if(imageSelectDialog.ShowDialog() == DialogResult.OK)
+            {
+                pb_bg.Image = imageSelectDialog.SelectedImage;
+                float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
+                pb_bg.Width = 75;
+                pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
+
+                int xLoc = sc_PropertiesHorizontal.Panel2.Width / 2 - pb_bg.Width /2;
+                pb_bg.Location = new Point(xLoc,pb_bg.Location.Y);
+            }
         }
     }
 }
