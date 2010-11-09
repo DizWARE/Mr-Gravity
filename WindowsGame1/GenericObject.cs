@@ -19,8 +19,8 @@ namespace GravityShift
     /// </summary>
     class GenericObject : PhysicsObject
     {
-        public GenericObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction) : 
-            base(content, name, scalingFactors, initialPosition, ref environment,friction)
+        public GenericObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare) : 
+            base(content, name, scalingFactors, initialPosition, ref environment,friction, isSquare)
         {
 
         }

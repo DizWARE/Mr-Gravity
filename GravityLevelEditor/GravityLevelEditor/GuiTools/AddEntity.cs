@@ -14,13 +14,6 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseDown(ref EditorData data, System.Drawing.Point gridPosition)
         {
-            if (data.OnDeck == null) 
-            {
-                CreateEntity entityDialog = new CreateEntity();
-                if (entityDialog.ShowDialog() == DialogResult.OK)
-                    data.OnDeck = entityDialog.SelectedEntity;
-
-            }
         }
 
         public void LeftMouseUp(ref EditorData data, System.Drawing.Point gridPosition)

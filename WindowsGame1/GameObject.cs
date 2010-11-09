@@ -27,6 +27,8 @@ namespace GravityShift
         protected Texture2D mTexture;
         public Rectangle mBoundingBox;
 
+        public bool mIsSquare;
+
         protected String mName;
 
         /// <summary>
@@ -35,11 +37,14 @@ namespace GravityShift
         /// 1.0f = 0% friction
         /// </summary>
         public float mFriction;
+        // pixel perfect stuff
+        public Color[] mSpriteImageData;
 
-        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction)
+        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction, bool isSquare)
         {
             mName = name;
             mFriction = friction;
+            mIsSquare = isSquare;
             Load(content, name);
 
             mPosition = initialPosition;
@@ -93,7 +98,11 @@ namespace GravityShift
         /// <param name="name"></param>
         public virtual void Load(ContentManager content, String name)
         { 
-            mTexture = content.Load<Texture2D>(name); 
+            mTexture = content.Load<Texture2D>(name);
+            // pixel perfect stuff (may need to remove)
+            mSpriteImageData = new Color[mTexture.Width * mTexture.Height];
+            mTexture.GetData(mSpriteImageData);
+            //////////////////////////////////////
         }
 
         /// <summary>
