@@ -21,6 +21,13 @@ namespace GravityShift
         GraphicsDeviceManager mGraphics;
         SpriteBatch mSpriteBatch;
 
+        //Instance of the Menu class
+        Menu menu;
+
+        // Boolean to track whether we are in the game or the menu
+        private static bool inGame;
+        private static bool inMenu;
+
         //List of objects that comform to the game physics
         List<GameObject> mObjects;
 
@@ -56,8 +63,24 @@ namespace GravityShift
             mCurrentLevel = new Level();
             mPhysicsEnvironment = new PhysicsEnvironment();
 
+            menu = new Menu();
+            inMenu = true;
+            inGame = false;
+
             base.Initialize();
         }
+
+        public static bool InMenu
+        {
+            get { return inMenu; }
+            set { inMenu = value; }
+        }
+
+        public static bool InGame
+        {
+            get { return inGame; }
+            set { inGame = value; }
+        } 
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -65,6 +88,7 @@ namespace GravityShift
         /// </summary>
         protected override void LoadContent()
         {
+            menu.Load(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
             mCurrentLevel.Load(Content,1);
@@ -122,37 +146,41 @@ namespace GravityShift
         {
             KeyboardState keyboard = Keyboard.GetState();
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed 
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
                 || keyboard.IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            Random rand = new Random();
-            PhysicsEnvironment environment = new PhysicsEnvironment();
-            environment.TerminalSpeed = 20;
-            environment.GravityMagnitude = 1;
-            if (keyboard.IsKeyDown(Keys.N))
+            if (inGame)
             {
-                if (rand.Next() % 3 == 0)
-                    environment = mPhysicsEnvironment;
-                mObjects.Add(new GenericObject(Content, "Player",
-                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment,.8f,false));
-            }
-
-            foreach (GameObject gObject in mObjects)
-            {
-                if (gObject is PhysicsObject)
+                Random rand = new Random();
+                PhysicsEnvironment environment = new PhysicsEnvironment();
+                environment.TerminalSpeed = 20;
+                environment.GravityMagnitude = 1;
+                if (keyboard.IsKeyDown(Keys.N))
                 {
-                    PhysicsObject pObject = (PhysicsObject)gObject;
-                    pObject.Update(gameTime);
-                    // handle collision right after you move
-                    HandleCollisions(pObject);
-                    if (pObject is Player) ChangeValues((Player)pObject, keyboard);
-                    pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                    if (rand.Next() % 3 == 0)
+                        environment = mPhysicsEnvironment;
+                    mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment, .8f, false));
                 }
-            }
-            base.Update(gameTime);
-        }
 
+                foreach (GameObject gObject in mObjects)
+                {
+                    if (gObject is PhysicsObject)
+                    {
+                        PhysicsObject pObject = (PhysicsObject)gObject;
+                        pObject.Update(gameTime);
+                        // handle collision right after you move
+                        HandleCollisions(pObject);
+                        if (pObject is Player) ChangeValues((Player)pObject, keyboard);
+                        pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                    }
+                }
+                base.Update(gameTime);
+            }
+            else if (inMenu)
+                menu.Update(gameTime);
+        }
         /// <summary>
         /// TODO - REMOVE WHEN NO LONGER A DEMONSTRACTION (Demonstraction? HAHA!)
         /// </summary>
@@ -192,21 +220,25 @@ namespace GravityShift
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            mSpriteBatch.Begin();
-
-            //mCurrentLevel.Draw(mSpriteBatch);
-            foreach (GameObject gObject in mObjects)
+            if (inGame)
             {
-                gObject.Draw(mSpriteBatch, gameTime);
+                mSpriteBatch.Begin();
+
+                //mCurrentLevel.Draw(mSpriteBatch);
+                foreach (GameObject gObject in mObjects)
+                {
+                    gObject.Draw(mSpriteBatch, gameTime);
+                }
+
+                DrawHUD(gameTime);
+
+                mSpriteBatch.End();
+
+                base.Draw(gameTime);
             }
-
-            DrawHUD(gameTime);
-
-            mSpriteBatch.End();
-
-            base.Draw(gameTime);
+            else if (inMenu)
+                menu.Draw(mSpriteBatch, mGraphics);
         }
-
 
         /// <summary>
         /// TODO - ADD REAL HUD CODE
