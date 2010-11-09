@@ -105,40 +105,40 @@
             // mi_new
             // 
             this.mi_new.Name = "mi_new";
-            this.mi_new.Size = new System.Drawing.Size(103, 22);
+            this.mi_new.Size = new System.Drawing.Size(152, 22);
             this.mi_new.Text = "&New";
             this.mi_new.Click += new System.EventHandler(this.New);
             // 
             // mi_open
             // 
             this.mi_open.Name = "mi_open";
-            this.mi_open.Size = new System.Drawing.Size(103, 22);
+            this.mi_open.Size = new System.Drawing.Size(152, 22);
             this.mi_open.Text = "&Open";
             this.mi_open.Click += new System.EventHandler(this.Open);
             // 
             // mi_save
             // 
             this.mi_save.Name = "mi_save";
-            this.mi_save.Size = new System.Drawing.Size(103, 22);
+            this.mi_save.Size = new System.Drawing.Size(152, 22);
             this.mi_save.Text = "&Save";
             this.mi_save.Click += new System.EventHandler(this.Save);
             // 
             // ts_line2
             // 
             this.ts_line2.Name = "ts_line2";
-            this.ts_line2.Size = new System.Drawing.Size(100, 6);
+            this.ts_line2.Size = new System.Drawing.Size(149, 6);
             // 
             // mi_play
             // 
             this.mi_play.Name = "mi_play";
-            this.mi_play.Size = new System.Drawing.Size(103, 22);
+            this.mi_play.Size = new System.Drawing.Size(152, 22);
             this.mi_play.Text = "&Play!";
             this.mi_play.Click += new System.EventHandler(this.Play);
             // 
             // mi_quit
             // 
             this.mi_quit.Name = "mi_quit";
-            this.mi_quit.Size = new System.Drawing.Size(103, 22);
+            this.mi_quit.Size = new System.Drawing.Size(152, 22);
             this.mi_quit.Text = "&Quit";
             this.mi_quit.Click += new System.EventHandler(this.Quit);
             // 

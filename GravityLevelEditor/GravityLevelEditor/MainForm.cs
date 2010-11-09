@@ -276,7 +276,9 @@ namespace GravityLevelEditor
         {
             mData.Level.Save();
 
-            //TODO: Add code to launch game with sample level as a parameter
+            //TODO: Add code to launch game with sample level as a parameter.
+            //FORNOW: Open a dialog to show play functionality is not working.
+            MessageBox.Show("Coming Soon!");
         }
 
         /*
