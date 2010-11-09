@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 using GravityLevelEditor.GuiTools;
+using GravityLevelEditor.EntityCreationForm;
 
 namespace GravityLevelEditor
 {
@@ -140,6 +141,23 @@ namespace GravityLevelEditor
                 p2 = GridSpace.GetDrawingCoord(new Point(mData.Level.Size.X, i));
                 g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
+            }
+
+            if(TOOL_MULTISELECT.Selecting)
+            {
+                
+                Pen pen3 = new Pen(Color.FromArgb(100, Color.Black));
+                pen3.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+                pen3.Width = 5;
+
+                Point initial = TOOL_MULTISELECT.Initial;
+                Point current = TOOL_MULTISELECT.Previous;
+
+                Point topLeft = GridSpace.GetDrawingCoord(new Point(Math.Min(initial.X, current.X), Math.Min(initial.Y, current.Y)));
+                Point bottomRight = GridSpace.GetDrawingCoord(new Point(Math.Max(initial.X, current.X) + 1, Math.Max(initial.Y, current.Y) + 1));
+
+                g.DrawRectangle(pen3, 
+                    new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft)))));
             }
         }
 
@@ -382,6 +400,17 @@ namespace GravityLevelEditor
         }
 
         /*
+         * MousePosToGrid
+         * 
+         * Gets the converted version of the mouse position
+         */
+        private Point MousePosToGrid(Panel p, Point mousePos)
+        {
+            return GridSpace.GetScaledGridCoord(new Point(p.DisplayRectangle.X + mousePos.X,
+                             p.DisplayRectangle.Y + mousePos.Y));
+        }
+
+        /*
          * GridMouseDown
          * 
          * Invoked when user presses the left or right mouse buttons on the grid. Calls its
@@ -499,6 +528,21 @@ namespace GravityLevelEditor
 
                 int xLoc = sc_HorizontalProperties.Panel2.Width / 2 - pb_bg.Width / 2;
                 pb_bg.Location = new Point(xLoc,pb_bg.Location.Y);
+            }
+        }
+
+        private void ChangeEntity(object sender, EventArgs e)
+        {
+            CreateEntity entityDialog = new CreateEntity();
+            if (entityDialog.ShowDialog() == DialogResult.OK)
+            {
+                mData.OnDeck = entityDialog.SelectedEntity;
+                if(mData.OnDeck == null) return;
+                pb_Entity.Image = mData.OnDeck.Texture;
+                lbl_entityName.Text = mData.OnDeck.Name;
+                lbl_entityType.Text = mData.OnDeck.Type;
+                cb_entityPaintable.Checked = mData.OnDeck.Paintable;
+                cb_entityVisible.Checked = mData.OnDeck.Visible;
             }
         }
     }

@@ -68,6 +68,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.sc_Properties = new System.Windows.Forms.SplitContainer();
             this.sc_HorizontalProperties = new System.Windows.Forms.SplitContainer();
+            this.cb_entityVisible = new System.Windows.Forms.CheckBox();
+            this.cb_entityPaintable = new System.Windows.Forms.CheckBox();
+            this.lbl_entityType = new System.Windows.Forms.Label();
+            this.lbl_eTypeLabel = new System.Windows.Forms.Label();
+            this.lbl_entityName = new System.Windows.Forms.Label();
+            this.lbl_eNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.b_ChangeEntity = new System.Windows.Forms.Button();
             this.pb_Entity = new System.Windows.Forms.PictureBox();
@@ -82,6 +88,8 @@
             this.lbl_cols = new System.Windows.Forms.Label();
             this.tb_rows = new System.Windows.Forms.TextBox();
             this.time_updater = new System.Windows.Forms.Timer(this.components);
+            this.lbl_eVisibleLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.buttonContainer1.SuspendLayout();
             this.tsc_MainContainer.BottomToolStripPanel.SuspendLayout();
@@ -146,51 +154,51 @@
             // mi_new
             // 
             this.mi_new.Name = "mi_new";
-            this.mi_new.Size = new System.Drawing.Size(152, 26);
+            this.mi_new.Size = new System.Drawing.Size(134, 26);
             this.mi_new.Text = "&New";
             this.mi_new.Click += new System.EventHandler(this.New);
             // 
             // mi_open
             // 
             this.mi_open.Name = "mi_open";
-            this.mi_open.Size = new System.Drawing.Size(152, 26);
+            this.mi_open.Size = new System.Drawing.Size(134, 26);
             this.mi_open.Text = "&Open";
             this.mi_open.Click += new System.EventHandler(this.Open);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(131, 6);
             // 
             // mi_save
             // 
             this.mi_save.Name = "mi_save";
-            this.mi_save.Size = new System.Drawing.Size(152, 26);
+            this.mi_save.Size = new System.Drawing.Size(134, 26);
             this.mi_save.Text = "&Save";
             this.mi_save.Click += new System.EventHandler(this.Save);
             // 
             // mi_saveAs
             // 
             this.mi_saveAs.Name = "mi_saveAs";
-            this.mi_saveAs.Size = new System.Drawing.Size(152, 26);
+            this.mi_saveAs.Size = new System.Drawing.Size(134, 26);
             this.mi_saveAs.Text = "Save &As";
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(131, 6);
             // 
             // mi_play
             // 
             this.mi_play.Name = "mi_play";
-            this.mi_play.Size = new System.Drawing.Size(152, 26);
+            this.mi_play.Size = new System.Drawing.Size(134, 26);
             this.mi_play.Text = "&Play!";
             this.mi_play.Click += new System.EventHandler(this.Play);
             // 
             // mi_quit
             // 
             this.mi_quit.Name = "mi_quit";
-            this.mi_quit.Size = new System.Drawing.Size(152, 26);
+            this.mi_quit.Size = new System.Drawing.Size(134, 26);
             this.mi_quit.Text = "&Quit";
             this.mi_quit.Click += new System.EventHandler(this.Quit);
             // 
@@ -211,40 +219,40 @@
             // mi_undo
             // 
             this.mi_undo.Name = "mi_undo";
-            this.mi_undo.Size = new System.Drawing.Size(152, 26);
+            this.mi_undo.Size = new System.Drawing.Size(118, 26);
             this.mi_undo.Text = "&Undo";
             this.mi_undo.Click += new System.EventHandler(this.Undo);
             // 
             // mi_redo
             // 
             this.mi_redo.Name = "mi_redo";
-            this.mi_redo.Size = new System.Drawing.Size(152, 26);
+            this.mi_redo.Size = new System.Drawing.Size(118, 26);
             this.mi_redo.Text = "&Redo";
             this.mi_redo.Click += new System.EventHandler(this.Redo);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(115, 6);
             // 
             // mi_cut
             // 
             this.mi_cut.Name = "mi_cut";
-            this.mi_cut.Size = new System.Drawing.Size(152, 26);
+            this.mi_cut.Size = new System.Drawing.Size(118, 26);
             this.mi_cut.Text = "&Cut";
             this.mi_cut.Click += new System.EventHandler(this.Cut);
             // 
             // mi_copy
             // 
             this.mi_copy.Name = "mi_copy";
-            this.mi_copy.Size = new System.Drawing.Size(152, 26);
+            this.mi_copy.Size = new System.Drawing.Size(118, 26);
             this.mi_copy.Text = "C&opy";
             this.mi_copy.Click += new System.EventHandler(this.Copy);
             // 
             // mi_paste
             // 
             this.mi_paste.Name = "mi_paste";
-            this.mi_paste.Size = new System.Drawing.Size(152, 26);
+            this.mi_paste.Size = new System.Drawing.Size(118, 26);
             this.mi_paste.Text = "&Paste";
             this.mi_paste.Click += new System.EventHandler(this.Paste);
             // 
@@ -261,14 +269,14 @@
             // mi_zoomIn
             // 
             this.mi_zoomIn.Name = "mi_zoomIn";
-            this.mi_zoomIn.Size = new System.Drawing.Size(152, 26);
+            this.mi_zoomIn.Size = new System.Drawing.Size(151, 26);
             this.mi_zoomIn.Text = "Zoom &In";
             this.mi_zoomIn.Click += new System.EventHandler(this.ZoomIn);
             // 
             // mi_zoomOut
             // 
             this.mi_zoomOut.Name = "mi_zoomOut";
-            this.mi_zoomOut.Size = new System.Drawing.Size(152, 26);
+            this.mi_zoomOut.Size = new System.Drawing.Size(151, 26);
             this.mi_zoomOut.Text = "Zoom &Out";
             this.mi_zoomOut.Click += new System.EventHandler(this.ZoomOut);
             // 
@@ -462,6 +470,14 @@
             // 
             // sc_HorizontalProperties.Panel1
             // 
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.label2);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eVisibleLabel);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityVisible);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityPaintable);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_entityType);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eTypeLabel);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_entityName);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eNameLabel);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.label1);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.b_ChangeEntity);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.pb_Entity);
@@ -482,6 +498,70 @@
             this.sc_HorizontalProperties.SplitterDistance = 290;
             this.sc_HorizontalProperties.TabIndex = 0;
             // 
+            // cb_entityVisible
+            // 
+            this.cb_entityVisible.AutoSize = true;
+            this.cb_entityVisible.Enabled = false;
+            this.cb_entityVisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_entityVisible.Location = new System.Drawing.Point(124, 167);
+            this.cb_entityVisible.Name = "cb_entityVisible";
+            this.cb_entityVisible.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cb_entityVisible.Size = new System.Drawing.Size(15, 14);
+            this.cb_entityVisible.TabIndex = 8;
+            this.cb_entityVisible.UseVisualStyleBackColor = true;
+            // 
+            // cb_entityPaintable
+            // 
+            this.cb_entityPaintable.AutoSize = true;
+            this.cb_entityPaintable.Enabled = false;
+            this.cb_entityPaintable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_entityPaintable.Location = new System.Drawing.Point(124, 188);
+            this.cb_entityPaintable.Name = "cb_entityPaintable";
+            this.cb_entityPaintable.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cb_entityPaintable.Size = new System.Drawing.Size(15, 14);
+            this.cb_entityPaintable.TabIndex = 7;
+            this.cb_entityPaintable.UseVisualStyleBackColor = true;
+            // 
+            // lbl_entityType
+            // 
+            this.lbl_entityType.AutoSize = true;
+            this.lbl_entityType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_entityType.Location = new System.Drawing.Point(78, 143);
+            this.lbl_entityType.Name = "lbl_entityType";
+            this.lbl_entityType.Size = new System.Drawing.Size(95, 13);
+            this.lbl_entityType.TabIndex = 6;
+            this.lbl_entityType.Text = "No Entity Selected";
+            // 
+            // lbl_eTypeLabel
+            // 
+            this.lbl_eTypeLabel.AutoSize = true;
+            this.lbl_eTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eTypeLabel.Location = new System.Drawing.Point(35, 143);
+            this.lbl_eTypeLabel.Name = "lbl_eTypeLabel";
+            this.lbl_eTypeLabel.Size = new System.Drawing.Size(39, 13);
+            this.lbl_eTypeLabel.TabIndex = 5;
+            this.lbl_eTypeLabel.Text = "Type:";
+            // 
+            // lbl_entityName
+            // 
+            this.lbl_entityName.AutoSize = true;
+            this.lbl_entityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_entityName.Location = new System.Drawing.Point(78, 121);
+            this.lbl_entityName.Name = "lbl_entityName";
+            this.lbl_entityName.Size = new System.Drawing.Size(95, 13);
+            this.lbl_entityName.TabIndex = 4;
+            this.lbl_entityName.Text = "No Entity Selected";
+            // 
+            // lbl_eNameLabel
+            // 
+            this.lbl_eNameLabel.AutoSize = true;
+            this.lbl_eNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eNameLabel.Location = new System.Drawing.Point(35, 121);
+            this.lbl_eNameLabel.Name = "lbl_eNameLabel";
+            this.lbl_eNameLabel.Size = new System.Drawing.Size(43, 13);
+            this.lbl_eNameLabel.TabIndex = 3;
+            this.lbl_eNameLabel.Text = "Name:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -500,6 +580,7 @@
             this.b_ChangeEntity.TabIndex = 1;
             this.b_ChangeEntity.Text = "Change Entity";
             this.b_ChangeEntity.UseVisualStyleBackColor = true;
+            this.b_ChangeEntity.Click += new System.EventHandler(this.ChangeEntity);
             // 
             // pb_Entity
             // 
@@ -507,6 +588,7 @@
             this.pb_Entity.Location = new System.Drawing.Point(17, 36);
             this.pb_Entity.Name = "pb_Entity";
             this.pb_Entity.Size = new System.Drawing.Size(64, 64);
+            this.pb_Entity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_Entity.TabIndex = 0;
             this.pb_Entity.TabStop = false;
             // 
@@ -620,6 +702,26 @@
             // 
             this.time_updater.Interval = 1000;
             // 
+            // lbl_eVisibleLabel
+            // 
+            this.lbl_eVisibleLabel.AutoSize = true;
+            this.lbl_eVisibleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eVisibleLabel.Location = new System.Drawing.Point(35, 168);
+            this.lbl_eVisibleLabel.Name = "lbl_eVisibleLabel";
+            this.lbl_eVisibleLabel.Size = new System.Drawing.Size(48, 13);
+            this.lbl_eVisibleLabel.TabIndex = 9;
+            this.lbl_eVisibleLabel.Text = "Visible:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Paintable:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,6 +811,14 @@
         private System.Windows.Forms.Label lbl_cols;
         private System.Windows.Forms.TextBox tb_rows;
         private System.Windows.Forms.Timer time_updater;
+        private System.Windows.Forms.CheckBox cb_entityPaintable;
+        private System.Windows.Forms.Label lbl_entityType;
+        private System.Windows.Forms.Label lbl_eTypeLabel;
+        private System.Windows.Forms.Label lbl_entityName;
+        private System.Windows.Forms.Label lbl_eNameLabel;
+        private System.Windows.Forms.CheckBox cb_entityVisible;
+        private System.Windows.Forms.Label lbl_eVisibleLabel;
+        private System.Windows.Forms.Label label2;
 
     }
 }
