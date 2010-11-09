@@ -23,6 +23,7 @@ namespace GravityLevelEditor
         private static GuiTools.RemoveEntity TOOL_REMOVE = new GuiTools.RemoveEntity();
 
         ITool mCurrentTool = TOOL_SELECT;
+        bool didScroll = true;
 
         /*
          * TempGUI
@@ -126,7 +127,24 @@ namespace GravityLevelEditor
             
             foreach(Entity selectedEntity in mData.SelectedEntities)
                 g.FillRectangle(pen2.Brush,GridSpace.GetDrawingRegion(selectedEntity.Location,offset));
-            
+
+            if (TOOL_MULTISELECT.Selecting)
+            {
+
+                Pen pen3 = new Pen(Color.FromArgb(100, Color.Black));
+                pen3.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+                pen3.Width = 4;
+
+                Point initial = TOOL_MULTISELECT.Initial;
+                Point current = TOOL_MULTISELECT.Previous;
+
+                Point topLeft = GridSpace.GetDrawingCoord(new Point(Math.Min(initial.X, current.X), Math.Min(initial.Y, current.Y)));
+                Point bottomRight = GridSpace.GetDrawingCoord(new Point(Math.Max(initial.X, current.X) + 1, Math.Max(initial.Y, current.Y) + 1));
+
+                g.DrawRectangle(pen3,
+                    new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft)))));
+            }
+
             for (int i = 0; i <= mData.Level.Size.X; i++)
             {
                 p1 = GridSpace.GetDrawingCoord(new Point(i, 0));
@@ -141,23 +159,6 @@ namespace GravityLevelEditor
                 p2 = GridSpace.GetDrawingCoord(new Point(mData.Level.Size.X, i));
                 g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
-            }
-
-            if(TOOL_MULTISELECT.Selecting)
-            {
-                
-                Pen pen3 = new Pen(Color.FromArgb(100, Color.Black));
-                pen3.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                pen3.Width = 5;
-
-                Point initial = TOOL_MULTISELECT.Initial;
-                Point current = TOOL_MULTISELECT.Previous;
-
-                Point topLeft = GridSpace.GetDrawingCoord(new Point(Math.Min(initial.X, current.X), Math.Min(initial.Y, current.Y)));
-                Point bottomRight = GridSpace.GetDrawingCoord(new Point(Math.Max(initial.X, current.X) + 1, Math.Max(initial.Y, current.Y) + 1));
-
-                g.DrawRectangle(pen3, 
-                    new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft)))));
             }
         }
 
@@ -352,7 +353,14 @@ namespace GravityLevelEditor
          */
         private void Paste(object sender, EventArgs e)
         {
-            mData.Level.Paste();
+            mData.SelectedEntities.Clear();
+
+            ArrayList entities = mData.Level.Paste();
+
+            foreach (Entity entity in entities)
+                mData.SelectedEntities.Add(entity);
+
+            mData.Level.Copy(mData.SelectedEntities);
             sc_Properties.Panel1.Refresh();
         }
 
@@ -397,8 +405,8 @@ namespace GravityLevelEditor
          */
         private Point MousePosToGrid(Panel p, MouseEventArgs e)
         {
-            return GridSpace.GetScaledGridCoord(new Point(p.DisplayRectangle.X + e.X,
-                             p.DisplayRectangle.Y + e.Y));
+            return GridSpace.GetScaledGridCoord(new Point(-p.DisplayRectangle.X + e.X,
+                             -p.DisplayRectangle.Y + e.Y));
         }
 
         /*
@@ -408,8 +416,8 @@ namespace GravityLevelEditor
          */
         private Point MousePosToGrid(Panel p, Point mousePos)
         {
-            return GridSpace.GetScaledGridCoord(new Point(p.DisplayRectangle.X + mousePos.X,
-                             p.DisplayRectangle.Y + mousePos.Y));
+            return GridSpace.GetScaledGridCoord(new Point(-p.DisplayRectangle.X + mousePos.X,
+                             -p.DisplayRectangle.Y + mousePos.Y));
         }
 
         /*
@@ -459,7 +467,16 @@ namespace GravityLevelEditor
         private void GridMouseMove(object sender, MouseEventArgs e)
         {
             Panel p = (Panel)sender;
-            mCurrentTool.MouseMove(ref mData, p, MousePosToGrid(p, e));
+            Point mousePos = MousePosToGrid(p, e);
+
+            //if (!VerifyEntityLocation()) return; Work in progress
+            if ((mousePos.X >= mData.Level.Size.X || mousePos.Y >= mData.Level.Size.Y ||
+               mousePos.X < 0 || mousePos.Y < 0))
+            { tslbl_gridLoc.Text = "Out of Grid Bounds"; return; }
+
+            mCurrentTool.MouseMove(ref mData, p, mousePos);
+
+            tslbl_gridLoc.Text = mousePos.ToString();
         }
 
         /*
@@ -513,17 +530,14 @@ namespace GravityLevelEditor
             mCurrentTool = TOOL_REMOVE;
         }
 
-        private void UpdateGraphics(object sender, EventArgs e)
-        {
-
-        }
-
         private void ChangeBackground(object sender, EventArgs e)
         {
             ImportForm imageSelectDialog = new ImportForm();
             if(imageSelectDialog.ShowDialog() == DialogResult.OK)
             {
                 pb_bg.Image = imageSelectDialog.SelectedImage;
+                if (pb_bg.Image == null) return;
+
                 float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
                 pb_bg.Width = 75;
                 pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
@@ -546,6 +560,30 @@ namespace GravityLevelEditor
                 cb_entityPaintable.Checked = mData.OnDeck.Paintable;
                 cb_entityVisible.Checked = mData.OnDeck.Visible;
             }
+        }
+
+        private bool VerifyEntityLocation()
+        {
+            if (mData.SelectedEntities.Count == 0) return true;
+            Point maxPoint = ((Entity)mData.SelectedEntities[0]).Location;
+            Point minPoint = maxPoint;
+            foreach (Entity entity in mData.SelectedEntities)
+            {
+                maxPoint.X = Math.Max(maxPoint.X, entity.Location.X);
+                maxPoint.Y = Math.Max(maxPoint.Y, entity.Location.Y);
+                minPoint.X = Math.Min(minPoint.X, entity.Location.X);
+                minPoint.Y = Math.Min(minPoint.Y, entity.Location.Y);
+            }
+            if (maxPoint.X > mData.Level.Size.X || maxPoint.Y > mData.Level.Size.Y ||
+               minPoint.X < 0 || minPoint.Y < 0)
+                 return false;
+
+            return true;
+        }
+
+        private void GridScroll(object sender, ScrollEventArgs e)
+        {
+            didScroll = true;
         }
     }
 }

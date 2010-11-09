@@ -28,10 +28,10 @@ namespace GravityLevelEditor
         {
             get
             {
-                string filename = 
-                    imageLocation + "\\" + cb_folder.SelectedValue + "\\" + lb_images.SelectedItem;
-                Image selectedImage = Image.FromFile(filename);
-                selectedImage.Tag = filename;
+                if (cb_folder.SelectedValue == null || lb_images.SelectedItem == null) return null;
+                string filename = cb_folder.SelectedValue + "\\" + lb_images.SelectedItem;
+                Image selectedImage = Image.FromFile(imageLocation + "\\" + filename);
+                selectedImage.Tag = filename.Replace(".png","");
                 return selectedImage;
             }
         }
