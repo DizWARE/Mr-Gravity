@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -66,8 +66,10 @@
     </Compile>
     <Compile Include="GridSpace.cs" />
     <Compile Include="GuiTools\AddEntity.cs" />
+    <Compile Include="GuiTools\DepaintEntity.cs" />
     <Compile Include="GuiTools\ITool.cs" />
     <Compile Include="GuiTools\MultiSelect.cs" />
+    <Compile Include="GuiTools\PaintEntity.cs" />
     <Compile Include="GuiTools\RemoveEntity.cs" />
     <Compile Include="GuiTools\SingleSelect.cs" />
     <Compile Include="ImportForm.cs">
@@ -93,6 +95,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntityCreationForm\CreateEntity.resx">
       <DependentUpon>CreateEntity.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm.resx">
       <DependentUpon>ImportForm.cs</DependentUpon>

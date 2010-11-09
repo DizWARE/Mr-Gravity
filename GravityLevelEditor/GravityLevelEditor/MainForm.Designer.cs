@@ -384,6 +384,7 @@
             this.b_paint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.b_paint.Size = new System.Drawing.Size(48, 48);
             this.b_paint.Text = "Paint Entity";
+            this.b_paint.Click += new System.EventHandler(this.PaintTool);
             // 
             // b_depaint
             // 
@@ -395,6 +396,7 @@
             this.b_depaint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.b_depaint.Size = new System.Drawing.Size(48, 48);
             this.b_depaint.Text = "Unpaint Entity";
+            this.b_depaint.Click += new System.EventHandler(this.DepaintTool);
             // 
             // toolStripSeparator2
             // 
@@ -477,7 +479,7 @@
             this.sc_Properties.Panel2MinSize = 100;
             this.sc_Properties.Size = new System.Drawing.Size(1128, 611);
             this.sc_Properties.SplitterDistance = 906;
-            this.sc_Properties.TabIndex = 1;
+            this.sc_Properties.TabIndex = 0;
             // 
             // sc_HorizontalProperties
             // 
@@ -514,7 +516,7 @@
             this.sc_HorizontalProperties.Panel2.Controls.Add(this.tb_rows);
             this.sc_HorizontalProperties.Size = new System.Drawing.Size(215, 611);
             this.sc_HorizontalProperties.SplitterDistance = 290;
-            this.sc_HorizontalProperties.TabIndex = 0;
+            this.sc_HorizontalProperties.TabIndex = 1;
             // 
             // label2
             // 
@@ -545,7 +547,7 @@
             this.cb_entityVisible.Name = "cb_entityVisible";
             this.cb_entityVisible.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_entityVisible.Size = new System.Drawing.Size(15, 14);
-            this.cb_entityVisible.TabIndex = 8;
+            this.cb_entityVisible.TabIndex = 3;
             this.cb_entityVisible.UseVisualStyleBackColor = true;
             // 
             // cb_entityPaintable
@@ -557,7 +559,7 @@
             this.cb_entityPaintable.Name = "cb_entityPaintable";
             this.cb_entityPaintable.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_entityPaintable.Size = new System.Drawing.Size(15, 14);
-            this.cb_entityPaintable.TabIndex = 7;
+            this.cb_entityPaintable.TabIndex = 4;
             this.cb_entityPaintable.UseVisualStyleBackColor = true;
             // 
             // lbl_entityType
@@ -615,7 +617,7 @@
             this.b_ChangeEntity.Location = new System.Drawing.Point(97, 57);
             this.b_ChangeEntity.Name = "b_ChangeEntity";
             this.b_ChangeEntity.Size = new System.Drawing.Size(83, 27);
-            this.b_ChangeEntity.TabIndex = 1;
+            this.b_ChangeEntity.TabIndex = 2;
             this.b_ChangeEntity.Text = "Change Entity";
             this.b_ChangeEntity.UseVisualStyleBackColor = true;
             this.b_ChangeEntity.Click += new System.EventHandler(this.ChangeEntity);
@@ -636,7 +638,7 @@
             this.b_bg.Location = new System.Drawing.Point(33, 222);
             this.b_bg.Name = "b_bg";
             this.b_bg.Size = new System.Drawing.Size(143, 23);
-            this.b_bg.TabIndex = 22;
+            this.b_bg.TabIndex = 8;
             this.b_bg.Text = "Change Background";
             this.b_bg.UseVisualStyleBackColor = true;
             this.b_bg.Click += new System.EventHandler(this.ChangeBackground);
@@ -668,7 +670,7 @@
             this.tb_name.Location = new System.Drawing.Point(47, 57);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(113, 20);
-            this.tb_name.TabIndex = 20;
+            this.tb_name.TabIndex = 5;
             this.tb_name.Text = "New Level";
             // 
             // b_modifyLevel
@@ -677,7 +679,7 @@
             this.b_modifyLevel.Location = new System.Drawing.Point(64, 273);
             this.b_modifyLevel.Name = "b_modifyLevel";
             this.b_modifyLevel.Size = new System.Drawing.Size(75, 23);
-            this.b_modifyLevel.TabIndex = 13;
+            this.b_modifyLevel.TabIndex = 9;
             this.b_modifyLevel.Text = "Apply!";
             this.b_modifyLevel.UseVisualStyleBackColor = true;
             this.b_modifyLevel.Click += new System.EventHandler(this.ApplyChanges);
@@ -709,7 +711,7 @@
             this.tb_cols.MaxLength = 5;
             this.tb_cols.Name = "tb_cols";
             this.tb_cols.Size = new System.Drawing.Size(46, 20);
-            this.tb_cols.TabIndex = 18;
+            this.tb_cols.TabIndex = 7;
             this.tb_cols.Text = "10";
             this.tb_cols.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_cols.TextChanged += new System.EventHandler(this.ValidateSizeTextbox);
@@ -731,7 +733,7 @@
             this.tb_rows.MaxLength = 5;
             this.tb_rows.Name = "tb_rows";
             this.tb_rows.Size = new System.Drawing.Size(46, 20);
-            this.tb_rows.TabIndex = 17;
+            this.tb_rows.TabIndex = 6;
             this.tb_rows.Text = "10";
             this.tb_rows.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_rows.TextChanged += new System.EventHandler(this.ValidateSizeTextbox);
@@ -751,6 +753,7 @@
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quit);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.buttonContainer1.ResumeLayout(false);
