@@ -24,7 +24,7 @@ namespace GravityLevelEditor
         public string Name { get { return mName; } set { mName = value; } }
 
         private Point mSize;
-        public Point Size { get { return mSize; }}
+        public Point Size { get { return mSize; } set { mSize = value; } }
         //TODO - Anchor for modifying level size
 
         private Color mColor;
@@ -323,6 +323,55 @@ namespace GravityLevelEditor
         }
 
         //TODO - Add Load/Save functions
+
+        public void Load(string filename)
+        {
+
+            string currentDirectory = Directory.GetCurrentDirectory();
+            if (currentDirectory.EndsWith("bin\\Debug"))
+            {
+                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
+                if (trimLoc >= 0)
+                {
+                    currentDirectory = currentDirectory.Substring(0, trimLoc);
+                }
+            }
+
+            XElement xLevel = XElement.Load(filename);
+
+            foreach (XElement el in xLevel.Elements())
+            {
+                if (el.Name == "Name")
+                {
+                    this.Name = el.Name.ToString();
+                }
+                if (el.Name == "Size")
+                {
+                    Point xSize = new Point(Convert.ToInt32(el.Attribute("X").Value.ToString()), Convert.ToInt32(el.Attribute("Y").Value.ToString()));
+                    this.Size = xSize;
+
+                }
+                if (el.Name == "Background")
+                {
+                    this.Background = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
+                }
+                if (el.Name == "Color")
+                {
+                    this.Color = Color.FromName(el.Name.ToString());
+                }
+                if (el.Name == "Entities")
+                {
+
+                    mEntities.Clear();
+
+                    foreach (XElement entity in el.Elements())
+                    {
+                        mEntities.Add(new Entity(entity));
+                    }
+                }
+            }
+
+        }
 
         public void Save()
         {
