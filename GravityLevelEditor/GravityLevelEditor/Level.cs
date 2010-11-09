@@ -59,7 +59,61 @@ namespace GravityLevelEditor
             mBackground = background;
         }
 
-        //TODO - Add constructor for loading a level from an Xml file
+        /*
+         * Level
+         * 
+         * Constructor for a level from a given XML file.
+         * 
+         * string filename: the XML file to load the level from.
+         */
+        public Level(string filename)
+        {
+
+            string currentDirectory = Directory.GetCurrentDirectory();
+            if (currentDirectory.EndsWith("bin\\Debug"))
+            {
+                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
+                if (trimLoc >= 0)
+                {
+                    currentDirectory = currentDirectory.Substring(0, trimLoc);
+                }
+            }
+
+            XElement xLevel = XElement.Load(filename);
+
+            foreach (XElement el in xLevel.Elements())
+            {
+                if (el.Name == "Name")
+                {
+                    this.Name = el.Name.ToString();
+                }
+                if (el.Name == "Size")
+                {
+                    Point xSize = new Point(Convert.ToInt32(el.Attribute("X").Value.ToString()), Convert.ToInt32(el.Attribute("Y").Value.ToString()));
+                    this.Size = xSize;
+
+                }
+                if (el.Name == "Background")
+                {
+                    this.Background = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
+                }
+                if (el.Name == "Color")
+                {
+                    this.Color = Color.FromName(el.Name.ToString());
+                }
+                if (el.Name == "Entities")
+                {
+
+                    mEntities.Clear();
+
+                    foreach (XElement entity in el.Elements())
+                    {
+                        mEntities.Add(new Entity(entity));
+                    }
+                }
+            }
+
+        }
 
         /*
          * AddEntity
@@ -324,57 +378,14 @@ namespace GravityLevelEditor
             return selected;
         }
 
-        //TODO - Add Load/Save functions
-
-        public void Load(string filename)
-        {
-
-            string currentDirectory = Directory.GetCurrentDirectory();
-            if (currentDirectory.EndsWith("bin\\Debug"))
-            {
-                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
-                if (trimLoc >= 0)
-                {
-                    currentDirectory = currentDirectory.Substring(0, trimLoc);
-                }
-            }
-
-            XElement xLevel = XElement.Load(filename);
-
-            foreach (XElement el in xLevel.Elements())
-            {
-                if (el.Name == "Name")
-                {
-                    this.Name = el.Name.ToString();
-                }
-                if (el.Name == "Size")
-                {
-                    Point xSize = new Point(Convert.ToInt32(el.Attribute("X").Value.ToString()), Convert.ToInt32(el.Attribute("Y").Value.ToString()));
-                    this.Size = xSize;
-
-                }
-                if (el.Name == "Background")
-                {
-                    this.Background = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
-                }
-                if (el.Name == "Color")
-                {
-                    this.Color = Color.FromName(el.Name.ToString());
-                }
-                if (el.Name == "Entities")
-                {
-
-                    mEntities.Clear();
-
-                    foreach (XElement entity in el.Elements())
-                    {
-                        mEntities.Add(new Entity(entity));
-                    }
-                }
-            }
-
-        }
-
+        /*
+         * Save
+         * 
+         * Saves the current level as an serialized XML Document into the folder
+         * .../Levels/.  The name of the file is given by the name variable stored
+         * in this level as <name>.xml.
+         * 
+         */
         public void Save()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
