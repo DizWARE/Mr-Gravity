@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -151,8 +151,10 @@
     <Content Include="Content\defaultImage.png" />
     <Content Include="Content\addentity.png" />
     <Content Include="Content\depaint.png" />
+    <Content Include="Content\multi.png" />
     <Content Include="Content\multiselect.png" />
     <Content Include="Content\paint.png" />
+    <Content Include="Content\remove.png" />
     <Content Include="Content\removeentity.png" />
     <Content Include="Content\select.png" />
   </ItemGroup>

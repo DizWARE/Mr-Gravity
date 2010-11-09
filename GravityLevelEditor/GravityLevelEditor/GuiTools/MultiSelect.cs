@@ -9,9 +9,14 @@ namespace GravityLevelEditor.GuiTools
 {
     class MultiSelect:ITool
     {
-        Point mInitial;
-        Point mPrevious;
-        bool mouseDown = false;
+        private Point mPrevious;
+        public Point Previous { get { return mPrevious; } }
+
+        private Point mInitial;
+        public Point Initial { get { return mInitial; } }
+        
+        private bool mouseDown = false;
+        public bool Selecting { get { return mouseDown; } }
 
         #region ITool Members
 

@@ -17,11 +17,12 @@ namespace GravityLevelEditor
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
+            Application.EnableVisualStyles();
             //Application.Run(new Textures());
-            Application.Run(new TempGUI());
+            //Application.Run(new TempGUI());
             //Application.Run(new CreateEntity());
-            //Application.Run(new MainForm());
+            Application.Run(new MainForm());
         }
     }
 }

@@ -72,37 +72,39 @@ namespace GravityShift
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
             player = new Player(Content, "Player",
-                new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), 
-                ref mPhysicsEnvironment, new KeyboardControl(),.8f);
+                new Vector2(1, 1), new Vector2(300,100), 
+                ref mPhysicsEnvironment, new KeyboardControl(),.8f,false);
             mObjects.Add(player);
 
-            MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f);
-            mObjects.Add(movTile);
+            //MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f,true);
+            //mObjects.Add(movTile);
+
+            Tile tile1 = new Tile(Content, "Tile", Vector2.One, new Vector2(300, 300), .8f, true);
+            mObjects.Add(tile1);
             // create floor
             for (int i = 0; i < 20; i++)
             {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(i*64, 704), .8f);
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(i*64, 704), .8f,true);
                 mObjects.Add(tile);
             }
             // create left wall
             for (int i = 0; i < 11; i++)
             {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(0, i*64), .8f);
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(0, i*64), .8f,true);
                 mObjects.Add(tile);
             }
             // create right wall
             for (int i = 0; i < 10; i++)
             {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(1216,64+ i * 64), .8f);
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(1216,64+ i * 64), .8f,true);
                 mObjects.Add(tile);
             }
             // create top
             for (int i = 0; i < 19; i++)
             {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f);
+                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f,true);
                 mObjects.Add(tile);
             }
-
     }
 
         /// <summary>
@@ -133,7 +135,7 @@ namespace GravityShift
                 if (rand.Next() % 3 == 0)
                     environment = mPhysicsEnvironment;
                 mObjects.Add(new GenericObject(Content, "Player",
-                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment,.8f));
+                        new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment,.8f,false));
             }
 
             foreach (GameObject gObject in mObjects)
@@ -256,16 +258,43 @@ namespace GravityShift
         /// <summary>
         /// Checks to see if given object is colliding with any other object and handles the collision
         /// </summary>
-        /// <param name="PhysicsObject"></param>
+        /// <param name="physObj">object to see if anything is colliding with it</param>
         private void HandleCollisions(PhysicsObject physObj)
         {
-            // handle collisions for each physics object
-            foreach (GameObject obj in mObjects)
+            if (physObj.mIsSquare)
             {
-                if (physObj.IsColliding(obj))
+                // handle collisions for each physics object
+                foreach (GameObject obj in mObjects)
                 {
-                    physObj.HandleCollideBox(obj);
+                    if (obj.mIsSquare)// square/square collision
+                    {
+                        physObj.HandleCollideBoxAndBox(obj);
+                    }
+                    else//square/ circle collision
+                    {
+                        if (obj is PhysicsObject)
+                        {
+                            PhysicsObject physTemp = (PhysicsObject)obj;
+                            physTemp.HandleCollideCircleAndBox(physObj);
+                        }
+                    }
                 }
+            }
+            else// circle
+            {
+                // handle collisions for each physics object
+                foreach (GameObject obj in mObjects)
+                {
+                    if (obj.mIsSquare)// circle/square collision
+                    {
+                        physObj.HandleCollideCircleAndBox(obj);
+                    }
+                    else// circle/circle collision
+                    {
+                        physObj.HandleCollideCircleAndCircle(obj);
+                    }
+                }
+
             }
         }
     }

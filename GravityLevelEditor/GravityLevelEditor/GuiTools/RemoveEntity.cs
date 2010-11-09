@@ -22,9 +22,10 @@ namespace GravityLevelEditor.GuiTools
 
             try
             {
-                topEntity.Add(data.Level.SelectEntity(gridPosition));
-                data.SelectedEntities.Remove(topEntity[0]);
-                data.Level.RemoveEntity(topEntity);
+                if (data.SelectedEntities.Count == 0)
+                    data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+                data.Level.RemoveEntity(data.SelectedEntities);
+                data.SelectedEntities.Clear();
             }
             catch (Exception e)
             {

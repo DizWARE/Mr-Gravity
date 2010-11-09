@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -55,24 +56,40 @@
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.buttonContainer1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.tsc_MainContainer = new System.Windows.Forms.ToolStripContainer();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.sc_Properties = new System.Windows.Forms.SplitContainer();
-            this.sc_HorizontalProperties = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.b_ChangePicture = new System.Windows.Forms.Button();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.l_LevelProperties = new System.Windows.Forms.Label();
-            this.propertyGrid2 = new System.Windows.Forms.PropertyGrid();
-            this.pb_Entity = new System.Windows.Forms.PictureBox();
             this.b_select = new System.Windows.Forms.ToolStripButton();
             this.b_multiselect = new System.Windows.Forms.ToolStripButton();
             this.b_addentity = new System.Windows.Forms.ToolStripButton();
             this.b_removeentity = new System.Windows.Forms.ToolStripButton();
             this.b_paint = new System.Windows.Forms.ToolStripButton();
             this.b_depaint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
+            this.tsc_MainContainer = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.sc_Properties = new System.Windows.Forms.SplitContainer();
+            this.sc_HorizontalProperties = new System.Windows.Forms.SplitContainer();
+            this.cb_entityVisible = new System.Windows.Forms.CheckBox();
+            this.cb_entityPaintable = new System.Windows.Forms.CheckBox();
+            this.lbl_entityType = new System.Windows.Forms.Label();
+            this.lbl_eTypeLabel = new System.Windows.Forms.Label();
+            this.lbl_entityName = new System.Windows.Forms.Label();
+            this.lbl_eNameLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.b_ChangeEntity = new System.Windows.Forms.Button();
+            this.pb_Entity = new System.Windows.Forms.PictureBox();
+            this.b_bg = new System.Windows.Forms.Button();
+            this.l_LevelProperties = new System.Windows.Forms.Label();
+            this.pb_bg = new System.Windows.Forms.PictureBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.b_modifyLevel = new System.Windows.Forms.Button();
+            this.lbl_levelName = new System.Windows.Forms.Label();
+            this.lbl_rows = new System.Windows.Forms.Label();
+            this.tb_cols = new System.Windows.Forms.TextBox();
+            this.lbl_cols = new System.Windows.Forms.Label();
+            this.tb_rows = new System.Windows.Forms.TextBox();
+            this.time_updater = new System.Windows.Forms.Timer(this.components);
+            this.lbl_eVisibleLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.buttonContainer1.SuspendLayout();
             this.tsc_MainContainer.BottomToolStripPanel.SuspendLayout();
@@ -85,6 +102,7 @@
             this.sc_HorizontalProperties.Panel2.SuspendLayout();
             this.sc_HorizontalProperties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Entity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).BeginInit();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -116,7 +134,6 @@
             this.menu.Size = new System.Drawing.Size(1184, 29);
             this.menu.TabIndex = 0;
             this.menu.Text = "Menu";
-            this.menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menu_ItemClicked);
             // 
             // mi_file
             // 
@@ -139,12 +156,14 @@
             this.mi_new.Name = "mi_new";
             this.mi_new.Size = new System.Drawing.Size(134, 26);
             this.mi_new.Text = "&New";
+            this.mi_new.Click += new System.EventHandler(this.New);
             // 
             // mi_open
             // 
             this.mi_open.Name = "mi_open";
             this.mi_open.Size = new System.Drawing.Size(134, 26);
             this.mi_open.Text = "&Open";
+            this.mi_open.Click += new System.EventHandler(this.Open);
             // 
             // closeToolStripMenuItem
             // 
@@ -156,6 +175,7 @@
             this.mi_save.Name = "mi_save";
             this.mi_save.Size = new System.Drawing.Size(134, 26);
             this.mi_save.Text = "&Save";
+            this.mi_save.Click += new System.EventHandler(this.Save);
             // 
             // mi_saveAs
             // 
@@ -173,12 +193,14 @@
             this.mi_play.Name = "mi_play";
             this.mi_play.Size = new System.Drawing.Size(134, 26);
             this.mi_play.Text = "&Play!";
+            this.mi_play.Click += new System.EventHandler(this.Play);
             // 
             // mi_quit
             // 
             this.mi_quit.Name = "mi_quit";
             this.mi_quit.Size = new System.Drawing.Size(134, 26);
             this.mi_quit.Text = "&Quit";
+            this.mi_quit.Click += new System.EventHandler(this.Quit);
             // 
             // mi_edit
             // 
@@ -199,12 +221,14 @@
             this.mi_undo.Name = "mi_undo";
             this.mi_undo.Size = new System.Drawing.Size(118, 26);
             this.mi_undo.Text = "&Undo";
+            this.mi_undo.Click += new System.EventHandler(this.Undo);
             // 
             // mi_redo
             // 
             this.mi_redo.Name = "mi_redo";
             this.mi_redo.Size = new System.Drawing.Size(118, 26);
             this.mi_redo.Text = "&Redo";
+            this.mi_redo.Click += new System.EventHandler(this.Redo);
             // 
             // toolStripMenuItem1
             // 
@@ -216,18 +240,21 @@
             this.mi_cut.Name = "mi_cut";
             this.mi_cut.Size = new System.Drawing.Size(118, 26);
             this.mi_cut.Text = "&Cut";
+            this.mi_cut.Click += new System.EventHandler(this.Cut);
             // 
             // mi_copy
             // 
             this.mi_copy.Name = "mi_copy";
             this.mi_copy.Size = new System.Drawing.Size(118, 26);
             this.mi_copy.Text = "C&opy";
+            this.mi_copy.Click += new System.EventHandler(this.Copy);
             // 
             // mi_paste
             // 
             this.mi_paste.Name = "mi_paste";
             this.mi_paste.Size = new System.Drawing.Size(118, 26);
             this.mi_paste.Text = "&Paste";
+            this.mi_paste.Click += new System.EventHandler(this.Paste);
             // 
             // mi_view
             // 
@@ -244,12 +271,14 @@
             this.mi_zoomIn.Name = "mi_zoomIn";
             this.mi_zoomIn.Size = new System.Drawing.Size(151, 26);
             this.mi_zoomIn.Text = "Zoom &In";
+            this.mi_zoomIn.Click += new System.EventHandler(this.ZoomIn);
             // 
             // mi_zoomOut
             // 
             this.mi_zoomOut.Name = "mi_zoomOut";
             this.mi_zoomOut.Size = new System.Drawing.Size(151, 26);
             this.mi_zoomOut.Text = "Zoom &Out";
+            this.mi_zoomOut.Click += new System.EventHandler(this.ZoomOut);
             // 
             // RightToolStripPanel
             // 
@@ -288,12 +317,81 @@
             this.buttonContainer1.Name = "buttonContainer1";
             this.buttonContainer1.Size = new System.Drawing.Size(56, 611);
             this.buttonContainer1.TabIndex = 0;
-            this.buttonContainer1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.buttonContainer1_ItemClicked);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(54, 6);
+            // 
+            // b_select
+            // 
+            this.b_select.AutoSize = false;
+            this.b_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.b_select.Image = global::GravityLevelEditor.Properties.Resources.select;
+            this.b_select.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.b_select.Name = "b_select";
+            this.b_select.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.b_select.Size = new System.Drawing.Size(48, 48);
+            this.b_select.Text = "Select/Move";
+            this.b_select.Click += new System.EventHandler(this.SelectTool);
+            // 
+            // b_multiselect
+            // 
+            this.b_multiselect.AutoSize = false;
+            this.b_multiselect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.b_multiselect.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
+            this.b_multiselect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.b_multiselect.Name = "b_multiselect";
+            this.b_multiselect.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.b_multiselect.Size = new System.Drawing.Size(48, 48);
+            this.b_multiselect.Text = "Multi-Select";
+            this.b_multiselect.Click += new System.EventHandler(this.MultiSelectTool);
+            // 
+            // b_addentity
+            // 
+            this.b_addentity.AutoSize = false;
+            this.b_addentity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.b_addentity.Image = global::GravityLevelEditor.Properties.Resources.addentity;
+            this.b_addentity.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.b_addentity.Name = "b_addentity";
+            this.b_addentity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.b_addentity.Size = new System.Drawing.Size(48, 48);
+            this.b_addentity.Text = "Add Entity";
+            this.b_addentity.Click += new System.EventHandler(this.AddTool);
+            // 
+            // b_removeentity
+            // 
+            this.b_removeentity.AutoSize = false;
+            this.b_removeentity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.b_removeentity.Image = global::GravityLevelEditor.Properties.Resources.removeentity;
+            this.b_removeentity.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.b_removeentity.Name = "b_removeentity";
+            this.b_removeentity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.b_removeentity.Size = new System.Drawing.Size(48, 48);
+            this.b_removeentity.Text = "Remove Entity";
+            this.b_removeentity.Click += new System.EventHandler(this.RemoveTool);
+            // 
+            // b_paint
+            // 
+            this.b_paint.AutoSize = false;
+            this.b_paint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.b_paint.Image = global::GravityLevelEditor.Properties.Resources.paint;
+            this.b_paint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.b_paint.Name = "b_paint";
+            this.b_paint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.b_paint.Size = new System.Drawing.Size(48, 48);
+            this.b_paint.Text = "Paint Entity";
+            // 
+            // b_depaint
+            // 
+            this.b_depaint.AutoSize = false;
+            this.b_depaint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.b_depaint.Image = global::GravityLevelEditor.Properties.Resources.depaint;
+            this.b_depaint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.b_depaint.Name = "b_depaint";
+            this.b_depaint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.b_depaint.Size = new System.Drawing.Size(48, 48);
+            this.b_depaint.Text = "Unpaint Entity";
             // 
             // toolStripSeparator2
             // 
@@ -348,6 +446,10 @@
             // sc_Properties.Panel1
             // 
             this.sc_Properties.Panel1.AutoScroll = true;
+            this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
+            this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
+            this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
+            this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             this.sc_Properties.Panel1MinSize = 100;
             // 
             // sc_Properties.Panel2
@@ -368,18 +470,97 @@
             // 
             // sc_HorizontalProperties.Panel1
             // 
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.label2);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eVisibleLabel);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityVisible);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityPaintable);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_entityType);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eTypeLabel);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_entityName);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eNameLabel);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.label1);
-            this.sc_HorizontalProperties.Panel1.Controls.Add(this.b_ChangePicture);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.b_ChangeEntity);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.pb_Entity);
-            this.sc_HorizontalProperties.Panel1.Controls.Add(this.propertyGrid1);
             // 
             // sc_HorizontalProperties.Panel2
             // 
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.b_bg);
             this.sc_HorizontalProperties.Panel2.Controls.Add(this.l_LevelProperties);
-            this.sc_HorizontalProperties.Panel2.Controls.Add(this.propertyGrid2);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.pb_bg);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.tb_name);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.b_modifyLevel);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.lbl_levelName);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.lbl_rows);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.tb_cols);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.lbl_cols);
+            this.sc_HorizontalProperties.Panel2.Controls.Add(this.tb_rows);
             this.sc_HorizontalProperties.Size = new System.Drawing.Size(215, 611);
-            this.sc_HorizontalProperties.SplitterDistance = 339;
+            this.sc_HorizontalProperties.SplitterDistance = 290;
             this.sc_HorizontalProperties.TabIndex = 0;
+            // 
+            // cb_entityVisible
+            // 
+            this.cb_entityVisible.AutoSize = true;
+            this.cb_entityVisible.Enabled = false;
+            this.cb_entityVisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_entityVisible.Location = new System.Drawing.Point(124, 167);
+            this.cb_entityVisible.Name = "cb_entityVisible";
+            this.cb_entityVisible.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cb_entityVisible.Size = new System.Drawing.Size(15, 14);
+            this.cb_entityVisible.TabIndex = 8;
+            this.cb_entityVisible.UseVisualStyleBackColor = true;
+            // 
+            // cb_entityPaintable
+            // 
+            this.cb_entityPaintable.AutoSize = true;
+            this.cb_entityPaintable.Enabled = false;
+            this.cb_entityPaintable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_entityPaintable.Location = new System.Drawing.Point(124, 188);
+            this.cb_entityPaintable.Name = "cb_entityPaintable";
+            this.cb_entityPaintable.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cb_entityPaintable.Size = new System.Drawing.Size(15, 14);
+            this.cb_entityPaintable.TabIndex = 7;
+            this.cb_entityPaintable.UseVisualStyleBackColor = true;
+            // 
+            // lbl_entityType
+            // 
+            this.lbl_entityType.AutoSize = true;
+            this.lbl_entityType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_entityType.Location = new System.Drawing.Point(78, 143);
+            this.lbl_entityType.Name = "lbl_entityType";
+            this.lbl_entityType.Size = new System.Drawing.Size(95, 13);
+            this.lbl_entityType.TabIndex = 6;
+            this.lbl_entityType.Text = "No Entity Selected";
+            // 
+            // lbl_eTypeLabel
+            // 
+            this.lbl_eTypeLabel.AutoSize = true;
+            this.lbl_eTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eTypeLabel.Location = new System.Drawing.Point(35, 143);
+            this.lbl_eTypeLabel.Name = "lbl_eTypeLabel";
+            this.lbl_eTypeLabel.Size = new System.Drawing.Size(39, 13);
+            this.lbl_eTypeLabel.TabIndex = 5;
+            this.lbl_eTypeLabel.Text = "Type:";
+            // 
+            // lbl_entityName
+            // 
+            this.lbl_entityName.AutoSize = true;
+            this.lbl_entityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_entityName.Location = new System.Drawing.Point(78, 121);
+            this.lbl_entityName.Name = "lbl_entityName";
+            this.lbl_entityName.Size = new System.Drawing.Size(95, 13);
+            this.lbl_entityName.TabIndex = 4;
+            this.lbl_entityName.Text = "No Entity Selected";
+            // 
+            // lbl_eNameLabel
+            // 
+            this.lbl_eNameLabel.AutoSize = true;
+            this.lbl_eNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eNameLabel.Location = new System.Drawing.Point(35, 121);
+            this.lbl_eNameLabel.Name = "lbl_eNameLabel";
+            this.lbl_eNameLabel.Size = new System.Drawing.Size(43, 13);
+            this.lbl_eNameLabel.TabIndex = 3;
+            this.lbl_eNameLabel.Text = "Name:";
             // 
             // label1
             // 
@@ -391,21 +572,36 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Entity Properties";
             // 
-            // b_ChangePicture
+            // b_ChangeEntity
             // 
-            this.b_ChangePicture.Location = new System.Drawing.Point(143, 129);
-            this.b_ChangePicture.Name = "b_ChangePicture";
-            this.b_ChangePicture.Size = new System.Drawing.Size(60, 27);
-            this.b_ChangePicture.TabIndex = 1;
-            this.b_ChangePicture.Text = "Browse...";
-            this.b_ChangePicture.UseVisualStyleBackColor = true;
+            this.b_ChangeEntity.Location = new System.Drawing.Point(97, 57);
+            this.b_ChangeEntity.Name = "b_ChangeEntity";
+            this.b_ChangeEntity.Size = new System.Drawing.Size(83, 27);
+            this.b_ChangeEntity.TabIndex = 1;
+            this.b_ChangeEntity.Text = "Change Entity";
+            this.b_ChangeEntity.UseVisualStyleBackColor = true;
+            this.b_ChangeEntity.Click += new System.EventHandler(this.ChangeEntity);
             // 
-            // propertyGrid1
+            // pb_Entity
             // 
-            this.propertyGrid1.Location = new System.Drawing.Point(3, 162);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(209, 171);
-            this.propertyGrid1.TabIndex = 0;
+            this.pb_Entity.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pb_Entity.Location = new System.Drawing.Point(17, 36);
+            this.pb_Entity.Name = "pb_Entity";
+            this.pb_Entity.Size = new System.Drawing.Size(64, 64);
+            this.pb_Entity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Entity.TabIndex = 0;
+            this.pb_Entity.TabStop = false;
+            // 
+            // b_bg
+            // 
+            this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.b_bg.Location = new System.Drawing.Point(33, 222);
+            this.b_bg.Name = "b_bg";
+            this.b_bg.Size = new System.Drawing.Size(143, 23);
+            this.b_bg.TabIndex = 22;
+            this.b_bg.Text = "Change Background";
+            this.b_bg.UseVisualStyleBackColor = true;
+            this.b_bg.Click += new System.EventHandler(this.ChangeBackground);
             // 
             // l_LevelProperties
             // 
@@ -417,88 +613,114 @@
             this.l_LevelProperties.TabIndex = 1;
             this.l_LevelProperties.Text = "Level Properties";
             // 
-            // propertyGrid2
+            // pb_bg
             // 
-            this.propertyGrid2.Location = new System.Drawing.Point(3, 36);
-            this.propertyGrid2.Name = "propertyGrid2";
-            this.propertyGrid2.Size = new System.Drawing.Size(209, 229);
-            this.propertyGrid2.TabIndex = 0;
+            this.pb_bg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pb_bg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_bg.Location = new System.Drawing.Point(29, 133);
+            this.pb_bg.Name = "pb_bg";
+            this.pb_bg.Size = new System.Drawing.Size(151, 83);
+            this.pb_bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_bg.TabIndex = 21;
+            this.pb_bg.TabStop = false;
             // 
-            // pb_Entity
+            // tb_name
             // 
-            this.pb_Entity.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pb_Entity.Location = new System.Drawing.Point(17, 36);
-            this.pb_Entity.Name = "pb_Entity";
-            this.pb_Entity.Size = new System.Drawing.Size(120, 120);
-            this.pb_Entity.TabIndex = 0;
-            this.pb_Entity.TabStop = false;
+            this.tb_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_name.Location = new System.Drawing.Point(47, 57);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(113, 20);
+            this.tb_name.TabIndex = 20;
+            this.tb_name.Text = "New Level";
             // 
-            // b_select
+            // b_modifyLevel
             // 
-            this.b_select.AutoSize = false;
-            this.b_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.b_select.Image = global::GravityLevelEditor.Properties.Resources.select;
-            this.b_select.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.b_select.Name = "b_select";
-            this.b_select.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.b_select.Size = new System.Drawing.Size(48, 48);
-            this.b_select.Text = "Select";
+            this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.b_modifyLevel.Location = new System.Drawing.Point(64, 273);
+            this.b_modifyLevel.Name = "b_modifyLevel";
+            this.b_modifyLevel.Size = new System.Drawing.Size(75, 23);
+            this.b_modifyLevel.TabIndex = 13;
+            this.b_modifyLevel.Text = "Apply!";
+            this.b_modifyLevel.UseVisualStyleBackColor = true;
+            this.b_modifyLevel.Click += new System.EventHandler(this.ApplyChanges);
             // 
-            // b_multiselect
+            // lbl_levelName
             // 
-            this.b_multiselect.AutoSize = false;
-            this.b_multiselect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.b_multiselect.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
-            this.b_multiselect.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.b_multiselect.Name = "b_multiselect";
-            this.b_multiselect.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.b_multiselect.Size = new System.Drawing.Size(48, 48);
-            this.b_multiselect.Text = "Multi-Select";
+            this.lbl_levelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_levelName.AutoSize = true;
+            this.lbl_levelName.Location = new System.Drawing.Point(44, 41);
+            this.lbl_levelName.Name = "lbl_levelName";
+            this.lbl_levelName.Size = new System.Drawing.Size(35, 13);
+            this.lbl_levelName.TabIndex = 19;
+            this.lbl_levelName.Text = "Name";
             // 
-            // b_addentity
+            // lbl_rows
             // 
-            this.b_addentity.AutoSize = false;
-            this.b_addentity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.b_addentity.Image = global::GravityLevelEditor.Properties.Resources.addentity;
-            this.b_addentity.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.b_addentity.Name = "b_addentity";
-            this.b_addentity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.b_addentity.Size = new System.Drawing.Size(48, 48);
-            this.b_addentity.Text = "Add Entity";
+            this.lbl_rows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_rows.AutoSize = true;
+            this.lbl_rows.Location = new System.Drawing.Point(44, 91);
+            this.lbl_rows.Name = "lbl_rows";
+            this.lbl_rows.Size = new System.Drawing.Size(34, 13);
+            this.lbl_rows.TabIndex = 14;
+            this.lbl_rows.Text = "Rows";
             // 
-            // b_removeentity
+            // tb_cols
             // 
-            this.b_removeentity.AutoSize = false;
-            this.b_removeentity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.b_removeentity.Image = global::GravityLevelEditor.Properties.Resources.removeentity;
-            this.b_removeentity.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.b_removeentity.Name = "b_removeentity";
-            this.b_removeentity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.b_removeentity.Size = new System.Drawing.Size(48, 48);
-            this.b_removeentity.Text = "Remove Entity";
+            this.tb_cols.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_cols.Location = new System.Drawing.Point(114, 107);
+            this.tb_cols.MaxLength = 5;
+            this.tb_cols.Name = "tb_cols";
+            this.tb_cols.Size = new System.Drawing.Size(46, 20);
+            this.tb_cols.TabIndex = 18;
+            this.tb_cols.Text = "10";
+            this.tb_cols.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_cols.TextChanged += new System.EventHandler(this.ValidateSizeTextbox);
             // 
-            // b_paint
+            // lbl_cols
             // 
-            this.b_paint.AutoSize = false;
-            this.b_paint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.b_paint.Image = global::GravityLevelEditor.Properties.Resources.paint;
-            this.b_paint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.b_paint.Name = "b_paint";
-            this.b_paint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.b_paint.Size = new System.Drawing.Size(48, 48);
-            this.b_paint.Text = "Paint Entity";
+            this.lbl_cols.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbl_cols.AutoSize = true;
+            this.lbl_cols.Location = new System.Drawing.Point(111, 91);
+            this.lbl_cols.Name = "lbl_cols";
+            this.lbl_cols.Size = new System.Drawing.Size(47, 13);
+            this.lbl_cols.TabIndex = 15;
+            this.lbl_cols.Text = "Columns";
             // 
-            // b_depaint
+            // tb_rows
             // 
-            this.b_depaint.AutoSize = false;
-            this.b_depaint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.b_depaint.Image = global::GravityLevelEditor.Properties.Resources.depaint;
-            this.b_depaint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.b_depaint.Name = "b_depaint";
-            this.b_depaint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.b_depaint.Size = new System.Drawing.Size(48, 48);
-            this.b_depaint.Text = "Unpaint Entity";
-            this.b_depaint.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.tb_rows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_rows.Location = new System.Drawing.Point(47, 107);
+            this.tb_rows.MaxLength = 5;
+            this.tb_rows.Name = "tb_rows";
+            this.tb_rows.Size = new System.Drawing.Size(46, 20);
+            this.tb_rows.TabIndex = 17;
+            this.tb_rows.Text = "10";
+            this.tb_rows.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tb_rows.TextChanged += new System.EventHandler(this.ValidateSizeTextbox);
+            // 
+            // time_updater
+            // 
+            this.time_updater.Interval = 1000;
+            // 
+            // lbl_eVisibleLabel
+            // 
+            this.lbl_eVisibleLabel.AutoSize = true;
+            this.lbl_eVisibleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eVisibleLabel.Location = new System.Drawing.Point(35, 168);
+            this.lbl_eVisibleLabel.Name = "lbl_eVisibleLabel";
+            this.lbl_eVisibleLabel.Size = new System.Drawing.Size(48, 13);
+            this.lbl_eVisibleLabel.TabIndex = 9;
+            this.lbl_eVisibleLabel.Text = "Visible:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Paintable:";
             // 
             // MainForm
             // 
@@ -511,7 +733,6 @@
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.buttonContainer1.ResumeLayout(false);
@@ -531,6 +752,7 @@
             this.sc_HorizontalProperties.Panel2.PerformLayout();
             this.sc_HorizontalProperties.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Entity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -575,12 +797,28 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.SplitContainer sc_Properties;
         private System.Windows.Forms.SplitContainer sc_HorizontalProperties;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
-        private System.Windows.Forms.PropertyGrid propertyGrid2;
-        private System.Windows.Forms.Button b_ChangePicture;
+        private System.Windows.Forms.Button b_ChangeEntity;
         private System.Windows.Forms.PictureBox pb_Entity;
         private System.Windows.Forms.Label l_LevelProperties;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button b_bg;
+        private System.Windows.Forms.PictureBox pb_bg;
+        private System.Windows.Forms.TextBox tb_name;
+        private System.Windows.Forms.Button b_modifyLevel;
+        private System.Windows.Forms.Label lbl_levelName;
+        private System.Windows.Forms.Label lbl_rows;
+        private System.Windows.Forms.TextBox tb_cols;
+        private System.Windows.Forms.Label lbl_cols;
+        private System.Windows.Forms.TextBox tb_rows;
+        private System.Windows.Forms.Timer time_updater;
+        private System.Windows.Forms.CheckBox cb_entityPaintable;
+        private System.Windows.Forms.Label lbl_entityType;
+        private System.Windows.Forms.Label lbl_eTypeLabel;
+        private System.Windows.Forms.Label lbl_entityName;
+        private System.Windows.Forms.Label lbl_eNameLabel;
+        private System.Windows.Forms.CheckBox cb_entityVisible;
+        private System.Windows.Forms.Label lbl_eVisibleLabel;
+        private System.Windows.Forms.Label label2;
 
     }
 }

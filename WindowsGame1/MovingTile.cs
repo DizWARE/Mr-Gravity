@@ -19,14 +19,15 @@ namespace GravityShift
     /// </summary>
     class MovingTile : PhysicsObject
     {
-        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction) :
-            base(content, name, scalingFactors, initialPosition, ref environment, friction)
+        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare) :
+            base(content, name, scalingFactors, initialPosition, ref environment, friction, isSquare)
         {
 
         }
 
         public override void Kill()
         {
+            // probably not needed
             throw new NotImplementedException();
         }
 
