@@ -82,8 +82,13 @@ namespace GravityLevelEditor
             mTexture = texture;
         }
 
-        //TODO - Constructor from Xml file
-
+        /*
+         * Entity
+         *
+         * Constructor that creates an entity from a given Xelement.
+         * 
+         * XElement ent : the XML XElement that contains information for this entity.
+         */
         public Entity(XElement ent)
         {
 
@@ -234,6 +239,12 @@ namespace GravityLevelEditor
 
         //TODO - Import/Export methods
 
+        /*
+         * Export
+         * 
+         * Creates an XML XElement representation of this level.
+         *
+         */
         public XElement Export()
         {
 
