@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,7 +55,7 @@ namespace GravityLevelEditor
             mVisible = original.mVisible;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
-            mLocation = new Point(-100, -100);
+            mLocation = original.mLocation;
             mTexture = original.mTexture;
         }
 
@@ -82,6 +83,61 @@ namespace GravityLevelEditor
         }
 
         //TODO - Constructor from Xml file
+
+        public Entity(XElement ent)
+        {
+
+            string currentDirectory = Directory.GetCurrentDirectory();
+            if (currentDirectory.EndsWith("bin\\Debug"))
+            {
+                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
+                if (trimLoc >= 0)
+                {
+                    currentDirectory = currentDirectory.Substring(0, trimLoc);
+                }
+            }
+
+            foreach (XElement el in ent.Elements())
+            {
+                if (el.Name == "ID")
+                {
+                    mID = Convert.ToInt32(el.Value.ToString());
+                }
+                if (el.Name == "Name")
+                {
+                    mName = el.Value.ToString();
+                }
+                if (el.Name == "Type")
+                {
+                    mType = el.Value.ToString();
+                }
+                if (el.Name == "Location")
+                {
+                    Point xLoc = new Point(Convert.ToInt32(el.Attribute("X").Value.ToString()), Convert.ToInt32(el.Attribute("Y").Value.ToString()));
+                    mLocation = xLoc;
+                }
+                if (el.Name == "Visible")
+                {
+                    if (el.Value == "true")
+                    {
+                        mVisible = true;
+                    }
+                    else mVisible = false;
+                }
+                if (el.Name == "Paintable")
+                {
+                    if (el.Value == "true")
+                    {
+                        mPaintable = true;
+                    }
+                    else mPaintable = false;
+                }
+                if (el.Name == "Texture")
+                {
+                    mTexture = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
+                }
+            }
+        }
 
         /*
          * MoveEntity

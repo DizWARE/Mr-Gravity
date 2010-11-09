@@ -100,7 +100,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void AdditionalProperties(object sender, EventArgs e)
         {
-            if (SelectedEntity == null) return;
+            if (mAllEntities.Count == 0 || SelectedEntity == null) return;
             AdditionalProperties properties = new AdditionalProperties();
             properties.Location = Point.Add(this.Location, new Size(50, 50));
             properties.Properties = SelectedEntity.Properties;
@@ -255,7 +255,11 @@ namespace GravityLevelEditor.EntityCreationForm
             if (lb_entitySelect.SelectedIndex != -1 &&
                 artSelector.ShowDialog() == DialogResult.OK)
             {
-                pb_texture.Image = artSelector.SelectedImage;
+                if (artSelector.SelectedImage != null)
+                    pb_texture.Image = artSelector.SelectedImage;
+                else
+                    pb_texture.Image = Image.FromFile("..\\..\\Content\\defaultImage.png");
+
                 SelectedEntity.Texture = pb_texture.Image;
             }
         }
