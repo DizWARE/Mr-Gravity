@@ -66,8 +66,12 @@
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.tsc_MainContainer = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tslbl_gridLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslbl_gridLoc = new System.Windows.Forms.ToolStripStatusLabel();
             this.sc_Properties = new System.Windows.Forms.SplitContainer();
             this.sc_HorizontalProperties = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_eVisibleLabel = new System.Windows.Forms.Label();
             this.cb_entityVisible = new System.Windows.Forms.CheckBox();
             this.cb_entityPaintable = new System.Windows.Forms.CheckBox();
             this.lbl_entityType = new System.Windows.Forms.Label();
@@ -88,14 +92,13 @@
             this.lbl_cols = new System.Windows.Forms.Label();
             this.tb_rows = new System.Windows.Forms.TextBox();
             this.time_updater = new System.Windows.Forms.Timer(this.components);
-            this.lbl_eVisibleLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.buttonContainer1.SuspendLayout();
             this.tsc_MainContainer.BottomToolStripPanel.SuspendLayout();
             this.tsc_MainContainer.ContentPanel.SuspendLayout();
             this.tsc_MainContainer.TopToolStripPanel.SuspendLayout();
             this.tsc_MainContainer.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.sc_Properties.Panel2.SuspendLayout();
             this.sc_Properties.SuspendLayout();
             this.sc_HorizontalProperties.Panel1.SuspendLayout();
@@ -430,10 +433,24 @@
             // statusStrip1
             // 
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslbl_gridLabel,
+            this.tslbl_gridLoc});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip1.TabIndex = 0;
+            // 
+            // tslbl_gridLabel
+            // 
+            this.tslbl_gridLabel.Name = "tslbl_gridLabel";
+            this.tslbl_gridLabel.Size = new System.Drawing.Size(81, 17);
+            this.tslbl_gridLabel.Text = "Grid Location:";
+            // 
+            // tslbl_gridLoc
+            // 
+            this.tslbl_gridLoc.Name = "tslbl_gridLoc";
+            this.tslbl_gridLoc.Size = new System.Drawing.Size(0, 17);
             // 
             // sc_Properties
             // 
@@ -448,6 +465,7 @@
             this.sc_Properties.Panel1.AutoScroll = true;
             this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
             this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
+            this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.GridScroll);
             this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
             this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             this.sc_Properties.Panel1MinSize = 100;
@@ -497,6 +515,26 @@
             this.sc_HorizontalProperties.Size = new System.Drawing.Size(215, 611);
             this.sc_HorizontalProperties.SplitterDistance = 290;
             this.sc_HorizontalProperties.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Paintable:";
+            // 
+            // lbl_eVisibleLabel
+            // 
+            this.lbl_eVisibleLabel.AutoSize = true;
+            this.lbl_eVisibleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eVisibleLabel.Location = new System.Drawing.Point(35, 168);
+            this.lbl_eVisibleLabel.Name = "lbl_eVisibleLabel";
+            this.lbl_eVisibleLabel.Size = new System.Drawing.Size(48, 13);
+            this.lbl_eVisibleLabel.TabIndex = 9;
+            this.lbl_eVisibleLabel.Text = "Visible:";
             // 
             // cb_entityVisible
             // 
@@ -702,26 +740,6 @@
             // 
             this.time_updater.Interval = 1000;
             // 
-            // lbl_eVisibleLabel
-            // 
-            this.lbl_eVisibleLabel.AutoSize = true;
-            this.lbl_eVisibleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_eVisibleLabel.Location = new System.Drawing.Point(35, 168);
-            this.lbl_eVisibleLabel.Name = "lbl_eVisibleLabel";
-            this.lbl_eVisibleLabel.Size = new System.Drawing.Size(48, 13);
-            this.lbl_eVisibleLabel.TabIndex = 9;
-            this.lbl_eVisibleLabel.Text = "Visible:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Paintable:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -744,6 +762,8 @@
             this.tsc_MainContainer.TopToolStripPanel.PerformLayout();
             this.tsc_MainContainer.ResumeLayout(false);
             this.tsc_MainContainer.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.sc_Properties.Panel2.ResumeLayout(false);
             this.sc_Properties.ResumeLayout(false);
             this.sc_HorizontalProperties.Panel1.ResumeLayout(false);
@@ -819,6 +839,8 @@
         private System.Windows.Forms.CheckBox cb_entityVisible;
         private System.Windows.Forms.Label lbl_eVisibleLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLabel;
+        private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLoc;
 
     }
 }
