@@ -21,6 +21,8 @@ namespace GravityLevelEditor
         private static GuiTools.MultiSelect TOOL_MULTISELECT = new GuiTools.MultiSelect();
         private static GuiTools.AddEntity TOOL_ADD = new GuiTools.AddEntity();
         private static GuiTools.RemoveEntity TOOL_REMOVE = new GuiTools.RemoveEntity();
+        private static GuiTools.PaintEntity TOOL_PAINT = new GuiTools.PaintEntity();
+        private static GuiTools.DepaintEntity TOOL_DEPAINT = new GuiTools.DepaintEntity();
 
         ITool mCurrentTool = TOOL_SELECT;
         bool didScroll = true;
@@ -277,7 +279,9 @@ namespace GravityLevelEditor
         {
             mData.Level.Save();
 
-            //TODO: Add code to launch game with sample level as a parameter
+            //TODO: Add code to launch game with sample level as a parameter.
+            //FORNOW: Open a dialog to show play functionality is not working.
+            MessageBox.Show("Coming Soon!");
         }
 
         /*
@@ -526,6 +530,30 @@ namespace GravityLevelEditor
         private void RemoveTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_REMOVE;
+        }
+
+        /*
+         * PaintTool
+         * 
+         * Switches the current tool to paint
+         * 
+         * Normal Event parameters
+         */
+        private void PaintTool(object sender, EventArgs e)
+        {
+            mCurrentTool = TOOL_PAINT;
+        }
+
+        /*
+         * DepaintTool
+         * 
+         * Switches the current tool to depaint
+         * 
+         * Normal Event parameters
+         */
+        private void DepaintTool(object sender, EventArgs e)
+        {
+            mCurrentTool = TOOL_DEPAINT;
         }
 
         private void ChangeBackground(object sender, EventArgs e)
