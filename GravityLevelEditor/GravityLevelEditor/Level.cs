@@ -218,13 +218,15 @@ namespace GravityLevelEditor
          */
         public ArrayList Paste()
         {
-            Point minPoint = ((Entity)mClipboard[0]).Location;
-            foreach(Entity entity in mClipboard)
-                if (minPoint.X >= entity.Location.X && minPoint.Y >= entity.Location.Y)
-                    minPoint = entity.Location;
+            //Point minPoint = ((Entity)mClipboard[0]).Location;
+            Point minPoint = new Point(1,1);
+            //foreach(Entity entity in mClipboard)
+            //    if (minPoint.X >= entity.Location.X && minPoint.Y >= entity.Location.Y)
+            //        minPoint = entity.Location;
 
             foreach (Entity entity in mClipboard)
-                entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
+                //entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
+                entity.Location = Point.Add(entity.Location, new Size(minPoint));
 
             AddEntities(mClipboard);
             return mClipboard;

@@ -55,7 +55,7 @@ namespace GravityLevelEditor
             mVisible = original.mVisible;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
-            mLocation = new Point(-100, -100);
+            mLocation = original.mLocation;
             mTexture = original.mTexture;
         }
 
