@@ -69,7 +69,7 @@ namespace GravityShift
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
             mCurrentLevel.Load(Content,1);
 
-            mDefaultFont = Content.Load<SpriteFont>("defaultFont");
+            mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
             player = new Player(Content, "Player",
                 new Vector2(1, 1), mCurrentLevel.GetStartingPoint(), 

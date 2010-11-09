@@ -59,8 +59,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="defaultFont.spritefont">
-      <Name>defaultFont</Name>
+    <Compile Include="fonts\Kootenay.spritefont">
+      <Name>Kootenay</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>

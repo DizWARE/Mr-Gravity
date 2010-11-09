@@ -9,9 +9,13 @@ namespace GravityShift
         /// </summary>
         static void Main(string[] args)
         {
-            using (GravityShiftMain game = new GravityShiftMain())
+//            using (GravityShiftMain game = new GravityShiftMain())
+//            {
+//                game.Run();
+//            }
+            using ( Menu menu = new Menu())
             {
-                game.Run();
+                menu.Run();
             }
         }
     }
