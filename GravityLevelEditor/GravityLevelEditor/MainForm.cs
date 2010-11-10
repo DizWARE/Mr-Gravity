@@ -39,10 +39,6 @@ namespace GravityLevelEditor
                 new Level("New Level", new Point(10, 10), Color.Red,
                      Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
 
-            this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer |
-            ControlStyles.AllPaintingInWmPaint,
-            true);
-
             this.DoubleBuffered = true;
             
             time_updater.Start();

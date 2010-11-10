@@ -456,6 +456,7 @@
             // 
             // sc_Properties
             // 
+            this.sc_Properties.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sc_Properties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sc_Properties.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.sc_Properties.IsSplitterFixed = true;
@@ -483,8 +484,9 @@
             // 
             // sc_HorizontalProperties
             // 
+            this.sc_HorizontalProperties.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sc_HorizontalProperties.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sc_HorizontalProperties.Location = new System.Drawing.Point(3, 0);
+            this.sc_HorizontalProperties.Location = new System.Drawing.Point(1, 0);
             this.sc_HorizontalProperties.Name = "sc_HorizontalProperties";
             this.sc_HorizontalProperties.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -514,8 +516,8 @@
             this.sc_HorizontalProperties.Panel2.Controls.Add(this.tb_cols);
             this.sc_HorizontalProperties.Panel2.Controls.Add(this.lbl_cols);
             this.sc_HorizontalProperties.Panel2.Controls.Add(this.tb_rows);
-            this.sc_HorizontalProperties.Size = new System.Drawing.Size(215, 611);
-            this.sc_HorizontalProperties.SplitterDistance = 290;
+            this.sc_HorizontalProperties.Size = new System.Drawing.Size(215, 609);
+            this.sc_HorizontalProperties.SplitterDistance = 289;
             this.sc_HorizontalProperties.TabIndex = 1;
             // 
             // label2
@@ -635,9 +637,9 @@
             // b_bg
             // 
             this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.b_bg.Location = new System.Drawing.Point(33, 222);
+            this.b_bg.Location = new System.Drawing.Point(32, 222);
             this.b_bg.Name = "b_bg";
-            this.b_bg.Size = new System.Drawing.Size(143, 23);
+            this.b_bg.Size = new System.Drawing.Size(143, 20);
             this.b_bg.TabIndex = 8;
             this.b_bg.Text = "Change Background";
             this.b_bg.UseVisualStyleBackColor = true;
@@ -657,7 +659,7 @@
             // 
             this.pb_bg.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pb_bg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_bg.Location = new System.Drawing.Point(29, 133);
+            this.pb_bg.Location = new System.Drawing.Point(28, 133);
             this.pb_bg.Name = "pb_bg";
             this.pb_bg.Size = new System.Drawing.Size(151, 83);
             this.pb_bg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -667,7 +669,7 @@
             // tb_name
             // 
             this.tb_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tb_name.Location = new System.Drawing.Point(47, 57);
+            this.tb_name.Location = new System.Drawing.Point(46, 57);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(113, 20);
             this.tb_name.TabIndex = 5;
@@ -676,7 +678,7 @@
             // b_modifyLevel
             // 
             this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.b_modifyLevel.Location = new System.Drawing.Point(64, 273);
+            this.b_modifyLevel.Location = new System.Drawing.Point(63, 273);
             this.b_modifyLevel.Name = "b_modifyLevel";
             this.b_modifyLevel.Size = new System.Drawing.Size(75, 23);
             this.b_modifyLevel.TabIndex = 9;
@@ -688,7 +690,7 @@
             // 
             this.lbl_levelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_levelName.AutoSize = true;
-            this.lbl_levelName.Location = new System.Drawing.Point(44, 41);
+            this.lbl_levelName.Location = new System.Drawing.Point(43, 41);
             this.lbl_levelName.Name = "lbl_levelName";
             this.lbl_levelName.Size = new System.Drawing.Size(35, 13);
             this.lbl_levelName.TabIndex = 19;
@@ -698,7 +700,7 @@
             // 
             this.lbl_rows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_rows.AutoSize = true;
-            this.lbl_rows.Location = new System.Drawing.Point(44, 91);
+            this.lbl_rows.Location = new System.Drawing.Point(43, 91);
             this.lbl_rows.Name = "lbl_rows";
             this.lbl_rows.Size = new System.Drawing.Size(34, 13);
             this.lbl_rows.TabIndex = 14;
@@ -707,7 +709,7 @@
             // tb_cols
             // 
             this.tb_cols.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tb_cols.Location = new System.Drawing.Point(114, 107);
+            this.tb_cols.Location = new System.Drawing.Point(113, 107);
             this.tb_cols.MaxLength = 5;
             this.tb_cols.Name = "tb_cols";
             this.tb_cols.Size = new System.Drawing.Size(46, 20);
@@ -720,7 +722,7 @@
             // 
             this.lbl_cols.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbl_cols.AutoSize = true;
-            this.lbl_cols.Location = new System.Drawing.Point(111, 91);
+            this.lbl_cols.Location = new System.Drawing.Point(110, 91);
             this.lbl_cols.Name = "lbl_cols";
             this.lbl_cols.Size = new System.Drawing.Size(47, 13);
             this.lbl_cols.TabIndex = 15;
@@ -729,7 +731,7 @@
             // tb_rows
             // 
             this.tb_rows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tb_rows.Location = new System.Drawing.Point(47, 107);
+            this.tb_rows.Location = new System.Drawing.Point(46, 107);
             this.tb_rows.MaxLength = 5;
             this.tb_rows.Name = "tb_rows";
             this.tb_rows.Size = new System.Drawing.Size(46, 20);
@@ -753,7 +755,6 @@
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quit);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.buttonContainer1.ResumeLayout(false);
