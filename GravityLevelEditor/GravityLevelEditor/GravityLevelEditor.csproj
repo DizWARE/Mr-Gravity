@@ -52,10 +52,10 @@
     <Compile Include="AddEntity.cs" />
     <Compile Include="EditorData.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="EntityCreationForm\AdditionalProperties.cs">
+    <Compile Include="Content\AdditionalProperties.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntityCreationForm\AdditionalProperties.Designer.cs">
+    <Compile Include="Content\AdditionalProperties.Designer.cs">
       <DependentUpon>AdditionalProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityCreationForm\CreateEntity.cs">
@@ -89,7 +89,7 @@
     <Compile Include="MoveEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EntityCreationForm\AdditionalProperties.resx">
+    <EmbeddedResource Include="Content\AdditionalProperties.resx">
       <DependentUpon>AdditionalProperties.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

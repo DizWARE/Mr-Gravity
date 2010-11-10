@@ -141,6 +141,14 @@ namespace GravityLevelEditor
                 {
                     mTexture = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
                 }
+                if (el.Name == "Properties")
+                {
+                    mProperties = new Dictionary<string, string>();
+                    foreach (XElement property in el.Elements())
+                    {
+                        mProperties.Add(property.Name.ToString(), property.Value.ToString());
+                    }
+                }
             }
         }
 
@@ -241,7 +249,7 @@ namespace GravityLevelEditor
         /*
          * Export
          * 
-         * Creates an XML XElement representation of this level.
+         * Creates an XML XElement representation of this entity.
          *
          */
         public XElement Export()
@@ -249,6 +257,14 @@ namespace GravityLevelEditor
 
             if (mTexture.Tag == null)
             { MessageBox.Show("Failed to save " + ToString() + ID + ". Invalid image."); return null; }
+
+            XElement propertiesTree = new XElement("Properties");
+
+            foreach (string key in mProperties.Keys)
+            {
+                propertiesTree.Add(new XElement(key, mProperties[key]));
+            }
+
 
             XElement entityTree = new XElement("Entity",
                 new XElement("ID", this.ID),
@@ -259,7 +275,8 @@ namespace GravityLevelEditor
                     new XAttribute("Y", this.Location.Y)),
                 new XElement("Visible", this.Visible.ToString()),
                 new XElement("Paintable", this.Paintable.ToString()),
-                new XElement("Texture", this.mTexture.Tag.ToString()));
+                new XElement("Texture", this.mTexture.Tag.ToString()),
+                propertiesTree);
 
             return entityTree;
         }
