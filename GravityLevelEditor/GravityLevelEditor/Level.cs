@@ -204,8 +204,8 @@ namespace GravityLevelEditor
          */
         public void Resize(int rows, int cols)
         {
-            mSize.X = rows;
-            mSize.Y = cols;
+            mSize.X = cols;
+            mSize.Y = rows;
         }
 
         /*
