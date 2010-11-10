@@ -24,7 +24,7 @@ namespace GravityLevelEditor.GuiTools
             {
                 if (data.SelectedEntities.Count == 0)
                     data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
-                data.Level.RemoveEntity(data.SelectedEntities);
+                data.Level.RemoveEntity(data.SelectedEntities, true);
                 data.SelectedEntities.Clear();
             }
             catch (Exception e)
