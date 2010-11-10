@@ -25,7 +25,6 @@ namespace GravityLevelEditor
         private static GuiTools.DepaintEntity TOOL_DEPAINT = new GuiTools.DepaintEntity();
 
         ITool mCurrentTool = TOOL_SELECT;
-        bool didScroll = true;
 
         /*
          * TempGUI
@@ -39,12 +38,18 @@ namespace GravityLevelEditor
                 new Level("New Level", new Point(10, 10), Color.Red,
                      Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
 
-            this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer |
-            ControlStyles.AllPaintingInWmPaint,
-            true);
+            this.SetStyle(ControlStyles.DoubleBuffer |
+                           ControlStyles.UserPaint |
+                          ControlStyles.AllPaintingInWmPaint |
+                          ControlStyles.OptimizedDoubleBuffer,
+                          true);
 
             this.DoubleBuffered = true;
-            
+
+            // Code for keyboard input -JRH
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(MainForm_KeyPress);
+
             time_updater.Start();
         }
 
@@ -81,7 +86,7 @@ namespace GravityLevelEditor
 
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -142,9 +147,12 @@ namespace GravityLevelEditor
 
                 Point topLeft = GridSpace.GetDrawingCoord(new Point(Math.Min(initial.X, current.X), Math.Min(initial.Y, current.Y)));
                 Point bottomRight = GridSpace.GetDrawingCoord(new Point(Math.Max(initial.X, current.X) + 1, Math.Max(initial.Y, current.Y) + 1));
+                Rectangle rect = new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft))));
 
-                g.DrawRectangle(pen3,
-                    new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft)))));
+                rect.X += offset.X;
+                rect.Y += offset.Y;
+
+                g.DrawRectangle(pen3, rect);
             }
 
             for (int i = 0; i <= mData.Level.Size.X; i++)
@@ -237,7 +245,7 @@ namespace GravityLevelEditor
                 sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
             }
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -262,7 +270,7 @@ namespace GravityLevelEditor
                 mData.SelectedEntities.Clear();
             }
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -296,7 +304,7 @@ namespace GravityLevelEditor
         private void Undo(object sender, EventArgs e)
         {
             mData.Level.Undo();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -311,7 +319,7 @@ namespace GravityLevelEditor
         private void Redo(object sender, EventArgs e)
         {
             mData.Level.Redo();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -327,7 +335,7 @@ namespace GravityLevelEditor
         {
             mData.Level.Cut(mData.SelectedEntities);
             mData.SelectedEntities.Clear();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -363,7 +371,7 @@ namespace GravityLevelEditor
                 mData.SelectedEntities.Add(entity);
 
             mData.Level.Copy(mData.SelectedEntities);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -380,7 +388,7 @@ namespace GravityLevelEditor
             GridSpace.ZoomIn();
             Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -397,7 +405,7 @@ namespace GravityLevelEditor
             GridSpace.ZoomOut();
             Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -409,17 +417,6 @@ namespace GravityLevelEditor
         {
             return GridSpace.GetScaledGridCoord(new Point(-p.DisplayRectangle.X + e.X,
                              -p.DisplayRectangle.Y + e.Y));
-        }
-
-        /*
-         * MousePosToGrid
-         * 
-         * Gets the converted version of the mouse position
-         */
-        private Point MousePosToGrid(Panel p, Point mousePos)
-        {
-            return GridSpace.GetScaledGridCoord(new Point(-p.DisplayRectangle.X + mousePos.X,
-                             -p.DisplayRectangle.Y + mousePos.Y));
         }
 
         /*
@@ -437,7 +434,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseDown(ref mData, MousePosToGrid(p, e));
             else if (e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseDown(ref mData, MousePosToGrid(p, e));
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -455,7 +452,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseUp(ref mData, MousePosToGrid(p, e));
             else if (e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseUp(ref mData, MousePosToGrid(p, e));
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -471,7 +468,7 @@ namespace GravityLevelEditor
             Panel p = (Panel)sender;
             Point mousePos = MousePosToGrid(p, e);
 
-            //if (!VerifyEntityLocation()) return; Work in progress
+            VerifyEntityLocation();
             if ((mousePos.X >= mData.Level.Size.X || mousePos.Y >= mData.Level.Size.Y ||
                mousePos.X < 0 || mousePos.Y < 0))
             { tslbl_gridLoc.Text = "Out of Grid Bounds"; return; }
@@ -491,6 +488,7 @@ namespace GravityLevelEditor
         private void SelectTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_SELECT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.select;
         }
 
 
@@ -504,6 +502,7 @@ namespace GravityLevelEditor
         private void MultiSelectTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_MULTISELECT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
         }
 
 
@@ -517,6 +516,7 @@ namespace GravityLevelEditor
         private void AddTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_ADD;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.addentity;
         }
 
 
@@ -530,6 +530,7 @@ namespace GravityLevelEditor
         private void RemoveTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_REMOVE;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.removeentity;
         }
 
         /*
@@ -542,6 +543,7 @@ namespace GravityLevelEditor
         private void PaintTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_PAINT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.paint;
         }
 
         /*
@@ -554,8 +556,14 @@ namespace GravityLevelEditor
         private void DepaintTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_DEPAINT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.depaint;
         }
 
+        /*
+         * ChangeBackground
+         * 
+         * Launches an image selection dialog box, and changes the background to the selection
+         */
         private void ChangeBackground(object sender, EventArgs e)
         {
             ImportForm imageSelectDialog = new ImportForm();
@@ -573,9 +581,18 @@ namespace GravityLevelEditor
             }
         }
 
+        /*
+         * ChangeEntity
+         * 
+         * Launch the Dialog selection screen
+         * 
+         * -Typical event parameters
+         */
         private void ChangeEntity(object sender, EventArgs e)
         {
             CreateEntity entityDialog = new CreateEntity();
+
+            //If the dialog comes back successfully, change the On-deck etity and update info
             if (entityDialog.ShowDialog() == DialogResult.OK)
             {
                 mData.OnDeck = entityDialog.SelectedEntity;
@@ -588,11 +605,18 @@ namespace GravityLevelEditor
             }
         }
 
-        private bool VerifyEntityLocation()
+        /*
+         * VerifyEntityLocation
+         * 
+         * Checks to make sure nothing is out of bounds. If something is, move it back on 
+         * the grid
+         */
+        private void VerifyEntityLocation()
         {
-            if (mData.SelectedEntities.Count == 0) return true;
+            if (mData.SelectedEntities.Count == 0) return;
             Point maxPoint = ((Entity)mData.SelectedEntities[0]).Location;
             Point minPoint = maxPoint;
+            bool invalidate = false;
             foreach (Entity entity in mData.SelectedEntities)
             {
                 maxPoint.X = Math.Max(maxPoint.X, entity.Location.X);
@@ -600,16 +624,177 @@ namespace GravityLevelEditor
                 minPoint.X = Math.Min(minPoint.X, entity.Location.X);
                 minPoint.Y = Math.Min(minPoint.Y, entity.Location.Y);
             }
-            if (maxPoint.X > mData.Level.Size.X || maxPoint.Y > mData.Level.Size.Y ||
-               minPoint.X < 0 || minPoint.Y < 0)
-                 return false;
 
-            return true;
+            if (maxPoint.X >= mData.Level.Size.X)
+            {
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X - 1, entity.Location.Y);
+                invalidate = true;
+            }
+            if (maxPoint.Y >= mData.Level.Size.Y)
+            {
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X, entity.Location.Y - 1);
+                invalidate = true;
+            }
+            if (minPoint.X < 0)
+            {
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X + 1, entity.Location.Y);
+                invalidate = true;
+            }
+            if (minPoint.Y < 0)
+            {
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X, entity.Location.Y + 1);
+                invalidate = true;
+            }
+            if(invalidate)
+                sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
+
+            return;
         }
 
+        /*
+         * GridScroll
+         * 
+         * Helps make scrolling as smooth as possible
+         * 
+         * -Typical scroll event parameters
+         */
         private void GridScroll(object sender, ScrollEventArgs e)
         {
-            didScroll = true;
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
+
+
+        void MainForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control)
+            {
+                switch (e.KeyChar)
+                {
+                    //ctrl-s
+                    case (char)019:
+                        mi_save.PerformClick();
+                        break;
+
+                    //ctrl-c
+                    case (char)003:
+                        mi_copy.PerformClick();
+                        break;
+
+                    //ctrl-x
+                    case (char)024:
+                        mi_cut.PerformClick();
+                        break;
+
+                    //ctrl-v
+                    case (char)022:
+                        mi_paste.PerformClick();
+                        break;
+
+                    //ctrl-z
+                    case (char)026:
+                        mi_undo.PerformClick();
+                        break;
+
+                    //ctrl-y
+                    case (char)025:
+                        mi_redo.PerformClick();
+                        break;
+
+                    //ctrl-n
+                    case (char)014:
+                        mi_new.PerformClick();
+                        break;
+
+                    //ctrl-o
+                    case (char)015:
+                        mi_open.PerformClick();
+                        break;
+
+                    //ctrl-p
+                    case (char)016:
+                        mi_paste.PerformClick();
+                        break;
+
+                    //ctrl-q
+                    case (char)017:
+                        mi_quit.PerformClick();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            switch (e.KeyChar)
+            {
+                //zoom in
+                case '=':
+                case '+':
+                    mi_zoomIn.PerformClick();
+                    break;
+                
+                //zoom out
+                case '-':
+                case '_':
+                    mi_zoomOut.PerformClick();
+                    break;
+
+                //s, S, or 1 = select tool
+                case 's':
+                case 'S':
+                case '1':;
+                    mCurrentTool = TOOL_SELECT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.select;
+                    break;
+
+                //m, M or 2 = multi-select tool
+                case 'm':
+                case 'M':
+                case '2':
+                    mCurrentTool = TOOL_MULTISELECT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
+                    break;
+
+                //a, A, or 3 = add entity
+                case 'a':
+                case 'A':
+                case '3':
+                    mCurrentTool = TOOL_ADD;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.addentity;
+                    break;
+
+                //r, R, or 4 = remove entity
+                case 'r':
+                case 'R':
+                case '4':
+                    mCurrentTool = TOOL_REMOVE;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.removeentity;
+                    break;
+
+                //p, P, or 5 = paint entity
+                case 'p':
+                case 'P':
+                case '5':
+                    mCurrentTool = TOOL_PAINT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.paint;
+                    break;
+
+                //d, D, or 6 = depaint entity
+                case 'd':
+                case 'D':
+                case '6':
+                    mCurrentTool = TOOL_DEPAINT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.depaint;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
     }
 }

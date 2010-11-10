@@ -42,16 +42,16 @@ namespace GravityLevelEditor.GuiTools
         public void MouseMove(ref EditorData data, System.Windows.Forms.Panel panel, System.Drawing.Point gridPosition)
         {
             ArrayList topEntity = new ArrayList();
+            Entity entity = data.Level.SelectEntity(gridPosition);
 
-            if (mPainting && !mPrevious.Equals(gridPosition))
+            if (entity != null && mPainting && !mPrevious.Equals(gridPosition))
                 try
                 {
                     data.SelectedEntities.Clear();
-                    data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
-                    data.Level.RemoveEntity(data.SelectedEntities, true);
-                    data.SelectedEntities.Clear();
+                    topEntity.Add(entity);                    
+                    data.Level.RemoveEntity(topEntity, true);
                     mPrevious = gridPosition;
-                    panel.Refresh();
+                    panel.Invalidate(panel.DisplayRectangle);
                 }
                 catch (Exception e)
                 {

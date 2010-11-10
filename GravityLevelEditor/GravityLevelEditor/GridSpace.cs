@@ -16,14 +16,14 @@ namespace GravityLevelEditor
          * 
          * Zooms in by 25% of its original size factor.
          */
-        public static void ZoomIn() {   SCALE_FACTOR += .20f;   }
+        public static void ZoomIn() {   SCALE_FACTOR += .10f;   }
 
         /*
          * ZoomOut
          * 
          * Zooms out by 25% of its original size factor.
          */
-        public static void ZoomOut()    {  SCALE_FACTOR -= .20f;   }
+        public static void ZoomOut()    {  SCALE_FACTOR -= .10f;   }
 
         /*
          * GetDrawingCoord
