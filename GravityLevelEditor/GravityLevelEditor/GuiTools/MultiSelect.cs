@@ -48,7 +48,7 @@ namespace GravityLevelEditor.GuiTools
         {
             if (mouseDown&&!mPrevious.Equals(gridPosition))
             {
-                data.SelectedEntities = data.Level.SelectEntities(mInitial, gridPosition);
+                data.SelectedEntities = data.Level.SelectEntities(mInitial, gridPosition, true);
                 mPrevious = gridPosition;
                 panel.Refresh();
             }

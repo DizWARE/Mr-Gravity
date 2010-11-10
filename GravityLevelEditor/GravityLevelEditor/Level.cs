@@ -124,16 +124,19 @@ namespace GravityLevelEditor
          * Entity entity: entity to be added to the level.
          * 
          * Point location: location where we are placing this Entity
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public ArrayList AddEntity(Entity entity, Point location)
+        public ArrayList AddEntity(Entity entity, Point location, bool addToHistory)
         {
             mUndoHistory.Clear();
-            mHistory.Push(new AddEntity(entity, this));
+            if (addToHistory)
+                mHistory.Push(new AddEntity(entity, this));
             mEntities.Add(entity);
 
             entity.MoveEntity(location);
 
-            return SelectEntities(location, location);
+            return SelectEntities(location, location, false);
         }
 
         /*
@@ -164,11 +167,14 @@ namespace GravityLevelEditor
          * remove entity operation to the history.
          * 
          * ArrayList entities: entities to be removed from the level.
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public void RemoveEntity(ArrayList entities)
+        public void RemoveEntity(ArrayList entities, bool addToHistory)
         {
             mUndoHistory.Clear();
-            mHistory.Push(new RemoveEntity(entities, this));
+            if(addToHistory)
+                mHistory.Push(new RemoveEntity(entities, this));
             foreach (Entity entity in entities)
                 mEntities.Remove(entity);
         }
@@ -261,7 +267,7 @@ namespace GravityLevelEditor
          */
         public void Cut(ArrayList entities)
         {
-            RemoveEntity(entities);
+            RemoveEntity(entities, true);
             Copy(entities);
         }
 
@@ -352,8 +358,10 @@ namespace GravityLevelEditor
          * Point topLeft: Top left corner of the selection rectangle
          * 
          * Point bottomRight: Bottom right corner of the selection rectangle
+         * 
+         * bool addToHistory: Determines whether or not we will add this operation to the history
          */
-        public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
+        public ArrayList SelectEntities(Point firstPoint, Point secondPoint, bool addToHistory)
         {
             Point min = new Point(Math.Min(firstPoint.X,secondPoint.X),
                                     Math.Min(firstPoint.Y,secondPoint.Y));
@@ -374,7 +382,9 @@ namespace GravityLevelEditor
                 }
             }
 
-            mHistory.Push(new SelectEntity(selected));
+            if (addToHistory)
+                mHistory.Push(new SelectEntity(selected));
+
             return selected;
         }
 

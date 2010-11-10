@@ -20,7 +20,7 @@ namespace GravityLevelEditor.GuiTools
             mPainting = true;
             Entity entity = data.OnDeck.Copy();
             entity.Location = gridPosition;
-            data.Level.AddEntity(entity, gridPosition);
+            data.Level.AddEntity(entity, gridPosition, true);
             data.SelectedEntities.Clear();
             data.SelectedEntities.Add(entity);
         }
@@ -47,7 +47,7 @@ namespace GravityLevelEditor.GuiTools
             {
                 Entity entity = data.OnDeck.Copy();
                 entity.Location = gridPosition;
-                data.Level.AddEntity(entity, gridPosition);
+                data.Level.AddEntity(entity, gridPosition, true);
                 data.SelectedEntities.Clear();
                 data.SelectedEntities.Add(entity);
                 mPrevious = gridPosition;

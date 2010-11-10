@@ -20,7 +20,7 @@ namespace GravityLevelEditor.GuiTools
             mPainting = true;
             data.SelectedEntities.Clear();
             data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
-            data.Level.RemoveEntity(data.SelectedEntities);
+            data.Level.RemoveEntity(data.SelectedEntities, true);
             data.SelectedEntities.Clear();
         }
 
@@ -48,7 +48,7 @@ namespace GravityLevelEditor.GuiTools
                 {
                     data.SelectedEntities.Clear();
                     data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
-                    data.Level.RemoveEntity(data.SelectedEntities);
+                    data.Level.RemoveEntity(data.SelectedEntities, true);
                     data.SelectedEntities.Clear();
                     mPrevious = gridPosition;
                     panel.Refresh();

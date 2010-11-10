@@ -21,7 +21,7 @@ namespace GravityLevelEditor.GuiTools
             if (data.OnDeck == null) return;
             Entity entity = data.OnDeck.Copy();
             entity.Location = gridPosition;
-            data.Level.AddEntity(entity, gridPosition);
+            data.Level.AddEntity(entity, gridPosition, true);
             data.SelectedEntities.Clear();
             data.SelectedEntities.Add(entity);
         }
