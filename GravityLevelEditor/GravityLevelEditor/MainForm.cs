@@ -468,7 +468,7 @@ namespace GravityLevelEditor
             Panel p = (Panel)sender;
             Point mousePos = MousePosToGrid(p, e);
 
-            if (!VerifyEntityLocation()) return; 
+            VerifyEntityLocation();
             if ((mousePos.X >= mData.Level.Size.X || mousePos.Y >= mData.Level.Size.Y ||
                mousePos.X < 0 || mousePos.Y < 0))
             { tslbl_gridLoc.Text = "Out of Grid Bounds"; return; }
@@ -559,6 +559,11 @@ namespace GravityLevelEditor
             pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.depaint;
         }
 
+        /*
+         * ChangeBackground
+         * 
+         * Launches an image selection dialog box, and changes the background to the selection
+         */
         private void ChangeBackground(object sender, EventArgs e)
         {
             ImportForm imageSelectDialog = new ImportForm();
@@ -576,9 +581,18 @@ namespace GravityLevelEditor
             }
         }
 
+        /*
+         * ChangeEntity
+         * 
+         * Launch the Dialog selection screen
+         * 
+         * -Typical event parameters
+         */
         private void ChangeEntity(object sender, EventArgs e)
         {
             CreateEntity entityDialog = new CreateEntity();
+
+            //If the dialog comes back successfully, change the On-deck etity and update info
             if (entityDialog.ShowDialog() == DialogResult.OK)
             {
                 mData.OnDeck = entityDialog.SelectedEntity;
@@ -591,12 +605,18 @@ namespace GravityLevelEditor
             }
         }
 
-        private bool VerifyEntityLocation()
+        /*
+         * VerifyEntityLocation
+         * 
+         * Checks to make sure nothing is out of bounds. If something is, move it back on 
+         * the grid
+         */
+        private void VerifyEntityLocation()
         {
-            if (mData.SelectedEntities.Count == 0) return true;
+            if (mData.SelectedEntities.Count == 0) return;
             Point maxPoint = ((Entity)mData.SelectedEntities[0]).Location;
             Point minPoint = maxPoint;
-            bool returnVal = true;
+            bool invalidate = false;
             foreach (Entity entity in mData.SelectedEntities)
             {
                 maxPoint.X = Math.Max(maxPoint.X, entity.Location.X);
@@ -606,22 +626,42 @@ namespace GravityLevelEditor
             }
 
             if (maxPoint.X >= mData.Level.Size.X)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X - 1, entity.Location.Y);
+                invalidate = true;
+            }
             if (maxPoint.Y >= mData.Level.Size.Y)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X, entity.Location.Y - 1);
+                invalidate = true;
+            }
             if (minPoint.X < 0)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X + 1, entity.Location.Y);
+                invalidate = true;
+            }
             if (minPoint.Y < 0)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X, entity.Location.Y + 1);
-            
+                invalidate = true;
+            }
+            if(invalidate)
+                sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
 
-            return returnVal;
+            return;
         }
 
+        /*
+         * GridScroll
+         * 
+         * Helps make scrolling as smooth as possible
+         * 
+         * -Typical scroll event parameters
+         */
         private void GridScroll(object sender, ScrollEventArgs e)
         {
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);

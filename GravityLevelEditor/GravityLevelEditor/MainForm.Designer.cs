@@ -38,7 +38,6 @@
             this.mi_open = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.mi_save = new System.Windows.Forms.ToolStripMenuItem();
-            this.mi_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.mi_play = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_quit = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,7 +146,6 @@
             this.mi_open,
             this.closeToolStripMenuItem,
             this.mi_save,
-            this.mi_saveAs,
             this.playToolStripMenuItem,
             this.mi_play,
             this.mi_quit});
@@ -181,12 +179,6 @@
             this.mi_save.Size = new System.Drawing.Size(220, 26);
             this.mi_save.Text = "&Save            (Ctrl+S)";
             this.mi_save.Click += new System.EventHandler(this.Save);
-            // 
-            // mi_saveAs
-            // 
-            this.mi_saveAs.Name = "mi_saveAs";
-            this.mi_saveAs.Size = new System.Drawing.Size(220, 26);
-            this.mi_saveAs.Text = "Save &As";
             // 
             // playToolStripMenuItem
             // 
@@ -338,6 +330,7 @@
             this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStripButton1.Size = new System.Drawing.Size(48, 48);
             this.toolStripButton1.Text = "Select/Move (S) (1)";
+            this.toolStripButton1.Click += new System.EventHandler(this.SelectTool);
             // 
             // b_multiselect
             // 
@@ -804,7 +797,6 @@
         private System.Windows.Forms.ToolStripMenuItem mi_open;
         private System.Windows.Forms.ToolStripSeparator closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mi_save;
-        private System.Windows.Forms.ToolStripMenuItem mi_saveAs;
         private System.Windows.Forms.ToolStripSeparator playToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mi_play;
         private System.Windows.Forms.ToolStripMenuItem mi_quit;
