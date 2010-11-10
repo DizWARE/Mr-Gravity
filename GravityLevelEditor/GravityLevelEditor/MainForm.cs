@@ -467,7 +467,7 @@ namespace GravityLevelEditor
             Panel p = (Panel)sender;
             Point mousePos = MousePosToGrid(p, e);
 
-            //if (!VerifyEntityLocation()) return; Work in progress
+            if (!VerifyEntityLocation()) return; 
             if ((mousePos.X >= mData.Level.Size.X || mousePos.Y >= mData.Level.Size.Y ||
                mousePos.X < 0 || mousePos.Y < 0))
             { tslbl_gridLoc.Text = "Out of Grid Bounds"; return; }
@@ -589,6 +589,7 @@ namespace GravityLevelEditor
             if (mData.SelectedEntities.Count == 0) return true;
             Point maxPoint = ((Entity)mData.SelectedEntities[0]).Location;
             Point minPoint = maxPoint;
+            bool returnVal = true;
             foreach (Entity entity in mData.SelectedEntities)
             {
                 maxPoint.X = Math.Max(maxPoint.X, entity.Location.X);
@@ -596,11 +597,22 @@ namespace GravityLevelEditor
                 minPoint.X = Math.Min(minPoint.X, entity.Location.X);
                 minPoint.Y = Math.Min(minPoint.Y, entity.Location.Y);
             }
-            if (maxPoint.X > mData.Level.Size.X || maxPoint.Y > mData.Level.Size.Y ||
-               minPoint.X < 0 || minPoint.Y < 0)
-                 return false;
 
-            return true;
+            if (maxPoint.X >= mData.Level.Size.X)
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X - 1, entity.Location.Y);
+            if (maxPoint.Y >= mData.Level.Size.Y)
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X, entity.Location.Y - 1);
+            if (minPoint.X < 0)
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X + 1, entity.Location.Y);
+            if (minPoint.Y < 0)
+                foreach (Entity entity in mData.SelectedEntities)
+                    entity.Location = new Point(entity.Location.X, entity.Location.Y+1);
+            
+
+            return returnVal;
         }
 
         private void GridScroll(object sender, ScrollEventArgs e)
