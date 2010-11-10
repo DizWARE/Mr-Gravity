@@ -46,7 +46,10 @@ namespace GravityLevelEditor
 
             this.DoubleBuffered = true;
 
-            
+            // Code for keyboard input -JRH
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(MainForm_KeyPress);
+
             time_updater.Start();
         }
 
@@ -485,6 +488,7 @@ namespace GravityLevelEditor
         private void SelectTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_SELECT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.select;
         }
 
 
@@ -498,6 +502,7 @@ namespace GravityLevelEditor
         private void MultiSelectTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_MULTISELECT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
         }
 
 
@@ -511,6 +516,7 @@ namespace GravityLevelEditor
         private void AddTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_ADD;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.addentity;
         }
 
 
@@ -524,6 +530,7 @@ namespace GravityLevelEditor
         private void RemoveTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_REMOVE;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.removeentity;
         }
 
         /*
@@ -536,6 +543,7 @@ namespace GravityLevelEditor
         private void PaintTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_PAINT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.paint;
         }
 
         /*
@@ -548,6 +556,7 @@ namespace GravityLevelEditor
         private void DepaintTool(object sender, EventArgs e)
         {
             mCurrentTool = TOOL_DEPAINT;
+            pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.depaint;
         }
 
         private void ChangeBackground(object sender, EventArgs e)
@@ -617,5 +626,135 @@ namespace GravityLevelEditor
         {
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
+
+
+        void MainForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Control.ModifierKeys & Keys.Control) == Keys.Control)
+            {
+                switch (e.KeyChar)
+                {
+                    //ctrl-s
+                    case (char)019:
+                        mi_save.PerformClick();
+                        break;
+
+                    //ctrl-c
+                    case (char)003:
+                        mi_copy.PerformClick();
+                        break;
+
+                    //ctrl-x
+                    case (char)024:
+                        mi_cut.PerformClick();
+                        break;
+
+                    //ctrl-v
+                    case (char)022:
+                        mi_paste.PerformClick();
+                        break;
+
+                    //ctrl-z
+                    case (char)026:
+                        mi_undo.PerformClick();
+                        break;
+
+                    //ctrl-y
+                    case (char)025:
+                        mi_redo.PerformClick();
+                        break;
+
+                    //ctrl-n
+                    case (char)014:
+                        mi_new.PerformClick();
+                        break;
+
+                    //ctrl-o
+                    case (char)015:
+                        mi_open.PerformClick();
+                        break;
+
+                    //ctrl-p
+                    case (char)016:
+                        mi_paste.PerformClick();
+                        break;
+
+                    //ctrl-q
+                    case (char)017:
+                        mi_quit.PerformClick();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            switch (e.KeyChar)
+            {
+                //zoom in
+                case '=':
+                case '+':
+                    mi_zoomIn.PerformClick();
+                    break;
+                
+                //zoom out
+                case '-':
+                case '_':
+                    mi_zoomOut.PerformClick();
+                    break;
+
+                //s, S, or 1 = select tool
+                case 's':
+                case 'S':
+                case '1':;
+                    mCurrentTool = TOOL_SELECT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.select;
+                    break;
+
+                //m, M or 2 = multi-select tool
+                case 'm':
+                case 'M':
+                case '2':
+                    mCurrentTool = TOOL_MULTISELECT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
+                    break;
+
+                //a, A, or 3 = add entity
+                case 'a':
+                case 'A':
+                case '3':
+                    mCurrentTool = TOOL_ADD;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.addentity;
+                    break;
+
+                //r, R, or 4 = remove entity
+                case 'r':
+                case 'R':
+                case '4':
+                    mCurrentTool = TOOL_REMOVE;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.removeentity;
+                    break;
+
+                //p, P, or 5 = paint entity
+                case 'p':
+                case 'P':
+                case '5':
+                    mCurrentTool = TOOL_PAINT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.paint;
+                    break;
+
+                //d, D, or 6 = depaint entity
+                case 'd':
+                case 'D':
+                case '6':
+                    mCurrentTool = TOOL_DEPAINT;
+                    pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.depaint;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
     }
 }
