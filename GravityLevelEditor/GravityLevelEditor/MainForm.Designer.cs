@@ -468,7 +468,7 @@
             this.sc_Properties.Panel1.AutoScroll = true;
             this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
             this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
-            this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Scroll);
+            this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.GridScroll);
             this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
             this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             this.sc_Properties.Panel1MinSize = 100;

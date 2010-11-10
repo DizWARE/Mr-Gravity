@@ -30,7 +30,6 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseUp(ref EditorData data, Point gridPosition)
         {
-            //data.SelectedEntities = data.Level.SelectEntities(mInitial, gridPosition);
             mouseDown = false;
         }
 

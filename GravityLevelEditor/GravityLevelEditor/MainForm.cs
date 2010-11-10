@@ -144,9 +144,12 @@ namespace GravityLevelEditor
 
                 Point topLeft = GridSpace.GetDrawingCoord(new Point(Math.Min(initial.X, current.X), Math.Min(initial.Y, current.Y)));
                 Point bottomRight = GridSpace.GetDrawingCoord(new Point(Math.Max(initial.X, current.X) + 1, Math.Max(initial.Y, current.Y) + 1));
+                Rectangle rect = new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft))));
 
-                g.DrawRectangle(pen3,
-                    new Rectangle(topLeft, new Size(Point.Subtract(bottomRight, new Size(topLeft)))));
+                rect.X += offset.X;
+                rect.Y += offset.Y;
+
+                g.DrawRectangle(pen3, rect);
             }
 
             for (int i = 0; i <= mData.Level.Size.X; i++)
@@ -414,17 +417,6 @@ namespace GravityLevelEditor
         }
 
         /*
-         * MousePosToGrid
-         * 
-         * Gets the converted version of the mouse position
-         */
-        private Point MousePosToGrid(Panel p, Point mousePos)
-        {
-            return GridSpace.GetScaledGridCoord(new Point(-p.DisplayRectangle.X + mousePos.X,
-                             -p.DisplayRectangle.Y + mousePos.Y));
-        }
-
-        /*
          * GridMouseDown
          * 
          * Invoked when user presses the left or right mouse buttons on the grid. Calls its
@@ -621,7 +613,7 @@ namespace GravityLevelEditor
             return returnVal;
         }
 
-        private void Scroll(object sender, ScrollEventArgs e)
+        private void GridScroll(object sender, ScrollEventArgs e)
         {
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
