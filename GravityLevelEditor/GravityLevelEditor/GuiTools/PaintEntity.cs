@@ -51,7 +51,7 @@ namespace GravityLevelEditor.GuiTools
                 data.SelectedEntities.Clear();
                 data.SelectedEntities.Add(entity);
                 mPrevious = gridPosition;
-                panel.Refresh();
+                panel.Invalidate(panel.DisplayRectangle);
             }
         }
 

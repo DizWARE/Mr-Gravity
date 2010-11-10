@@ -25,7 +25,6 @@ namespace GravityLevelEditor
         private static GuiTools.DepaintEntity TOOL_DEPAINT = new GuiTools.DepaintEntity();
 
         ITool mCurrentTool = TOOL_SELECT;
-        bool didScroll = true;
 
         /*
          * TempGUI
@@ -39,7 +38,14 @@ namespace GravityLevelEditor
                 new Level("New Level", new Point(10, 10), Color.Red,
                      Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
 
+            this.SetStyle(ControlStyles.DoubleBuffer |
+                           ControlStyles.UserPaint |
+                          ControlStyles.AllPaintingInWmPaint |
+                          ControlStyles.OptimizedDoubleBuffer,
+                          true);
+
             this.DoubleBuffered = true;
+
             
             time_updater.Start();
         }
@@ -77,7 +83,7 @@ namespace GravityLevelEditor
 
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -233,7 +239,7 @@ namespace GravityLevelEditor
                 sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
             }
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -258,7 +264,7 @@ namespace GravityLevelEditor
                 mData.SelectedEntities.Clear();
             }
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -292,7 +298,7 @@ namespace GravityLevelEditor
         private void Undo(object sender, EventArgs e)
         {
             mData.Level.Undo();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -307,7 +313,7 @@ namespace GravityLevelEditor
         private void Redo(object sender, EventArgs e)
         {
             mData.Level.Redo();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -323,7 +329,7 @@ namespace GravityLevelEditor
         {
             mData.Level.Cut(mData.SelectedEntities);
             mData.SelectedEntities.Clear();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -359,7 +365,7 @@ namespace GravityLevelEditor
                 mData.SelectedEntities.Add(entity);
 
             mData.Level.Copy(mData.SelectedEntities);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -376,7 +382,7 @@ namespace GravityLevelEditor
             GridSpace.ZoomIn();
             Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -393,7 +399,7 @@ namespace GravityLevelEditor
             GridSpace.ZoomOut();
             Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -433,7 +439,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseDown(ref mData, MousePosToGrid(p, e));
             else if (e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseDown(ref mData, MousePosToGrid(p, e));
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -451,7 +457,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseUp(ref mData, MousePosToGrid(p, e));
             else if (e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseUp(ref mData, MousePosToGrid(p, e));
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -609,15 +615,15 @@ namespace GravityLevelEditor
                     entity.Location = new Point(entity.Location.X + 1, entity.Location.Y);
             if (minPoint.Y < 0)
                 foreach (Entity entity in mData.SelectedEntities)
-                    entity.Location = new Point(entity.Location.X, entity.Location.Y+1);
+                    entity.Location = new Point(entity.Location.X, entity.Location.Y + 1);
             
 
             return returnVal;
         }
 
-        private void GridScroll(object sender, ScrollEventArgs e)
+        private void Scroll(object sender, ScrollEventArgs e)
         {
-            didScroll = true;
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
     }
 }

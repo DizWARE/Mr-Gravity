@@ -55,7 +55,7 @@ namespace GravityLevelEditor.GuiTools
                 data.Level.MoveEntity(data.SelectedEntities,
                     new Size(Point.Subtract(gridPosition, new Size(mPrevious))));
                 mPrevious = gridPosition;
-                panel.Refresh();
+                panel.Invalidate(panel.DisplayRectangle);
             }
         }
 

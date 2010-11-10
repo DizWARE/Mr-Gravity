@@ -77,7 +77,7 @@ namespace GravityLevelEditor
 
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -216,7 +216,7 @@ namespace GravityLevelEditor
                 sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
             }
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -241,7 +241,7 @@ namespace GravityLevelEditor
                 mData.SelectedEntities.Clear();
             }
 
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -273,7 +273,7 @@ namespace GravityLevelEditor
         private void Undo(object sender, EventArgs e)
         {
             mData.Level.Undo();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -288,7 +288,7 @@ namespace GravityLevelEditor
         private void Redo(object sender, EventArgs e)
         {
             mData.Level.Redo();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -304,7 +304,7 @@ namespace GravityLevelEditor
         {
             mData.Level.Cut(mData.SelectedEntities);
             mData.SelectedEntities.Clear();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -333,7 +333,7 @@ namespace GravityLevelEditor
         private void Paste(object sender, EventArgs e)
         {
             mData.Level.Paste();
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -350,7 +350,7 @@ namespace GravityLevelEditor
             GridSpace.ZoomIn();
             Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -367,7 +367,7 @@ namespace GravityLevelEditor
             GridSpace.ZoomOut();
             Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         private Point MousePosToGrid(Panel p, MouseEventArgs e)
@@ -391,7 +391,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseDown(ref mData, MousePosToGrid(p, e));
             else if(e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseDown(ref mData, MousePosToGrid(p, e));
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -409,7 +409,7 @@ namespace GravityLevelEditor
                 mCurrentTool.LeftMouseUp(ref mData, MousePosToGrid(p, e));
             else if (e.Button == MouseButtons.Right)
                 mCurrentTool.RightMouseUp(ref mData, MousePosToGrid(p, e));
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         /*
@@ -479,7 +479,7 @@ namespace GravityLevelEditor
 
         private void UpdateGraphics(object sender, EventArgs e)
         {
-            sc_Properties.Panel1.Refresh();
+            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
         private void ChangeBackground(object sender, EventArgs e)
