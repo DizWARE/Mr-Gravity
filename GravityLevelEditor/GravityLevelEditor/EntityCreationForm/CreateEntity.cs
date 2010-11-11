@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,17 @@ namespace GravityLevelEditor.EntityCreationForm
     {
         private int mSelectedIndex;
         ArrayList mAllEntities;
-        public Entity SelectedEntity { get { return (Entity)mAllEntities[mSelectedIndex]; } }       
+        public Entity SelectedEntity 
+        { 
+            get 
+            { 
+                if(mAllEntities.Count > 0)
+                    return (Entity)mAllEntities[mSelectedIndex]; 
+
+                return null;
+            } 
+        
+        }       
 
         /*
          * CreateEnity
@@ -28,6 +39,8 @@ namespace GravityLevelEditor.EntityCreationForm
 
             mAllEntities = new ArrayList();
             lb_entitySelect.Items.Clear();
+
+            ImportEntityList();
             //lb_entitySelect.ValueMember = "Name";
             //Load Entity List and fill mAllEntities here.
         }
@@ -117,7 +130,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void Ok(object sender, EventArgs e)
         {
-            //Export Entity list
+            ExportEntityList();
 
             DialogResult = DialogResult.OK;
             this.Close();
@@ -265,14 +278,74 @@ namespace GravityLevelEditor.EntityCreationForm
         }
 
         
-        /***These two methods are for Kameron***/
-        private void ImportEntityList(XDocument entityList)
+        /*
+         * ImportEntityList
+         * 
+         * Loads a list of entities used by the level Editor from an XDocument.
+         * 
+         * XDocument entityList: the XML file containing information on the entities to be loaded.
+         */
+        private void ImportEntityList()
         {
+            mAllEntities.Clear();
+            DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
 
+            directoryInfo = directoryInfo.Parent.Parent;
+            if (directoryInfo.GetDirectories("Entities").Length == 0)
+                 directoryInfo.CreateSubdirectory("Entities");
+
+            XDocument entityList;
+            try
+            {
+                entityList = XDocument.Load(
+                    directoryInfo.GetDirectories("Entities")[0].FullName + "\\" + "entityList.xml");
+            }
+            catch (IOException exception) { return; }
+
+            foreach (XElement e in entityList.Elements())
+            {
+                if (e.Name == "Entities")
+                {
+                    foreach (XElement entity in e.Elements())
+                    {
+                        Entity createdEntity = new Entity(entity);
+                        mAllEntities.Add(createdEntity);
+                        lb_entitySelect.Items.Add(createdEntity);
+                    }
+                }
+            }
+
+            if(lb_entitySelect.Items.Count > 0)
+                lb_entitySelect.SelectedIndex = 0;
         }
 
+        /*
+         * ExportEntityList
+         * 
+         * Creates an XML representation of all the Entities used in the level editor.
+         * 
+         */
         private void ExportEntityList()
         {
+            DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+
+            directoryInfo = directoryInfo.Parent.Parent;
+            if (directoryInfo.GetDirectories("Entities").Length == 0)
+                directoryInfo.CreateSubdirectory("Entities");
+
+            XDocument entityList = new XDocument();
+
+            XElement entityTree = new XElement("Entities");
+            foreach (Entity entity in mAllEntities)
+            {
+                entityTree.Add(entity.Export());
+            }
+
+            entityList.Add(entityTree);
+
+            entityList.Save(
+                directoryInfo.GetDirectories("Entities")[0].FullName + "\\" + "entityList.xml");
+
 
         }
     }

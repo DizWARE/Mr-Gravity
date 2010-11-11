@@ -92,6 +92,7 @@
             this.lbl_cols = new System.Windows.Forms.Label();
             this.tb_rows = new System.Windows.Forms.TextBox();
             this.time_updater = new System.Windows.Forms.Timer(this.components);
+            this.mi_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.buttonContainer1.SuspendLayout();
             this.tsc_MainContainer.BottomToolStripPanel.SuspendLayout();
@@ -146,6 +147,7 @@
             this.mi_open,
             this.closeToolStripMenuItem,
             this.mi_save,
+            this.mi_saveAs,
             this.playToolStripMenuItem,
             this.mi_play,
             this.mi_quit});
@@ -749,6 +751,12 @@
             // 
             this.time_updater.Interval = 1000;
             // 
+            // mi_saveAs
+            // 
+            this.mi_saveAs.Name = "mi_saveAs";
+            this.mi_saveAs.Size = new System.Drawing.Size(220, 26);
+            this.mi_saveAs.Text = "Save &As";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,6 +860,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLoc;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.PictureBox pb_CurrentTool;
+        private System.Windows.Forms.ToolStripMenuItem mi_saveAs;
 
     }
 }

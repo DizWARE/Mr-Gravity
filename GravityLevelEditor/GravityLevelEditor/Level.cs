@@ -68,16 +68,11 @@ namespace GravityLevelEditor
          */
         public Level(string filename)
         {
+            string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Images";
+            DirectoryInfo d = new DirectoryInfo(currentDirectory);
 
-            string currentDirectory = Directory.GetCurrentDirectory();
-            if (currentDirectory.EndsWith("bin\\Debug"))
-            {
-                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
-                if (trimLoc >= 0)
-                {
-                    currentDirectory = currentDirectory.Substring(0, trimLoc);
-                }
-            }
+            mEntities = new ArrayList();
+            mClipboard = new ArrayList();
 
             XElement xLevel = XElement.Load(filename);
 
@@ -85,7 +80,7 @@ namespace GravityLevelEditor
             {
                 if (el.Name == "Name")
                 {
-                    this.Name = el.Name.ToString();
+                    this.Name = el.Value.ToString();
                 }
                 if (el.Name == "Size")
                 {
@@ -95,7 +90,8 @@ namespace GravityLevelEditor
                 }
                 if (el.Name == "Background")
                 {
-                    this.Background = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
+                    this.Background = Image.FromFile(d.FullName + "\\" + el.Value + ".png");
+                    this.Background.Tag = el.Value;
                 }
                 if (el.Name == "Color")
                 {
@@ -224,8 +220,8 @@ namespace GravityLevelEditor
          */
         public void Resize(int rows, int cols)
         {
-            mSize.X = rows;
-            mSize.Y = cols;
+            mSize.X = cols;
+            mSize.Y = rows;
         }
 
         /*
