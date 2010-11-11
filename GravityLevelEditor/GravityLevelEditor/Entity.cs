@@ -92,15 +92,11 @@ namespace GravityLevelEditor
         public Entity(XElement ent)
         {
 
-            string currentDirectory = Directory.GetCurrentDirectory();
-            if (currentDirectory.EndsWith("bin\\Debug"))
-            {
-                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
-                if (trimLoc >= 0)
-                {
-                    currentDirectory = currentDirectory.Substring(0, trimLoc);
-                }
-            }
+            string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Images";
+
+            DirectoryInfo d = new DirectoryInfo(currentDirectory);
+
+            mProperties = new Dictionary<string, string>();
 
             foreach (XElement el in ent.Elements())
             {
@@ -123,7 +119,7 @@ namespace GravityLevelEditor
                 }
                 if (el.Name == "Visible")
                 {
-                    if (el.Value == "true")
+                    if (el.Value == "True")
                     {
                         mVisible = true;
                     }
@@ -131,7 +127,7 @@ namespace GravityLevelEditor
                 }
                 if (el.Name == "Paintable")
                 {
-                    if (el.Value == "true")
+                    if (el.Value == "True")
                     {
                         mPaintable = true;
                     }
@@ -139,11 +135,12 @@ namespace GravityLevelEditor
                 }
                 if (el.Name == "Texture")
                 {
-                    mTexture = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
+                    currentDirectory = d.FullName + "\\" + el.Value + ".png";
+                    mTexture = Image.FromFile(currentDirectory);
+                    mTexture.Tag = el.Value;
                 }
                 if (el.Name == "Properties")
                 {
-                    mProperties = new Dictionary<string, string>();
                     foreach (XElement property in el.Elements())
                     {
                         mProperties.Add(property.Name.ToString(), property.Value.ToString());
@@ -261,10 +258,7 @@ namespace GravityLevelEditor
             XElement propertiesTree = new XElement("Properties");
 
             foreach (string key in mProperties.Keys)
-            {
                 propertiesTree.Add(new XElement(key, mProperties[key]));
-            }
-
 
             XElement entityTree = new XElement("Entity",
                 new XElement("ID", this.ID),

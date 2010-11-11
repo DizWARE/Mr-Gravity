@@ -16,7 +16,17 @@ namespace GravityLevelEditor.EntityCreationForm
     {
         private int mSelectedIndex;
         ArrayList mAllEntities;
-        public Entity SelectedEntity { get { return (Entity)mAllEntities[mSelectedIndex]; } }       
+        public Entity SelectedEntity 
+        { 
+            get 
+            { 
+                if(mAllEntities.Count > 0)
+                    return (Entity)mAllEntities[mSelectedIndex]; 
+
+                return null;
+            } 
+        
+        }       
 
         /*
          * CreateEnity
@@ -29,6 +39,8 @@ namespace GravityLevelEditor.EntityCreationForm
 
             mAllEntities = new ArrayList();
             lb_entitySelect.Items.Clear();
+
+            ImportEntityList();
             //lb_entitySelect.ValueMember = "Name";
             //Load Entity List and fill mAllEntities here.
         }
@@ -118,7 +130,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void Ok(object sender, EventArgs e)
         {
-            //Export Entity list
+            ExportEntityList();
 
             DialogResult = DialogResult.OK;
             this.Close();
@@ -273,10 +285,22 @@ namespace GravityLevelEditor.EntityCreationForm
          * 
          * XDocument entityList: the XML file containing information on the entities to be loaded.
          */
-        private void ImportEntityList(XDocument entityList)
+        private void ImportEntityList()
         {
             mAllEntities.Clear();
+            DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
 
+            directoryInfo = directoryInfo.Parent.Parent;
+            if (directoryInfo.GetDirectories("Entities").Length == 0)
+                 directoryInfo.CreateSubdirectory("Entities");
+
+            XDocument entityList;
+            try
+            {
+                entityList = XDocument.Load(
+                    directoryInfo.GetDirectories("Entities")[0].FullName + "\\" + "entityList.xml");
+            }
+            catch (IOException exception) { return; }
 
             foreach (XElement e in entityList.Elements())
             {
@@ -284,10 +308,15 @@ namespace GravityLevelEditor.EntityCreationForm
                 {
                     foreach (XElement entity in e.Elements())
                     {
-                        mAllEntities.Add(new Entity(entity));
+                        Entity createdEntity = new Entity(entity);
+                        mAllEntities.Add(createdEntity);
+                        lb_entitySelect.Items.Add(createdEntity);
                     }
                 }
             }
+
+            if(lb_entitySelect.Items.Count > 0)
+                lb_entitySelect.SelectedIndex = 0;
         }
 
         /*
@@ -298,21 +327,11 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void ExportEntityList()
         {
+            DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
 
-            string currentDirectory = Directory.GetCurrentDirectory();
-            if (currentDirectory.EndsWith("bin\\Debug"))
-            {
-                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
-                if (trimLoc >= 0)
-                {
-                    currentDirectory = currentDirectory.Substring(0, trimLoc);
-                }
-            }
-            if (currentDirectory.IndexOf("Entities") == -1)
-            {
-                System.IO.Directory.CreateDirectory(currentDirectory + "Entities\\");
-                currentDirectory += "Entities\\";
-            }
+            directoryInfo = directoryInfo.Parent.Parent;
+            if (directoryInfo.GetDirectories("Entities").Length == 0)
+                directoryInfo.CreateSubdirectory("Entities");
 
             XDocument entityList = new XDocument();
 
@@ -324,7 +343,8 @@ namespace GravityLevelEditor.EntityCreationForm
 
             entityList.Add(entityTree);
 
-            entityList.Save(currentDirectory + "entityList.xml");
+            entityList.Save(
+                directoryInfo.GetDirectories("Entities")[0].FullName + "\\" + "entityList.xml");
 
 
         }

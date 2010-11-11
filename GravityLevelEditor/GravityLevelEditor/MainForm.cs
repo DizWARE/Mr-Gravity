@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Collections;
 using GravityLevelEditor.GuiTools;
 using GravityLevelEditor.EntityCreationForm;
+using System.IO;
 
 namespace GravityLevelEditor
 {
@@ -103,6 +104,11 @@ namespace GravityLevelEditor
             if(pb_bg.Image != null)
                 mData.Level.Background = pb_bg.Image;
 
+            UpdatePanel();
+        }
+
+        private void UpdatePanel()
+        {
             PrepareBackbuffer();
 
             //Update sceen
@@ -293,8 +299,30 @@ namespace GravityLevelEditor
 
             if (result != DialogResult.Cancel)
             {
-                //TODO: Add pointer to Xml load code in Level.cs
-                mData.SelectedEntities.Clear();
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "XML Files|*.xml";
+                dialog.Title = "Select a level File";
+                dialog.CheckFileExists = true;
+                dialog.CheckPathExists = true;
+
+                DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());
+
+                di = di.Parent.Parent;
+                dialog.InitialDirectory = di.FullName;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    mData.SelectedEntities.Clear();
+                    mData.Level = new Level(dialog.FileName);
+                    UpdatePanel();
+
+                    tb_cols.Text = mData.Level.Size.X.ToString();
+                    tb_rows.Text = mData.Level.Size.Y.ToString();
+
+                    tb_name.Text = mData.Level.Name;
+
+                    UpdateBackgroundPreview(mData.Level.Background);
+                    
+                }
             }
 
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
@@ -596,16 +624,21 @@ namespace GravityLevelEditor
             ImportForm imageSelectDialog = new ImportForm();
             if(imageSelectDialog.ShowDialog() == DialogResult.OK)
             {
-                pb_bg.Image = imageSelectDialog.SelectedImage;
-                if (pb_bg.Image == null) return;
-
-                float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
-                pb_bg.Width = 75;
-                pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
-
-                int xLoc = sc_HorizontalProperties.Panel2.Width / 2 - pb_bg.Width / 2;
-                pb_bg.Location = new Point(xLoc,pb_bg.Location.Y);
+                UpdateBackgroundPreview(imageSelectDialog.SelectedImage);
             }
+        }
+
+        private void UpdateBackgroundPreview(Image image)
+        {
+            pb_bg.Image = image;
+            if (pb_bg.Image == null) return;
+
+            float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
+            pb_bg.Width = 75;
+            pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
+
+            int xLoc = sc_HorizontalProperties.Panel2.Width / 2 - pb_bg.Width / 2;
+            pb_bg.Location = new Point(xLoc, pb_bg.Location.Y);
         }
 
         /*
