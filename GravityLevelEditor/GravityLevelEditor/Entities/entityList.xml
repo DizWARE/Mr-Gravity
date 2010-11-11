@@ -1,13 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entities>
   <Entity>
-    <ID>2</ID>
+    <ID>5</ID>
     <Name>TestImage</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Backgrounds\HAHAHA</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>45</ID>
+    <Name>TestImage2</Name>
+    <Type>Dynamic Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Tiles\</Texture>
     <Properties />
   </Entity>
 </Entities>

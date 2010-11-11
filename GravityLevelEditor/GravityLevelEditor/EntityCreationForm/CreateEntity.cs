@@ -116,6 +116,10 @@ namespace GravityLevelEditor.EntityCreationForm
             if (mAllEntities.Count == 0 || SelectedEntity == null) return;
             AdditionalProperties properties = new AdditionalProperties(SelectedEntity.Properties);
             properties.Location = Point.Add(this.Location, new Size(50, 50));
+            if (properties.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         /*

@@ -112,10 +112,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="TempUI\TempGUI.resx">
-      <DependentUpon>TempGUI.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Textures.resx">
       <DependentUpon>Textures.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -136,12 +132,6 @@
     </Compile>
     <Compile Include="RemoveEntity.cs" />
     <Compile Include="SelectEntity.cs" />
-    <Compile Include="TempUI\TempGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TempUI\TempGUI.Designer.cs">
-      <DependentUpon>TempGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="Textures.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,15 +140,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\add.png" />
+    <Content Include="Content\addentity.png" />
     <Content Include="Content\defaultBG.png" />
     <Content Include="Content\defaultImage.png" />
-    <Content Include="Content\addentity.png" />
     <Content Include="Content\depaint.png" />
-    <Content Include="Content\multi.png" />
     <Content Include="Content\multiselect.png" />
     <Content Include="Content\paint.png" />
-    <Content Include="Content\remove.png" />
     <Content Include="Content\removeentity.png" />
     <Content Include="Content\select.png" />
   </ItemGroup>
