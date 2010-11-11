@@ -12,7 +12,8 @@ namespace GravityLevelEditor.EntityCreationForm
     public partial class AdditionalProperties : Form
     {
         private string mPreviousKey;
-        private CreateEntity mForm;
+        private bool mEditable = false;
+        public bool Editable { set { mEditable = value; } }
 
         private Dictionary<string, string> mProperties;
         public Dictionary<string, string> Properties
@@ -33,13 +34,18 @@ namespace GravityLevelEditor.EntityCreationForm
         public AdditionalProperties(Dictionary<string, string> props)
         {
             InitializeComponent();
+            tb_name.Enabled = mEditable;
+            b_add.Enabled = mEditable;
+            b_remove.Enabled = mEditable;
 
             mProperties = new Dictionary<string, string>();
             if (props.Count > 0)
                 for (int i = 0; i < props.Count; i++)
                 {
-                    string name = mProperties.ElementAt(i).Key;
-                    string value = mProperties.ElementAt(i).Value;
+                    
+                    string name = props.ElementAt(i).Key;
+                    string value = props.ElementAt(i).Value;
+                    mProperties.Add(name, value);
                     lb_properties.Items.Add(name + "/" + value);
                 }
         }
@@ -51,6 +57,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void Ok(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -104,11 +111,19 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void Apply(object sender, EventArgs e)
         {
-            if (lb_properties.SelectedIndex == -1 || mProperties.ContainsKey(tb_name.Text)) return;
+            if (lb_properties.SelectedIndex == -1) return;
+            if (!mEditable) { EditValue(); return; }
+            if(mProperties.ContainsKey(tb_name.Text)) return;
             mProperties.Remove(mPreviousKey);
             mProperties.Add(tb_name.Text, tb_value.Text);
             mPreviousKey = tb_name.Text;
 
+            UpdateView();
+        }
+
+        private void EditValue()
+        {
+            mProperties[tb_name.Text] = tb_value.Text;
             UpdateView();
         }
 
@@ -139,14 +154,6 @@ namespace GravityLevelEditor.EntityCreationForm
             tb_value.Text = lb_properties.SelectedItem.ToString().Substring(splitIndex + 1);
         }
 
-        /*
-         * Closing
-         * 
-         * Copies the properties over to the entity on closing.
-         */
-        private void Closing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
+
     }
 }

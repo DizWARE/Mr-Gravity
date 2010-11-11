@@ -91,7 +91,6 @@ namespace GravityLevelEditor
          */
         public Entity(XElement ent)
         {
-
             string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Images";
 
             DirectoryInfo d = new DirectoryInfo(currentDirectory);

@@ -152,7 +152,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdditionalProperties";
             this.Text = "AdditionalProperties";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
