@@ -12,7 +12,7 @@ namespace GravityLevelEditor.EntityCreationForm
     public partial class AdditionalProperties : Form
     {
         private string mPreviousKey;
-        private bool mEditable = false;
+        private bool mEditable = true;
         public bool Editable { set { mEditable = value; } }
 
         private Dictionary<string, string> mProperties;
