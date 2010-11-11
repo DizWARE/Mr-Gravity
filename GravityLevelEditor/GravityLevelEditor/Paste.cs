@@ -6,48 +6,43 @@ using System.Collections;
 
 namespace GravityLevelEditor
 {
-    class RemoveEntity : IOperation
+    class Paste : IOperation
     {
         private ArrayList mEntities;
-        private Level mLevel;
 
         /*
          * Redo
          *
          * Implemented function from interface IOperation.
-         * Redoes a previously undone remove entity operation.
+         * Repastes the entites onto the level.
          */
         public void Redo()
         {
-            mLevel.RemoveEntity(mEntities, true);
+            throw new NotImplementedException();
         }
 
         /*
          * Undo
          *
          * Implemented function from interface IOperation.
-         * Undoes a remove entity operation, adding the entities
-         * back onto the level.
+         * Removes the last pasted entites.
          */
         public void Undo()
         {
-            mLevel.AddEntities(mEntities, false);
+            throw new NotImplementedException();
         }
 
         /*
-         * RemoveEntity
+         * Paste
          * 
-         * Constructor for remove entity operation. Holds all
+         * Constructor for paste operation. Holds all
          * data required to either undo or redo the given operation.
          * 
-         * ArrayList entities: the entities that are being removed from the level.
-         * 
-         * Level level: the level that is having the entity removed.
+         * ArrayList entities: list of entities being pasted
          */
-        public RemoveEntity(ArrayList entities, Level level)
+        public Paste(ArrayList entities)
         {
             mEntities = entities;
-            mLevel = level;
         }
     }
 }

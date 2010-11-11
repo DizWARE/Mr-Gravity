@@ -15,7 +15,9 @@ namespace GravityLevelEditor
     class Level
     {
         private ArrayList mEntities;
+
         private ArrayList mClipboard;
+        public ArrayList Clipboard { get { return mClipboard; } set { mClipboard = value; } }
 
         private bool mSaved = false;
         public bool Saved { get { return mSaved; } }
@@ -277,8 +279,13 @@ namespace GravityLevelEditor
          */
         public void Cut(ArrayList entities)
         {
-            RemoveEntity(entities, true);
+            if (entities.Count == 0) return;
+
+            RemoveEntity(entities, false);
             Copy(entities);
+
+            mUndoHistory.Clear();
+            mHistory.Push(new Cut(entities, this));
         }
 
         /*
@@ -288,14 +295,9 @@ namespace GravityLevelEditor
          */
         public ArrayList Paste()
         {
-            //Point minPoint = ((Entity)mClipboard[0]).Location;
             Point minPoint = new Point(1,1);
-            //foreach(Entity entity in mClipboard)
-            //    if (minPoint.X >= entity.Location.X && minPoint.Y >= entity.Location.Y)
-            //        minPoint = entity.Location;
 
             foreach (Entity entity in mClipboard)
-                //entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
                 entity.Location = Point.Add(entity.Location, new Size(minPoint));
 
             AddEntities(mClipboard, true);
