@@ -38,6 +38,7 @@
             this.mi_open = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.mi_save = new System.Windows.Forms.ToolStripMenuItem();
+            this.mi_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.mi_play = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_quit = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +93,6 @@
             this.lbl_cols = new System.Windows.Forms.Label();
             this.tb_rows = new System.Windows.Forms.TextBox();
             this.time_updater = new System.Windows.Forms.Timer(this.components);
-            this.mi_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.buttonContainer1.SuspendLayout();
             this.tsc_MainContainer.BottomToolStripPanel.SuspendLayout();
@@ -181,6 +181,12 @@
             this.mi_save.Size = new System.Drawing.Size(220, 26);
             this.mi_save.Text = "&Save            (Ctrl+S)";
             this.mi_save.Click += new System.EventHandler(this.Save);
+            // 
+            // mi_saveAs
+            // 
+            this.mi_saveAs.Name = "mi_saveAs";
+            this.mi_saveAs.Size = new System.Drawing.Size(220, 26);
+            this.mi_saveAs.Text = "Save &As";
             // 
             // playToolStripMenuItem
             // 
@@ -643,7 +649,7 @@
             // 
             // b_bg
             // 
-            this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.b_bg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.b_bg.Location = new System.Drawing.Point(32, 222);
             this.b_bg.Name = "b_bg";
             this.b_bg.Size = new System.Drawing.Size(143, 20);
@@ -684,7 +690,7 @@
             // 
             // b_modifyLevel
             // 
-            this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.b_modifyLevel.Location = new System.Drawing.Point(63, 273);
             this.b_modifyLevel.Name = "b_modifyLevel";
             this.b_modifyLevel.Size = new System.Drawing.Size(75, 23);
@@ -751,12 +757,6 @@
             // 
             this.time_updater.Interval = 1000;
             // 
-            // mi_saveAs
-            // 
-            this.mi_saveAs.Name = "mi_saveAs";
-            this.mi_saveAs.Size = new System.Drawing.Size(220, 26);
-            this.mi_saveAs.Text = "Save &As";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,7 +768,6 @@
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quit);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.buttonContainer1.ResumeLayout(false);

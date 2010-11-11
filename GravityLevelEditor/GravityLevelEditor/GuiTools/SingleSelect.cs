@@ -31,9 +31,14 @@ namespace GravityLevelEditor.GuiTools
             mPrevious = mInitial = gridPosition;
             mouseDown = true;
         }
-
+        
         public void LeftMouseUp(ref EditorData data, Point gridPosition)
         {
+            if(gridPosition.Equals(mInitial) && data.Level.SelectEntity(gridPosition) != null)
+            {
+                data.SelectedEntities.Clear();
+                data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+            }
             if (data.SelectedEntities.Count > 0)
             {
                 data.Level.MoveEntity(data.SelectedEntities,

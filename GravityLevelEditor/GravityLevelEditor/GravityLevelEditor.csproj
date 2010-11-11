@@ -144,6 +144,7 @@
     <Content Include="Content\defaultBG.png" />
     <Content Include="Content\defaultImage.png" />
     <Content Include="Content\depaint.png" />
+    <Content Include="Content\GLEicon.ico" />
     <Content Include="Content\multiselect.png" />
     <Content Include="Content\paint.png" />
     <Content Include="Content\removeentity.png" />
