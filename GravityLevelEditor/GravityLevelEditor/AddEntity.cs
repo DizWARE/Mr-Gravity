@@ -20,7 +20,7 @@ namespace GravityLevelEditor
         public void Redo()
         {
             foreach(Entity entity in mEntities)
-                mLevel.AddEntity(entity, entity.Location, true);
+                mLevel.AddEntity(entity, entity.Location, false);
         }
 
         /*

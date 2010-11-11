@@ -31,8 +31,9 @@ namespace GravityLevelEditor
          */
         public void Undo()
         {
-            foreach (Entity e in mEntities)
-                mLevel.AddEntity(e, e.Location, false);
+            mLevel.AddEntities(mEntities, false);
+            //foreach (Entity e in mEntities)
+                //mLevel.AddEntity(e, e.Location, false);
         }
 
         /*

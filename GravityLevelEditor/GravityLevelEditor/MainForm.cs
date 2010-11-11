@@ -795,6 +795,5 @@ namespace GravityLevelEditor
                     break;
             }
         }
-
     }
 }

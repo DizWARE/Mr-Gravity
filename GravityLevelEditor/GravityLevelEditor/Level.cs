@@ -129,11 +129,13 @@ namespace GravityLevelEditor
          */
         public ArrayList AddEntity(Entity entity, Point location, bool addToHistory)
         {
-            mUndoHistory.Clear();
             if (addToHistory)
+            {
+                mUndoHistory.Clear();
                 mHistory.Push(new AddEntity(entity, this));
-            mEntities.Add(entity);
+            }
 
+            mEntities.Add(entity);
             entity.MoveEntity(location);
 
             return SelectEntities(location, location, false);
@@ -149,11 +151,16 @@ namespace GravityLevelEditor
          * ArrayList entities: List of entities. Must have preset locations
          * 
          * Return Value: Rereturns the list for editor selection
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public ArrayList AddEntities(ArrayList entities)
+        public ArrayList AddEntities(ArrayList entities, bool addToHistory)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new AddEntity(entities, this));
+            if (addToHistory)
+            {
+                mUndoHistory.Clear();
+                mHistory.Push(new AddEntity(entities, this));
+            }
             foreach (Entity entity in entities)
                 mEntities.Add(entity);            
 
@@ -172,9 +179,11 @@ namespace GravityLevelEditor
          */
         public void RemoveEntity(ArrayList entities, bool addToHistory)
         {
-            mUndoHistory.Clear();
             if(addToHistory)
+            {
                 mHistory.Push(new RemoveEntity(entities, this));
+                mUndoHistory.Clear();
+            }
             foreach (Entity entity in entities)
                 mEntities.Remove(entity);
         }
@@ -188,11 +197,16 @@ namespace GravityLevelEditor
          * ArrayList entities: entities to be moved.
          * 
          * Size offset: The difference that needs to be added to the entities current location
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public void MoveEntity(ArrayList entities, Size offset)
+        public void MoveEntity(ArrayList entities, Size offset, bool addToHistory)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new MoveEntity(entities, offset));
+            if (addToHistory)
+            {
+                mUndoHistory.Clear();
+                mHistory.Push(new MoveEntity(entities, offset));
+            }
 
             foreach(Entity entity in entities)
                 if(entity != null)
@@ -288,7 +302,7 @@ namespace GravityLevelEditor
                 //entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
                 entity.Location = Point.Add(entity.Location, new Size(minPoint));
 
-            AddEntities(mClipboard);
+            AddEntities(mClipboard, true);
             return mClipboard;
         }
 
@@ -383,7 +397,10 @@ namespace GravityLevelEditor
             }
 
             if (addToHistory)
+            {
                 mHistory.Push(new SelectEntity(selected));
+                mUndoHistory.Clear();
+            }
 
             return selected;
         }
