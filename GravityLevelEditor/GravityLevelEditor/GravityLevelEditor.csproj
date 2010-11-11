@@ -49,8 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEntity.cs" />
-    <Compile Include="Cut.cs" />
     <Compile Include="EntityCreationForm\AdditionalProperties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,7 +77,13 @@
     <Compile Include="ImportForm.Designer.cs">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IOperation.cs" />
+    <Compile Include="IOperationClasses\AddEntity.cs" />
+    <Compile Include="IOperationClasses\Cut.cs" />
+    <Compile Include="IOperationClasses\IOperation.cs" />
+    <Compile Include="IOperationClasses\MoveEntity.cs" />
+    <Compile Include="IOperationClasses\Paste.cs" />
+    <Compile Include="IOperationClasses\RemoveEntity.cs" />
+    <Compile Include="IOperationClasses\SelectEntity.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -87,8 +91,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoveEntity.cs" />
-    <Compile Include="Paste.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EntityCreationForm\AdditionalProperties.resx">
@@ -130,8 +132,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RemoveEntity.cs" />
-    <Compile Include="SelectEntity.cs" />
     <Compile Include="Textures.cs">
       <SubType>Form</SubType>
     </Compile>
