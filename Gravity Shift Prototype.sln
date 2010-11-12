@@ -1,12 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C# Express 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Shift Prototype", "WindowsGame1\Gravity Shift Prototype.csproj", "{1465AA73-5032-4E30-8E36-514543A7F0BF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0} = {CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityLevelEditor", "GravityLevelEditor\GravityLevelEditor\GravityLevelEditor.csproj", "{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1Content", "WindowsGame1\Content\WindowsGame1Content.contentproj", "{346008ED-587D-42F8-80B1-424AAEF43968}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
