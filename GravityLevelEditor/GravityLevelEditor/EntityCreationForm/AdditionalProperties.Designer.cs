@@ -38,6 +38,7 @@
             this.tb_value = new System.Windows.Forms.TextBox();
             this.lbl_value = new System.Windows.Forms.Label();
             this.b_ok = new System.Windows.Forms.Button();
+            this.b_apply = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // b_add
@@ -48,6 +49,7 @@
             this.b_add.TabIndex = 0;
             this.b_add.Text = "+";
             this.b_add.UseVisualStyleBackColor = true;
+            this.b_add.Click += new System.EventHandler(this.NewProperty);
             // 
             // b_remove
             // 
@@ -57,6 +59,7 @@
             this.b_remove.TabIndex = 1;
             this.b_remove.Text = "-";
             this.b_remove.UseVisualStyleBackColor = true;
+            this.b_remove.Click += new System.EventHandler(this.RemoveProperty);
             // 
             // lb_properties
             // 
@@ -64,7 +67,8 @@
             this.lb_properties.Location = new System.Drawing.Point(12, 48);
             this.lb_properties.Name = "lb_properties";
             this.lb_properties.Size = new System.Drawing.Size(136, 173);
-            this.lb_properties.TabIndex = 2;
+            this.lb_properties.TabIndex = 6;
+            this.lb_properties.SelectedIndexChanged += new System.EventHandler(this.IndexChanged);
             // 
             // lbl_properties
             // 
@@ -91,14 +95,14 @@
             this.tb_name.Location = new System.Drawing.Point(167, 67);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(100, 20);
-            this.tb_name.TabIndex = 5;
+            this.tb_name.TabIndex = 2;
             // 
             // tb_value
             // 
             this.tb_value.Location = new System.Drawing.Point(167, 127);
             this.tb_value.Name = "tb_value";
             this.tb_value.Size = new System.Drawing.Size(100, 20);
-            this.tb_value.TabIndex = 7;
+            this.tb_value.TabIndex = 3;
             // 
             // lbl_value
             // 
@@ -115,15 +119,27 @@
             this.b_ok.Location = new System.Drawing.Point(192, 227);
             this.b_ok.Name = "b_ok";
             this.b_ok.Size = new System.Drawing.Size(75, 23);
-            this.b_ok.TabIndex = 8;
+            this.b_ok.TabIndex = 5;
             this.b_ok.Text = "OK";
             this.b_ok.UseVisualStyleBackColor = true;
+            this.b_ok.Click += new System.EventHandler(this.Ok);
+            // 
+            // b_apply
+            // 
+            this.b_apply.Location = new System.Drawing.Point(167, 175);
+            this.b_apply.Name = "b_apply";
+            this.b_apply.Size = new System.Drawing.Size(99, 23);
+            this.b_apply.TabIndex = 4;
+            this.b_apply.Text = "Apply";
+            this.b_apply.UseVisualStyleBackColor = true;
+            this.b_apply.Click += new System.EventHandler(this.Apply);
             // 
             // AdditionalProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 262);
+            this.Controls.Add(this.b_apply);
             this.Controls.Add(this.b_ok);
             this.Controls.Add(this.tb_value);
             this.Controls.Add(this.lbl_value);
@@ -152,5 +168,6 @@
         private System.Windows.Forms.TextBox tb_value;
         private System.Windows.Forms.Label lbl_value;
         private System.Windows.Forms.Button b_ok;
+        private System.Windows.Forms.Button b_apply;
     }
 }

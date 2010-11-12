@@ -19,9 +19,6 @@ namespace GravityLevelEditor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
             Application.EnableVisualStyles();
-            //Application.Run(new Textures());
-            //Application.Run(new TempGUI());
-            //Application.Run(new CreateEntity());
             Application.Run(new MainForm());
         }
     }

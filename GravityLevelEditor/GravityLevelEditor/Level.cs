@@ -15,7 +15,9 @@ namespace GravityLevelEditor
     class Level
     {
         private ArrayList mEntities;
+
         private ArrayList mClipboard;
+        public ArrayList Clipboard { get { return mClipboard; } set { mClipboard = value; } }
 
         private bool mSaved = false;
         public bool Saved { get { return mSaved; } }
@@ -68,16 +70,11 @@ namespace GravityLevelEditor
          */
         public Level(string filename)
         {
+            string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Images";
+            DirectoryInfo d = new DirectoryInfo(currentDirectory);
 
-            string currentDirectory = Directory.GetCurrentDirectory();
-            if (currentDirectory.EndsWith("bin\\Debug"))
-            {
-                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
-                if (trimLoc >= 0)
-                {
-                    currentDirectory = currentDirectory.Substring(0, trimLoc);
-                }
-            }
+            mEntities = new ArrayList();
+            mClipboard = new ArrayList();
 
             XElement xLevel = XElement.Load(filename);
 
@@ -85,7 +82,7 @@ namespace GravityLevelEditor
             {
                 if (el.Name == "Name")
                 {
-                    this.Name = el.Name.ToString();
+                    this.Name = el.Value.ToString();
                 }
                 if (el.Name == "Size")
                 {
@@ -95,7 +92,8 @@ namespace GravityLevelEditor
                 }
                 if (el.Name == "Background")
                 {
-                    this.Background = Image.FromFile(currentDirectory + "\\Content\\Images\\" + el.Value + ".png");
+                    this.Background = Image.FromFile(d.FullName + "\\" + el.Value + ".png");
+                    this.Background.Tag = el.Value;
                 }
                 if (el.Name == "Color")
                 {
@@ -124,16 +122,21 @@ namespace GravityLevelEditor
          * Entity entity: entity to be added to the level.
          * 
          * Point location: location where we are placing this Entity
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public ArrayList AddEntity(Entity entity, Point location)
+        public ArrayList AddEntity(Entity entity, Point location, bool addToHistory)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new AddEntity(entity, this));
-            mEntities.Add(entity);
+            if (addToHistory)
+            {
+                mUndoHistory.Clear();
+                mHistory.Push(new AddEntity(entity, this));
+            }
 
+            mEntities.Add(entity);
             entity.MoveEntity(location);
 
-            return SelectEntities(location, location);
+            return SelectEntities(location, location, false);
         }
 
         /*
@@ -146,11 +149,16 @@ namespace GravityLevelEditor
          * ArrayList entities: List of entities. Must have preset locations
          * 
          * Return Value: Rereturns the list for editor selection
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public ArrayList AddEntities(ArrayList entities)
+        public ArrayList AddEntities(ArrayList entities, bool addToHistory)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new AddEntity(entities, this));
+            if (addToHistory)
+            {
+                mUndoHistory.Clear();
+                mHistory.Push(new AddEntity(entities, this));
+            }
             foreach (Entity entity in entities)
                 mEntities.Add(entity);            
 
@@ -164,11 +172,16 @@ namespace GravityLevelEditor
          * remove entity operation to the history.
          * 
          * ArrayList entities: entities to be removed from the level.
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public void RemoveEntity(ArrayList entities)
+        public void RemoveEntity(ArrayList entities, bool addToHistory)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new RemoveEntity(entities, this));
+            if(addToHistory)
+            {
+                mHistory.Push(new RemoveEntity(entities, this));
+                mUndoHistory.Clear();
+            }
             foreach (Entity entity in entities)
                 mEntities.Remove(entity);
         }
@@ -182,11 +195,16 @@ namespace GravityLevelEditor
          * ArrayList entities: entities to be moved.
          * 
          * Size offset: The difference that needs to be added to the entities current location
+         * 
+         * bool addToHistory: whether or not to add the operation to the undo history
          */
-        public void MoveEntity(ArrayList entities, Size offset)
+        public void MoveEntity(ArrayList entities, Size offset, bool addToHistory)
         {
-            mUndoHistory.Clear();
-            mHistory.Push(new MoveEntity(entities, offset));
+            if (addToHistory)
+            {
+                mUndoHistory.Clear();
+                mHistory.Push(new MoveEntity(entities, offset));
+            }
 
             foreach(Entity entity in entities)
                 if(entity != null)
@@ -204,8 +222,8 @@ namespace GravityLevelEditor
          */
         public void Resize(int rows, int cols)
         {
-            mSize.X = rows;
-            mSize.Y = cols;
+            mSize.X = cols;
+            mSize.Y = rows;
         }
 
         /*
@@ -261,8 +279,13 @@ namespace GravityLevelEditor
          */
         public void Cut(ArrayList entities)
         {
-            RemoveEntity(entities);
+            if (entities.Count == 0) return;
+
+            RemoveEntity(entities, false);
             Copy(entities);
+
+            mUndoHistory.Clear();
+            mHistory.Push(new Cut(entities, this));
         }
 
         /*
@@ -272,17 +295,12 @@ namespace GravityLevelEditor
          */
         public ArrayList Paste()
         {
-            //Point minPoint = ((Entity)mClipboard[0]).Location;
             Point minPoint = new Point(1,1);
-            //foreach(Entity entity in mClipboard)
-            //    if (minPoint.X >= entity.Location.X && minPoint.Y >= entity.Location.Y)
-            //        minPoint = entity.Location;
 
             foreach (Entity entity in mClipboard)
-                //entity.Location = Point.Subtract(entity.Location, new Size(minPoint));
                 entity.Location = Point.Add(entity.Location, new Size(minPoint));
 
-            AddEntities(mClipboard);
+            AddEntities(mClipboard, true);
             return mClipboard;
         }
 
@@ -352,8 +370,10 @@ namespace GravityLevelEditor
          * Point topLeft: Top left corner of the selection rectangle
          * 
          * Point bottomRight: Bottom right corner of the selection rectangle
+         * 
+         * bool addToHistory: Determines whether or not we will add this operation to the history
          */
-        public ArrayList SelectEntities(Point firstPoint, Point secondPoint)
+        public ArrayList SelectEntities(Point firstPoint, Point secondPoint, bool addToHistory)
         {
             Point min = new Point(Math.Min(firstPoint.X,secondPoint.X),
                                     Math.Min(firstPoint.Y,secondPoint.Y));
@@ -374,7 +394,12 @@ namespace GravityLevelEditor
                 }
             }
 
-            mHistory.Push(new SelectEntity(selected));
+            if (addToHistory)
+            {
+                mHistory.Push(new SelectEntity(selected));
+                mUndoHistory.Clear();
+            }
+
             return selected;
         }
 

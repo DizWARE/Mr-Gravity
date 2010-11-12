@@ -1,0 +1,46 @@
+Git Commands:
+
+git init						make an existing directory
+git clone [url]					get a copy of an existing project
+git add							add a file to the staging area (use 'git add .' for all files)
+git status						show status of files (staged or unstaged/modified etc)
+	-s							show only filename and status
+git diff						show modifications to unstaged files since last commit
+	--cached					show modifications to staged files since last commit
+	HEAD						show modifications to both file types since last commit
+	--stat						show summary of changes (1 files changed, 2 insertions(+), 1 deletions(-)
+	[tag]						show what is changed since [tag] release
+	[branchname1] [branchname2] show difference between two branches
+git commit						record a snapshot of the staging area
+	-m [text]					add commit message on the command line instead of in a text editor
+	-a							automatically stage all tracked, modified files before commit
+git reset HEAD -- [filename]	unstage changes that have been staged
+git rm [filename]				removes a file from the staging area (delete)
+get branch						list current available branches (starred branch is your current working branch)
+	[branchname]				create a new branch
+get checkout [branchname]		switch to a branch
+	-b [branchname]				create and switch to a new branch
+	-d [branchname]				delete an existing branch
+git merge [branchname]			merge current branch with [branchname]
+git log							show commit changes leading up to this branch
+	--oneline					show compact version of the history
+	--graph						show when history was branched and merged
+	--decorate					show tags in log
+	[branchname1] ^[branchname2]show commits in branchname2 that are not in branchname1
+	--author=[authorname]		show commits done by author
+	-[number]					show last x commits done
+	--before{[x]} --after={[y]} show commits in current range (values x and y can be something line 3.weeks.ago or 2010-04-18)
+	--no-merges					don't show merge commits
+	--grep=[text]				show commits containing [text] in the commit message (don't use quotes or apostrophes around text)
+	--all-match					use to show results of conditions met by multiple filters (i.e. author AND grep)
+	-s[text]					filter by introduced diff (no '=' between s and [text])	
+	-p							show patch introduced at each commit
+	--stat						show diffstat of introduced changes
+git tag -a [tag]				tag a point in history as important
+git remote						list your remote aliases (repositories)
+	-v							show the url for each alias
+	add [alias] [url]			add a new remote repository to the given url
+	rm							remove an existing alias
+get fetch [alias]				download new branches and data from repository
+get pull [alias]				run a get fetch and merge
+get push [alias] [branch]		push new branches/data to a remote repository

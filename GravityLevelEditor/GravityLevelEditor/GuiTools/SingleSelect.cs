@@ -19,23 +19,36 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseDown(ref EditorData data, Point gridPosition)
         {
-            mInitial = gridPosition;
-            mPrevious = mInitial;
-            mouseDown = true;
-        }
-
-        public void LeftMouseUp(ref EditorData data, Point gridPosition)
-        {
-            if (mInitial.Equals(gridPosition))
+            if (data.SelectedEntities.Count < 2)
             {
                 data.SelectedEntities.Clear();
-                Entity selected = data.Level.SelectEntity(gridPosition);
 
-                if(selected != null)
+                Entity selected = data.Level.SelectEntity(gridPosition);
+                if (selected != null)
                     data.SelectedEntities.Add(selected);
+            }
+
+            mPrevious = mInitial = gridPosition;
+            mouseDown = true;
+        }
+        
+        public void LeftMouseUp(ref EditorData data, Point gridPosition)
+        {
+            if(gridPosition.Equals(mInitial) && data.Level.SelectEntity(gridPosition) != null)
+            {
+                data.SelectedEntities.Clear();
+                data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+            }
+            if (data.SelectedEntities.Count > 0)
+            {
+                data.Level.MoveEntity(data.SelectedEntities,
+                    new Size(Point.Subtract(mInitial, new Size(gridPosition))), false);
+                data.Level.MoveEntity(data.SelectedEntities,
+                    new Size(Point.Subtract(gridPosition, new Size(mInitial))), true);
             }
             mouseDown = false;
         }
+
 
         public void RightMouseDown(ref EditorData data, Point gridPosition)
         {
@@ -53,7 +66,7 @@ namespace GravityLevelEditor.GuiTools
             {
                 //Keep an eye on this. The SelectedEntities can return an empty list
                 data.Level.MoveEntity(data.SelectedEntities,
-                    new Size(Point.Subtract(gridPosition, new Size(mPrevious))));
+                    new Size(Point.Subtract(gridPosition, new Size(mPrevious))), false);
                 mPrevious = gridPosition;
                 panel.Invalidate(panel.DisplayRectangle);
             }

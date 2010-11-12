@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Collections;
 using GravityLevelEditor.GuiTools;
 using GravityLevelEditor.EntityCreationForm;
+using System.IO;
 
 namespace GravityLevelEditor
 {
@@ -25,6 +26,10 @@ namespace GravityLevelEditor
         private static GuiTools.DepaintEntity TOOL_DEPAINT = new GuiTools.DepaintEntity();
 
         ITool mCurrentTool = TOOL_SELECT;
+
+        //Backbuffer stuff
+        private Bitmap offScreenBmp;
+        private Graphics offScreenDC;
 
         /*
          * TempGUI
@@ -46,13 +51,20 @@ namespace GravityLevelEditor
 
             this.DoubleBuffered = true;
 
+            PrepareBackbuffer();
+
             // Code for keyboard input -JRH
             this.KeyPreview = true;
             this.KeyPress += new KeyPressEventHandler(MainForm_KeyPress);
 
             time_updater.Start();
         }
-
+        
+        /*
+         * CreateParams
+         * 
+         * More flicker fixes. This one does help quite a bit
+         */
         protected override CreateParams CreateParams
         {
             get
@@ -61,7 +73,16 @@ namespace GravityLevelEditor
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
-        } 
+        }
+
+        private void PrepareBackbuffer()
+        {
+            Panel p = sc_Properties.Panel1;
+            Size gridSize = new Size(GridSpace.GetDrawingCoord(mData.Level.Size));
+            offScreenBmp = new Bitmap(Math.Min(gridSize.Width,p.DisplayRectangle.Width), 
+                Math.Min(gridSize.Height,p.DisplayRectangle.Height));
+            offScreenDC = Graphics.FromImage(offScreenBmp);
+        }
 
         /*
          * ApplyChanges
@@ -75,17 +96,24 @@ namespace GravityLevelEditor
          */
         private void ApplyChanges(object sender, EventArgs e)
         {
+            //Apply level changes
             mData.Level.Name = tb_name.Text;
-
             mData.Level.Resize(int.Parse(tb_rows.Text), 
                           int.Parse(tb_cols.Text));
 
-            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
             if(pb_bg.Image != null)
                 mData.Level.Background = pb_bg.Image;
 
-            sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
+            UpdatePanel();
+        }
 
+        private void UpdatePanel()
+        {
+            PrepareBackbuffer();
+
+            //Update sceen
+            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
+            sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
@@ -127,13 +155,14 @@ namespace GravityLevelEditor
             Pen pen = new Pen(Brushes.Gray);
             Point p1, p2;
             Point offset = new Point(p.DisplayRectangle.X, p.DisplayRectangle.Y);
+            offScreenDC.Clear(Color.Ivory);
 
-            mData.Level.Draw(g, offset);
+            mData.Level.Draw(offScreenDC, offset);
 
             Pen pen2 = new Pen(Color.FromArgb(55, Color.Blue));
             
             foreach(Entity selectedEntity in mData.SelectedEntities)
-                g.FillRectangle(pen2.Brush,GridSpace.GetDrawingRegion(selectedEntity.Location,offset));
+                offScreenDC.FillRectangle(pen2.Brush,GridSpace.GetDrawingRegion(selectedEntity.Location,offset));
 
             if (TOOL_MULTISELECT.Selecting)
             {
@@ -152,24 +181,28 @@ namespace GravityLevelEditor
                 rect.X += offset.X;
                 rect.Y += offset.Y;
 
-                g.DrawRectangle(pen3, rect);
+                offScreenDC.DrawRectangle(pen3, rect);
             }
 
+            //Draw rows
             for (int i = 0; i <= mData.Level.Size.X; i++)
             {
                 p1 = GridSpace.GetDrawingCoord(new Point(i, 0));
                 p2 = GridSpace.GetDrawingCoord(new Point(i, mData.Level.Size.Y));
-                g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
+                offScreenDC.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
             }
 
+            //Draw columns
             for (int i = 0; i <= mData.Level.Size.Y; i++)
             {
                 p1 = GridSpace.GetDrawingCoord(new Point(0, i));
                 p2 = GridSpace.GetDrawingCoord(new Point(mData.Level.Size.X, i));
-                g.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
+                offScreenDC.DrawLine(pen, new Point(p1.X + offset.X, p1.Y + offset.Y),
                     new Point(p2.X + offset.X, p2.Y + offset.Y));
             }
+
+            g.DrawImage(offScreenBmp, 0, 0);
         }
 
         /*
@@ -266,8 +299,30 @@ namespace GravityLevelEditor
 
             if (result != DialogResult.Cancel)
             {
-                //TODO: Add pointer to Xml load code in Level.cs
-                mData.SelectedEntities.Clear();
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "XML Files|*.xml";
+                dialog.Title = "Select a level File";
+                dialog.CheckFileExists = true;
+                dialog.CheckPathExists = true;
+
+                DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());
+
+                di = di.Parent.Parent;
+                dialog.InitialDirectory = di.FullName;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    mData.SelectedEntities.Clear();
+                    mData.Level = new Level(dialog.FileName);
+                    UpdatePanel();
+
+                    tb_cols.Text = mData.Level.Size.X.ToString();
+                    tb_rows.Text = mData.Level.Size.Y.ToString();
+
+                    tb_name.Text = mData.Level.Name;
+
+                    UpdateBackgroundPreview(mData.Level.Background);
+                    
+                }
             }
 
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
@@ -468,7 +523,7 @@ namespace GravityLevelEditor
             Panel p = (Panel)sender;
             Point mousePos = MousePosToGrid(p, e);
 
-            if (!VerifyEntityLocation()) return; 
+            VerifyEntityLocation();
             if ((mousePos.X >= mData.Level.Size.X || mousePos.Y >= mData.Level.Size.Y ||
                mousePos.X < 0 || mousePos.Y < 0))
             { tslbl_gridLoc.Text = "Out of Grid Bounds"; return; }
@@ -559,26 +614,45 @@ namespace GravityLevelEditor
             pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.depaint;
         }
 
+        /*
+         * ChangeBackground
+         * 
+         * Launches an image selection dialog box, and changes the background to the selection
+         */
         private void ChangeBackground(object sender, EventArgs e)
         {
             ImportForm imageSelectDialog = new ImportForm();
             if(imageSelectDialog.ShowDialog() == DialogResult.OK)
             {
-                pb_bg.Image = imageSelectDialog.SelectedImage;
-                if (pb_bg.Image == null) return;
-
-                float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
-                pb_bg.Width = 75;
-                pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
-
-                int xLoc = sc_HorizontalProperties.Panel2.Width / 2 - pb_bg.Width / 2;
-                pb_bg.Location = new Point(xLoc,pb_bg.Location.Y);
+                UpdateBackgroundPreview(imageSelectDialog.SelectedImage);
             }
         }
 
+        private void UpdateBackgroundPreview(Image image)
+        {
+            pb_bg.Image = image;
+            if (pb_bg.Image == null) return;
+
+            float ratioWidth = (float)pb_bg.Image.Size.Height / pb_bg.Image.Width;
+            pb_bg.Width = 75;
+            pb_bg.Height = (int)(pb_bg.Width * ratioWidth);
+
+            int xLoc = sc_HorizontalProperties.Panel2.Width / 2 - pb_bg.Width / 2;
+            pb_bg.Location = new Point(xLoc, pb_bg.Location.Y);
+        }
+
+        /*
+         * ChangeEntity
+         * 
+         * Launch the Dialog selection screen
+         * 
+         * -Typical event parameters
+         */
         private void ChangeEntity(object sender, EventArgs e)
         {
             CreateEntity entityDialog = new CreateEntity();
+
+            //If the dialog comes back successfully, change the On-deck etity and update info
             if (entityDialog.ShowDialog() == DialogResult.OK)
             {
                 mData.OnDeck = entityDialog.SelectedEntity;
@@ -591,12 +665,18 @@ namespace GravityLevelEditor
             }
         }
 
-        private bool VerifyEntityLocation()
+        /*
+         * VerifyEntityLocation
+         * 
+         * Checks to make sure nothing is out of bounds. If something is, move it back on 
+         * the grid
+         */
+        private void VerifyEntityLocation()
         {
-            if (mData.SelectedEntities.Count == 0) return true;
+            if (mData.SelectedEntities.Count == 0) return;
             Point maxPoint = ((Entity)mData.SelectedEntities[0]).Location;
             Point minPoint = maxPoint;
-            bool returnVal = true;
+            bool invalidate = false;
             foreach (Entity entity in mData.SelectedEntities)
             {
                 maxPoint.X = Math.Max(maxPoint.X, entity.Location.X);
@@ -606,22 +686,42 @@ namespace GravityLevelEditor
             }
 
             if (maxPoint.X >= mData.Level.Size.X)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X - 1, entity.Location.Y);
+                invalidate = true;
+            }
             if (maxPoint.Y >= mData.Level.Size.Y)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X, entity.Location.Y - 1);
+                invalidate = true;
+            }
             if (minPoint.X < 0)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X + 1, entity.Location.Y);
+                invalidate = true;
+            }
             if (minPoint.Y < 0)
+            {
                 foreach (Entity entity in mData.SelectedEntities)
                     entity.Location = new Point(entity.Location.X, entity.Location.Y + 1);
-            
+                invalidate = true;
+            }
+            if(invalidate)
+                sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
 
-            return returnVal;
+            return;
         }
 
+        /*
+         * GridScroll
+         * 
+         * Helps make scrolling as smooth as possible
+         * 
+         * -Typical scroll event parameters
+         */
         private void GridScroll(object sender, ScrollEventArgs e)
         {
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
@@ -755,6 +855,5 @@ namespace GravityLevelEditor
                     break;
             }
         }
-
     }
 }

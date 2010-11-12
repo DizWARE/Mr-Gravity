@@ -338,6 +338,7 @@
             this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStripButton1.Size = new System.Drawing.Size(48, 48);
             this.toolStripButton1.Text = "Select/Move (S) (1)";
+            this.toolStripButton1.Click += new System.EventHandler(this.SelectTool);
             // 
             // b_multiselect
             // 
@@ -648,7 +649,7 @@
             // 
             // b_bg
             // 
-            this.b_bg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.b_bg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.b_bg.Location = new System.Drawing.Point(32, 222);
             this.b_bg.Name = "b_bg";
             this.b_bg.Size = new System.Drawing.Size(143, 20);
@@ -689,7 +690,7 @@
             // 
             // b_modifyLevel
             // 
-            this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.b_modifyLevel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.b_modifyLevel.Location = new System.Drawing.Point(63, 273);
             this.b_modifyLevel.Name = "b_modifyLevel";
             this.b_modifyLevel.Size = new System.Drawing.Size(75, 23);
@@ -804,7 +805,6 @@
         private System.Windows.Forms.ToolStripMenuItem mi_open;
         private System.Windows.Forms.ToolStripSeparator closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mi_save;
-        private System.Windows.Forms.ToolStripMenuItem mi_saveAs;
         private System.Windows.Forms.ToolStripSeparator playToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mi_play;
         private System.Windows.Forms.ToolStripMenuItem mi_quit;
@@ -859,6 +859,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLoc;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.PictureBox pb_CurrentTool;
+        private System.Windows.Forms.ToolStripMenuItem mi_saveAs;
 
     }
 }
