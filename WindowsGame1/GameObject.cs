@@ -21,6 +21,7 @@ namespace GravityShift
         //Creates a unique identifier for every Physics object
         public int ID = PhysicsObject.ID_CREATER++;
 
+        protected Vector2 mPrevPos;
         protected Vector2 mPosition;
         protected Vector2 mSize;
 

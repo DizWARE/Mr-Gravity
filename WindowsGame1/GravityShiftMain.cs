@@ -70,12 +70,14 @@ namespace GravityShift
             base.Initialize();
         }
 
+        /* Getter/Setter to change the inMenu variables */
         public static bool InMenu
         {
             get { return inMenu; }
             set { inMenu = value; }
         }
 
+        /* Getter/Setter to change the inGame variables */
         public static bool InGame
         {
             get { return inGame; }
@@ -96,12 +98,28 @@ namespace GravityShift
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
             player = new Player(Content, "Player",
-                new Vector2(1, 1), new Vector2(300,100), 
-                ref mPhysicsEnvironment, new KeyboardControl(),.8f,false);
+                new Vector2(1, 1), new Vector2(300, 100),
+                ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
             mObjects.Add(player);
 
-            //MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f,true);
-            //mObjects.Add(movTile);
+            mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(500, 550), ref mPhysicsEnvironment, .8f, false));
+            mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(500, 600), ref mPhysicsEnvironment, .8f, false));
+            mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(550, 500), ref mPhysicsEnvironment, .8f, false));
+            /*mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(600, 500), ref mPhysicsEnvironment, .8f, false));
+            mObjects.Add(new GenericObject(Content, "Player",
+                          new Vector2(1, 1), new Vector2(700, 750), ref mPhysicsEnvironment, .8f, false));
+            mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(700, 700), ref mPhysicsEnvironment, .8f, false));
+            mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(850, 800), ref mPhysicsEnvironment, .8f, false));
+            mObjects.Add(new GenericObject(Content, "Player",
+                            new Vector2(1, 1), new Vector2(800, 800), ref mPhysicsEnvironment, .8f, false));*/
+            MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f,true);
+            mObjects.Add(movTile);
 
             Tile tile1 = new Tile(Content, "Tile", Vector2.One, new Vector2(300, 300), .8f, true);
             mObjects.Add(tile1);
@@ -304,11 +322,7 @@ namespace GravityShift
                     }
                     else//square/ circle collision
                     {
-                        if (obj is PhysicsObject)
-                        {
-                            PhysicsObject physTemp = (PhysicsObject)obj;
-                            physTemp.HandleCollideCircleAndBox(physObj);
-                        }
+                        physObj.HandleCollideCircleAndBox(obj);
                     }
                 }
             }
