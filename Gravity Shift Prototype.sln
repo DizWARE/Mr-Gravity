@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Shift Prototype", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityLevelEditor", "GravityLevelEditor\GravityLevelEditor\GravityLevelEditor.csproj", "{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1Content", "WindowsGame1\Content\WindowsGame1Content.contentproj", "{346008ED-587D-42F8-80B1-424AAEF43968}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1Content", "WindowsGame1\Content\Content.contentproj", "{346008ED-587D-42F8-80B1-424AAEF43968}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,12 +19,13 @@
     <XnaUpgrade>
     </XnaUpgrade>
     <XnaOutputType>Game</XnaOutputType>
-    <XnaProfile>HiDef</XnaProfile>
+    <XnaProfile>Reach</XnaProfile>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -52,6 +53,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <PlatformTarget>x86</PlatformTarget>
     <XnaCompressContent>false</XnaCompressContent>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -64,6 +66,10 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <PlatformTarget>x86</PlatformTarget>
     <XnaCompressContent>True</XnaCompressContent>
+<<<<<<< HEAD
+=======
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+>>>>>>> upstream/master
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553">
@@ -187,7 +193,11 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="Content\WindowsGame1Content.contentproj">
+=======
+    <ProjectReference Include="Content\Content.contentproj">
+>>>>>>> upstream/master
       <Project>{346008ED-587D-42F8-80B1-424AAEF43968}</Project>
       <Name>WindowsGame1Content %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
