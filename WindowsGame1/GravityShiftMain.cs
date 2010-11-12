@@ -70,12 +70,14 @@ namespace GravityShift
             base.Initialize();
         }
 
+        /* Getter/Setter to change the inMenu variables */
         public static bool InMenu
         {
             get { return inMenu; }
             set { inMenu = value; }
         }
 
+        /* Getter/Setter to change the inGame variables */
         public static bool InGame
         {
             get { return inGame; }
