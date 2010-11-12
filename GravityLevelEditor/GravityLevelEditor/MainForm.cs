@@ -75,6 +75,11 @@ namespace GravityLevelEditor
             }
         }
 
+        /*
+         * PrepareBackbuffer
+         * 
+         * Prepares the backbuffer for drawing
+         */
         private void PrepareBackbuffer()
         {
             Panel p = sc_Properties.Panel1;
@@ -107,6 +112,11 @@ namespace GravityLevelEditor
             UpdatePanel();
         }
 
+        /*
+         * UpdatePanel
+         * 
+         * Prepare Backbuffer and resize the panels
+         */
         private void UpdatePanel()
         {
             PrepareBackbuffer();
@@ -441,9 +451,7 @@ namespace GravityLevelEditor
         private void ZoomIn(object sender, EventArgs e)
         {
             GridSpace.ZoomIn();
-            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
-            sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
+            UpdatePanel();
         }
 
         /*
@@ -458,9 +466,7 @@ namespace GravityLevelEditor
         private void ZoomOut(object sender, EventArgs e)
         {
             GridSpace.ZoomOut();
-            Point pixelSize = GridSpace.GetDrawingCoord(mData.Level.Size);
-            sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);
-            sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
+            UpdatePanel();
         }
 
         /*
@@ -560,7 +566,6 @@ namespace GravityLevelEditor
             pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.multiselect;
         }
 
-
         /*
          * AddTool
          * 
@@ -573,8 +578,7 @@ namespace GravityLevelEditor
             mCurrentTool = TOOL_ADD;
             pb_CurrentTool.Image = global::GravityLevelEditor.Properties.Resources.addentity;
         }
-
-
+        
         /*
          * RemoveTool
          * 
@@ -628,6 +632,9 @@ namespace GravityLevelEditor
             }
         }
 
+        /*
+         * Update the background image in the preview box
+         */
         private void UpdateBackgroundPreview(Image image)
         {
             pb_bg.Image = image;
@@ -727,7 +734,13 @@ namespace GravityLevelEditor
             sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
         }
 
-
+        /*
+         * MainForm_KeyPress
+         * 
+         * Handle keypresses
+         * 
+         * Default 
+         */
         void MainForm_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Control.ModifierKeys & Keys.Control) == Keys.Control)
