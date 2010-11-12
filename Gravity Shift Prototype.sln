@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C# Express 2008
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Shift Prototype", "WindowsGame1\Gravity Shift Prototype.csproj", "{1465AA73-5032-4E30-8E36-514543A7F0BF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CB1740F4-F065-4B6E-A377-63A1F2FB7EA0} = {CB1740F4-F065-4B6E-A377-63A1F2FB7EA0}
@@ -22,6 +22,7 @@ Global
 		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Debug|x86.ActiveCfg = Debug|x86
+		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Debug|x86.Build.0 = Debug|x86
 		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Release|Any CPU.ActiveCfg = Release|x86
 		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{1465AA73-5032-4E30-8E36-514543A7F0BF}.Release|Mixed Platforms.Build.0 = Release|x86
