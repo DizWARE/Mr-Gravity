@@ -19,7 +19,7 @@
     <XnaUpgrade>
     </XnaUpgrade>
     <XnaOutputType>Game</XnaOutputType>
-    <XnaProfile>HiDef</XnaProfile>
+    <XnaProfile>Reach</XnaProfile>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -190,7 +190,7 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Content\WindowsGame1Content.contentproj">
+    <ProjectReference Include="Content\Content.contentproj">
       <Project>{346008ED-587D-42F8-80B1-424AAEF43968}</Project>
       <Name>WindowsGame1Content %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
