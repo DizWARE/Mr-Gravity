@@ -58,7 +58,6 @@ namespace GravityShift
     class KeyboardControl : IControlScheme
     {
         private const double BURN_DOWN_TIME = 1000;
-        GameTime mGametime = new GameTime(System.TimeSpan.Zero, System.TimeSpan.Zero, System.TimeSpan.Zero, System.TimeSpan.Zero);
         bool upIsPushed = false;
         bool downIsPushed = false;
         bool leftIsPushed = false;
