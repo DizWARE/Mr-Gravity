@@ -102,6 +102,9 @@ namespace GravityShift
                 ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
             mObjects.Add(player);
 
+            HazardTile htile = new HazardTile(Content, "Deadly", Vector2.One, new Vector2(364, 300), .8f, true);
+            mObjects.Add(htile);
+
             mObjects.Add(new GenericObject(Content, "Player",
                             new Vector2(1, 1), new Vector2(500, 550), ref mPhysicsEnvironment, .8f, false));
             mObjects.Add(new GenericObject(Content, "Player",
