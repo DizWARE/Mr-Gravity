@@ -144,6 +144,7 @@ namespace GravityShift
         public virtual void Update(GameTime gametime)
         {
             UpdateVelocities();
+            mPrevPos = mPosition;
             mPosition = Vector2.Add(mPosition, mVelocity);
             UpdateBoundingBoxes();
         }
@@ -170,7 +171,7 @@ namespace GravityShift
             int radiusB = otherObject.mBoundingBox.Width/2;
             Point centerPosA = this.mBoundingBox.Center;
             Point centerPosB = otherObject.mBoundingBox.Center;
-            Vector2 centers = new Vector2(centerPosA.X - centerPosB.X, centerPosA.Y - centerPosB.Y);
+            Vector2 centers = new Vector2((float)(centerPosA.X - centerPosB.X), (float)(centerPosA.Y - centerPosB.Y));
             return !Equals(otherObject) && (centers.Length()<(radiusA+radiusB));
         }
 
@@ -178,12 +179,13 @@ namespace GravityShift
         /// <summary>
         /// Handles collision for two boxes (this, and other)
         /// </summary>
-        /// <param name="otherObject">box to calculate collision on</param>
-        public virtual void HandleCollideBoxAndBox(GameObject otherObject)
+        /// <param name="otherObject">object to do collision on(box)</param>
+        /// <returns>1 if collided; 0 if no collision</returns>
+        public virtual int HandleCollideBoxAndBox(GameObject otherObject)
         {
             if (!IsCollidingBoxAndBox(otherObject))
             {
-                return;
+                return 0;
             }
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
@@ -207,54 +209,59 @@ namespace GravityShift
                 mPosition.X += colDepth.X;
             }
             UpdateBoundingBoxes();
+            return 1;// handled collision 
         }
-         /// <summary>
-        /// Handles collision for a circle and circle
-        /// (Kinda works, very buggy)
+        /// <summary>
+        /// Handles collision for circle and circle
         /// </summary>
-        /// <param name="otherObject">circle object to do collision on</param>
-        public virtual void HandleCollideCircleAndCircle(GameObject otherObject)
+        /// <param name="otherObject">object to do collision on(circle)</param>
+        /// <returns>1 if collided; 0 if no collision</returns>
+        public virtual int HandleCollideCircleAndCircle(GameObject otherObject)
         {
             if (!IsCollidingCircleandCircle(otherObject))
             {
-                return;
+                return 0;
             }
+            
             Point centerA = this.mBoundingBox.Center;
             Point centerB = otherObject.BoundingBox.Center;
 
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
-            Vector2 centerDiff = new Vector2(centerA.X - centerB.X, centerA.Y - centerB.Y);
+            Vector2 centerDiff = new Vector2((float)(centerA.X - centerB.X), (float)(centerA.Y - centerB.Y));
 
-            int radiusA = this.mBoundingBox.Width / 2;
-            int radiusB = otherObject.mBoundingBox.Width / 2;
+            float radiusA = this.mBoundingBox.Width / 2;
+            float radiusB = otherObject.mBoundingBox.Width / 2;
 
             float delta = (radiusA + radiusB) - centerDiff.Length();
             centerDiff.Normalize();
             Vector2 add = Vector2.Multiply(centerDiff, delta);
-
+           
             //Reset Y Velocity to 0
-            mVelocity.Y = otherObject.mFriction;
+            mVelocity.Y = mVelocity.Y * otherObject.mFriction * 1.1f;
             // reduce x velocity for friction
-            mVelocity.X = otherObject.mFriction;
+            mVelocity.X = mVelocity.X * otherObject.mFriction * 1.1f;
             // place the Y pos just so it is not colliding. 
             mPosition += add;
 
             UpdateBoundingBoxes();
-
+            if (add.Length() > 1.0f)
+            {
+                return 0; // changed enough to call a collision
+            }
+            return 0;
         }
         /// <summary>
-        /// Handles collision for a circle and box(circle = this)
-        /// (Works for Individual blocks, a little buggy when tiling blocks)
+        /// Handles collision for circle and Box (circle =this)
         /// </summary>
-        /// <param name="otherObject">square object to do collision on</param>
-        public virtual void HandleCollideCircleAndBox(GameObject otherObject)
+        /// <param name="otherObject">object to do collision on(box)</param>
+        /// <returns>1 if collided; 0 if no collision</returns>
+        public virtual int HandleCollideCircleAndBox(GameObject otherObject)
         {
             if (!IsCollidingBoxAndBox(otherObject))
             {
-                return;
+                return 0;// no collision
             }
-            float radius = this.mBoundingBox.Width / 2;
             // get points of square
             Point[] p = new Point[4];
             // top left
@@ -273,8 +280,9 @@ namespace GravityShift
             {
                 // then treat like a square /square
                 HandleCollideBoxAndBox(otherObject);
+                return 0;// handled collision
             }
-            else// going to hit a corner
+            else // going to hit a corner
             {
                 // treat like circle/point collision
                 Point centerA = this.mBoundingBox.Center;
@@ -296,9 +304,9 @@ namespace GravityShift
                     centerB = p[3];
                 }
 
-                Vector2 centerDiff = new Vector2(centerA.X - centerB.X, centerA.Y - centerB.Y);
+                Vector2 centerDiff = new Vector2((float)(centerA.X - centerB.X), (float)(centerA.Y - centerB.Y));
 
-                int radiusA = this.mBoundingBox.Width / 2;
+                float radiusA = this.mBoundingBox.Width / 2;
 
                 float delta = (radiusA) - centerDiff.Length();
                 centerDiff.Normalize();
@@ -309,9 +317,14 @@ namespace GravityShift
 
                 // place the Y pos just so it is not colliding. 
                 mPosition += add;
-
+                
                 UpdateBoundingBoxes();
+                if (add.Length() > 0.5f)
+                {
+                    return 0; // changed enough to call a collision
+                }
             }
+            return 0; // did not collide
         }
         /// <summary>
         /// finds how deep they are intersecting (That is what she said!)
@@ -320,15 +333,15 @@ namespace GravityShift
         public Vector2 GetCollitionDepth(GameObject otherObject)
         {
             //Find Center
-            int halfHeight1 = this.BoundingBox.Height / 2;
-            int halfWidth1 = this.BoundingBox.Width / 2;
+            float halfHeight1 = this.BoundingBox.Height / 2;
+            float halfWidth1 = this.BoundingBox.Width / 2;
 
             //Calculate Center Position
             Vector2 center1 = new Vector2(this.BoundingBox.Left + halfWidth1, this.BoundingBox.Top + halfHeight1);
             
             //Find Center of otherObject
-            int halfHeight2 = otherObject.BoundingBox.Height / 2;
-            int halfWidth2 = otherObject.BoundingBox.Width / 2;
+            float halfHeight2 = otherObject.BoundingBox.Height / 2;
+            float halfWidth2 = otherObject.BoundingBox.Width / 2;
 
             //Calculate Center Position
             Vector2 center2 = new Vector2(otherObject.BoundingBox.Left + halfWidth2, otherObject.BoundingBox.Top + halfHeight2);
@@ -424,3 +437,63 @@ namespace GravityShift
         public abstract override string ToString();
     }
 }
+
+/*
+            //// is colliding
+            //if (otherObject is PhysicsObject)
+            //{
+            //    PhysicsObject PhysObj = (PhysicsObject)otherObject;
+
+            //    // seperate balls (Tee hee!)
+            //    // back the balls up along their previous path until they're not colliding
+
+            //    // what percentage to increment moving back. .01 = 1% 
+            //    float increment = .001f; //(Lower = more accurate; Higher = better performance
+            //    float t = increment;
+            //    while (IsCollidingCircleandCircle(PhysObj))
+            //    {
+            //        this.mPosition = this.mPrevPos;
+            //        PhysObj.mPosition = PhysObj.mPrevPos;
+            //        UpdateBoundingBoxes();
+            //        t += increment;
+            //    }
+
+            //    // normal of the collision
+            //    float n_x = this.mPosition.X - PhysObj.mPosition.X;
+            //    float n_y = this.mPosition.Y - PhysObj.mPosition.Y;
+            //    float n_length = (float)Math.Sqrt((n_x * n_x) + (n_y * n_y));
+            //    // normalize n
+            //    if (n_length > 0)
+            //    {
+            //        n_x /= n_length;
+            //        n_y /= n_length;
+            //    }
+
+            //    // tangent of the collision
+            //    float t_x = n_y;
+            //    float t_y = -n_x;
+
+            //    float e = 0.99f; // elasticity of the collision
+
+            //    float vain = (this.mVelocity.X * n_x) + (this.mVelocity.Y * n_y); //Vector2.Dot(ball1.Velocity, N);
+            //    float vait = (this.mVelocity.X * t_x) + (this.mVelocity.Y * t_y); //Vector2.Dot(ball1.Velocity, T);
+            //    float vbin = (PhysObj.mVelocity.X * n_x) + (PhysObj.mVelocity.Y * n_y); //Vector2.Dot(ball2.Velocity, N);
+            //    float vbit = (PhysObj.mVelocity.X * t_x) + (PhysObj.mVelocity.Y * t_y); //Vector2.Dot(ball2.Velocity, T);
+
+            //    float vafn = ((e + 1.0f) * vbin + vain * (1 - e)) / 2;
+            //    float vbfn = ((e + 1.0f) * vain - vbin * (1 - e)) / 2;
+            //    float vaft = vait;
+            //    float vbft = vbit;
+
+            //    this.mVelocity.X = vafn * n_x + vaft * t_x;
+            //    this.mVelocity.Y = vafn * n_y + vaft * t_y;
+            //    PhysObj.mVelocity.X = vbfn * n_x + vbft * t_x;
+            //    PhysObj.mVelocity.Y = vbfn * n_y + vbft * t_y;
+
+            //}
+            //else
+            //{
+            //    //just move "this"
+            //    this.mVelocity = Vector2.Zero;
+            //}
+            */
