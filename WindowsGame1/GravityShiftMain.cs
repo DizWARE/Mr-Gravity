@@ -46,6 +46,15 @@ namespace GravityShift
         //Font for this game
         SpriteFont mDefaultFont;
 
+        /** SOUND EFFECTS **/
+
+        //Player Collision
+        SoundEffect soundPlayerColWall, soundPlayerColHazard;
+
+        //Gravity Shifting
+        SoundEffect soundGravityShiftUp, soundGravityShiftDown;
+        SoundEffect soundGravityShiftLeft, soundGravityShiftRight;
+
         public GravityShiftMain()
         {
             mGraphics = new GraphicsDeviceManager(this);
@@ -158,6 +167,15 @@ namespace GravityShift
                 Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f,true);
                 mObjects.Add(tile);
             }
+
+            //Sound Effects
+            soundPlayerColWall = Content.Load<SoundEffect>("SoundEffects\\playerCol_wall");
+            soundPlayerColHazard = Content.Load<SoundEffect>("SoundEffects\\playerCol_hazard");
+            soundGravityShiftUp = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftUp");
+            soundGravityShiftDown = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftDown");
+            soundGravityShiftLeft = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftLeft");
+            soundGravityShiftRight = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftRight");
+
     }
 
         /// <summary>
@@ -392,6 +410,9 @@ namespace GravityShift
                         int collided = physObj.HandleCollideCircleAndBox(obj);
                         if ((physObj is Player) && (obj is HazardTile)&&(collided==1))
                         {
+                            //Play sound
+                            soundPlayerColHazard.Play();
+
                             if (((Player)physObj).Kill() <= 0)
                             {
                                 //inMenu = true;
