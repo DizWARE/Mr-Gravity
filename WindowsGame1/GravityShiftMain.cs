@@ -28,6 +28,12 @@ namespace GravityShift
         private static bool inGame;
         private static bool inMenu;
 
+        // see if we are paused
+        private static bool isPaused;
+
+        // check for press of pause button
+        bool wasDown=false;
+
         //List of objects that comform to the game physics
         List<GameObject> mObjects;
 
@@ -66,6 +72,8 @@ namespace GravityShift
             menu = new Menu();
             inMenu = true;
             inGame = false;
+
+            isPaused = false;
 
             base.Initialize();
         }
@@ -170,6 +178,15 @@ namespace GravityShift
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
                 || keyboard.IsKeyDown(Keys.Escape))
                 this.Exit();
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space))
+            {
+                if (!wasDown)
+                {
+                    isPaused = !isPaused;// toggle pause
+                }
+            }
+
+            wasDown =(GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space));
 
             if (inGame)
             {
@@ -184,23 +201,39 @@ namespace GravityShift
                     mObjects.Add(new GenericObject(Content, "Player",
                             new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment, .8f, false));
                 }
-
-                foreach (GameObject gObject in mObjects)
+                if ((player.mIsAlive)&&!isPaused)// only update while player is alive
                 {
-                    if (gObject is PhysicsObject)
+                    foreach (GameObject gObject in mObjects)
                     {
-                        PhysicsObject pObject = (PhysicsObject)gObject;
-                        pObject.Update(gameTime);
-                        // handle collision right after you move
-                        HandleCollisions(pObject);
-                        if (pObject is Player) ChangeValues((Player)pObject, keyboard);
-                        pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                        if (gObject is PhysicsObject)
+                        {
+                            PhysicsObject pObject = (PhysicsObject)gObject;
+                            pObject.Update(gameTime);
+                            // handle collision right after you move
+                            HandleCollisions(pObject);
+                            if (pObject is Player) ChangeValues((Player)pObject, keyboard);
+                            pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                        }
                     }
+
+
+                    base.Update(gameTime);
                 }
-                base.Update(gameTime);
             }
             else if (inMenu)
                 menu.Update(gameTime);
+
+            if (!player.mIsAlive)
+            {
+                if (keyboard.IsKeyDown(Keys.A))// resets game after game over
+                {// TODO: add gamepad functionality
+                    player.mNumLives = 5;
+                    player.mIsAlive = true;
+                    inGame = false;
+                    inMenu = true;
+                }
+
+            }
         }
         /// <summary>
         /// TODO - REMOVE WHEN NO LONGER A DEMONSTRACTION (Demonstraction? HAHA!)
@@ -231,6 +264,8 @@ namespace GravityShift
                 mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Down);
             if (keyboardState.IsKeyDown(Keys.F))
                 mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Down);
+            
+
         }
 
         /// <summary>
@@ -285,6 +320,8 @@ namespace GravityShift
             mSpriteBatch.DrawString(mDefaultFont, "Terminal Speed(T/Y): " + mPhysicsEnvironment.TerminalSpeed, location, Color.Black);
             location = Vector2.Add(location, new Vector2(0, 20));
             mSpriteBatch.DrawString(mDefaultFont, "Erosion Factor(W/E): " + mPhysicsEnvironment.ErosionFactor, location, Color.Black);
+            location = Vector2.Add(location, new Vector2(0, 20));
+            mSpriteBatch.DrawString(mDefaultFont, "Lives:  " + player.mNumLives, location, Color.Black);
 
             location = new Vector2(titleSafeArea.Right - 490, titleSafeArea.Y+5);
             mSpriteBatch.DrawString(mDefaultFont, "Up Force Magnifier(U/I): " + 
@@ -307,6 +344,22 @@ namespace GravityShift
                 " Total Force Y: " + player.TotalForce.Y, location, Color.Black);
             location = Vector2.Add(location, new Vector2(0, 20));
             mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
+
+            if (!player.mIsAlive)
+            {
+                // Add game over sign
+                location = new Vector2(500, 500);
+                mSpriteBatch.DrawString(mDefaultFont, "GAME OVER", location, Color.Black);
+                location = new Vector2(500, 520);
+                mSpriteBatch.DrawString(mDefaultFont, "Press A to go back to menu", location, Color.Black);    
+            }
+            if (isPaused)
+            {
+                // Add pause sign
+                location = new Vector2(500, 500);
+                mSpriteBatch.DrawString(mDefaultFont, "Paused", location, Color.Black);
+ 
+            }
         }
         /// <summary>
         /// Checks to see if given object is colliding with any other object and handles the collision
@@ -336,7 +389,15 @@ namespace GravityShift
                 {
                     if (obj.mIsSquare)// circle/square collision
                     {
-                        physObj.HandleCollideCircleAndBox(obj);
+                        int collided = physObj.HandleCollideCircleAndBox(obj);
+                        if ((physObj is Player) && (obj is HazardTile)&&(collided==1))
+                        {
+                            if (((Player)physObj).Kill() <= 0)
+                            {
+                                //inMenu = true;
+                                //inGame = false;
+                            }
+                        } 
                     }
                     else// circle/circle collision
                     {

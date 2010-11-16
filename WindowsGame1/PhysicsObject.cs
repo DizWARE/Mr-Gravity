@@ -280,7 +280,7 @@ namespace GravityShift
             {
                 // then treat like a square /square
                 HandleCollideBoxAndBox(otherObject);
-                return 0;// handled collision
+                return 1;// handled collision
             }
             else // going to hit a corner
             {
@@ -321,7 +321,7 @@ namespace GravityShift
                 UpdateBoundingBoxes();
                 if (add.Length() > 0.5f)
                 {
-                    return 0; // changed enough to call a collision
+                    return 1; // changed enough to call a collision
                 }
             }
             return 0; // did not collide
@@ -433,7 +433,7 @@ namespace GravityShift
             return false;
         } 
 
-        public abstract void Kill();
+        public abstract int Kill();
         public abstract override string ToString();
     }
 }
