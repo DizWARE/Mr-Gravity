@@ -115,5 +115,6 @@ namespace GravityShift
         {
             canvas.Draw(mTexture, mBoundingBox, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
         }
+        
     }
 }
