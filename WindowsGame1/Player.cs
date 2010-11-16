@@ -21,6 +21,8 @@ namespace GravityShift
     {
         IControlScheme mControls;
         Vector2 mSpawnPoint;
+        public int mNumLives = 5;
+        public bool mIsAlive = true;
 
         /// <summary>
         /// Construcs a player object, that can live in a physical realm
@@ -53,11 +55,19 @@ namespace GravityShift
         }
 
         /// <summary>
-        /// Will handle players death TODO - IMPLEMENT ME!!
+        /// Handle players death 
         /// </summary>
-        public override void Kill()
+        public override int Kill()
         {
-            throw new NotImplementedException();
+            // reset player to start position
+            this.mPosition = mSpawnPoint;
+            // remove a life
+            mNumLives--;
+            if (mNumLives <= 0)
+            {
+                mIsAlive = false;
+            }
+            return mNumLives;
         }
 
         /// <summary>

@@ -125,6 +125,7 @@
     <Compile Include="GameObject.cs" />
     <Compile Include="GenericObject.cs" />
     <Compile Include="GravityDirections.cs" />
+    <Compile Include="HazardTile.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MovingTile.cs" />

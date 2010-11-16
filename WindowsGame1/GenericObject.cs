@@ -25,7 +25,7 @@ namespace GravityShift
 
         }
 
-        public override void Kill()
+        public override int Kill()
         {
             throw new NotImplementedException();
         }
