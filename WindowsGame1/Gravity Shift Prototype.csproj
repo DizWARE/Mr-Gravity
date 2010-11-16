@@ -123,6 +123,7 @@
     <Compile Include="GenericObject.cs" />
     <Compile Include="GravityDirections.cs" />
     <Compile Include="HazardTile.cs" />
+    <Compile Include="Import Code\Importer.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MovingTile.cs" />
@@ -197,6 +198,7 @@
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
