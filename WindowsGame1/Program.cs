@@ -2,16 +2,19 @@ using System;
 
 namespace GravityShift
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             using (GravityShiftMain game = new GravityShiftMain())
             {
+                if (args.Length > 0)
+                { game.LevelLocation = args[0]; game.DisableMenu(); }
                 game.Run();
+                
             }
         }
     }

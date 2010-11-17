@@ -10,6 +10,7 @@ using System.Collections;
 using GravityLevelEditor.GuiTools;
 using GravityLevelEditor.EntityCreationForm;
 using System.IO;
+using System.Diagnostics;
 
 namespace GravityLevelEditor
 {
@@ -352,9 +353,16 @@ namespace GravityLevelEditor
         {
             mData.Level.Save();
 
-            //TODO: Add code to launch game with sample level as a parameter.
-            //FORNOW: Open a dialog to show play functionality is not working.
-            MessageBox.Show("Coming Soon!");
+            Process game = new Process();
+
+            DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+            dir = dir.Parent.Parent;
+
+            game.StartInfo.FileName = dir.FullName + "\\RunGame.bat";
+            game.StartInfo.Arguments = "\"" + mData.Level.Name + ".xml\"";
+            game.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            game.StartInfo.ErrorDialog = true;
+            game.Start();
         }
 
         /*

@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
@@ -25,8 +26,8 @@ namespace GravityShift
         Menu menu;
 
         // Boolean to track whether we are in the game or the menu
-        private static bool inGame;
-        private static bool inMenu;
+        private static bool inGame = false;
+        private static bool inMenu = true;
 
         // see if we are paused
         private static bool isPaused;
@@ -45,6 +46,10 @@ namespace GravityShift
 
         //Font for this game
         SpriteFont mDefaultFont;
+
+        public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\New Level.xml";
+
 
         public GravityShiftMain()
         {
@@ -66,12 +71,9 @@ namespace GravityShift
             mGraphics.ApplyChanges();
 
             mObjects = new List<GameObject>();
-            mCurrentLevel = new Level();
             mPhysicsEnvironment = new PhysicsEnvironment();
 
             menu = new Menu();
-            inMenu = true;
-            inGame = false;
 
             isPaused = false;
 
@@ -101,12 +103,15 @@ namespace GravityShift
             menu.Load(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
-            mCurrentLevel.Load(Content,1);
+
+            //Should eventually not require 
+            Importer importer = new Importer(Content);
+            mCurrentLevel = importer.ImportLevel(LevelLocation);
 
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
             player = new Player(Content, "Player",
-                new Vector2(1, 1), new Vector2(300, 100),
+                new Vector2(1, 1), mCurrentLevel.StartingPoint,
                 ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
             mObjects.Add(player);
 
@@ -235,6 +240,16 @@ namespace GravityShift
 
             }
         }
+
+        /// <summary>
+        /// Disables the menu from showing initially
+        /// </summary>
+        public void DisableMenu()
+        {
+            inGame = true;
+            inMenu = false;
+        }
+
         /// <summary>
         /// TODO - REMOVE WHEN NO LONGER A DEMONSTRACTION (Demonstraction? HAHA!)
         /// </summary>
@@ -280,7 +295,7 @@ namespace GravityShift
             {
                 mSpriteBatch.Begin();
 
-                //mCurrentLevel.Draw(mSpriteBatch);
+                mCurrentLevel.Draw(mSpriteBatch);
                 foreach (GameObject gObject in mObjects)
                 {
                     gObject.Draw(mSpriteBatch, gameTime);

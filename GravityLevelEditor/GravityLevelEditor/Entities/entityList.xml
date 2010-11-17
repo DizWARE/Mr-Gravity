@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entities>
+  <Entity>
+    <ID>0</ID>
+    <Name>Hazard</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Physics Objects\hazard</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>1</ID>
+    <Name>Non-Hazard</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Physics Objects\nonhazard</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>2</ID>
+    <Name>Hazard</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\hazard</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>3</ID>
+    <Name>Non-Hazard</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\nonHazard</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>4</ID>
+    <Name>PlayerStart</Name>
+    <Type>Level Positions</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>False</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Level Positions\PlayerStart</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>5</ID>
+    <Name>PlayerEnd</Name>
+    <Type>Level Positions</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>False</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Level Positions\playerend</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>6</ID>
+    <Name>Non-Hazard</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Physics Objects\circle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+</Entities>

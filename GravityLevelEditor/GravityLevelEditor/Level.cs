@@ -110,7 +110,6 @@ namespace GravityLevelEditor
                     }
                 }
             }
-
         }
 
         /*
@@ -413,20 +412,11 @@ namespace GravityLevelEditor
          */
         public void Save()
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
-            if (currentDirectory.EndsWith("bin\\Debug"))
-            {
-                int trimLoc = currentDirectory.LastIndexOf("bin\\Debug");
-                if (trimLoc >= 0)
-                {
-                    currentDirectory = currentDirectory.Substring(0, trimLoc);
-                }
-            }
-            if (currentDirectory.IndexOf("Levels") == -1)
-            {
-                System.IO.Directory.CreateDirectory(currentDirectory + "Levels\\");
-                currentDirectory += "Levels\\";
-            }
+            string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Levels\\";
+            DirectoryInfo d = new DirectoryInfo(currentDirectory);
+
+            if (!d.Exists)
+                System.IO.Directory.CreateDirectory(currentDirectory);
 
             if (mBackground.Tag == null)
             { MessageBox.Show("Failed to save \"" + Name + "\". Invalid background image."); return; }
@@ -446,6 +436,8 @@ namespace GravityLevelEditor
                     entityTree));
 
             xDoc.Save(currentDirectory + this.Name + ".xml");
+
+            MessageBox.Show(this.Name + ".xml saved correctly");
         }
     }
 }
