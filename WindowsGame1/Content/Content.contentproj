@@ -55,6 +55,76 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Images\Level Positions\player_end.png">
+      <Name>player_end</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Level Positions\player_start.png">
+      <Name>player_start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Physics Objects\circle.png">
+      <Name>circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\grounda_magma.png">
+      <Name>grounda_magma</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\grounda_magma2.png">
+      <Name>grounda_magma2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\grounda_neonBlue.png">
+      <Name>grounda_neonBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\grounda_neonGreen.png">
+      <Name>grounda_neonGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\grounda_neonPink.png">
+      <Name>grounda_neonPink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\grounda_neonYellow.png">
+      <Name>grounda_neonYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\groundi_magma.png">
+      <Name>groundi_magma</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\groundi_magma2.png">
+      <Name>groundi_magma2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\groundi_neonBlue.png">
+      <Name>groundi_neonBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\groundi_neonGreen.png">
+      <Name>groundi_neonGreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Static Objects\groundi_neonYellow.png">
+      <Name>groundi_neonYellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Level1.png">
       <Name>Level1</Name>
       <Importer>TextureImporter</Importer>
@@ -222,44 +292,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Level Positions\playerend.png">
-      <Name>playerend</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Level Positions\playerstart.png">
-      <Name>playerstart</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Physics Objects\circle.png">
-      <Name>circle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Physics Objects\hazard.png">
-      <Name>hazard</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Physics Objects\nonhazard.png">
-      <Name>nonhazard</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Static Objects\hazard.png">
-      <Name>hazard</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Static Objects\nonHazard.png">
-      <Name>nonHazard</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
+    <Folder Include="Images\Backgrounds\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Backgrounds\" />
+    <Compile Include="Images\Static Objects\groundi_neonPink.png">
+      <Name>groundi_neonPink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

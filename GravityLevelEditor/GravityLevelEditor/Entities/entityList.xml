@@ -1,61 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entities>
   <Entity>
-    <ID>0</ID>
-    <Name>Hazard</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <Visible>True</Visible>
-    <Paintable>False</Paintable>
-    <Texture>Physics Objects\hazard</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>1</ID>
-    <Name>Non-Hazard</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <Visible>True</Visible>
-    <Paintable>False</Paintable>
-    <Texture>Physics Objects\nonhazard</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>2</ID>
-    <Name>Hazard</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <Visible>True</Visible>
-    <Paintable>True</Paintable>
-    <Texture>Static Objects\hazard</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>3</ID>
-    <Name>Non-Hazard</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <Visible>True</Visible>
-    <Paintable>True</Paintable>
-    <Texture>Static Objects\nonHazard</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
     <ID>4</ID>
     <Name>PlayerStart</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
     <Visible>False</Visible>
     <Paintable>False</Paintable>
-    <Texture>Level Positions\PlayerStart</Texture>
+    <Texture>Level Positions\player_start</Texture>
     <Properties />
   </Entity>
   <Entity>
@@ -65,7 +17,7 @@
     <Location X="-100" Y="-100" />
     <Visible>False</Visible>
     <Paintable>False</Paintable>
-    <Texture>Level Positions\playerend</Texture>
+    <Texture>Level Positions\player_end</Texture>
     <Properties />
   </Entity>
   <Entity>
@@ -79,5 +31,65 @@
     <Properties>
       <Shape>Circle</Shape>
     </Properties>
+  </Entity>
+  <Entity>
+    <ID>7</ID>
+    <Name>NeonGreen</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_neonGreen</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>8</ID>
+    <Name>NeonPink</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_neonPink</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>9</ID>
+    <Name>NeonBlue</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_neonBlue</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>10</ID>
+    <Name>NeonYellow</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_neonYellow</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>18</ID>
+    <Name>BrownMagma</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_magma</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>19</ID>
+    <Name>BlackMagma</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_magma2</Texture>
+    <Properties />
   </Entity>
 </Entities>
