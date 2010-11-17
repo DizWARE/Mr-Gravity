@@ -222,11 +222,12 @@ namespace GravityShift
                             // handle collision right after you move
                             HandleCollisions(pObject);
                             if (pObject is Player) ChangeValues((Player)pObject, keyboard);
+                            cam.Postion = new Vector3(player.Position.X, player.Position.Y, 0);
                             pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
                         }
                     }
 
-                    cam.Postion = new Vector3(400.0f, 230.0f, 0.0f);
+//                    cam.Postion = new Vector3(400.0f, 230.0f, 0.0f);
                     cam.Zoom = 0.9f;
 
                     base.Update(gameTime);
@@ -297,6 +298,7 @@ namespace GravityShift
             GraphicsDevice.Clear(Color.CornflowerBlue);
             if (inGame)
             {
+                // Begin spritebatch with the desired camera transformations
                 mSpriteBatch.Begin(SpriteSortMode.Immediate, 
                                     BlendState.AlphaBlend,
                                     SamplerState.LinearClamp,

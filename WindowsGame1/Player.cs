@@ -85,6 +85,16 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Gets the psotion of the player
+        /// </summary>
+        /// <returns>A vector2 with the players position</returns>
+        public Vector2 Position
+        {
+            get { return this.mPosition; }
+            set { this.mPosition = value; }
+        }
+
+        /// <summary>
         /// Gets the Unique identifier for this object. Will be used for logging
         /// </summary>
         /// <returns>A string with the Object ID and the object type</returns>
