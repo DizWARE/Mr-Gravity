@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="ColorCodes.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="GameObject.cs" />

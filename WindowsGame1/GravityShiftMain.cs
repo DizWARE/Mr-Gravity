@@ -29,6 +29,9 @@ namespace GravityShift
         private static bool inGame = false;
         private static bool inMenu = true;
 
+        // Camera
+        public static Camera cam;
+
         // see if we are paused
         private static bool isPaused;
 
@@ -50,6 +53,14 @@ namespace GravityShift
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
         private string mLevelLocation = "..\\..\\..\\Content\\Levels\\New Level.xml";
 
+        /** SOUND EFFECTS **/
+
+        //Player Collision
+        SoundEffect soundPlayerColWall, soundPlayerColHazard;
+
+        //Gravity Shifting
+        SoundEffect soundGravityShiftUp, soundGravityShiftDown;
+        SoundEffect soundGravityShiftLeft, soundGravityShiftRight;
 
         public GravityShiftMain()
         {
@@ -65,6 +76,8 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
+            cam = new Camera(GraphicsDevice.Viewport);
+
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
@@ -165,6 +178,16 @@ namespace GravityShift
                 Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f,true);
                 mObjects.Add(tile);
             }*/
+
+            //Sound Effects
+            soundPlayerColWall = Content.Load<SoundEffect>("SoundEffects\\playerCol_wall");
+            soundPlayerColHazard = Content.Load<SoundEffect>("SoundEffects\\playerCol_hazard");
+            soundGravityShiftUp = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftUp");
+            soundGravityShiftDown = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftDown");
+            soundGravityShiftLeft = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftLeft");
+            soundGravityShiftRight = Content.Load<SoundEffect>("SoundEffects\\level_gravityShiftRight");
+
+
     }
 
         /// <summary>
@@ -219,10 +242,14 @@ namespace GravityShift
                             // handle collision right after you move
                             HandleCollisions(pObject);
                             if (pObject is Player) ChangeValues((Player)pObject, keyboard);
-                            pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+
+                            // Update the camera to keep the player at the center of the screen
+                            cam.Postion = new Vector3(player.Position.X-275, player.Position.Y-100, 0);
+                            cam.Zoom = 0.9f;
+                            
+                            pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
                         }
                     }
-
 
                     base.Update(gameTime);
                 }
@@ -281,8 +308,6 @@ namespace GravityShift
                 mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Down);
             if (keyboardState.IsKeyDown(Keys.F))
                 mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Down);
-            
-
         }
 
         /// <summary>
@@ -292,12 +317,19 @@ namespace GravityShift
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             if (inGame)
             {
-                mSpriteBatch.Begin();
-
+                // Begin spritebatch with the desired camera transformations
+                mSpriteBatch.Begin(SpriteSortMode.Immediate, 
+                                    BlendState.AlphaBlend,
+                                    SamplerState.LinearClamp,
+                                    DepthStencilState.None, 
+                                    RasterizerState.CullCounterClockwise, 
+                                    null, 
+                                    cam.get_transformation());
+                    
                 mCurrentLevel.Draw(mSpriteBatch);
+
                 foreach (GameObject gObject in mObjects)
                 {
                     gObject.Draw(mSpriteBatch, gameTime);
@@ -409,6 +441,9 @@ namespace GravityShift
                         int collided = physObj.HandleCollideCircleAndBox(obj);
                         if ((physObj is Player) && (obj is HazardTile)&&(collided==1))
                         {
+                            //Play sound
+                            soundPlayerColHazard.Play();
+
                             if (((Player)physObj).Kill() <= 0)
                             {
                                 //inMenu = true;

@@ -48,12 +48,26 @@ namespace GravityShift
         {
             base.Update(gametime);
 
-            if (mControls.isDownPressed()) mEnvironment.GravityDirection = GravityDirections.Down;
-            else if (mControls.isUpPressed()) mEnvironment.GravityDirection = GravityDirections.Up;
-            else if (mControls.isLeftPressed()) mEnvironment.GravityDirection = GravityDirections.Left;
-            else if (mControls.isRightPressed()) mEnvironment.GravityDirection = GravityDirections.Right;
-        }
+            if (mControls.isDownPressed())
+            {
+                mEnvironment.GravityDirection = GravityDirections.Down;
+            }
 
+            else if (mControls.isUpPressed())
+            {
+                mEnvironment.GravityDirection = GravityDirections.Up;
+            }
+
+            else if (mControls.isLeftPressed())
+            {
+                mEnvironment.GravityDirection = GravityDirections.Left;
+            }
+
+            else if (mControls.isRightPressed())
+            {
+                mEnvironment.GravityDirection = GravityDirections.Right;
+            }
+        }
         /// <summary>
         /// Handle players death 
         /// </summary>
@@ -68,6 +82,26 @@ namespace GravityShift
                 mIsAlive = false;
             }
             return mNumLives;
+        }
+
+        /// <summary>
+        /// Gets the position of the player
+        /// </summary>
+        /// <returns>A vector2 with the players position</returns>
+        public Vector2 Position
+        {
+            get { return this.mPosition; }
+            set { this.mPosition = value; }
+        }
+
+        /// <summary>
+        /// Gets the velocity of the player
+        /// </summary>
+        /// <returns>A vector2 with the players velocity</returns>
+        public Vector2 Velocity
+        {
+            get { return this.mVelocity; }
+            set { this.mVelocity = value; }
         }
 
         /// <summary>
