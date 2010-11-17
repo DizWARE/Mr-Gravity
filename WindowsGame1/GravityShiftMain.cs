@@ -28,6 +28,9 @@ namespace GravityShift
         private static bool inGame;
         private static bool inMenu;
 
+        // Camera
+        public static Camera cam;
+
         // see if we are paused
         private static bool isPaused;
 
@@ -60,6 +63,8 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
+            cam = new Camera(GraphicsDevice.Viewport);
+
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
@@ -216,6 +221,8 @@ namespace GravityShift
                         }
                     }
 
+                    cam.Postion = new Vector3(400.0f, 230.0f, 0.0f);
+                    cam.Zoom = 0.9f;
 
                     base.Update(gameTime);
                 }
@@ -264,8 +271,6 @@ namespace GravityShift
                 mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Down);
             if (keyboardState.IsKeyDown(Keys.F))
                 mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Down);
-            
-
         }
 
         /// <summary>
@@ -275,11 +280,16 @@ namespace GravityShift
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             if (inGame)
             {
-                mSpriteBatch.Begin();
-
+                mSpriteBatch.Begin(SpriteSortMode.Immediate, 
+                                    BlendState.AlphaBlend,
+                                    SamplerState.LinearClamp,
+                                    DepthStencilState.None, 
+                                    RasterizerState.CullCounterClockwise, 
+                                    null, 
+                                    cam.get_transformation());
+                    
                 //mCurrentLevel.Draw(mSpriteBatch);
                 foreach (GameObject gObject in mObjects)
                 {
