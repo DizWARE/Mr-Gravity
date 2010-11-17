@@ -229,7 +229,7 @@ namespace GravityShift
                             cam.Postion = new Vector3(player.Position.X-275, player.Position.Y-100, 0);
                             cam.Zoom = 0.9f;
                             
-                            pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
+                            pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
                         }
                     }
 
@@ -310,7 +310,7 @@ namespace GravityShift
                                     null, 
                                     cam.get_transformation());
                     
-                //mCurrentLevel.Draw(mSpriteBatch);
+                mCurrentLevel.Draw(mSpriteBatch);
 
                 foreach (GameObject gObject in mObjects)
                 {
