@@ -120,7 +120,9 @@ namespace GravityShift
                 ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
             mObjects.Add(player);
 
-            HazardTile htile = new HazardTile(Content, "Deadly", Vector2.One, new Vector2(364, 300), .8f, true);
+            mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
+
+/*            HazardTile htile = new HazardTile(Content, "Deadly", Vector2.One, new Vector2(364, 300), .8f, true);
             mObjects.Add(htile);
 
             mObjects.Add(new GenericObject(Content, "Player",
@@ -138,7 +140,7 @@ namespace GravityShift
             mObjects.Add(new GenericObject(Content, "Player",
                             new Vector2(1, 1), new Vector2(850, 800), ref mPhysicsEnvironment, .8f, false));
             mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(800, 800), ref mPhysicsEnvironment, .8f, false));*/
+                            new Vector2(1, 1), new Vector2(800, 800), ref mPhysicsEnvironment, .8f, false));
             MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f,true);
             mObjects.Add(movTile);
 
@@ -167,7 +169,7 @@ namespace GravityShift
             {
                 Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f,true);
                 mObjects.Add(tile);
-            }
+            }*/
     }
 
         /// <summary>

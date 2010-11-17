@@ -86,7 +86,7 @@ namespace GravityLevelEditor
             Panel p = sc_Properties.Panel1;
             Size gridSize = new Size(GridSpace.GetDrawingCoord(mData.Level.Size));
             offScreenBmp = new Bitmap(Math.Min(gridSize.Width,p.DisplayRectangle.Width), 
-                Math.Min(gridSize.Height,p.DisplayRectangle.Height));
+                Math.Min(gridSize.Height,p.DisplayRectangle.Height+100));
             offScreenDC = Graphics.FromImage(offScreenBmp);
         }
 
@@ -318,8 +318,8 @@ namespace GravityLevelEditor
 
                 DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());
 
-                di = di.Parent.Parent;
-                dialog.InitialDirectory = di.FullName;
+                di = di.Parent.Parent.Parent.Parent;
+                dialog.InitialDirectory = di.FullName + "\\WindowsGame1\\Content\\Levels";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     mData.SelectedEntities.Clear();
@@ -797,7 +797,7 @@ namespace GravityLevelEditor
 
                     //ctrl-p
                     case (char)016:
-                        mi_paste.PerformClick();
+                        mi_play.PerformClick();
                         break;
 
                     //ctrl-q
