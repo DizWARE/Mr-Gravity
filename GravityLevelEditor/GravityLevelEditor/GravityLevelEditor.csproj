@@ -136,10 +136,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Textures.resx">
-      <DependentUpon>Textures.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -153,12 +149,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Textures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Textures.designer.cs">
-      <DependentUpon>Textures.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
