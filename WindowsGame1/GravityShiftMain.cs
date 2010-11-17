@@ -224,13 +224,14 @@ namespace GravityShift
                             // handle collision right after you move
                             HandleCollisions(pObject);
                             if (pObject is Player) ChangeValues((Player)pObject, keyboard);
-                            cam.Postion = new Vector3(player.Position.X, player.Position.Y, 0);
+
+                            // Update the camera to keep the player at the center of the screen
+                            cam.Postion = new Vector3(player.Position.X-275, player.Position.Y-100, 0);
+                            cam.Zoom = 0.9f;
+                            
                             pObject.FixForBounds(mGraphics.PreferredBackBufferWidth, mGraphics.PreferredBackBufferHeight);
                         }
                     }
-
-//                    cam.Postion = new Vector3(400.0f, 230.0f, 0.0f);
-                    cam.Zoom = 0.9f;
 
                     base.Update(gameTime);
                 }
