@@ -10,6 +10,7 @@ using System.Collections;
 using GravityLevelEditor.GuiTools;
 using GravityLevelEditor.EntityCreationForm;
 using System.IO;
+using System.Diagnostics;
 
 namespace GravityLevelEditor
 {
@@ -85,7 +86,7 @@ namespace GravityLevelEditor
             Panel p = sc_Properties.Panel1;
             Size gridSize = new Size(GridSpace.GetDrawingCoord(mData.Level.Size));
             offScreenBmp = new Bitmap(Math.Min(gridSize.Width,p.DisplayRectangle.Width), 
-                Math.Min(gridSize.Height,p.DisplayRectangle.Height));
+                Math.Min(gridSize.Height,p.DisplayRectangle.Height+100));
             offScreenDC = Graphics.FromImage(offScreenBmp);
         }
 
@@ -317,8 +318,8 @@ namespace GravityLevelEditor
 
                 DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());
 
-                di = di.Parent.Parent;
-                dialog.InitialDirectory = di.FullName;
+                di = di.Parent.Parent.Parent.Parent;
+                dialog.InitialDirectory = di.FullName + "\\WindowsGame1\\Content\\Levels";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     mData.SelectedEntities.Clear();
@@ -352,9 +353,16 @@ namespace GravityLevelEditor
         {
             mData.Level.Save();
 
-            //TODO: Add code to launch game with sample level as a parameter.
-            //FORNOW: Open a dialog to show play functionality is not working.
-            MessageBox.Show("Coming Soon!");
+            Process game = new Process();
+
+            DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+            dir = dir.Parent.Parent;
+
+            game.StartInfo.FileName = dir.FullName + "\\RunGame.bat";
+            game.StartInfo.Arguments = "\"" + mData.Level.Name + ".xml\"";
+            game.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            game.StartInfo.ErrorDialog = true;
+            game.Start();
         }
 
         /*
@@ -789,7 +797,7 @@ namespace GravityLevelEditor
 
                     //ctrl-p
                     case (char)016:
-                        mi_paste.PerformClick();
+                        mi_play.PerformClick();
                         break;
 
                     //ctrl-q

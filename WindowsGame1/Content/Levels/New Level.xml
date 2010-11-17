@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>New Level</Name>
+  <Size X="20" Y="20" />
+  <Background>Level Positions\playerend</Background>
+  <Color>Color [Color]</Color>
+  <Entities>
+    <Entity>
+      <ID>7</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="2" Y="8" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\circle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="5" Y="8" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\circle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="7" Y="8" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\circle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>10</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="8" Y="7" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\circle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>18</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>19</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>20</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>21</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>22</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>23</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>24</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>25</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>26</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="5" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>27</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="15" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>28</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="15" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>29</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="15" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>30</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="15" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>31</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="15" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>32</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="9" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>33</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="8" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>34</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="7" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>35</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="3" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>36</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="2" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>37</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="1" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>45</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="1" Y="4" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\nonhazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>46</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="1" Y="5" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\nonhazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>47</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="1" Y="6" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\nonhazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>48</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="1" Y="7" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\nonhazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>49</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Physics Objects</Type>
+      <Location X="1" Y="8" />
+      <Visible>True</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Physics Objects\nonhazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>57</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="3" Y="6" />
+      <Visible>False</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Level Positions\PlayerStart</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>30</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="0" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>31</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="9" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>32</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="8" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>33</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="7" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>34</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="3" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>35</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="2" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>36</ID>
+      <Name>Non-Hazard</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="1" />
+      <Visible>True</Visible>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\nonHazard</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+  </Entities>
+</Level>

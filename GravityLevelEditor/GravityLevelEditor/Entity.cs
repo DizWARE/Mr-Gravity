@@ -32,9 +32,6 @@ namespace GravityLevelEditor
         private bool mPaintable;
         public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
 
-        //private bool mSelected = false;
-        //public bool Selected { get { return mSelected; } set { mSelected = true; } }
-
         private Image mTexture;
         public Image Texture { get { return mTexture; } set { mTexture = value; } }
 
@@ -135,8 +132,9 @@ namespace GravityLevelEditor
                 if (el.Name == "Texture")
                 {
                     currentDirectory = d.FullName + "\\" + el.Value + ".png";
-                    mTexture = Image.FromFile(currentDirectory);
-                    mTexture.Tag = el.Value;
+                    try { mTexture = Image.FromFile(currentDirectory); mTexture.Tag = el.Value; }
+                    catch (Exception e) { MessageBox.Show("File " + currentDirectory + " could not be found."); }
+                    
                 }
                 if (el.Name == "Properties")
                 {

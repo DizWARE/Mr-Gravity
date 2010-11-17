@@ -19,14 +19,36 @@ namespace GravityShift
     /// </summary>
     class Level
     {
-        private Texture2D colorMap;
-        private Texture2D overlay;
+        /// <summary>
+        /// Gets the background texture of this level
+        /// </summary>
+        public Texture2D Texture { get { return mTexture; } }
+        private Texture2D mTexture;
 
-        public Texture2D ColorMap
-        { get { return colorMap; } }
+        /// <summary>
+        /// Gets or sets the name of this level
+        /// </summary>
+        public string Name { get { return mName; } set { mName = value; } }
+        private string mName;
 
-        public Texture2D Overlay
-        { get { return overlay; } }
+        /// <summary>
+        /// Gets or sets the size of the level(in pixels)
+        /// </summary>
+        public Vector2 Size { get { return mSize; } set { mSize = value; } }
+        private Vector2 mSize;
+        
+        /// <summary>
+        /// Gets or sets the player starting point of this level(in pixels)
+        /// </summary>
+        public Vector2 StartingPoint { get { return mStartingPoint; } set { mStartingPoint = value; } }
+        private Vector2 mStartingPoint;
+        
+        /// <summary>
+        /// Gets or sets the player ending point of this level(in pixels)
+        /// </summary>
+        public Vector2 EndingPoint { get { return mEndingPoint; } set { mEndingPoint = value; } }
+        private Vector2 mEndingPoint;
+
 
         /// <summary>
         /// Constructs a new level for the game.
@@ -40,79 +62,19 @@ namespace GravityShift
         /// <summary>
         /// Loads the level from the content manager
         /// </summary>
-        /// <param name="content"></param>
-        /// <param name="level"></param>
-        public void Load(ContentManager content, int level)
+        /// <param name="content">Content Manager to load from</param>
+        public void Load(ContentManager content, string assetName)
         {
-            colorMap = content.Load<Texture2D>("Level" + level.ToString());
-            overlay = content.Load<Texture2D>("Level" + level.ToString() + "Overlay");
+            mTexture = content.Load<Texture2D>("Images\\" + assetName);//assetName);
         }
 
         /// <summary>
-        /// Checks to see if the given object is in bounds or not
+        /// Draws the level background on to the screen
         /// </summary>
-        /// <param name="objectToCheck">Object we are checking for collisions with</param>
-        public void CheckBounds(PhysicsObject objectToCheck)
-        {
-            Rectangle currentBoundingBox = objectToCheck.BoundingBox;
-
-            Vector2 dPos = objectToCheck.ObjectVelocity;
-
-            Color[] mapData = new Color[currentBoundingBox.Width * currentBoundingBox.Height];
-
-            while (IsTouchingBounds(new Rectangle(
-                currentBoundingBox.X,currentBoundingBox.Y,
-                currentBoundingBox.Width,currentBoundingBox.Height), dPos, mapData))
-                    dPos = Vector2.Multiply(dPos, .75f);
-
-            objectToCheck.ObjectVelocity = dPos;
-
-        }
-
-        private bool IsTouchingBounds(Rectangle boundingBox, Vector2 dPos, Color[] mapData)
-        {
-            boundingBox.X += (int)dPos.X;
-            boundingBox.Y += (int)dPos.Y;
-
-            colorMap.GetData<Color>(0, boundingBox, mapData, 0, mapData.Length);
-
-            foreach (Color color in mapData)
-                if (color.Equals(ColorCodes.UNWALKABLE))
-                    return true;
-
-            return false;
-        }
-
-
-        /// <summary>
-        /// Gets
-        /// </summary>
-        /// <returns></returns>
-        public Vector2 GetStartingPoint()
-        {
-            int aPixels = colorMap.Width * colorMap.Height;
-
-            Color[] myColors = new Color[aPixels];
-            Vector2 startingPoint = new Vector2(25, 25);
-
-            colorMap.GetData<Color>(myColors);
-
-            for (int i = 0; i < myColors.Length; i++)
-            {
-                if (myColors[i] == ColorCodes.STARTING_POINT)
-                {
-                    startingPoint = new Vector2(i % colorMap.Width, i / colorMap.Width);
-                    break;
-                }
-            }
-
-            return startingPoint;
-        }
-
+        /// <param name="spriteBatch">Sprite batch that we use to draw textures</param>
         public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(colorMap, new Rectangle(0, 0, colorMap.Width, colorMap.Height), Color.White);
-            spriteBatch.Draw(overlay, new Rectangle(0, 0, overlay.Width, overlay.Height), Color.White);            
+        {           
+            spriteBatch.Draw(mTexture, new Rectangle(0,0,(int)mSize.X,(int)mSize.Y), Color.White);
         }
     }
 }

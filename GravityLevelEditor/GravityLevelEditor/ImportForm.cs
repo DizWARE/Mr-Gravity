@@ -15,8 +15,6 @@ namespace GravityLevelEditor
     {
         #region Member Variables
 
-        public Textures FirstForm { get; set; }
-
         public string imageLocation = "..\\..\\..\\..\\WindowsGame1\\Content\\Images";
 
         private string invalidFileMessage = "Please select a valid PNG file.";

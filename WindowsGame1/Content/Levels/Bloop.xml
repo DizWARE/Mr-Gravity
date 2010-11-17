@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>Bloop</Name>
+  <Size X="10" Y="20" />
+  <Background>Backgrounds\StupidBackground</Background>
+  <Color>Color [Red]</Color>
+  <Entities />
+</Level>
