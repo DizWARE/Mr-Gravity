@@ -23,6 +23,9 @@ namespace GravityLevelEditor
         private string mType;
         public string Type { get { return mType; } set { mType = value; } }
 
+        private bool mHazardous;
+        public bool Hazardous { get { return mHazardous; } set { mHazardous = value; } }
+
         private Point mLocation;
         public Point Location { get { return mLocation; } set { mLocation = value; } }
         
@@ -49,6 +52,7 @@ namespace GravityLevelEditor
         {
             mType = original.mType;
             mName = original.mName;
+            mHazardous = original.mHazardous;
             mVisible = original.mVisible;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
@@ -62,12 +66,14 @@ namespace GravityLevelEditor
          * Constructor that creates an entity from with the given properties
          * 
          * string type: type of entity (i.e. Wall, PlayerStart, etc).
+         * string name: identifier for entity
+         * bool hazardous: whether or not the entity is hazardous
          * bool visibility: whether or not the entity will be visible in-game.
          * bool paintable: whether or not the given entity is paintable.
          * Dictionary<string, string> properties: additional properties for this entity.
          * Image texture: image used to represent this entity in the level editor.
          */
-        public Entity(string type, string name, bool visibility,
+        public Entity(string type, string name, bool hazardous, bool visibility,
             bool paintable, Dictionary<string, string> properties, Image texture)
         {
             mType = type;
@@ -107,6 +113,12 @@ namespace GravityLevelEditor
                 if (el.Name == "Type")
                 {
                     mType = el.Value.ToString();
+                }
+                if (el.Name == "Hazardous")
+                {
+                    if (el.Value == "True")
+                        mHazardous = true;
+                    else mHazardous = false;
                 }
                 if (el.Name == "Location")
                 {
@@ -264,6 +276,7 @@ namespace GravityLevelEditor
                 new XElement("Location",
                     new XAttribute("X", this.Location.X),
                     new XAttribute("Y", this.Location.Y)),
+                new XElement("Hazardous", this.Hazardous.ToString()),
                 new XElement("Visible", this.Visible.ToString()),
                 new XElement("Paintable", this.Paintable.ToString()),
                 new XElement("Texture", this.mTexture.Tag.ToString()),

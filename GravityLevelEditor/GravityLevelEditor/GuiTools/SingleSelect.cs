@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Collections;
 using System.Windows.Forms;
+using GravityLevelEditor.EntityCreationForm;
 
 namespace GravityLevelEditor.GuiTools
 {
@@ -52,7 +53,12 @@ namespace GravityLevelEditor.GuiTools
 
         public void RightMouseDown(ref EditorData data, Point gridPosition)
         {
-            
+            if(data.SelectedEntities.Count != 1) return;
+
+            AdditionalProperties properties = new AdditionalProperties(data.Level.SelectEntity(gridPosition).Properties);
+            properties.Editable = false;
+            if (properties.ShowDialog() == DialogResult.OK)
+                data.Level.SelectEntity(gridPosition).Properties = properties.Properties;
         }
 
         public void RightMouseUp(ref EditorData data, Point gridPosition)

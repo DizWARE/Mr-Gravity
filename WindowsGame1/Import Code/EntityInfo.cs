@@ -15,6 +15,7 @@ namespace GravityShift.Import_Code
         //Opted not to do Properties to interface with the variables for ease of writing. I figure that its not too big of a deal in this case
         public string mName;
         public string mType;
+        public bool mHazardous;
         public string mTextureFile;
 
         public bool mVisible;
@@ -36,6 +37,8 @@ namespace GravityShift.Import_Code
                     mName = item.Value;
                 if (item.Name == XmlKeys.TYPE)
                     mType = item.Value;
+                if (item.Name == XmlKeys.HAZARDOUS)
+                    mHazardous = "True".Equals(item.Value);
                 if (item.Name == XmlKeys.TEXTURE)
                     mTextureFile = item.Value;
                 if (item.Name == XmlKeys.VISIBLE)

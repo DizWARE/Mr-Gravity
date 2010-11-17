@@ -10,12 +10,11 @@ namespace GravityShift.Import_Code
         //Specific entity Names
         public static string PLAYER_START = "PlayerStart";
         public static string PLAYER_END = "PlayerEnd";
-        public static string HAZARD = "Hazard";
-        public static string NON_HAZARD = "Non-Hazard";
 
         //Property info
         public static string TYPE = "Type";
         public static string NAME = "Name";
+        public static string HAZARDOUS = "Hazardous";
         public static string SIZE = "Size";
         public static string BACKGROUND = "Background";
         public static string LOCATION = "Location";

@@ -5,6 +5,7 @@
     <Name>PlayerStart</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>False</Visible>
     <Paintable>False</Paintable>
     <Texture>Level Positions\player_start</Texture>
@@ -15,6 +16,7 @@
     <Name>PlayerEnd</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>False</Visible>
     <Paintable>False</Paintable>
     <Texture>Level Positions\player_end</Texture>
@@ -25,6 +27,7 @@
     <Name>Non-Hazard</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>False</Paintable>
     <Texture>Physics Objects\circle</Texture>
@@ -37,6 +40,7 @@
     <Name>NeonGreen</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonGreen</Texture>
@@ -47,6 +51,7 @@
     <Name>NeonPink</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonPink</Texture>
@@ -57,6 +62,7 @@
     <Name>NeonBlue</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonBlue</Texture>
@@ -67,6 +73,7 @@
     <Name>NeonYellow</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -77,6 +84,7 @@
     <Name>BrownMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma</Texture>
@@ -87,9 +95,21 @@
     <Name>BlackMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
     <Visible>True</Visible>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma2</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>252</ID>
+    <Name>TestHazard</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>True</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\grounda_magma</Texture>
     <Properties />
   </Entity>
 </Entities>

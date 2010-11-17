@@ -83,13 +83,13 @@ namespace GravityShift.Import_Code
             {
                 if (entity.mType == XmlKeys.STATIC_OBJECT)
                 {
-                    if (entity.mName == XmlKeys.HAZARD)
+                    if (entity.mHazardous)
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
                         objects.Add(new HazardTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
                             GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare));
                     }
-                    if (entity.mName == XmlKeys.NON_HAZARD)
+                    else
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
                         objects.Add(new Tile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
@@ -98,13 +98,13 @@ namespace GravityShift.Import_Code
                 }
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
                 {
-                    if (entity.mName == XmlKeys.HAZARD)
+                    if (entity.mHazardous)
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
                         objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
                             GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare));
                     }
-                    if (entity.mName == XmlKeys.NON_HAZARD)
+                    else
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
                         objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),

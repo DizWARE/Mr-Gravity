@@ -71,7 +71,9 @@
             this.pb_CurrentTool = new System.Windows.Forms.PictureBox();
             this.sc_Properties = new System.Windows.Forms.SplitContainer();
             this.sc_HorizontalProperties = new System.Windows.Forms.SplitContainer();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cb_entityHazardous = new System.Windows.Forms.CheckBox();
+            this.lbl_eHazardous = new System.Windows.Forms.Label();
+            this.lbl_ePaintable = new System.Windows.Forms.Label();
             this.lbl_eVisibleLabel = new System.Windows.Forms.Label();
             this.cb_entityVisible = new System.Windows.Forms.CheckBox();
             this.cb_entityPaintable = new System.Windows.Forms.CheckBox();
@@ -479,10 +481,10 @@
             // sc_Properties.Panel1
             // 
             this.sc_Properties.Panel1.AutoScroll = true;
-            this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
-            this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
             this.sc_Properties.Panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.GridScroll);
+            this.sc_Properties.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.GridPaint);
             this.sc_Properties.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridMouseDown);
+            this.sc_Properties.Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GridMouseMove);
             this.sc_Properties.Panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GridMouseUp);
             this.sc_Properties.Panel1MinSize = 100;
             // 
@@ -505,7 +507,9 @@
             // 
             // sc_HorizontalProperties.Panel1
             // 
-            this.sc_HorizontalProperties.Panel1.Controls.Add(this.label2);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityHazardous);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eHazardous);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_ePaintable);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eVisibleLabel);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityVisible);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityPaintable);
@@ -533,15 +537,37 @@
             this.sc_HorizontalProperties.SplitterDistance = 289;
             this.sc_HorizontalProperties.TabIndex = 1;
             // 
-            // label2
+            // cb_entityHazardous
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Paintable:";
+            this.cb_entityHazardous.AutoSize = true;
+            this.cb_entityHazardous.Enabled = false;
+            this.cb_entityHazardous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_entityHazardous.Location = new System.Drawing.Point(123, 214);
+            this.cb_entityHazardous.Name = "cb_entityHazardous";
+            this.cb_entityHazardous.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cb_entityHazardous.Size = new System.Drawing.Size(15, 14);
+            this.cb_entityHazardous.TabIndex = 12;
+            this.cb_entityHazardous.UseVisualStyleBackColor = true;
+            // 
+            // lbl_eHazardous
+            // 
+            this.lbl_eHazardous.AutoSize = true;
+            this.lbl_eHazardous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eHazardous.Location = new System.Drawing.Point(35, 214);
+            this.lbl_eHazardous.Name = "lbl_eHazardous";
+            this.lbl_eHazardous.Size = new System.Drawing.Size(71, 13);
+            this.lbl_eHazardous.TabIndex = 11;
+            this.lbl_eHazardous.Text = "Hazardous:";
+            // 
+            // lbl_ePaintable
+            // 
+            this.lbl_ePaintable.AutoSize = true;
+            this.lbl_ePaintable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ePaintable.Location = new System.Drawing.Point(35, 191);
+            this.lbl_ePaintable.Name = "lbl_ePaintable";
+            this.lbl_ePaintable.Size = new System.Drawing.Size(64, 13);
+            this.lbl_ePaintable.TabIndex = 10;
+            this.lbl_ePaintable.Text = "Paintable:";
             // 
             // lbl_eVisibleLabel
             // 
@@ -570,7 +596,7 @@
             this.cb_entityPaintable.AutoSize = true;
             this.cb_entityPaintable.Enabled = false;
             this.cb_entityPaintable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_entityPaintable.Location = new System.Drawing.Point(124, 188);
+            this.cb_entityPaintable.Location = new System.Drawing.Point(124, 190);
             this.cb_entityPaintable.Name = "cb_entityPaintable";
             this.cb_entityPaintable.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_entityPaintable.Size = new System.Drawing.Size(15, 14);
@@ -768,6 +794,7 @@
             this.Name = "MainForm";
             this.Text = "Gravity Level Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quit);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.buttonContainer1.ResumeLayout(false);
@@ -854,12 +881,14 @@
         private System.Windows.Forms.Label lbl_eNameLabel;
         private System.Windows.Forms.CheckBox cb_entityVisible;
         private System.Windows.Forms.Label lbl_eVisibleLabel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_ePaintable;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLabel;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLoc;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.PictureBox pb_CurrentTool;
         private System.Windows.Forms.ToolStripMenuItem mi_saveAs;
+        private System.Windows.Forms.Label lbl_eHazardous;
+        private System.Windows.Forms.CheckBox cb_entityHazardous;
 
     }
 }

@@ -303,11 +303,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="Images\Backgrounds\TestBackground.png">
-      <Name>TestBackground</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="SoundEffects\level_gravityShiftDown.wav">
       <Name>level_gravityShiftDown</Name>
       <Importer>WavImporter</Importer>

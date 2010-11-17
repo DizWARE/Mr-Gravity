@@ -53,7 +53,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void CreateNew(object sender, EventArgs e)
         {
-            mAllEntities.Add(new Entity("", "New", true, true,
+            mAllEntities.Add(new Entity("", "New", false, true, true,
                 new Dictionary<string, string>(),
                 Image.FromFile("..\\..\\Content\\defaultImage.png")));
             mSelectedIndex = mAllEntities.Count - 1;
@@ -82,6 +82,7 @@ namespace GravityLevelEditor.EntityCreationForm
                 cb_type.Text = "Select Type";
             ckb_visible.Checked = SelectedEntity.Visible;
             ckb_paintable.Checked = SelectedEntity.Paintable;
+            ckb_hazardous.Checked = SelectedEntity.Hazardous;
             pb_texture.Image = SelectedEntity.Texture;
         }
 
@@ -187,6 +188,17 @@ namespace GravityLevelEditor.EntityCreationForm
         }
 
         /*
+         * SetHazardous
+         * 
+         * Sets if this entity will be hazardous or not
+         */
+        private void SetHazardous(object sender, EventArgs e)
+        {
+            if (lb_entitySelect.SelectedIndex > -1)
+                SelectedEntity.Hazardous = ckb_hazardous.Checked;
+        }
+
+        /*
          * SetPaintable
          * 
          * Sets whether this entity is paintable or not
@@ -257,6 +269,7 @@ namespace GravityLevelEditor.EntityCreationForm
             tb_name.Text = "";
             cb_type.Text = "Select Type";
             pb_texture.Image = null;
+            ckb_hazardous.Checked = false;
             ckb_paintable.Checked = false;
             ckb_visible.Checked = false;
         }

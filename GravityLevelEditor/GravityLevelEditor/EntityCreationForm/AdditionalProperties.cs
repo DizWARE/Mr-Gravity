@@ -13,7 +13,16 @@ namespace GravityLevelEditor.EntityCreationForm
     {
         private string mPreviousKey;
         private bool mEditable = true;
-        public bool Editable { set { mEditable = value; } }
+        public bool Editable
+        {
+            set
+            {
+                mEditable = value;
+                tb_name.Enabled = mEditable;
+                b_add.Enabled = mEditable;
+                b_remove.Enabled = mEditable;
+            }
+        }
 
         private Dictionary<string, string> mProperties;
         public Dictionary<string, string> Properties
@@ -34,9 +43,6 @@ namespace GravityLevelEditor.EntityCreationForm
         public AdditionalProperties(Dictionary<string, string> props)
         {
             InitializeComponent();
-            tb_name.Enabled = mEditable;
-            b_add.Enabled = mEditable;
-            b_remove.Enabled = mEditable;
 
             mProperties = new Dictionary<string, string>();
             if (props.Count > 0)
@@ -152,6 +158,7 @@ namespace GravityLevelEditor.EntityCreationForm
             int splitIndex = lb_properties.SelectedItem.ToString().IndexOf('/');
             tb_name.Text = lb_properties.SelectedItem.ToString().Substring(0, splitIndex);
             tb_value.Text = lb_properties.SelectedItem.ToString().Substring(splitIndex + 1);
+            mPreviousKey = tb_name.Text;
         }
 
 

@@ -676,6 +676,7 @@ namespace GravityLevelEditor
                 lbl_entityName.Text = mData.OnDeck.Name;
                 lbl_entityType.Text = mData.OnDeck.Type;
                 cb_entityPaintable.Checked = mData.OnDeck.Paintable;
+                cb_entityHazardous.Checked = mData.OnDeck.Hazardous;
                 cb_entityVisible.Checked = mData.OnDeck.Visible;
             }
         }
