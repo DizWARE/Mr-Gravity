@@ -120,6 +120,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Images\Static Objects\groundi_neonPink.png">
+      <Name>groundi_neonPink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Images\Static Objects\groundi_neonYellow.png">
       <Name>groundi_neonYellow</Name>
       <Importer>TextureImporter</Importer>
