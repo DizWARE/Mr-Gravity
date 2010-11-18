@@ -187,13 +187,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fonts\Kootenay.spritefont">
-      <Name>Kootenay</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="menu\BackSelected.png">
       <Name>BackSelected</Name>
       <Importer>TextureImporter</Importer>
@@ -256,13 +249,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fonts\Kootenay.spritefont">
-      <Name>Kootenay</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
@@ -291,9 +277,7 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Backgrounds\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Images\Static Objects\groundi_neonPink.png">
       <Name>groundi_neonPink</Name>
@@ -301,7 +285,6 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="SoundEffects\level_gravityShiftDown.wav">
       <Name>level_gravityShiftDown</Name>
@@ -334,6 +317,20 @@
       <Name>playerCol_wall</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fonts\Kootenay.spritefont">
+      <Name>Kootenay</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Backgrounds\defaultBG.png">
+      <Name>defaultBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
