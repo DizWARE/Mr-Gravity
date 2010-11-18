@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
+    <Compile Include="GameSound.cs" />
     <Compile Include="ColorCodes.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="GameObject.cs" />
@@ -198,12 +199,9 @@
   <ItemGroup>
     <ProjectReference Include="Content\Content.contentproj">
       <Project>{346008ED-587D-42F8-80B1-424AAEF43968}</Project>
-      <Name>WindowsGame1Content %28Content%29</Name>
+      <Name>Content</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Import Code\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

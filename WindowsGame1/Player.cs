@@ -38,8 +38,8 @@ namespace GravityShift
         {
             mControls = controlScheme;
             mSpawnPoint = initialPosition;
+            
         }
-
         /// <summary>
         /// Updates the player location and the player controls
         /// </summary>
@@ -50,21 +50,25 @@ namespace GravityShift
 
             if (mControls.isDownPressed())
             {
+                GameSound.level_gravityShiftDown.Play();
                 mEnvironment.GravityDirection = GravityDirections.Down;
             }
 
             else if (mControls.isUpPressed())
             {
+                GameSound.level_gravityShiftUp.Play();
                 mEnvironment.GravityDirection = GravityDirections.Up;
             }
 
             else if (mControls.isLeftPressed())
             {
+                GameSound.level_gravityShiftLeft.Play();
                 mEnvironment.GravityDirection = GravityDirections.Left;
             }
 
             else if (mControls.isRightPressed())
             {
+                GameSound.level_gravityShiftRight.Play();
                 mEnvironment.GravityDirection = GravityDirections.Right;
             }
         }
