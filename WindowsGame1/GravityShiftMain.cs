@@ -252,15 +252,15 @@ namespace GravityShift
                             if (Math.Abs(player.Velocity.X) > 8 || Math.Abs(player.Velocity.Y) > 8)
                             {
                                 if (cam.Zoom > 0.5f)
-                                    cam.Zoom -= 0.001f;
+                                    cam.Zoom -= 0.0005f;
                             }
                             else if (Math.Abs(player.Velocity.X) > 15 || Math.Abs(player.Velocity.Y) > 15)
                             {
                                 if (cam.Zoom > 0.25f)
-                                    cam.Zoom -= 0.001f;
+                                    cam.Zoom -= 0.0015f;
                             }
                             else if (cam.Zoom < 1.0f)
-                                cam.Zoom += 0.01f;                            
+                                cam.Zoom += 0.001f;                            
                             
                             pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
                         }

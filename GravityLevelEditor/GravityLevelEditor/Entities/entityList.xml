@@ -112,4 +112,17 @@
     <Texture>Static Objects\grounda_magma</Texture>
     <Properties />
   </Entity>
+  <Entity>
+    <ID>235</ID>
+    <Name>Non-Hazard</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\groundi_neonYellow</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
 </Entities>
