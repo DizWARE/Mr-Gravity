@@ -244,8 +244,23 @@ namespace GravityShift
                             if (pObject is Player) ChangeValues((Player)pObject, keyboard);
 
                             // Update the camera to keep the player at the center of the screen
-                            cam.Postion = new Vector3(player.Position.X-275, player.Position.Y-100, 0);
-                            cam.Zoom = 0.9f;
+                            // Also only update if the velocity if greater than 0.5f in either direction
+                            if (Math.Abs(player.Velocity.X) > 0.5f || Math.Abs(player.Velocity.Y) > 0.5f)
+                                cam.Postion = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
+
+                            // Update zoom based on players velocity
+                            if (Math.Abs(player.Velocity.X) > 8 || Math.Abs(player.Velocity.Y) > 8)
+                            {
+                                if (cam.Zoom > 0.5f)
+                                    cam.Zoom -= 0.001f;
+                            }
+                            else if (Math.Abs(player.Velocity.X) > 15 || Math.Abs(player.Velocity.Y) > 15)
+                            {
+                                if (cam.Zoom > 0.25f)
+                                    cam.Zoom -= 0.001f;
+                            }
+                            else if (cam.Zoom < 1.0f)
+                                cam.Zoom += 0.01f;                            
                             
                             pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
                         }
