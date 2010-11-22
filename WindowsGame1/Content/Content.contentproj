@@ -296,13 +296,10 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="Images\Backgrounds\TestBackground.png">
-      <Name>TestBackground</Name>
-	  <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
+    <Folder Include="Images\Backgrounds\" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Images\Static Objects\groundi_neonPink.png">
       <Name>groundi_neonPink</Name>
       <Importer>TextureImporter</Importer>
