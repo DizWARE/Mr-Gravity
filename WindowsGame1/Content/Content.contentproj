@@ -137,27 +137,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Player.png">
-      <Name>Player</Name>
+    <Compile Include="menu\BackSelected.png">
+      <Name>BackSelected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Level1Overlay.png">
-      <Name>Level1Overlay</Name>
+    <Compile Include="menu\BackUnselected.png">
+      <Name>BackUnselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Tile.png">
-      <Name>Tile</Name>
+    <Compile Include="menu\ControllerSelected.png">
+      <Name>ControllerSelected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="menu\ControllerUnselected.png">
+      <Name>ControllerUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="menu\LoadGameSelected.png">
       <Name>LoadGameSelected</Name>
       <Importer>TextureImporter</Importer>
@@ -192,13 +191,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fonts\Kootenay.spritefont">
-      <Name>Kootenay</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="menu\BackSelected.png">
       <Name>BackSelected</Name>
       <Importer>TextureImporter</Importer>
@@ -210,12 +202,7 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="menu\ControllerSelected.png">
-      <Name>ControllerSelected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="menu\ControllerUnselected.png">
-      <Name>ControllerUnselected</Name>
+      <Name>ControllerSelected</Name>	
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -226,6 +213,16 @@
     </Compile>
     <Compile Include="menu\OneUnselected.png">
       <Name>OneUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="menu\OptionSelected.png">
+      <Name>OptionSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="menu\OptionUnselected.png">
+      <Name>OptionUnselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -256,6 +253,25 @@
     </Compile>
     <Compile Include="menu\TwoUnselected.png">
       <Name>TwoUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Player.png">
+      <Name>Player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level1Overlay.png">
+      <Name>Level1Overlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tile.png">
+      <Name>Tile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -300,6 +316,48 @@
     <Folder Include="Images\Backgrounds\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SoundEffects\level_goal.wav">
+      <Name>level_goal</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SoundEffects\level_stageFail.wav">
+      <Name>level_stageFail</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SoundEffects\level_stageVictory.wav">
+      <Name>level_stageVictory</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SoundEffects\menuSound_rollover.wav">
+      <Name>menuSound_rollover</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SoundEffects\menuSound_select.wav">
+      <Name>menuSound_select</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SoundEffects\playerSound_death.wav">
+      <Name>playerSound_death</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="SoundEffects\playerSound_respawn.wav">
+      <Name>playerSound_respawn</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Backgrounds\TestBackground.png">
+      <Name>TestBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Images\Static Objects\groundi_neonPink.png">
       <Name>groundi_neonPink</Name>
       <Importer>TextureImporter</Importer>
@@ -338,6 +396,20 @@
       <Name>playerCol_wall</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fonts\Kootenay.spritefont">
+      <Name>Kootenay</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Backgrounds\defaultBG.png">
+      <Name>defaultBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

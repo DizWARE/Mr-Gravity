@@ -9,6 +9,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using GravityLevelEditor.XML;
 
 namespace GravityLevelEditor
 {
@@ -80,26 +81,26 @@ namespace GravityLevelEditor
 
             foreach (XElement el in xLevel.Elements())
             {
-                if (el.Name == "Name")
+                if (el.Name == XmlKeys.L_NAME)
                 {
                     this.Name = el.Value.ToString();
                 }
-                if (el.Name == "Size")
+                if (el.Name == XmlKeys.SIZE)
                 {
-                    Point xSize = new Point(Convert.ToInt32(el.Attribute("X").Value.ToString()), Convert.ToInt32(el.Attribute("Y").Value.ToString()));
+                    Point xSize = new Point(Convert.ToInt32(el.Attribute(XmlKeys.L_X).Value.ToString()), Convert.ToInt32(el.Attribute(XmlKeys.L_Y).Value.ToString()));
                     this.Size = xSize;
 
                 }
-                if (el.Name == "Background")
+                if (el.Name == XmlKeys.BACKGROUND)
                 {
-                    this.Background = Image.FromFile(d.FullName + "\\" + el.Value + ".png");
+                    this.Background = Image.FromFile(d.FullName + "\\" + el.Value + XmlKeys.PNG);
                     this.Background.Tag = el.Value;
                 }
-                if (el.Name == "Color")
+                if (el.Name == XmlKeys.COLOR)
                 {
                     this.Color = Color.FromName(el.Name.ToString());
                 }
-                if (el.Name == "Entities")
+                if (el.Name == XmlKeys.ENTITIES)
                 {
 
                     mEntities.Clear();
@@ -421,21 +422,21 @@ namespace GravityLevelEditor
             if (mBackground.Tag == null)
             { MessageBox.Show("Failed to save \"" + Name + "\". Invalid background image."); return; }
 
-            XElement entityTree = new XElement("Entities");
+            XElement entityTree = new XElement(XmlKeys.ENTITIES);
             foreach (Entity entity in mEntities) {
                 entityTree.Add(entity.Export());
             }
             XDocument xDoc = new XDocument(
-                new XElement("Level",
-                    new XElement("Name", this.Name),
-                    new XElement("Size",
-                        new XAttribute("X", this.Size.X),
-                        new XAttribute("Y", this.Size.Y)),
-                    new XElement("Background", this.Background.Tag.ToString()),
-                    new XElement("Color", this.Color.ToString()),
+                new XElement(XmlKeys.LEVEL,
+                    new XElement(XmlKeys.L_NAME, this.Name),
+                    new XElement(XmlKeys.SIZE,
+                        new XAttribute(XmlKeys.L_X, this.Size.X),
+                        new XAttribute(XmlKeys.L_Y, this.Size.Y)),
+                    new XElement(XmlKeys.BACKGROUND, this.Background.Tag.ToString()),
+                    new XElement(XmlKeys.COLOR, this.Color.ToString()),
                     entityTree));
 
-            xDoc.Save(currentDirectory + this.Name + ".xml");
+            xDoc.Save(currentDirectory + this.Name + XmlKeys.XML);
 
             MessageBox.Show(this.Name + ".xml saved correctly");
         }

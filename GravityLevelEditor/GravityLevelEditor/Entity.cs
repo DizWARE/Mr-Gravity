@@ -8,6 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using GravityLevelEditor.XML;
 
 namespace GravityLevelEditor
 {
@@ -102,53 +103,53 @@ namespace GravityLevelEditor
 
             foreach (XElement el in ent.Elements())
             {
-                if (el.Name == "ID")
+                if (el.Name == XmlKeys.ID)
                 {
                     mID = Convert.ToInt32(el.Value.ToString());
                 }
-                if (el.Name == "Name")
+                if (el.Name == XmlKeys.E_NAME)
                 {
                     mName = el.Value.ToString();
                 }
-                if (el.Name == "Type")
+                if (el.Name == XmlKeys.TYPE)
                 {
                     mType = el.Value.ToString();
                 }
-                if (el.Name == "Hazardous")
+                if (el.Name == XmlKeys.HAZARDOUS)
                 {
-                    if (el.Value == "True")
+                    if (el.Value == XmlKeys.TRUE)
                         mHazardous = true;
                     else mHazardous = false;
                 }
-                if (el.Name == "Location")
+                if (el.Name == XmlKeys.LOCATION)
                 {
-                    Point xLoc = new Point(Convert.ToInt32(el.Attribute("X").Value.ToString()), Convert.ToInt32(el.Attribute("Y").Value.ToString()));
+                    Point xLoc = new Point(Convert.ToInt32(el.Attribute(XmlKeys.E_X).Value.ToString()), Convert.ToInt32(el.Attribute(XmlKeys.E_Y).Value.ToString()));
                     mLocation = xLoc;
                 }
-                if (el.Name == "Visible")
+                if (el.Name == XmlKeys.VISIBLE)
                 {
-                    if (el.Value == "True")
+                    if (el.Value == XmlKeys.TRUE)
                     {
                         mVisible = true;
                     }
                     else mVisible = false;
                 }
-                if (el.Name == "Paintable")
+                if (el.Name == XmlKeys.PAINTABLE)
                 {
-                    if (el.Value == "True")
+                    if (el.Value == XmlKeys.TRUE)
                     {
                         mPaintable = true;
                     }
                     else mPaintable = false;
                 }
-                if (el.Name == "Texture")
+                if (el.Name == XmlKeys.TEXTURE)
                 {
-                    currentDirectory = d.FullName + "\\" + el.Value + ".png";
+                    currentDirectory = d.FullName + "\\" + el.Value + XmlKeys.PNG;
                     try { mTexture = Image.FromFile(currentDirectory); mTexture.Tag = el.Value; }
                     catch (Exception e) { MessageBox.Show("File " + currentDirectory + " could not be found."); }
                     
                 }
-                if (el.Name == "Properties")
+                if (el.Name == XmlKeys.PROPERTIES)
                 {
                     foreach (XElement property in el.Elements())
                     {
@@ -264,22 +265,22 @@ namespace GravityLevelEditor
             if (mTexture.Tag == null)
             { MessageBox.Show("Failed to save " + ToString() + ID + ". Invalid image."); return null; }
 
-            XElement propertiesTree = new XElement("Properties");
+            XElement propertiesTree = new XElement(XmlKeys.PROPERTIES);
 
             foreach (string key in mProperties.Keys)
                 propertiesTree.Add(new XElement(key, mProperties[key]));
 
-            XElement entityTree = new XElement("Entity",
-                new XElement("ID", this.ID),
-                new XElement("Name", this.Name),
-                new XElement("Type", this.Type),
-                new XElement("Location",
-                    new XAttribute("X", this.Location.X),
-                    new XAttribute("Y", this.Location.Y)),
-                new XElement("Hazardous", this.Hazardous.ToString()),
-                new XElement("Visible", this.Visible.ToString()),
-                new XElement("Paintable", this.Paintable.ToString()),
-                new XElement("Texture", this.mTexture.Tag.ToString()),
+            XElement entityTree = new XElement(XmlKeys.ENTITY,
+                new XElement(XmlKeys.ID, this.ID),
+                new XElement(XmlKeys.E_NAME, this.Name),
+                new XElement(XmlKeys.TYPE, this.Type),
+                new XElement(XmlKeys.LOCATION,
+                    new XAttribute(XmlKeys.E_X, this.Location.X),
+                    new XAttribute(XmlKeys.E_Y, this.Location.Y)),
+                new XElement(XmlKeys.HAZARDOUS, this.Hazardous.ToString()),
+                new XElement(XmlKeys.VISIBLE, this.Visible.ToString()),
+                new XElement(XmlKeys.PAINTABLE, this.Paintable.ToString()),
+                new XElement(XmlKeys.TEXTURE, this.mTexture.Tag.ToString()),
                 propertiesTree);
 
             return entityTree;
