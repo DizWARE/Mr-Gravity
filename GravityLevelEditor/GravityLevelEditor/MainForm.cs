@@ -360,7 +360,7 @@ namespace GravityLevelEditor
 
             game.StartInfo.FileName = dir.FullName + "\\RunGame.bat";
             game.StartInfo.Arguments = "\"" + mData.Level.Name + ".xml\"";
-            game.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            game.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             game.StartInfo.ErrorDialog = true;
             game.Start();
         }
