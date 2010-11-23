@@ -312,9 +312,7 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Backgrounds\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="SoundEffects\level_goal.wav">
       <Name>level_goal</Name>

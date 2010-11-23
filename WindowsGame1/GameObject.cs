@@ -98,8 +98,12 @@ namespace GravityShift
         /// <param name="content"></param>
         /// <param name="name"></param>
         public virtual void Load(ContentManager content, String name)
-        { 
-            mTexture = content.Load<Texture2D>(name);
+        {
+            try
+            {   mTexture = content.Load<Texture2D>(name);   }
+            catch (Exception e)
+            {   mTexture = content.Load<Texture2D>("Images\\error");    }
+
             // pixel perfect stuff (may need to remove)
             mSpriteImageData = new Color[mTexture.Width * mTexture.Height];
             mTexture.GetData(mSpriteImageData);

@@ -51,7 +51,7 @@ namespace GravityShift
         SpriteFont mDefaultFont;
 
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\New Level.xml";
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
 
         public GravityShiftMain()
         {
