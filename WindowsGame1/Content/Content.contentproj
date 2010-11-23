@@ -282,6 +282,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Images\errorBG.png">
+      <Name>errorBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="SoundEffects\level_goal.wav">
       <Name>level_goal</Name>
       <Importer>WavImporter</Importer>
