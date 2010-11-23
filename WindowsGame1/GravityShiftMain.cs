@@ -115,7 +115,7 @@ namespace GravityShift
 
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
-            player = new Player(Content, "Player",
+            player = new Player(Content, "Images\\Player",
                 new Vector2(1, 1), mCurrentLevel.StartingPoint,
                 ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
             mObjects.Add(player);

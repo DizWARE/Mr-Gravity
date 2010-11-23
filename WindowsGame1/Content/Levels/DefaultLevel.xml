@@ -3,7 +3,7 @@
   <Name>DefaultLevel</Name>
   <Size X="10" Y="10" />
   <Background>Backgrounds\defaultBG</Background>
-  <Color>Color [Red]</Color>
+  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>22</ID>

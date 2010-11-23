@@ -65,7 +65,10 @@ namespace GravityShift
         /// <param name="content">Content Manager to load from</param>
         public void Load(ContentManager content, string assetName)
         {
-            mTexture = content.Load<Texture2D>("Images\\" + assetName);//assetName);
+            try
+            { mTexture = content.Load<Texture2D>("Images\\" + assetName); }
+            catch (Exception e)
+            { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
         }
 
         /// <summary>
