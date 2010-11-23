@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>DefaultLevel</Name>
+  <Size X="10" Y="10" />
+  <Background>Backgrounds\defaultBG</Background>
+  <Color>Color [Red]</Color>
+  <Entities>
+    <Entity>
+      <ID>22</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="4" Y="3" />
+      <Hazardous>False</Hazardous>
+      <Visible>False</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Level Positions\player_start</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>34</ID>
+      <Name>PlayerEnd</Name>
+      <Type>Level Positions</Type>
+      <Location X="5" Y="3" />
+      <Hazardous>False</Hazardous>
+      <Visible>False</Visible>
+      <Paintable>False</Paintable>
+      <Texture>Level Positions\player_end</Texture>
+      <Properties />
+    </Entity>
+  </Entities>
+</Level>
