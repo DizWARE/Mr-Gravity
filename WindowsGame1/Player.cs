@@ -24,6 +24,19 @@ namespace GravityShift
         public int mNumLives = 5;
         public bool mIsAlive = true;
 
+        //Player rotation values (current, goal, and speed)
+        private float mRotation;
+        private float mGoalRotation;
+        private float mRotationFactor = (float)(Math.PI / 60.0f);
+
+        //rotation goals for the 4 directions
+        private float mRotationDown = 0.0f;
+        private float mRotationRight = (float)(Math.PI / 2.0f);
+        private float mRotationUp = (float)Math.PI;
+        private float mRotationLeft = (float)(3.0 * Math.PI / 2.0);
+        
+        
+
         /// <summary>
         /// Construcs a player object, that can live in a physical realm
         /// </summary>
@@ -38,6 +51,8 @@ namespace GravityShift
         {
             mControls = controlScheme;
             mSpawnPoint = initialPosition;
+            mRotation = 0.0f;
+            mGoalRotation = 0.0f;
             
         }
         /// <summary>
@@ -52,26 +67,58 @@ namespace GravityShift
             {
                 GameSound.level_gravityShiftDown.Play();
                 mEnvironment.GravityDirection = GravityDirections.Down;
+                mGoalRotation = 0.0f;
             }
 
             else if (mControls.isUpPressed())
             {
                 GameSound.level_gravityShiftUp.Play();
                 mEnvironment.GravityDirection = GravityDirections.Up;
+                mGoalRotation = (float)Math.PI;
             }
 
             else if (mControls.isLeftPressed())
             {
                 GameSound.level_gravityShiftLeft.Play();
                 mEnvironment.GravityDirection = GravityDirections.Left;
+                mGoalRotation = (float)(3.0 * Math.PI / 2.0);
             }
 
             else if (mControls.isRightPressed())
             {
                 GameSound.level_gravityShiftRight.Play();
                 mEnvironment.GravityDirection = GravityDirections.Right;
+                mGoalRotation = (float)(Math.PI / 2.0);
             }
+
+            if (Math.Abs(mGoalRotation - mRotation) < 0.1)
+            {
+                mRotation = mGoalRotation;
+            }
+            else if (mRotation > mGoalRotation)
+            {
+                mRotation -= mRotationFactor;
+            }
+            else
+            {
+                mRotation += mRotationFactor;
+            }
+
+
+
+
         }
+
+        /// <summary>
+        /// Draw the player, with rotation due to gravity taken into affect
+        /// </summary>
+        /// <param name="canvas">Canvas SpriteBatch</param>
+        /// <param name="gametime">Current gametime</param>
+        public override void Draw(SpriteBatch canvas, GameTime gametime)
+        {
+            canvas.Draw(mTexture, mBoundingBox, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White, mRotation, new Vector2((mSize.X / 2.0f), (mSize.Y / 2.0f)), SpriteEffects.None, 0);
+        }
+
         /// <summary>
         /// Handle players death 
         /// </summary>
