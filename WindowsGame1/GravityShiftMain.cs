@@ -333,7 +333,7 @@ namespace GravityShift
                     gObject.Draw(mSpriteBatch, gameTime);
                 }
 
-                DrawHUD(gameTime);
+                //DrawHUD(gameTime);
 
                 mSpriteBatch.End();
 
@@ -347,67 +347,68 @@ namespace GravityShift
         /// TODO - ADD REAL HUD CODE
         /// </summary>
         /// <param name="gameTime"></param>
-        private void DrawHUD(GameTime gameTime)
-        {
-            Rectangle titleSafeArea = GraphicsDevice.Viewport.TitleSafeArea;
+        //private void DrawHUD(GameTime gameTime)
+        //{
+        //    Rectangle titleSafeArea = GraphicsDevice.Viewport.TitleSafeArea;
 
-            Player player = null;
-            foreach (GameObject obj in mObjects)
-            {
-                if (obj is Player)
-                {
-                    player = (Player)obj;
-                }
-            }
+        //    Player player = null;
+        //    foreach (GameObject obj in mObjects)
+        //    {
+        //        if (obj is Player)
+        //        {
+        //            player = (Player)obj;
+        //        }
+        //    }
             
-            Vector2 location = new Vector2(titleSafeArea.X+10,titleSafeArea.Y+5);            
+        //    Vector2 location = new Vector2(titleSafeArea.X+10,titleSafeArea.Y+5);            
 
-            mSpriteBatch.DrawString(mDefaultFont,"Gravity Force(G/H): " + mPhysicsEnvironment.GravityMagnitude, location,Color.Black);
-            location = Vector2.Add(location, new Vector2(0, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Terminal Speed(T/Y): " + mPhysicsEnvironment.TerminalSpeed, location, Color.Black);
-            location = Vector2.Add(location, new Vector2(0, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Erosion Factor(W/E): " + mPhysicsEnvironment.ErosionFactor, location, Color.Black);
-            location = Vector2.Add(location, new Vector2(0, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Lives:  " + player.mNumLives, location, Color.Black);
+        //    mSpriteBatch.DrawString(mDefaultFont,"Gravity Force(G/H): " + mPhysicsEnvironment.GravityMagnitude, location,Color.Black);
+        //    location = Vector2.Add(location, new Vector2(0, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Terminal Speed(T/Y): " + mPhysicsEnvironment.TerminalSpeed, location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(0, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Erosion Factor(W/E): " + mPhysicsEnvironment.ErosionFactor, location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(0, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Lives:  " + player.mNumLives, location, Color.Black);
 
-            location = new Vector2(titleSafeArea.Right - 490, titleSafeArea.Y+5);
-            mSpriteBatch.DrawString(mDefaultFont, "Up Force Magnifier(U/I): " + 
-                mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Up), location, Color.Black);
-            location = Vector2.Add(location, new Vector2(-250, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Left Force Magnifier(K/L): " + 
-                mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Left), location, Color.Black);
-            location = Vector2.Add(location, new Vector2(+450, 0));
-            mSpriteBatch.DrawString(mDefaultFont, "Right Force Magnifier(O/P): " + 
-                mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Right), location, Color.Black);
-            location = Vector2.Add(location, new Vector2(-200, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Down Force Magnifier(D/F): " + 
-                mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Down), location, Color.Black);
+        //    location = new Vector2(titleSafeArea.Right - 490, titleSafeArea.Y+5);
+        //    mSpriteBatch.DrawString(mDefaultFont, "Up Force Magnifier(U/I): " + 
+        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Up), location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(-250, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Left Force Magnifier(K/L): " + 
+        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Left), location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(+450, 0));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Right Force Magnifier(O/P): " + 
+        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Right), location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(-200, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Down Force Magnifier(D/F): " + 
+        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Down), location, Color.Black);
 
-            location = new Vector2(titleSafeArea.X + 10, titleSafeArea.Height - 70); 
-            mSpriteBatch.DrawString(mDefaultFont, "Velocity X : " + (int)player.ObjectVelocity.X + 
-                " Velocity Y: " + (int)player.ObjectVelocity.Y, location, Color.Black);
-            location = Vector2.Add(location, new Vector2(0, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Total Force X: " + player.TotalForce.X + 
-                " Total Force Y: " + player.TotalForce.Y, location, Color.Black);
-            location = Vector2.Add(location, new Vector2(0, 20));
-            mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
+        //    location = new Vector2(titleSafeArea.X + 10, titleSafeArea.Height - 70); 
+        //    mSpriteBatch.DrawString(mDefaultFont, "Velocity X : " + (int)player.ObjectVelocity.X + 
+        //        " Velocity Y: " + (int)player.ObjectVelocity.Y, location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(0, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Total Force X: " + player.TotalForce.X + 
+        //        " Total Force Y: " + player.TotalForce.Y, location, Color.Black);
+        //    location = Vector2.Add(location, new Vector2(0, 20));
+        //    mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
 
-            if (!player.mIsAlive)
-            {
-                // Add game over sign
-                location = new Vector2(500, 500);
-                mSpriteBatch.DrawString(mDefaultFont, "GAME OVER", location, Color.Black);
-                location = new Vector2(500, 520);
-                mSpriteBatch.DrawString(mDefaultFont, "Press A to go back to menu", location, Color.Black);    
-            }
-            if (isPaused)
-            {
-                // Add pause sign
-                location = new Vector2(500, 500);
-                mSpriteBatch.DrawString(mDefaultFont, "Paused", location, Color.Black);
+        //    if (!player.mIsAlive)
+        //    {
+        //         Add game over sign
+        //        location = new Vector2(500, 500);
+        //        mSpriteBatch.DrawString(mDefaultFont, "GAME OVER", location, Color.Black);
+        //        location = new Vector2(500, 520);
+        //        mSpriteBatch.DrawString(mDefaultFont, "Press A to go back to menu", location, Color.Black);    
+        //    }
+        //    if (isPaused)
+        //    {
+        //         Add pause sign
+        //        location = new Vector2(500, 500);
+        //        mSpriteBatch.DrawString(mDefaultFont, "Paused", location, Color.Black);
  
-            }
-        }
+        //    }
+        //}
+
         /// <summary>
         /// Checks to see if given object is colliding with any other object and handles the collision
         /// </summary>
