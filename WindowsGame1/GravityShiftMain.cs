@@ -314,7 +314,7 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             if (inGame)
             {
                 // Begin spritebatch with the desired camera transformations
