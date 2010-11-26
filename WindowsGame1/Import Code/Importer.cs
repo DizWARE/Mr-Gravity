@@ -52,7 +52,6 @@ namespace GravityShift.Import_Code
             }
 
             level.StartingPoint = GetPlayerStart();
-            level.EndingPoint = GetPlayerEnd();
 
             return level;
         }
@@ -67,13 +66,13 @@ namespace GravityShift.Import_Code
             return new Vector2(-100, -100);
         } 
 
-        public Vector2 GetPlayerEnd()
+        public PlayerEnd GetPlayerEnd()
         {
             foreach (EntityInfo entity in mEntities)
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_END)
-                    return GridSpace.GetDrawingCoord(entity.mLocation);
+                    return new PlayerEnd(mContent, GridSpace.GetDrawingCoord(entity.mLocation));
 
-            return new Vector2(-100, -100);
+            return null;
         }
 
         public List<GameObject> GetObjects(ref PhysicsEnvironment environment)

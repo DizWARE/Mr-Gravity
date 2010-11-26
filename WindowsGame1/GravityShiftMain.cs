@@ -122,6 +122,8 @@ namespace GravityShift
 
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
+            mObjects.Add(importer.GetPlayerEnd());
+
 /*            HazardTile htile = new HazardTile(Content, "Deadly", Vector2.One, new Vector2(364, 300), .8f, true);
             mObjects.Add(htile);
 
@@ -228,16 +230,16 @@ namespace GravityShift
 
                             // Update the camera to keep the player at the center of the screen
                             // Also only update if the velocity if greater than 0.5f in either direction
-                            if (Math.Abs(player.Velocity.X) > 0.5f || Math.Abs(player.Velocity.Y) > 0.5f)
+                            if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
                                 cam.Postion = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
 
                             // Update zoom based on players velocity
-                            if (Math.Abs(player.Velocity.X) > 8 || Math.Abs(player.Velocity.Y) > 8)
+                            if (Math.Abs(player.ObjectVelocity.X) > 8 || Math.Abs(player.ObjectVelocity.Y) > 8)
                             {
                                 if (cam.Zoom > 0.5f)
                                     cam.Zoom -= 0.0005f;
                             }
-                            else if (Math.Abs(player.Velocity.X) > 15 || Math.Abs(player.Velocity.Y) > 15)
+                            else if (Math.Abs(player.ObjectVelocity.X) > 15 || Math.Abs(player.ObjectVelocity.Y) > 15)
                             {
                                 if (cam.Zoom > 0.25f)
                                     cam.Zoom -= 0.0015f;
@@ -409,6 +411,13 @@ namespace GravityShift
         //    }
         //}
 
+        private void Respawn(Player player)
+        {
+            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+            player.Position = mCurrentLevel.StartingPoint;
+            player.ObjectVelocity = new Vector2();
+        }
+
         /// <summary>
         /// Checks to see if given object is colliding with any other object and handles the collision
         /// </summary>
@@ -420,14 +429,13 @@ namespace GravityShift
                 // handle collisions for each physics object
                 foreach (GameObject obj in mObjects)
                 {
+                    if (obj is PlayerEnd)
+                        continue;
+
                     if (obj.mIsSquare)// square/square collision
-                    {
                         physObj.HandleCollideBoxAndBox(obj);
-                    }
                     else//square/ circle collision
-                    {
                         physObj.HandleCollideCircleAndBox(obj);
-                    }
                 }
             }
             else// circle
@@ -437,11 +445,15 @@ namespace GravityShift
                 {
                     if (obj.mIsSquare)// circle/square collision
                     {
+                        if (!(physObj is Player) && obj is PlayerEnd)
+                            continue;
+
                         int collided = physObj.HandleCollideCircleAndBox(obj);
                         if ((physObj is Player) && (obj is HazardTile)&&(collided==1))
                         {
                             //Play sound
                             GameSound.playerCol_hazard.Play();
+                            Respawn((Player)physObj);
 
                             if (((Player)physObj).Kill() <= 0)
                             {
@@ -449,6 +461,12 @@ namespace GravityShift
                                 //inGame = false;
                             }
                         } 
+                        if(physObj is Player && obj is PlayerEnd && collided == 1)
+                        {
+                            Respawn((Player)physObj);
+                            inMenu = true;
+                            inGame = false;
+                        }
                     }
                     else// circle/circle collision
                     {

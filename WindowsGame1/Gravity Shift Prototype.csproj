@@ -119,7 +119,6 @@
   <ItemGroup>
     <Compile Include="Camera.cs" />
     <Compile Include="GameSound.cs" />
-    <Compile Include="ColorCodes.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GenericObject.cs" />
@@ -135,6 +134,7 @@
     <Compile Include="PhysicsEnvironment.cs" />
     <Compile Include="PhysicsObject.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerEnd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="GravityShiftMain.cs" />
@@ -202,6 +202,9 @@
       <Name>Content</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game Objects\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
