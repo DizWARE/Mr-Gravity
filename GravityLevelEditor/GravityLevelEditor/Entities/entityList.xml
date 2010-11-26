@@ -125,4 +125,17 @@
       <Shape>Square</Shape>
     </Properties>
   </Entity>
+  <Entity>
+    <ID>89</ID>
+    <Name>Hazard</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>True</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\grounda_magma</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
 </Entities>

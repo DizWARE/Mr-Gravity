@@ -16,8 +16,8 @@ namespace GravityShift
 {
     abstract class StaticObject : GameObject
     {
-        public StaticObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction, bool isSquare)
-            : base(content, name, scalingFactors, initialPosition, friction,isSquare)
+        public StaticObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
+            : base(content, name, initialPosition, friction,isSquare,isHazardous)
         {
         }
     }

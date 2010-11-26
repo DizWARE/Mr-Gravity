@@ -15,8 +15,8 @@ namespace GravityShift
 {
     class HazardTile : StaticObject
     {
-        public HazardTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction, bool isSquare)
-            : base(content, name, scalingFactors, initialPosition, friction, isSquare)
+        public HazardTile(ContentManager content, String name,  Vector2 initialPosition, float friction, bool isSquare)
+            : base(content, name, initialPosition, friction, isSquare, true)
         {
 
         }

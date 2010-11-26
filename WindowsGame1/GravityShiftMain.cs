@@ -116,63 +116,13 @@ namespace GravityShift
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
             player = new Player(Content, "Images\\Player",
-                new Vector2(1, 1), mCurrentLevel.StartingPoint,
+                 mCurrentLevel.StartingPoint,
                 ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
             mObjects.Add(player);
 
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
             mObjects.Add(importer.GetPlayerEnd());
-
-/*            HazardTile htile = new HazardTile(Content, "Deadly", Vector2.One, new Vector2(364, 300), .8f, true);
-            mObjects.Add(htile);
-
-            mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(500, 550), ref mPhysicsEnvironment, .8f, false));
-            mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(500, 600), ref mPhysicsEnvironment, .8f, false));
-            mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(550, 500), ref mPhysicsEnvironment, .8f, false));
-            /*mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(600, 500), ref mPhysicsEnvironment, .8f, false));
-            mObjects.Add(new GenericObject(Content, "Player",
-                          new Vector2(1, 1), new Vector2(700, 750), ref mPhysicsEnvironment, .8f, false));
-            mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(700, 700), ref mPhysicsEnvironment, .8f, false));
-            mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(850, 800), ref mPhysicsEnvironment, .8f, false));
-            mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(800, 800), ref mPhysicsEnvironment, .8f, false));
-            MovingTile movTile = new MovingTile(Content, "Tile", Vector2.One, new Vector2(100, 100), ref mPhysicsEnvironment, .8f,true);
-            mObjects.Add(movTile);
-
-            Tile tile1 = new Tile(Content, "Tile", Vector2.One, new Vector2(300, 300), .8f, true);
-            mObjects.Add(tile1);
-            // create floor
-            for (int i = 0; i < 20; i++)
-            {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(i*64, 704), .8f,true);
-                mObjects.Add(tile);
-            }
-            // create left wall
-            for (int i = 0; i < 11; i++)
-            {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(0, i*64), .8f,true);
-                mObjects.Add(tile);
-            }
-            // create right wall
-            for (int i = 0; i < 10; i++)
-            {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(1216,64+ i * 64), .8f,true);
-                mObjects.Add(tile);
-            }
-            // create top
-            for (int i = 0; i < 19; i++)
-            {
-                Tile tile = new Tile(Content, "Tile", Vector2.One, new Vector2(64+ i * 64, 0), .8f,true);
-                mObjects.Add(tile);
-            }*/
-
     }
 
         /// <summary>
@@ -209,13 +159,6 @@ namespace GravityShift
                 PhysicsEnvironment environment = new PhysicsEnvironment();
                 environment.TerminalSpeed = 20;
                 environment.GravityMagnitude = 1;
-                if (keyboard.IsKeyDown(Keys.N))
-                {
-                    if (rand.Next() % 3 == 0)
-                        environment = mPhysicsEnvironment;
-                    mObjects.Add(new GenericObject(Content, "Player",
-                            new Vector2(1, 1), new Vector2(rand.Next(), rand.Next()), ref environment, .8f, false));
-                }
                 if ((player.mIsAlive)&&!isPaused)// only update while player is alive
                 {
                     foreach (GameObject gObject in mObjects)
@@ -335,8 +278,6 @@ namespace GravityShift
                     gObject.Draw(mSpriteBatch, gameTime);
                 }
 
-                //DrawHUD(gameTime);
-
                 mSpriteBatch.End();
 
                 base.Draw(gameTime);
@@ -346,76 +287,16 @@ namespace GravityShift
         }
 
         /// <summary>
-        /// TODO - ADD REAL HUD CODE
+        /// Respawn the player. Reset gravity direction and clear player velocity
+        /// 
+        /// TODO - Reset all other objects as well
         /// </summary>
-        /// <param name="gameTime"></param>
-        //private void DrawHUD(GameTime gameTime)
-        //{
-        //    Rectangle titleSafeArea = GraphicsDevice.Viewport.TitleSafeArea;
-
-        //    Player player = null;
-        //    foreach (GameObject obj in mObjects)
-        //    {
-        //        if (obj is Player)
-        //        {
-        //            player = (Player)obj;
-        //        }
-        //    }
-            
-        //    Vector2 location = new Vector2(titleSafeArea.X+10,titleSafeArea.Y+5);            
-
-        //    mSpriteBatch.DrawString(mDefaultFont,"Gravity Force(G/H): " + mPhysicsEnvironment.GravityMagnitude, location,Color.Black);
-        //    location = Vector2.Add(location, new Vector2(0, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Terminal Speed(T/Y): " + mPhysicsEnvironment.TerminalSpeed, location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(0, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Erosion Factor(W/E): " + mPhysicsEnvironment.ErosionFactor, location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(0, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Lives:  " + player.mNumLives, location, Color.Black);
-
-        //    location = new Vector2(titleSafeArea.Right - 490, titleSafeArea.Y+5);
-        //    mSpriteBatch.DrawString(mDefaultFont, "Up Force Magnifier(U/I): " + 
-        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Up), location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(-250, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Left Force Magnifier(K/L): " + 
-        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Left), location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(+450, 0));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Right Force Magnifier(O/P): " + 
-        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Right), location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(-200, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Down Force Magnifier(D/F): " + 
-        //        mPhysicsEnvironment.GetGravityMagnifier(GravityDirections.Down), location, Color.Black);
-
-        //    location = new Vector2(titleSafeArea.X + 10, titleSafeArea.Height - 70); 
-        //    mSpriteBatch.DrawString(mDefaultFont, "Velocity X : " + (int)player.ObjectVelocity.X + 
-        //        " Velocity Y: " + (int)player.ObjectVelocity.Y, location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(0, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Total Force X: " + player.TotalForce.X + 
-        //        " Total Force Y: " + player.TotalForce.Y, location, Color.Black);
-        //    location = Vector2.Add(location, new Vector2(0, 20));
-        //    mSpriteBatch.DrawString(mDefaultFont, "Direction of Gravity: " + mPhysicsEnvironment.GravityDirection.ToString(), location, Color.Black);
-
-        //    if (!player.mIsAlive)
-        //    {
-        //         Add game over sign
-        //        location = new Vector2(500, 500);
-        //        mSpriteBatch.DrawString(mDefaultFont, "GAME OVER", location, Color.Black);
-        //        location = new Vector2(500, 520);
-        //        mSpriteBatch.DrawString(mDefaultFont, "Press A to go back to menu", location, Color.Black);    
-        //    }
-        //    if (isPaused)
-        //    {
-        //         Add pause sign
-        //        location = new Vector2(500, 500);
-        //        mSpriteBatch.DrawString(mDefaultFont, "Paused", location, Color.Black);
- 
-        //    }
-        //}
-
-        private void Respawn(Player player)
+        /// <param name="player">Player object</param>
+        private void Respawn()
         {
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
-            player.Position = mCurrentLevel.StartingPoint;
-            player.ObjectVelocity = new Vector2();
+            foreach (GameObject gameObject in mObjects)
+                gameObject.Respawn();
         }
 
         /// <summary>
@@ -424,56 +305,29 @@ namespace GravityShift
         /// <param name="physObj">object to see if anything is colliding with it</param>
         private void HandleCollisions(PhysicsObject physObj)
         {
-            if (physObj.mIsSquare)
+            foreach (GameObject obj in mObjects)
             {
-                // handle collisions for each physics object
-                foreach (GameObject obj in mObjects)
-                {
-                    if (obj is PlayerEnd)
-                        continue;
+                if (obj is PlayerEnd && !(physObj is Player))
+                    continue;
 
-                    if (obj.mIsSquare)// square/square collision
-                        physObj.HandleCollideBoxAndBox(obj);
-                    else//square/ circle collision
-                        physObj.HandleCollideCircleAndBox(obj);
-                }
-            }
-            else// circle
-            {
-                // handle collisions for each physics object
-                foreach (GameObject obj in mObjects)
-                {
-                    if (obj.mIsSquare)// circle/square collision
-                    {
-                        if (!(physObj is Player) && obj is PlayerEnd)
-                            continue;
+                bool collided = physObj.HandleCollisions(obj);
 
-                        int collided = physObj.HandleCollideCircleAndBox(obj);
-                        if ((physObj is Player) && (obj is HazardTile)&&(collided==1))
-                        {
-                            //Play sound
-                            GameSound.playerCol_hazard.Play();
-                            Respawn((Player)physObj);
-
-                            if (((Player)physObj).Kill() <= 0)
-                            {
-                                //inMenu = true;
-                                //inGame = false;
-                            }
-                        } 
-                        if(physObj is Player && obj is PlayerEnd && collided == 1)
-                        {
-                            Respawn((Player)physObj);
-                            inMenu = true;
-                            inGame = false;
-                        }
-                    }
-                    else// circle/circle collision
-                    {
-                        physObj.HandleCollideCircleAndCircle(obj);
-                    }
+                if (collided && obj is PlayerEnd && physObj is Player)
+                { 
+                    Respawn(); 
+                    inGame = false; 
+                    inMenu = true; 
+                    GameSound.level_stageVictory.Play(); 
                 }
 
+                if (collided && ((physObj is Player) && obj.IsHazardous || (obj is Player) && physObj.IsHazardous))
+                {
+                    //Play sound
+                    GameSound.playerCol_hazard.Play();
+                    Respawn();
+                    if (physObj is Player) physObj.Kill();
+                    else ((Player)obj).Kill();
+                }     
             }
         }
     }

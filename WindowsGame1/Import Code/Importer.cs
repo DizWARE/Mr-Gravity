@@ -85,13 +85,13 @@ namespace GravityShift.Import_Code
                     if (entity.mHazardous)
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new HazardTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
+                        objects.Add(new HazardTile(mContent, "Images\\" + entity.mTextureFile,
                             GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare));
                     }
                     else
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new Tile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
+                        objects.Add(new Tile(mContent, "Images\\" + entity.mTextureFile,
                             GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare));
                     }
                 }
@@ -100,7 +100,7 @@ namespace GravityShift.Import_Code
                     if (entity.mHazardous)
                     {
                         bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
+                        objects.Add(new HazardousMovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
                             GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare));
                     }
                     else

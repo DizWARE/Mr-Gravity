@@ -17,10 +17,10 @@ namespace GravityShift
     /// <summary>
     /// Moving tile
     /// </summary>
-    class MovingTile : PhysicsObject
+    class HazardousMovingTile : PhysicsObject
     {
-        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare) :
-            base(content, name, initialPosition, ref environment, friction, isSquare, false)
+        public HazardousMovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare) :
+            base(content, name, initialPosition, ref environment, friction, isSquare, true)
         {
 
         }

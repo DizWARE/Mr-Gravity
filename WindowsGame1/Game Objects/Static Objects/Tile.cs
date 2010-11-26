@@ -16,8 +16,8 @@ namespace GravityShift
 {
     class Tile : StaticObject
     {
-        public Tile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction, bool isSquare)
-            : base(content, name, scalingFactors, initialPosition, friction, isSquare)
+        public Tile(ContentManager content, String name, Vector2 scalingFactors, float friction, bool isSquare)
+            : base(content, name, scalingFactors, friction, isSquare, false)
         {
 
         }

@@ -16,19 +16,25 @@ namespace GravityShift
 {
     abstract class GameObject
     {
-        public static int ID_CREATER = 0;
+        private static int ID_CREATER = 0;
 
         //Creates a unique identifier for every Physics object
-        public int ID = PhysicsObject.ID_CREATER++;
+        public int ID = GameObject.ID_CREATER++;
 
         protected Vector2 mPrevPos;
         protected Vector2 mPosition;
         protected Vector2 mSize;
 
+        protected bool mIsHazardous;
+        public bool IsHazardous { get { return mIsHazardous; } }
+
+        private Vector2 mInitialPosition;
+
         protected Texture2D mTexture;
         public Rectangle mBoundingBox;
 
-        public bool mIsSquare;
+        protected bool mIsSquare;
+        public bool IsSquare { get { return mIsSquare; } }
 
         protected String mName;
 
@@ -41,19 +47,29 @@ namespace GravityShift
         // pixel perfect stuff
         public Color[] mSpriteImageData;
 
-        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction, bool isSquare)
+        public GameObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
         {
             mName = name;
             mFriction = friction;
             mIsSquare = isSquare;
+            mIsHazardous = isHazardous;
+
             Load(content, name);
 
             mPosition = initialPosition;
-            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
+            mInitialPosition = initialPosition;
+            mSize = new Vector2(mTexture.Width, mTexture.Height);
 
             mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
         }
-        
+
+        /// <summary>
+        /// Resets this object to its initial position
+        /// </summary>
+        public virtual void Respawn()
+        {
+            mPosition = mInitialPosition;
+        }
 
         /// <summary>
         /// Gets the unique identifier for this object
