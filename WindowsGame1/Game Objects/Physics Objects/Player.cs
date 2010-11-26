@@ -35,15 +35,12 @@ namespace GravityShift
         private float mRotationUp = (float)Math.PI;
         private float mRotationLeft = (float)(Math.PI / 2.0);
         
-        
-
         /// <summary>
         /// Construcs a player object, that can live in a physical realm
         /// </summary>
         /// <param name="content">Content manager for the game</param>
         /// <param name="name">Name of the image resource for the player</param>
         /// <param name="initialPosition">Initial posisition in the level</param>
-        /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5))</param>
         /// <param name="controlScheme">Controller scheme for the player(Controller or keyboard)</param>
         public Player(ContentManager content, String name,
             Vector2 initialPosition,ref PhysicsEnvironment environment, IControlScheme controlScheme, float friction, bool isSquare) 
@@ -103,10 +100,6 @@ namespace GravityShift
             {
                 mRotation += mRotationFactor;
             }
-
-
-
-
         }
 
         /// <summary>

@@ -12,7 +12,6 @@ namespace GravityShift.Import_Code
     /// </summary>
     class EntityInfo
     {
-        //Opted not to do Properties to interface with the variables for ease of writing. I figure that its not too big of a deal in this case
         public string mName;
         public string mType;
         public bool mHazardous;

@@ -19,8 +19,17 @@ namespace GravityShift
     /// </summary>
     class MovingTile : PhysicsObject
     {
-        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare) :
-            base(content, name, initialPosition, ref environment, friction, isSquare, false)
+        /// <summary>
+        /// Constructs a tile that is capable of moving around the screen
+        /// </summary>
+        /// <param name="content">The games content manager</param>
+        /// <param name="name">Name of the Object("Images/{Type}/{Name}"</param>
+        /// <param name="initialPosition">Starting position</param>
+        /// <param name="friction">Friction that reacts to physics objects</param>
+        /// <param name="isSquare">True if the object should behave like a square</param>
+        /// <param name="isHazardous">True if the object should kill the player when touched</param>
+        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare, bool isHazardous) :
+            base(content, name, initialPosition, ref environment, friction, isSquare, isHazardous)
         {
 
         }

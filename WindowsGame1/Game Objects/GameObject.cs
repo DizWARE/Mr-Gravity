@@ -14,11 +14,14 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace GravityShift
 {
+    /// <summary>
+    /// This represents an object that exists in the game
+    /// </summary>
     abstract class GameObject
     {
         private static int ID_CREATER = 0;
 
-        //Creates a unique identifier for every Physics object
+        //Creates a unique identifier for every object
         public int ID = GameObject.ID_CREATER++;
 
         protected Vector2 mPrevPos;
@@ -47,6 +50,15 @@ namespace GravityShift
         // pixel perfect stuff
         public Color[] mSpriteImageData;
 
+        /// <summary>
+        /// Constructs a GameObject
+        /// </summary>
+        /// <param name="content">The games content manager</param>
+        /// <param name="name">Name of the Object("Images/{Type}/{Name}"</param>
+        /// <param name="initialPosition">Starting position</param>
+        /// <param name="friction">Friction that reacts to physics objects</param>
+        /// <param name="isSquare">True if the object should behave like a square</param>
+        /// <param name="isHazardous">True if the object should kill the player when touched</param>
         public GameObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
         {
             mName = name;

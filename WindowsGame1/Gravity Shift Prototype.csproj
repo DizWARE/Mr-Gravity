@@ -118,14 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
-    <Compile Include="Game Objects\Physics Objects\HazardousMovingTile.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
-    <Compile Include="Game Objects\Physics Objects\GenericObject.cs" />
     <Compile Include="MISC Code\GravityDirections.cs" />
     <Compile Include="MISC Code\GridSpace.cs" />
-    <Compile Include="Game Objects\Static Objects\HazardTile.cs" />
     <Compile Include="Import Code\EntityInfo.cs" />
     <Compile Include="Import Code\Importer.cs" />
     <Compile Include="Import Code\XmlKeys.cs" />
@@ -207,6 +204,10 @@
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
