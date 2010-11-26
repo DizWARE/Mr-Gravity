@@ -31,9 +31,9 @@ namespace GravityShift
 
         //rotation goals for the 4 directions
         private float mRotationDown = 0.0f;
-        private float mRotationRight = (float)(Math.PI / 2.0f);
+        private float mRotationRight = (float)(3.0 * Math.PI / 2.0f);
         private float mRotationUp = (float)Math.PI;
-        private float mRotationLeft = (float)(3.0 * Math.PI / 2.0);
+        private float mRotationLeft = (float)(Math.PI / 2.0);
         
         
 
@@ -67,28 +67,28 @@ namespace GravityShift
             {
                 GameSound.level_gravityShiftDown.Play();
                 mEnvironment.GravityDirection = GravityDirections.Down;
-                mGoalRotation = 0.0f;
+                mGoalRotation = mRotationDown;
             }
 
             else if (mControls.isUpPressed())
             {
                 GameSound.level_gravityShiftUp.Play();
                 mEnvironment.GravityDirection = GravityDirections.Up;
-                mGoalRotation = (float)Math.PI;
+                mGoalRotation = mRotationUp;
             }
 
             else if (mControls.isLeftPressed())
             {
                 GameSound.level_gravityShiftLeft.Play();
                 mEnvironment.GravityDirection = GravityDirections.Left;
-                mGoalRotation = (float)(3.0 * Math.PI / 2.0);
+                mGoalRotation = mRotationLeft;
             }
 
             else if (mControls.isRightPressed())
             {
                 GameSound.level_gravityShiftRight.Play();
                 mEnvironment.GravityDirection = GravityDirections.Right;
-                mGoalRotation = (float)(Math.PI / 2.0);
+                mGoalRotation = mRotationRight;
             }
 
             if (Math.Abs(mGoalRotation - mRotation) < 0.1)
