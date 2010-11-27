@@ -124,9 +124,8 @@ namespace GravityShift
             // remove a life
             mNumLives--;
             if (mNumLives <= 0)
-            {
                 mIsAlive = false;
-            }
+
             return mNumLives;
         }
 

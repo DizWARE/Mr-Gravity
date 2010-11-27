@@ -101,11 +101,15 @@ namespace GravityLevelEditor
 
             mProperties = new Dictionary<string, string>();
 
+            int maxID = 0;
+
             foreach (XElement el in ent.Elements())
             {
                 if (el.Name == XmlKeys.ID)
                 {
                     mID = Convert.ToInt32(el.Value.ToString());
+
+                    if (mID > maxID) maxID = mID;
                 }
                 if (el.Name == XmlKeys.E_NAME)
                 {
@@ -157,6 +161,8 @@ namespace GravityLevelEditor
                     }
                 }
             }
+
+            Entity.ObjectID = maxID;
         }
 
         /*
@@ -220,7 +226,7 @@ namespace GravityLevelEditor
          */
         public override bool Equals(object obj)
         {
-            return obj is Entity && ((Entity)obj).mID == mID;
+            return obj is Entity && ((Entity)obj).mID == mID && ((Entity)obj).ToString() == ToString();
         }
 
         /*

@@ -121,6 +121,7 @@
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
+    <Compile Include="MISC Code\GameStates.cs" />
     <Compile Include="MISC Code\GravityDirections.cs" />
     <Compile Include="MISC Code\GridSpace.cs" />
     <Compile Include="Import Code\EntityInfo.cs" />
