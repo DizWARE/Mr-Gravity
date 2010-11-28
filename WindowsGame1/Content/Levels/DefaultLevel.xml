@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
   <Name>DefaultLevel</Name>
-  <Size X="10" Y="10" />
+  <Size X="30" Y="30" />
   <Background>Backgrounds\defaultBG</Background>
   <Color>Color [Color]</Color>
   <Entities>
@@ -9,7 +9,7 @@
       <ID>22</ID>
       <Name>PlayerStart</Name>
       <Type>Level Positions</Type>
-      <Location X="4" Y="3" />
+      <Location X="0" Y="0" />
       <Hazardous>False</Hazardous>
       <Visible>False</Visible>
       <Paintable>False</Paintable>
@@ -20,7 +20,7 @@
       <ID>34</ID>
       <Name>PlayerEnd</Name>
       <Type>Level Positions</Type>
-      <Location X="5" Y="3" />
+      <Location X="29" Y="29" />
       <Hazardous>False</Hazardous>
       <Visible>False</Visible>
       <Paintable>False</Paintable>

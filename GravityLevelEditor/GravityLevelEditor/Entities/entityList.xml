@@ -151,4 +151,17 @@
       <Shape>Circle</Shape>
     </Properties>
   </Entity>
+  <Entity>
+    <ID>13</ID>
+    <Name>DangerBall</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>True</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Physics Objects\circle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
 </Entities>

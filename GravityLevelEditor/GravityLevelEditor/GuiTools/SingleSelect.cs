@@ -20,25 +20,20 @@ namespace GravityLevelEditor.GuiTools
 
         public void LeftMouseDown(ref EditorData data, Point gridPosition)
         {
-            if (data.SelectedEntities.Count < 2)
-            {
-                data.SelectedEntities.Clear();
-
-                Entity selected = data.Level.SelectEntity(gridPosition);
-                if (selected != null)
-                    data.SelectedEntities.Add(selected);
-            }
-
             mPrevious = mInitial = gridPosition;
             mouseDown = true;
         }
         
         public void LeftMouseUp(ref EditorData data, Point gridPosition)
         {
-            if(gridPosition.Equals(mInitial) && data.Level.SelectEntity(gridPosition) != null)
+            if(gridPosition.Equals(mInitial))
             {
-                data.SelectedEntities.Clear();
-                data.SelectedEntities.Add(data.Level.SelectEntity(gridPosition));
+                if(!data.CTRLHeld) data.SelectedEntities.Clear();
+                Entity selected = data.Level.SelectEntity(gridPosition);
+                if (selected != null && !data.SelectedEntities.Contains(selected))
+                    data.SelectedEntities.Add(selected);
+                else if (selected == null && !data.CTRLHeld)
+                    data.SelectedEntities.Clear();
             }
             if (data.SelectedEntities.Count > 0)
             {
