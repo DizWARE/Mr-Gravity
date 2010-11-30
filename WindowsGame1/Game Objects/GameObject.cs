@@ -14,21 +14,30 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace GravityShift
 {
+    /// <summary>
+    /// This represents an object that exists in the game
+    /// </summary>
     abstract class GameObject
     {
-        public static int ID_CREATER = 0;
+        private static int ID_CREATER = 0;
 
-        //Creates a unique identifier for every Physics object
-        public int ID = PhysicsObject.ID_CREATER++;
+        //Creates a unique identifier for every object
+        public int ID = GameObject.ID_CREATER++;
 
         protected Vector2 mPrevPos;
         protected Vector2 mPosition;
         protected Vector2 mSize;
 
+        protected bool mIsHazardous;
+        public bool IsHazardous { get { return mIsHazardous; } }
+
+        private Vector2 mInitialPosition;
+
         protected Texture2D mTexture;
         public Rectangle mBoundingBox;
 
-        public bool mIsSquare;
+        protected bool mIsSquare;
+        public bool IsSquare { get { return mIsSquare; } }
 
         protected String mName;
 
@@ -41,19 +50,38 @@ namespace GravityShift
         // pixel perfect stuff
         public Color[] mSpriteImageData;
 
-        public GameObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, float friction, bool isSquare)
+        /// <summary>
+        /// Constructs a GameObject
+        /// </summary>
+        /// <param name="content">The games content manager</param>
+        /// <param name="name">Name of the Object("Images/{Type}/{Name}"</param>
+        /// <param name="initialPosition">Starting position</param>
+        /// <param name="friction">Friction that reacts to physics objects</param>
+        /// <param name="isSquare">True if the object should behave like a square</param>
+        /// <param name="isHazardous">True if the object should kill the player when touched</param>
+        public GameObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
         {
             mName = name;
             mFriction = friction;
             mIsSquare = isSquare;
+            mIsHazardous = isHazardous;
+
             Load(content, name);
 
             mPosition = initialPosition;
-            mSize = new Vector2(mTexture.Width * scalingFactors.X, mTexture.Height * scalingFactors.Y);
+            mInitialPosition = initialPosition;
+            mSize = new Vector2(mTexture.Width, mTexture.Height);
 
             mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
         }
-        
+
+        /// <summary>
+        /// Resets this object to its initial position
+        /// </summary>
+        public virtual void Respawn()
+        {
+            mPosition = mInitialPosition;
+        }
 
         /// <summary>
         /// Gets the unique identifier for this object
@@ -98,8 +126,12 @@ namespace GravityShift
         /// <param name="content"></param>
         /// <param name="name"></param>
         public virtual void Load(ContentManager content, String name)
-        { 
-            mTexture = content.Load<Texture2D>(name);
+        {
+            try
+            {   mTexture = content.Load<Texture2D>(name);   }
+            catch (Exception e)
+            {   mTexture = content.Load<Texture2D>("Images\\error");    }
+
             // pixel perfect stuff (may need to remove)
             mSpriteImageData = new Color[mTexture.Width * mTexture.Height];
             mTexture.GetData(mSpriteImageData);

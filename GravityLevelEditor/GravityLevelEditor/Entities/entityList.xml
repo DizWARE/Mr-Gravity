@@ -24,7 +24,7 @@
   </Entity>
   <Entity>
     <ID>6</ID>
-    <Name>Non-Hazard</Name>
+    <Name>Moving Ball</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
     <Hazardous>False</Hazardous>
@@ -103,7 +103,7 @@
   </Entity>
   <Entity>
     <ID>252</ID>
-    <Name>TestHazard</Name>
+    <Name>DangerMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <Hazardous>True</Hazardous>
@@ -111,5 +111,57 @@
     <Paintable>True</Paintable>
     <Texture>Static Objects\grounda_magma</Texture>
     <Properties />
+  </Entity>
+  <Entity>
+    <ID>235</ID>
+    <Name>FallingYellow</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\groundi_neonYellow</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>89</ID>
+    <Name>MovingDangerMagma</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>True</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\grounda_magma</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>12</ID>
+    <Name>BallWall</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>False</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Physics Objects\circle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>13</ID>
+    <Name>DangerBall</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <Hazardous>True</Hazardous>
+    <Visible>True</Visible>
+    <Paintable>True</Paintable>
+    <Texture>Physics Objects\circle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
   </Entity>
 </Entities>

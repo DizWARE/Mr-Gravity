@@ -26,5 +26,10 @@ namespace GravityShift.Import_Code
         public static string STATIC_OBJECT = "Static Objects";
         public static string PHYSICS_OBJECT = "Physics Objects";
         public static string PLAYER_LOCATION = "Level Positions";
+
+        //Values
+        public static string TRUE = "True";
+        public static string FALSE = "False";
+        public static string ERROR_TEXTURE = "Images/Error";
     }
 }

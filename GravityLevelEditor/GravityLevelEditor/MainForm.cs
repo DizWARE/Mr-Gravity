@@ -876,6 +876,36 @@ namespace GravityLevelEditor
                 default:
                     break;
             }
+            mData.CTRLHeld = false;
+        }
+
+        /*
+         * Form_KeyDown
+         * 
+         * Handles the key down event. In this case, links the delete key and ctrl key to some actions
+         */
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Delete)
+            {
+                TOOL_REMOVE.LeftMouseUp(ref mData, new Point(-10, -10));
+                UpdatePanel();
+            }
+            
+            //TODO - Add a CTRL Click
+            if (e.Modifiers == Keys.Control)
+                mData.CTRLHeld = true;
+        }
+
+        /*
+         * Form_KeyUp
+         * 
+         * Handles the key up event. In this case, links the ctrl key to some actions
+         */
+        private void Form_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.ControlKey)
+                mData.CTRLHeld = false;
         }
     }
 }

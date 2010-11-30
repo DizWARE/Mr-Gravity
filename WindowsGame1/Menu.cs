@@ -185,6 +185,7 @@ namespace GravityShift
                     /* If we are not on the first element already */
                     if (current > 0)
                     {
+                        GameSound.menuSound_rollover.Play();
                         /* Decrement current and change the images */
                         current--;
                         for (int i = 0; i < TITLE; i++)
@@ -201,6 +202,7 @@ namespace GravityShift
                     /* If we are on the last element in the menu */
                     if (current < TITLE - 1)
                     {
+                        GameSound.menuSound_rollover.Play();
                         /* Increment current and update graphics */
                         current++;
                         for (int i = 0; i < TITLE; i++)
@@ -215,6 +217,7 @@ namespace GravityShift
                     key_state.IsKeyDown(Keys.Enter) &&
                     prev_key_state.IsKeyUp(Keys.Enter))
                 {
+                    GameSound.menuSound_select.Play();
                     /* New Game */
                     if (current == 0)
                     {
@@ -299,6 +302,7 @@ namespace GravityShift
                 {
                     if (current > 0)
                     {
+                        GameSound.menuSound_rollover.Play();
                         current--;
                         for (int i = 0; i < OPTIONS; i++)
                             menuItems[i] = unselMenuItems[i];
@@ -312,6 +316,7 @@ namespace GravityShift
                 {
                     if (current < OPTIONS - 1)
                     {
+                        GameSound.menuSound_rollover.Play();
                         current++;
                         for (int i = 0; i < OPTIONS; i++)
                             menuItems[i] = unselMenuItems[i];
@@ -324,6 +329,7 @@ namespace GravityShift
                     key_state.IsKeyDown(Keys.Enter) &&
                     prev_key_state.IsKeyUp(Keys.Enter))
                 {
+                    GameSound.menuSound_select.Play();
                     /* Controller Settings */
                     if (current == 0)
                     {
@@ -375,6 +381,7 @@ namespace GravityShift
                 {
                     if (current > 0)
                     {
+                        GameSound.menuSound_rollover.Play();
                         current--;
                         for (int i = 0; i < LOAD; i++)
                             menuItems[i] = unselMenuItems[i];
@@ -388,6 +395,7 @@ namespace GravityShift
                 {
                     if (current < LOAD - 1)
                     {
+                        GameSound.menuSound_rollover.Play();
                         current++;
                         for (int i = 0; i < LOAD; i++)
                             menuItems[i] = unselMenuItems[i];
@@ -400,6 +408,7 @@ namespace GravityShift
                     key_state.IsKeyDown(Keys.Enter) &&
                     prev_key_state.IsKeyUp(Keys.Enter))
                 {
+                    GameSound.menuSound_select.Play();
                     /* Level 1 */
                     if (current == 0)
                     {

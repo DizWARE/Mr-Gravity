@@ -12,7 +12,6 @@ namespace GravityShift.Import_Code
     /// </summary>
     class EntityInfo
     {
-        //Opted not to do Properties to interface with the variables for ease of writing. I figure that its not too big of a deal in this case
         public string mName;
         public string mType;
         public bool mHazardous;
@@ -38,18 +37,17 @@ namespace GravityShift.Import_Code
                 if (item.Name == XmlKeys.TYPE)
                     mType = item.Value;
                 if (item.Name == XmlKeys.HAZARDOUS)
-                    mHazardous = "True".Equals(item.Value);
+                    mHazardous = XmlKeys.TRUE.Equals(item.Value);
                 if (item.Name == XmlKeys.TEXTURE)
                     mTextureFile = item.Value;
                 if (item.Name == XmlKeys.VISIBLE)
-                    mVisible = "True".Equals(item.Value);
+                    mVisible = XmlKeys.TRUE.Equals(item.Value);
                 if (item.Name == XmlKeys.LOCATION)
                     mLocation = new Vector2(int.Parse(item.Attribute(XName.Get("X", "")).Value),
                         int.Parse(item.Attribute(XName.Get("Y", "")).Value));
                 if (item.Name == XmlKeys.PROPERTIES)
                     foreach (XElement property in item.Elements())
                         mProperties.Add(property.Name.ToString(), property.Value);
-
             }
         }
     }

@@ -14,8 +14,7 @@ using Microsoft.Xna.Framework.Storage;
 namespace GravityShift
 {
     /// <summary>
-    /// MAJOR TODO - This class needs to be completely retooled. There is a major problem with a lot of the decisions I made here.
-    /// It was only kept for the use of the demonstration
+    /// This class represents a level in the game
     /// </summary>
     class Level
     {
@@ -49,23 +48,16 @@ namespace GravityShift
         public Vector2 EndingPoint { get { return mEndingPoint; } set { mEndingPoint = value; } }
         private Vector2 mEndingPoint;
 
-
-        /// <summary>
-        /// Constructs a new level for the game.
-        /// 
-        /// TODO - Figure out if this will be used
-        /// </summary>
-        public Level()
-        {
-        }
-
         /// <summary>
         /// Loads the level from the content manager
         /// </summary>
         /// <param name="content">Content Manager to load from</param>
         public void Load(ContentManager content, string assetName)
         {
-            mTexture = content.Load<Texture2D>("Images\\" + assetName);//assetName);
+            try
+            { mTexture = content.Load<Texture2D>("Images\\" + assetName); }
+            catch (Exception e)
+            { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
         }
 
         /// <summary>

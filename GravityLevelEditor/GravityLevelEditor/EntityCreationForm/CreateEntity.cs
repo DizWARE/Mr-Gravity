@@ -16,12 +16,13 @@ namespace GravityLevelEditor.EntityCreationForm
     {
         private int mSelectedIndex;
         ArrayList mAllEntities;
+        ArrayList mFilteredEntities;
         public Entity SelectedEntity 
         { 
             get 
             { 
                 if(mAllEntities.Count > 0)
-                    return (Entity)mAllEntities[mSelectedIndex]; 
+                    return (Entity)mFilteredEntities[mSelectedIndex]; 
 
                 return null;
             } 
@@ -38,6 +39,7 @@ namespace GravityLevelEditor.EntityCreationForm
             InitializeComponent();
 
             mAllEntities = new ArrayList();
+            mFilteredEntities = new ArrayList();
             lb_entitySelect.Items.Clear();
 
             ImportEntityList();
@@ -53,11 +55,14 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void CreateNew(object sender, EventArgs e)
         {
-            mAllEntities.Add(new Entity("", "New", false, true, true,
+            string type = "";
+            if(!lb_filter.SelectedItem.Equals("(None)")) type = lb_filter.SelectedItem.ToString();
+            mAllEntities.Add(new Entity(type, "New", false, true, true,
                 new Dictionary<string, string>(),
                 Image.FromFile("..\\..\\Content\\defaultImage.png")));
-            mSelectedIndex = mAllEntities.Count - 1;
-            lb_entitySelect.Items.Add(mAllEntities[mSelectedIndex]);
+            mFilteredEntities.Add(mAllEntities[mAllEntities.Count - 1]);
+            mSelectedIndex = mFilteredEntities.Count - 1;
+            lb_entitySelect.Items.Add(mFilteredEntities[mSelectedIndex]);
             lb_entitySelect.SelectedItem = SelectedEntity;
         }
 
@@ -71,7 +76,7 @@ namespace GravityLevelEditor.EntityCreationForm
         private void SelectEntity(object sender, EventArgs e)
         {
             if (lb_entitySelect.SelectedIndex < 0 || 
-                mAllEntities[lb_entitySelect.SelectedIndex] == null) return;
+                mFilteredEntities[lb_entitySelect.SelectedIndex] == null) return;
 
             mSelectedIndex = lb_entitySelect.SelectedIndex;
 
@@ -93,7 +98,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void DeleteSelected(object sender, EventArgs e)
         {
-            if (mAllEntities.Count == 0 || SelectedEntity == null) return;
+            if (mFilteredEntities.Count == 0 || SelectedEntity == null) return;
             int index = lb_entitySelect.SelectedIndex;
             lb_entitySelect.Items.Remove(SelectedEntity);
             mAllEntities.Remove(SelectedEntity);
@@ -114,7 +119,7 @@ namespace GravityLevelEditor.EntityCreationForm
          */
         private void AdditionalProperties(object sender, EventArgs e)
         {
-            if (mAllEntities.Count == 0 || SelectedEntity == null) return;
+            if (mFilteredEntities.Count == 0 || SelectedEntity == null) return;
             AdditionalProperties properties = new AdditionalProperties(SelectedEntity.Properties);
             properties.Location = Point.Add(this.Location, new Size(50, 50));
             if (properties.ShowDialog() == DialogResult.OK)
@@ -241,15 +246,22 @@ namespace GravityLevelEditor.EntityCreationForm
         private void FilterSelected(object sender, EventArgs e)
         {
             lb_entitySelect.Items.Clear();
+            mFilteredEntities.Clear();
             
             //If (None) than show all items, Othewise only show of the selected type
             if("(None)".Equals(lb_filter.SelectedItem))
                 foreach (Entity entity in mAllEntities)
+                {
                     lb_entitySelect.Items.Add(entity);
+                    mFilteredEntities.Add(entity);
+                }
             else
                 foreach (Entity entity in mAllEntities)
-                    if(entity.Type.Equals(lb_filter.SelectedItem))
+                    if (entity.Type.Equals(lb_filter.SelectedItem))
+                    {
                         lb_entitySelect.Items.Add(entity);
+                        mFilteredEntities.Add(entity);
+                    }
 
             if (lb_entitySelect.Items.Count > 0)
                 lb_entitySelect.SelectedIndex = 0;
@@ -300,6 +312,7 @@ namespace GravityLevelEditor.EntityCreationForm
         private void ImportEntityList()
         {
             mAllEntities.Clear();
+            mFilteredEntities.Clear();
             DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
 
             directoryInfo = directoryInfo.Parent.Parent;
@@ -322,6 +335,7 @@ namespace GravityLevelEditor.EntityCreationForm
                     {
                         Entity createdEntity = new Entity(entity);
                         mAllEntities.Add(createdEntity);
+                        mFilteredEntities.Add(createdEntity);
                         lb_entitySelect.Items.Add(createdEntity);
                     }
                 }

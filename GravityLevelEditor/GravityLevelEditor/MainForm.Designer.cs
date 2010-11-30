@@ -36,9 +36,7 @@
             this.mi_file = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_new = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_open = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.mi_save = new System.Windows.Forms.ToolStripMenuItem();
-            this.mi_saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.mi_play = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_quit = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,9 +145,7 @@
             this.mi_file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mi_new,
             this.mi_open,
-            this.closeToolStripMenuItem,
             this.mi_save,
-            this.mi_saveAs,
             this.playToolStripMenuItem,
             this.mi_play,
             this.mi_quit});
@@ -172,23 +168,12 @@
             this.mi_open.Text = "&Open           (Ctrl+O)";
             this.mi_open.Click += new System.EventHandler(this.Open);
             // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(217, 6);
-            // 
             // mi_save
             // 
             this.mi_save.Name = "mi_save";
             this.mi_save.Size = new System.Drawing.Size(220, 26);
             this.mi_save.Text = "&Save            (Ctrl+S)";
             this.mi_save.Click += new System.EventHandler(this.Save);
-            // 
-            // mi_saveAs
-            // 
-            this.mi_saveAs.Name = "mi_saveAs";
-            this.mi_saveAs.Size = new System.Drawing.Size(220, 26);
-            this.mi_saveAs.Text = "Save &As";
             // 
             // playToolStripMenuItem
             // 
@@ -795,6 +780,8 @@
             this.Text = "Gravity Level Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Quit);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form_KeyUp);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.buttonContainer1.ResumeLayout(false);
@@ -830,7 +817,6 @@
         private System.Windows.Forms.ToolStripMenuItem mi_file;
         private System.Windows.Forms.ToolStripMenuItem mi_new;
         private System.Windows.Forms.ToolStripMenuItem mi_open;
-        private System.Windows.Forms.ToolStripSeparator closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mi_save;
         private System.Windows.Forms.ToolStripSeparator playToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mi_play;
@@ -886,7 +872,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLoc;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.PictureBox pb_CurrentTool;
-        private System.Windows.Forms.ToolStripMenuItem mi_saveAs;
         private System.Windows.Forms.Label lbl_eHazardous;
         private System.Windows.Forms.CheckBox cb_entityHazardous;
 

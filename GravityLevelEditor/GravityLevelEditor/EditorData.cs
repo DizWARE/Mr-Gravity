@@ -11,6 +11,7 @@ namespace GravityLevelEditor
         private ArrayList mSelectedEntities;
         private Entity mOnDeck;
         private Level mLevel;
+        private bool mCTRLHeld = false;
 
         /*
          * SelectedEntities
@@ -43,6 +44,12 @@ namespace GravityLevelEditor
         {
             get { return mLevel; }
             set { mLevel = value;}
+        }
+
+        public bool CTRLHeld
+        {
+            get { return mCTRLHeld; }
+            set { mCTRLHeld = value; }
         }
 
         /*

@@ -25,18 +25,29 @@ namespace GravityShift.Import_Code
     {
         ContentManager mContent;
         List<EntityInfo> mEntities;
+
+        /// <summary>
+        /// Constructor for an importer object
+        /// </summary>
+        /// <param name="content">Content Manager</param>
         public Importer(ContentManager content)
         {
             mContent = content;
             mEntities = new List<EntityInfo>();
         }
 
+        /// <summary>
+        /// Goes through the xml file and translates the information
+        /// </summary>
+        /// <param name="filename">Name of the file we are importing</param>
+        /// <returns>A level object</returns>
         public Level ImportLevel(string filename)
         {
             XElement xLevel = XElement.Load(filename);
 
             Level level = new Level();
 
+            //Gets all the information for a level and places it into the level object
             foreach (XElement item in xLevel.Elements())
             {
                 if (item.Name == XmlKeys.NAME)
@@ -52,12 +63,14 @@ namespace GravityShift.Import_Code
             }
 
             level.StartingPoint = GetPlayerStart();
-            level.EndingPoint = GetPlayerEnd();
 
             return level;
         }
 
-
+        /// <summary>
+        /// Gets the players start position
+        /// </summary>
+        /// <returns>A vector2 with the players start position(or -100,-100 if none is provided)</returns>
         public Vector2 GetPlayerStart()
         {
             foreach (EntityInfo entity in mEntities)
@@ -67,54 +80,53 @@ namespace GravityShift.Import_Code
             return new Vector2(-100, -100);
         } 
 
-        public Vector2 GetPlayerEnd()
+        /// <summary>
+        /// Creates and returns a PlayerEnd using the info that is in the xml file
+        /// </summary>
+        /// <returns>An object that represents the end of a level</returns>
+        public PlayerEnd GetPlayerEnd()
         {
             foreach (EntityInfo entity in mEntities)
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_END)
-                    return GridSpace.GetDrawingCoord(entity.mLocation);
+                    return new PlayerEnd(mContent, "Images\\" + entity.mTextureFile, GridSpace.GetDrawingCoord(entity.mLocation));
 
-            return new Vector2(-100, -100);
+            return new PlayerEnd(mContent, "Images\\Level Positions\\player_end", Vector2.Add(GetPlayerStart(),GridSpace.SIZE));
         }
 
+        /// <summary>
+        /// Goes through all the entities and finds all of the ones that are Static, or physics(Dynamic maybe in the future)
+        /// Creates and returns them using the data found in the xml file
+        /// </summary>
+        /// <param name="environment">Environment that these items exist in</param>
+        /// <returns>A list of objects that are in the game</returns>
         public List<GameObject> GetObjects(ref PhysicsEnvironment environment)
         {
             List<GameObject> objects = new List<GameObject>();
             foreach (EntityInfo entity in mEntities)
             {
+                //If the object is static, make a static object
                 if (entity.mType == XmlKeys.STATIC_OBJECT)
                 {
-                    if (entity.mHazardous)
-                    {
-                        bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new HazardTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                            GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare));
-                    }
-                    else
-                    {
-                        bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new Tile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                            GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare));
-                    }
+                    bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
+                    objects.Add(new Tile(mContent, "Images\\" + entity.mTextureFile,
+                        GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare, entity.mHazardous));
                 }
+                //If the object is physics, make a physics object
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
                 {
-                    if (entity.mHazardous)
-                    {
-                        bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                            GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare));
-                    }
-                    else
-                    {
-                        bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                        objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                            GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare));
-                    }
+                    bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
+                    objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
+                        GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mHazardous));
                 }
             }
 
             return objects;
         }
+
+        /// <summary>
+        /// UNUSED FOR NOW. MAY IN THE FUTURE, GATHER ALL THE INFO UP AND MAKE BIGGER BOUNDING BOXES FOR ENTIRE WALLS
+        /// </summary>
+        /// <returns></returns>
         public List<Tile> GetWalls()
         {
             return null;

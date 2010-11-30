@@ -26,7 +26,7 @@ namespace GravityShift
         private Vector2 mResistiveForce = new Vector2(1,1);
         private Vector2 mAdditionalForces = new Vector2(0, 0);
 
-        public Vector2 mVelocity = new Vector2(0, 0);
+        private Vector2 mVelocity = new Vector2(0, 0);
 
         /// <summary>
         /// Directional force on this object
@@ -53,11 +53,21 @@ namespace GravityShift
         /// <param name="name">Name of the physics object so that it can be loaded</param>
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5)</param>
         /// <param name="initialPosition">Position of where this object starts in the level</param>
-        public PhysicsObject(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction,bool isSquare)
-            :base(content,name,scalingFactors,initialPosition, friction, isSquare)
+        public PhysicsObject(ContentManager content, String name, Vector2 initialPosition, 
+            ref PhysicsEnvironment environment, float friction, bool isSquare, bool isHazardous)
+            :base(content,name,initialPosition, friction, isSquare, isHazardous)
         {
             mEnvironment = environment;
             UpdateBoundingBoxes();
+        }
+
+        /// <summary>
+        /// Respawns this object and stops its movement
+        /// </summary>
+        public override void Respawn()
+        {
+            base.Respawn();
+            mVelocity = new Vector2();
         }
 
         /// <summary>
@@ -175,6 +185,19 @@ namespace GravityShift
             return !Equals(otherObject) && (centers.Length()<(radiusA+radiusB));
         }
 
+        /// <summary>
+        /// Decides on the collision detection method for this and the given object
+        /// </summary>
+        /// <param name="obj">object we are testing</param>
+        public bool HandleCollisions(GameObject obj)
+        {
+            if (!obj.IsSquare ^ !mIsSquare)
+                return HandleCollideCircleAndBox(obj) == 1;
+            else if (obj.IsSquare & mIsSquare)
+                return HandleCollideBoxAndBox(obj) == 1;
+            else
+                return HandleCollideCircleAndCircle(obj) == 1;
+        }
 
         /// <summary>
         /// Handles collision for two boxes (this, and other)
@@ -247,7 +270,7 @@ namespace GravityShift
             UpdateBoundingBoxes();
             if (add.Length() > 1.0f)
             {
-                return 0; // changed enough to call a collision
+                return 1; // changed enough to call a collision
             }
             return 0;
         }
