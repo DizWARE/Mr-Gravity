@@ -29,8 +29,9 @@ namespace GravityShift
         private bool onLoad;
         private bool onController;
         private bool onSound;
+        private bool onCredits;
 
-        private const int TITLE = 3;
+        private const int TITLE = 4;
         private const int LOAD = 4;
         private const int OPTIONS = 3;
 
@@ -45,6 +46,8 @@ namespace GravityShift
 
         #region Menu Art
 
+        private Texture2D title;
+
         /* Title */
         private Texture2D newGameUnsel;
         private Texture2D newGameSel;
@@ -52,6 +55,8 @@ namespace GravityShift
         private Texture2D loadGameSel;
         private Texture2D optionsSel;
         private Texture2D optionsUnsel;
+        private Texture2D creditsSel;
+        private Texture2D creditsUnsel;
 
         /* Options Screen */
         private Texture2D controlUnsel;
@@ -76,7 +81,7 @@ namespace GravityShift
          *
          * Currently does not do anything
          */
-        public Menu() {}
+        public Menu() { }
 
         /*
          * Load
@@ -94,14 +99,18 @@ namespace GravityShift
             unselMenuItems = new Texture2D[TITLE];
             menuItems = new Texture2D[TITLE];
 
+            title = content.Load<Texture2D>("menu/Title");
+
             /* Title Screen */
             newGameSel = content.Load<Texture2D>("menu/NewGameSelected");
             newGameUnsel = content.Load<Texture2D>("menu/NewGameUnselected");
             loadGameSel = content.Load<Texture2D>("menu/LoadGameSelected");
             loadGameUnsel = content.Load<Texture2D>("menu/LoadGameUnselected");
-            optionsSel = content.Load<Texture2D>("menu/OptionSelected");
-            optionsUnsel = content.Load<Texture2D>("menu/OptionUnselected");
-            
+            optionsSel = content.Load<Texture2D>("menu/OptionsSelected");
+            optionsUnsel = content.Load<Texture2D>("menu/OptionsUnselected");
+            creditsSel = content.Load<Texture2D>("menu/CreditsSelected");
+            creditsUnsel = content.Load<Texture2D>("menu/CreditsUnselected");
+
             /* Options Screen */
             controlUnsel = content.Load<Texture2D>("menu/ControllerUnselected");
             controlSel = content.Load<Texture2D>("menu/ControllerSelected");
@@ -109,7 +118,7 @@ namespace GravityShift
             soundSel = content.Load<Texture2D>("menu/SoundSelected");
             backUnsel = content.Load<Texture2D>("menu/BackUnselected");
             backSel = content.Load<Texture2D>("menu/BackSelected");
-            
+
             /* Level Select Screen */
             oneUnsel = content.Load<Texture2D>("menu/OneUnselected");
             oneSel = content.Load<Texture2D>("menu/OneSelected");
@@ -117,19 +126,22 @@ namespace GravityShift
             twoSel = content.Load<Texture2D>("menu/TwoSelected");
             threeUnsel = content.Load<Texture2D>("menu/ThreeUnselected");
             threeSel = content.Load<Texture2D>("menu/ThreeSelected");
-            
+
             /* Initialize the menu item arrays */
             selMenuItems[0] = newGameSel;
             selMenuItems[1] = loadGameSel;
             selMenuItems[2] = optionsSel;
+            selMenuItems[3] = creditsSel;
 
             unselMenuItems[0] = newGameUnsel;
             unselMenuItems[1] = loadGameUnsel;
             unselMenuItems[2] = optionsUnsel;
+            unselMenuItems[3] = creditsUnsel;
 
             menuItems[0] = newGameSel;
             menuItems[1] = loadGameUnsel;
             menuItems[2] = optionsUnsel;
+            menuItems[3] = creditsUnsel;
 
             /* Set which screen we start on */
             onTitle = true;
@@ -137,6 +149,7 @@ namespace GravityShift
             onLoad = false;
             onController = false;
             onSound = false;
+            onCredits = false;
 
             /* Pad state stuff */
             prev_pad_state = GamePad.GetState(PlayerIndex.One);
@@ -263,6 +276,16 @@ namespace GravityShift
 
                         current = 0;
                     }
+                    /* Credits */
+                    else if (current == 3)
+                    {
+                        /* Change to the credits */
+                        onTitle = false;
+                        onCredits = true;
+
+                        current = 0;
+                    }
+
                 }
             }
 
@@ -326,14 +349,17 @@ namespace GravityShift
                         selMenuItems[0] = newGameSel;
                         selMenuItems[1] = loadGameSel;
                         selMenuItems[2] = optionsSel;
+                        selMenuItems[3] = creditsSel;
 
                         unselMenuItems[0] = newGameUnsel;
                         unselMenuItems[1] = loadGameUnsel;
                         unselMenuItems[2] = optionsUnsel;
+                        unselMenuItems[3] = creditsUnsel;
 
                         menuItems[0] = newGameSel;
                         menuItems[1] = loadGameUnsel;
                         menuItems[2] = optionsUnsel;
+                        menuItems[3] = creditsUnsel;
 
                         current = 0;
                     }
@@ -403,14 +429,17 @@ namespace GravityShift
                         selMenuItems[0] = newGameSel;
                         selMenuItems[1] = loadGameSel;
                         selMenuItems[2] = optionsSel;
+                        selMenuItems[3] = creditsSel;
 
                         unselMenuItems[0] = newGameUnsel;
                         unselMenuItems[1] = loadGameUnsel;
                         unselMenuItems[2] = optionsUnsel;
+                        unselMenuItems[3] = creditsUnsel;
 
                         menuItems[0] = newGameSel;
                         menuItems[1] = loadGameUnsel;
                         menuItems[2] = optionsUnsel;
+                        menuItems[3] = creditsUnsel;
 
                         current = 0;
                     }
@@ -446,16 +475,16 @@ namespace GravityShift
             spriteBatch.Begin();
 
             /* Draw the title of the game  and main background */
-            spriteBatch.DrawString(kootenay, "Gravity Shift",
-                                   new Vector2(150.0f, 0.0f), Color.Black);
+            spriteBatch.Draw(title, new Vector2(150.0f, 50.0f), Color.White);
 
             /* If on the title screen */
             if (onTitle)
             {
                 /* Draw the title items */
-                spriteBatch.Draw(menuItems[0], new Vector2(300.0f, 200.0f), Color.White);
-                spriteBatch.Draw(menuItems[1], new Vector2(300.0f, 300.0f), Color.White);
-                spriteBatch.Draw(menuItems[2], new Vector2(300.0f, 400.0f), Color.White);
+                spriteBatch.Draw(menuItems[0], new Vector2(460.0f, 300.0f), Color.White);
+                spriteBatch.Draw(menuItems[1], new Vector2(445.0f, 400.0f), Color.White);
+                spriteBatch.Draw(menuItems[2], new Vector2(500.0f, 500.0f), Color.White);
+                spriteBatch.Draw(menuItems[3], new Vector2(510.0f, 600.0f), Color.White);
             }
 
             /* If on the load screen */
@@ -464,7 +493,7 @@ namespace GravityShift
                 spriteBatch.Draw(menuItems[0], new Vector2(100.0f, 100.0f), Color.White);
                 spriteBatch.Draw(menuItems[1], new Vector2(100.0f, 300.0f), Color.White);
                 spriteBatch.Draw(menuItems[2], new Vector2(100.0f, 500.0f), Color.White);
-                spriteBatch.Draw(menuItems[3], new Vector2(700.0f, 700.0f), Color.White);          
+                spriteBatch.Draw(menuItems[3], new Vector2(700.0f, 700.0f), Color.White);
             }
 
             /* If on the options menu */
