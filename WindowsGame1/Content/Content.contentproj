@@ -388,11 +388,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Backgrounds\Blah.png">
-      <Name>Blah</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Backgrounds\defaultBG.png">
       <Name>defaultBG</Name>
       <Importer>TextureImporter</Importer>

@@ -25,7 +25,7 @@ namespace GravityShift
         public int ID = GameObject.ID_CREATER++;
 
         protected Vector2 mPrevPos;
-        protected Vector2 mPosition;
+        public Vector2 mPosition;
         protected Vector2 mSize;
 
         protected bool mIsHazardous;

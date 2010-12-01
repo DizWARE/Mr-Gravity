@@ -264,8 +264,9 @@ namespace GravityShift
             mVelocity.Y = mVelocity.Y * otherObject.mFriction * 1.1f;
             // reduce x velocity for friction
             mVelocity.X = mVelocity.X * otherObject.mFriction * 1.1f;
-            // place the Y pos just so it is not colliding. 
-            mPosition += add;
+            // place it just so it is not colliding. 
+            mPosition += add / 2;
+            otherObject.mPosition -= add / 2;
 
             UpdateBoundingBoxes();
             if (add.Length() > 1.0f)
