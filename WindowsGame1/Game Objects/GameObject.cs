@@ -24,7 +24,7 @@ namespace GravityShift
         //Creates a unique identifier for every object
         public int ID = GameObject.ID_CREATER++;
 
-        protected Vector2 mPrevPos;
+        public Vector2 mPrevPos;
         public Vector2 mPosition;
         protected Vector2 mSize;
 
@@ -35,6 +35,7 @@ namespace GravityShift
 
         protected Texture2D mTexture;
         public Rectangle mBoundingBox;
+        public Vector2 mVelocity;
 
         protected bool mIsSquare;
         public bool IsSquare { get { return mIsSquare; } }
@@ -139,7 +140,7 @@ namespace GravityShift
         }
 
         /// <summary>
-        /// Draws the physics object to the screen
+        /// Draws the object to the screen
         /// </summary>
         /// <param name="canvas">Canvas that the game is being drawn on</param>
         /// <param name="gametime">The current gametime</param>

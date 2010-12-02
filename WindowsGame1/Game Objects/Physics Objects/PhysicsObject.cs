@@ -26,8 +26,6 @@ namespace GravityShift
         private Vector2 mResistiveForce = new Vector2(1,1);
         private Vector2 mAdditionalForces = new Vector2(0, 0);
 
-        private Vector2 mVelocity = new Vector2(0, 0);
-
         /// <summary>
         /// Directional force on this object
         /// </summary>
@@ -58,6 +56,7 @@ namespace GravityShift
             :base(content,name,initialPosition, friction, isSquare, isHazardous)
         {
             mEnvironment = environment;
+            mVelocity = new Vector2(0, 0);
             UpdateBoundingBoxes();
         }
 
@@ -213,24 +212,26 @@ namespace GravityShift
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             // handle the shallowest collision
-            if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))
-            {
-                //Reset Y Velocity to 0
-                mVelocity.Y = 0;
-                // reduce x velocity for friction
-                mVelocity.X *= otherObject.mFriction;
-                // place the Y pos just so it is not colliding. 
-                mPosition.Y += colDepth.Y;
-            }
-            else
-            {
-                //Reset X Velocity to 0
-                mVelocity.X = 0;
-                // reduce Y velocity for friction
-                mVelocity.Y *= otherObject.mFriction;
-                // place the X pos just so it is not colliding.
-                mPosition.X += colDepth.X;
-            }
+           
+                if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))// colliding top or bottom
+                {
+                    //Reset Y Velocity to 0
+                    mVelocity.Y = 0;
+                    // reduce x velocity for friction
+                    mVelocity.X *= otherObject.mFriction;
+                    // place the Y pos just so it is not colliding. 
+                    mPosition.Y += colDepth.Y;
+                }
+                else// colliding left or right
+                {
+                    //Reset X Velocity to 0
+                    mVelocity.X = 0;
+                    // reduce Y velocity for friction
+                    mVelocity.Y *= otherObject.mFriction;
+                    // place the X pos just so it is not colliding.
+                    mPosition.X += colDepth.X;
+                }
+            
             UpdateBoundingBoxes();
             return 1;// handled collision 
         }
@@ -258,15 +259,21 @@ namespace GravityShift
 
             float delta = (radiusA + radiusB) - centerDiff.Length();
             centerDiff.Normalize();
-            Vector2 add = Vector2.Multiply(centerDiff, delta);
-           
-            //Reset Y Velocity to 0
-            mVelocity.Y = mVelocity.Y * otherObject.mFriction * 1.1f;
-            // reduce x velocity for friction
-            mVelocity.X = mVelocity.X * otherObject.mFriction * 1.1f;
+            Vector2 add = Vector2.Multiply(centerDiff, delta); 
+
+            HandleVelocitiesAfterCollision(otherObject, centerDiff);
+
             // place it just so it is not colliding. 
-            mPosition += add / 2;
-            otherObject.mPosition -= add / 2;
+            if (otherObject is PhysicsObject)
+            {
+                mPosition += add / 2;
+                otherObject.mPosition -= add / 2;                
+            }
+            else
+            {
+                // do not move a static object
+                mPosition += add;
+            }
 
             UpdateBoundingBoxes();
             if (add.Length() > 1.0f)
@@ -336,8 +343,29 @@ namespace GravityShift
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
 
-                // if you do not do not change mVelocity on a corner collision
-                // (do not factor in friction) it gives the appearance of "rolling off" the corner
+                // Handle velocities
+
+                // normal of the collision
+                Vector2 N = centerDiff;
+                N.Normalize();
+                // tangent of the collision
+                Vector2 T = new Vector2(N.Y, -N.X);
+
+                float e = 0.9f;//0.9f; // elasticity of the collision
+
+                float vain = Vector2.Dot(this.mVelocity, N);
+                float vait = Vector2.Dot(this.mVelocity, T);
+
+                float vbin = Vector2.Dot(Vector2.Zero, N);
+                float vbit = Vector2.Dot(Vector2.Zero, T);
+
+                float vafn = ((e + 1.0f) * vbin + vain * (1 - e)) / 2;
+                float vbfn = ((e + 1.0f) * vain - vbin * (1 - e)) / 2;
+                float vaft = vait;
+                float vbft = vbit;
+
+                this.mVelocity.X = vafn * N.X + vaft * T.X;
+                this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
 
                 // place the Y pos just so it is not colliding. 
                 mPosition += add;
@@ -455,8 +483,42 @@ namespace GravityShift
                 }
             }
             return false;
-        } 
+        }
 
+        private void HandleVelocitiesAfterCollision(GameObject otherObject,Vector2 normal)
+        {
+            // Thanks to Dr. Bob of UofU SoC
+
+            // normal of the collision
+            Vector2 N = normal;
+            N.Normalize();
+
+            // tangent of the collision
+            Vector2 T = new Vector2(N.Y, -N.X);
+
+            float e = 0.9f;//0.9f; // elasticity of the collision
+
+            float vain = Vector2.Dot(this.mVelocity, N);
+            float vait = Vector2.Dot(this.mVelocity, T);
+
+            float vbin = Vector2.Dot(((PhysicsObject)otherObject).mVelocity, N);
+            float vbit = Vector2.Dot(((PhysicsObject)otherObject).mVelocity, T);
+
+            float vafn = ((e + 1.0f) * vbin + vain * (1 - e)) / 2;
+            float vbfn = ((e + 1.0f) * vain - vbin * (1 - e)) / 2;
+            float vaft = vait;
+            float vbft = vbit;
+
+            this.mVelocity.X = vafn * N.X + vaft * T.X;
+            this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
+
+
+            if (otherObject is PhysicsObject)
+            {
+                ((PhysicsObject)otherObject).mVelocity.X = vbfn * N.X + vbft * T.X;
+                ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
+            }
+        }
         public abstract int Kill();
         public abstract override string ToString();
     }

@@ -31,6 +31,7 @@ namespace GravityShift
         public StaticObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
             : base(content, name, initialPosition, friction,isSquare,isHazardous)
         {
+            this.mVelocity = Vector2.Zero;
         }
     }
 }
