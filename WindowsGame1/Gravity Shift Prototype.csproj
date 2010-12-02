@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
+    <Compile Include="Game Objects\Static Objects\Triggers\BasicTrigger.cs" />
+    <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
