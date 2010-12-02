@@ -50,7 +50,7 @@ namespace GravityShift
             mSpawnPoint = initialPosition;
             mRotation = 0.0f;
             mGoalRotation = 0.0f;
-            
+            ID = -1;
         }
         /// <summary>
         /// Updates the player location and the player controls

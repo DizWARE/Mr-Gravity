@@ -21,6 +21,7 @@ namespace GravityShift.Import_Code
         public static string VISIBLE = "Visible";
         public static string PROPERTIES = "Properties";
         public static string TEXTURE = "Texture";
+        public static string ID = "ID";
 
         //Specific Types
         public static string STATIC_OBJECT = "Static Objects";

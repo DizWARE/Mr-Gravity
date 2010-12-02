@@ -12,6 +12,7 @@ namespace GravityShift.Import_Code
     /// </summary>
     class EntityInfo
     {
+        public int mId;
         public string mName;
         public string mType;
         public bool mHazardous;
@@ -32,6 +33,8 @@ namespace GravityShift.Import_Code
             mProperties = new Dictionary<string,string>();
             foreach(XElement item in entity.Elements())
             {
+                if (item.Name == XmlKeys.ID)
+                    mId = int.Parse(item.Value);
                 if (item.Name == XmlKeys.NAME)
                     mName = item.Value;
                 if (item.Name == XmlKeys.TYPE)

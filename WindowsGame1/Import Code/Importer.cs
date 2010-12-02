@@ -108,15 +108,20 @@ namespace GravityShift.Import_Code
                 if (entity.mType == XmlKeys.STATIC_OBJECT)
                 {
                     bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                    objects.Add(new Tile(mContent, "Images\\" + entity.mTextureFile,
-                        GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare, entity.mHazardous));
+                    Tile tile = new Tile(mContent, "Images\\" + entity.mTextureFile,
+                        GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare, entity.mHazardous);
+                    tile.ID = entity.mId;
+                    objects.Add(tile);
+
                 }
                 //If the object is physics, make a physics object
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
                 {
                     bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                    objects.Add(new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                        GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mHazardous));
+                    MovingTile tile = new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
+                        GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mHazardous);
+                    tile.ID = entity.mId;
+                    objects.Add(tile);
                 }
             }
 
