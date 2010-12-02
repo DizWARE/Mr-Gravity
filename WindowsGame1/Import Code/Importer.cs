@@ -15,6 +15,7 @@ using System.IO;
 using System.Collections;
 using System.Xml.Linq;
 using GravityLevelEditor;
+using GravityShift.Game_Objects.Static_Objects.Triggers;
 
 namespace GravityShift.Import_Code
 {
@@ -117,7 +118,7 @@ namespace GravityShift.Import_Code
                 //If the object is physics, make a physics object
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
                 {
-                    bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
+                    bool isSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
                     MovingTile tile = new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
                         GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mHazardous);
                     tile.ID = entity.mId;
@@ -135,6 +136,31 @@ namespace GravityShift.Import_Code
         public List<Tile> GetWalls()
         {
             return null;
+        }
+
+        /// <summary>
+        /// Gets all the triggers in the level
+        /// </summary>
+        /// <returns>All the triggers in the xml file</returns>
+        public List<Trigger> GetTriggers()
+        {
+            List<Trigger> triggers = new List<Trigger>();
+            foreach (EntityInfo entity in mEntities)
+            {
+                if (entity.mType == XmlKeys.TRIGGER)
+                {
+                    bool isSquare = entity.mProperties.ContainsKey(XmlKeys.SHAPE) && entity.mProperties[XmlKeys.SHAPE] == XmlKeys.SQUARE;
+
+                    if(!entity.mProperties.ContainsKey(XmlKeys.WIDTH) || !entity.mProperties.ContainsKey(XmlKeys.HEIGHT))
+                        continue;
+
+                    if(entity.mName == "Basic")
+                        triggers.Add(new BasicTrigger(mContent,entity.mName,
+                            entity.mLocation,isSquare,int.Parse(entity.mProperties[XmlKeys.WIDTH]),int.Parse(entity.mProperties[XmlKeys.HEIGHT])));
+                    //Add trigger by name
+                }
+            }
+            return triggers;
         }
     }
 }

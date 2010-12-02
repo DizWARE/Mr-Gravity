@@ -20,6 +20,11 @@ namespace GravityShift
     abstract class PhysicsObject : GameObject
     {
         protected PhysicsEnvironment mEnvironment;
+        public PhysicsEnvironment Environment
+        {
+            get { return mEnvironment; }
+            set { mEnvironment = value; }
+        }
         
         //All forces applied to this physicsObject
         private Vector2 mGravityForce = new Vector2(0,0);

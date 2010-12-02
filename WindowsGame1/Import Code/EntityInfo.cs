@@ -13,12 +13,13 @@ namespace GravityShift.Import_Code
     class EntityInfo
     {
         public int mId;
+
         public string mName;
         public string mType;
-        public bool mHazardous;
         public string mTextureFile;
 
-        public bool mVisible;
+        public bool mTrigger;
+        public bool mHazardous;
 
         public Vector2 mLocation = new Vector2();
 
@@ -43,8 +44,8 @@ namespace GravityShift.Import_Code
                     mHazardous = XmlKeys.TRUE.Equals(item.Value);
                 if (item.Name == XmlKeys.TEXTURE)
                     mTextureFile = item.Value;
-                if (item.Name == XmlKeys.VISIBLE)
-                    mVisible = XmlKeys.TRUE.Equals(item.Value);
+                if (item.Name == XmlKeys.TRIGGER)
+                    mTrigger = XmlKeys.TRUE.Equals(item.Value);
                 if (item.Name == XmlKeys.LOCATION)
                     mLocation = new Vector2(int.Parse(item.Attribute(XName.Get("X", "")).Value),
                         int.Parse(item.Attribute(XName.Get("Y", "")).Value));
