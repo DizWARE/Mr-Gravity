@@ -889,7 +889,7 @@ namespace GravityLevelEditor
             if (e.KeyData == Keys.Delete)
             {
                 TOOL_REMOVE.LeftMouseUp(ref mData, new Point(-10, -10));
-                UpdatePanel();
+                sc_Properties.Panel1.Invalidate(sc_Properties.Panel1.DisplayRectangle);
             }
             
             //TODO - Add a CTRL Click

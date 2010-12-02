@@ -158,7 +158,7 @@
     <Location X="-100" Y="-100" />
     <Hazardous>True</Hazardous>
     <Visible>True</Visible>
-    <Paintable>True</Paintable>
+    <Paintable>False</Paintable>
     <Texture>Physics Objects\circle</Texture>
     <Properties>
       <Shape>Circle</Shape>
