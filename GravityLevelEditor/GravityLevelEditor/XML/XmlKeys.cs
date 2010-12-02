@@ -25,8 +25,7 @@ namespace GravityLevelEditor.XML
         public static string LOCATION = "Location";
         public static string E_X = "X";
         public static string E_Y = "Y";
-        public static string HAZARDOUS = "Hazardous";
-        public static string VISIBLE = "Visible";
+        public static string COLLISIONTYPE = "CollisionType";
         public static string PAINTABLE = "Paintable";
         public static string TEXTURE = "Texture";
         public static string PROPERTIES = "Properties";

@@ -5,8 +5,7 @@
     <Name>PlayerStart</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>False</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Level Positions\player_start</Texture>
     <Properties />
@@ -16,8 +15,7 @@
     <Name>PlayerEnd</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>False</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Level Positions\player_end</Texture>
     <Properties />
@@ -27,8 +25,7 @@
     <Name>Moving Ball</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Physics Objects\circle</Texture>
     <Properties>
@@ -40,8 +37,7 @@
     <Name>NeonGreen</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonGreen</Texture>
     <Properties />
@@ -51,8 +47,7 @@
     <Name>NeonPink</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonPink</Texture>
     <Properties />
@@ -62,8 +57,7 @@
     <Name>NeonBlue</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonBlue</Texture>
     <Properties />
@@ -73,8 +67,7 @@
     <Name>NeonYellow</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonYellow</Texture>
     <Properties />
@@ -84,8 +77,7 @@
     <Name>BrownMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma</Texture>
     <Properties />
@@ -95,8 +87,7 @@
     <Name>BlackMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma2</Texture>
     <Properties />
@@ -106,8 +97,7 @@
     <Name>DangerMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>True</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\grounda_magma</Texture>
     <Properties />
@@ -117,8 +107,7 @@
     <Name>FallingYellow</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Static Objects\groundi_neonYellow</Texture>
     <Properties>
@@ -130,8 +119,7 @@
     <Name>MovingDangerMagma</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>True</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Hazardous</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Static Objects\grounda_magma</Texture>
     <Properties>
@@ -143,8 +131,7 @@
     <Name>BallWall</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>False</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Physics Objects\circle</Texture>
     <Properties>
@@ -156,8 +143,7 @@
     <Name>DangerBall</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <Hazardous>True</Hazardous>
-    <Visible>True</Visible>
+    <CollisionType>Hazardous</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Physics Objects\circle</Texture>
     <Properties>
