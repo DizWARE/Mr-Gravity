@@ -24,16 +24,21 @@ namespace GravityShift
         private Texture2D[] unselMenuItems;
         private Texture2D[] menuItems;
 
-        private bool onTitle;
-        private bool onOptions;
-        private bool onLoad;
-        private bool onController;
-        private bool onSound;
-        private bool onCredits;
+        enum states
+        {
+            TITLE,
+            OPTIONS,
+            LOAD,
+            CONTROLLER,
+            SOUNDS,
+            CREDITS
+        };
 
-        private const int TITLE = 4;
-        private const int LOAD = 4;
-        private const int OPTIONS = 3;
+        states state;
+
+        private const int NUM_TITLE = 4;
+        private const int NUM_LOAD = 4;
+        private const int NUM_OPTIONS = 3;
 
         GamePadState pad_state;
         GamePadState prev_pad_state;
@@ -74,6 +79,9 @@ namespace GravityShift
         private Texture2D threeUnsel;
         private Texture2D threeSel;
 
+        /* Controller Settings */
+        private Texture2D xboxControl;
+
         #endregion
 
         /*
@@ -93,11 +101,12 @@ namespace GravityShift
          */
         public void Load(ContentManager content)
         {
+            state = states.TITLE;
             current = 0;
 
-            selMenuItems = new Texture2D[TITLE];
-            unselMenuItems = new Texture2D[TITLE];
-            menuItems = new Texture2D[TITLE];
+            selMenuItems = new Texture2D[NUM_TITLE];
+            unselMenuItems = new Texture2D[NUM_TITLE];
+            menuItems = new Texture2D[NUM_TITLE];
 
             title = content.Load<Texture2D>("menu/Title");
 
@@ -127,6 +136,9 @@ namespace GravityShift
             threeUnsel = content.Load<Texture2D>("menu/ThreeUnselected");
             threeSel = content.Load<Texture2D>("menu/ThreeSelected");
 
+            /* Controller */
+            xboxControl = content.Load<Texture2D>("menu/XboxController");
+
             /* Initialize the menu item arrays */
             selMenuItems[0] = newGameSel;
             selMenuItems[1] = loadGameSel;
@@ -142,14 +154,6 @@ namespace GravityShift
             menuItems[1] = loadGameUnsel;
             menuItems[2] = optionsUnsel;
             menuItems[3] = creditsUnsel;
-
-            /* Set which screen we start on */
-            onTitle = true;
-            onOptions = false;
-            onLoad = false;
-            onController = false;
-            onSound = false;
-            onCredits = false;
 
             /* Pad state stuff */
             prev_pad_state = GamePad.GetState(PlayerIndex.One);
@@ -174,96 +178,328 @@ namespace GravityShift
             pad_state = GamePad.GetState(PlayerIndex.One);
 
             /* If we are on the title screen */
-            if (onTitle)
+            switch (state)
             {
-                /* If the user hits up */
-                if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                    prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                    key_state.IsKeyDown(Keys.Up) &&
-                    prev_key_state.IsKeyUp(Keys.Up))
-                {
-                    /* If we are not on the first element already */
-                    if (current > 0)
+                case states.TITLE:
+                    /* If the user hits up */
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
+                        key_state.IsKeyDown(Keys.Up) &&
+                        prev_key_state.IsKeyUp(Keys.Up))
                     {
-                        GameSound.menuSound_rollover.Play();
-                        /* Decrement current and change the images */
-                        current--;
-                        for (int i = 0; i < TITLE; i++)
-                            menuItems[i] = unselMenuItems[i];
-                        menuItems[current] = selMenuItems[current];
+                        /* If we are not on the first element already */
+                        if (current > 0)
+                        {
+                            GameSound.menuSound_rollover.Play();
+                            /* Decrement current and change the images */
+                            current--;
+                            for (int i = 0; i < NUM_TITLE; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
                     }
-                }
-                /* If the user hits the down button */
-                if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                    prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                    key_state.IsKeyDown(Keys.Down) &&
-                    prev_key_state.IsKeyUp(Keys.Down))
-                {
-                    /* If we are on the last element in the menu */
-                    if (current < TITLE - 1)
+                    /* If the user hits the down button */
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
+                        key_state.IsKeyDown(Keys.Down) &&
+                        prev_key_state.IsKeyUp(Keys.Down))
                     {
-                        GameSound.menuSound_rollover.Play();
-                        /* Increment current and update graphics */
-                        current++;
-                        for (int i = 0; i < TITLE; i++)
-                            menuItems[i] = unselMenuItems[i];
-                        menuItems[current] = selMenuItems[current];
+                        /* If we are on the last element in the menu */
+                        if (current < NUM_TITLE - 1)
+                        {
+                            GameSound.menuSound_rollover.Play();
+                            /* Increment current and update graphics */
+                            current++;
+                            for (int i = 0; i < NUM_TITLE; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
                     }
-                }
 
-                /* If the user selects one of the menu items */
-                if (pad_state.IsButtonDown(Buttons.A) &&
-                    prev_pad_state.IsButtonUp(Buttons.A) ||
-                    key_state.IsKeyDown(Keys.Enter) &&
-                    prev_key_state.IsKeyUp(Keys.Enter))
-                {
-                    GameSound.menuSound_select.Play();
-                    /* New Game */
-                    if (current == 0)
+                    /* If the user selects one of the menu items */
+                    if (pad_state.IsButtonDown(Buttons.A) &&
+                        prev_pad_state.IsButtonUp(Buttons.A) ||
+                        key_state.IsKeyDown(Keys.Enter) &&
+                        prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        /* Start the game */
-                        GravityShiftMain.InMenu = false;
-                        GravityShiftMain.InGame = true;
+                        GameSound.menuSound_select.Play();
+                        /* New Game */
+                        if (current == 0)
+                        {
+                            /* Start the game */
+                            GravityShiftMain.InMenu = false;
+                            GravityShiftMain.InGame = true;
+                        }
+                        /* Load Game */
+                        else if (current == 1)
+                        {
+                            /* Change to the load screen */
+                            state = states.LOAD;
+
+                            /* Initialize variables to the load menu items */
+                            selMenuItems = new Texture2D[NUM_LOAD];
+                            unselMenuItems = new Texture2D[NUM_LOAD];
+                            menuItems = new Texture2D[NUM_LOAD];
+
+                            selMenuItems[0] = oneSel;
+                            selMenuItems[1] = twoSel;
+                            selMenuItems[2] = threeSel;
+                            selMenuItems[3] = backSel;
+
+                            unselMenuItems[0] = oneUnsel;
+                            unselMenuItems[1] = twoUnsel;
+                            unselMenuItems[2] = threeUnsel;
+                            unselMenuItems[3] = backUnsel;
+
+                            menuItems[0] = oneSel;
+                            menuItems[1] = twoUnsel;
+                            menuItems[2] = threeUnsel;
+                            menuItems[3] = backUnsel;
+
+                            current = 0;
+                        }
+                        /* Options */
+                        else if (current == 2)
+                        {
+                            /* Change to the options menu */
+                            state = states.OPTIONS;
+
+                            selMenuItems = new Texture2D[NUM_OPTIONS];
+                            unselMenuItems = new Texture2D[NUM_OPTIONS];
+                            menuItems = new Texture2D[NUM_OPTIONS];
+
+                            selMenuItems[0] = controlSel;
+                            selMenuItems[1] = soundSel;
+                            selMenuItems[2] = backSel;
+
+                            unselMenuItems[0] = controlUnsel;
+                            unselMenuItems[1] = soundUnsel;
+                            unselMenuItems[2] = backUnsel;
+
+                            menuItems[0] = controlSel;
+                            menuItems[1] = soundUnsel;
+                            menuItems[2] = backUnsel;
+
+                            current = 0;
+                        }
+                        /* Credits */
+                        else if (current == 3)
+                        {
+                            /* Change to the credits */
+                            state = states.CREDITS;
+
+                            current = 0;
+                        }
                     }
-                    /* Load Game */
-                    else if (current == 1)
+                    break;
+
+                /* Options Menu*/
+                case states.OPTIONS:
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
+                        key_state.IsKeyDown(Keys.Up) &&
+                        prev_key_state.IsKeyUp(Keys.Up))
                     {
-                        /* Change to the load screen */
-                        onTitle = false;
-                        onLoad = true;
+                        if (current > 0)
+                        {
+                            GameSound.menuSound_rollover.Play();
+                            current--;
+                            for (int i = 0; i < NUM_OPTIONS; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
+                    }
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
+                        key_state.IsKeyDown(Keys.Down) &&
+                        prev_key_state.IsKeyUp(Keys.Down))
+                    {
+                        if (current < NUM_OPTIONS - 1)
+                        {
+                            GameSound.menuSound_rollover.Play();
+                            current++;
+                            for (int i = 0; i < NUM_OPTIONS; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
+                    }
 
-                        /* Initialize variables to the load menu items */
-                        selMenuItems = new Texture2D[LOAD];
-                        unselMenuItems = new Texture2D[LOAD];
-                        menuItems = new Texture2D[LOAD];
+                    if (pad_state.IsButtonDown(Buttons.A) &&
+                        prev_pad_state.IsButtonUp(Buttons.A) ||
+                        key_state.IsKeyDown(Keys.Enter) &&
+                        prev_key_state.IsKeyUp(Keys.Enter))
+                    {
+                        GameSound.menuSound_select.Play();
+                        /* Controller Settings */
+                        if (current == 0)
+                        {
+                            state = states.CONTROLLER;
+                        }
+                        /* Sound Settings */
+                        else if (current == 1)
+                        {
+                            state = states.SOUNDS;
+                        }
+                        /* Back */
+                        else if (current == 2)
+                        {
+                            state = states.TITLE;
 
-                        selMenuItems[0] = oneSel;
-                        selMenuItems[1] = twoSel;
-                        selMenuItems[2] = threeSel;
-                        selMenuItems[3] = backSel;
+                            selMenuItems = new Texture2D[NUM_TITLE];
+                            unselMenuItems = new Texture2D[NUM_TITLE];
+                            menuItems = new Texture2D[NUM_TITLE];
 
-                        unselMenuItems[0] = oneUnsel;
-                        unselMenuItems[1] = twoUnsel;
-                        unselMenuItems[2] = threeUnsel;
-                        unselMenuItems[3] = backUnsel;
+                            selMenuItems[0] = newGameSel;
+                            selMenuItems[1] = loadGameSel;
+                            selMenuItems[2] = optionsSel;
+                            selMenuItems[3] = creditsSel;
 
-                        menuItems[0] = oneSel;
-                        menuItems[1] = twoUnsel;
-                        menuItems[2] = threeUnsel;
-                        menuItems[3] = backUnsel;
+                            unselMenuItems[0] = newGameUnsel;
+                            unselMenuItems[1] = loadGameUnsel;
+                            unselMenuItems[2] = optionsUnsel;
+                            unselMenuItems[3] = creditsUnsel;
+
+                            menuItems[0] = newGameSel;
+                            menuItems[1] = loadGameUnsel;
+                            menuItems[2] = optionsUnsel;
+                            menuItems[3] = creditsUnsel;
+
+                            current = 0;
+                        }
+                    }
+                    break;
+
+                /* Load Menu */
+                case states.LOAD:
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
+                        key_state.IsKeyDown(Keys.Up) &&
+                        prev_key_state.IsKeyUp(Keys.Up))
+                    {
+                        if (current > 0)
+                        {
+                            GameSound.menuSound_rollover.Play();
+                            current--;
+                            for (int i = 0; i < NUM_LOAD; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
+                    }
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
+                        key_state.IsKeyDown(Keys.Down) &&
+                        prev_key_state.IsKeyUp(Keys.Down))
+                    {
+                        if (current < NUM_LOAD - 1)
+                        {
+                            GameSound.menuSound_rollover.Play();
+                            current++;
+                            for (int i = 0; i < NUM_LOAD; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
+                    }
+
+                    if (pad_state.IsButtonDown(Buttons.A) &&
+                        prev_pad_state.IsButtonUp(Buttons.A) ||
+                        key_state.IsKeyDown(Keys.Enter) &&
+                        prev_key_state.IsKeyUp(Keys.Enter))
+                    {
+                        GameSound.menuSound_select.Play();
+                        /* Level 1 */
+                        if (current == 0)
+                        {
+                            /* TODO */
+                        }
+                        /* Level 2 */
+                        else if (current == 1)
+                        {
+                            /* TODO */
+                        }
+                        /* Level 3 */
+                        else if (current == 2)
+                        {
+                            /* TODO */
+                        }
+                        /* Back */
+                        else if (current == 3)
+                        {
+                            /* Return back to the title screen */
+                            state = states.TITLE;
+
+                            selMenuItems = new Texture2D[NUM_TITLE];
+                            unselMenuItems = new Texture2D[NUM_TITLE];
+                            menuItems = new Texture2D[NUM_TITLE];
+
+                            selMenuItems[0] = newGameSel;
+                            selMenuItems[1] = loadGameSel;
+                            selMenuItems[2] = optionsSel;
+                            selMenuItems[3] = creditsSel;
+
+                            unselMenuItems[0] = newGameUnsel;
+                            unselMenuItems[1] = loadGameUnsel;
+                            unselMenuItems[2] = optionsUnsel;
+                            unselMenuItems[3] = creditsUnsel;
+
+                            menuItems[0] = newGameSel;
+                            menuItems[1] = loadGameUnsel;
+                            menuItems[2] = optionsUnsel;
+                            menuItems[3] = creditsUnsel;
+
+                            current = 0;
+                        }
+                    }
+                    break;
+
+                /* Options Menu*/
+                case states.CREDITS:
+                    if (pad_state.IsButtonDown(Buttons.A) &&
+                        prev_pad_state.IsButtonUp(Buttons.A) ||
+                        key_state.IsKeyDown(Keys.Enter) &&
+                        prev_key_state.IsKeyUp(Keys.Enter))
+                    {
+                        GameSound.menuSound_select.Play();
+                        /* Back */
+                        state = states.TITLE;
+
+                        selMenuItems = new Texture2D[NUM_TITLE];
+                        unselMenuItems = new Texture2D[NUM_TITLE];
+                        menuItems = new Texture2D[NUM_TITLE];
+                        
+                        selMenuItems[0] = newGameSel;
+                        selMenuItems[1] = loadGameSel;
+                        selMenuItems[2] = optionsSel;
+                        selMenuItems[3] = creditsSel;
+
+                        unselMenuItems[0] = newGameUnsel;
+                        unselMenuItems[1] = loadGameUnsel;
+                        unselMenuItems[2] = optionsUnsel;
+                        unselMenuItems[3] = creditsUnsel;
+
+                        menuItems[0] = newGameSel;
+                        menuItems[1] = loadGameUnsel;
+                        menuItems[2] = optionsUnsel;
+                        menuItems[3] = creditsUnsel;
 
                         current = 0;
                     }
-                    /* Options */
-                    else if (current == 2)
-                    {
-                        /* Change to the options menu */
-                        onTitle = false;
-                        onOptions = true;
+                    break;
 
-                        selMenuItems = new Texture2D[OPTIONS];
-                        unselMenuItems = new Texture2D[OPTIONS];
-                        menuItems = new Texture2D[OPTIONS];
+                /* Controller Settings */
+                case states.CONTROLLER:
+                    if (pad_state.IsButtonDown(Buttons.A) &&
+                        prev_pad_state.IsButtonUp(Buttons.A) ||
+                        key_state.IsKeyDown(Keys.Enter) &&
+                        prev_key_state.IsKeyUp(Keys.Enter))
+                    {
+                        GameSound.menuSound_select.Play();
+
+                        /* Change to the options menu */
+                        state = states.OPTIONS;
+
+                        selMenuItems = new Texture2D[NUM_OPTIONS];
+                        unselMenuItems = new Texture2D[NUM_OPTIONS];
+                        menuItems = new Texture2D[NUM_OPTIONS];
 
                         selMenuItems[0] = controlSel;
                         selMenuItems[1] = soundSel;
@@ -279,193 +515,42 @@ namespace GravityShift
 
                         current = 0;
                     }
-                    /* Credits */
-                    else if (current == 3)
+
+                    break;
+
+                /* Sound Settings */
+                case states.SOUNDS:
+                    if (pad_state.IsButtonDown(Buttons.A) &&
+                        prev_pad_state.IsButtonUp(Buttons.A) ||
+                        key_state.IsKeyDown(Keys.Enter) &&
+                        prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        /* Change to the credits */
-                        onTitle = false;
-                        onCredits = true;
+                        GameSound.menuSound_select.Play();
+                        
+                        /* Change to the options menu */
+                        state = states.OPTIONS;
+
+                        selMenuItems = new Texture2D[NUM_OPTIONS];
+                        unselMenuItems = new Texture2D[NUM_OPTIONS];
+                        menuItems = new Texture2D[NUM_OPTIONS];
+
+                        selMenuItems[0] = controlSel;
+                        selMenuItems[1] = soundSel;
+                        selMenuItems[2] = backSel;
+
+                        unselMenuItems[0] = controlUnsel;
+                        unselMenuItems[1] = soundUnsel;
+                        unselMenuItems[2] = backUnsel;
+
+                        menuItems[0] = controlSel;
+                        menuItems[1] = soundUnsel;
+                        menuItems[2] = backUnsel;
 
                         current = 0;
                     }
-
-                }
+                    break;
             }
-
-            /* Options Menu*/
-            else if (onOptions)
-            {
-                if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                    prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                    key_state.IsKeyDown(Keys.Up) &&
-                    prev_key_state.IsKeyUp(Keys.Up))
-                {
-                    if (current > 0)
-                    {
-                        GameSound.menuSound_rollover.Play();
-                        current--;
-                        for (int i = 0; i < OPTIONS; i++)
-                            menuItems[i] = unselMenuItems[i];
-                        menuItems[current] = selMenuItems[current];
-                    }
-                }
-                if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                    prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                    key_state.IsKeyDown(Keys.Down) &&
-                    prev_key_state.IsKeyUp(Keys.Down))
-                {
-                    if (current < OPTIONS - 1)
-                    {
-                        GameSound.menuSound_rollover.Play();
-                        current++;
-                        for (int i = 0; i < OPTIONS; i++)
-                            menuItems[i] = unselMenuItems[i];
-                        menuItems[current] = selMenuItems[current];
-                    }
-                }
-
-                if (pad_state.IsButtonDown(Buttons.A) &&
-                    prev_pad_state.IsButtonUp(Buttons.A) ||
-                    key_state.IsKeyDown(Keys.Enter) &&
-                    prev_key_state.IsKeyUp(Keys.Enter))
-                {
-                    GameSound.menuSound_select.Play();
-                    /* Controller Settings */
-                    if (current == 0)
-                    {
-                        onOptions = false;
-                        onController = true;
-                    }
-                    /* Sound Settings */
-                    else if (current == 1)
-                    {
-                        onOptions = false;
-                        onSound = true;
-                    }
-                    /* Back */
-                    else if (current == 2)
-                    {
-                        onOptions = false;
-                        onTitle = true;
-
-                        selMenuItems = new Texture2D[TITLE];
-                        unselMenuItems = new Texture2D[TITLE];
-                        menuItems = new Texture2D[TITLE];
-
-                        selMenuItems[0] = newGameSel;
-                        selMenuItems[1] = loadGameSel;
-                        selMenuItems[2] = optionsSel;
-                        selMenuItems[3] = creditsSel;
-
-                        unselMenuItems[0] = newGameUnsel;
-                        unselMenuItems[1] = loadGameUnsel;
-                        unselMenuItems[2] = optionsUnsel;
-                        unselMenuItems[3] = creditsUnsel;
-
-                        menuItems[0] = newGameSel;
-                        menuItems[1] = loadGameUnsel;
-                        menuItems[2] = optionsUnsel;
-                        menuItems[3] = creditsUnsel;
-
-                        current = 0;
-                    }
-                }
-            }
-            /* Load Menu */
-            else if (onLoad)
-            {
-                if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                    prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                    key_state.IsKeyDown(Keys.Up) &&
-                    prev_key_state.IsKeyUp(Keys.Up))
-                {
-                    if (current > 0)
-                    {
-                        GameSound.menuSound_rollover.Play();
-                        current--;
-                        for (int i = 0; i < LOAD; i++)
-                            menuItems[i] = unselMenuItems[i];
-                        menuItems[current] = selMenuItems[current];
-                    }
-                }
-                if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                    prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                    key_state.IsKeyDown(Keys.Down) &&
-                    prev_key_state.IsKeyUp(Keys.Down))
-                {
-                    if (current < LOAD - 1)
-                    {
-                        GameSound.menuSound_rollover.Play();
-                        current++;
-                        for (int i = 0; i < LOAD; i++)
-                            menuItems[i] = unselMenuItems[i];
-                        menuItems[current] = selMenuItems[current];
-                    }
-                }
-
-                if (pad_state.IsButtonDown(Buttons.A) &&
-                    prev_pad_state.IsButtonUp(Buttons.A) ||
-                    key_state.IsKeyDown(Keys.Enter) &&
-                    prev_key_state.IsKeyUp(Keys.Enter))
-                {
-                    GameSound.menuSound_select.Play();
-                    /* Level 1 */
-                    if (current == 0)
-                    {
-                        /* TODO */
-                    }
-                    /* Level 2 */
-                    else if (current == 1)
-                    {
-                        /* TODO */
-                    }
-                    /* Level 3 */
-                    else if (current == 2)
-                    {
-                        /* TODO */
-                    }
-                    /* Back */
-                    else if (current == 3)
-                    {
-                        /* Return back to the title screen */
-                        onLoad = false;
-                        onTitle = true;
-
-                        selMenuItems = new Texture2D[TITLE];
-                        unselMenuItems = new Texture2D[TITLE];
-                        menuItems = new Texture2D[TITLE];
-
-                        selMenuItems[0] = newGameSel;
-                        selMenuItems[1] = loadGameSel;
-                        selMenuItems[2] = optionsSel;
-                        selMenuItems[3] = creditsSel;
-
-                        unselMenuItems[0] = newGameUnsel;
-                        unselMenuItems[1] = loadGameUnsel;
-                        unselMenuItems[2] = optionsUnsel;
-                        unselMenuItems[3] = creditsUnsel;
-
-                        menuItems[0] = newGameSel;
-                        menuItems[1] = loadGameUnsel;
-                        menuItems[2] = optionsUnsel;
-                        menuItems[3] = creditsUnsel;
-
-                        current = 0;
-                    }
-                }
-            }
-            /* Controller Settings */
-            else if (onController)
-            {
-                /* TODO */
-            }
-            /* Sound Settings */
-            else if (onSound)
-            {
-                /* TODO */
-            }
-
-            /* Set the previous states to the current states */
+                    /* Set the previous states to the current states */
             prev_pad_state = pad_state;
             prev_key_state = key_state;
         }
@@ -487,44 +572,62 @@ namespace GravityShift
             spriteBatch.Draw(title, new Vector2(150.0f, 50.0f), Color.White);
 
             /* If on the title screen */
-            if (onTitle)
+            switch (state)
             {
-                /* Draw the title items */
-                spriteBatch.Draw(menuItems[0], new Vector2(460.0f, 300.0f), Color.White);
-                spriteBatch.Draw(menuItems[1], new Vector2(445.0f, 400.0f), Color.White);
-                spriteBatch.Draw(menuItems[2], new Vector2(500.0f, 500.0f), Color.White);
-                spriteBatch.Draw(menuItems[3], new Vector2(510.0f, 600.0f), Color.White);
-            }
+                case states.TITLE:
+                    /* Draw the title items */
+                    spriteBatch.Draw(menuItems[0], new Vector2(460.0f, 300.0f), Color.White);
+                    spriteBatch.Draw(menuItems[1], new Vector2(445.0f, 400.0f), Color.White);
+                    spriteBatch.Draw(menuItems[2], new Vector2(500.0f, 500.0f), Color.White);
+                    spriteBatch.Draw(menuItems[3], new Vector2(510.0f, 600.0f), Color.White);
+                    break;
 
-            /* If on the load screen */
-            else if (onLoad)
-            {
-                spriteBatch.Draw(menuItems[0], new Vector2(100.0f, 100.0f), Color.White);
-                spriteBatch.Draw(menuItems[1], new Vector2(100.0f, 300.0f), Color.White);
-                spriteBatch.Draw(menuItems[2], new Vector2(100.0f, 500.0f), Color.White);
-                spriteBatch.Draw(menuItems[3], new Vector2(700.0f, 700.0f), Color.White);
-            }
+                /* If on the load screen */
+                case states.LOAD:
+                    spriteBatch.Draw(menuItems[0], new Vector2(100.0f, 100.0f), Color.White);
+                    spriteBatch.Draw(menuItems[1], new Vector2(100.0f, 300.0f), Color.White);
+                    spriteBatch.Draw(menuItems[2], new Vector2(100.0f, 500.0f), Color.White);
+                    spriteBatch.Draw(menuItems[3], new Vector2(900.0f, 700.0f), Color.White);
+                    break;
 
-            /* If on the options menu */
-            else if (onOptions)
-            {
-                spriteBatch.Draw(menuItems[0], new Vector2(300.0f, 200.0f), Color.White);
-                spriteBatch.Draw(menuItems[1], new Vector2(300.0f, 300.0f), Color.White);
-                spriteBatch.Draw(menuItems[2], new Vector2(300.0f, 400.0f), Color.White);
-            }
+                /* If on the options menu */
+                case states.OPTIONS:
+                    spriteBatch.Draw(menuItems[0], new Vector2(300.0f, 300.0f), Color.White);
+                    spriteBatch.Draw(menuItems[1], new Vector2(300.0f, 400.0f), Color.White);
+                    spriteBatch.Draw(menuItems[2], new Vector2(900.0f, 700.0f), Color.White);
+                    break;
 
-            /* If on the controller settings screen */
-            else if (onController)
-            {
-                /* TODO */
-            }
+                case states.CREDITS:
+                    spriteBatch.DrawString(kootenay, "Developed By:", new Vector2(400.0f, 375.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Lukas Black", new Vector2(400.0f, 425.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Nate Bradford", new Vector2(400.0f, 450.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Michael DeVico", new Vector2(400.0f, 475.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Steven Doxey", new Vector2(400.0f, 500.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Kamron Egan", new Vector2(400.0f, 525.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Jeremy Heintz", new Vector2(400.0f, 550.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Morgan Reynolds", new Vector2(400.0f, 575.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Tyler Robinson", new Vector2(400.0f, 600.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Casey Spencer", new Vector2(400.0f, 625.0f), Color.White);
+                    spriteBatch.DrawString(kootenay, "Curtis Taylor", new Vector2(400.0f, 650.0f), Color.White);
 
-            /* If on the sound settings screen */
-            else if (onSound)
-            {
-                /* TODO */
-            }
+                    spriteBatch.Draw(backSel, new Vector2(900.0f, 700.0f), Color.White);
 
+                    break;
+
+                /* If on the controller settings screen */
+                case states.CONTROLLER:
+                    spriteBatch.Draw(xboxControl, new Vector2(300.0f, 30.0f), Color.White);
+                    spriteBatch.Draw(backSel, new Vector2(900.0f, 700.0f), Color.White);
+                    /* TODO */
+                    break;
+
+                /* If on the sound settings screen */
+                case states.SOUNDS:
+                    spriteBatch.DrawString(kootenay, "Coming Soon", new Vector2(300.0f, 400.0f), Color.White);
+                    spriteBatch.Draw(backSel, new Vector2(900.0f, 700.0f), Color.White);
+                    /* TODO */
+                    break;
+            }
             spriteBatch.End();
         }
     }
