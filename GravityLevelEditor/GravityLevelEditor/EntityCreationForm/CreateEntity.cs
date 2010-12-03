@@ -43,6 +43,8 @@ namespace GravityLevelEditor.EntityCreationForm
             lb_entitySelect.Items.Clear();
 
             ImportEntityList();
+
+            lb_filter.SelectedIndex = 0;
             //lb_entitySelect.ValueMember = "Name";
             //Load Entity List and fill mAllEntities here.
         }

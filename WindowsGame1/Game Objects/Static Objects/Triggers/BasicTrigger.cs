@@ -23,13 +23,14 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
 
         public override void RunTrigger(List<GameObject> objects, Player player)
         {
-            bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!mIsSquare && player.IsCollidingCircleandCircle(this));
+            bool isColliding = mBoundingBox.Intersects(player.mBoundingBox);
 
-            if(!wasColliding && isColliding)
-                player.Environment.GravityMagnitude *= 2;
+            if (!wasColliding && isColliding)
+                player.Environment.GravityDirection = GravityDirections.Down;
             if (wasColliding && !isColliding)
-                player.Environment.GravityMagnitude /= 2;
+                player.Environment.GravityDirection = GravityDirections.Down;
 
+            wasColliding = isColliding;
         }
     }
 }
