@@ -29,9 +29,10 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         {
             this.mSize.X = width;
             this.mSize.Y = height;
-
-            this.mBoundingBox.Width = width * (int)GridSpace.SIZE.X;
-            this.mBoundingBox.Height = height * (int)GridSpace.SIZE.Y;
+            this.mBoundingBox.X -= width / 2;
+            this.mBoundingBox.Y -= height / 2;
+            this.mBoundingBox.Width = width;
+            this.mBoundingBox.Height = height;
         }
 
         /// <summary>
@@ -42,6 +43,11 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             return; //Don't draw :D
         }
 
+        /// <summary>
+        /// Runs whatever the trigger should do.
+        /// </summary>
+        /// <param name="objects">List of all the objects in the level</param>
+        /// <param name="player">The player in the game</param>
         public abstract void RunTrigger(List<GameObject> objects, Player player);
     }
 }

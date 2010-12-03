@@ -17,6 +17,9 @@ namespace GravityLevelEditor
     {
         private ArrayList mEntities;
 
+        private int mObjectID;
+        public int ObjectID { get { return mObjectID; } set { mObjectID = value; } }
+
         private ArrayList mClipboard;
         public ArrayList Clipboard { get { return mClipboard; } set { mClipboard = value; } }
 
@@ -78,6 +81,8 @@ namespace GravityLevelEditor
             mEntities = new ArrayList();
             mClipboard = new ArrayList();
 
+            
+
             XElement xLevel = XElement.Load(filename);
 
             foreach (XElement el in xLevel.Elements())
@@ -110,6 +115,11 @@ namespace GravityLevelEditor
                     {
                         mEntities.Add(new Entity(entity));
                     }
+
+                    //Set the object id to be the max of the saved id's
+                    foreach (Entity e in mEntities)
+                        if (mObjectID < e.ID)
+                            mObjectID = e.ID;
                 }
             }
         }

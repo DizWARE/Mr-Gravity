@@ -119,7 +119,7 @@ namespace GravityLevelEditor.EntityCreationForm
         {
             if (lb_properties.SelectedIndex == -1) return;
             if (!mEditable) { EditValue(); return; }
-            if(mProperties.ContainsKey(tb_name.Text)) return;
+            if (mProperties.ContainsKey(tb_name.Text)) { EditValue(); return; }
             mProperties.Remove(mPreviousKey);
             mProperties.Add(tb_name.Text, tb_value.Text);
             mPreviousKey = tb_name.Text;

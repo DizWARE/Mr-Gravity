@@ -40,7 +40,9 @@
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonGreen</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
     <ID>8</ID>
@@ -70,7 +72,9 @@
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonYellow</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
     <ID>18</ID>
@@ -80,7 +84,9 @@
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
     <ID>19</ID>
@@ -124,6 +130,7 @@
     <Texture>Static Objects\grounda_magma</Texture>
     <Properties>
       <Shape>Square</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
@@ -148,6 +155,7 @@
     <Texture>Physics Objects\circle</Texture>
     <Properties>
       <Shape>Circle</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
@@ -159,9 +167,9 @@
     <Paintable>False</Paintable>
     <Texture>Level Positions\player_end</Texture>
     <Properties>
-      <Shape>Circle</Shape>
       <Width>3</Width>
       <Height>3</Height>
+      <Shape>Circle</Shape>
     </Properties>
   </Entity>
   <Entity>
@@ -174,6 +182,7 @@
     <Texture>Static Objects\groundi_magma2</Texture>
     <Properties>
       <Shape>Square</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
@@ -184,6 +193,8 @@
     <CollisionType>Collectable</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\grounda_neonBlue</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
 </Entities>

@@ -15,7 +15,7 @@ namespace GravityLevelEditor
     class Entity
     {
         private int mID;
-        public int ID { get { return mID; } }
+        public int ID { get { return mID; } set { mID = value; } }
 
         private string mName;
         public string Name { get { return mName; } set { mName = value; } }
@@ -98,15 +98,11 @@ namespace GravityLevelEditor
 
             mProperties = new Dictionary<string, string>();
 
-            int maxID = 0;
-
             foreach (XElement el in ent.Elements())
             {
                 if (el.Name == XmlKeys.ID)
                 {
                     mID = Convert.ToInt32(el.Value.ToString());
-
-                    if (mID > maxID) maxID = mID;
                 }
                 if (el.Name == XmlKeys.E_NAME)
                 {
