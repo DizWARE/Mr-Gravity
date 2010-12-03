@@ -28,8 +28,8 @@ namespace GravityShift
         /// <param name="friction">Friction that reacts to physics objects</param>
         /// <param name="isSquare">True if the object should behave like a square</param>
         /// <param name="isHazardous">True if the object should kill the player when touched</param>
-        public StaticObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
-            : base(content, name, initialPosition, friction,isSquare,isHazardous)
+        public StaticObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, string collisionType)
+            : base(content, name, initialPosition, friction,isSquare, collisionType)
         {
             this.mVelocity = Vector2.Zero;
         }

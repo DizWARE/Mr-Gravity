@@ -10,7 +10,7 @@ namespace GravityShift
     class PlayerEnd : StaticObject
     {
         public PlayerEnd(ContentManager content, string name, Vector2 initialPosition)
-            : base(content, name, initialPosition, .8f,true,false)
+            : base(content, name, initialPosition, .8f,true, "Normal")
         {
         }
     }

@@ -110,7 +110,7 @@ namespace GravityShift.Import_Code
                 {
                     bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
                     Tile tile = new Tile(mContent, "Images\\" + entity.mTextureFile,
-                        GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare, entity.mHazardous);
+                        GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare, entity.mCollisionType);
                     tile.ID = entity.mId;
                     objects.Add(tile);
 
@@ -120,7 +120,7 @@ namespace GravityShift.Import_Code
                 {
                     bool isSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
                     MovingTile tile = new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                        GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mHazardous);
+                        GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mCollisionType);
                     tile.ID = entity.mId;
                     objects.Add(tile);
                 }

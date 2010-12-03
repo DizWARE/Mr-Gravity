@@ -320,14 +320,23 @@ namespace GravityShift
                     GameSound.level_stageVictory.Play(); 
                 }
 
-                if (collided && ((physObj is Player) && obj.IsHazardous || (obj is Player) && physObj.IsHazardous))
+                if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                 {
                     //Play sound
                     GameSound.playerCol_hazard.Play();
                     Respawn();
                     if (physObj is Player) physObj.Kill();
                     else ((Player)obj).Kill();
-                }     
+                }
+
+                if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
+                {
+                    //Play sound
+                    //GameSound.playerCol_hazard.Play();
+                    player.mScore += 100;
+                    if (physObj.CollisionType == XmlKeys.COLLECTABLE) mObjects.Remove(physObj);
+                    else if (obj.CollisionType == XmlKeys.COLLECTABLE) mObjects.Remove(obj);
+                } 
             }
         }
     }

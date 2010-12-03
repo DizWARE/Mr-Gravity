@@ -28,8 +28,8 @@ namespace GravityShift
         /// <param name="friction">Friction that reacts to physics objects</param>
         /// <param name="isSquare">True if the object should behave like a square</param>
         /// <param name="isHazardous">True if the object should kill the player when touched</param>
-        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare, bool isHazardous) :
-            base(content, name, initialPosition, ref environment, friction, isSquare, isHazardous)
+        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare, string collisionType) :
+            base(content, name, initialPosition, ref environment, friction, isSquare, collisionType)
         {
 
         }

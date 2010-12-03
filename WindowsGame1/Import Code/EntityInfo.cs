@@ -16,10 +16,10 @@ namespace GravityShift.Import_Code
 
         public string mName;
         public string mType;
+        public string mCollisionType;
         public string mTextureFile;
 
         public bool mTrigger;
-        public bool mHazardous;
 
         public Vector2 mLocation = new Vector2();
 
@@ -40,8 +40,8 @@ namespace GravityShift.Import_Code
                     mName = item.Value;
                 if (item.Name == XmlKeys.TYPE)
                     mType = item.Value;
-                if (item.Name == XmlKeys.HAZARDOUS)
-                    mHazardous = XmlKeys.TRUE.Equals(item.Value);
+                if (item.Name == XmlKeys.COLLISION_TYPE)
+                    mCollisionType = item.Value;
                 if (item.Name == XmlKeys.TEXTURE)
                     mTextureFile = item.Value;
                 if (item.Name == XmlKeys.TRIGGER)
