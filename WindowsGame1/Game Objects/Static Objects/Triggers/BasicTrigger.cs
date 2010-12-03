@@ -16,6 +16,8 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
 {
     class BasicTrigger : Trigger
     {
+        bool wasColliding = false;
+
         public BasicTrigger(ContentManager content, String name, Vector2 initialPosition, bool isSquare, int width, int height) :
             base(content, name, initialPosition, isSquare, width, height) { }
 
@@ -23,6 +25,10 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         {
             bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!mIsSquare && player.IsCollidingCircleandCircle(this));
 
+            if(!wasColliding && isColliding)
+                player.Environment.GravityMagnitude *= 2;
+            if (wasColliding && !isColliding)
+                player.Environment.GravityMagnitude /= 2;
 
         }
     }
