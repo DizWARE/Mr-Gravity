@@ -29,8 +29,8 @@ namespace GravityShift
         public Vector2 mPosition;
         protected Vector2 mSize;
 
-        protected bool mIsHazardous;
-        public bool IsHazardous { get { return mIsHazardous; } }
+        protected string mCollisionType;
+        public string CollisionType { get { return mCollisionType; } }
 
         private Vector2 mInitialPosition;
 
@@ -63,12 +63,12 @@ namespace GravityShift
         /// <param name="friction">Friction that reacts to physics objects</param>
         /// <param name="isSquare">True if the object should behave like a square</param>
         /// <param name="isHazardous">True if the object should kill the player when touched</param>
-        public GameObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, bool isHazardous)
+        public GameObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, string collisionType)
         {
             mName = name;
             mFriction = friction;
             mIsSquare = isSquare;
-            mIsHazardous = isHazardous;
+            mCollisionType = collisionType;
 
             Load(content, name);
 

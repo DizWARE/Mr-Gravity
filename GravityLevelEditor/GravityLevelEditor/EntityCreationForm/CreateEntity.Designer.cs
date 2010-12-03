@@ -235,7 +235,7 @@
             this.cb_collisionType.FormattingEnabled = true;
             this.cb_collisionType.Items.AddRange(new object[] {
             "Normal",
-            "Collectible",
+            "Collectable",
             "Hazardous"});
             this.cb_collisionType.Location = new System.Drawing.Point(247, 244);
             this.cb_collisionType.Name = "cb_collisionType";

@@ -25,7 +25,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         /// <param name="width">Width of the trigger activation field</param>
         /// <param name="height">Height of the trigger activation field</param>
         public Trigger(ContentManager content, String name, Vector2 initialPosition, bool isSquare, int width, int height)
-            : base(content, name, initialPosition, .0f, isSquare, false)
+            : base(content, name, initialPosition, .0f, isSquare, "Normal")
         {
             this.mSize.X = width;
             this.mSize.Y = height;

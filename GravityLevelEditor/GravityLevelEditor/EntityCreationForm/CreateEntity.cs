@@ -59,7 +59,7 @@ namespace GravityLevelEditor.EntityCreationForm
         {
             string type = "";
             if(!lb_filter.SelectedItem.Equals("(None)")) type = lb_filter.SelectedItem.ToString();
-            mAllEntities.Add(new Entity(type, "New", type, true,
+            mAllEntities.Add(new Entity(type, "New",0, type, true,
                 new Dictionary<string, string>(),
                 Image.FromFile("..\\..\\Content\\defaultImage.png")));
             mFilteredEntities.Add(mAllEntities[mAllEntities.Count - 1]);

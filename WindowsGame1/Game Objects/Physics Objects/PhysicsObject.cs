@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
@@ -57,8 +58,8 @@ namespace GravityShift
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5)</param>
         /// <param name="initialPosition">Position of where this object starts in the level</param>
         public PhysicsObject(ContentManager content, String name, Vector2 initialPosition, 
-            ref PhysicsEnvironment environment, float friction, bool isSquare, bool isHazardous)
-            :base(content,name,initialPosition, friction, isSquare, isHazardous)
+            ref PhysicsEnvironment environment, float friction, bool isSquare, string collisionType)
+            :base(content,name,initialPosition, friction, isSquare, collisionType)
         {
             mEnvironment = environment;
             mVelocity = new Vector2(0, 0);
@@ -214,6 +215,11 @@ namespace GravityShift
             {
                 return 0;
             }
+
+            //Player collided with collectable
+            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+                return 1;
+
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             // handle the shallowest collision
@@ -251,6 +257,10 @@ namespace GravityShift
             {
                 return 0;
             }
+
+            //Player collided with collectable
+            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+                return 1;
             
             Point centerA = this.mBoundingBox.Center;
             Point centerB = otherObject.BoundingBox.Center;
@@ -298,6 +308,11 @@ namespace GravityShift
             {
                 return 0;// no collision
             }
+
+            //Player collided with collectable
+            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+                return 1;
+
             // get points of square
             Point[] p = new Point[4];
             // top left

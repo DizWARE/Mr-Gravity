@@ -14,9 +14,8 @@ namespace GravityLevelEditor
 {
     class Entity
     {
-        public static int ObjectID = 0;
-        private int mID = ObjectID++;
-        public int ID { get { return mID; } }
+        private int mID;
+        public int ID { get { return mID; } set { mID = value; } }
 
         private string mName;
         public string Name { get { return mName; } set { mName = value; } }
@@ -50,6 +49,7 @@ namespace GravityLevelEditor
         {
             mType = original.mType;
             mName = original.mName;
+            mID = original.mID;
             mCollisionType = original.mCollisionType;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
@@ -64,16 +64,18 @@ namespace GravityLevelEditor
          * 
          * string type: type of entity (i.e. Wall, PlayerStart, etc).
          * string name: identifier for entity
+         * int objectID: ID of the entity
          * string collisionType: type of collision for an entity.
          * bool paintable: whether or not the given entity is paintable.
          * Dictionary<string, string> properties: additional properties for this entity.
          * Image texture: image used to represent this entity in the level editor.
          */
-        public Entity(string type, string name, string collisionType,
+        public Entity(string type, string name, int objectID, string collisionType,
             bool paintable, Dictionary<string, string> properties, Image texture)
         {
             mType = type;
             mName = name;
+            mID = objectID;
             mCollisionType = collisionType;
             mLocation = new Point(-100, -100);
             mPaintable = paintable;
@@ -96,15 +98,11 @@ namespace GravityLevelEditor
 
             mProperties = new Dictionary<string, string>();
 
-            int maxID = ObjectID;
-
             foreach (XElement el in ent.Elements())
             {
                 if (el.Name == XmlKeys.ID)
                 {
                     mID = Convert.ToInt32(el.Value.ToString());
-
-                    if (mID > maxID) maxID = mID;
                 }
                 if (el.Name == XmlKeys.E_NAME)
                 {
@@ -146,9 +144,6 @@ namespace GravityLevelEditor
                     }
                 }
             }
-
-            mID = maxID;
-            Entity.ObjectID = maxID;
         }
 
         /*

@@ -22,6 +22,7 @@ namespace GravityShift
         IControlScheme mControls;
         Vector2 mSpawnPoint;
         public int mNumLives = 5;
+        public int mScore = 0;
         public bool mIsAlive = true;
 
         //Player rotation values (current, goal, and speed)
@@ -44,7 +45,7 @@ namespace GravityShift
         /// <param name="controlScheme">Controller scheme for the player(Controller or keyboard)</param>
         public Player(ContentManager content, String name,
             Vector2 initialPosition,ref PhysicsEnvironment environment, IControlScheme controlScheme, float friction, bool isSquare) 
-            : base(content, name, initialPosition,ref environment,friction,isSquare, false)
+            : base(content, name, initialPosition,ref environment,friction,isSquare, "Normal")
         {
             mControls = controlScheme;
             mSpawnPoint = initialPosition;
