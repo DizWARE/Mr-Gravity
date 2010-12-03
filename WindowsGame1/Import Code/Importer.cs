@@ -156,7 +156,9 @@ namespace GravityShift.Import_Code
 
                     if(entity.mName == "Basic")
                         triggers.Add(new BasicTrigger(mContent,entity.mName,
-                            entity.mLocation,isSquare,int.Parse(entity.mProperties[XmlKeys.WIDTH]),int.Parse(entity.mProperties[XmlKeys.HEIGHT])));
+                            GridSpace.GetDrawingCoord(entity.mLocation),isSquare,
+                            (int)GridSpace.SIZE.X * int.Parse(entity.mProperties[XmlKeys.WIDTH]), 
+                            (int)GridSpace.SIZE.Y * int.Parse(entity.mProperties[XmlKeys.HEIGHT])));
                     //Add trigger by name
                 }
             }

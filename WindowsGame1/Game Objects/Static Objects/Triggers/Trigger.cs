@@ -29,9 +29,10 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         {
             this.mSize.X = width;
             this.mSize.Y = height;
-
-            this.mBoundingBox.Width = width * (int)GridSpace.SIZE.X;
-            this.mBoundingBox.Height = height * (int)GridSpace.SIZE.Y;
+            this.mBoundingBox.X -= width / 2;
+            this.mBoundingBox.Y -= height / 2;
+            this.mBoundingBox.Width = width;
+            this.mBoundingBox.Height = height;
         }
 
         /// <summary>

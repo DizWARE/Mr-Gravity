@@ -26,9 +26,9 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             bool isColliding = mBoundingBox.Intersects(player.mBoundingBox);
 
             if (!wasColliding && isColliding)
-                player.Environment.GravityDirection = GravityDirections.Down;
+                player.AddForce(new Vector2(.5f, 0));
             if (wasColliding && !isColliding)
-                player.Environment.GravityDirection = GravityDirections.Down;
+                player.AddForce(new Vector2(-.5f, 0));
 
             wasColliding = isColliding;
         }
