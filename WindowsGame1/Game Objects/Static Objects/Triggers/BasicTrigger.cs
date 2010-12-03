@@ -17,6 +17,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
     class BasicTrigger : Trigger
     {
         bool wasColliding = false;
+        List<PhysicsObject> affectedObjects = new List<PhysicsObject>();
 
         public BasicTrigger(ContentManager content, String name, Vector2 initialPosition, bool isSquare, int width, int height) :
             base(content, name, initialPosition, isSquare, width, height) { }
@@ -29,14 +30,22 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         /// <param name="player">Player in the game</param>
         public override void RunTrigger(List<GameObject> objects, Player player)
         {
-            bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!IsSquare && player.IsCollidingCircleandCircle(this));
+            foreach (GameObject gObj in objects)
+            {
+                if(gObj is PhysicsObject)
+                {
+                    //bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!IsSquare && player.IsCollidingCircleandCircle(this));
+                    bool isColliding = mBoundingBox.Intersects(gObj.BoundingBox);
+                    PhysicsObject pObj = (PhysicsObject)gObj;
 
-            if (!wasColliding && isColliding)
-                player.AddForce(new Vector2(.5f, 0));
-            if (wasColliding && !isColliding)
-                player.AddForce(new Vector2(-.5f, 0));
+                    if (!affectedObjects.Contains(pObj) && isColliding)
+                    { pObj.AddForce(new Vector2(.35f, 0)); affectedObjects.Add(pObj); }
+                    else if (affectedObjects.Contains(pObj) && !isColliding)
+                    { pObj.AddForce(new Vector2(-.35f, 0)); affectedObjects.Remove(pObj); }
 
-            wasColliding = isColliding;
+                    
+                }
+            }
         }
     }
 }

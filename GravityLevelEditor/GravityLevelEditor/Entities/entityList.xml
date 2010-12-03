@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entities>
   <Entity>
-    <ID>4</ID>
+    <ID>556</ID>
     <Name>PlayerStart</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
@@ -11,7 +11,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>5</ID>
+    <ID>557</ID>
     <Name>PlayerEnd</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
@@ -21,7 +21,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>6</ID>
+    <ID>558</ID>
     <Name>Moving Ball</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -30,20 +30,23 @@
     <Texture>Physics Objects\circle</Texture>
     <Properties>
       <Shape>Circle</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
-    <ID>7</ID>
+    <ID>559</ID>
     <Name>NeonGreen</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonGreen</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
-    <ID>8</ID>
+    <ID>560</ID>
     <Name>NeonPink</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -53,7 +56,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>9</ID>
+    <ID>561</ID>
     <Name>NeonBlue</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -63,7 +66,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>10</ID>
+    <ID>562</ID>
     <Name>NeonYellow</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -73,7 +76,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>18</ID>
+    <ID>563</ID>
     <Name>BrownMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -83,17 +86,19 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>19</ID>
+    <ID>564</ID>
     <Name>BlackMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma2</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
-    <ID>252</ID>
+    <ID>565</ID>
     <Name>DangerMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -103,19 +108,20 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>235</ID>
+    <ID>566</ID>
     <Name>FallingYellow</Name>
-    <Type>Physics Objects</Type>
+    <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
     <Texture>Static Objects\groundi_neonYellow</Texture>
     <Properties>
       <Shape>Square</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
-    <ID>89</ID>
+    <ID>567</ID>
     <Name>MovingDangerMagma</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -128,7 +134,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>12</ID>
+    <ID>568</ID>
     <Name>BallWall</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -140,7 +146,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>13</ID>
+    <ID>569</ID>
     <Name>DangerBall</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -153,7 +159,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>13</ID>
+    <ID>570</ID>
     <Name>Basic</Name>
     <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
@@ -164,6 +170,20 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>571</ID>
+    <Name>Blah</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType></CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Physics Objects\circle</Texture>
+    <Properties>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
     </Properties>
   </Entity>
 </Entities>
