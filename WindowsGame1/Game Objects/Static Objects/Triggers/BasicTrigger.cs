@@ -16,7 +16,6 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
 {
     class BasicTrigger : Trigger
     {
-        bool wasColliding = false;
         List<PhysicsObject> affectedObjects = new List<PhysicsObject>();
 
         public BasicTrigger(ContentManager content, String name, Vector2 initialPosition, bool isSquare, int width, int height) :
@@ -41,9 +40,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
                     if (!affectedObjects.Contains(pObj) && isColliding)
                     { pObj.AddForce(new Vector2(.35f, 0)); affectedObjects.Add(pObj); }
                     else if (affectedObjects.Contains(pObj) && !isColliding)
-                    { pObj.AddForce(new Vector2(-.35f, 0)); affectedObjects.Remove(pObj); }
-
-                    
+                    { pObj.AddForce(new Vector2(-.35f, 0)); affectedObjects.Remove(pObj); }                    
                 }
             }
         }

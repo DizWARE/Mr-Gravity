@@ -154,11 +154,14 @@ namespace GravityShift.Import_Code
                     if(!entity.mProperties.ContainsKey(XmlKeys.WIDTH) || !entity.mProperties.ContainsKey(XmlKeys.HEIGHT))
                         continue;
 
-                    if(entity.mName == "Basic")
-                        triggers.Add(new BasicTrigger(mContent,entity.mName,
-                            GridSpace.GetDrawingCoord(entity.mLocation),isSquare,
-                            (int)GridSpace.SIZE.X * int.Parse(entity.mProperties[XmlKeys.WIDTH]), 
-                            (int)GridSpace.SIZE.Y * int.Parse(entity.mProperties[XmlKeys.HEIGHT])));
+                    if (entity.mName == "Basic")
+                    {
+                        BasicTrigger trigger = new BasicTrigger(mContent, entity.mName,
+                            GridSpace.GetDrawingCoord(entity.mLocation), isSquare,
+                            (int)GridSpace.SIZE.X * int.Parse(entity.mProperties[XmlKeys.WIDTH]),
+                            (int)GridSpace.SIZE.Y * int.Parse(entity.mProperties[XmlKeys.HEIGHT]));
+                        triggers.Add(trigger);
+                    }
                     //Add trigger by name
                 }
             }

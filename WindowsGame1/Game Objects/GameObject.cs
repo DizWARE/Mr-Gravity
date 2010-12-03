@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
@@ -32,6 +33,8 @@ namespace GravityShift
         public bool IsHazardous { get { return mIsHazardous; } }
 
         private Vector2 mInitialPosition;
+
+        protected EntityInfo mOriginalInfo;
 
         protected Texture2D mTexture;
         public Rectangle mBoundingBox;
@@ -130,7 +133,7 @@ namespace GravityShift
         {
             try
             {   mTexture = content.Load<Texture2D>(name);   }
-            catch (Exception e)
+            catch (Exception ex)
             {   mTexture = content.Load<Texture2D>("Images\\error");    }
 
             // pixel perfect stuff (may need to remove)
