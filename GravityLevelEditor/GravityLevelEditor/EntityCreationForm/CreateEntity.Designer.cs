@@ -37,18 +37,16 @@
             this.lbl_properties = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_type = new System.Windows.Forms.Label();
-            this.lbl_visibility = new System.Windows.Forms.Label();
             this.lbl_paintable = new System.Windows.Forms.Label();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.cb_type = new System.Windows.Forms.ComboBox();
-            this.ckb_visible = new System.Windows.Forms.CheckBox();
             this.ckb_paintable = new System.Windows.Forms.CheckBox();
             this.b_additional = new System.Windows.Forms.Button();
             this.pb_texture = new System.Windows.Forms.PictureBox();
             this.b_ok = new System.Windows.Forms.Button();
             this.b_delete = new System.Windows.Forms.Button();
-            this.lbl_hazardous = new System.Windows.Forms.Label();
-            this.ckb_hazardous = new System.Windows.Forms.CheckBox();
+            this.cb_collisionType = new System.Windows.Forms.ComboBox();
+            this.lbl_collisionType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_texture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,10 +92,11 @@
             "Physics Objects",
             "Static Objects",
             "Dynamic Objects",
-            "Level Positions"});
+            "Level Positions",
+            "Triggers"});
             this.lb_filter.Location = new System.Drawing.Point(247, 29);
             this.lb_filter.Name = "lb_filter";
-            this.lb_filter.Size = new System.Drawing.Size(206, 82);
+            this.lb_filter.Size = new System.Drawing.Size(206, 95);
             this.lb_filter.TabIndex = 3;
             this.lb_filter.SelectedIndexChanged += new System.EventHandler(this.FilterSelected);
             // 
@@ -115,7 +114,7 @@
             // 
             this.lbl_properties.AutoSize = true;
             this.lbl_properties.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_properties.Location = new System.Drawing.Point(243, 122);
+            this.lbl_properties.Location = new System.Drawing.Point(243, 129);
             this.lbl_properties.Name = "lbl_properties";
             this.lbl_properties.Size = new System.Drawing.Size(95, 24);
             this.lbl_properties.TabIndex = 5;
@@ -141,21 +140,11 @@
             this.lbl_type.TabIndex = 7;
             this.lbl_type.Text = "Type";
             // 
-            // lbl_visibility
-            // 
-            this.lbl_visibility.AutoSize = true;
-            this.lbl_visibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_visibility.Location = new System.Drawing.Point(244, 249);
-            this.lbl_visibility.Name = "lbl_visibility";
-            this.lbl_visibility.Size = new System.Drawing.Size(57, 17);
-            this.lbl_visibility.TabIndex = 8;
-            this.lbl_visibility.Text = "Visible?";
-            // 
             // lbl_paintable
             // 
             this.lbl_paintable.AutoSize = true;
             this.lbl_paintable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_paintable.Location = new System.Drawing.Point(244, 276);
+            this.lbl_paintable.Location = new System.Drawing.Point(244, 273);
             this.lbl_paintable.Name = "lbl_paintable";
             this.lbl_paintable.Size = new System.Drawing.Size(75, 17);
             this.lbl_paintable.TabIndex = 9;
@@ -180,7 +169,8 @@
             "Physics Objects",
             "Static Objects",
             "Dynamic Objects",
-            "Level Positions"});
+            "Level Positions",
+            "Triggers"});
             this.cb_type.Location = new System.Drawing.Point(329, 192);
             this.cb_type.Name = "cb_type";
             this.cb_type.Size = new System.Drawing.Size(121, 21);
@@ -189,20 +179,10 @@
             this.cb_type.SelectedIndexChanged += new System.EventHandler(this.TypeChanged);
             this.cb_type.Leave += new System.EventHandler(this.Rename);
             // 
-            // ckb_visible
-            // 
-            this.ckb_visible.AutoSize = true;
-            this.ckb_visible.Location = new System.Drawing.Point(348, 252);
-            this.ckb_visible.Name = "ckb_visible";
-            this.ckb_visible.Size = new System.Drawing.Size(15, 14);
-            this.ckb_visible.TabIndex = 12;
-            this.ckb_visible.UseVisualStyleBackColor = true;
-            this.ckb_visible.CheckedChanged += new System.EventHandler(this.SetVisible);
-            // 
             // ckb_paintable
             // 
             this.ckb_paintable.AutoSize = true;
-            this.ckb_paintable.Location = new System.Drawing.Point(348, 278);
+            this.ckb_paintable.Location = new System.Drawing.Point(348, 275);
             this.ckb_paintable.Name = "ckb_paintable";
             this.ckb_paintable.Size = new System.Drawing.Size(15, 14);
             this.ckb_paintable.TabIndex = 13;
@@ -250,43 +230,46 @@
             this.b_delete.UseVisualStyleBackColor = true;
             this.b_delete.Click += new System.EventHandler(this.DeleteSelected);
             // 
-            // lbl_hazardous
+            // cb_collisionType
             // 
-            this.lbl_hazardous.AutoSize = true;
-            this.lbl_hazardous.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hazardous.Location = new System.Drawing.Point(244, 220);
-            this.lbl_hazardous.Name = "lbl_hazardous";
-            this.lbl_hazardous.Size = new System.Drawing.Size(85, 17);
-            this.lbl_hazardous.TabIndex = 18;
-            this.lbl_hazardous.Text = "Hazardous?";
+            this.cb_collisionType.FormattingEnabled = true;
+            this.cb_collisionType.Items.AddRange(new object[] {
+            "Normal",
+            "Collectible",
+            "Hazardous"});
+            this.cb_collisionType.Location = new System.Drawing.Point(247, 244);
+            this.cb_collisionType.Name = "cb_collisionType";
+            this.cb_collisionType.Size = new System.Drawing.Size(133, 21);
+            this.cb_collisionType.TabIndex = 20;
+            this.cb_collisionType.Text = "Select Collision Type";
+            this.cb_collisionType.SelectedIndexChanged += new System.EventHandler(this.CollisionTypeChanged);
+            this.cb_collisionType.Leave += new System.EventHandler(this.Rename);
             // 
-            // ckb_hazardous
+            // lbl_collisionType
             // 
-            this.ckb_hazardous.AutoSize = true;
-            this.ckb_hazardous.Location = new System.Drawing.Point(348, 223);
-            this.ckb_hazardous.Name = "ckb_hazardous";
-            this.ckb_hazardous.Size = new System.Drawing.Size(15, 14);
-            this.ckb_hazardous.TabIndex = 19;
-            this.ckb_hazardous.UseVisualStyleBackColor = true;
-            this.ckb_hazardous.CheckedChanged += new System.EventHandler(this.SetHazardous);
+            this.lbl_collisionType.AutoSize = true;
+            this.lbl_collisionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_collisionType.Location = new System.Drawing.Point(244, 219);
+            this.lbl_collisionType.Name = "lbl_collisionType";
+            this.lbl_collisionType.Size = new System.Drawing.Size(96, 17);
+            this.lbl_collisionType.TabIndex = 21;
+            this.lbl_collisionType.Text = "Collision Type";
             // 
             // CreateEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 345);
-            this.Controls.Add(this.ckb_hazardous);
-            this.Controls.Add(this.lbl_hazardous);
+            this.Controls.Add(this.lbl_collisionType);
+            this.Controls.Add(this.cb_collisionType);
             this.Controls.Add(this.b_delete);
             this.Controls.Add(this.b_ok);
             this.Controls.Add(this.pb_texture);
             this.Controls.Add(this.b_additional);
             this.Controls.Add(this.ckb_paintable);
-            this.Controls.Add(this.ckb_visible);
             this.Controls.Add(this.cb_type);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.lbl_paintable);
-            this.Controls.Add(this.lbl_visibility);
             this.Controls.Add(this.lbl_type);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_properties);
@@ -314,17 +297,15 @@
         private System.Windows.Forms.Label lbl_properties;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_type;
-        private System.Windows.Forms.Label lbl_visibility;
         private System.Windows.Forms.Label lbl_paintable;
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.ComboBox cb_type;
-        private System.Windows.Forms.CheckBox ckb_visible;
         private System.Windows.Forms.CheckBox ckb_paintable;
         private System.Windows.Forms.Button b_additional;
         private System.Windows.Forms.PictureBox pb_texture;
         private System.Windows.Forms.Button b_ok;
         private System.Windows.Forms.Button b_delete;
-        private System.Windows.Forms.Label lbl_hazardous;
-        private System.Windows.Forms.CheckBox ckb_hazardous;
+        private System.Windows.Forms.ComboBox cb_collisionType;
+        private System.Windows.Forms.Label lbl_collisionType;
     }
 }

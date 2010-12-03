@@ -24,14 +24,11 @@ namespace GravityLevelEditor
         private string mType;
         public string Type { get { return mType; } set { mType = value; } }
 
-        private bool mHazardous;
-        public bool Hazardous { get { return mHazardous; } set { mHazardous = value; } }
+        private string mCollisionType;
+        public string CollisionType { get { return mCollisionType; } set { mCollisionType = value; } }
 
         private Point mLocation;
         public Point Location { get { return mLocation; } set { mLocation = value; } }
-        
-        private bool mVisible;
-        public bool Visible { get { return mVisible; } set { mVisible = value; } }
 
         private bool mPaintable;
         public bool Paintable { get { return mPaintable; } set { mPaintable = value; } }
@@ -53,8 +50,7 @@ namespace GravityLevelEditor
         {
             mType = original.mType;
             mName = original.mName;
-            mHazardous = original.mHazardous;
-            mVisible = original.mVisible;
+            mCollisionType = original.mCollisionType;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
             mLocation = original.mLocation;
@@ -68,19 +64,18 @@ namespace GravityLevelEditor
          * 
          * string type: type of entity (i.e. Wall, PlayerStart, etc).
          * string name: identifier for entity
-         * bool hazardous: whether or not the entity is hazardous
-         * bool visibility: whether or not the entity will be visible in-game.
+         * string collisionType: type of collision for an entity.
          * bool paintable: whether or not the given entity is paintable.
          * Dictionary<string, string> properties: additional properties for this entity.
          * Image texture: image used to represent this entity in the level editor.
          */
-        public Entity(string type, string name, bool hazardous, bool visibility,
+        public Entity(string type, string name, string collisionType,
             bool paintable, Dictionary<string, string> properties, Image texture)
         {
             mType = type;
             mName = name;
+            mCollisionType = collisionType;
             mLocation = new Point(-100, -100);
-            mVisible = visibility;
             mPaintable = paintable;
             mProperties = properties;
             mTexture = texture;
@@ -119,24 +114,14 @@ namespace GravityLevelEditor
                 {
                     mType = el.Value.ToString();
                 }
-                if (el.Name == XmlKeys.HAZARDOUS)
+                if (el.Name == XmlKeys.COLLISIONTYPE)
                 {
-                    if (el.Value == XmlKeys.TRUE)
-                        mHazardous = true;
-                    else mHazardous = false;
+                    mCollisionType = el.Value.ToString();
                 }
                 if (el.Name == XmlKeys.LOCATION)
                 {
                     Point xLoc = new Point(Convert.ToInt32(el.Attribute(XmlKeys.E_X).Value.ToString()), Convert.ToInt32(el.Attribute(XmlKeys.E_Y).Value.ToString()));
                     mLocation = xLoc;
-                }
-                if (el.Name == XmlKeys.VISIBLE)
-                {
-                    if (el.Value == XmlKeys.TRUE)
-                    {
-                        mVisible = true;
-                    }
-                    else mVisible = false;
                 }
                 if (el.Name == XmlKeys.PAINTABLE)
                 {
@@ -175,16 +160,6 @@ namespace GravityLevelEditor
         public void MoveEntity(Point where)
         {
             mLocation = where;
-        }
-
-        /*
-         * ToggleVisibility
-         * 
-         * Marks this entity as visible or invisible for in-game play.
-         */
-        public void ToggleVisibility()
-        {
-            mVisible = !mVisible;
         }
 
         /*
@@ -283,8 +258,7 @@ namespace GravityLevelEditor
                 new XElement(XmlKeys.LOCATION,
                     new XAttribute(XmlKeys.E_X, this.Location.X),
                     new XAttribute(XmlKeys.E_Y, this.Location.Y)),
-                new XElement(XmlKeys.HAZARDOUS, this.Hazardous.ToString()),
-                new XElement(XmlKeys.VISIBLE, this.Visible.ToString()),
+                new XElement(XmlKeys.COLLISIONTYPE, this.CollisionType),
                 new XElement(XmlKeys.PAINTABLE, this.Paintable.ToString()),
                 new XElement(XmlKeys.TEXTURE, this.mTexture.Tag.ToString()),
                 propertiesTree);

@@ -57,7 +57,7 @@ namespace GravityLevelEditor.EntityCreationForm
         {
             string type = "";
             if(!lb_filter.SelectedItem.Equals("(None)")) type = lb_filter.SelectedItem.ToString();
-            mAllEntities.Add(new Entity(type, "New", false, true, true,
+            mAllEntities.Add(new Entity(type, "New", type, true,
                 new Dictionary<string, string>(),
                 Image.FromFile("..\\..\\Content\\defaultImage.png")));
             mFilteredEntities.Add(mAllEntities[mAllEntities.Count - 1]);
@@ -85,9 +85,11 @@ namespace GravityLevelEditor.EntityCreationForm
                 cb_type.Text = SelectedEntity.Type;
             else
                 cb_type.Text = "Select Type";
-            ckb_visible.Checked = SelectedEntity.Visible;
             ckb_paintable.Checked = SelectedEntity.Paintable;
-            ckb_hazardous.Checked = SelectedEntity.Hazardous;
+            if (SelectedEntity.CollisionType != "")
+                cb_collisionType.Text = SelectedEntity.CollisionType;
+            else
+                cb_collisionType.Text = "Select Collision Type";
             pb_texture.Image = SelectedEntity.Texture;
         }
 
@@ -182,25 +184,17 @@ namespace GravityLevelEditor.EntityCreationForm
         }
 
         /*
-         * SetVisible
+         * CollisionTypeChanged
          * 
-         * Sets if this entity will be visible in the game
+         * Handles when the user changes the Collision Type
          */
-        private void SetVisible(object sender, EventArgs e)
+        private void CollisionTypeChanged(object sender, EventArgs e)
         {
             if (lb_entitySelect.SelectedIndex > -1)
-                SelectedEntity.Visible = ckb_visible.Checked;
-        }
-
-        /*
-         * SetHazardous
-         * 
-         * Sets if this entity will be hazardous or not
-         */
-        private void SetHazardous(object sender, EventArgs e)
-        {
-            if (lb_entitySelect.SelectedIndex > -1)
-                SelectedEntity.Hazardous = ckb_hazardous.Checked;
+            {
+                SelectedEntity.CollisionType = cb_collisionType.Text;
+                UpdateView();
+            }
         }
 
         /*
@@ -281,9 +275,8 @@ namespace GravityLevelEditor.EntityCreationForm
             tb_name.Text = "";
             cb_type.Text = "Select Type";
             pb_texture.Image = null;
-            ckb_hazardous.Checked = false;
+            cb_collisionType.Text = "Select Collision Type";
             ckb_paintable.Checked = false;
-            ckb_visible.Checked = false;
         }
 
         private void ChangeImage(object sender, EventArgs e)

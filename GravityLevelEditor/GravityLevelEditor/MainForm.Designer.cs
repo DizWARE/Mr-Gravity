@@ -69,10 +69,10 @@
             this.pb_CurrentTool = new System.Windows.Forms.PictureBox();
             this.sc_Properties = new System.Windows.Forms.SplitContainer();
             this.sc_HorizontalProperties = new System.Windows.Forms.SplitContainer();
-            this.cb_entityHazardous = new System.Windows.Forms.CheckBox();
+            this.lbl_collision = new System.Windows.Forms.Label();
             this.lbl_eHazardous = new System.Windows.Forms.Label();
             this.lbl_ePaintable = new System.Windows.Forms.Label();
-            this.lbl_eVisibleLabel = new System.Windows.Forms.Label();
+            this.lbl_eTriggerLabel = new System.Windows.Forms.Label();
             this.cb_entityVisible = new System.Windows.Forms.CheckBox();
             this.cb_entityPaintable = new System.Windows.Forms.CheckBox();
             this.lbl_entityType = new System.Windows.Forms.Label();
@@ -492,10 +492,10 @@
             // 
             // sc_HorizontalProperties.Panel1
             // 
-            this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityHazardous);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_collision);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eHazardous);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_ePaintable);
-            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eVisibleLabel);
+            this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_eTriggerLabel);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityVisible);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.cb_entityPaintable);
             this.sc_HorizontalProperties.Panel1.Controls.Add(this.lbl_entityType);
@@ -522,17 +522,14 @@
             this.sc_HorizontalProperties.SplitterDistance = 289;
             this.sc_HorizontalProperties.TabIndex = 1;
             // 
-            // cb_entityHazardous
+            // lbl_collision
             // 
-            this.cb_entityHazardous.AutoSize = true;
-            this.cb_entityHazardous.Enabled = false;
-            this.cb_entityHazardous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_entityHazardous.Location = new System.Drawing.Point(123, 214);
-            this.cb_entityHazardous.Name = "cb_entityHazardous";
-            this.cb_entityHazardous.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cb_entityHazardous.Size = new System.Drawing.Size(15, 14);
-            this.cb_entityHazardous.TabIndex = 12;
-            this.cb_entityHazardous.UseVisualStyleBackColor = true;
+            this.lbl_collision.AutoSize = true;
+            this.lbl_collision.Location = new System.Drawing.Point(38, 231);
+            this.lbl_collision.Name = "lbl_collision";
+            this.lbl_collision.Size = new System.Drawing.Size(95, 13);
+            this.lbl_collision.TabIndex = 12;
+            this.lbl_collision.Text = "No Entity Selected";
             // 
             // lbl_eHazardous
             // 
@@ -540,9 +537,9 @@
             this.lbl_eHazardous.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_eHazardous.Location = new System.Drawing.Point(35, 214);
             this.lbl_eHazardous.Name = "lbl_eHazardous";
-            this.lbl_eHazardous.Size = new System.Drawing.Size(71, 13);
+            this.lbl_eHazardous.Size = new System.Drawing.Size(90, 13);
             this.lbl_eHazardous.TabIndex = 11;
-            this.lbl_eHazardous.Text = "Hazardous:";
+            this.lbl_eHazardous.Text = "Collision Type:";
             // 
             // lbl_ePaintable
             // 
@@ -554,15 +551,15 @@
             this.lbl_ePaintable.TabIndex = 10;
             this.lbl_ePaintable.Text = "Paintable:";
             // 
-            // lbl_eVisibleLabel
+            // lbl_eTriggerLabel
             // 
-            this.lbl_eVisibleLabel.AutoSize = true;
-            this.lbl_eVisibleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_eVisibleLabel.Location = new System.Drawing.Point(35, 168);
-            this.lbl_eVisibleLabel.Name = "lbl_eVisibleLabel";
-            this.lbl_eVisibleLabel.Size = new System.Drawing.Size(48, 13);
-            this.lbl_eVisibleLabel.TabIndex = 9;
-            this.lbl_eVisibleLabel.Text = "Visible:";
+            this.lbl_eTriggerLabel.AutoSize = true;
+            this.lbl_eTriggerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_eTriggerLabel.Location = new System.Drawing.Point(35, 168);
+            this.lbl_eTriggerLabel.Name = "lbl_eTriggerLabel";
+            this.lbl_eTriggerLabel.Size = new System.Drawing.Size(51, 13);
+            this.lbl_eTriggerLabel.TabIndex = 9;
+            this.lbl_eTriggerLabel.Text = "Trigger:";
             // 
             // cb_entityVisible
             // 
@@ -866,14 +863,14 @@
         private System.Windows.Forms.Label lbl_entityName;
         private System.Windows.Forms.Label lbl_eNameLabel;
         private System.Windows.Forms.CheckBox cb_entityVisible;
-        private System.Windows.Forms.Label lbl_eVisibleLabel;
+        private System.Windows.Forms.Label lbl_eTriggerLabel;
         private System.Windows.Forms.Label lbl_ePaintable;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLabel;
         private System.Windows.Forms.ToolStripStatusLabel tslbl_gridLoc;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.PictureBox pb_CurrentTool;
         private System.Windows.Forms.Label lbl_eHazardous;
-        private System.Windows.Forms.CheckBox cb_entityHazardous;
+        private System.Windows.Forms.Label lbl_collision;
 
     }
 }
