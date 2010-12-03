@@ -216,6 +216,10 @@ namespace GravityShift
                 return 0;
             }
 
+            //Player collided with collectable
+            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+                return 1;
+
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             // handle the shallowest collision
@@ -253,6 +257,10 @@ namespace GravityShift
             {
                 return 0;
             }
+
+            //Player collided with collectable
+            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+                return 1;
             
             Point centerA = this.mBoundingBox.Center;
             Point centerB = otherObject.BoundingBox.Center;
@@ -300,6 +308,10 @@ namespace GravityShift
             {
                 return 0;// no collision
             }
+
+            //Player collided with collectable
+            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+                return 1;
 
             // get points of square
             Point[] p = new Point[4];

@@ -162,6 +162,7 @@
     <Content Include="Content\paint.png" />
     <Content Include="Content\removeentity.png" />
     <Content Include="Content\select.png" />
+    <Content Include="Content\trigger.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
