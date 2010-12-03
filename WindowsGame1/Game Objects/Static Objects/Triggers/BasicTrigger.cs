@@ -16,14 +16,21 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
 {
     class BasicTrigger : Trigger
     {
+        bool wasColliding = false;
+
         public BasicTrigger(ContentManager content, String name, Vector2 initialPosition, bool isSquare, int width, int height) :
             base(content, name, initialPosition, isSquare, width, height) { }
 
         public override void RunTrigger(List<GameObject> objects, Player player)
         {
-            bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!mIsSquare && player.IsCollidingCircleandCircle(this));
+            bool isColliding = mBoundingBox.Intersects(player.mBoundingBox);
 
+            if (!wasColliding && isColliding)
+                player.Environment.GravityDirection = GravityDirections.Down;
+            if (wasColliding && !isColliding)
+                player.Environment.GravityDirection = GravityDirections.Down;
 
+            wasColliding = isColliding;
         }
     }
 }

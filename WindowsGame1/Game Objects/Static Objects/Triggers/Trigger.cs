@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.MISC_Code;
 
 namespace GravityShift.Game_Objects.Static_Objects.Triggers
 {
@@ -29,8 +30,8 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             this.mSize.X = width;
             this.mSize.Y = height;
 
-            this.mBoundingBox.Width = width;
-            this.mBoundingBox.Height = height;
+            this.mBoundingBox.Width = width * (int)GridSpace.SIZE.X;
+            this.mBoundingBox.Height = height * (int)GridSpace.SIZE.Y;
         }
 
         /// <summary>

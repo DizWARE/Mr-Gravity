@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
+using GravityShift.Game_Objects.Static_Objects.Triggers;
 
 namespace GravityShift
 {
@@ -41,6 +42,8 @@ namespace GravityShift
         //List of objects that comform to the game physics
         List<GameObject> mObjects;
 
+        List<Trigger> mTrigger;
+
         Player player;
 
         //Current level
@@ -51,7 +54,7 @@ namespace GravityShift
         SpriteFont mDefaultFont;
 
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\MyTestLevel.xml";
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\TestTriggers.xml";
 
         public GravityShiftMain()
         {
@@ -75,6 +78,7 @@ namespace GravityShift
             mGraphics.ApplyChanges();
 
             mObjects = new List<GameObject>();
+            mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
 
             menu = new Menu();
@@ -123,6 +127,8 @@ namespace GravityShift
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
             mObjects.Add(importer.GetPlayerEnd());
+
+            mTrigger.AddRange(importer.GetTriggers());
     }
 
         /// <summary>
@@ -169,7 +175,9 @@ namespace GravityShift
                             pObject.Update(gameTime);
                             // handle collision right after you move
                             HandleCollisions(pObject);
-                            if (pObject is Player) ChangeValues((Player)pObject, keyboard);
+                            if (pObject is Player) 
+                                foreach(Trigger trigger in mTrigger) 
+                                    trigger.RunTrigger(mObjects,(Player)pObject);                 
 
                             // Update the camera to keep the player at the center of the screen
                             // Also only update if the velocity if greater than 0.5f in either direction
@@ -220,37 +228,6 @@ namespace GravityShift
         {
             inGame = true;
             inMenu = false;
-        }
-
-        /// <summary>
-        /// TODO - REMOVE WHEN NO LONGER A DEMONSTRACTION (Demonstraction? HAHA!)
-        /// </summary>
-        /// <param name="player"></param>
-        /// <param name="keyboardState"></param>
-        private void ChangeValues(Player player, KeyboardState keyboardState)
-        {
-            if (keyboardState.IsKeyDown(Keys.G)) mPhysicsEnvironment.GravityMagnitude += 1;
-            if (keyboardState.IsKeyDown(Keys.H)) mPhysicsEnvironment.GravityMagnitude -= 1;
-            if (keyboardState.IsKeyDown(Keys.T)) mPhysicsEnvironment.TerminalSpeed += 1;
-            if (keyboardState.IsKeyDown(Keys.Y)) mPhysicsEnvironment.TerminalSpeed -= 1;
-            if (keyboardState.IsKeyDown(Keys.W)) mPhysicsEnvironment.ErosionFactor += .01f;
-            if (keyboardState.IsKeyDown(Keys.E)) mPhysicsEnvironment.ErosionFactor -= .01f;
-            if (keyboardState.IsKeyDown(Keys.U)) 
-                mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Up);
-            if (keyboardState.IsKeyDown(Keys.I))
-                mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Up);
-            if (keyboardState.IsKeyDown(Keys.K)) 
-                mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Left);
-            if (keyboardState.IsKeyDown(Keys.L)) 
-                mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Left);
-            if (keyboardState.IsKeyDown(Keys.O)) 
-                mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Right);
-            if (keyboardState.IsKeyDown(Keys.P)) 
-                mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Right);
-            if (keyboardState.IsKeyDown(Keys.D))
-                mPhysicsEnvironment.IncrementDirectionalMagnifier(GravityDirections.Down);
-            if (keyboardState.IsKeyDown(Keys.F))
-                mPhysicsEnvironment.DecrementDirectionalMagnifier(GravityDirections.Down);
         }
 
         /// <summary>

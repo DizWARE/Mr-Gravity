@@ -150,4 +150,18 @@
       <Shape>Circle</Shape>
     </Properties>
   </Entity>
+  <Entity>
+    <ID>13</ID>
+    <Name>Basic</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Level Positions\player_end</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Width>3</Width>
+      <Height>3</Height>
+    </Properties>
+  </Entity>
 </Entities>
