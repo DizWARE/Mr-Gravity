@@ -181,7 +181,38 @@ namespace GravityLevelEditor.EntityCreationForm
             if (lb_entitySelect.SelectedIndex > -1)
             {
                 SelectedEntity.Type = cb_type.Text;
+                PrepareTrigger();
+                PrepareObjects();
                 UpdateView();
+            }
+        }
+
+        private void PrepareTrigger()
+        {
+            if (SelectedEntity.Type == "Triggers")
+            {
+                if(!SelectedEntity.Properties.ContainsKey("Width")) SelectedEntity.Properties.Add("Width", "3");
+                if(!SelectedEntity.Properties.ContainsKey("Height")) SelectedEntity.Properties.Add("Height", "3");
+            }
+            else
+            {
+                if(SelectedEntity.Properties.ContainsKey("Width")) SelectedEntity.Properties.Remove("Width");
+                if(SelectedEntity.Properties.ContainsKey("Height")) SelectedEntity.Properties.Remove("Height");
+            }
+        }
+
+        private void PrepareObjects()
+        {
+            if ((SelectedEntity.Type == "Physics Objects" || SelectedEntity.Type == "Static Objects" || SelectedEntity.Type == "Triggers"))
+            {
+                if (!SelectedEntity.Properties.ContainsKey("Shape")) SelectedEntity.Properties.Add("Shape", "Square");
+                if (!SelectedEntity.Properties.ContainsKey("Mass") && SelectedEntity.Type == "Physics Objects") 
+                    SelectedEntity.Properties.Add("Mass", "1");
+            }
+            else
+            {
+                if (SelectedEntity.Properties.ContainsKey("Shape")) SelectedEntity.Properties.Remove("Shape");
+                if (SelectedEntity.Properties.ContainsKey("Mass")) SelectedEntity.Properties.Remove("Mass");
             }
         }
 

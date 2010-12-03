@@ -124,6 +124,7 @@
     <Texture>Static Objects\grounda_magma</Texture>
     <Properties>
       <Shape>Square</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
@@ -148,6 +149,7 @@
     <Texture>Physics Objects\circle</Texture>
     <Properties>
       <Shape>Circle</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
   <Entity>
@@ -159,9 +161,9 @@
     <Paintable>False</Paintable>
     <Texture>Level Positions\player_end</Texture>
     <Properties>
-      <Shape>Circle</Shape>
       <Width>3</Width>
       <Height>3</Height>
+      <Shape>Circle</Shape>
     </Properties>
   </Entity>
 </Entities>
