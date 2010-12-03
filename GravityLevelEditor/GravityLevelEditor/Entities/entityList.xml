@@ -53,7 +53,9 @@
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonPink</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
     <ID>561</ID>
@@ -192,7 +194,7 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>Basic</Name>
+    <Name>BasicCollectable</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Collectable</CollisionType>
@@ -204,7 +206,7 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>Falling</Name>
+    <Name>BasicCollectable</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Collectable</CollisionType>
