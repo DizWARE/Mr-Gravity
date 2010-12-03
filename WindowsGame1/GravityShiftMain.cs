@@ -41,6 +41,7 @@ namespace GravityShift
 
         //List of objects that comform to the game physics
         List<GameObject> mObjects;
+        List<GameObject> mCollected;
 
         List<Trigger> mTrigger;
 
@@ -54,7 +55,7 @@ namespace GravityShift
         SpriteFont mDefaultFont;
 
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\TestTriggers.xml";
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\Test.xml";
 
         public GravityShiftMain()
         {
@@ -78,6 +79,7 @@ namespace GravityShift
             mGraphics.ApplyChanges();
 
             mObjects = new List<GameObject>();
+            mCollected = new List<GameObject>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
 
@@ -202,6 +204,17 @@ namespace GravityShift
                         }
                     }
 
+                    //Check to see if we collected anything
+                    if (mCollected.Count > 0)
+                    {
+                        //Safely remove the collected objects
+                        foreach (GameObject g in mCollected)
+                            mObjects.Remove(g);
+
+                        //Then clear the list
+                        mCollected.Clear();
+                    }
+
                     base.Update(gameTime);
                 }
             }
@@ -297,7 +310,17 @@ namespace GravityShift
                     GameSound.level_stageVictory.Play(); 
                 }
 
-                if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
+                //If player collided with a collectable object
+                if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
+                {
+                    //Play sound
+                    //GameSound.playerCol_hazard.Play();
+                    player.mScore += 100;
+                    if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
+                    else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
+                }
+
+                else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                 {
                     //Play sound
                     GameSound.playerCol_hazard.Play();
@@ -305,15 +328,6 @@ namespace GravityShift
                     if (physObj is Player) physObj.Kill();
                     else ((Player)obj).Kill();
                 }
-
-                if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
-                {
-                    //Play sound
-                    //GameSound.playerCol_hazard.Play();
-                    player.mScore += 100;
-                    if (physObj.CollisionType == XmlKeys.COLLECTABLE) mObjects.Remove(physObj);
-                    else if (obj.CollisionType == XmlKeys.COLLECTABLE) mObjects.Remove(obj);
-                } 
             }
         }
     }

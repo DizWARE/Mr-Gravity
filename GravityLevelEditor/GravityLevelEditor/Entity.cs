@@ -14,8 +14,7 @@ namespace GravityLevelEditor
 {
     class Entity
     {
-        static int ObjectID = 0;
-        private int mID = ObjectID++;
+        private int mID;
         public int ID { get { return mID; } }
 
         private string mName;
@@ -50,6 +49,7 @@ namespace GravityLevelEditor
         {
             mType = original.mType;
             mName = original.mName;
+            mID = original.mID;
             mCollisionType = original.mCollisionType;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
@@ -64,16 +64,18 @@ namespace GravityLevelEditor
          * 
          * string type: type of entity (i.e. Wall, PlayerStart, etc).
          * string name: identifier for entity
+         * int objectID: ID of the entity
          * string collisionType: type of collision for an entity.
          * bool paintable: whether or not the given entity is paintable.
          * Dictionary<string, string> properties: additional properties for this entity.
          * Image texture: image used to represent this entity in the level editor.
          */
-        public Entity(string type, string name, string collisionType,
+        public Entity(string type, string name, int objectID, string collisionType,
             bool paintable, Dictionary<string, string> properties, Image texture)
         {
             mType = type;
             mName = name;
+            mID = objectID;
             mCollisionType = collisionType;
             mLocation = new Point(-100, -100);
             mPaintable = paintable;
@@ -146,8 +148,6 @@ namespace GravityLevelEditor
                     }
                 }
             }
-
-            Entity.ObjectID = maxID;
         }
 
         /*

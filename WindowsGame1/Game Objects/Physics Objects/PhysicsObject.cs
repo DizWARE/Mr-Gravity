@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
@@ -214,6 +215,7 @@ namespace GravityShift
             {
                 return 0;
             }
+
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             // handle the shallowest collision
@@ -298,6 +300,7 @@ namespace GravityShift
             {
                 return 0;// no collision
             }
+
             // get points of square
             Point[] p = new Point[4];
             // top left
