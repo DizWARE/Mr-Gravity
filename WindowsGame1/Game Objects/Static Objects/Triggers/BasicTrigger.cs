@@ -21,9 +21,15 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         public BasicTrigger(ContentManager content, String name, Vector2 initialPosition, bool isSquare, int width, int height) :
             base(content, name, initialPosition, isSquare, width, height) { }
 
+        /// <summary>
+        /// This triggers adds a force in the x direction while the player is within its bounds and removes it
+        /// when the player exits
+        /// </summary>
+        /// <param name="objects">List of objects in the game</param>
+        /// <param name="player">Player in the game</param>
         public override void RunTrigger(List<GameObject> objects, Player player)
         {
-            bool isColliding = mBoundingBox.Intersects(player.mBoundingBox);
+            bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!IsSquare && player.IsCollidingCircleandCircle(this));
 
             if (!wasColliding && isColliding)
                 player.AddForce(new Vector2(.5f, 0));

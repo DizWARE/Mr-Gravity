@@ -14,7 +14,7 @@ namespace GravityLevelEditor
 {
     class Entity
     {
-        static int ObjectID = 0;
+        public static int ObjectID = 0;
         private int mID = ObjectID++;
         public int ID { get { return mID; } }
 
@@ -96,7 +96,7 @@ namespace GravityLevelEditor
 
             mProperties = new Dictionary<string, string>();
 
-            int maxID = 0;
+            int maxID = ObjectID;
 
             foreach (XElement el in ent.Elements())
             {
@@ -147,6 +147,7 @@ namespace GravityLevelEditor
                 }
             }
 
+            mID = maxID;
             Entity.ObjectID = maxID;
         }
 

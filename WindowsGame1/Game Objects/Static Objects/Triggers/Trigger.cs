@@ -43,6 +43,11 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             return; //Don't draw :D
         }
 
+        /// <summary>
+        /// Runs whatever the trigger should do.
+        /// </summary>
+        /// <param name="objects">List of all the objects in the level</param>
+        /// <param name="player">The player in the game</param>
         public abstract void RunTrigger(List<GameObject> objects, Player player);
     }
 }

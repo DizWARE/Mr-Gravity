@@ -77,6 +77,8 @@ namespace GravityLevelEditor
             mEntities = new ArrayList();
             mClipboard = new ArrayList();
 
+            Entity.ObjectID = 0;
+
             XElement xLevel = XElement.Load(filename);
 
             foreach (XElement el in xLevel.Elements())
