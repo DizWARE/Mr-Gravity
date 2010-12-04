@@ -238,8 +238,7 @@ namespace GravityLevelEditor
          */
         public XElement Export()
         {
-
-            if (mTexture.Tag == null)
+            if (mTexture == null || mTexture.Tag == null)
             { MessageBox.Show("Failed to save " + ToString() + ID + ". Invalid image."); return null; }
 
             XElement propertiesTree = new XElement(XmlKeys.PROPERTIES);

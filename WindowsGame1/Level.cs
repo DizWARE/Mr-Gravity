@@ -56,7 +56,7 @@ namespace GravityShift
         {
             try
             { mTexture = content.Load<Texture2D>("Images\\" + assetName); }
-            catch (Exception e)
+            catch (Exception ex)
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
         }
 

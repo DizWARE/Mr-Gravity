@@ -163,22 +163,8 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>570</ID>
+    <ID>0</ID>
     <Name>Basic</Name>
-    <Type>Triggers</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Triggers\Trigger</Texture>
-    <Properties>
-      <Width>3</Width>
-      <Height>3</Height>
-      <Shape>Circle</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>571</ID>
-    <Name>Blah</Name>
     <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
@@ -192,7 +178,7 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>Basic</Name>
+    <Name>Collectable</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Collectable</CollisionType>
@@ -200,19 +186,6 @@
     <Texture>Static Objects\collectable</Texture>
     <Properties>
       <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>Falling</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Physics Objects\collectable</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
     </Properties>
   </Entity>
 </Entities>
