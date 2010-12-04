@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
@@ -43,15 +44,14 @@ namespace GravityShift
         /// <param name="name">Name of the image resource for the player</param>
         /// <param name="initialPosition">Initial posisition in the level</param>
         /// <param name="controlScheme">Controller scheme for the player(Controller or keyboard)</param>
-        public Player(ContentManager content, String name,
-            Vector2 initialPosition,ref PhysicsEnvironment environment, IControlScheme controlScheme, float friction, bool isSquare) 
-            : base(content, name, initialPosition,ref environment,friction,isSquare, "Normal")
+        public Player(ContentManager content, ref PhysicsEnvironment environment, IControlScheme controlScheme, float friction, EntityInfo entity) 
+            : base(content, ref environment,friction, entity)
         {
             mControls = controlScheme;
-            mSpawnPoint = initialPosition;
+            mSpawnPoint = mPosition;
             mRotation = 0.0f;
             mGoalRotation = 0.0f;
-            ID = -1;
+            ID = entity.mId;
         }
         /// <summary>
         /// Updates the player location and the player controls

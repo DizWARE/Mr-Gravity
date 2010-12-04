@@ -10,8 +10,7 @@
       <Name>PlayerStart</Name>
       <Type>Level Positions</Type>
       <Location X="0" Y="0" />
-      <Hazardous>False</Hazardous>
-      <Visible>False</Visible>
+      <CollisionType />
       <Paintable>False</Paintable>
       <Texture>Level Positions\player_start</Texture>
       <Properties />
@@ -21,8 +20,7 @@
       <Name>PlayerEnd</Name>
       <Type>Level Positions</Type>
       <Location X="29" Y="29" />
-      <Hazardous>False</Hazardous>
-      <Visible>False</Visible>
+      <CollisionType />
       <Paintable>False</Paintable>
       <Texture>Level Positions\player_end</Texture>
       <Properties />

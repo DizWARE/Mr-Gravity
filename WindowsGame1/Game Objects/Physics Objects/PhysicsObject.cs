@@ -57,9 +57,8 @@ namespace GravityShift
         /// <param name="name">Name of the physics object so that it can be loaded</param>
         /// <param name="scalingFactors">Factor for the image resource(i.e. half the size would be (.5,.5)</param>
         /// <param name="initialPosition">Position of where this object starts in the level</param>
-        public PhysicsObject(ContentManager content, String name, Vector2 initialPosition, 
-            ref PhysicsEnvironment environment, float friction, bool isSquare, string collisionType)
-            :base(content,name,initialPosition, friction, isSquare, collisionType)
+        public PhysicsObject(ContentManager content, ref PhysicsEnvironment environment, float friction, EntityInfo entity)
+            :base(content, friction, entity)
         {
             mEnvironment = environment;
             mVelocity = new Vector2(0, 0);

@@ -89,9 +89,11 @@ namespace GravityShift.Import_Code
         {
             foreach (EntityInfo entity in mEntities)
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_END)
-                    return new PlayerEnd(mContent, "Images\\" + entity.mTextureFile, GridSpace.GetDrawingCoord(entity.mLocation));
+                    return new PlayerEnd(mContent, entity);
 
-            return new PlayerEnd(mContent, "Images\\Level Positions\\player_end", Vector2.Add(GetPlayerStart(),GridSpace.SIZE));
+            //Need to fix ---- TODODODODODODODO
+            return new PlayerEnd(mContent, EntityInfo.CreatePlayerEndInfo(
+                Vector2.Add(GridSpace.GetGridCoord(GetPlayerStart()),new Vector2(1,1))));
         }
 
         /// <summary>
@@ -108,10 +110,7 @@ namespace GravityShift.Import_Code
                 //If the object is static, make a static object
                 if (entity.mType == XmlKeys.STATIC_OBJECT)
                 {
-                    bool isSquare = entity.mProperties.Count == 0 || entity.mProperties["Shape"] == "Square";
-                    Tile tile = new Tile(mContent, "Images\\" + entity.mTextureFile,
-                        GridSpace.GetDrawingCoord(entity.mLocation), .8f, isSquare, entity.mCollisionType);
-                    tile.ID = entity.mId;
+                    Tile tile = new Tile(mContent, .8f, entity);
                     objects.Add(tile);
 
                 }
@@ -119,9 +118,7 @@ namespace GravityShift.Import_Code
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
                 {
                     bool isSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
-                    MovingTile tile = new MovingTile(mContent, "Images\\" + entity.mTextureFile, new Vector2(1, 1),
-                        GridSpace.GetDrawingCoord(entity.mLocation), ref environment, .8f, isSquare, entity.mCollisionType);
-                    tile.ID = entity.mId;
+                    MovingTile tile = new MovingTile(mContent, ref environment, .8f, entity);
                     objects.Add(tile);
                 }
             }
@@ -156,10 +153,7 @@ namespace GravityShift.Import_Code
 
                     if (entity.mName == "Basic")
                     {
-                        BasicTrigger trigger = new BasicTrigger(mContent, entity.mName,
-                            GridSpace.GetDrawingCoord(entity.mLocation), isSquare,
-                            (int)GridSpace.SIZE.X * int.Parse(entity.mProperties[XmlKeys.WIDTH]),
-                            (int)GridSpace.SIZE.Y * int.Parse(entity.mProperties[XmlKeys.HEIGHT]));
+                        BasicTrigger trigger = new BasicTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
                     //Add trigger by name

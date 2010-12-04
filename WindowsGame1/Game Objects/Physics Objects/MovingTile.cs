@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
@@ -28,8 +29,8 @@ namespace GravityShift
         /// <param name="friction">Friction that reacts to physics objects</param>
         /// <param name="isSquare">True if the object should behave like a square</param>
         /// <param name="isHazardous">True if the object should kill the player when touched</param>
-        public MovingTile(ContentManager content, String name, Vector2 scalingFactors, Vector2 initialPosition, ref PhysicsEnvironment environment, float friction, bool isSquare, string collisionType) :
-            base(content, name, initialPosition, ref environment, friction, isSquare, collisionType)
+        public MovingTile(ContentManager content, ref PhysicsEnvironment environment, float friction, EntityInfo entity) :
+            base(content, ref environment, friction, entity)
         {
 
         }

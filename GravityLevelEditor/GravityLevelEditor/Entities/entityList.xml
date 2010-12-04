@@ -65,7 +65,9 @@
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonBlue</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
     <ID>562</ID>
@@ -111,7 +113,9 @@
     <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\grounda_magma</Texture>
-    <Properties />
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
   </Entity>
   <Entity>
     <ID>566</ID>
@@ -165,21 +169,22 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>0</ID>
+    <ID>570</ID>
     <Name>Basic</Name>
     <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
+    <Paintable>False</Paintable>
     <Texture>Triggers\Trigger</Texture>
     <Properties>
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
+      <Force>.35</Force>
     </Properties>
   </Entity>
   <Entity>
-    <ID>0</ID>
+    <ID>570</ID>
     <Name>BasicCollectable</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -191,7 +196,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>0</ID>
+    <ID>570</ID>
     <Name>BasicCollectable</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />

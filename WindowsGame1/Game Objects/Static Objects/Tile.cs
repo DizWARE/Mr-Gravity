@@ -11,13 +11,14 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using GravityShift.Import_Code;
 
 namespace GravityShift
 {
     class Tile : StaticObject
     {
-        public Tile(ContentManager content, String name, Vector2 scalingFactors, float friction, bool isSquare, string collisionType)
-            : base(content, name, scalingFactors, friction, isSquare, collisionType)
+        public Tile(ContentManager content, float friction, EntityInfo entity)
+            : base(content, friction, entity)
         {
 
         }

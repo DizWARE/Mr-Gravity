@@ -14,6 +14,7 @@ namespace GravityLevelEditor
 {
     class Entity
     {
+        public static int objectID = 0;
         private int mID;
         public int ID { get { return mID; } set { mID = value; } }
 
@@ -49,7 +50,7 @@ namespace GravityLevelEditor
         {
             mType = original.mType;
             mName = original.mName;
-            mID = original.mID;
+            mID = objectID++;
             mCollisionType = original.mCollisionType;
             mPaintable = original.mPaintable;
             mProperties = original.mProperties;
@@ -75,7 +76,7 @@ namespace GravityLevelEditor
         {
             mType = type;
             mName = name;
-            mID = objectID;
+            mID = objectID++;
             mCollisionType = collisionType;
             mLocation = new Point(-100, -100);
             mPaintable = paintable;
@@ -103,6 +104,10 @@ namespace GravityLevelEditor
                 if (el.Name == XmlKeys.ID)
                 {
                     mID = Convert.ToInt32(el.Value.ToString());
+                    if (mID < objectID)
+                        mID = objectID+1;
+                    
+                    objectID = mID+1;
                 }
                 if (el.Name == XmlKeys.E_NAME)
                 {

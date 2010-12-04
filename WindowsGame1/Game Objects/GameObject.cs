@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
+using GravityShift.MISC_Code;
 
 namespace GravityShift
 {
@@ -63,17 +64,20 @@ namespace GravityShift
         /// <param name="friction">Friction that reacts to physics objects</param>
         /// <param name="isSquare">True if the object should behave like a square</param>
         /// <param name="isHazardous">True if the object should kill the player when touched</param>
-        public GameObject(ContentManager content, String name, Vector2 initialPosition, float friction, bool isSquare, string collisionType)
+        public GameObject(ContentManager content, float friction, EntityInfo entity)
         {
-            mName = name;
+            mName = "Images\\" + entity.mTextureFile;
             mFriction = friction;
-            mIsSquare = isSquare;
-            mCollisionType = collisionType;
+            mIsSquare = !entity.mProperties.ContainsKey("Shape") || entity.mProperties["Shape"] == "Square";
+            mCollisionType = entity.mCollisionType;
+            mOriginalInfo = entity;
 
-            Load(content, name);
+            Load(content, mName);
 
-            mPosition = initialPosition;
-            mInitialPosition = initialPosition;
+            ID = entity.mId;
+
+            mPosition = GridSpace.GetDrawingCoord(entity.mLocation);
+            mInitialPosition = mPosition;
             mSize = new Vector2(mTexture.Width, mTexture.Height);
 
             mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);

@@ -284,7 +284,6 @@ namespace GravityLevelEditor
                 mData.SelectedEntities.Clear();
                 tb_cols.Text = tb_rows.Text = "10";
                 tb_name.Text = "New Level";
-                mData.Level.ObjectID = 0;
                 sc_Properties.Panel1.Invalidate();
                 Point pixelSize = GridSpace.GetPixelCoord(mData.Level.Size);
                 sc_Properties.Panel1.AutoScrollMinSize = new Size(pixelSize);

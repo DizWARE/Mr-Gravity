@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
 using GravityShift.Game_Objects.Static_Objects.Triggers;
+using GravityShift.MISC_Code;
 
 namespace GravityShift
 {
@@ -55,7 +56,7 @@ namespace GravityShift
         SpriteFont mDefaultFont;
 
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
-
+        
         private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
 
         public GravityShiftMain()
@@ -122,9 +123,9 @@ namespace GravityShift
 
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
-            player = new Player(Content, "Images\\Player",
-                 mCurrentLevel.StartingPoint,
-                ref mPhysicsEnvironment, new KeyboardControl(), .8f, false);
+            player = new Player(Content, ref mPhysicsEnvironment, 
+                new KeyboardControl(), .8f, EntityInfo.CreatePlayerInfo(GridSpace.GetGridCoord(mCurrentLevel.StartingPoint)));
+
             mObjects.Add(player);
 
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
@@ -190,16 +191,16 @@ namespace GravityShift
                             // Update zoom based on players velocity
                             if (Math.Abs(player.ObjectVelocity.X) > 8 || Math.Abs(player.ObjectVelocity.Y) > 8)
                             {
-                                if (cam.Zoom > 0.5f)
-                                    cam.Zoom -= 0.0005f;
+                            //    if (cam.Zoom > 0.5f)
+                            //        cam.Zoom -= 0.00005f;
                             }
-                            else if (Math.Abs(player.ObjectVelocity.X) > 15 || Math.Abs(player.ObjectVelocity.Y) > 15)
+                            if (Math.Abs(player.ObjectVelocity.X) > 15 || Math.Abs(player.ObjectVelocity.Y) > 15)
                             {
                                 if (cam.Zoom > 0.25f)
-                                    cam.Zoom -= 0.0015f;
+                                    cam.Zoom -= 0.000015f;
                             }
                             else if (cam.Zoom < 1.0f)
-                                cam.Zoom += 0.001f;                            
+                                cam.Zoom += 0.00025f;
                             
                             pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
                         }

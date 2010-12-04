@@ -54,5 +54,34 @@ namespace GravityShift.Import_Code
                         mProperties.Add(property.Name.ToString(), property.Value);
             }
         }
+
+        private EntityInfo(string name, Vector2 startLocation)
+        {
+            mId = -1;
+
+            mName = name;
+            mType = "";
+            mCollisionType = "Normal";
+            mTextureFile = name;
+            mLocation = startLocation;
+            mProperties = new Dictionary<string, string>();
+        }
+
+        public static EntityInfo CreatePlayerEndInfo(Vector2 startLocation)
+        {
+            EntityInfo playerEnd = new EntityInfo("PlayerEnd", startLocation);
+            playerEnd.mId = -2;
+            return playerEnd;
+        }
+
+        public static EntityInfo CreatePlayerInfo(Vector2 startLocation)
+        {
+            EntityInfo player = new EntityInfo("Player", startLocation);
+            player.mProperties.Add("Shape", "Circle");
+            player.mProperties.Add("Mass", "1");
+            player.mId = -1;
+            return player;
+        }
+
     }
 }
