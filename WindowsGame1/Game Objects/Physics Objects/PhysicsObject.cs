@@ -217,7 +217,7 @@ namespace GravityShift
             }
 
             //Player collided with collectable
-            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+            if (otherObject.CollisionType == XmlKeys.COLLECTABLE || this.CollisionType == XmlKeys.COLLECTABLE && !(otherObject is StaticObject))
                 return 1;
 
             Vector2 colDepth = GetCollitionDepth(otherObject);
@@ -259,7 +259,7 @@ namespace GravityShift
             }
 
             //Player collided with collectable
-            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+            if (otherObject.CollisionType == XmlKeys.COLLECTABLE || this.CollisionType == XmlKeys.COLLECTABLE && !(otherObject is StaticObject))
                 return 1;
             
             Point centerA = this.mBoundingBox.Center;
@@ -310,7 +310,7 @@ namespace GravityShift
             }
 
             //Player collided with collectable
-            if ((this is Player) && otherObject.CollisionType == XmlKeys.COLLECTABLE || (otherObject is Player) && this.CollisionType == XmlKeys.COLLECTABLE)
+            if (otherObject.CollisionType == XmlKeys.COLLECTABLE || this.CollisionType == XmlKeys.COLLECTABLE && !(otherObject is StaticObject))
                 return 1;
 
             // get points of square
