@@ -181,27 +181,9 @@ namespace GravityShift
                             HandleCollisions(pObject);
                             if (pObject is Player) 
                                 foreach(Trigger trigger in mTrigger) 
-                                    trigger.RunTrigger(mObjects,(Player)pObject);                 
+                                    trigger.RunTrigger(mObjects,(Player)pObject);              
 
-                            // Update the camera to keep the player at the center of the screen
-                            // Also only update if the velocity if greater than 0.5f in either direction
-                            if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
-                                cam.Postion = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
-
-                            // Update zoom based on players velocity
-                            if (Math.Abs(player.ObjectVelocity.X) > 8 || Math.Abs(player.ObjectVelocity.Y) > 8)
-                            {
-                            //    if (cam.Zoom > 0.5f)
-                            //        cam.Zoom -= 0.00005f;
-                            }
-                            if (Math.Abs(player.ObjectVelocity.X) > 15 || Math.Abs(player.ObjectVelocity.Y) > 15)
-                            {
-                                if (cam.Zoom > 0.25f)
-                                    cam.Zoom -= 0.000015f;
-                            }
-                            else if (cam.Zoom < 1.0f)
-                                cam.Zoom += 0.00025f;
-                            
+                            // Update zoom based on players velocity                 
                             pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
                         }
                     }
@@ -216,6 +198,20 @@ namespace GravityShift
                         //Then clear the list
                         mCollected.Clear();
                     }
+
+                    // Update the camera to keep the player at the center of the screen
+                    // Also only update if the velocity if greater than 0.5f in either direction
+                    if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
+                        cam.Postion = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
+
+                    //Update zoom
+                    if (Math.Abs(player.ObjectVelocity.X) > 12 || Math.Abs(player.ObjectVelocity.Y) > 12)
+                    {
+                        if (cam.Zoom > 0.50f)
+                            cam.Zoom -= 0.0015f;
+                    }
+                    else if (cam.Zoom < 1.0f)
+                        cam.Zoom += 0.0015f;
 
                     base.Update(gameTime);
                 }
