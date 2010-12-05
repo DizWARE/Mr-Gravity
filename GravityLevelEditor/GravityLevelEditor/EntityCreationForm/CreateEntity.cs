@@ -360,6 +360,7 @@ namespace GravityLevelEditor.EntityCreationForm
                     foreach (XElement entity in e.Elements())
                     {
                         Entity createdEntity = new Entity(entity);
+                        createdEntity.ID = 0;
                         mAllEntities.Add(createdEntity);
                         mFilteredEntities.Add(createdEntity);
                         lb_entitySelect.Items.Add(createdEntity);

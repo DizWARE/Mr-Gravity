@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Entities>
   <Entity>
-<<<<<<< HEAD
-    <ID>600</ID>
-
+    <ID>0</ID>
     <Name>PlayerStart</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
@@ -13,7 +11,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>602</ID>
+    <ID>0</ID>
     <Name>PlayerEnd</Name>
     <Type>Level Positions</Type>
     <Location X="-100" Y="-100" />
@@ -23,7 +21,7 @@
     <Properties />
   </Entity>
   <Entity>
-    <ID>604</ID>
+    <ID>0</ID>
     <Name>Moving Ball</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -36,7 +34,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>606</ID>
+    <ID>0</ID>
     <Name>NeonGreen</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -48,7 +46,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>608</ID>
+    <ID>0</ID>
     <Name>NeonPink</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -60,7 +58,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>610</ID>
+    <ID>0</ID>
     <Name>NeonBlue</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -72,7 +70,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>612</ID>
+    <ID>0</ID>
     <Name>NeonYellow</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -84,7 +82,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>614</ID>
+    <ID>0</ID>
     <Name>BrownMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -96,7 +94,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>616</ID>
+    <ID>0</ID>
     <Name>BlackMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -108,7 +106,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>618</ID>
+    <ID>0</ID>
     <Name>DangerMagma</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -120,7 +118,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>620</ID>
+    <ID>0</ID>
     <Name>FallingYellow</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -133,7 +131,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>622</ID>
+    <ID>0</ID>
     <Name>MovingDangerMagma</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -146,7 +144,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>624</ID>
+    <ID>0</ID>
     <Name>BallWall</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -158,7 +156,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>626</ID>
+    <ID>0</ID>
     <Name>DangerBall</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -171,7 +169,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>628</ID>
+    <ID>0</ID>
     <Name>Basic</Name>
     <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
@@ -186,7 +184,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>630</ID>
+    <ID>0</ID>
     <Name>BasicCollectable</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -198,7 +196,7 @@
     </Properties>
   </Entity>
   <Entity>
-    <ID>632</ID>
+    <ID>0</ID>
     <Name>BasicCollectable</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
