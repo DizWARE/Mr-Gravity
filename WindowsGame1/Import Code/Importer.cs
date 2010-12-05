@@ -118,7 +118,13 @@ namespace GravityShift.Import_Code
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
                 {
                     bool isSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
-                    MovingTile tile = new MovingTile(mContent, ref environment, .8f, entity);
+                    float mass = 1;
+                    if (entity.mProperties.ContainsKey("Mass"))
+                    {
+                        mass = (float)Convert.ToDouble(entity.mProperties["Mass"]);
+                    }
+                    MovingTile tile = new MovingTile(mContent, ref environment, 0.8f, entity);
+                    tile.Mass = mass;
                     objects.Add(tile);
                 }
             }

@@ -26,6 +26,13 @@ namespace GravityShift
             get { return mEnvironment; }
             set { mEnvironment = value; }
         }
+
+        protected float mMass;
+        public float Mass
+        {
+            get { return mMass; }
+            set { mMass = value; }
+        }
         
         //All forces applied to this physicsObject
         private Vector2 mGravityForce = new Vector2(0,0);
@@ -63,6 +70,7 @@ namespace GravityShift
             mEnvironment = environment;
             mVelocity = new Vector2(0, 0);
             UpdateBoundingBoxes();
+            mMass = 1;
         }
 
         /// <summary>
@@ -141,12 +149,13 @@ namespace GravityShift
         /// </summary>
         private void UpdateVelocities()
         {
-            mVelocity = Vector2.Add(mVelocity, mEnvironment.GravityForce);
+            mVelocity = Vector2.Add(mVelocity, Vector2.Divide(mEnvironment.GravityForce, mMass));
             mVelocity = Vector2.Add(mVelocity, mAdditionalForces);
 
             //Force erosion on the resistive forces(friction/wind resistance)
             ChangeGravityForceDirection(mEnvironment.GravityDirection);
             mVelocity = Vector2.Multiply(mVelocity,mResistiveForce);
+            //mVelocity = Vector2.Divide(mVelocity, mMass);
 
             EnforceTerminalVelocity();
         }
