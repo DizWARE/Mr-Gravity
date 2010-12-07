@@ -180,7 +180,8 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <Force>.35</Force>
+      <XForce>.35</XForce>
+      <YForce>0</YForce>
     </Properties>
   </Entity>
   <Entity>
@@ -205,7 +206,7 @@
     <Texture>Physics Objects\collectable</Texture>
     <Properties>
       <Shape>Square</Shape>
-      <Mass>1</Mass>
+      <Mass>2</Mass>
     </Properties>
   </Entity>
 </Entities>
