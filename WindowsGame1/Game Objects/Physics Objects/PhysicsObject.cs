@@ -289,8 +289,9 @@ namespace GravityShift
             // place it just so it is not colliding. 
             if (otherObject is PhysicsObject)
             {
+                
                 mPosition += add / 2;
-                otherObject.mPosition -= add / 2;                
+                ((PhysicsObject)otherObject).mPosition -= add / 2;                
             }
             else
             {
@@ -529,8 +530,17 @@ namespace GravityShift
             float vain = Vector2.Dot(this.mVelocity, N);
             float vait = Vector2.Dot(this.mVelocity, T);
 
-            float vbin = Vector2.Dot(((PhysicsObject)otherObject).mVelocity, N);
-            float vbit = Vector2.Dot(((PhysicsObject)otherObject).mVelocity, T);
+            float vbin, vbit;
+            if (otherObject is PhysicsObject)
+            {
+                vbin = Vector2.Dot(((PhysicsObject)otherObject).mVelocity, N);
+                vbit = Vector2.Dot(((PhysicsObject)otherObject).mVelocity, T);
+            }
+            else
+            {
+                vbin = Vector2.Dot(Vector2.Zero, N);
+                vbit = Vector2.Dot(Vector2.Zero, T);
+            }
 
             float vafn = ((e + 1.0f) * vbin + vain * (1 - e)) / 2;
             float vbfn = ((e + 1.0f) * vain - vbin * (1 - e)) / 2;
