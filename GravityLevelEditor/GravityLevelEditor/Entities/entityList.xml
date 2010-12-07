@@ -206,7 +206,7 @@
     <Texture>Physics Objects\collectable</Texture>
     <Properties>
       <Shape>Square</Shape>
-      <Mass>1</Mass>
+      <Mass>2</Mass>
     </Properties>
   </Entity>
 </Entities>
