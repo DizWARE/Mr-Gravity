@@ -18,14 +18,15 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
     class BasicTrigger : Trigger
     {
         List<PhysicsObject> affectedObjects = new List<PhysicsObject>();
-        float mForce = .35f;
-        Vector2 mDirection = new Vector2(1, 0);
+        Vector2 mForce = new Vector2(1, 0);
 
         public BasicTrigger(ContentManager content, EntityInfo entity) :
             base(content, entity) 
         {
-            if (entity.mProperties.ContainsKey(XmlKeys.FORCE))
-                mForce = float.Parse(entity.mProperties[XmlKeys.FORCE]);
+            if (entity.mProperties.ContainsKey(XmlKeys.XFORCE))
+                mForce.X = float.Parse(entity.mProperties[XmlKeys.XFORCE]);
+            if (entity.mProperties.ContainsKey(XmlKeys.YFORCE))
+                mForce.Y = float.Parse(entity.mProperties[XmlKeys.YFORCE]);
         }
 
         /// <summary>
@@ -45,9 +46,9 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
                     PhysicsObject pObj = (PhysicsObject)gObj;
 
                     if (!affectedObjects.Contains(pObj) && isColliding)
-                    { pObj.AddForce(Vector2.Multiply(mDirection, mForce)); affectedObjects.Add(pObj); }
+                    { pObj.AddForce(mForce); affectedObjects.Add(pObj); }
                     else if (affectedObjects.Contains(pObj) && !isColliding)
-                    { pObj.AddForce(Vector2.Multiply(mDirection,-mForce)); affectedObjects.Remove(pObj); }                    
+                    { pObj.AddForce(Vector2.Multiply(mForce,-1)); affectedObjects.Remove(pObj); }                    
                 }
             }
         }

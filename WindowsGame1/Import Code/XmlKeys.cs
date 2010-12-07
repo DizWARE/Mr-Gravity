@@ -23,7 +23,8 @@ namespace GravityShift.Import_Code
         public static string TEXTURE = "Texture";
         public static string ID = "ID";
         public static string MASS = "Mass";
-        public static string FORCE = "Force";
+        public static string XFORCE = "XForce";
+        public static string YFORCE = "YForce";
         
         //Names
         public static string WIDTH = "Width";
