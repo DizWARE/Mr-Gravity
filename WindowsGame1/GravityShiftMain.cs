@@ -27,9 +27,21 @@ namespace GravityShift
         //Instance of the Menu class
         Menu menu;
 
+        //Instance of the scoring class
+        Scoring scoring;
+
+//        enum States
+//        {
+//            GAME,
+//            MENU,
+//            PAUSE,
+//            SCORE
+//        };
+
         // Boolean to track whether we are in the game or the menu
         private static bool inGame = false;
         private static bool inMenu = true;
+        private static bool inScore = false;
 
         // Camera
         public static Camera cam;
@@ -86,6 +98,7 @@ namespace GravityShift
             mPhysicsEnvironment = new PhysicsEnvironment();
 
             menu = new Menu();
+            scoring = new Scoring();
 
             isPaused = false;
 
@@ -104,8 +117,13 @@ namespace GravityShift
         {
             get { return inGame; }
             set { inGame = value; }
-        } 
+        }
 
+        public static bool InScore
+        {
+            get { return inScore; }
+            set { inScore = value; }
+        }
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -113,6 +131,7 @@ namespace GravityShift
         protected override void LoadContent()
         {
             menu.Load(Content);
+            scoring.Load(Content);
             GameSound.Load(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
@@ -169,7 +188,7 @@ namespace GravityShift
                 PhysicsEnvironment environment = new PhysicsEnvironment();
                 environment.TerminalSpeed = 20;
                 environment.GravityMagnitude = 1;
-                if ((player.mIsAlive)&&!isPaused)// only update while player is alive
+                if ((player.mIsAlive) && !isPaused)// only update while player is alive
                 {
                     foreach (GameObject gObject in mObjects)
                     {
@@ -179,9 +198,9 @@ namespace GravityShift
                             pObject.Update(gameTime);
                             // handle collision right after you move
                             HandleCollisions(pObject);
-                            if (pObject is Player) 
-                                foreach(Trigger trigger in mTrigger) 
-                                    trigger.RunTrigger(mObjects,(Player)pObject);              
+                            if (pObject is Player)
+                                foreach (Trigger trigger in mTrigger)
+                                    trigger.RunTrigger(mObjects, (Player)pObject);
 
                             // Update zoom based on players velocity                 
                             pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
@@ -218,6 +237,9 @@ namespace GravityShift
             }
             else if (inMenu)
                 menu.Update(gameTime);
+
+            else if (inScore)
+                scoring.Update(gameTime);
 
             if (!player.mIsAlive)
             {
@@ -272,6 +294,11 @@ namespace GravityShift
             }
             else if (inMenu)
                 menu.Draw(mSpriteBatch, mGraphics);
+
+            else if (inScore)
+            {
+                scoring.Draw(mSpriteBatch, mGraphics);
+            }
         }
 
         /// <summary>
@@ -304,7 +331,9 @@ namespace GravityShift
                 { 
                     Respawn(); 
                     inGame = false; 
-                    inMenu = true; 
+                    inMenu = false;
+                    inScore = true;
+
                     GameSound.level_stageVictory.Play(); 
                 }
 

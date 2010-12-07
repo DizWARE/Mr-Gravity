@@ -550,7 +550,8 @@ namespace GravityShift
                     }
                     break;
             }
-                    /* Set the previous states to the current states */
+            
+            /* Set the previous states to the current states */
             prev_pad_state = pad_state;
             prev_key_state = key_state;
         }
