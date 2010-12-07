@@ -24,6 +24,8 @@ namespace GravityShift
         private Texture2D[] unselMenuItems;
         private Texture2D[] menuItems;
 
+        private bool muted;
+
         enum states
         {
             TITLE,
@@ -39,6 +41,7 @@ namespace GravityShift
         private const int NUM_TITLE = 4;
         private const int NUM_LOAD = 4;
         private const int NUM_OPTIONS = 3;
+        private const int NUM_SOUND = 2;
 
         GamePadState pad_state;
         GamePadState prev_pad_state;
@@ -82,6 +85,12 @@ namespace GravityShift
         /* Controller Settings */
         private Texture2D xboxControl;
 
+        /* Sounds Screen */
+        private Texture2D mute;
+        private Texture2D unMute;
+        private Texture2D muteSel;
+        private Texture2D muteUnsel;
+
         #endregion
 
         /*
@@ -103,6 +112,8 @@ namespace GravityShift
         {
             state = states.TITLE;
             current = 0;
+
+            muted = false;
 
             selMenuItems = new Texture2D[NUM_TITLE];
             unselMenuItems = new Texture2D[NUM_TITLE];
@@ -138,6 +149,12 @@ namespace GravityShift
 
             /* Controller */
             xboxControl = content.Load<Texture2D>("menu/XboxController");
+
+            /* Sound Screen */
+            mute = content.Load<Texture2D>("menu/mute");
+            unMute = content.Load<Texture2D>("menu/unMute");
+            muteSel = content.Load<Texture2D>("menu/MuteSelected");
+            muteUnsel = content.Load<Texture2D>("menu/MuteUnselected");
 
             /* Initialize the menu item arrays */
             selMenuItems[0] = newGameSel;
@@ -190,7 +207,7 @@ namespace GravityShift
                         /* If we are not on the first element already */
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play();
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                             /* Decrement current and change the images */
                             current--;
                             for (int i = 0; i < NUM_TITLE; i++)
@@ -207,7 +224,7 @@ namespace GravityShift
                         /* If we are on the last element in the menu */
                         if (current < NUM_TITLE - 1)
                         {
-                            GameSound.menuSound_rollover.Play();
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                             /* Increment current and update graphics */
                             current++;
                             for (int i = 0; i < NUM_TITLE; i++)
@@ -222,7 +239,7 @@ namespace GravityShift
                         key_state.IsKeyDown(Keys.Enter) &&
                         prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        GameSound.menuSound_select.Play();
+                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                         /* New Game */
                         if (current == 0)
                         {
@@ -302,7 +319,7 @@ namespace GravityShift
                     {
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play();
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                             current--;
                             for (int i = 0; i < NUM_OPTIONS; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -316,7 +333,7 @@ namespace GravityShift
                     {
                         if (current < NUM_OPTIONS - 1)
                         {
-                            GameSound.menuSound_rollover.Play();
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                             current++;
                             for (int i = 0; i < NUM_OPTIONS; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -329,7 +346,7 @@ namespace GravityShift
                         key_state.IsKeyDown(Keys.Enter) &&
                         prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        GameSound.menuSound_select.Play();
+                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                         /* Controller Settings */
                         if (current == 0)
                         {
@@ -339,6 +356,21 @@ namespace GravityShift
                         else if (current == 1)
                         {
                             state = states.SOUNDS;
+
+                            selMenuItems = new Texture2D[NUM_SOUND];
+                            unselMenuItems = new Texture2D[NUM_SOUND];
+                            menuItems = new Texture2D[NUM_SOUND];
+
+                            selMenuItems[0] = muteSel;
+                            selMenuItems[1] = backSel;
+
+                            unselMenuItems[0] = muteUnsel;
+                            unselMenuItems[1] = backUnsel;
+
+                            menuItems[0] = muteSel;
+                            menuItems[1] = backUnsel;
+                   
+                            current = 0;
                         }
                         /* Back */
                         else if (current == 2)
@@ -378,7 +410,7 @@ namespace GravityShift
                     {
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play();
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                             current--;
                             for (int i = 0; i < NUM_LOAD; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -392,7 +424,7 @@ namespace GravityShift
                     {
                         if (current < NUM_LOAD - 1)
                         {
-                            GameSound.menuSound_rollover.Play();
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                             current++;
                             for (int i = 0; i < NUM_LOAD; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -405,7 +437,7 @@ namespace GravityShift
                         key_state.IsKeyDown(Keys.Enter) &&
                         prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        GameSound.menuSound_select.Play();
+                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                         /* Level 1 */
                         if (current == 0)
                         {
@@ -451,14 +483,14 @@ namespace GravityShift
                     }
                     break;
 
-                /* Options Menu*/
+                /* Credits Menu*/
                 case states.CREDITS:
                     if (pad_state.IsButtonDown(Buttons.A) &&
                         prev_pad_state.IsButtonUp(Buttons.A) ||
                         key_state.IsKeyDown(Keys.Enter) &&
                         prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        GameSound.menuSound_select.Play();
+                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                         /* Back */
                         state = states.TITLE;
 
@@ -492,7 +524,7 @@ namespace GravityShift
                         key_state.IsKeyDown(Keys.Enter) &&
                         prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        GameSound.menuSound_select.Play();
+                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
 
                         /* Change to the options menu */
                         state = states.OPTIONS;
@@ -520,33 +552,82 @@ namespace GravityShift
 
                 /* Sound Settings */
                 case states.SOUNDS:
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
+                        key_state.IsKeyDown(Keys.Up) &&
+                        prev_key_state.IsKeyUp(Keys.Up))
+                    {
+                        if (current > 0)
+                        {
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            current--;
+                            for (int i = 0; i < NUM_SOUND; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
+                    }
+                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
+                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
+                        key_state.IsKeyDown(Keys.Down) &&
+                        prev_key_state.IsKeyUp(Keys.Down))
+                    {
+                        if (current < NUM_SOUND - 1)
+                        {
+                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            current++;
+                            for (int i = 0; i < NUM_SOUND; i++)
+                                menuItems[i] = unselMenuItems[i];
+                            menuItems[current] = selMenuItems[current];
+                        }
+                    }
+
                     if (pad_state.IsButtonDown(Buttons.A) &&
                         prev_pad_state.IsButtonUp(Buttons.A) ||
                         key_state.IsKeyDown(Keys.Enter) &&
                         prev_key_state.IsKeyUp(Keys.Enter))
                     {
-                        GameSound.menuSound_select.Play();
-                        
-                        /* Change to the options menu */
-                        state = states.OPTIONS;
+                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        /* Mute */
+                        if (current == 0)
+                        {
+                            if (muted == false)
+                            {
+                                muted = true;
+                                GravityShiftMain.Volume = 0.0f;
+                            }
+                            else
+                            {
+                                muted = false;
+                                GravityShiftMain.Volume = 1.0f;
+                            }
+                        }
+                        /* Back */
+                        else if (current == 1)
+                        {
+                            /* Return back to the title screen */
+                            state = states.TITLE;
 
-                        selMenuItems = new Texture2D[NUM_OPTIONS];
-                        unselMenuItems = new Texture2D[NUM_OPTIONS];
-                        menuItems = new Texture2D[NUM_OPTIONS];
+                            selMenuItems = new Texture2D[NUM_TITLE];
+                            unselMenuItems = new Texture2D[NUM_TITLE];
+                            menuItems = new Texture2D[NUM_TITLE];
 
-                        selMenuItems[0] = controlSel;
-                        selMenuItems[1] = soundSel;
-                        selMenuItems[2] = backSel;
+                            selMenuItems[0] = newGameSel;
+                            selMenuItems[1] = loadGameSel;
+                            selMenuItems[2] = optionsSel;
+                            selMenuItems[3] = creditsSel;
 
-                        unselMenuItems[0] = controlUnsel;
-                        unselMenuItems[1] = soundUnsel;
-                        unselMenuItems[2] = backUnsel;
+                            unselMenuItems[0] = newGameUnsel;
+                            unselMenuItems[1] = loadGameUnsel;
+                            unselMenuItems[2] = optionsUnsel;
+                            unselMenuItems[3] = creditsUnsel;
 
-                        menuItems[0] = controlSel;
-                        menuItems[1] = soundUnsel;
-                        menuItems[2] = backUnsel;
+                            menuItems[0] = newGameSel;
+                            menuItems[1] = loadGameUnsel;
+                            menuItems[2] = optionsUnsel;
+                            menuItems[3] = creditsUnsel;
 
-                        current = 0;
+                            current = 0;
+                        }
                     }
                     break;
             }
@@ -624,8 +705,13 @@ namespace GravityShift
 
                 /* If on the sound settings screen */
                 case states.SOUNDS:
-                    spriteBatch.DrawString(kootenay, "Coming Soon", new Vector2(300.0f, 400.0f), Color.White);
-                    spriteBatch.Draw(backSel, new Vector2(900.0f, 700.0f), Color.White);
+
+                    spriteBatch.Draw(menuItems[0], new Vector2(300.0f, 300.0f), Color.White);
+                    if (muted)
+                        spriteBatch.Draw(mute, new Vector2(550.0f, 290.0f), Color.White);
+                    else
+                        spriteBatch.Draw(unMute, new Vector2(550.0f, 290.0f), Color.White);
+                    spriteBatch.Draw(menuItems[1], new Vector2(900.0f, 700.0f), Color.White);
                     /* TODO */
                     break;
             }

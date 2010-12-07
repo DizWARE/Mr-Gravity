@@ -30,6 +30,8 @@ namespace GravityShift
         //Instance of the scoring class
         Scoring scoring;
 
+        private static float volume;
+
 //        enum States
 //        {
 //            GAME,
@@ -85,6 +87,8 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
+            volume = 1.0f;
+
             cam = new Camera(GraphicsDevice.Viewport);
 
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
@@ -123,7 +127,15 @@ namespace GravityShift
         {
             get { return inScore; }
             set { inScore = value; }
+        
         }
+
+        public static float Volume
+        {
+            get { return volume; }
+            set { volume = value; }
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -334,14 +346,14 @@ namespace GravityShift
                     inMenu = false;
                     inScore = true;
 
-                    GameSound.level_stageVictory.Play(); 
+                    GameSound.level_stageVictory.Play(volume, 0.0f, 0.0f); 
                 }
 
                 //If player collided with a collectable object
                 if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                 {
                     //Play sound
-                    //GameSound.playerCol_hazard.Play();
+                    //GameSound.playerCol_hazard.Play(volume, 0.0f, 0.0f);
                     player.mScore += 100;
                     if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
                     else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
@@ -350,7 +362,7 @@ namespace GravityShift
                 else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                 {
                     //Play sound
-                    GameSound.playerCol_hazard.Play();
+                    GameSound.playerCol_hazard.Play(volume, 0.0f, 0.0f);
                     Respawn();
                     if (physObj is Player) physObj.Kill();
                     else ((Player)obj).Kill();

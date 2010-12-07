@@ -63,28 +63,28 @@ namespace GravityShift
 
             if (mControls.isDownPressed())
             {
-                GameSound.level_gravityShiftDown.Play();
+                GameSound.level_gravityShiftDown.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Down;
                 mGoalRotation = mRotationDown;
             }
 
             else if (mControls.isUpPressed())
             {
-                GameSound.level_gravityShiftUp.Play();
+                GameSound.level_gravityShiftUp.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Up;
                 mGoalRotation = mRotationUp;
             }
 
             else if (mControls.isLeftPressed())
             {
-                GameSound.level_gravityShiftLeft.Play();
+                GameSound.level_gravityShiftLeft.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Left;
                 mGoalRotation = mRotationLeft;
             }
 
             else if (mControls.isRightPressed())
             {
-                GameSound.level_gravityShiftRight.Play();
+                GameSound.level_gravityShiftRight.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Right;
                 mGoalRotation = mRotationRight;
             }
