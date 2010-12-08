@@ -46,8 +46,8 @@ namespace GravityShift
         public Matrix get_transformation()
         {
               return Matrix.CreateTranslation(new Vector3(-mPosition.X, -mPosition.Y, 0.0f)) *
-                        Matrix.CreateScale(new Vector3(Zoom, Zoom, 0.0f)) *
-                        Matrix.CreateTranslation(new Vector3(mWidth * 0.5f, mHeight * 0.5f, 0.0f));
+                           Matrix.CreateScale(new Vector3(Zoom, Zoom, 0.0f)) *
+                           Matrix.CreateTranslation(new Vector3(mWidth * 0.5f, mHeight * 0.5f, 0.0f));
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace GravityShift
         /// Gets and sets the mPosition variable
         /// </summary>
         /// <returns>A Vector3 value representing the position of the camera</returns>
-        public Vector3 Postion
+        public Vector3 Position
         {
             get { return mPosition; }
             set { mPosition = value; }

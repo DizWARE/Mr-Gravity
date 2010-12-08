@@ -18,6 +18,7 @@ namespace GravityShift
     {
         #region Member Variables
 
+        /* Spritefond */
         private SpriteFont kootenay;
 
         GamePadState pad_state;
@@ -26,7 +27,7 @@ namespace GravityShift
         KeyboardState prev_key_state;
 
         /* Equivalent of stars */
-        private static int[,] num_apples;
+        private static Texture2D[] num_apples;
         private const int POSSIBLE_APPLES = 3;
 
         /* Keep track of the level */
@@ -60,11 +61,11 @@ namespace GravityShift
         #region Getters and Setters
 
         /* Getter/Setter for the apples variable */
-        public static int[,] Apples
-        {
-            get { return num_apples; }
-            set { num_apples = value; }
-        }
+//        public static int[] Apples
+//        {
+//            get { return num_apples; }
+//            set { num_apples = value; }
+//        }
 
         /* Getter/Setter for the level variable */
         public static int[,] Level
@@ -103,7 +104,11 @@ namespace GravityShift
             /* For now we have 1 world with 3 levels */
             level = new int[1, 3];
             score = new int[1, 3];
-            num_apples = new int[1, 3];
+            num_apples = new Texture2D[3];
+
+            num_apples[0] = apple;
+            num_apples[1] = apple;
+            num_apples[2] = apple;
 
             current = 0;
 
@@ -143,6 +148,13 @@ namespace GravityShift
             /* Keyboard and GamePad states */
             key_state = Keyboard.GetState();
             pad_state = GamePad.GetState(PlayerIndex.One);
+
+            if (GravityShiftMain.Timer >= 10 && GravityShiftMain.Timer < 15)
+                num_apples[2] = possible_apple;
+            else if (GravityShiftMain.Timer >= 15 && GravityShiftMain.Timer < 20)
+                num_apples[1] = possible_apple;
+            if (GravityShiftMain.Timer >= 20)
+                num_apples[0] = possible_apple;
 
             /* If the user hits up */
             if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
@@ -192,6 +204,7 @@ namespace GravityShift
                     /* Start the game */
                     GravityShiftMain.InScore = false;
                     GravityShiftMain.InGame = true;
+                    GravityShiftMain.Timer = 0;
                     current = 0;
                 }
                 /* Back Game */
@@ -223,10 +236,10 @@ namespace GravityShift
 
             spriteBatch.Draw(title, new Vector2(150.0f, 50.0f), Color.White);
 
-            spriteBatch.DrawString(kootenay, "Score: ", new Vector2(350.0f, 350.0f), Color.White);
-            spriteBatch.Draw(apple, new Vector2(350.0f, 400.0f), Color.White);
-            spriteBatch.Draw(apple, new Vector2(425.0f, 400.0f), Color.White);
-            spriteBatch.Draw(possible_apple, new Vector2(500.0f, 400.0f), Color.White);
+            spriteBatch.DrawString(kootenay, "Time: " + (int)GravityShiftMain.Timer + " Seconds", new Vector2(350.0f, 350.0f), Color.White);
+            spriteBatch.Draw(num_apples[0], new Vector2(350.0f, 400.0f), Color.White);
+            spriteBatch.Draw(num_apples[1], new Vector2(425.0f, 400.0f), Color.White);
+            spriteBatch.Draw(num_apples[2], new Vector2(500.0f, 400.0f), Color.White);
 
             spriteBatch.Draw(Items[0], new Vector2(900.0f, 600.0f), Color.White);
             spriteBatch.Draw(Items[1], new Vector2(900.0f, 675.0f), Color.White);

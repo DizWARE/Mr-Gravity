@@ -30,8 +30,14 @@ namespace GravityShift
         //Instance of the scoring class
         Scoring scoring;
 
+        /* Volume variable - used to mute and unmute the sound effects */
         private static float volume;
 
+        /* Timer variable */
+        private static double timer;
+
+        /* SpriteFond */
+        SpriteFont kootenay;
 //        enum States
 //        {
 //            GAME,
@@ -47,6 +53,7 @@ namespace GravityShift
 
         // Camera
         public static Camera cam;
+        public static Camera cam1;
 
         // see if we are paused
         private static bool isPaused;
@@ -89,7 +96,12 @@ namespace GravityShift
         {
             volume = 1.0f;
 
+            timer = 0;
+
+            kootenay = Content.Load<SpriteFont>("fonts/Kootenay");
+
             cam = new Camera(GraphicsDevice.Viewport);
+            cam1 = new Camera(GraphicsDevice.Viewport);
 
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
@@ -128,6 +140,12 @@ namespace GravityShift
             get { return inScore; }
             set { inScore = value; }
         
+        }
+
+        public static double Timer
+        {
+            get { return timer; }
+            set { timer = value; }
         }
 
         public static float Volume
@@ -184,6 +202,7 @@ namespace GravityShift
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
                 || keyboard.IsKeyDown(Keys.Escape))
                 this.Exit();
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space))
             {
                 if (!wasDown)
@@ -196,6 +215,7 @@ namespace GravityShift
 
             if (inGame)
             {
+                timer += (gameTime.ElapsedGameTime.TotalSeconds); //- timeInMenus.Seconds);
                 Random rand = new Random();
                 PhysicsEnvironment environment = new PhysicsEnvironment();
                 environment.TerminalSpeed = 20;
@@ -233,8 +253,10 @@ namespace GravityShift
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
                     if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
-                        cam.Postion = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
-
+                    {
+                        cam.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
+                        cam1.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
+                    }
                     //Update zoom
                     if (Math.Abs(player.ObjectVelocity.X) > 12 || Math.Abs(player.ObjectVelocity.Y) > 12)
                     {
@@ -249,7 +271,6 @@ namespace GravityShift
             }
             else if (inMenu)
                 menu.Update(gameTime);
-
             else if (inScore)
                 scoring.Update(gameTime);
 
@@ -284,6 +305,26 @@ namespace GravityShift
             GraphicsDevice.Clear(Color.Black);
             if (inGame)
             {
+                /* Cam is used to draw everything except the HUD - SEE BELOW FOR DRAWING HUD */
+                mSpriteBatch.Begin(SpriteSortMode.Immediate,
+                    BlendState.AlphaBlend,
+                    SamplerState.LinearClamp,
+                    DepthStencilState.None,
+                    RasterizerState.CullCounterClockwise,
+                    null,
+                    cam.get_transformation());
+
+                mCurrentLevel.Draw(mSpriteBatch);
+
+                foreach (GameObject gObject in mObjects)
+                {
+                    gObject.Draw(mSpriteBatch, gameTime);
+                }
+
+                mSpriteBatch.End();
+
+
+                /* Cam 1 is for drawing the HUD - PLACE ALL YOUR HUD STUFF IN THIS SECTION */
                 // Begin spritebatch with the desired camera transformations
                 mSpriteBatch.Begin(SpriteSortMode.Immediate, 
                                     BlendState.AlphaBlend,
@@ -291,14 +332,9 @@ namespace GravityShift
                                     DepthStencilState.None, 
                                     RasterizerState.CullCounterClockwise, 
                                     null, 
-                                    cam.get_transformation());
-                    
-                mCurrentLevel.Draw(mSpriteBatch);
+                                    cam1.get_transformation());
 
-                foreach (GameObject gObject in mObjects)
-                {
-                    gObject.Draw(mSpriteBatch, gameTime);
-                }
+                mSpriteBatch.DrawString(kootenay, "Timer: " + (int)timer, new Vector2(cam1.Position.X-275, cam1.Position.Y-200), Color.White);
 
                 mSpriteBatch.End();
 
@@ -345,6 +381,8 @@ namespace GravityShift
                     inGame = false; 
                     inMenu = false;
                     inScore = true;
+
+                    this.ResetElapsedTime();
 
                     GameSound.level_stageVictory.Play(volume, 0.0f, 0.0f); 
                 }
