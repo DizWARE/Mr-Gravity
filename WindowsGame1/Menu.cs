@@ -651,17 +651,17 @@ namespace GravityShift
             spriteBatch.Begin();
 
             /* Draw the title of the game  and main background */
-            spriteBatch.Draw(title, new Vector2(150.0f, 50.0f), Color.White);
+            spriteBatch.Draw(title, new Vector2(180.0f, 50.0f), Color.White);
 
             /* If on the title screen */
             switch (state)
             {
                 case states.TITLE:
                     /* Draw the title items */
-                    spriteBatch.Draw(menuItems[0], new Vector2(460.0f, 300.0f), Color.White);
-                    spriteBatch.Draw(menuItems[1], new Vector2(445.0f, 400.0f), Color.White);
-                    spriteBatch.Draw(menuItems[2], new Vector2(500.0f, 500.0f), Color.White);
-                    spriteBatch.Draw(menuItems[3], new Vector2(510.0f, 600.0f), Color.White);
+                    spriteBatch.Draw(menuItems[0], new Vector2(500.0f, 425.0f), Color.White);
+                    spriteBatch.Draw(menuItems[1], new Vector2(480.0f, 500.0f), Color.White);
+                    spriteBatch.Draw(menuItems[2], new Vector2(540.0f, 580.0f), Color.White);
+                    spriteBatch.Draw(menuItems[3], new Vector2(552.0f, 655.0f), Color.White);
                     break;
 
                 /* If on the load screen */
