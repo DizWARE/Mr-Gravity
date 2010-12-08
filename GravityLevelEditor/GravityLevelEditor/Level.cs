@@ -96,7 +96,8 @@ namespace GravityLevelEditor
                 }
                 if (el.Name == XmlKeys.BACKGROUND)
                 {
-                    this.Background = Image.FromFile(d.FullName + "\\" + el.Value + XmlKeys.PNG);
+                    try { this.Background = Image.FromFile(d.FullName + "\\" + el.Value + XmlKeys.PNG); }
+                    catch (Exception ex) { this.Background = Image.FromFile(d.FullName + "\\errorBG" + XmlKeys.PNG); }
                     this.Background.Tag = el.Value;
                 }
                 if (el.Name == XmlKeys.COLOR)
