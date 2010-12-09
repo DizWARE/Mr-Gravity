@@ -209,4 +209,34 @@
       <Mass>2</Mass>
     </Properties>
   </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BasicRailX</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\grounda_neonGreen</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>X</Rail>
+      <Length>2</Length>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BasicRailY</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\grounda_neonGreen</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>Y</Rail>
+      <Length>5</Length>
+    </Properties>
+  </Entity>
 </Entities>

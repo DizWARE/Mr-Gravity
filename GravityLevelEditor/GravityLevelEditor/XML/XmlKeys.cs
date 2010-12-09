@@ -31,6 +31,10 @@ namespace GravityLevelEditor.XML
         public static string PROPERTIES = "Properties";
         public static string TRUE = "True";
         public static string FALSE = "False";
+        public static string RAIL = "Rail";
+        public static string RAIL_X = "X";
+        public static string RAIL_Y = "Y";
+        public static string LENGTH = "Length";
 
         //File Extensions
         public static string PNG = ".png";
