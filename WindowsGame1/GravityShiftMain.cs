@@ -36,6 +36,29 @@ namespace GravityShift
         /* Timer variable */
         private static double timer;
 
+        #region HUD
+
+        private Texture2D arrow_down;
+        private Texture2D arrow_left;
+        private Texture2D arrow_right;
+        private Texture2D arrow_up;
+
+        private Texture2D life_count_0;
+        private Texture2D life_count_1;
+        private Texture2D life_count_2;
+        private Texture2D life_count_3;
+        private Texture2D life_count_4;
+        private Texture2D life_count_5;
+        private Texture2D life_count_6;
+        private Texture2D life_count_7;
+        private Texture2D life_count_8;
+        private Texture2D life_count_9;
+
+        private Texture2D[] directions;
+        private Texture2D[] lives;
+
+        #endregion
+
         /* SpriteFond */
         SpriteFont kootenay;
 //        enum States
@@ -88,7 +111,7 @@ namespace GravityShift
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
+        /// This is where it c5an query for any required services and load any non-graphic
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
@@ -117,6 +140,41 @@ namespace GravityShift
             scoring = new Scoring();
 
             isPaused = false;
+
+            arrow_down = Content.Load<Texture2D>("HUD/arrow_down");
+            arrow_left = Content.Load<Texture2D>("HUD/arrow_left");
+            arrow_right = Content.Load<Texture2D>("HUD/arrow_right");
+            arrow_up = Content.Load<Texture2D>("HUD/arrow_up");
+
+            life_count_0 = Content.Load<Texture2D>("HUD/NeonLifeCount0");
+            life_count_1 = Content.Load<Texture2D>("HUD/NeonLifeCount1");
+            life_count_2 = Content.Load<Texture2D>("HUD/NeonLifeCount2");
+            life_count_3 = Content.Load<Texture2D>("HUD/NeonLifeCount3");
+            life_count_4 = Content.Load<Texture2D>("HUD/NeonLifeCount4");
+            life_count_5 = Content.Load<Texture2D>("HUD/NeonLifeCount5");
+            life_count_6 = Content.Load<Texture2D>("HUD/NeonLifeCount6");
+            life_count_7 = Content.Load<Texture2D>("HUD/NeonLifeCount7");
+            life_count_8 = Content.Load<Texture2D>("HUD/NeonLifeCount8");
+            life_count_9 = Content.Load<Texture2D>("HUD/NeonLifeCount9");
+
+            directions = new Texture2D[4];
+
+            directions[0] = arrow_up;
+            directions[1] = arrow_right;
+            directions[2] = arrow_down;
+            directions[3] = arrow_left;
+
+            lives = new Texture2D[10];
+            lives[0] = life_count_0;
+            lives[1] = life_count_1;
+            lives[2] = life_count_2;
+            lives[3] = life_count_3;
+            lives[4] = life_count_4;
+            lives[5] = life_count_5;
+            lives[6] = life_count_6;
+            lives[7] = life_count_7;
+            lives[8] = life_count_8;
+            lives[9] = life_count_9;
 
             base.Initialize();
         }
@@ -336,6 +394,17 @@ namespace GravityShift
 
                 mSpriteBatch.DrawString(kootenay, "Timer: " + (int)timer, new Vector2(cam1.Position.X-275, cam1.Position.Y-200), Color.White);
 
+                if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
+                    mSpriteBatch.Draw(directions[0], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
+                    mSpriteBatch.Draw(directions[1], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
+                    mSpriteBatch.Draw(directions[2], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
+                    mSpriteBatch.Draw(directions[3], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+
+                mSpriteBatch.Draw(lives[player.mNumLives], new Vector2(cam1.Position.X + 600, cam1.Position.Y - 200), Color.White);
+
                 mSpriteBatch.End();
 
                 base.Draw(gameTime);
@@ -381,6 +450,7 @@ namespace GravityShift
                     inGame = false; 
                     inMenu = false;
                     inScore = true;
+                    scoring.Load(Content);
 
                     this.ResetElapsedTime();
 

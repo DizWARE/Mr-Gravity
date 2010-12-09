@@ -47,7 +47,7 @@ namespace GravityShift
         #region Art
 
         private Texture2D apple;
-        private Texture2D possible_apple;
+        private Texture2D apple_gray;
 
         private Texture2D backUnsel;
         private Texture2D backSel;
@@ -98,7 +98,7 @@ namespace GravityShift
             kootenay = content.Load<SpriteFont>("fonts/Kootenay");
 
             apple = content.Load<Texture2D>("scoring/apple");
-            possible_apple = content.Load<Texture2D>("scoring/possible_apple");
+            apple_gray = content.Load<Texture2D>("scoring/apple_gray");
 
             /* Set up with the number of worlds and levels */
             /* For now we have 1 world with 3 levels */
@@ -149,12 +149,20 @@ namespace GravityShift
             key_state = Keyboard.GetState();
             pad_state = GamePad.GetState(PlayerIndex.One);
 
-            if (GravityShiftMain.Timer >= 10 && GravityShiftMain.Timer < 15)
-                num_apples[2] = possible_apple;
-            else if (GravityShiftMain.Timer >= 15 && GravityShiftMain.Timer < 20)
-                num_apples[1] = possible_apple;
+            if (GravityShiftMain.Timer >= 10)
+            {
+                num_apples[2] = apple_gray;
+            }
+
+            if (GravityShiftMain.Timer >= 15)
+            {
+                num_apples[1] = apple_gray;
+            }
+
             if (GravityShiftMain.Timer >= 20)
-                num_apples[0] = possible_apple;
+            {
+                num_apples[0] = apple_gray;
+            }
 
             /* If the user hits up */
             if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
