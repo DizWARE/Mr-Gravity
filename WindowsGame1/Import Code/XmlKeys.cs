@@ -25,6 +25,10 @@ namespace GravityShift.Import_Code
         public static string MASS = "Mass";
         public static string XFORCE = "XForce";
         public static string YFORCE = "YForce";
+        public static string RAIL = "Rail";
+        public static string RAIL_X = "X";
+        public static string RAIL_Y = "Y";
+        public static string LENGTH = "Length";
         
         //Names
         public static string WIDTH = "Width";
