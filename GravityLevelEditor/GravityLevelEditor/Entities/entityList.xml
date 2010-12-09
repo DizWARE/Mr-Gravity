@@ -205,7 +205,7 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>2</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -220,7 +220,7 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>5</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>

@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
+using GravityShift.MISC_Code;
 
 namespace GravityShift
 {
@@ -39,7 +40,8 @@ namespace GravityShift
 
         //only used for rails
         private Vector2 mOriginalPosition;
-        private int mRailLength;
+        private float mHiBound;
+        private float mLowBound;
         
         //All forces applied to this physicsObject
         private Vector2 mGravityForce = new Vector2(0,0);
@@ -80,9 +82,18 @@ namespace GravityShift
             mIsRail = mOriginalInfo.mProperties.ContainsKey(XmlKeys.RAIL);
 
             if (mIsRail)
-                mRailLength = int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64;
+                if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                {
+                    mHiBound = GridSpace.GetDrawingCoord(mOriginalPosition).X + (int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64);
+                    mLowBound = GridSpace.GetDrawingCoord(mOriginalPosition).X;
+                }
+                else
+                {
+                    mHiBound = GridSpace.GetDrawingCoord(mOriginalPosition).Y + (int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64);
+                    mLowBound = GridSpace.GetDrawingCoord(mOriginalPosition).Y;
+                }
             else
-                mRailLength = 0;
+                mHiBound = mLowBound = 0;
 
             UpdateBoundingBoxes();
             mMass = 1;
@@ -151,6 +162,40 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Ensures a rail physics objects stays in its bounds
+        /// </summary>
+        private void EnforceRailBounds()
+        {
+            if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+            {
+
+                if (mPosition.X > mHiBound)
+                {
+                    mPosition.X = mHiBound;
+                    mVelocity = Vector2.Zero;
+                }
+                else if (mPosition.X < mLowBound)
+                {
+                    mPosition.X = mLowBound;
+                    mVelocity = Vector2.Zero;
+                }
+            }
+            else
+            {
+                if (mPosition.Y > mHiBound)
+                {
+                    mPosition.Y = mHiBound;
+                    mVelocity = Vector2.Zero;
+                }
+                else if (mPosition.Y < mLowBound)
+                {
+                    mPosition.Y = mLowBound;
+                    mVelocity = Vector2.Zero;
+                }
+            }
+        }
+
+        /// <summary>
         /// Updates the bounding box around this object
         /// </summary>
         private void UpdateBoundingBoxes()
@@ -181,6 +226,9 @@ namespace GravityShift
             ChangeGravityForceDirection(mEnvironment.GravityDirection); 
             mVelocity = Vector2.Multiply(mVelocity, mResistiveForce);
             EnforceTerminalVelocity();
+
+            if (mIsRail)
+                EnforceRailBounds();
         }
 
         /// <summary>
