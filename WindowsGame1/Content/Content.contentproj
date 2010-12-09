@@ -534,7 +534,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\Physics Objects\AngryNewton.png">
-      <Name>AngryNewton</Name>
+      <Name>AngryNewton</Name>	  
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+	</Compile>
+    <Compile Include="Images\Backgrounds\BlackBG.png">
+      <Name>BlackBG</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
