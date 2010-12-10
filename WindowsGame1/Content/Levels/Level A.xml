@@ -2,7 +2,7 @@
 <Level>
   <Name>Level A</Name>
   <Size X="39" Y="29" />
-  <Background>Backgrounds\BlackBG</Background>
+  <Background>Backgrounds\backgroundCogs1</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>

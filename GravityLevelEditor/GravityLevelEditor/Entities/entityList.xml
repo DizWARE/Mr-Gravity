@@ -120,7 +120,7 @@
   <Entity>
     <ID>0</ID>
     <Name>FallingYellow</Name>
-    <Type>Static Objects</Type>
+    <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
