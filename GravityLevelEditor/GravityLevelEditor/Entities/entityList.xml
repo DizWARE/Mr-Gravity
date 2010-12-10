@@ -170,22 +170,6 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>Basic</Name>
-    <Type>Triggers</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Triggers\Trigger</Texture>
-    <Properties>
-      <Width>3</Width>
-      <Height>3</Height>
-      <Shape>Square</Shape>
-      <XForce>.35</XForce>
-      <YForce>0</YForce>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
     <Name>BasicCollectable</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
@@ -207,6 +191,63 @@
     <Properties>
       <Shape>Square</Shape>
       <Mass>2</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BasicRailX</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\grounda_neonGreen</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>X</Rail>
+      <Length>3</Length>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BasicRailY</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Static Objects\grounda_neonGreen</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>Y</Rail>
+      <Length>3</Length>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>Basic</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Triggers\Trigger</Texture>
+    <Properties>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>Moving Square</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Physics Objects</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Physics Objects\AngryNewton</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
     </Properties>
   </Entity>
 </Entities>

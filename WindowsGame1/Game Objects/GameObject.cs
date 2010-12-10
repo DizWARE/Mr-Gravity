@@ -36,6 +36,7 @@ namespace GravityShift
         private Vector2 mInitialPosition;
 
         protected EntityInfo mOriginalInfo;
+        public EntityInfo OriginalInfo { get { return mOriginalInfo; } set { mOriginalInfo = value; } }
 
         protected Texture2D mTexture;
         public Rectangle mBoundingBox;

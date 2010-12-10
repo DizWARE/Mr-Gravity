@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
+using GravityShift.MISC_Code;
 
 namespace GravityShift
 {
@@ -33,6 +34,14 @@ namespace GravityShift
             get { return mMass; }
             set { mMass = value; }
         }
+
+        private bool mIsRail;
+        public bool IsRail { get { return mIsRail; } }
+
+        //only used for rails
+        private Vector2 mOriginalPosition;
+        private float mHiBound;
+        private float mLowBound;
         
         //All forces applied to this physicsObject
         private Vector2 mGravityForce = new Vector2(0,0);
@@ -69,6 +78,23 @@ namespace GravityShift
         {
             mEnvironment = environment;
             mVelocity = new Vector2(0, 0);
+            mOriginalPosition = mOriginalInfo.mLocation;
+            mIsRail = mOriginalInfo.mProperties.ContainsKey(XmlKeys.RAIL);
+
+            if (mIsRail)
+                if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                {
+                    mHiBound = GridSpace.GetDrawingCoord(mOriginalPosition).X + (int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64);
+                    mLowBound = GridSpace.GetDrawingCoord(mOriginalPosition).X;
+                }
+                else
+                {
+                    mHiBound = GridSpace.GetDrawingCoord(mOriginalPosition).Y + (int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64);
+                    mLowBound = GridSpace.GetDrawingCoord(mOriginalPosition).Y;
+                }
+            else
+                mHiBound = mLowBound = 0;
+
             UpdateBoundingBoxes();
             mMass = 1;
         }
@@ -136,6 +162,40 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Ensures a rail physics objects stays in its bounds
+        /// </summary>
+        private void EnforceRailBounds()
+        {
+            if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+            {
+
+                if (mPosition.X > mHiBound)
+                {
+                    mPosition.X = mHiBound;
+                    mVelocity = Vector2.Zero;
+                }
+                else if (mPosition.X < mLowBound)
+                {
+                    mPosition.X = mLowBound;
+                    mVelocity = Vector2.Zero;
+                }
+            }
+            else
+            {
+                if (mPosition.Y > mHiBound)
+                {
+                    mPosition.Y = mHiBound;
+                    mVelocity = Vector2.Zero;
+                }
+                else if (mPosition.Y < mLowBound)
+                {
+                    mPosition.Y = mLowBound;
+                    mVelocity = Vector2.Zero;
+                }
+            }
+        }
+
+        /// <summary>
         /// Updates the bounding box around this object
         /// </summary>
         private void UpdateBoundingBoxes()
@@ -149,15 +209,26 @@ namespace GravityShift
         /// </summary>
         private void UpdateVelocities()
         {
-            mVelocity = Vector2.Add(mVelocity, Vector2.Divide(mEnvironment.GravityForce, mMass));
-            mVelocity = Vector2.Add(mVelocity, mAdditionalForces);
+            if (mIsRail)
+            {
+                if(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    mVelocity.X += (mEnvironment.GravityForce.X / mMass);
+                else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_Y)
+                    mVelocity.Y += (mEnvironment.GravityForce.Y / mMass);
+            }
+            else
+            {
+                mVelocity = Vector2.Add(mVelocity, Vector2.Divide(mEnvironment.GravityForce, mMass));
+                mVelocity = Vector2.Add(mVelocity, mAdditionalForces); 
+            }
 
             //Force erosion on the resistive forces(friction/wind resistance)
-            ChangeGravityForceDirection(mEnvironment.GravityDirection);
-            mVelocity = Vector2.Multiply(mVelocity,mResistiveForce);
-            //mVelocity = Vector2.Divide(mVelocity, mMass);
-
+            ChangeGravityForceDirection(mEnvironment.GravityDirection); 
+            mVelocity = Vector2.Multiply(mVelocity, mResistiveForce);
             EnforceTerminalVelocity();
+
+            if (mIsRail)
+                EnforceRailBounds();
         }
 
         /// <summary>
@@ -236,8 +307,11 @@ namespace GravityShift
                 {
                     //Reset Y Velocity to 0
                     mVelocity.Y = 0;
-                    // reduce x velocity for friction
-                    mVelocity.X *= otherObject.mFriction;
+
+                    if(!mIsRail || (mIsRail && !(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_Y)))
+                        // reduce x velocity for friction
+                        mVelocity.X *= otherObject.mFriction;
+
                     // place the Y pos just so it is not colliding. 
                     mPosition.Y += colDepth.Y;
                 }
@@ -245,8 +319,11 @@ namespace GravityShift
                 {
                     //Reset X Velocity to 0
                     mVelocity.X = 0;
-                    // reduce Y velocity for friction
-                    mVelocity.Y *= otherObject.mFriction;
+
+                    if (!mIsRail || (mIsRail && !(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)))
+                        // reduce Y velocity for friction
+                        mVelocity.Y *= otherObject.mFriction;
+
                     // place the X pos just so it is not colliding.
                     mPosition.X += colDepth.X;
                 }
@@ -289,14 +366,29 @@ namespace GravityShift
             // place it just so it is not colliding. 
             if (otherObject is PhysicsObject)
             {
-                
-                mPosition += add / 2;
-                ((PhysicsObject)otherObject).mPosition -= add / 2;                
+                if (!mIsRail)
+                    mPosition += add / 2;
+                else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    mPosition.X += add.X / 2;
+                else
+                    mPosition.Y += add.Y / 2;
+
+                if(!((PhysicsObject)otherObject).IsRail)
+                    ((PhysicsObject)otherObject).mPosition -= add / 2;
+                else if (otherObject.OriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    ((PhysicsObject)otherObject).mPosition.X -= add.X / 2;
+                else
+                    ((PhysicsObject)otherObject).mPosition.Y -= add.Y / 2;
             }
             else
             {
                 // do not move a static object
-                mPosition += add;
+                if(!mIsRail)
+                    mPosition += add;
+                else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    mPosition.X += add.X;
+                else
+                    mPosition.Y += add.Y;
             }
 
             UpdateBoundingBoxes();
@@ -372,8 +464,6 @@ namespace GravityShift
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
 
-                // Handle velocities
-
                 // normal of the collision
                 Vector2 N = centerDiff;
                 N.Normalize();
@@ -393,11 +483,23 @@ namespace GravityShift
                 float vaft = vait;
                 float vbft = vbit;
 
-                this.mVelocity.X = vafn * N.X + vaft * T.X;
-                this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
+                if (!mIsRail)
+                {
+                    this.mVelocity.X = vafn * N.X + vaft * T.X;
+                    this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
+                }
+                else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    this.mVelocity.X = vafn * N.X + vaft * T.X;
+                else
+                    this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
 
-                // place the Y pos just so it is not colliding. 
-                mPosition += add;
+                // place the Y pos just so it is not colliding.
+                if (!mIsRail)
+                    mPosition += add;
+                else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    mPosition.X += add.X;
+                else
+                    mPosition.Y += add.Y;
                 
                 UpdateBoundingBoxes();
                 if (add.Length() > 0.5f)
@@ -547,14 +649,28 @@ namespace GravityShift
             float vaft = vait;
             float vbft = vbit;
 
-            this.mVelocity.X = vafn * N.X + vaft * T.X;
-            this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
+            if (!mIsRail)
+            {
+                this.mVelocity.X = vafn * N.X + vaft * T.X;
+                this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
+            }
+            else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                this.mVelocity.X = vafn * N.X + vaft * T.X;
+            else
+                this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
 
 
             if (otherObject is PhysicsObject)
             {
-                ((PhysicsObject)otherObject).mVelocity.X = vbfn * N.X + vbft * T.X;
-                ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
+                if (!((PhysicsObject)otherObject).IsRail)
+                {
+                    ((PhysicsObject)otherObject).mVelocity.X = vbfn * N.X + vbft * T.X;
+                    ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
+                }
+                else if (otherObject.OriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
+                    ((PhysicsObject)otherObject).mVelocity.X = vbfn * N.X + vbft * T.X;
+                else
+                    ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
             }
         }
         public abstract int Kill();
