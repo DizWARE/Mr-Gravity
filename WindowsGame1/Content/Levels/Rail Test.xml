@@ -2,7 +2,7 @@
 <Level>
   <Name>Rail Test</Name>
   <Size X="20" Y="20" />
-  <Background>Backgrounds\TestBackground</Background>
+  <Background>Backgrounds\BlackBG</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>

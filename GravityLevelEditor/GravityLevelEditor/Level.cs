@@ -113,11 +113,6 @@ namespace GravityLevelEditor
                     {
                         mEntities.Add(new Entity(entity));
                     }
-
-                    //Set the object id to be the max of the saved id's
-                    //foreach (Entity e in mEntities)
-                    //    if (mObjectID < e.ID)
-                    //        mObjectID = e.ID;
                 }
             }
         }
