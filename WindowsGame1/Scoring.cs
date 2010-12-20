@@ -220,6 +220,8 @@ namespace GravityShift
                 {
                     GravityShiftMain.InScore = false;
                     GravityShiftMain.InMenu = true;
+                    GravityShiftMain.Timer = 0;
+
                     current = 0;
                 }
             }

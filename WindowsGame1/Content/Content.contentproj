@@ -464,11 +464,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="scoring\apple_gray.png">
-	  <Name>apple_gray</Name>
-	  <Importer>TextureImporter</Importer>
-	  <Processor>TextureProcessor</Processor>
+      <Name>apple_gray</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
-	<Compile Include="Images\Backgrounds\Background6Resize.png">
+    <Compile Include="Images\Backgrounds\Background6Resize.png">
       <Name>Background6Resize</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -594,7 +594,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-	<Compile Include="Images\Static Objects\collectable.png">
+    <Compile Include="Images\Static Objects\collectable.png">
       <Name>collectable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -602,10 +602,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\Physics Objects\AngryNewton.png">
-      <Name>AngryNewton</Name>	  
+      <Name>AngryNewton</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-	</Compile>
+    </Compile>
     <Compile Include="Images\Backgrounds\BlackBG.png">
       <Name>BlackBG</Name>
       <Importer>TextureImporter</Importer>
@@ -614,7 +614,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\Backgrounds\backgroundCogs1.png">
-      <Name>backgroundCogs1</Name>
+      <Name>backgroundCogs1</Name> 
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="animatedSprites\Blackhole.png">
+      <Name>Blackhole</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

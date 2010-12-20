@@ -59,7 +59,7 @@ namespace GravityLevelEditor.EntityCreationForm
         {
             string type = "";
             if(!lb_filter.SelectedItem.Equals("(None)")) type = lb_filter.SelectedItem.ToString();
-            mAllEntities.Add(new Entity(type, "New",0, type, true,
+            mAllEntities.Add(new Entity(type, "New",0, "Normal", true,
                 new Dictionary<string, string>(),
                 Image.FromFile("..\\..\\Content\\defaultImage.png")));
             mFilteredEntities.Add(mAllEntities[mAllEntities.Count - 1]);
@@ -106,6 +106,7 @@ namespace GravityLevelEditor.EntityCreationForm
             int index = lb_entitySelect.SelectedIndex;
             lb_entitySelect.Items.Remove(SelectedEntity);
             mAllEntities.Remove(SelectedEntity);
+            mFilteredEntities.Remove(SelectedEntity);
 
             //Correct the entity selection after the delete
             if (index < lb_entitySelect.Items.Count)

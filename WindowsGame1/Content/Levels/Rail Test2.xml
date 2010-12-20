@@ -2,7 +2,7 @@
 <Level>
   <Name>Rail Test2</Name>
   <Size X="20" Y="20" />
-  <Background>Backgrounds\TestBackground</Background>
+  <Background>Backgrounds\BlackBG</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>
@@ -2084,7 +2084,7 @@
       <ID>375</ID>
       <Name>BasicRailX</Name>
       <Type>Physics Objects</Type>
-      <Location X="16" Y="3" />
+      <Location X="15" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonGreen</Texture>
@@ -2114,7 +2114,7 @@
       <ID>377</ID>
       <Name>BasicRailX</Name>
       <Type>Physics Objects</Type>
-      <Location X="2" Y="9" />
+      <Location X="1" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonGreen</Texture>
@@ -2174,7 +2174,7 @@
       <ID>421</ID>
       <Name>BasicRailY</Name>
       <Type>Physics Objects</Type>
-      <Location X="5" Y="5" />
+      <Location X="5" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonGreen</Texture>
@@ -2189,7 +2189,7 @@
       <ID>422</ID>
       <Name>BasicRailY</Name>
       <Type>Physics Objects</Type>
-      <Location X="15" Y="8" />
+      <Location X="15" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonGreen</Texture>
@@ -2204,7 +2204,7 @@
       <ID>423</ID>
       <Name>BasicRailY</Name>
       <Type>Physics Objects</Type>
-      <Location X="14" Y="11" />
+      <Location X="14" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonGreen</Texture>
@@ -2219,7 +2219,7 @@
       <ID>424</ID>
       <Name>BasicRailY</Name>
       <Type>Physics Objects</Type>
-      <Location X="5" Y="14" />
+      <Location X="5" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonGreen</Texture>

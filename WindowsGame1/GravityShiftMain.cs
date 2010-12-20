@@ -27,6 +27,12 @@ namespace GravityShift
         //Instance of the Menu class
         Menu menu;
 
+        /* Animated Sprite */
+        private AnimatedSprite blackHole;
+
+        /* Tracks the previous zoom of the camera */
+        private float prev_zoom;
+
         //Instance of the scoring class
         Scoring scoring;
 
@@ -103,6 +109,9 @@ namespace GravityShift
         
         private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
 
+        GamePadState prev_gamepad;
+        KeyboardState prev_keyboard;
+
         public GravityShiftMain()
         {
             mGraphics = new GraphicsDeviceManager(this);
@@ -120,6 +129,10 @@ namespace GravityShift
             volume = 1.0f;
 
             timer = 0;
+            blackHole = new AnimatedSprite();
+
+            prev_gamepad = GamePad.GetState(PlayerIndex.One);
+            prev_keyboard = Keyboard.GetState();
 
             kootenay = Content.Load<SpriteFont>("fonts/Kootenay");
 
@@ -218,6 +231,8 @@ namespace GravityShift
         /// </summary>
         protected override void LoadContent()
         {
+            blackHole.Load(Content, "Blackhole", 3, 0.1f);
+
             menu.Load(Content);
             scoring.Load(Content);
             GameSound.Load(Content);
@@ -255,7 +270,10 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            /* Keyboard and GamePad states */
             KeyboardState keyboard = Keyboard.GetState();
+            GamePadState gamepad = GamePad.GetState(PlayerIndex.One);
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
                 || keyboard.IsKeyDown(Keys.Escape))
@@ -273,7 +291,9 @@ namespace GravityShift
 
             if (inGame)
             {
-                timer += (gameTime.ElapsedGameTime.TotalSeconds); //- timeInMenus.Seconds);
+                blackHole.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+                timer += (gameTime.ElapsedGameTime.TotalSeconds);
                 Random rand = new Random();
                 PhysicsEnvironment environment = new PhysicsEnvironment();
                 environment.TerminalSpeed = 20;
@@ -315,14 +335,36 @@ namespace GravityShift
                         cam.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
                         cam1.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
                     }
-                    //Update zoom
-                    if (Math.Abs(player.ObjectVelocity.X) > 12 || Math.Abs(player.ObjectVelocity.Y) > 12)
+  
+                    /* Gradual Zoom Out */
+                    if (gamepad.IsButtonDown(Buttons.LeftShoulder) ||
+                        keyboard.IsKeyDown(Keys.OemMinus)) //&&
                     {
-                        if (cam.Zoom > 0.50f)
-                            cam.Zoom -= 0.0015f;
+                        if (cam.Zoom > 0.4f)
+                            cam.Zoom -= 0.003f;
+                        prev_zoom = cam.Zoom;
                     }
-                    else if (cam.Zoom < 1.0f)
-                        cam.Zoom += 0.0015f;
+
+                    /* Gradual Zoom In */
+                    else if (gamepad.IsButtonDown(Buttons.RightShoulder) ||
+                             keyboard.IsKeyDown(Keys.OemPlus)) //&&
+                    {
+                        if (cam.Zoom < 1.0f)
+                            cam.Zoom += 0.003f;
+                        prev_zoom = cam.Zoom;
+                    }
+
+                    /* Snap Zoom Out */
+                    else if (gamepad.IsButtonDown(Buttons.Y) ||
+                             keyboard.IsKeyDown(Keys.Y))
+                        cam.Zoom = 0.4f;
+
+                    /* Snap Zoom In */
+                    else if (prev_gamepad.IsButtonDown(Buttons.Y) &&
+                             gamepad.IsButtonUp(Buttons.Y) ||
+                             prev_keyboard.IsKeyDown(Keys.Y) &&
+                             keyboard.IsKeyUp(Keys.Y))
+                        cam.Zoom = prev_zoom;
 
                     base.Update(gameTime);
                 }
@@ -334,8 +376,9 @@ namespace GravityShift
 
             if (!player.mIsAlive)
             {
-                if (keyboard.IsKeyDown(Keys.A))// resets game after game over
-                {// TODO: add gamepad functionality
+                if (keyboard.IsKeyDown(Keys.A) ||
+                    gamepad.IsButtonDown(Buttons.A))// resets game after game over
+                {
                     player.mNumLives = 5;
                     player.mIsAlive = true;
                     inGame = false;
@@ -343,6 +386,10 @@ namespace GravityShift
                 }
 
             }
+
+            /* Set the previous states to the current states */
+            prev_gamepad = gamepad;
+            prev_keyboard = keyboard;
         }
 
         /// <summary>
@@ -378,6 +425,8 @@ namespace GravityShift
                 {
                     gObject.Draw(mSpriteBatch, gameTime);
                 }
+
+                blackHole.Draw(mSpriteBatch, new Vector2(100.0f, 100.0f));
 
                 mSpriteBatch.End();
 

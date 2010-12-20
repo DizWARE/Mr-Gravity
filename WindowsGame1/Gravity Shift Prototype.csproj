@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimatedSprite.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\BasicTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
@@ -196,7 +197,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram1.cd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Content\Content.contentproj">
