@@ -85,7 +85,7 @@ namespace GravityLevelEditor
         {
             Panel p = sc_Properties.Panel1;
             Size gridSize = new Size(GridSpace.GetDrawingCoord(mData.Level.Size));
-            offScreenBmp = new Bitmap(Math.Min(gridSize.Width,p.DisplayRectangle.Width), 
+            offScreenBmp = new Bitmap(Math.Min(gridSize.Width,p.DisplayRectangle.Width+100), 
                 Math.Min(gridSize.Height,p.DisplayRectangle.Height+100));
             offScreenDC = Graphics.FromImage(offScreenBmp);
         }
@@ -234,7 +234,7 @@ namespace GravityLevelEditor
                 FormClosingEventArgs f = (FormClosingEventArgs)e;
                 result = MessageBox.Show("Do you want to save?", "Quit", MessageBoxButtons.YesNoCancel);
                 if (result == DialogResult.Yes)
-                    mData.Level.Save();
+                    mData.Level.Save(GetImage());
 
                 if (result == DialogResult.Cancel)
                     f.Cancel = true;
@@ -257,7 +257,18 @@ namespace GravityLevelEditor
          */
         private void Save(object sender, EventArgs e)
         {
-            mData.Level.Save();
+            mData.Level.Save(GetImage());
+        }
+
+        private Bitmap GetImage()
+        {
+            Point imageSize = GridSpace.GetPixelCoord(mData.Level.Size);
+            Bitmap image = new Bitmap(imageSize.X, imageSize.Y);
+
+            Graphics g = Graphics.FromImage(image);
+            mData.Level.Draw(g);
+
+            return image;
         }
 
         /*
@@ -275,7 +286,7 @@ namespace GravityLevelEditor
         {
             DialogResult result = MessageBox.Show("Do you want to save?", "New", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
-                mData.Level.Save();
+                mData.Level.Save(GetImage());
 
             if (result != DialogResult.Cancel)
             {
@@ -306,7 +317,7 @@ namespace GravityLevelEditor
         {
             DialogResult result = MessageBox.Show("Do you want to save?", "Open", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
-                mData.Level.Save();
+                mData.Level.Save(GetImage());
 
             if (result != DialogResult.Cancel)
             {
@@ -351,7 +362,7 @@ namespace GravityLevelEditor
          */
         private void Play(object sender, EventArgs e)
         {
-            mData.Level.Save();
+            mData.Level.Save(GetImage());
 
             Process game = new Process();
 

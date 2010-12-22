@@ -41,12 +41,6 @@ namespace GravityShift
         /// </summary>
         public Vector2 StartingPoint { get { return mStartingPoint; } set { mStartingPoint = value; } }
         private Vector2 mStartingPoint;
-        
-        /// <summary>
-        /// Gets or sets the player ending point of this level(in pixels)
-        /// </summary>
-        public Vector2 EndingPoint { get { return mEndingPoint; } set { mEndingPoint = value; } }
-        private Vector2 mEndingPoint;
 
         /// <summary>
         /// Loads the level from the content manager
@@ -58,6 +52,15 @@ namespace GravityShift
             { mTexture = content.Load<Texture2D>("Images\\" + assetName); }
             catch (Exception ex)
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
+        }
+
+        /// <summary>
+        /// Updates the level's progress
+        /// </summary>
+        /// <param name="gameTime"></param>
+        public void Update(GameTime gameTime)
+        {
+
         }
 
         /// <summary>

@@ -27,9 +27,6 @@ namespace GravityShift
         //Instance of the Menu class
         Menu menu;
 
-        /* Animated Sprite */
-        private AnimatedSprite blackHole;
-
         /* Tracks the previous zoom of the camera */
         private float prev_zoom;
 
@@ -67,13 +64,6 @@ namespace GravityShift
 
         /* SpriteFond */
         SpriteFont kootenay;
-//        enum States
-//        {
-//            GAME,
-//            MENU,
-//            PAUSE,
-//            SCORE
-//        };
 
         // Boolean to track whether we are in the game or the menu
         private static bool inGame = false;
@@ -129,7 +119,6 @@ namespace GravityShift
             volume = 1.0f;
 
             timer = 0;
-            blackHole = new AnimatedSprite();
 
             prev_gamepad = GamePad.GetState(PlayerIndex.One);
             prev_keyboard = Keyboard.GetState();
@@ -231,8 +220,6 @@ namespace GravityShift
         /// </summary>
         protected override void LoadContent()
         {
-            blackHole.Load(Content, "Blackhole", 3, 0.1f);
-
             menu.Load(Content);
             scoring.Load(Content);
             GameSound.Load(Content);
@@ -291,8 +278,6 @@ namespace GravityShift
 
             if (inGame)
             {
-                blackHole.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-
                 timer += (gameTime.ElapsedGameTime.TotalSeconds);
                 Random rand = new Random();
                 PhysicsEnvironment environment = new PhysicsEnvironment();

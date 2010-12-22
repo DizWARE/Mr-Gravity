@@ -366,6 +366,19 @@ namespace GravityLevelEditor
                 entity.Draw(g, offset);
         }
 
+        /// <summary>
+        /// Draws the level in its unzoomed location
+        /// </summary>
+        /// <param name="g">Graphics to draw to</param>
+        public void Draw(Graphics g)
+        {
+            g.DrawImage(mBackground, new Rectangle(new Point(),
+                new Size(GridSpace.GetPixelCoord(this.mSize))));
+
+            foreach (Entity entity in mEntities)
+                entity.Draw(g);
+        }
+
         /***
          * SelectEntities
          * 
@@ -415,13 +428,18 @@ namespace GravityLevelEditor
          * in this level as <name>.xml.
          * 
          */
-        public void Save()
+        public void Save(Bitmap image)
         {
             string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Levels\\";
             DirectoryInfo d = new DirectoryInfo(currentDirectory);
 
+            DirectoryInfo thumbnail = new DirectoryInfo(currentDirectory + "\\Thumbnail\\");
+
             if (!d.Exists)
                 System.IO.Directory.CreateDirectory(currentDirectory);
+
+            if (!thumbnail.Exists)
+                System.IO.Directory.CreateDirectory(currentDirectory + "\\Thumbnail\\");
 
             if (mBackground.Tag == null)
             { MessageBox.Show("Failed to save \"" + Name + "\". Invalid background image."); return; }
@@ -442,6 +460,8 @@ namespace GravityLevelEditor
 
             xDoc.Save(currentDirectory + this.Name + XmlKeys.XML);
 
+
+            image.Save(currentDirectory + "\\Thumbnail\\" + this.Name + ".png");
             MessageBox.Show(this.Name + ".xml saved correctly");
         }
     }

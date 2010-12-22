@@ -179,6 +179,17 @@ namespace GravityLevelEditor
             g.DrawImage(mTexture, drawLocation);
         }
 
+        /// <summary>
+        /// Draws this entity in a non-zoomed location
+        /// </summary>
+        /// <param name="g">Graphics object to draw to</param>
+        public void Draw(Graphics g)
+        {
+            Rectangle drawLocation = new Rectangle(GridSpace.GetPixelCoord(mLocation), new Size(GridSpace.SIZE));
+
+            g.DrawImage(mTexture, drawLocation);
+        }
+
         /*
          * Copy
          * 
