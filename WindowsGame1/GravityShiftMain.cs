@@ -426,7 +426,7 @@ namespace GravityShift
                     gObject.Draw(mSpriteBatch, gameTime);
                 }
 
-                blackHole.Draw(mSpriteBatch, new Vector2(100.0f, 100.0f));
+                //blackHole.Draw(mSpriteBatch, new Vector2(100.0f, 100.0f));
 
                 mSpriteBatch.End();
 
