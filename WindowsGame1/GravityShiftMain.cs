@@ -43,7 +43,7 @@ namespace GravityShift
 
         //TO BE CHANGED
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\New Level.xml";
 
         public GravityShiftMain()
         {

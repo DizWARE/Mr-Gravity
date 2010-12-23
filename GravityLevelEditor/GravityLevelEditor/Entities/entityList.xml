@@ -36,86 +36,72 @@
   <Entity>
     <ID>0</ID>
     <Name>NeonGreen</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonGreen</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
     <Name>NeonPink</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonPink</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
     <Name>NeonBlue</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonBlue</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
     <Name>NeonYellow</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_neonYellow</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
     <Name>BrownMagma</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
     <Name>BlackMagma</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\groundi_magma2</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
     <Name>DangerMagma</Name>
-    <Type>Static Objects</Type>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Static Objects\grounda_magma</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>

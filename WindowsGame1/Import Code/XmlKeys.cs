@@ -40,6 +40,7 @@ namespace GravityShift.Import_Code
         public static string PHYSICS_OBJECT = "Physics Objects";
         public static string PLAYER_LOCATION = "Level Positions";
         public static string TRIGGER = "Triggers";
+        public static string WALLS = "Walls";
 
         //Values
         public static string TRUE = "True";

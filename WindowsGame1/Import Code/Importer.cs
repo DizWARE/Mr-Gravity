@@ -16,6 +16,7 @@ using System.Collections;
 using System.Xml.Linq;
 using GravityShift.MISC_Code;
 using GravityShift.Game_Objects.Static_Objects.Triggers;
+using GravityShift.Game_Objects.Static_Objects;
 
 namespace GravityShift.Import_Code
 {
@@ -134,9 +135,140 @@ namespace GravityShift.Import_Code
         /// UNUSED FOR NOW. MAY IN THE FUTURE, GATHER ALL THE INFO UP AND MAKE BIGGER BOUNDING BOXES FOR ENTIRE WALLS
         /// </summary>
         /// <returns></returns>
-        public List<Tile> GetWalls()
+        public List<StaticObject> GetWalls(Level level)
         {
-            return null;
+            Vector2 gridSize = GridSpace.GetGridCoord(level.Size);
+
+            List<StaticObject> final = new List<StaticObject>();
+
+            List<StaticObject> walls = new List<StaticObject>();
+            List<StaticObject>[] rows = new List<StaticObject>[(int)gridSize.Y];
+            List<StaticObject>[] cols = new List<StaticObject>[(int)gridSize.X];
+            foreach (EntityInfo entity in mEntities)
+                if (entity.mType == XmlKeys.WALLS)
+                    walls.Add(new Tile(mContent, .8f, entity));
+
+            CreateSortedIndicies(walls, rows);
+            for(int i = 0; i < rows.Length; i++)
+            {
+                int next = -1;
+                string collisionType = "";
+                List<StaticObject> wall = new List<StaticObject>();
+                foreach (StaticObject obj in rows[i])
+                {
+                    Vector2 gridLoc = GridSpace.GetGridCoord(obj.mPosition);
+                    if ((gridLoc.X != next || !collisionType.Equals(obj.CollisionType)) && wall.Count > 0)
+                    {
+                        if (wall.Count > 1)
+                            final.Add(new Wall(.8f, wall));
+                        else
+                            walls.Add(wall[0]);
+
+                        next = -1;
+                        collisionType = "";
+                        wall.Clear();
+                    }
+
+                    if(wall.Count == 0)
+                    {
+                        walls.Remove(obj);
+                        wall.Add(obj);
+                        next = (int)gridLoc.X + 1;
+                        collisionType = obj.CollisionType;
+                    }
+                    else if (gridLoc.X == next && collisionType.Equals(obj.CollisionType))
+                    {
+                        walls.Remove(obj);
+                        wall.Add(obj);
+                        next++;
+                    }
+                }
+                if (wall.Count > 0)
+                {
+                    if (wall.Count > 1)
+                        final.Add(new Wall(.8f, wall));
+                    else
+                        walls.Add(wall[0]);
+
+                    wall.Clear();
+                }
+            }
+
+            CreateSortedIndicies(walls, cols);
+            for (int i = 0; i < cols.Length; i++)
+            {
+                int next = -1;
+                string collisionType = "";
+                List<StaticObject> wall = new List<StaticObject>();
+                foreach (StaticObject obj in cols[i])
+                {
+                    Vector2 gridLoc = GridSpace.GetGridCoord(obj.mPosition);
+                    if ((gridLoc.Y != next || !collisionType.Equals(obj.CollisionType)) && wall.Count > 0)
+                    {
+                        if (wall.Count > 1)
+                            final.Add(new Wall(.8f, wall));
+                        else
+                            walls.Add(wall[0]);
+
+                        next = -1;
+                        wall.Clear();
+                    }
+
+                    if (wall.Count == 0)
+                    {
+                        walls.Remove(obj);
+                        wall.Add(obj);
+                        next = (int)gridLoc.Y + 1;
+                        collisionType = obj.CollisionType;
+                    }
+                    else if (gridLoc.Y == next && collisionType.Equals(obj.CollisionType))
+                    {
+                        walls.Remove(obj);
+                        wall.Add(obj);
+                        next++;
+                    }
+                }
+
+                if (wall.Count > 0)
+                {
+                    if (wall.Count > 1)
+                        final.Add(new Wall(.8f, wall));
+                    else
+                        walls.Add(wall[0]);
+
+                    wall.Clear();
+                }
+            }
+
+            final.AddRange(walls);
+
+            return final;
+        }
+
+        /// <summary>
+        /// Creates the sorted indicies.
+        /// </summary>
+        /// <param name="walls">The walls.</param>
+        /// <param name="indicies">The indicies.</param>
+        private void CreateSortedIndicies(List<StaticObject> walls, List<StaticObject>[] indicies)
+        {
+            for (int i = 0; i < indicies.Length; i++) indicies[i] = new List<StaticObject>();
+            foreach (StaticObject obj in walls)
+            {
+                int i = 0;
+                Vector2 gridLoc = GridSpace.GetGridCoord(obj.mPosition);
+                for (; i < indicies[(int)gridLoc.Y].Count; i++)
+                {
+                    Vector2 otherGridLoc = GridSpace.GetGridCoord(indicies[(int)gridLoc.Y][i].mPosition);
+                    if (gridLoc.X < otherGridLoc.X)
+                        break;
+                }
+
+                if (i < indicies[(int)gridLoc.Y].Count)
+                    indicies[(int)gridLoc.Y].Insert(i, obj);
+                else
+                    indicies[(int)gridLoc.Y].Add(obj);
+            }
         }
 
         /// <summary>

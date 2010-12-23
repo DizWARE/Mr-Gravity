@@ -84,6 +84,14 @@ namespace GravityShift
             mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
         }
 
+
+        /// <summary>
+        /// Initializes an empty GameObject.
+        /// </summary>
+        public GameObject()
+        {
+        }
+
         /// <summary>
         /// Resets this object to its initial position
         /// </summary>

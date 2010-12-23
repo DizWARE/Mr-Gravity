@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 using GravityShift.Game_Objects.Static_Objects.Triggers;
 using GravityShift.Import_Code;
 using GravityShift.MISC_Code;
+using GravityShift.Game_Objects.Static_Objects;
 
 namespace GravityShift
 {
@@ -136,6 +137,9 @@ namespace GravityShift
             mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
             mObjects.Add(importer.GetPlayerEnd());
+
+            mObjects.AddRange(importer.GetWalls(this));
+
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
@@ -155,10 +159,22 @@ namespace GravityShift
                     mCollisionMatrix[i][j] = new List<GameObject>();
             }
 
+            //Adds each object into the collision matrix. Special case is for walls, in which it must extend over for it to be continuously 
+                //considered as collidable
             foreach (GameObject obj in mObjects)
             {
                 Vector2 gridLoc = GridSpace.GetGridCoord(obj.mPosition);
-                mCollisionMatrix[(int)gridLoc.Y][(int)gridLoc.X].Add(obj);
+                if (!(obj is Wall))
+                    mCollisionMatrix[(int)gridLoc.Y][(int)gridLoc.X].Add(obj);
+                else
+                {
+                    Wall wall = (Wall)obj;
+                    for (int i = 0; i < wall.Walls.Count; i+=2)
+                    {
+                        gridLoc = GridSpace.GetGridCoord(wall.Walls[i].mPosition);
+                        mCollisionMatrix[(int)gridLoc.Y][(int)gridLoc.X].Add(obj);
+                    }
+                }
             }
         }
         

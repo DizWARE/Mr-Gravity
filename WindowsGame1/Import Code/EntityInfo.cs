@@ -83,5 +83,12 @@ namespace GravityShift.Import_Code
             return player;
         }
 
+        public static EntityInfo CreateWallInfo()
+        {
+            EntityInfo info = new EntityInfo("", new Vector2());
+            info.mProperties.Add("Shape", "Square");
+            return info;
+        }
+
     }
 }
