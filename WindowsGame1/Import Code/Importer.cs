@@ -155,9 +155,9 @@ namespace GravityShift.Import_Code
                     if(!entity.mProperties.ContainsKey(XmlKeys.WIDTH) || !entity.mProperties.ContainsKey(XmlKeys.HEIGHT))
                         continue;
 
-                    if (entity.mName == "Basic")
+                    if (entity.mName == "Force")
                     {
-                        BasicTrigger trigger = new BasicTrigger(mContent, entity);
+                        ForceTrigger trigger = new ForceTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
                     //Add trigger by name

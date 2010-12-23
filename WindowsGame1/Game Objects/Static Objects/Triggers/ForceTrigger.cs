@@ -15,12 +15,12 @@ using GravityShift.Import_Code;
 
 namespace GravityShift.Game_Objects.Static_Objects.Triggers
 {
-    class BasicTrigger : Trigger
+    class ForceTrigger : Trigger
     {
         List<PhysicsObject> affectedObjects = new List<PhysicsObject>();
         Vector2 mForce = new Vector2(1, 0);
 
-        public BasicTrigger(ContentManager content, EntityInfo entity) :
+        public ForceTrigger(ContentManager content, EntityInfo entity) :
             base(content, entity) 
         {
             if (entity.mProperties.ContainsKey(XmlKeys.XFORCE))

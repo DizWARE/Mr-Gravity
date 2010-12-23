@@ -190,7 +190,7 @@ namespace GravityShift
                 else if (mCurrent == 1)
                 {
                     /*Back To Level Selection*/
-                    gameState = GameStates.Level_Selection;
+                    gameState = GameStates.Main_Menu;
 
                     mCurrent = 0;
                 }

@@ -225,7 +225,7 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>Basic</Name>
+    <Name>Force</Name>
     <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
