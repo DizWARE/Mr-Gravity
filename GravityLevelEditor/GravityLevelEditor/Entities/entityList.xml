@@ -221,6 +221,8 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
+      <XForce>1</XForce>
+      <YForce>1</YForce>
     </Properties>
   </Entity>
   <Entity>
