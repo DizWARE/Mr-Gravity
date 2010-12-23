@@ -244,8 +244,7 @@ namespace GravityShift
                         if (current == 0)
                         {
                             /* Start the game */
-                            GravityShiftMain.InMenu = false;
-                            GravityShiftMain.InGame = true;
+                            GravityShiftMain.GameState = GravityShiftMain.GameStates.IN_GAME;
                         }
                         /* Load Game */
                         else if (current == 1)

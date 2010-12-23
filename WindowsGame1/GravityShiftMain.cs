@@ -25,70 +25,41 @@ namespace GravityShift
         SpriteBatch mSpriteBatch;
 
         //Instance of the Menu class
-        Menu menu;
+        Menu mMenu;
 
         /* Animated Sprite */
-        private AnimatedSprite blackHole;
+        private AnimatedSprite mBlackHole;
 
         /* Tracks the previous zoom of the camera */
-        private float prev_zoom;
+        private float mPrevZoom;
 
         //Instance of the scoring class
-        Scoring scoring;
+        Scoring mScoring;
 
         /* Volume variable - used to mute and unmute the sound effects */
-        private static float volume;
+        private static float VOLUME;
 
         /* Timer variable */
-        private static double timer;
+        private static double TIMER;
 
-        #region HUD
+        /* Textures for HUD */
+        private Texture2D[] mDirections;
+        private Texture2D[] mLives;
 
-        private Texture2D arrow_down;
-        private Texture2D arrow_left;
-        private Texture2D arrow_right;
-        private Texture2D arrow_up;
-
-        private Texture2D life_count_0;
-        private Texture2D life_count_1;
-        private Texture2D life_count_2;
-        private Texture2D life_count_3;
-        private Texture2D life_count_4;
-        private Texture2D life_count_5;
-        private Texture2D life_count_6;
-        private Texture2D life_count_7;
-        private Texture2D life_count_8;
-        private Texture2D life_count_9;
-
-        private Texture2D[] directions;
-        private Texture2D[] lives;
-
-        #endregion
-
-        /* SpriteFond */
-        SpriteFont kootenay;
-//        enum States
-//        {
-//            GAME,
-//            MENU,
-//            PAUSE,
-//            SCORE
-//        };
-
-        // Boolean to track whether we are in the game or the menu
-        private static bool inGame = false;
-        private static bool inMenu = true;
-        private static bool inScore = false;
+        //Keep track of game state
+        public enum GameStates { IN_GAME, IN_MENU, IN_SCORE };
+        private static GameStates mGameState = GameStates.IN_MENU;
+        public static GameStates GameState { get { return mGameState; } set { mGameState = value; } }
 
         // Camera
-        public static Camera cam;
-        public static Camera cam1;
+        public static Camera mCam;
+        public static Camera mCam1;
 
         // see if we are paused
-        private static bool isPaused;
+        private static bool mPaused;
 
         // check for press of pause button
-        bool wasDown=false;
+        private bool mWasDown = false;
 
         //List of objects that comform to the game physics
         List<GameObject> mObjects;
@@ -96,21 +67,21 @@ namespace GravityShift
 
         List<Trigger> mTrigger;
 
-        Player player;
+        Player mPlayer;
 
         //Current level
         Level mCurrentLevel;
         PhysicsEnvironment mPhysicsEnvironment;
 
-        //Font for this game
+        //Fonts for this game
         SpriteFont mDefaultFont;
+        SpriteFont kootenay;
 
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\Level A.xml";
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
-        
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
 
-        GamePadState prev_gamepad;
-        KeyboardState prev_keyboard;
+        GamePadState mPrevGamepad;
+        KeyboardState mPrevKeyboard;
 
         public GravityShiftMain()
         {
@@ -126,18 +97,18 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
-            volume = 1.0f;
+            VOLUME = 1.0f;
 
-            timer = 0;
-            blackHole = new AnimatedSprite();
+            TIMER = 0;
+            mBlackHole = new AnimatedSprite();
 
-            prev_gamepad = GamePad.GetState(PlayerIndex.One);
-            prev_keyboard = Keyboard.GetState();
+            mPrevGamepad = GamePad.GetState(PlayerIndex.One);
+            mPrevKeyboard = Keyboard.GetState();
 
             kootenay = Content.Load<SpriteFont>("fonts/Kootenay");
 
-            cam = new Camera(GraphicsDevice.Viewport);
-            cam1 = new Camera(GraphicsDevice.Viewport);
+            mCam = new Camera(GraphicsDevice.Viewport);
+            mCam1 = new Camera(GraphicsDevice.Viewport);
 
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
@@ -149,80 +120,27 @@ namespace GravityShift
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
 
-            menu = new Menu();
-            scoring = new Scoring();
+            mMenu = new Menu();
+            mScoring = new Scoring();
 
-            isPaused = false;
+            mPaused = false;
 
-            arrow_down = Content.Load<Texture2D>("HUD/arrow_down");
-            arrow_left = Content.Load<Texture2D>("HUD/arrow_left");
-            arrow_right = Content.Load<Texture2D>("HUD/arrow_right");
-            arrow_up = Content.Load<Texture2D>("HUD/arrow_up");
-
-            life_count_0 = Content.Load<Texture2D>("HUD/NeonLifeCount0");
-            life_count_1 = Content.Load<Texture2D>("HUD/NeonLifeCount1");
-            life_count_2 = Content.Load<Texture2D>("HUD/NeonLifeCount2");
-            life_count_3 = Content.Load<Texture2D>("HUD/NeonLifeCount3");
-            life_count_4 = Content.Load<Texture2D>("HUD/NeonLifeCount4");
-            life_count_5 = Content.Load<Texture2D>("HUD/NeonLifeCount5");
-            life_count_6 = Content.Load<Texture2D>("HUD/NeonLifeCount6");
-            life_count_7 = Content.Load<Texture2D>("HUD/NeonLifeCount7");
-            life_count_8 = Content.Load<Texture2D>("HUD/NeonLifeCount8");
-            life_count_9 = Content.Load<Texture2D>("HUD/NeonLifeCount9");
-
-            directions = new Texture2D[4];
-
-            directions[0] = arrow_up;
-            directions[1] = arrow_right;
-            directions[2] = arrow_down;
-            directions[3] = arrow_left;
-
-            lives = new Texture2D[10];
-            lives[0] = life_count_0;
-            lives[1] = life_count_1;
-            lives[2] = life_count_2;
-            lives[3] = life_count_3;
-            lives[4] = life_count_4;
-            lives[5] = life_count_5;
-            lives[6] = life_count_6;
-            lives[7] = life_count_7;
-            lives[8] = life_count_8;
-            lives[9] = life_count_9;
+            mDirections = new Texture2D[4];
+            mLives = new Texture2D[10];
 
             base.Initialize();
         }
 
-        /* Getter/Setter to change the inMenu variables */
-        public static bool InMenu
-        {
-            get { return inMenu; }
-            set { inMenu = value; }
-        }
-
-        /* Getter/Setter to change the inGame variables */
-        public static bool InGame
-        {
-            get { return inGame; }
-            set { inGame = value; }
-        }
-
-        public static bool InScore
-        {
-            get { return inScore; }
-            set { inScore = value; }
-        
-        }
-
         public static double Timer
         {
-            get { return timer; }
-            set { timer = value; }
+            get { return TIMER; }
+            set { TIMER = value; }
         }
 
         public static float Volume
         {
-            get { return volume; }
-            set { volume = value; }
+            get { return VOLUME; }
+            set { VOLUME = value; }
         }
 
         /// <summary>
@@ -231,10 +149,28 @@ namespace GravityShift
         /// </summary>
         protected override void LoadContent()
         {
-            blackHole.Load(Content, "Blackhole", 3, 0.1f);
+            mBlackHole.Load(Content, "Blackhole", 3, 0.1f);
 
-            menu.Load(Content);
-            scoring.Load(Content);
+            //Load direction textures
+            mDirections[0] = Content.Load<Texture2D>("HUD/arrow_up");
+            mDirections[1] = Content.Load<Texture2D>("HUD/arrow_right");
+            mDirections[2] = Content.Load<Texture2D>("HUD/arrow_down");
+            mDirections[3] = Content.Load<Texture2D>("HUD/arrow_left");
+
+            //Load life textures
+            mLives[0] = Content.Load<Texture2D>("HUD/NeonLifeCount0");
+            mLives[1] = Content.Load<Texture2D>("HUD/NeonLifeCount1");
+            mLives[2] = Content.Load<Texture2D>("HUD/NeonLifeCount2");
+            mLives[3] = Content.Load<Texture2D>("HUD/NeonLifeCount3");
+            mLives[4] = Content.Load<Texture2D>("HUD/NeonLifeCount4");
+            mLives[5] = Content.Load<Texture2D>("HUD/NeonLifeCount5");
+            mLives[6] = Content.Load<Texture2D>("HUD/NeonLifeCount6");
+            mLives[7] = Content.Load<Texture2D>("HUD/NeonLifeCount7");
+            mLives[8] = Content.Load<Texture2D>("HUD/NeonLifeCount8");
+            mLives[9] = Content.Load<Texture2D>("HUD/NeonLifeCount9");
+
+            mMenu.Load(Content);
+            mScoring.Load(Content);
             GameSound.Load(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
@@ -245,10 +181,10 @@ namespace GravityShift
 
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
 
-            player = new Player(Content, ref mPhysicsEnvironment, 
+            mPlayer = new Player(Content, ref mPhysicsEnvironment, 
                 new KeyboardControl(), .8f, EntityInfo.CreatePlayerInfo(GridSpace.GetGridCoord(mCurrentLevel.StartingPoint)));
 
-            mObjects.Add(player);
+            mObjects.Add(mPlayer);
 
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
@@ -281,24 +217,24 @@ namespace GravityShift
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space))
             {
-                if (!wasDown)
+                if (!mWasDown)
                 {
-                    isPaused = !isPaused;// toggle pause
+                    mPaused = !mPaused;// toggle pause
                 }
             }
 
-            wasDown =(GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space));
+            mWasDown =(GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space));
 
-            if (inGame)
+            if (mGameState == GameStates.IN_GAME)
             {
-                blackHole.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                mBlackHole.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
-                timer += (gameTime.ElapsedGameTime.TotalSeconds);
+                TIMER += (gameTime.ElapsedGameTime.TotalSeconds);
                 Random rand = new Random();
                 PhysicsEnvironment environment = new PhysicsEnvironment();
                 environment.TerminalSpeed = 20;
                 environment.GravityMagnitude = 1;
-                if ((player.mIsAlive) && !isPaused)// only update while player is alive
+                if ((mPlayer.mIsAlive) && !mPaused)// only update while player is alive
                 {
                     foreach (GameObject gObject in mObjects)
                     {
@@ -330,66 +266,65 @@ namespace GravityShift
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
-                    if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
+                    if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
                     {
-                        cam.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
-                        cam1.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
+                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
                     }
   
                     /* Gradual Zoom Out */
                     if (gamepad.IsButtonDown(Buttons.LeftShoulder) ||
                         keyboard.IsKeyDown(Keys.OemMinus)) //&&
                     {
-                        if (cam.Zoom > 0.4f)
-                            cam.Zoom -= 0.003f;
-                        prev_zoom = cam.Zoom;
+                        if (mCam.Zoom > 0.4f)
+                            mCam.Zoom -= 0.003f;
+                        mPrevZoom = mCam.Zoom;
                     }
 
                     /* Gradual Zoom In */
                     else if (gamepad.IsButtonDown(Buttons.RightShoulder) ||
                              keyboard.IsKeyDown(Keys.OemPlus)) //&&
                     {
-                        if (cam.Zoom < 1.0f)
-                            cam.Zoom += 0.003f;
-                        prev_zoom = cam.Zoom;
+                        if (mCam.Zoom < 1.0f)
+                            mCam.Zoom += 0.003f;
+                        mPrevZoom = mCam.Zoom;
                     }
 
                     /* Snap Zoom Out */
                     else if (gamepad.IsButtonDown(Buttons.Y) ||
                              keyboard.IsKeyDown(Keys.Y))
-                        cam.Zoom = 0.4f;
+                        mCam.Zoom = 0.4f;
 
                     /* Snap Zoom In */
-                    else if (prev_gamepad.IsButtonDown(Buttons.Y) &&
+                    else if (mPrevGamepad.IsButtonDown(Buttons.Y) &&
                              gamepad.IsButtonUp(Buttons.Y) ||
-                             prev_keyboard.IsKeyDown(Keys.Y) &&
+                             mPrevKeyboard.IsKeyDown(Keys.Y) &&
                              keyboard.IsKeyUp(Keys.Y))
-                        cam.Zoom = prev_zoom;
+                        mCam.Zoom = mPrevZoom;
 
                     base.Update(gameTime);
                 }
             }
-            else if (inMenu)
-                menu.Update(gameTime);
-            else if (inScore)
-                scoring.Update(gameTime);
+            else if (mGameState == GameStates.IN_MENU)
+                mMenu.Update(gameTime);
+            else if (mGameState == GameStates.IN_SCORE)
+                mScoring.Update(gameTime);
 
-            if (!player.mIsAlive)
+            if (!mPlayer.mIsAlive)
             {
                 if (keyboard.IsKeyDown(Keys.A) ||
                     gamepad.IsButtonDown(Buttons.A))// resets game after game over
                 {
-                    player.mNumLives = 5;
-                    player.mIsAlive = true;
-                    inGame = false;
-                    inMenu = true;
+                    mPlayer.mNumLives = 5;
+                    mPlayer.mIsAlive = true;
+                    mGameState = GameStates.IN_MENU;
                 }
 
             }
 
             /* Set the previous states to the current states */
-            prev_gamepad = gamepad;
-            prev_keyboard = keyboard;
+            mPrevGamepad = gamepad;
+            mPrevKeyboard = keyboard;
         }
 
         /// <summary>
@@ -397,8 +332,7 @@ namespace GravityShift
         /// </summary>
         public void DisableMenu()
         {
-            inGame = true;
-            inMenu = false;
+            mGameState = GameStates.IN_GAME;
         }
 
         /// <summary>
@@ -408,7 +342,7 @@ namespace GravityShift
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            if (inGame)
+            if (mGameState == GameStates.IN_GAME)
             {
                 /* Cam is used to draw everything except the HUD - SEE BELOW FOR DRAWING HUD */
                 mSpriteBatch.Begin(SpriteSortMode.Immediate,
@@ -417,7 +351,7 @@ namespace GravityShift
                     DepthStencilState.None,
                     RasterizerState.CullCounterClockwise,
                     null,
-                    cam.get_transformation());
+                    mCam.get_transformation());
 
                 mCurrentLevel.Draw(mSpriteBatch);
 
@@ -426,7 +360,7 @@ namespace GravityShift
                     gObject.Draw(mSpriteBatch, gameTime);
                 }
 
-                blackHole.Draw(mSpriteBatch, new Vector2(100.0f, 100.0f));
+                //mBlackHole.Draw(mSpriteBatch, new Vector2(100.0f, 100.0f));
 
                 mSpriteBatch.End();
 
@@ -439,31 +373,31 @@ namespace GravityShift
                                     DepthStencilState.None, 
                                     RasterizerState.CullCounterClockwise, 
                                     null, 
-                                    cam1.get_transformation());
+                                    mCam1.get_transformation());
 
-                mSpriteBatch.DrawString(kootenay, "Timer: " + (int)timer, new Vector2(cam1.Position.X-275, cam1.Position.Y-200), Color.White);
+                mSpriteBatch.DrawString(kootenay, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X-275, mCam1.Position.Y-200), Color.White);
 
                 if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-                    mSpriteBatch.Draw(directions[0], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                    mSpriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
                 else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-                    mSpriteBatch.Draw(directions[1], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                    mSpriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
                 else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-                    mSpriteBatch.Draw(directions[2], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                    mSpriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
                 else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-                    mSpriteBatch.Draw(directions[3], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                    mSpriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
 
-                mSpriteBatch.Draw(lives[player.mNumLives], new Vector2(cam1.Position.X + 600, cam1.Position.Y - 200), Color.White);
+                mSpriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 200), Color.White);
 
                 mSpriteBatch.End();
 
                 base.Draw(gameTime);
             }
-            else if (inMenu)
-                menu.Draw(mSpriteBatch, mGraphics);
+            else if (mGameState == GameStates.IN_MENU)
+                mMenu.Draw(mSpriteBatch, mGraphics);
 
-            else if (inScore)
+            else if (mGameState == GameStates.IN_SCORE)
             {
-                scoring.Draw(mSpriteBatch, mGraphics);
+                mScoring.Draw(mSpriteBatch, mGraphics);
             }
         }
 
@@ -477,7 +411,14 @@ namespace GravityShift
         {
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
             foreach (GameObject gameObject in mObjects)
+            {
                 gameObject.Respawn();
+                if (gameObject is PhysicsObject)
+                {
+                    ((PhysicsObject)gameObject).UpdateBoundingBoxes();
+                    ((PhysicsObject)gameObject).mVelocity = Vector2.Zero;
+                }
+            }
         }
 
         /// <summary>
@@ -495,15 +436,13 @@ namespace GravityShift
 
                 if (collided && obj is PlayerEnd && physObj is Player)
                 { 
-                    Respawn(); 
-                    inGame = false; 
-                    inMenu = false;
-                    inScore = true;
-                    scoring.Load(Content);
+                    Respawn();
+                    mGameState = GameStates.IN_SCORE;
+                    mScoring.Load(Content);
 
                     this.ResetElapsedTime();
 
-                    GameSound.level_stageVictory.Play(volume, 0.0f, 0.0f); 
+                    GameSound.level_stageVictory.Play(VOLUME, 0.0f, 0.0f); 
                 }
 
                 //If player collided with a collectable object
@@ -511,7 +450,7 @@ namespace GravityShift
                 {
                     //Play sound
                     //GameSound.playerCol_hazard.Play(volume, 0.0f, 0.0f);
-                    player.mScore += 100;
+                    mPlayer.mScore += 100;
                     if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
                     else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
                 }
@@ -519,7 +458,7 @@ namespace GravityShift
                 else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                 {
                     //Play sound
-                    GameSound.playerCol_hazard.Play(volume, 0.0f, 0.0f);
+                    GameSound.playerCol_hazard.Play(VOLUME, 0.0f, 0.0f);
                     Respawn();
                     if (physObj is Player) physObj.Kill();
                     else ((Player)obj).Kill();

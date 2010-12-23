@@ -198,7 +198,7 @@ namespace GravityShift
         /// <summary>
         /// Updates the bounding box around this object
         /// </summary>
-        private void UpdateBoundingBoxes()
+        public void UpdateBoundingBoxes()
         {
             mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,
                 (int)mSize.X, (int)mSize.Y);

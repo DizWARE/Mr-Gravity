@@ -210,16 +210,14 @@ namespace GravityShift
                 if (current == 0)
                 {
                     /* Start the game */
-                    GravityShiftMain.InScore = false;
-                    GravityShiftMain.InGame = true;
+                    GravityShiftMain.GameState = GravityShiftMain.GameStates.IN_GAME;
                     GravityShiftMain.Timer = 0;
                     current = 0;
                 }
                 /* Back Game */
                 else if (current == 1)
                 {
-                    GravityShiftMain.InScore = false;
-                    GravityShiftMain.InMenu = true;
+                    GravityShiftMain.GameState = GravityShiftMain.GameStates.IN_MENU;
                     GravityShiftMain.Timer = 0;
 
                     current = 0;
