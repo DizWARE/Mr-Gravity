@@ -21,10 +21,7 @@ namespace GravityShift
         /* Spritefond */
         private SpriteFont kootenay;
 
-        GamePadState pad_state;
-        GamePadState prev_pad_state;
-        KeyboardState key_state;
-        KeyboardState prev_key_state;
+        IControlScheme mControls;
 
         /* Equivalent of stars */
         private static Texture2D[] num_apples;
@@ -83,7 +80,10 @@ namespace GravityShift
 
         #endregion
 
-        public Scoring() {}
+        public Scoring(IControlScheme controls) 
+        {
+            mControls = controls;
+        }
 
         /*
          * Load
@@ -143,37 +143,16 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref GameStates gameState)
         {
-            /* Keyboard and GamePad states */
-            key_state = Keyboard.GetState();
-            pad_state = GamePad.GetState(PlayerIndex.One);
-
-            if (GravityShiftMain.Timer >= 10)
-            {
-                num_apples[2] = apple_gray;
-            }
-
-            if (GravityShiftMain.Timer >= 15)
-            {
-                num_apples[1] = apple_gray;
-            }
-
-            if (GravityShiftMain.Timer >= 20)
-            {
-                num_apples[0] = apple_gray;
-            }
 
             /* If the user hits up */
-            if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                key_state.IsKeyDown(Keys.Up) &&
-                prev_key_state.IsKeyUp(Keys.Up))
+            if (mControls.isUpPressed(false))
             {
                 /* If we are not on the first element already */
                 if (current > 0)
                 {
-                    GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                    GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                     /* Decrement current and change the images */
                     current--;
                     for (int i = 0; i < NUM_OPTIONS; i++)
@@ -182,15 +161,12 @@ namespace GravityShift
                 }
             }
             /* If the user hits the down button */
-            if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                key_state.IsKeyDown(Keys.Down) &&
-                prev_key_state.IsKeyUp(Keys.Down))
+            if (mControls.isDownPressed(false))
             {
                 /* If we are on the last element in the menu */
                 if (current < NUM_OPTIONS - 1)
                 {
-                    GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                    GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                     /* Increment current and update graphics */
                     current++;
                     for (int i = 0; i < NUM_OPTIONS; i++)
@@ -200,35 +176,25 @@ namespace GravityShift
             }
 
             /* If the user selects one of the menu items */
-            if (pad_state.IsButtonDown(Buttons.A) &&
-                prev_pad_state.IsButtonUp(Buttons.A) ||
-                key_state.IsKeyDown(Keys.Enter) &&
-                prev_key_state.IsKeyUp(Keys.Enter))
+            if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                 /* Restart Game */
                 if (current == 0)
                 {
-                    /* Start the game */
-                    GravityShiftMain.InScore = false;
-                    GravityShiftMain.InGame = true;
-                    GravityShiftMain.Timer = 0;
+                    /* Start the game*/
+                    gameState = GameStates.In_Game;
                     current = 0;
                 }
                 /* Back Game */
                 else if (current == 1)
                 {
-                    GravityShiftMain.InScore = false;
-                    GravityShiftMain.InMenu = true;
-                    GravityShiftMain.Timer = 0;
+                    /*Back To Level Selection*/
+                    gameState = GameStates.Level_Selection;
 
                     current = 0;
                 }
             }
-
-            /* Set the previous states to the current states */
-            prev_pad_state = pad_state;
-            prev_key_state = key_state;
         }
 
         /*
@@ -246,7 +212,7 @@ namespace GravityShift
 
             spriteBatch.Draw(title, new Vector2(150.0f, 50.0f), Color.White);
 
-            spriteBatch.DrawString(kootenay, "Time: " + (int)GravityShiftMain.Timer + " Seconds", new Vector2(350.0f, 350.0f), Color.White);
+            //spriteBatch.DrawString(kootenay, "Time: " + (int)GravityShiftMain.Timer + " Seconds", new Vector2(350.0f, 350.0f), Color.White);
             spriteBatch.Draw(num_apples[0], new Vector2(350.0f, 400.0f), Color.White);
             spriteBatch.Draw(num_apples[1], new Vector2(425.0f, 400.0f), Color.White);
             spriteBatch.Draw(num_apples[2], new Vector2(500.0f, 400.0f), Color.White);

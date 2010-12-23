@@ -42,11 +42,9 @@ namespace GravityShift.Import_Code
         /// </summary>
         /// <param name="filename">Name of the file we are importing</param>
         /// <returns>A level object</returns>
-        public Level ImportLevel(string filename)
+        public Level ImportLevel(Level level)
         {
-            XElement xLevel = XElement.Load(filename);
-
-            Level level = new Level();
+            XElement xLevel = XElement.Load(level.Name);
 
             //Gets all the information for a level and places it into the level object
             foreach (XElement item in xLevel.Elements())

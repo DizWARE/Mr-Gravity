@@ -16,6 +16,8 @@ namespace GravityShift
 {
     public class GameSound
     {
+        public static float volume = 1.0f;
+
         /* Level */
         public static SoundEffect level_stageFail;
         public static SoundEffect level_stageVictory;

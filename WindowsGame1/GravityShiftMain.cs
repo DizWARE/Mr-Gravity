@@ -27,85 +27,33 @@ namespace GravityShift
         //Instance of the Menu class
         Menu menu;
 
-        /* Tracks the previous zoom of the camera */
-        private float prev_zoom;
-
         //Instance of the scoring class
         Scoring scoring;
 
-        /* Volume variable - used to mute and unmute the sound effects */
-        private static float volume;
+        private GameStates mCurrentState = GameStates.Main_Menu;
 
-        /* Timer variable */
-        private static double timer;
-
-        #region HUD
-
-        private Texture2D arrow_down;
-        private Texture2D arrow_left;
-        private Texture2D arrow_right;
-        private Texture2D arrow_up;
-
-        private Texture2D life_count_0;
-        private Texture2D life_count_1;
-        private Texture2D life_count_2;
-        private Texture2D life_count_3;
-        private Texture2D life_count_4;
-        private Texture2D life_count_5;
-        private Texture2D life_count_6;
-        private Texture2D life_count_7;
-        private Texture2D life_count_8;
-        private Texture2D life_count_9;
-
-        private Texture2D[] directions;
-        private Texture2D[] lives;
-
-        #endregion
-
-        /* SpriteFond */
-        SpriteFont kootenay;
-
-        // Boolean to track whether we are in the game or the menu
-        private static bool inGame = false;
-        private static bool inMenu = true;
-        private static bool inScore = false;
-
-        // Camera
-        public static Camera cam;
-        public static Camera cam1;
-
-        // see if we are paused
-        private static bool isPaused;
-
-        // check for press of pause button
-        bool wasDown=false;
-
-        //List of objects that comform to the game physics
-        List<GameObject> mObjects;
-        List<GameObject> mCollected;
-
-        List<Trigger> mTrigger;
-
-        Player player;
+        private IControlScheme mControls;
 
         //Current level
         Level mCurrentLevel;
-        PhysicsEnvironment mPhysicsEnvironment;
 
         //Font for this game
         SpriteFont mDefaultFont;
 
-        public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }
-        
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
-
-        GamePadState prev_gamepad;
-        KeyboardState prev_keyboard;
+        //TO BE CHANGED
+        public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\TestTriggers.xml";
 
         public GravityShiftMain()
         {
             mGraphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            if (GamePad.GetState(PlayerIndex.One).IsConnected || GamePad.GetState(PlayerIndex.Two).IsConnected ||
+                GamePad.GetState(PlayerIndex.Three).IsConnected || GamePad.GetState(PlayerIndex.Four).IsConnected)
+                mControls = new ControllerControl();
+            else
+                mControls = new KeyboardControl();
         }
 
         /// <summary>
@@ -116,102 +64,15 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
-            volume = 1.0f;
-
-            timer = 0;
-
-            prev_gamepad = GamePad.GetState(PlayerIndex.One);
-            prev_keyboard = Keyboard.GetState();
-
-            kootenay = Content.Load<SpriteFont>("fonts/Kootenay");
-
-            cam = new Camera(GraphicsDevice.Viewport);
-            cam1 = new Camera(GraphicsDevice.Viewport);
-
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
-            mObjects = new List<GameObject>();
-            mCollected = new List<GameObject>();
-            mTrigger = new List<Trigger>();
-            mPhysicsEnvironment = new PhysicsEnvironment();
-
-            menu = new Menu();
-            scoring = new Scoring();
-
-            isPaused = false;
-
-            arrow_down = Content.Load<Texture2D>("HUD/arrow_down");
-            arrow_left = Content.Load<Texture2D>("HUD/arrow_left");
-            arrow_right = Content.Load<Texture2D>("HUD/arrow_right");
-            arrow_up = Content.Load<Texture2D>("HUD/arrow_up");
-
-            life_count_0 = Content.Load<Texture2D>("HUD/NeonLifeCount0");
-            life_count_1 = Content.Load<Texture2D>("HUD/NeonLifeCount1");
-            life_count_2 = Content.Load<Texture2D>("HUD/NeonLifeCount2");
-            life_count_3 = Content.Load<Texture2D>("HUD/NeonLifeCount3");
-            life_count_4 = Content.Load<Texture2D>("HUD/NeonLifeCount4");
-            life_count_5 = Content.Load<Texture2D>("HUD/NeonLifeCount5");
-            life_count_6 = Content.Load<Texture2D>("HUD/NeonLifeCount6");
-            life_count_7 = Content.Load<Texture2D>("HUD/NeonLifeCount7");
-            life_count_8 = Content.Load<Texture2D>("HUD/NeonLifeCount8");
-            life_count_9 = Content.Load<Texture2D>("HUD/NeonLifeCount9");
-
-            directions = new Texture2D[4];
-
-            directions[0] = arrow_up;
-            directions[1] = arrow_right;
-            directions[2] = arrow_down;
-            directions[3] = arrow_left;
-
-            lives = new Texture2D[10];
-            lives[0] = life_count_0;
-            lives[1] = life_count_1;
-            lives[2] = life_count_2;
-            lives[3] = life_count_3;
-            lives[4] = life_count_4;
-            lives[5] = life_count_5;
-            lives[6] = life_count_6;
-            lives[7] = life_count_7;
-            lives[8] = life_count_8;
-            lives[9] = life_count_9;
+            menu = new Menu(mControls);
+            scoring = new Scoring(mControls);
 
             base.Initialize();
-        }
-
-        /* Getter/Setter to change the inMenu variables */
-        public static bool InMenu
-        {
-            get { return inMenu; }
-            set { inMenu = value; }
-        }
-
-        /* Getter/Setter to change the inGame variables */
-        public static bool InGame
-        {
-            get { return inGame; }
-            set { inGame = value; }
-        }
-
-        public static bool InScore
-        {
-            get { return inScore; }
-            set { inScore = value; }
-        
-        }
-
-        public static double Timer
-        {
-            get { return timer; }
-            set { timer = value; }
-        }
-
-        public static float Volume
-        {
-            get { return volume; }
-            set { volume = value; }
         }
 
         /// <summary>
@@ -223,25 +84,13 @@ namespace GravityShift
             menu.Load(Content);
             scoring.Load(Content);
             GameSound.Load(Content);
+            mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
+            mCurrentLevel.Load(Content);
+
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //Should eventually not require 
-            Importer importer = new Importer(Content);
-            mCurrentLevel = importer.ImportLevel(LevelLocation);
-
             mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
-
-            player = new Player(Content, ref mPhysicsEnvironment, 
-                new KeyboardControl(), .8f, EntityInfo.CreatePlayerInfo(GridSpace.GetGridCoord(mCurrentLevel.StartingPoint)));
-
-            mObjects.Add(player);
-
-            mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
-
-            mObjects.Add(importer.GetPlayerEnd());
-
-            mTrigger.AddRange(importer.GetTriggers());
     }
 
         /// <summary>
@@ -257,124 +106,18 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            /* Keyboard and GamePad states */
-            KeyboardState keyboard = Keyboard.GetState();
-            GamePadState gamepad = GamePad.GetState(PlayerIndex.One);
-
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
-                || keyboard.IsKeyDown(Keys.Escape))
+            if (mControls.isBackPressed(false))
                 this.Exit();
 
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space))
-            {
-                if (!wasDown)
-                {
-                    isPaused = !isPaused;// toggle pause
-                }
-            }
-
-            wasDown =(GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed || keyboard.IsKeyDown(Keys.Space));
-
-            if (inGame)
-            {
-                timer += (gameTime.ElapsedGameTime.TotalSeconds);
-                Random rand = new Random();
-                PhysicsEnvironment environment = new PhysicsEnvironment();
-                environment.TerminalSpeed = 20;
-                environment.GravityMagnitude = 1;
-                if ((player.mIsAlive) && !isPaused)// only update while player is alive
-                {
-                    foreach (GameObject gObject in mObjects)
-                    {
-                        if (gObject is PhysicsObject)
-                        {
-                            PhysicsObject pObject = (PhysicsObject)gObject;
-                            pObject.Update(gameTime);
-                            // handle collision right after you move
-                            HandleCollisions(pObject);
-                            if (pObject is Player)
-                                foreach (Trigger trigger in mTrigger)
-                                    trigger.RunTrigger(mObjects, (Player)pObject);
-
-                            // Update zoom based on players velocity                 
-                            pObject.FixForBounds((int)mCurrentLevel.Size.X, (int)mCurrentLevel.Size.Y);
-                        }
-                    }
-
-                    //Check to see if we collected anything
-                    if (mCollected.Count > 0)
-                    {
-                        //Safely remove the collected objects
-                        foreach (GameObject g in mCollected)
-                            mObjects.Remove(g);
-
-                        //Then clear the list
-                        mCollected.Clear();
-                    }
-
-                    // Update the camera to keep the player at the center of the screen
-                    // Also only update if the velocity if greater than 0.5f in either direction
-                    if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
-                    {
-                        cam.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
-                        cam1.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
-                    }
-  
-                    /* Gradual Zoom Out */
-                    if (gamepad.IsButtonDown(Buttons.LeftShoulder) ||
-                        keyboard.IsKeyDown(Keys.OemMinus)) //&&
-                    {
-                        if (cam.Zoom > 0.4f)
-                            cam.Zoom -= 0.003f;
-                        prev_zoom = cam.Zoom;
-                    }
-
-                    /* Gradual Zoom In */
-                    else if (gamepad.IsButtonDown(Buttons.RightShoulder) ||
-                             keyboard.IsKeyDown(Keys.OemPlus)) //&&
-                    {
-                        if (cam.Zoom < 1.0f)
-                            cam.Zoom += 0.003f;
-                        prev_zoom = cam.Zoom;
-                    }
-
-                    /* Snap Zoom Out */
-                    else if (gamepad.IsButtonDown(Buttons.Y) ||
-                             keyboard.IsKeyDown(Keys.Y))
-                        cam.Zoom = 0.4f;
-
-                    /* Snap Zoom In */
-                    else if (prev_gamepad.IsButtonDown(Buttons.Y) &&
-                             gamepad.IsButtonUp(Buttons.Y) ||
-                             prev_keyboard.IsKeyDown(Keys.Y) &&
-                             keyboard.IsKeyUp(Keys.Y))
-                        cam.Zoom = prev_zoom;
-
-                    base.Update(gameTime);
-                }
-            }
-            else if (inMenu)
-                menu.Update(gameTime);
-            else if (inScore)
-                scoring.Update(gameTime);
-
-            if (!player.mIsAlive)
-            {
-                if (keyboard.IsKeyDown(Keys.A) ||
-                    gamepad.IsButtonDown(Buttons.A))// resets game after game over
-                {
-                    player.mNumLives = 5;
-                    player.mIsAlive = true;
-                    inGame = false;
-                    inMenu = true;
-                }
-
-            }
-
-            /* Set the previous states to the current states */
-            prev_gamepad = gamepad;
-            prev_keyboard = keyboard;
+            if (mCurrentState == GameStates.In_Game)
+                mCurrentLevel.Update(gameTime, ref mCurrentState);
+            else if (mCurrentState == GameStates.Main_Menu)
+                menu.Update(gameTime, ref mCurrentState);
+            else if (mCurrentState == GameStates.Score)
+                scoring.Update(gameTime, ref mCurrentState);
+            else if (mCurrentState == GameStates.Level_Selection) ; //TODO
+            else if (mCurrentState == GameStates.Pause) ;
         }
 
         /// <summary>
@@ -382,8 +125,7 @@ namespace GravityShift
         /// </summary>
         public void DisableMenu()
         {
-            inGame = true;
-            inMenu = false;
+            mCurrentState = GameStates.In_Game;
         }
 
         /// <summary>
@@ -393,123 +135,19 @@ namespace GravityShift
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            if (inGame)
+            if (mCurrentState == GameStates.In_Game)
             {
-                /* Cam is used to draw everything except the HUD - SEE BELOW FOR DRAWING HUD */
-                mSpriteBatch.Begin(SpriteSortMode.Immediate,
-                    BlendState.AlphaBlend,
-                    SamplerState.LinearClamp,
-                    DepthStencilState.None,
-                    RasterizerState.CullCounterClockwise,
-                    null,
-                    cam.get_transformation());
-
-                mCurrentLevel.Draw(mSpriteBatch);
-
-                foreach (GameObject gObject in mObjects)
-                {
-                    gObject.Draw(mSpriteBatch, gameTime);
-                }
-
-                //blackHole.Draw(mSpriteBatch, new Vector2(100.0f, 100.0f));
-
-                mSpriteBatch.End();
-
-
-                /* Cam 1 is for drawing the HUD - PLACE ALL YOUR HUD STUFF IN THIS SECTION */
-                // Begin spritebatch with the desired camera transformations
-                mSpriteBatch.Begin(SpriteSortMode.Immediate, 
-                                    BlendState.AlphaBlend,
-                                    SamplerState.LinearClamp,
-                                    DepthStencilState.None, 
-                                    RasterizerState.CullCounterClockwise, 
-                                    null, 
-                                    cam1.get_transformation());
-
-                mSpriteBatch.DrawString(kootenay, "Timer: " + (int)timer, new Vector2(cam1.Position.X-275, cam1.Position.Y-200), Color.White);
-
-                if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-                    mSpriteBatch.Draw(directions[0], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
-                else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-                    mSpriteBatch.Draw(directions[1], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
-                else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-                    mSpriteBatch.Draw(directions[2], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
-                else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-                    mSpriteBatch.Draw(directions[3], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
-
-                mSpriteBatch.Draw(lives[player.mNumLives], new Vector2(cam1.Position.X + 600, cam1.Position.Y - 200), Color.White);
-
-                mSpriteBatch.End();
-
-                base.Draw(gameTime);
+                mCurrentLevel.Draw(mSpriteBatch, gameTime);
+                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);                
             }
-            else if (inMenu)
+            else if (mCurrentState == GameStates.Main_Menu)
                 menu.Draw(mSpriteBatch, mGraphics);
 
-            else if (inScore)
-            {
+            else if (mCurrentState == GameStates.Score)
                 scoring.Draw(mSpriteBatch, mGraphics);
-            }
-        }
-
-        /// <summary>
-        /// Respawn the player. Reset gravity direction and clear player velocity
-        /// 
-        /// TODO - Reset all other objects as well
-        /// </summary>
-        /// <param name="player">Player object</param>
-        private void Respawn()
-        {
-            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
-            foreach (GameObject gameObject in mObjects)
-                gameObject.Respawn();
-        }
-
-        /// <summary>
-        /// Checks to see if given object is colliding with any other object and handles the collision
-        /// </summary>
-        /// <param name="physObj">object to see if anything is colliding with it</param>
-        private void HandleCollisions(PhysicsObject physObj)
-        {
-            foreach (GameObject obj in mObjects)
-            {
-                if (obj is PlayerEnd && !(physObj is Player))
-                    continue;
-
-                bool collided = physObj.HandleCollisions(obj);
-
-                if (collided && obj is PlayerEnd && physObj is Player)
-                { 
-                    Respawn(); 
-                    inGame = false; 
-                    inMenu = false;
-                    inScore = true;
-                    scoring.Load(Content);
-
-                    this.ResetElapsedTime();
-
-                    GameSound.level_stageVictory.Play(volume, 0.0f, 0.0f); 
-                }
-
-                //If player collided with a collectable object
-                if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
-                {
-                    //Play sound
-                    //GameSound.playerCol_hazard.Play(volume, 0.0f, 0.0f);
-                    player.mScore += 100;
-                    if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
-                    else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
-                }
-
-                else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
-                {
-                    //Play sound
-                    GameSound.playerCol_hazard.Play(volume, 0.0f, 0.0f);
-                    Respawn();
-                    if (physObj is Player) physObj.Kill();
-                    else ((Player)obj).Kill();
-                }
-            }
+            else if (mCurrentState == GameStates.Level_Selection) ; //TODO
+            else if (mCurrentState == GameStates.Pause) ;
+            base.Draw(gameTime);
         }
     }
 }
