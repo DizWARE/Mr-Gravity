@@ -46,14 +46,14 @@ namespace GravityShift
         private Vector2 mStartingPoint;
 
         // Camera
-        public static Camera cam;
-        public static Camera cam1;
+        public static Camera mCam;
+        public static Camera mCam1;
 
         /* Tracks the previous zoom of the camera */
-        private float prev_zoom = 1.0f;
+        private float mPrevZoom = 1.0f;
 
         /* Timer variable */
-        private static double timer;
+        private static double TIMER;
 
         private List<GameObject>[][] mCollisionMatrix;
 
@@ -61,19 +61,19 @@ namespace GravityShift
         List<GameObject> mCollected;
         List<Trigger> mTrigger;
 
-        Player player;
+        Player mPlayer;
 
         PhysicsEnvironment mPhysicsEnvironment;
 
         IControlScheme mControls;
 
         /* SpriteFond */
-        SpriteFont kootenay;
+        SpriteFont mKootenay;
 
         #region HUD
 
-        private Texture2D[] directions;
-        private Texture2D[] lives;
+        private Texture2D[] mDirections;
+        private Texture2D[] mLives;
 
         #endregion
 
@@ -88,8 +88,8 @@ namespace GravityShift
             mName = name;
             mControls = controls;
 
-            cam = new Camera(viewport);
-            cam1 = new Camera(viewport);
+            mCam = new Camera(viewport);
+            mCam1 = new Camera(viewport);
 
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
@@ -108,17 +108,17 @@ namespace GravityShift
             catch (Exception ex)
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
 
-            kootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
 
-            directions = new Texture2D[4];
-            directions[3] = content.Load<Texture2D>("HUD/arrow_left");
-            directions[2] = content.Load<Texture2D>("HUD/arrow_down");
-            directions[1] = content.Load<Texture2D>("HUD/arrow_right");
-            directions[0] = content.Load<Texture2D>("HUD/arrow_up");
+            mDirections = new Texture2D[4];
+            mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
+            mDirections[2] = content.Load<Texture2D>("HUD/arrow_down");
+            mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
+            mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
 
-            lives = new Texture2D[10];
-            for (int i = 0; i < lives.Length; i++)
-                lives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
+            mLives = new Texture2D[10];
+            for (int i = 0; i < mLives.Length; i++)
+                mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
         }
 
         /// <summary>
@@ -130,10 +130,10 @@ namespace GravityShift
             Importer importer = new Importer(content);
             importer.ImportLevel(this);
 
-            player = new Player(content, ref mPhysicsEnvironment,
+            mPlayer = new Player(content, ref mPhysicsEnvironment,
                 mControls, .8f, EntityInfo.CreatePlayerInfo(GridSpace.GetGridCoord(StartingPoint)));
 
-            mObjects.Add(player);
+            mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
             mObjects.Add(importer.GetPlayerEnd());
             mTrigger.AddRange(importer.GetTriggers());
@@ -195,8 +195,8 @@ namespace GravityShift
         /// <param name="gameState">State of the game.</param>
         public void Update(GameTime gameTime, ref GameStates gameState)
         {
-            timer += (gameTime.ElapsedGameTime.TotalSeconds);
-            if ((player.mIsAlive))// only update while player is alive
+            TIMER += (gameTime.ElapsedGameTime.TotalSeconds);
+            if ((mPlayer.mIsAlive))// only update while player is alive
             {
                 foreach (GameObject gObject in mObjects)
                 {
@@ -236,43 +236,43 @@ namespace GravityShift
 
                 // Update the camera to keep the player at the center of the screen
                 // Also only update if the velocity if greater than 0.5f in either direction
-                if (Math.Abs(player.ObjectVelocity.X) > 0.5f || Math.Abs(player.ObjectVelocity.Y) > 0.5f)
+                if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
                 {
-                    cam.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
-                    cam1.Position = new Vector3(player.Position.X - 275, player.Position.Y - 100, 0);
+                    mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                    mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
                 }
 
                 /* Gradual Zoom Out */
                 if (mControls.isLeftShoulderPressed(true)) //&&
                 {
-                    if (cam.Zoom > 0.4f)
-                        cam.Zoom -= 0.003f;
-                    prev_zoom = cam.Zoom;
+                    if (mCam.Zoom > 0.4f)
+                        mCam.Zoom -= 0.003f;
+                    mPrevZoom = mCam.Zoom;
                 }
 
                 /* Gradual Zoom In */
                 else if (mControls.isRightShoulderPressed(true)) //&&
                 {
-                    if (cam.Zoom < 1.0f)
-                        cam.Zoom += 0.003f;
-                    prev_zoom = cam.Zoom;
+                    if (mCam.Zoom < 1.0f)
+                        mCam.Zoom += 0.003f;
+                    mPrevZoom = mCam.Zoom;
                 }
 
                 /* Snap Zoom Out */
                 else if (mControls.isYPressed(true))
-                    cam.Zoom = 0.4f;
+                    mCam.Zoom = 0.4f;
 
                 /* Snap Zoom In */
-                else if (cam.Zoom == .4f && !mControls.isYPressed(false))
-                    cam.Zoom = prev_zoom;
+                else if (mCam.Zoom == .4f && !mControls.isYPressed(false))
+                    mCam.Zoom = mPrevZoom;
             }
 
-            if (!player.mIsAlive)
+            if (!mPlayer.mIsAlive)
             {
                 if (mControls.isAPressed(false))// resets game after game over
                 {
-                    player.mNumLives = 5;
-                    player.mIsAlive = true;
+                    mPlayer.mNumLives = 5;
+                    mPlayer.mIsAlive = true;
                 }
             }
         }
@@ -290,7 +290,7 @@ namespace GravityShift
                 DepthStencilState.None,
                 RasterizerState.CullCounterClockwise,
                 null,
-                cam.get_transformation());
+                mCam.get_transformation());
             //spriteBatch.Begin();
 
             spriteBatch.Draw(mTexture, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
@@ -316,20 +316,20 @@ namespace GravityShift
                                 DepthStencilState.None,
                                 RasterizerState.CullCounterClockwise,
                                 null,
-                                cam1.get_transformation());
+                                mCam1.get_transformation());
 
-            spriteBatch.DrawString(kootenay, "Timer: " + (int)timer, new Vector2(cam1.Position.X - 275, cam1.Position.Y - 200), Color.White);
+            spriteBatch.DrawString(mKootenay, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.White);
 
             if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-                spriteBatch.Draw(directions[0], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
             else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-                spriteBatch.Draw(directions[1], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                spriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
             else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-                spriteBatch.Draw(directions[2], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                spriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
             else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-                spriteBatch.Draw(directions[3], new Vector2(cam1.Position.X + 500, cam1.Position.Y - 200), Color.White);
+                spriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
 
-            spriteBatch.Draw(lives[player.mNumLives], new Vector2(cam1.Position.X + 600, cam1.Position.Y - 200), Color.White);
+            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 200), Color.White);
 
             spriteBatch.End();
         }
@@ -342,10 +342,10 @@ namespace GravityShift
         /// <param name="player">Player object</param>
         private void Respawn()
         {
-            player.Respawn();
+            mPlayer.Respawn();
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
             foreach (GameObject gameObject in mObjects)
-                if(gameObject != player)
+                if(gameObject != mPlayer)
                     gameObject.Respawn();
         }
 
@@ -379,13 +379,13 @@ namespace GravityShift
                             Respawn();
                             GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
                             gameState = GameStates.Score;
-                            timer = 0;
+                            TIMER = 0;
                         }
 
                         //If player collided with a collectable object
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
-                            player.mScore += 100;
+                            mPlayer.mScore += 100;
                             if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
                             else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
                         }
