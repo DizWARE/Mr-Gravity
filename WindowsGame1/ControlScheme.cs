@@ -10,40 +10,117 @@ namespace GravityShift
     /// <summary>
     /// Options for the type of controls this scheme could be based on
     /// </summary>
-    enum ControlSchemes { Keyboard, Gamepad }
+    public enum ControlSchemes { Keyboard, Gamepad }
 
     /// <summary>
     /// Interface for the control scheme of Gravity Shift
     /// </summary>
-    interface IControlScheme
+    public interface IControlScheme
     {
         /// <summary>
         /// Checks to see if the control for left has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isLeftPressed();
+        bool isLeftPressed(bool held);
 
         /// <summary>
         /// Checks to see if the control for Right has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isRightPressed();
+        bool isRightPressed(bool held);
 
         /// <summary>
         /// Checks to see if the control for Down has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isDownPressed();
+        bool isDownPressed(bool held);
 
         /// <summary>
         /// Checks to see if the control for Up has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
         /// <returns>True if it has been pressed; false otherwise</returns>
-        bool isUpPressed();
+        bool isUpPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for A has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isAPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for B has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isBPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for X has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isXPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for Y has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isYPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for RT has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isRightTriggerPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for LT has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isLeftTriggerPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for RS has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isRightShoulderPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for LS has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isLeftShoulderPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for Start has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isStartPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for Select has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isBackPressed(bool held);
+
+        /// <summary>
+        /// Checks to see if the control for HOME has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <returns>True if it has been pressed; false otherwise</returns>
+        bool isHomePressed(bool held);
 
         /// <summary>
         /// Gets the type of control scheme this is
@@ -57,298 +134,589 @@ namespace GravityShift
     /// </summary>
     class KeyboardControl : IControlScheme
     {
-        private const double BURN_DOWN_TIME = 1000;
-        bool upIsPushed = false;
-        bool downIsPushed = false;
-        bool leftIsPushed = false;
-        bool rightIsPushed = false;
-        bool upWasPushed = false;
-        bool downWasPushed = false;
-        bool leftWasPushed = false;
-        bool rightWasPushed = false;
+        List<Keys> pressedKeys = new List<Keys>();
+
         /// <summary>
         /// Checks to see if the given key is pressed
         /// </summary>
         /// <param name="key">Key to be checked</param>
-        /// <returns>True if the key is pressed, false otherwise</returns>
-        private bool isPressed(Keys key)
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if the key is pressed, false otherwise
+        /// </returns>
+        private bool isPressed(Keys key, bool held)
         {
             KeyboardState state = Keyboard.GetState();
-            return state.IsKeyDown(key);
+            if (state.IsKeyDown(key))
+            {
+                if (pressedKeys.Contains(key) && !held) return false;
+                if (!pressedKeys.Contains(key)) 
+                    pressedKeys.Add(key);
+                return true;
+            }
+            else
+            {
+                if (pressedKeys.Contains(key))  pressedKeys.Remove(key);
+                return false;
+            }
         }
 
         /// <summary>
         /// Checks to see if the control for left has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isLeftPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isLeftPressed(bool held)
         {
-            if (isPressed(Keys.Left))
-            {
-                leftIsPushed = true;
-            }
-            else
-            {
-                leftIsPushed = false;
-            }
-
-            if (leftIsPushed && !leftWasPushed)
-            {
-                return true;
-            }
-            leftWasPushed = leftIsPushed;
-            return false;
+            return isPressed(Keys.Left, held);
         }
 
         /// <summary>
         /// Checks to see if the control for Right has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isRightPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isRightPressed(bool held)
         {
-            if (isPressed(Keys.Right))
-            {
-                rightIsPushed = true;
-            }
-            else
-            {
-                rightIsPushed = false;
-            }
-
-            if (rightIsPushed && !rightWasPushed)
-            {
-                return true;
-            }
-            rightWasPushed = rightIsPushed;
-            return false;
+            return isPressed(Keys.Right, held);
         }
 
         /// <summary>
         /// Checks to see if the control for Down has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isDownPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isDownPressed(bool held)
         {
-            if (isPressed(Keys.Down))
-            {
-                downIsPushed = true;
-            }
-            else
-            {
-                downIsPushed = false;
-            }
-
-            if (downIsPushed && !downWasPushed)
-            {
-                return true;
-            }
-            downWasPushed = downIsPushed;
-            return false;
+            return isPressed(Keys.Down, held);
         }
 
         /// <summary>
         /// Checks to see if the control for Up has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isUpPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isUpPressed(bool held)
         {
-            if (isPressed(Keys.Up))
-            {
-                upIsPushed = true;
-            }
-            else
-            {
-                upIsPushed = false;
-            }
-            if (upIsPushed && !upWasPushed)
-            {
-                return true;
-            }
-            upWasPushed = upIsPushed;
-            return false;
+            return isPressed(Keys.Up, held);
         }
 
+        /// <summary>
+        /// Checks to see if the control for A has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isAPressed(bool held)
+        {
+            return isPressed(Keys.A, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for B has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isBPressed(bool held)
+        {
+            return isPressed(Keys.B, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for X has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isXPressed(bool held)
+        {
+            return isPressed(Keys.X, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for Y has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isYPressed(bool held)
+        {
+            return isPressed(Keys.Y, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for RT has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isRightTriggerPressed(bool held)
+        {
+            return isPressed(Keys.PageDown, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for LT has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isLeftTriggerPressed(bool held)
+        {
+            return isPressed(Keys.PageUp, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for RS has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isRightShoulderPressed(bool held)
+        {
+            return isPressed(Keys.OemPlus, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for LS has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isLeftShoulderPressed(bool held)
+        {
+            return isPressed(Keys.OemMinus, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for Start has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isStartPressed(bool held)
+        {
+            return isPressed(Keys.Enter, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for back has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isBackPressed(bool held)
+        {
+            return isPressed(Keys.Escape, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for home has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isHomePressed(bool held)
+        {
+            return isPressed(Keys.Home, held);
+        }
 
         /// <summary>
         /// Gets the type of control scheme this is
         /// </summary>
-        /// <returns>Returns the Scheme for these controls. The enum for this is under ControlSchemes</returns>
+        /// <returns>
+        /// Returns the Scheme for these controls. The enum for this is under ControlSchemes
+        /// </returns>
         public ControlSchemes controlScheme()
         {
             return ControlSchemes.Keyboard;
         }
     }
 
+
+    /// <summary>
+    /// Control interface for a controller
+    /// </summary>
     class ControllerControl : IControlScheme
     {
-        private PlayerIndex mPlayerIndex;
+        List<Buttons> pressedButtons = new List<Buttons>();
 
-        bool upIsPushed = false;
-        bool downIsPushed = false;
-        bool leftIsPushed = false;
-        bool rightIsPushed = false;
-        bool upWasPushed = false;
-        bool downWasPushed = false;
-        bool leftWasPushed = false;
-        bool rightWasPushed = false;
+        Vector2 joystickDirection;
 
         /// <summary>
-        /// Constructor - Constructs a scheme for the controller input type
+        /// Finds the first player index that is connected
         /// </summary>
-        /// <param name="index">Player index of the controller</param>
-        public ControllerControl(PlayerIndex index)
+        /// <param name="button">The button.</param>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        ///   <c>true</c> if the specified button is pressed; otherwise, <c>false</c>.
+        /// </returns>
+        private bool isPressed(Buttons button, bool held)
         {
-            mPlayerIndex = index;
+            bool pressed = false;
+            if (GamePad.GetState(PlayerIndex.One).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.One);
+            if (GamePad.GetState(PlayerIndex.Two).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Two);
+            if (GamePad.GetState(PlayerIndex.Three).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Three);
+            if (GamePad.GetState(PlayerIndex.Four).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Four);
+            return pressed;
         }
 
         /// <summary>
         /// Checks to see if the given button is currently pressed
         /// </summary>
         /// <param name="button">Button we want to test</param>
-        /// <returns>True if the given button has been pressed; False otherwise</returns>
-        private bool isPressed(Buttons button)
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <param name="playerIndex">Index of the player.</param>
+        /// <returns>
+        /// True if the given button has been pressed; False otherwise
+        /// </returns>
+        private bool isPressed(Buttons button, bool held, PlayerIndex playerIndex)
         {
-            GamePadState state = GamePad.GetState(mPlayerIndex);
-            return state.IsButtonDown(button);
+            GamePadState state = GamePad.GetState(playerIndex);
+            if (state.IsButtonDown(button))
+            {
+                if (pressedButtons.Contains(button) && !held) return false;
+                if (!pressedButtons.Contains(button))
+                    pressedButtons.Add(button);
+                return true;
+            }
+            else
+            {
+                if (pressedButtons.Contains(button)) pressedButtons.Remove(button);
+                return false;
+            }
         }
 
         /// <summary>
         /// Checks to see if the control for left has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isLeftPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isLeftPressed(bool held)
         {
-            if (isPressed(Buttons.DPadLeft) || LeftThumbStickIsLeft() || isPressed(Buttons.X))
-            {
-                leftIsPushed = true;
-            }
-            else
-            {
-                leftIsPushed = false;
-            }
-            if (leftIsPushed && !leftWasPushed)
-            {
-                return true;
-            }
-            leftWasPushed = leftIsPushed;
-            return false;
+            return (isPressed(Buttons.DPadLeft, held) || (LeftThumbStickIsLeft(held)));
         }
 
         /// <summary>
         /// Checks to see if the control for Right has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isRightPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isRightPressed(bool held)
         {
-            if (isPressed(Buttons.DPadRight) || LeftThumbStickIsRight() || isPressed(Buttons.B))
-            {
-                rightIsPushed = true;
-            }
-            else
-            {
-                rightIsPushed = false;
-            }
-
-            if (rightIsPushed && !rightWasPushed)
-            {
-                return true;
-            }
-            rightWasPushed = rightIsPushed;
-            return false;
+            return (isPressed(Buttons.DPadRight,held) || (LeftThumbStickIsRight(held)));
         }
 
         /// <summary>
         /// Checks to see if the control for Down has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isDownPressed()
+        /// <param name="held"></param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isDownPressed(bool held)
         {
-            if (isPressed(Buttons.DPadDown) || LeftThumbStickIsDown() || isPressed(Buttons.A))
-            {
-                downIsPushed = true;
-            }
-            else
-            {
-                downIsPushed = false;
-            }
-
-            if (downIsPushed && !downWasPushed)
-            {
-                return true;
-            }
-            downWasPushed = downIsPushed;
-            return false;
+            return (isPressed(Buttons.DPadDown, held) || (LeftThumbStickIsDown(held) ));
         }
 
         /// <summary>
         /// Checks to see if the control for Up has been interacted with
         /// Only work when the button has just been pushed
         /// </summary>
-        /// <returns>True if it has been pressed; false otherwise</returns>
-        public bool isUpPressed()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isUpPressed(bool held)
         {
-            if (isPressed(Buttons.DPadUp) || LeftThumbStickIsUp() || isPressed(Buttons.Y))
-            {
-                upIsPushed = true;
-            }
-            else
-            {
-                upIsPushed = false;
-            }
-            if (upIsPushed && !upWasPushed)
-            {
-                return true;
-            }
-            upWasPushed = upIsPushed;
-            return false;
-
+            return (isPressed(Buttons.DPadUp, held) || (LeftThumbStickIsUp(held)));
         }
+
         /// <summary>
         /// Checks to see if the left thumbstick is currently left
         /// </summary>
-        /// <returns>True if it is; false if it is not</returns>
-        private bool LeftThumbStickIsLeft()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it is; false if it is not
+        /// </returns>
+        private bool LeftThumbStickIsLeft(bool held)
         {
-            // the value of .7 was attained by black magic, if you would like me to explain
-            // please ask me (Curtis Taylor)
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < -.7f);
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+                GamePadState state = GamePad.GetState(current);
+
+                Vector2 direction = new Vector2(-1, 0);
+                if (state.ThumbSticks.Left.X == -1f)
+                {
+                    if (!held && direction == joystickDirection) return false;
+                    if (held && direction == joystickDirection) return true;
+                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
+                }
+                else if (state.ThumbSticks.Left.X >= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            }
+            return false;
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently right
         /// </summary>
-        /// <returns>True if it is; false if it is not</returns>
-        private bool LeftThumbStickIsRight()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it is; false if it is not
+        /// </returns>
+        private bool LeftThumbStickIsRight(bool held)
         {
-            // the value of .7 was attained by black magic, if you would like me to explain
-            // please ask me (Curtis Taylor)
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > .7f);
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+                GamePadState state = GamePad.GetState(current);
+
+                Vector2 direction = new Vector2(1, 0);
+                if (state.ThumbSticks.Left.X == 1f)
+                {
+                    if (!held && direction == joystickDirection) return false;
+                    if (held && direction == joystickDirection) return true;
+                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
+                }
+                else if (state.ThumbSticks.Left.X <= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            }
+            return false;
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently Down
         /// </summary>
-        /// <returns>True if it is; false if it is not</returns>
-        private bool LeftThumbStickIsDown()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it is; false if it is not
+        /// </returns>
+        private bool LeftThumbStickIsDown(bool held)
         {
-            // the value of .7 was attained by black magic, if you would like me to explain
-            // please ask me (Curtis Taylor)
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < -.7f);
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+                GamePadState state = GamePad.GetState(current);
+                
+                Vector2 direction = new Vector2(0, -1);
+                if (state.ThumbSticks.Left.Y == -1f)
+                {
+                    if (!held && direction == joystickDirection) return false;
+                    if (held && direction == joystickDirection) return true;
+                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
+                }
+                else if (state.ThumbSticks.Left.Y >= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            }
+            return false;
         }
         /// <summary>
         /// Checks to see if the left thumbstick is currently Up
         /// </summary>
-        /// <returns>True if it is; false if it is not</returns>
-        private bool LeftThumbStickIsUp()
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it is; false if it is not
+        /// </returns>
+        private bool LeftThumbStickIsUp(bool held)
         {
-            // the value of .7 was attained by black magic, if you would like me to explain
-            // please ask me (Curtis Taylor)
-            return (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > .7f);
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+                GamePadState state = GamePad.GetState(current);
+
+                Vector2 direction = new Vector2(0, 1);
+                if (state.ThumbSticks.Left.Y == 1f)
+                {
+                    if (!held && direction == joystickDirection) return false;
+                    if (held && direction == joystickDirection) return true;
+                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
+                }
+                else if (state.ThumbSticks.Left.Y <= 0 && joystickDirection == direction) joystickDirection = new Vector2();
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if the control for A has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isAPressed(bool held)
+        {
+            return isPressed(Buttons.A, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for B has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held"></param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isBPressed(bool held)
+        {
+            return isPressed(Buttons.B, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for X has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isXPressed(bool held)
+        {
+            return isPressed(Buttons.X, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for Y has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isYPressed(bool held)
+        {
+            return isPressed(Buttons.Y, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for RT has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isRightTriggerPressed(bool held)
+        {
+            return isPressed(Buttons.RightTrigger, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for LT has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isLeftTriggerPressed(bool held)
+        {
+            return isPressed(Buttons.LeftTrigger, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for RS has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isRightShoulderPressed(bool held)
+        {
+            return isPressed(Buttons.RightShoulder, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for LS has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isLeftShoulderPressed(bool held)
+        {
+            return isPressed(Buttons.LeftShoulder, held);
+        }
+
+
+        /// <summary>
+        /// Checks to see if the control for Start has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held"></param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isStartPressed(bool held)
+        {
+            return isPressed(Buttons.Start, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for Select has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isBackPressed(bool held)
+        {
+            return isPressed(Buttons.Back, held);
+        }
+
+        /// <summary>
+        /// Checks to see if the control for HOME has been interacted with
+        /// Only work when the button has just been pushed
+        /// </summary>
+        /// <param name="held">Set true if this button is allowed to be held down and still respond to interaction</param>
+        /// <returns>
+        /// True if it has been pressed; false otherwise
+        /// </returns>
+        public bool isHomePressed(bool held)
+        {
+            return isPressed(Buttons.BigButton, held);
         }
 
         /// <summary>

@@ -105,7 +105,8 @@ namespace GravityShift
         public override void Respawn()
         {
             base.Respawn();
-            mVelocity = new Vector2();
+            UpdateBoundingBoxes();
+            mVelocity = Vector2.Zero;
         }
 
         /// <summary>

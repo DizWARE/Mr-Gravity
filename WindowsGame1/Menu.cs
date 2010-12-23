@@ -43,10 +43,7 @@ namespace GravityShift
         private const int NUM_OPTIONS = 3;
         private const int NUM_SOUND = 2;
 
-        GamePadState pad_state;
-        GamePadState prev_pad_state;
-        KeyboardState key_state;
-        KeyboardState prev_key_state;
+        IControlScheme mControls;
 
         int current;
 
@@ -98,7 +95,10 @@ namespace GravityShift
          *
          * Currently does not do anything
          */
-        public Menu() { }
+        public Menu(IControlScheme controls) 
+        {
+            mControls = controls;
+        }
 
         /*
          * Load
@@ -172,9 +172,6 @@ namespace GravityShift
             menuItems[2] = optionsUnsel;
             menuItems[3] = creditsUnsel;
 
-            /* Pad state stuff */
-            prev_pad_state = GamePad.GetState(PlayerIndex.One);
-
             /* Load the fonts */
             kootenay = content.Load<SpriteFont>("fonts/Kootenay");
         }
@@ -188,26 +185,19 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref GameStates gameState)
         {
-            /* Keyboard and GamePad states */
-            key_state = Keyboard.GetState();
-            pad_state = GamePad.GetState(PlayerIndex.One);
-
             /* If we are on the title screen */
             switch (state)
             {
                 case states.TITLE:
                     /* If the user hits up */
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                        key_state.IsKeyDown(Keys.Up) &&
-                        prev_key_state.IsKeyUp(Keys.Up))
+                    if (mControls.isUpPressed(false))
                     {
                         /* If we are not on the first element already */
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             /* Decrement current and change the images */
                             current--;
                             for (int i = 0; i < NUM_TITLE; i++)
@@ -216,15 +206,12 @@ namespace GravityShift
                         }
                     }
                     /* If the user hits the down button */
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                        key_state.IsKeyDown(Keys.Down) &&
-                        prev_key_state.IsKeyUp(Keys.Down))
+                    if (mControls.isDownPressed(false))
                     {
                         /* If we are on the last element in the menu */
                         if (current < NUM_TITLE - 1)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             /* Increment current and update graphics */
                             current++;
                             for (int i = 0; i < NUM_TITLE; i++)
@@ -234,17 +221,14 @@ namespace GravityShift
                     }
 
                     /* If the user selects one of the menu items */
-                    if (pad_state.IsButtonDown(Buttons.A) &&
-                        prev_pad_state.IsButtonUp(Buttons.A) ||
-                        key_state.IsKeyDown(Keys.Enter) &&
-                        prev_key_state.IsKeyUp(Keys.Enter))
+                    if (mControls.isAPressed(false)||mControls.isStartPressed(false))
                     {
-                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                         /* New Game */
                         if (current == 0)
                         {
                             /* Start the game */
-                            GravityShiftMain.GameState = GravityShiftMain.GameStates.IN_GAME;
+                            gameState = GameStates.In_Game;
                         }
                         /* Load Game */
                         else if (current == 1)
@@ -311,28 +295,22 @@ namespace GravityShift
 
                 /* Options Menu*/
                 case states.OPTIONS:
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                        key_state.IsKeyDown(Keys.Up) &&
-                        prev_key_state.IsKeyUp(Keys.Up))
+                    if (mControls.isUpPressed(false))
                     {
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             current--;
                             for (int i = 0; i < NUM_OPTIONS; i++)
                                 menuItems[i] = unselMenuItems[i];
                             menuItems[current] = selMenuItems[current];
                         }
                     }
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                        key_state.IsKeyDown(Keys.Down) &&
-                        prev_key_state.IsKeyUp(Keys.Down))
+                    if (mControls.isDownPressed(false))
                     {
                         if (current < NUM_OPTIONS - 1)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             current++;
                             for (int i = 0; i < NUM_OPTIONS; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -340,12 +318,9 @@ namespace GravityShift
                         }
                     }
 
-                    if (pad_state.IsButtonDown(Buttons.A) &&
-                        prev_pad_state.IsButtonUp(Buttons.A) ||
-                        key_state.IsKeyDown(Keys.Enter) &&
-                        prev_key_state.IsKeyUp(Keys.Enter))
+                    if (mControls.isAPressed(false) || mControls.isStartPressed(false))
                     {
-                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                         /* Controller Settings */
                         if (current == 0)
                         {
@@ -402,28 +377,22 @@ namespace GravityShift
 
                 /* Load Menu */
                 case states.LOAD:
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                        key_state.IsKeyDown(Keys.Up) &&
-                        prev_key_state.IsKeyUp(Keys.Up))
+                    if (mControls.isUpPressed(false))
                     {
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             current--;
                             for (int i = 0; i < NUM_LOAD; i++)
                                 menuItems[i] = unselMenuItems[i];
                             menuItems[current] = selMenuItems[current];
                         }
                     }
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                        key_state.IsKeyDown(Keys.Down) &&
-                        prev_key_state.IsKeyUp(Keys.Down))
+                    if (mControls.isDownPressed(false))
                     {
                         if (current < NUM_LOAD - 1)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             current++;
                             for (int i = 0; i < NUM_LOAD; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -431,12 +400,9 @@ namespace GravityShift
                         }
                     }
 
-                    if (pad_state.IsButtonDown(Buttons.A) &&
-                        prev_pad_state.IsButtonUp(Buttons.A) ||
-                        key_state.IsKeyDown(Keys.Enter) &&
-                        prev_key_state.IsKeyUp(Keys.Enter))
+                    if (mControls.isAPressed(false) || mControls.isStartPressed(false))
                     {
-                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                         /* Level 1 */
                         if (current == 0)
                         {
@@ -484,12 +450,9 @@ namespace GravityShift
 
                 /* Credits Menu*/
                 case states.CREDITS:
-                    if (pad_state.IsButtonDown(Buttons.A) &&
-                        prev_pad_state.IsButtonUp(Buttons.A) ||
-                        key_state.IsKeyDown(Keys.Enter) &&
-                        prev_key_state.IsKeyUp(Keys.Enter))
+                    if (mControls.isAPressed(false) || mControls.isStartPressed(false))
                     {
-                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                         /* Back */
                         state = states.TITLE;
 
@@ -518,12 +481,9 @@ namespace GravityShift
 
                 /* Controller Settings */
                 case states.CONTROLLER:
-                    if (pad_state.IsButtonDown(Buttons.A) &&
-                        prev_pad_state.IsButtonUp(Buttons.A) ||
-                        key_state.IsKeyDown(Keys.Enter) &&
-                        prev_key_state.IsKeyUp(Keys.Enter))
+                    if (mControls.isAPressed(false) || mControls.isStartPressed(false))
                     {
-                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
                         /* Change to the options menu */
                         state = states.OPTIONS;
@@ -551,28 +511,22 @@ namespace GravityShift
 
                 /* Sound Settings */
                 case states.SOUNDS:
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickUp) ||
-                        key_state.IsKeyDown(Keys.Up) &&
-                        prev_key_state.IsKeyUp(Keys.Up))
+                    if (mControls.isUpPressed(false))
                     {
                         if (current > 0)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             current--;
                             for (int i = 0; i < NUM_SOUND; i++)
                                 menuItems[i] = unselMenuItems[i];
                             menuItems[current] = selMenuItems[current];
                         }
                     }
-                    if (pad_state.IsButtonDown(Buttons.LeftThumbstickDown) &&
-                        prev_pad_state.IsButtonUp(Buttons.LeftThumbstickDown) ||
-                        key_state.IsKeyDown(Keys.Down) &&
-                        prev_key_state.IsKeyUp(Keys.Down))
+                    if (mControls.isDownPressed(false))
                     {
                         if (current < NUM_SOUND - 1)
                         {
-                            GameSound.menuSound_rollover.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                            GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
                             current++;
                             for (int i = 0; i < NUM_SOUND; i++)
                                 menuItems[i] = unselMenuItems[i];
@@ -580,24 +534,21 @@ namespace GravityShift
                         }
                     }
 
-                    if (pad_state.IsButtonDown(Buttons.A) &&
-                        prev_pad_state.IsButtonUp(Buttons.A) ||
-                        key_state.IsKeyDown(Keys.Enter) &&
-                        prev_key_state.IsKeyUp(Keys.Enter))
+                    if (mControls.isAPressed(false) || mControls.isStartPressed(false))
                     {
-                        GameSound.menuSound_select.Play(GravityShiftMain.Volume, 0.0f, 0.0f);
+                        GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                         /* Mute */
                         if (current == 0)
                         {
                             if (muted == false)
                             {
                                 muted = true;
-                                GravityShiftMain.Volume = 0.0f;
+                                GameSound.volume = 0.0f;
                             }
                             else
                             {
                                 muted = false;
-                                GravityShiftMain.Volume = 1.0f;
+                                GameSound.volume = 1.0f;
                             }
                         }
                         /* Back */
@@ -630,10 +581,6 @@ namespace GravityShift
                     }
                     break;
             }
-            
-            /* Set the previous states to the current states */
-            prev_pad_state = pad_state;
-            prev_key_state = key_state;
         }
 
         /*
