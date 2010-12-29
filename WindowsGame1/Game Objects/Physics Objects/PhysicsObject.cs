@@ -244,6 +244,8 @@ namespace GravityShift
             UpdateBoundingBoxes();
         }
 
+        #region Collision Code
+
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
         /// (only good for 2 boxes) (no circles yet)
@@ -674,6 +676,9 @@ namespace GravityShift
                     ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
             }
         }
+
+        #endregion
+
         public abstract int Kill();
         public abstract override string ToString();
     }
