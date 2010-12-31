@@ -41,9 +41,9 @@ namespace GravityShift
         SpriteFont mDefaultFont;
         SpriteFont kootenay;
 
-        //TO BE CHANGED
+        //TO BE CHANGED- Actually, this may be ok since we use this to play test.
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
-        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\TestTriggers.xml";
+        private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
 
         public GravityShiftMain()
         {

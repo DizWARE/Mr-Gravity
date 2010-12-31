@@ -148,7 +148,7 @@ namespace GravityShift.Import_Code
                 if (entity.mType == XmlKeys.WALLS)
                     walls.Add(new Tile(mContent, .8f, entity));
 
-            CreateSortedIndicies(walls, rows);
+            CreateSortedIndicies(walls, rows, false);
             for(int i = 0; i < rows.Length; i++)
             {
                 int next = -1;
@@ -194,7 +194,7 @@ namespace GravityShift.Import_Code
                 }
             }
 
-            CreateSortedIndicies(walls, cols);
+            CreateSortedIndicies(walls, cols,true);
             for (int i = 0; i < cols.Length; i++)
             {
                 int next = -1;
@@ -250,24 +250,33 @@ namespace GravityShift.Import_Code
         /// </summary>
         /// <param name="walls">The walls.</param>
         /// <param name="indicies">The indicies.</param>
-        private void CreateSortedIndicies(List<StaticObject> walls, List<StaticObject>[] indicies)
+        private void CreateSortedIndicies(List<StaticObject> walls, List<StaticObject>[] indicies, bool cols)
         {
             for (int i = 0; i < indicies.Length; i++) indicies[i] = new List<StaticObject>();
             foreach (StaticObject obj in walls)
             {
                 int i = 0;
                 Vector2 gridLoc = GridSpace.GetGridCoord(obj.mPosition);
-                for (; i < indicies[(int)gridLoc.Y].Count; i++)
+                int index = (int)gridLoc.Y;
+                float compNum = gridLoc.X;
+
+                if (cols) { index = (int)gridLoc.X; compNum = gridLoc.Y; }
+                for (; i < indicies[index].Count; i++)
                 {
-                    Vector2 otherGridLoc = GridSpace.GetGridCoord(indicies[(int)gridLoc.Y][i].mPosition);
-                    if (gridLoc.X < otherGridLoc.X)
+                    Vector2 otherGridLoc = GridSpace.GetGridCoord(indicies[index][i].mPosition);
+
+                    float otherComp = otherGridLoc.X;
+                    if (cols) otherComp = otherGridLoc.Y;
+                    
+
+                    if (compNum < otherComp)
                         break;
                 }
 
-                if (i < indicies[(int)gridLoc.Y].Count)
-                    indicies[(int)gridLoc.Y].Insert(i, obj);
+                if (i < indicies[index].Count)
+                    indicies[index].Insert(i, obj);
                 else
-                    indicies[(int)gridLoc.Y].Add(obj);
+                    indicies[index].Add(obj);
             }
         }
 
