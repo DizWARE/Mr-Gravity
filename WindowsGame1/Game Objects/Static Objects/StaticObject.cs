@@ -34,5 +34,10 @@ namespace GravityShift
         {
             this.mVelocity = Vector2.Zero;
         }
+
+        public StaticObject()
+        {
+            // TODO: Complete member initialization
+        }
     }
 }

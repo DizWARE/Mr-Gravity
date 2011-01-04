@@ -11035,7 +11035,7 @@
       <Texture>Physics Objects\AngryNewton</Texture>
       <Properties>
         <Shape>Square</Shape>
-        <Mass>.5</Mass>
+        <Mass>.85</Mass>
       </Properties>
     </Entity>
     <Entity>
@@ -11048,7 +11048,7 @@
       <Texture>Physics Objects\AngryNewton</Texture>
       <Properties>
         <Shape>Square</Shape>
-        <Mass>.5</Mass>
+        <Mass>.85</Mass>
       </Properties>
     </Entity>
   </Entities>

@@ -23,7 +23,7 @@ namespace GravityShift
         private float mFPS;
 
         /* The current frame to show */
-        private int frame;
+        private int mFrame;
 
         private Texture2D mTexture;
 
@@ -44,7 +44,7 @@ namespace GravityShift
             mFrameCount = frameCount;
             mTexture = content.Load<Texture2D>("animatedSprites/" + name);
             mFPS = FPS;
-            frame = 0;
+            mFrame = 0;
             mElapsed = 0.0f;
         }
 
@@ -59,9 +59,9 @@ namespace GravityShift
             /* If enough has passed, update the frame */
             if (mElapsed > mFPS)
             {
-                frame++;
+                mFrame++;
 
-                frame = frame % mFrameCount;
+                mFrame = mFrame % mFrameCount;
                 mElapsed -= mFPS;
             }
         }
@@ -74,7 +74,7 @@ namespace GravityShift
         public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
             int width = mTexture.Width / mFrameCount;
-            Rectangle sourcerect = new Rectangle(width * frame, 0, width, mTexture.Height);
+            Rectangle sourcerect = new Rectangle(width * mFrame, 0, width, mTexture.Height);
             spriteBatch.Draw(mTexture, position, sourcerect, Color.White);
         }
 
@@ -83,7 +83,7 @@ namespace GravityShift
         /// </summary>
         public void Reset()
         {
-            frame = 0;
+            mFrame = 0;
             mElapsed = 0.0f;
         }
     }
