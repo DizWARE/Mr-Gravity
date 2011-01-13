@@ -29,6 +29,9 @@ namespace GravityShift
 
         //Instance of the scoring class
         Scoring mScoring;
+
+        //Instance of the level selection class
+        LevelSelect mLevelSelect;
 		
         private GameStates mCurrentState = GameStates.Main_Menu;
 
@@ -74,6 +77,7 @@ namespace GravityShift
 
             mMenu = new Menu(mControls);
             mScoring = new Scoring(mControls);
+            mLevelSelect = new LevelSelect(mControls);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -88,6 +92,7 @@ namespace GravityShift
             mMenu.Load(Content);
             mScoring.Load(Content);
             GameSound.Load(Content);
+            mLevelSelect.Load(Content, mGraphics.GraphicsDevice);
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
             mCurrentLevel.Load(Content);
 
@@ -120,7 +125,8 @@ namespace GravityShift
                 mMenu.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Score)
                 mScoring.Update(gameTime, ref mCurrentState);
-            else if (mCurrentState == GameStates.Level_Selection) ; //TODO
+            else if (mCurrentState == GameStates.Level_Selection)
+                mLevelSelect.Update(gameTime,ref mCurrentState,ref mCurrentLevel);
             else if (mCurrentState == GameStates.Pause) ;
         }
 
@@ -142,14 +148,15 @@ namespace GravityShift
             if (mCurrentState == GameStates.In_Game)
             {
                 mCurrentLevel.Draw(mSpriteBatch, gameTime);
-                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);                
+                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);
             }
             else if (mCurrentState == GameStates.Main_Menu)
                 mMenu.Draw(mSpriteBatch, mGraphics);
 
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics);
-            else if (mCurrentState == GameStates.Level_Selection) ; //TODO
+            else if (mCurrentState == GameStates.Level_Selection)
+                mLevelSelect.Draw(mSpriteBatch, mGraphics);
             else if (mCurrentState == GameStates.Pause) ;
             base.Draw(gameTime);
         }

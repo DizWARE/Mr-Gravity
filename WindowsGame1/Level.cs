@@ -20,7 +20,7 @@ namespace GravityShift
     /// <summary>
     /// This class represents a level in the game
     /// </summary>
-    class Level
+    public class Level
     {
         /// <summary>
         /// Gets the background texture of this level

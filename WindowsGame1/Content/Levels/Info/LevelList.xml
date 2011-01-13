@@ -1,0 +1,10 @@
+<Levels>
+	<LevelData>
+		<name>Level A</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Level P</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+</Levels>
