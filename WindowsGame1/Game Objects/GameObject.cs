@@ -81,7 +81,10 @@ namespace GravityShift
             mInitialPosition = mPosition;
             mSize = new Vector2(mTexture.Width, mTexture.Height);
 
-            mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,(int)mSize.X, (int)mSize.Y);
+            if( mCollisionType == XmlKeys.HAZARDOUS)// make hazardous object have a bit smaller collision
+                mBoundingBox = new Rectangle((int)mPosition.X+3, (int)mPosition.Y+3, (int)mSize.X-6, (int)mSize.Y-6);
+            else
+                mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y, (int)mSize.X, (int)mSize.Y);
         }
 
 
@@ -162,7 +165,7 @@ namespace GravityShift
         /// <param name="gametime">The current gametime</param>
         public virtual void Draw(SpriteBatch canvas, GameTime gametime)
         {
-            canvas.Draw(mTexture, mBoundingBox, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
+            canvas.Draw(mTexture, new Rectangle((int)mPosition.X, (int)mPosition.Y, (int)mSize.X, (int)mSize.Y), new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
         }
         
     }
