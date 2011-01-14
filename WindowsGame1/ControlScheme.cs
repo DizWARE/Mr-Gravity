@@ -223,7 +223,7 @@ namespace GravityShift
         /// </returns>
         public bool isAPressed(bool held)
         {
-            return isPressed(Keys.A, held);
+            return isPressed(Keys.A, held)||isPressed(Keys.Enter,held);
         }
 
         /// <summary>

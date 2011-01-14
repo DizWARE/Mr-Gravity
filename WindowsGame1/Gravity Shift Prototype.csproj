@@ -122,6 +122,7 @@
     <Compile Include="Game Objects\Static Objects\Triggers\ForceTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
+    <Compile Include="LevelSelect.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
