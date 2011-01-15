@@ -190,6 +190,7 @@ namespace GravityShift
             /* If we are on the title screen */
             switch (mState)
             {
+                
                 case states.TITLE:
                     /* If the user hits up */
                     if (mControls.isUpPressed(false))
@@ -228,35 +229,13 @@ namespace GravityShift
                         if (mCurrent == 0)
                         {
                             /* Start the game */
-                            gameState = GameStates.In_Game;
+                            gameState = GameStates.Level_Selection;
                         }
                         /* Load Game */
                         else if (mCurrent == 1)
                         {
                             /* Change to the load screen */
                             gameState = GameStates.Level_Selection;
-
-                            /* Initialize variables to the load menu items */
-                            mSelMenuItems = new Texture2D[NUM_LOAD];
-                            mUnselMenuItems = new Texture2D[NUM_LOAD];
-                            mMenuItems = new Texture2D[NUM_LOAD];
-
-                            mSelMenuItems[0] = mOneSel;
-                            mSelMenuItems[1] = mTwoSel;
-                            mSelMenuItems[2] = mThreeSel;
-                            mSelMenuItems[3] = mBackSel;
-
-                            mUnselMenuItems[0] = mOneUnsel;
-                            mUnselMenuItems[1] = mTwoUnsel;
-                            mUnselMenuItems[2] = mThreeUnsel;
-                            mUnselMenuItems[3] = mBackUnsel;
-
-                            mMenuItems[0] = mOneSel;
-                            mMenuItems[1] = mTwoUnsel;
-                            mMenuItems[2] = mThreeUnsel;
-                            mMenuItems[3] = mBackUnsel;
-
-                            mCurrent = 0;
                         }
                         /* Options */
                         else if (mCurrent == 2)

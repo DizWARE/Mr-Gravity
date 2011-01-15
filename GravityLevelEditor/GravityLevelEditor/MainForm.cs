@@ -268,7 +268,11 @@ namespace GravityLevelEditor
             Graphics g = Graphics.FromImage(image);
             mData.Level.Draw(g);
 
-            return image;
+            Bitmap result = new Bitmap(300, 300);
+            g = Graphics.FromImage((Image)result);
+            g.DrawImage(image, 0, 0, 300, 300);
+
+            return result;
         }
 
         /*

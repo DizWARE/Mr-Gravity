@@ -1,6 +1,6 @@
 <Levels>
 	<LevelData>
-		<name>Level A</name>
+		<name>Apples</name>
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
@@ -8,7 +8,31 @@
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
+		<name>Level A</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Rails</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Chambers</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+		<LevelData>
 		<name>Apples</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Level P</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Level A</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Rails</name>
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
@@ -16,7 +40,23 @@
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
+		<name>Apples</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Level P</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Level A</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
 		<name>Rails</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Chambers</name>
 		<unlocked>True</unlocked>
 	</LevelData>
 </Levels>

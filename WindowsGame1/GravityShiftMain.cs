@@ -42,7 +42,6 @@ namespace GravityShift
 
         //Fonts for this game
         SpriteFont mDefaultFont;
-        SpriteFont kootenay;
 
         //TO BE CHANGED- Actually, this may be ok since we use this to play test.
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
@@ -116,7 +115,7 @@ namespace GravityShift
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (mControls.isBackPressed(false))
+            if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
                 this.Exit();
 
             if (mCurrentState == GameStates.In_Game)

@@ -31,8 +31,25 @@ namespace GravityShift
         /// <summary>
         /// Gets or sets the name of this level
         /// </summary>
-        public string Name { get { return mName; } set { mName = value; } }
+        public string Name { 
+            get { return mName; } 
+            set { 
+                mName = value;
+            } }
         private string mName;
+
+        /// <summary>
+        /// Gets or sets the filepath of this level
+        /// </summary>
+        public string Filepath { 
+            get { return mFilepath; } 
+            set{ 
+                mFilepath = value;
+                int start = mFilepath.LastIndexOf('\\');
+                int end = mFilepath.LastIndexOf('.');
+                mName = mFilepath.Substring(start+1, end - start - 1);
+            } }
+        private string mFilepath;
 
         /// <summary>
         /// Gets or sets the size of the level(in pixels)
@@ -68,7 +85,7 @@ namespace GravityShift
 
         IControlScheme mControls;
 
-        /* SpriteFond */
+        /* SpriteFont */
         SpriteFont mKootenay;
 
         #region HUD
@@ -84,9 +101,9 @@ namespace GravityShift
         /// <param name="name">The name of the level</param>
         /// <param name="controls">The controls scheme</param>
         /// <param name="viewport">The viewport for the cameras</param>
-        public Level(String name, IControlScheme controls, Viewport viewport)
+        public Level(String filepath, IControlScheme controls, Viewport viewport)
         {
-            mName = name;
+            Filepath = filepath;
             mControls = controls;
 
             mCam = new Camera(viewport);

@@ -462,6 +462,7 @@ namespace GravityLevelEditor
 
 
             image.Save(currentDirectory + "\\Thumbnail\\" + this.Name + ".png");
+            image.Dispose();
             MessageBox.Show(this.Name + ".xml saved correctly");
         }
     }
