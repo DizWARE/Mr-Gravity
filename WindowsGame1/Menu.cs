@@ -33,7 +33,8 @@ namespace GravityShift
             LOAD,
             CONTROLLER,
             SOUNDS,
-            CREDITS
+            CREDITS,
+            ACHIEVEMENT
         };
 
         states mState;
@@ -42,6 +43,7 @@ namespace GravityShift
         private const int NUM_LOAD = 4;
         private const int NUM_OPTIONS = 3;
         private const int NUM_SOUND = 2;
+        private const int NUM_ACHIEVE = 10;
 
         IControlScheme mControls;
 

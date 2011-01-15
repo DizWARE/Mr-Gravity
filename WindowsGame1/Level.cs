@@ -75,6 +75,7 @@ namespace GravityShift
 
         private Texture2D[] mDirections;
         private Texture2D[] mLives;
+        private int mNumCollected;
 
         #endregion
 
@@ -120,6 +121,8 @@ namespace GravityShift
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
+
+            mNumCollected = 0;
         }
 
         /// <summary>
@@ -242,6 +245,7 @@ namespace GravityShift
                     //Safely remove the collected objects
                     foreach (GameObject g in mCollected)
                     {
+                        mNumCollected++;
                         RemoveFromMatrix(g);
                         mObjects.Remove(g);
                     }
@@ -335,6 +339,8 @@ namespace GravityShift
                                 mCam1.get_transformation());
 
             spriteBatch.DrawString(mKootenay, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.White);
+
+            spriteBatch.DrawString(mKootenay, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 200), Color.White);
 
             if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
                 spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
