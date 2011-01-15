@@ -2286,30 +2286,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>599</ID>
-      <Name>NeonGreen</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="18" />
-      <CollisionType></CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>601</ID>
       <Name>NeonGreen</Name>
       <Type>Static Objects</Type>
       <Location X="2" Y="19" />
-      <CollisionType></CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>603</ID>
-      <Name>NeonGreen</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="19" />
       <CollisionType></CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonGreen</Texture>
@@ -6238,6 +6218,26 @@
         <Shape>Square</Shape>
         <Mass>1</Mass>
       </Properties>
+    </Entity>
+    <Entity>
+      <ID>2240</ID>
+      <Name>NeonGreen</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="18" />
+      <CollisionType></CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2241</ID>
+      <Name>NeonGreen</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="19" />
+      <CollisionType></CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
     </Entity>
   </Entities>
 </Level>

@@ -32,6 +32,9 @@ namespace GravityShift
 
         //Instance of the level selection class
         LevelSelect mLevelSelect;
+
+        //Instance of the pause class
+        Pause mPause;
 		
         private GameStates mCurrentState = GameStates.Main_Menu;
 
@@ -77,6 +80,7 @@ namespace GravityShift
             mMenu = new Menu(mControls);
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
+            mPause = new Pause(mControls);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -90,6 +94,7 @@ namespace GravityShift
         {
             mMenu.Load(Content);
             mScoring.Load(Content);
+            mPause.Load(Content);
             GameSound.Load(Content);
             mLevelSelect.Load(Content, mGraphics.GraphicsDevice);
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
@@ -123,10 +128,11 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Main_Menu)
                 mMenu.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Score)
-                mScoring.Update(gameTime, ref mCurrentState);
+                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             else if (mCurrentState == GameStates.Level_Selection)
-                mLevelSelect.Update(gameTime,ref mCurrentState,ref mCurrentLevel);
-            else if (mCurrentState == GameStates.Pause) ;
+                mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            else if (mCurrentState == GameStates.Pause)
+                mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
         }
 
         /// <summary>
@@ -156,7 +162,9 @@ namespace GravityShift
                 mScoring.Draw(mSpriteBatch, mGraphics);
             else if (mCurrentState == GameStates.Level_Selection)
                 mLevelSelect.Draw(mSpriteBatch, mGraphics);
-            else if (mCurrentState == GameStates.Pause) ;
+            else if (mCurrentState == GameStates.Pause)
+                mPause.Draw(mSpriteBatch, mGraphics);
+                
             base.Draw(gameTime);
         }
     }

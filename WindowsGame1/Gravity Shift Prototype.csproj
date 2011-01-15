@@ -135,6 +135,7 @@
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Game Objects\Physics Objects\MovingTile.cs" />
+    <Compile Include="Pause.cs" />
     <Compile Include="PhysicsEnvironment.cs" />
     <Compile Include="Game Objects\Physics Objects\PhysicsObject.cs" />
     <Compile Include="Game Objects\Physics Objects\Player.cs" />

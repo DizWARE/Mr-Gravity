@@ -308,6 +308,9 @@ namespace GravityShift
                     mPlayer.mIsAlive = true;
                 }
             }
+
+            if (mControls.isStartPressed(false))
+                gameState = GameStates.Pause;
         }
 
         /// <summary>
@@ -380,6 +383,17 @@ namespace GravityShift
             foreach (GameObject gameObject in mObjects)
                 if(gameObject != mPlayer)
                     gameObject.Respawn();
+        }
+
+        /// <summary>
+        /// Preps the level to reload content
+        /// </summary>
+        public void Reset()
+        {
+            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+            mObjects.Clear();
+            mCollected.Clear();
+            mTrigger.Clear();
         }
 
         /// <summary>

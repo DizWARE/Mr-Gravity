@@ -165,6 +165,7 @@ namespace GravityShift
                 currentLevel = mLevels[mCurrentIndex - 1 + 12 * mCurrentPage].Level;
                 currentLevel.Load(mContent);
                 gameState = GameStates.In_Game;
+                mCurrentIndex = 0;
             }
         }
 
