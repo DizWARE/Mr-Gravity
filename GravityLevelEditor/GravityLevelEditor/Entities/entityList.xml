@@ -184,9 +184,9 @@
     <Name>BasicRailX</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
+    <CollisionType>Hazardous</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Static Objects\grounda_neonGreen</Texture>
+    <Texture>Static Objects\grounda_neonPink</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
@@ -201,7 +201,7 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Static Objects\grounda_neonGreen</Texture>
+    <Texture>Static Objects\grounda_neonYellow</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
@@ -237,5 +237,28 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
     </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>DangerNeonPink</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\grounda_neonPink</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>NeonRed</Name>
+    <Type>Walls</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Static Objects\groundi_neonRed</Texture>
+    <Properties />
   </Entity>
 </Entities>

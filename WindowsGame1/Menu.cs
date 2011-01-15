@@ -236,7 +236,7 @@ namespace GravityShift
                         else if (mCurrent == 1)
                         {
                             /* Change to the load screen */
-                            mState = states.LOAD;
+                            gameState = GameStates.Level_Selection;
 
                             /* Initialize variables to the load menu items */
                             mSelMenuItems = new Texture2D[NUM_LOAD];
