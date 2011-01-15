@@ -2247,7 +2247,7 @@
       <ID>1755</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="36" Y="15" />
+      <Location X="35" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2257,7 +2257,7 @@
       <ID>1756</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="36" Y="16" />
+      <Location X="35" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2267,7 +2267,7 @@
       <ID>1758</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="35" Y="16" />
+      <Location X="34" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2277,7 +2277,7 @@
       <ID>1759</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="34" Y="16" />
+      <Location X="33" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2287,7 +2287,7 @@
       <ID>1760</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="34" Y="15" />
+      <Location X="33" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2297,7 +2297,7 @@
       <ID>1761</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="32" Y="15" />
+      <Location X="31" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2307,7 +2307,7 @@
       <ID>1762</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="32" Y="16" />
+      <Location X="31" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2317,7 +2317,7 @@
       <ID>1763</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="31" Y="16" />
+      <Location X="30" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2327,7 +2327,7 @@
       <ID>1764</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="30" Y="16" />
+      <Location X="29" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2337,7 +2337,7 @@
       <ID>1765</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="30" Y="15" />
+      <Location X="29" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2347,7 +2347,7 @@
       <ID>1766</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="33" Y="15" />
+      <Location X="32" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2357,7 +2357,7 @@
       <ID>1767</ID>
       <Name>NeonYellow</Name>
       <Type>Walls</Type>
-      <Location X="29" Y="15" />
+      <Location X="36" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonYellow</Texture>
@@ -2675,7 +2675,7 @@
       <ID>1854</ID>
       <Name>BasicCollectable</Name>
       <Type>Static Objects</Type>
-      <Location X="31" Y="15" />
+      <Location X="30" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\collectable</Texture>
@@ -2687,7 +2687,7 @@
       <ID>1855</ID>
       <Name>BasicCollectable</Name>
       <Type>Static Objects</Type>
-      <Location X="35" Y="15" />
+      <Location X="34" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\collectable</Texture>
@@ -2722,14 +2722,14 @@
         <Shape>Square</Shape>
         <Mass>1</Mass>
         <Rail>X</Rail>
-        <Length>11</Length>
+        <Length>10</Length>
       </Properties>
     </Entity>
     <Entity>
       <ID>1901</ID>
       <Name>BasicRailX</Name>
       <Type>Physics Objects</Type>
-      <Location X="33" Y="14" />
+      <Location X="32" Y="14" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Static Objects\grounda_neonPink</Texture>

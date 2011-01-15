@@ -69,10 +69,14 @@ namespace GravityShift
                 currentLevel = mLevels[mCurrentIndex].Level;
                 currentLevel.Load(mContent);
                 gameState = GameStates.In_Game;
+                mCurrentIndex = 0;
             }
 
             if (mControls.isBackPressed(false))
+            {
                 gameState = GameStates.Main_Menu;
+                mCurrentIndex = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)

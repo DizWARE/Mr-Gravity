@@ -21,6 +21,8 @@ namespace GravityShift
         /* Spritefont */
         private SpriteFont mKootenay;
 
+        ContentManager mContent;
+
         IControlScheme mControls;
 
         /* Equivalent of stars */
@@ -95,6 +97,7 @@ namespace GravityShift
          */
         public void Load(ContentManager content)
         {
+            mContent = content;
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
 
             mApple = content.Load<Texture2D>("scoring/apple");
@@ -143,7 +146,7 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime, ref GameStates gameState)
+        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
 
             /* If the user hits up */
@@ -184,6 +187,8 @@ namespace GravityShift
                 {
                     /* Start the game*/
                     gameState = GameStates.In_Game;
+                    level.Reset();
+                    level.Load(mContent);
                     mCurrent = 0;
                 }
                 /* Back Game */

@@ -231,7 +231,7 @@ namespace GravityShift
                             gameState = GameStates.In_Game;
                         }
                         /* Load Game */
-                        else if (mCurrent == 1)
+                        if (mCurrent == 1)
                         {
                             /* Change to the load screen */
                             gameState = GameStates.Level_Selection;

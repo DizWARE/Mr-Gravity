@@ -35,6 +35,12 @@ namespace GravityShift
         private string mName;
 
         /// <summary>
+        /// Gets the filepath of the level
+        /// </summary>
+        public string FileName { get { return mFileName; } }
+        private string mFileName;
+
+        /// <summary>
         /// Gets or sets the size of the level(in pixels)
         /// </summary>
         public Vector2 Size { get { return mSize; } set { mSize = value; } }
@@ -87,6 +93,7 @@ namespace GravityShift
         public Level(String name, IControlScheme controls, Viewport viewport)
         {
             mName = name;
+            mFileName = name;
             mControls = controls;
 
             mCam = new Camera(viewport);
@@ -291,6 +298,9 @@ namespace GravityShift
                     mPlayer.mIsAlive = true;
                 }
             }
+
+            if (mControls.isStartPressed(false))
+                gameState = GameStates.Pause;
         }
 
         /// <summary>
@@ -363,6 +373,17 @@ namespace GravityShift
             foreach (GameObject gameObject in mObjects)
                 if(gameObject != mPlayer)
                     gameObject.Respawn();
+        }
+
+        /// <summary>
+        /// Preps the level to reload content
+        /// </summary>
+        public void Reset()
+        {
+            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+            mObjects.Clear();
+            mCollected.Clear();
+            mTrigger.Clear();
         }
 
         /// <summary>
