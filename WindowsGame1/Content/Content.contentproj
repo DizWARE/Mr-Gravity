@@ -613,6 +613,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Images\Backgrounds\backgroundCogs1.png">
+      <Name>backgroundCogs1</Name> 
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="animatedSprites\Blackhole.png">
       <Name>Blackhole</Name>
       <Importer>TextureImporter</Importer>
