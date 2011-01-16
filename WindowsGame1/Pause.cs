@@ -121,7 +121,7 @@ namespace GravityShift
                 }
             }
             /* If the user selects a menu item */
-            if (mControls.isAPressed(false))
+            if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
                  GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                 /* Resume Game */

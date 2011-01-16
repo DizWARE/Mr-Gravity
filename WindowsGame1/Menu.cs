@@ -184,6 +184,7 @@ namespace GravityShift
             /* If we are on the title screen */
             switch (mState)
             {
+                
                 case states.TITLE:
                     /* If the user hits up */
                     if (mControls.isUpPressed(false))
@@ -222,7 +223,7 @@ namespace GravityShift
                         if (mCurrent == 0)
                         {
                             /* Start the game */
-                            gameState = GameStates.In_Game;
+                            gameState = GameStates.Level_Selection;
                         }
                         /* Load Game */
                         if (mCurrent == 1)

@@ -17,24 +17,46 @@ using System.IO;
 
 namespace GravityShift
 {
+    /// <summary>
+    /// Level selection menu that allows you to pick the level to start
+    /// </summary>
     class LevelSelect
     {
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
 
+        public static int BACK = 0;
+        public static int PREVIOUS = 13;
+        public static int NEXT = 14;
+
         IControlScheme mControls;
+
+        XElement mLevelInfo;
 
         List<LevelChoice> mLevels;
 
         Texture2D mSelectBox;
+        Texture2D[] mPrevious;
+        Texture2D[] mNext;
+        Texture2D[] mBack;
+        Texture2D mBackground;
+        
+        int mCurrentIndex = 1;
+        int mPageCount;
+        int mCurrentPage = 0;
 
-        XElement mLevelInfo;
-
-        int mCurrentIndex = 0;
+        Rectangle mScreenRect;
 
         ContentManager mContent;
 
+        /* SpriteFont */
+        SpriteFont mKootenay;
+
+        /// <summary>
+        /// Constructs the menu screen that allows the player to select a level
+        /// </summary>
+        /// <param name="controlScheme">Controls that the player are using</param>
         public LevelSelect(IControlScheme controlScheme)
         {
             mControls = controlScheme;
@@ -42,6 +64,11 @@ namespace GravityShift
             mLevelInfo = XElement.Load(LEVEL_LIST);
         }
 
+        /// <summary>
+        /// Load the data that is needed to show the Level selection screen
+        /// </summary>
+        /// <param name="content">Access to the content of the project</param>
+        /// <param name="graphics">Graphics that draws to the screen</param>
         public void Load(ContentManager content, GraphicsDevice graphics)
         {
             foreach (XElement level in mLevelInfo.Elements())
@@ -49,57 +76,157 @@ namespace GravityShift
 
             mContent = content;
             mSelectBox = content.Load<Texture2D>("menu/selectbox");
+            mKootenay = content.Load<SpriteFont>("fonts/kootenay");
+
+            mBackground = content.Load<Texture2D>("Images/Backgrounds/Background5Resize");
+
+            /*TODO - REMOVE THIS WHEN REAL ART COMES*/
+            mPrevious = new Texture2D[2];
+            mPrevious[0] = content.Load<Texture2D>("Images/LeftArrow");
+            mPrevious[1] = content.Load<Texture2D>("Images/LeftArrowSelect");
+
+            mNext = new Texture2D[2];
+            mNext[0] = content.Load<Texture2D>("Images/RightArrow");
+            mNext[1] = content.Load<Texture2D>("Images/RightArrowSelect");
+
+            mBack = new Texture2D[2];
+            mBack[0] = content.Load<Texture2D>("Images/Back");
+            mBack[1] = content.Load<Texture2D>("Images/BackSelect");
+
+            mPageCount = mLevels.Count / 12 +1;
+
+            mScreenRect = graphics.Viewport.TitleSafeArea;
         }
 
+        /// <summary>
+        /// Handle any changes while on the level selection menu
+        /// </summary>
+        /// <param name="gameTime">Current time within the game</param>
+        /// <param name="gameState">Current gamestate of the game</param>
+        /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
-            if (mControls.isLeftPressed(false))
-                mCurrentIndex = (mCurrentIndex - 1);
-            else if (mControls.isRightPressed(false))
-                mCurrentIndex = (mCurrentIndex + 1) % mLevels.Count;
-            else if(mControls.isUpPressed(false))
-                mCurrentIndex = (mCurrentIndex - 5);
-            else if(mControls.isDownPressed(false))
-                mCurrentIndex = (mCurrentIndex + 5) % mLevels.Count;
+            HandleDirectionKeys();          
 
-            if (mCurrentIndex < 0) mCurrentIndex += mLevels.Count;
-
-            if(mControls.isAPressed(false))
-            {
-                currentLevel = mLevels[mCurrentIndex].Level;
-                currentLevel.Load(mContent);
-                gameState = GameStates.In_Game;
-                mCurrentIndex = 0;
-            }
+            if(mControls.isAPressed(false)||mControls.isStartPressed(false))
+                HandleAPressed(ref gameState,ref currentLevel);
 
             if (mControls.isBackPressed(false))
             {
                 gameState = GameStates.Main_Menu;
-                mCurrentIndex = 0;
+                mCurrentPage = 0;
+                mCurrentIndex = 1;
             }
         }
 
+        /// <summary>
+        /// Handle actions for each direction the player may press on their controller
+        /// </summary>
+        private void HandleDirectionKeys()
+        {
+            if (mControls.isLeftPressed(false))
+            {
+                mCurrentIndex = (mCurrentIndex - 1);
+                if (mCurrentIndex + 12 * mCurrentPage > mLevels.Count && mCurrentIndex < PREVIOUS) mCurrentIndex = mLevels.Count % 12;
+            }
+            else if (mControls.isRightPressed(false))
+            {
+                mCurrentIndex = (mCurrentIndex + 1) % 15;
+                if (mCurrentIndex + 12 * mCurrentPage > mLevels.Count && mCurrentIndex < PREVIOUS) mCurrentIndex = PREVIOUS;
+            }
+            else if (mControls.isUpPressed(false))
+            {
+                if (mCurrentIndex > BACK && mCurrentIndex <= 4) mCurrentIndex = BACK;
+                else if (mCurrentIndex == BACK) mCurrentIndex = NEXT;
+                else if (mCurrentIndex == NEXT) mCurrentIndex = 11;
+                else if (mCurrentIndex == PREVIOUS) mCurrentIndex = 10;
+                else mCurrentIndex = (mCurrentIndex - 4);
+            }
+            else if (mControls.isDownPressed(false))
+            {
+                if (mCurrentIndex < PREVIOUS && mCurrentIndex > 10) mCurrentIndex = NEXT;
+                else if (mCurrentIndex < 11 && mCurrentIndex > 8) mCurrentIndex = PREVIOUS;
+                else if (mCurrentIndex == BACK) mCurrentIndex = 1;
+                else if (mCurrentIndex == NEXT || mCurrentIndex == PREVIOUS) mCurrentIndex = BACK;
+                else mCurrentIndex = (mCurrentIndex+ 4);
+            }
+
+            if (mCurrentIndex < 0) mCurrentIndex += 15;  
+        }
+
+        /// <summary>
+        /// Handle what happens when the player presses A for all options
+        /// </summary>
+        /// <param name="gameState">State of the game - Reference so that it can be changed for the main game class to handle</param>
+        /// <param name="currentLevel">Current level in the main game - Reference so that this can be changed for the main game class to handle</param>
+        private void HandleAPressed(ref GameStates gameState, ref Level currentLevel)
+        {
+            if (mCurrentIndex == BACK)
+            {
+                gameState = GameStates.Main_Menu;
+                mCurrentPage = 0;
+                mCurrentIndex = 1;
+            }
+            else if (mCurrentIndex == PREVIOUS)
+            {
+                if (--mCurrentPage < 0) mCurrentPage = 0;
+            }
+            else if (mCurrentIndex == NEXT)
+            {
+                if (++mCurrentPage == mPageCount) mCurrentPage = mPageCount - 1;
+            }
+            else if(mLevels[mCurrentIndex - 1 + 12 * mCurrentPage].Unlocked)
+            {
+                currentLevel = mLevels[mCurrentIndex - 1 + 12 * mCurrentPage].Level;
+                currentLevel.Load(mContent);
+                gameState = GameStates.In_Game;
+            }
+        }
+
+        /// <summary>
+        /// Draws the menu on the screen
+        /// </summary>
+        /// <param name="spriteBatch">Canvas we are drawing to</param>
+        /// <param name="graphics">Information on the device's graphics</param>
         public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
         {
             spriteBatch.Begin();
-            Vector2 padding = new Vector2(20,50);
-            Vector2 currentLocation = padding;
-            Vector2 size = new Vector2(200, 200);
 
+            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+
+            Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
+            Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
+
+            spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)] , new Vector2(mScreenRect.Left, mScreenRect.Top), Color.White);
+            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Vector2(mScreenRect.Center.X - 50, mScreenRect.Bottom - 75), Color.White);
+            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Vector2(mScreenRect.Center.X + 50, mScreenRect.Bottom - 75), Color.White);
+
+            size.X -= 2*padding.X;
+            size.Y -= 2*padding.Y;
+            
+            Vector2 currentLocation = new Vector2(mScreenRect.X, 2*padding.Y);
             int index = 0;
 
-            foreach (LevelChoice levelChoice in mLevels)
+            for (int i = 0; i < 12 && i + 12 * mCurrentPage < mLevels.Count; i++)
             {
                 if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.Width)
                 {
-                    currentLocation.X = padding.X;
+                    currentLocation.X = 0;
                     currentLocation.Y += padding.Y + size.Y;
                 }
                 currentLocation.X += padding.X;
                 Rectangle rect = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)size.X, (int)size.Y);
 
-                spriteBatch.Draw(levelChoice.Thumbnail, rect, Color.White);
-                if (index == mCurrentIndex) spriteBatch.Draw(mSelectBox, rect, Color.White);
+                spriteBatch.Draw(mLevels[i + 12 * mCurrentPage].Thumbnail, rect, Color.White);
+
+                Vector2 stringSize = mKootenay.MeasureString(mLevels[i + 12 * mCurrentPage].Level.Name);
+                Vector2 stringLocation = new Vector2(rect.Center.X - stringSize.X/2, rect.Top - stringSize.Y);
+                spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
+                if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
+
+                stringSize = mKootenay.MeasureString("Locked");
+                if (!mLevels[i + 12 * mCurrentPage].Unlocked) spriteBatch.DrawString(mKootenay,"Locked",
+                    new Vector2(rect.Center.X - stringSize.X/2,rect.Center.Y - stringSize.Y/2),Color.White);//DRAW LOCKED SYMBOL
 
                 currentLocation.X += size.X + padding.X;
                 index++;

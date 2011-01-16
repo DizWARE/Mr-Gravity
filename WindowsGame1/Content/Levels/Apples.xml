@@ -1576,7 +1576,7 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>709</ID>
+      <ID>711</ID>
       <Name>PlayerEnd</Name>
       <Type>Level Positions</Type>
       <Location X="13" Y="20" />
@@ -1781,7 +1781,7 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>307</ID>
+      <ID>866</ID>
       <Name>BasicCollectable</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="23" />
@@ -1793,7 +1793,7 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>866</ID>
+      <ID>868</ID>
       <Name>BasicCollectable</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="23" />

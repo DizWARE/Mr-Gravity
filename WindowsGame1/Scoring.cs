@@ -194,8 +194,8 @@ namespace GravityShift
                 /* Back Game */
                 else if (mCurrent == 1)
                 {
-                    /*Back To Main Menu*/
-                    gameState = GameStates.Main_Menu;
+                    /*Back To Level Selection*/
+                    gameState = GameStates.Level_Selection;
 
                     mCurrent = 0;
                 }

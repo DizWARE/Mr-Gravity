@@ -27,6 +27,7 @@ namespace GravityShift.Import_Code
     {
         ContentManager mContent;
         List<EntityInfo> mEntities;
+        List<EntityInfo> mRails;
 
         /// <summary>
         /// Constructor for an importer object
@@ -36,6 +37,7 @@ namespace GravityShift.Import_Code
         {
             mContent = content;
             mEntities = new List<EntityInfo>();
+            mRails = new List<EntityInfo>();
         }
 
         /// <summary>
@@ -45,7 +47,7 @@ namespace GravityShift.Import_Code
         /// <returns>A level object</returns>
         public Level ImportLevel(Level level)
         {
-            XElement xLevel = XElement.Load(level.FileName);
+            XElement xLevel = XElement.Load(level.Filepath);
 
             //Gets all the information for a level and places it into the level object
             foreach (XElement item in xLevel.Elements())
@@ -115,7 +117,15 @@ namespace GravityShift.Import_Code
                 }
                 //If the object is physics, make a physics object
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
-                {
+                { 
+                    if (entity.mName == "BasicRailX" || entity.mName == "BasicRailY")
+                    {
+                        if (entity.mProperties.ContainsKey("Rail") && entity.mProperties.ContainsKey("Length"))
+                        {
+                            mRails.Add(entity);
+                        }
+                    }
+
                     bool isSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
                     float mass = 1;
                     if (entity.mProperties.ContainsKey("Mass"))
@@ -305,6 +315,11 @@ namespace GravityShift.Import_Code
                 }
             }
             return triggers;
+        }
+
+        public List<EntityInfo> GetRails()
+        {
+            return mRails;
         }
     }
 }
