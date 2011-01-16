@@ -40,6 +40,7 @@ namespace GravityShift
         Texture2D[] mPrevious;
         Texture2D[] mNext;
         Texture2D[] mBack;
+        Texture2D mBackground;
         
         int mCurrentIndex = 1;
         int mPageCount;
@@ -76,6 +77,8 @@ namespace GravityShift
             mContent = content;
             mSelectBox = content.Load<Texture2D>("menu/selectbox");
             mKootenay = content.Load<SpriteFont>("fonts/kootenay");
+
+            mBackground = content.Load<Texture2D>("Images/Backgrounds/Background5Resize");
 
             /*TODO - REMOVE THIS WHEN REAL ART COMES*/
             mPrevious = new Texture2D[2];
@@ -132,9 +135,21 @@ namespace GravityShift
                 if (mCurrentIndex + 12 * mCurrentPage > mLevels.Count && mCurrentIndex < PREVIOUS) mCurrentIndex = PREVIOUS;
             }
             else if (mControls.isUpPressed(false))
-                mCurrentIndex = (mCurrentIndex - (mCurrentIndex % 4) - 4) + (mCurrentIndex % 4);
+            {
+                if (mCurrentIndex > BACK && mCurrentIndex <= 4) mCurrentIndex = BACK;
+                else if (mCurrentIndex == BACK) mCurrentIndex = NEXT;
+                else if (mCurrentIndex == NEXT) mCurrentIndex = 11;
+                else if (mCurrentIndex == PREVIOUS) mCurrentIndex = 10;
+                else mCurrentIndex = (mCurrentIndex - 4);
+            }
             else if (mControls.isDownPressed(false))
-                mCurrentIndex = ((mCurrentIndex - (mCurrentIndex % 4) + 4) % 15) + (mCurrentIndex % 4);
+            {
+                if (mCurrentIndex < PREVIOUS && mCurrentIndex > 10) mCurrentIndex = NEXT;
+                else if (mCurrentIndex < 11 && mCurrentIndex > 8) mCurrentIndex = PREVIOUS;
+                else if (mCurrentIndex == BACK) mCurrentIndex = 1;
+                else if (mCurrentIndex == NEXT || mCurrentIndex == PREVIOUS) mCurrentIndex = BACK;
+                else mCurrentIndex = (mCurrentIndex+ 4);
+            }
 
             if (mCurrentIndex < 0) mCurrentIndex += 15;  
         }
@@ -160,12 +175,11 @@ namespace GravityShift
             {
                 if (++mCurrentPage == mPageCount) mCurrentPage = mPageCount - 1;
             }
-            else
+            else if(mLevels[mCurrentIndex - 1 + 12 * mCurrentPage].Unlocked)
             {
                 currentLevel = mLevels[mCurrentIndex - 1 + 12 * mCurrentPage].Level;
                 currentLevel.Load(mContent);
                 gameState = GameStates.In_Game;
-                mCurrentIndex = 0;
             }
         }
 
@@ -177,6 +191,8 @@ namespace GravityShift
         public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
         {
             spriteBatch.Begin();
+
+            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
 
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
             Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
@@ -207,6 +223,10 @@ namespace GravityShift
                 Vector2 stringLocation = new Vector2(rect.Center.X - stringSize.X/2, rect.Top - stringSize.Y);
                 spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
                 if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
+
+                stringSize = mKootenay.MeasureString("Locked");
+                if (!mLevels[i + 12 * mCurrentPage].Unlocked) spriteBatch.DrawString(mKootenay,"Locked",
+                    new Vector2(rect.Center.X - stringSize.X/2,rect.Center.Y - stringSize.Y/2),Color.White);//DRAW LOCKED SYMBOL
 
                 currentLocation.X += size.X + padding.X;
                 index++;
