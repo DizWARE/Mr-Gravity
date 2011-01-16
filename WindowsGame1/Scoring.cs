@@ -20,6 +20,7 @@ namespace GravityShift
 
         /* Spritefont */
         private SpriteFont mKootenay;
+        private SpriteFont mQuartz;
 
         IControlScheme mControls;
 
@@ -96,6 +97,7 @@ namespace GravityShift
         public void Load(ContentManager content)
         {
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
             mApple = content.Load<Texture2D>("scoring/apple");
             mApple_gray = content.Load<Texture2D>("scoring/apple_gray");
@@ -178,6 +180,7 @@ namespace GravityShift
             /* If the user selects one of the menu items */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
+                GravityShift.Level.TIMER = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
                 /* Restart Game */
                 if (mCurrent == 0)
@@ -212,10 +215,12 @@ namespace GravityShift
 
             spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
 
-            //spriteBatch.DrawString(kootenay, "Time: " + (int)GravityShiftMain.Timer + " Seconds", new Vector2(350.0f, 350.0f), Color.White);
-            spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 400.0f), Color.White);
-            spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 400.0f), Color.White);
-            spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 400.0f), Color.White);
+            spriteBatch.DrawString(mQuartz, "Time: " + (int)GravityShift.Level.TIMER + " Seconds", new Vector2(350.0f, 300.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Collected: " + (int)GravityShift.Level.mNumCollected + " / " + "15", new Vector2(350.0f, 350.0f), Color.DarkOrange);
+
+            spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
+            spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
+            spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
 
             spriteBatch.Draw(mItems[0], new Vector2(900.0f, 600.0f), Color.White);
             spriteBatch.Draw(mItems[1], new Vector2(900.0f, 675.0f), Color.White);

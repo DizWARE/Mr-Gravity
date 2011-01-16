@@ -54,7 +54,7 @@ namespace GravityShift
         private float mPrevZoom = 1.0f;
 
         /* Timer variable */
-        private static double TIMER;
+        public static double TIMER;
 
         private List<GameObject>[][] mCollisionMatrix;
 
@@ -68,14 +68,15 @@ namespace GravityShift
 
         IControlScheme mControls;
 
-        /* SpriteFond */
+        /* SpriteFont */
         SpriteFont mKootenay;
+        SpriteFont mQuartz;
 
         #region HUD
 
         private Texture2D[] mDirections;
         private Texture2D[] mLives;
-        private int mNumCollected;
+        public static int mNumCollected;
 
         #endregion
 
@@ -111,6 +112,7 @@ namespace GravityShift
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
 
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
             mDirections = new Texture2D[4];
             mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
@@ -242,10 +244,11 @@ namespace GravityShift
                 //Check to see if we collected anything
                 if (mCollected.Count > 0)
                 {
+                    mNumCollected++;
+
                     //Safely remove the collected objects
                     foreach (GameObject g in mCollected)
                     {
-                        mNumCollected++;
                         RemoveFromMatrix(g);
                         mObjects.Remove(g);
                     }
@@ -338,9 +341,9 @@ namespace GravityShift
                                 null,
                                 mCam1.get_transformation());
 
-            spriteBatch.DrawString(mKootenay, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.White);
+            spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.DarkTurquoise);
 
-            spriteBatch.DrawString(mKootenay, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 200), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 200), Color.DarkTurquoise);
 
             if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
                 spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
@@ -401,7 +404,6 @@ namespace GravityShift
                             Respawn();
                             GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
                             gameState = GameStates.Score;
-                            TIMER = 0;
                         }
 
                         //If player collided with a collectable object
