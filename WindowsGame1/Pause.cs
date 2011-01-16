@@ -40,6 +40,15 @@ namespace GravityShift
 
         #region Art
 
+        private Texture2D mPauseTitle;
+
+        private Texture2D mResumeSel;
+        private Texture2D mResumeUnsel;
+        private Texture2D mSelectLevelSel;
+        private Texture2D mSelectLevelUnsel;
+        private Texture2D mMainMenuSel;
+        private Texture2D mMainMenuUnsel;
+
         #endregion
 
         public Pause(IControlScheme controlScheme)
@@ -53,20 +62,32 @@ namespace GravityShift
 
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
 
+            mPauseTitle = content.Load<Texture2D>("menu/paused");
+
             mCurrent = 0;
 
             mSelItems = new Texture2D[NUM_OPTIONS];
             mUnselItems = new Texture2D[NUM_OPTIONS];
             mItems = new Texture2D[NUM_OPTIONS];
 
-            //Resume
-            //Select Level
-            //Main Menu
-            //mBackUnsel = content.Load<Texture2D>("menu/BackUnselected");
-            //mBackSel = content.Load<Texture2D>("menu/BackSelected");
+            mResumeSel = content.Load<Texture2D>("menu/ResumeSelected");
+            mResumeUnsel = content.Load<Texture2D>("menu/ResumeUnselected");
+            mSelectLevelSel = content.Load<Texture2D>("menu/SelectLevelSelected");
+            mSelectLevelUnsel = content.Load<Texture2D>("menu/SelectLevelUnselected");
+            mMainMenuSel = content.Load<Texture2D>("menu/MainMenuSelected");
+            mMainMenuUnsel = content.Load<Texture2D>("menu/MainMenuUnselected");
 
-            //mRestartUnsel = content.Load<Texture2D>("menu/RestartUnselected");
-            //mRestartSel = content.Load<Texture2D>("menu/RestartSelected");
+            mSelItems[0] = mResumeSel;
+            mSelItems[1] = mSelectLevelSel;
+            mSelItems[2] = mMainMenuSel;
+
+            mUnselItems[0] = mResumeUnsel;
+            mUnselItems[1] = mSelectLevelUnsel;
+            mUnselItems[2] = mMainMenuUnsel;
+
+            mItems[0] = mResumeSel;
+            mItems[1] = mSelectLevelUnsel;
+            mItems[2] = mMainMenuUnsel;
         }
 
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
@@ -120,13 +141,25 @@ namespace GravityShift
                      level.Reset();
                      mCurrent = 0;
                  }
+
+                 mItems[0] = mResumeSel;
+                 mItems[1] = mSelectLevelUnsel;
+                 mItems[2] = mMainMenuUnsel;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
         {
             spriteBatch.Begin();
-            spriteBatch.DrawString(mKootenay, mCurrent.ToString(), Vector2.Zero, Color.White);
+
+            /* Draw the pause title */
+            spriteBatch.Draw(mPauseTitle, new Vector2(180.0f, 50.0f), Color.White);
+
+            /* Draw the pause options */
+            spriteBatch.Draw(mItems[0], new Vector2(500.0f, 425.0f), Color.White);
+            spriteBatch.Draw(mItems[1], new Vector2(500.0f, 500.0f), Color.White);
+            spriteBatch.Draw(mItems[2], new Vector2(500.0f, 580.0f), Color.White);
+
             spriteBatch.End();
         }
     }

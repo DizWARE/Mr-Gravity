@@ -69,15 +69,9 @@ namespace GravityShift
         private Texture2D mSoundUnsel;
         private Texture2D mSoundSel;
 
-        /* Load Screen */
+        /* Back Button */
         private Texture2D mBackUnsel;
         private Texture2D mBackSel;
-        private Texture2D mOneUnsel;
-        private Texture2D mOneSel;
-        private Texture2D mTwoUnsel;
-        private Texture2D mTwoSel;
-        private Texture2D mThreeUnsel;
-        private Texture2D mThreeSel;
 
         /* Controller Settings */
         private Texture2D mXboxControl;
@@ -140,12 +134,12 @@ namespace GravityShift
             mBackSel = content.Load<Texture2D>("menu/BackSelected");
 
             /* Level Select Screen */
-            mOneUnsel = content.Load<Texture2D>("menu/OneUnselected");
-            mOneSel = content.Load<Texture2D>("menu/OneSelected");
-            mTwoUnsel = content.Load<Texture2D>("menu/TwoUnselected");
-            mTwoSel = content.Load<Texture2D>("menu/TwoSelected");
-            mThreeUnsel = content.Load<Texture2D>("menu/ThreeUnselected");
-            mThreeSel = content.Load<Texture2D>("menu/ThreeSelected");
+            //mOneUnsel = content.Load<Texture2D>("menu/OneUnselected");
+            //mOneSel = content.Load<Texture2D>("menu/OneSelected");
+            //mTwoUnsel = content.Load<Texture2D>("menu/TwoUnselected");
+            //mTwoSel = content.Load<Texture2D>("menu/TwoSelected");
+            //mThreeUnsel = content.Load<Texture2D>("menu/ThreeUnselected");
+            //mThreeSel = content.Load<Texture2D>("menu/ThreeSelected");
 
             /* Controller */
             mXboxControl = content.Load<Texture2D>("menu/XboxController");
@@ -241,20 +235,20 @@ namespace GravityShift
                             mUnselMenuItems = new Texture2D[NUM_LOAD];
                             mMenuItems = new Texture2D[NUM_LOAD];
 
-                            mSelMenuItems[0] = mOneSel;
-                            mSelMenuItems[1] = mTwoSel;
-                            mSelMenuItems[2] = mThreeSel;
-                            mSelMenuItems[3] = mBackSel;
+                            mSelMenuItems[0] = mNewGameSel;
+                            mSelMenuItems[1] = mLoadGameSel;
+                            mSelMenuItems[2] = mOptionsSel;
+                            mSelMenuItems[3] = mCreditsSel;
 
-                            mUnselMenuItems[0] = mOneUnsel;
-                            mUnselMenuItems[1] = mTwoUnsel;
-                            mUnselMenuItems[2] = mThreeUnsel;
-                            mUnselMenuItems[3] = mBackUnsel;
+                            mUnselMenuItems[0] = mNewGameUnsel;
+                            mUnselMenuItems[1] = mLoadGameUnsel;
+                            mUnselMenuItems[2] = mOptionsUnsel;
+                            mUnselMenuItems[3] = mCreditsUnsel;
 
-                            mMenuItems[0] = mOneSel;
-                            mMenuItems[1] = mTwoUnsel;
-                            mMenuItems[2] = mThreeUnsel;
-                            mMenuItems[3] = mBackUnsel;
+                            mMenuItems[0] = mNewGameSel;
+                            mMenuItems[1] = mLoadGameUnsel;
+                            mMenuItems[2] = mOptionsUnsel;
+                            mMenuItems[3] = mCreditsUnsel;
 
                             mCurrent = 0;
                         }
@@ -610,13 +604,13 @@ namespace GravityShift
                     spriteBatch.Draw(mMenuItems[3], new Vector2(552.0f, 655.0f), Color.White);
                     break;
 
-                /* If on the load screen */
-                case states.LOAD:
-                    spriteBatch.Draw(mMenuItems[0], new Vector2(100.0f, 100.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[1], new Vector2(100.0f, 300.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[2], new Vector2(100.0f, 500.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[3], new Vector2(900.0f, 700.0f), Color.White);
-                    break;
+                /* If on the load screen */  //Is this doing anything?
+                //case states.LOAD:
+                //    spriteBatch.Draw(mMenuItems[0], new Vector2(100.0f, 100.0f), Color.White);
+                //    spriteBatch.Draw(mMenuItems[1], new Vector2(100.0f, 300.0f), Color.White);
+                //    spriteBatch.Draw(mMenuItems[2], new Vector2(100.0f, 500.0f), Color.White);
+                //    spriteBatch.Draw(mMenuItems[3], new Vector2(900.0f, 700.0f), Color.White);
+                //    break;
 
                 /* If on the options menu */
                 case states.OPTIONS:
