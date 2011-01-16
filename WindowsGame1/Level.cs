@@ -66,7 +66,10 @@ namespace GravityShift
 
         List<GameObject> mObjects;
         List<GameObject> mCollected;
+        List<GameObject> mRemoveCollected;
         List<Trigger> mTrigger;
+
+        bool mDiedThisUpdate;
 
         Player mPlayer;
 
@@ -101,6 +104,7 @@ namespace GravityShift
 
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
+            mRemoveCollected = new List<GameObject>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
         }
@@ -244,17 +248,34 @@ namespace GravityShift
                 }
 
                 //Check to see if we collected anything
-                if (mCollected.Count > 0)
+                if (mRemoveCollected.Count > 0)
                 {
                     //Safely remove the collected objects
-                    foreach (GameObject g in mCollected)
+                    foreach (GameObject g in mRemoveCollected)
                     {
                         RemoveFromMatrix(g);
                         mObjects.Remove(g);
                     }
 
                     //Then clear the list
+                    mRemoveCollected.Clear();
+                }
+
+                //Check to see if we died
+                if (mDiedThisUpdate)
+                {
+                    mDiedThisUpdate = false;
+
+                    //Add the collected objects back to the object list
+                    foreach (GameObject collected in mCollected)
+                        mObjects.Add(collected);
+
+                    //Reset the collision matrix
+                    PrepareCollisionMatrix();
+                    
+                    //Clear the collection lists
                     mCollected.Clear();
+                    mRemoveCollected.Clear();
                 }
 
                 // Update the camera to keep the player at the center of the screen
@@ -368,8 +389,12 @@ namespace GravityShift
         /// <param name="player">Player object</param>
         private void Respawn()
         {
+
             mPlayer.Respawn();
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+
+            mDiedThisUpdate = true;
+
             foreach (GameObject gameObject in mObjects)
                 if(gameObject != mPlayer)
                     gameObject.Respawn();
@@ -383,6 +408,7 @@ namespace GravityShift
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
             mObjects.Clear();
             mCollected.Clear();
+            mRemoveCollected.Clear();
             mTrigger.Clear();
         }
 
@@ -423,8 +449,16 @@ namespace GravityShift
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
                             mPlayer.mScore += 100;
-                            if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
-                            else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
+                            if (physObj.CollisionType == XmlKeys.COLLECTABLE)
+                            {
+                                mCollected.Add(physObj);
+                                mRemoveCollected.Add(physObj);
+                            }
+                            else if (obj.CollisionType == XmlKeys.COLLECTABLE)
+                            {
+                                mCollected.Add(obj);
+                                mRemoveCollected.Add(obj);
+                            }
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
