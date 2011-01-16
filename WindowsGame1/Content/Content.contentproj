@@ -656,6 +656,26 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Images\rail_bottom.png">
+      <Name>rail_bottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\rail_left.png">
+      <Name>rail_left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\rail_right.png">
+      <Name>rail_right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\rail_top.png">
+      <Name>rail_top</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\LeftArrowSelect.png">
@@ -663,8 +683,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\RightArrowSelect.png">
-      <Name>RightArrowSelect</Name>
+  <Compile Include="Images\RightArrowSelect.png">
+    <Name>RightArrowSelect</Name>
+    <Importer>TextureImporter</Importer>
+    <Processor>TextureProcessor</Processor>
+  </Compile>
+    <Compile Include="Images\rail_horizontal.png">
+      <Name>rail_horizontal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\rail_vertical.png">
+      <Name>rail_vertical</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

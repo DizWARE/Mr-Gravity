@@ -79,6 +79,14 @@ namespace GravityShift
         List<GameObject> mCollected;
         List<Trigger> mTrigger;
 
+        List<EntityInfo> mRails;
+        Texture2D mRailLeft;
+        Texture2D mRailRight;
+        Texture2D mRailHor;
+        Texture2D mRailTop;
+        Texture2D mRailBottom;
+        Texture2D mRailVert;
+
         Player mPlayer;
 
         PhysicsEnvironment mPhysicsEnvironment;
@@ -109,6 +117,8 @@ namespace GravityShift
             mCam = new Camera(viewport);
             mCam1 = new Camera(viewport);
 
+            mRails = new List<EntityInfo>();
+
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
             mTrigger = new List<Trigger>();
@@ -134,6 +144,13 @@ namespace GravityShift
             mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
             mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
 
+            mRailLeft = content.Load<Texture2D>("Images/rail_left");
+            mRailHor = content.Load<Texture2D>("Images/rail_horizontal");
+            mRailRight = content.Load<Texture2D>("Images/rail_right");
+            mRailTop = content.Load<Texture2D>("Images/rail_top");
+            mRailBottom = content.Load<Texture2D>("Images/rail_bottom");
+            mRailVert = content.Load<Texture2D>("Images/rail_vertical");
+
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
@@ -156,6 +173,8 @@ namespace GravityShift
             mObjects.Add(importer.GetPlayerEnd());
 
             mObjects.AddRange(importer.GetWalls(this));
+
+            mRails = importer.GetRails();
 
             mTrigger.AddRange(importer.GetTriggers());
 
@@ -332,7 +351,41 @@ namespace GravityShift
             spriteBatch.Draw(mTexture, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
 
             foreach (GameObject gObject in mObjects)
+            {
                 gObject.Draw(spriteBatch, gameTime);
+            }
+
+            // Loops through all rail objects and draws the appropriate rail image.
+            foreach (EntityInfo rail in mRails)
+            {
+                Vector2 position = new Vector2(rail.mLocation.X * 64, rail.mLocation.Y * 64);
+                int length = Convert.ToInt32(rail.mProperties["Length"]);
+                string type = rail.mProperties["Rail"];
+                int width = mRailTop.Width;
+                int height = mRailTop.Height;
+
+                for (int i = 0; i <= length; i++)
+                {
+                    if (type == "X")
+                    {
+                        if (i == 0)
+                            spriteBatch.Draw(mRailLeft, new Rectangle(Convert.ToInt32(position.X) + (i*64), Convert.ToInt32(position.Y), width, height), Color.White);
+                        else if (i == length)
+                            spriteBatch.Draw(mRailRight, new Rectangle(Convert.ToInt32(position.X) + (i*64), Convert.ToInt32(position.Y), width, height), Color.White);
+                        else
+                            spriteBatch.Draw(mRailHor, new Rectangle(Convert.ToInt32(position.X) + (i*64), Convert.ToInt32(position.Y), width, height), Color.White);
+                    }
+                    else
+                    {
+                        if (i == 0)
+                            spriteBatch.Draw(mRailTop, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i*64), width, height), Color.White);
+                        else if (i == length)
+                            spriteBatch.Draw(mRailBottom, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i * 64), width, height), Color.White);
+                        else
+                            spriteBatch.Draw(mRailVert, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i * 64), width, height), Color.White); ;
+                    }
+                }
+            }
 
             spriteBatch.End();
         }
