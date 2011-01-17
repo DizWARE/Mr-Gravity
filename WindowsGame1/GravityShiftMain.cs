@@ -124,15 +124,55 @@ namespace GravityShift
                 this.Exit();
 
             if (mCurrentState == GameStates.In_Game)
+            {
+                //Check for mute - not feature yet but could come
+                GameSound.music_level00.Volume = GameSound.volume;
+
+                //If the correct music isn't already playing
+                if (GameSound.music_level00.State != SoundState.Playing)
+                    GameSound.StopOthersAndPlay(GameSound.music_level00);
+                
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
+            }
             else if (mCurrentState == GameStates.Main_Menu)
+            {
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+
+                //If the correct music isn't already playing
+                if (GameSound.menuMusic_title.State != SoundState.Playing)
+                    GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
                 mMenu.Update(gameTime, ref mCurrentState);
+            }
             else if (mCurrentState == GameStates.Score)
+            {
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+                GameSound.level_stageVictory.Volume = GameSound.volume;
+
+                //First play win, then menu
+                if (GameSound.level_stageVictory.State != SoundState.Playing)
+                    if (GameSound.menuMusic_title.State != SoundState.Playing)
+                        GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
                 mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
             else if (mCurrentState == GameStates.Level_Selection)
+            {
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+
+                //If the correct music isn't already playing
+                if (GameSound.menuMusic_title.State != SoundState.Playing)
+                    GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
                 mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
             else if (mCurrentState == GameStates.Pause)
+            {
                 mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
             else if (mCurrentState == GameStates.Unlock)
             {
                 mLevelSelect.UnlockNextLevel();
@@ -174,7 +214,7 @@ namespace GravityShift
             }
             else if (mCurrentState == GameStates.Main_Menu)
                 mMenu.Draw(mSpriteBatch, mGraphics);
-
+            
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics);
             else if (mCurrentState == GameStates.Level_Selection)

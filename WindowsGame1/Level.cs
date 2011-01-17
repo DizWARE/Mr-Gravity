@@ -506,7 +506,8 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             Respawn();
-                            GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
+                            GameSound.music_level00.Stop();
+                            GameSound.level_stageVictory.Play();
                             gameState = GameStates.Unlock;
                             TIMER = 0;
                         }

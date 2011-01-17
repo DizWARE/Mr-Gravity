@@ -631,7 +631,7 @@
     </Compile>
     <Compile Include="menu\SelectLevelUnselected.png">
       <Name>SelectLevelUnselected</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\Back.png">
@@ -680,7 +680,7 @@
   <ItemGroup>
     <Compile Include="menu\paused.png">
       <Name>paused</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\LeftArrowSelect.png">
@@ -688,11 +688,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  <Compile Include="Images\RightArrowSelect.png">
-    <Name>RightArrowSelect</Name>
-    <Importer>TextureImporter</Importer>
-    <Processor>TextureProcessor</Processor>
-  </Compile>
+    <Compile Include="Images\RightArrowSelect.png">
+      <Name>RightArrowSelect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Images\rail_horizontal.png">
       <Name>rail_horizontal</Name>
       <Importer>TextureImporter</Importer>
@@ -702,6 +702,20 @@
       <Name>rail_vertical</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="music\music_level00.wav">
+      <Name>music_level00</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="music\menuMusic_title.wav">
+      <Name>menuMusic_title</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

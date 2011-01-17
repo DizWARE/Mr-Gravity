@@ -18,10 +18,6 @@ namespace GravityShift
     {
         public static float volume = 1.0f;
 
-        /* Level */
-        public static SoundEffect level_stageFail;
-        public static SoundEffect level_stageVictory;
-        
         /* Menu */
         public static SoundEffect menuSound_rollover;
         public static SoundEffect menuSound_select;
@@ -36,7 +32,17 @@ namespace GravityShift
         public static SoundEffect level_gravityShiftLeft;
         public static SoundEffect level_gravityShiftRight;
 
+        /* Level */
+        public static SoundEffect level_stageFailSource;
+        public static SoundEffectInstance level_stageFail;
+        public static SoundEffect level_stageVictorySource;
+        public static SoundEffectInstance level_stageVictory;
+        
         /* Music */
+        private static SoundEffect menuMusic_titleSource;
+        public static SoundEffectInstance menuMusic_title;
+        private static SoundEffect music_level00Source;
+        public static SoundEffectInstance music_level00; 
 
         public GameSound() { }
 
@@ -51,10 +57,6 @@ namespace GravityShift
          */
         public static void Load(ContentManager content)
         {
-            /* Level */
-            level_stageFail = content.Load<SoundEffect>("SoundEffects\\level_stageFail");
-            level_stageVictory = content.Load<SoundEffect>("SoundEffects\\level_stageVictory");
-        
             /* Menu */
             menuSound_rollover = content.Load<SoundEffect>("SoundEffects\\menuSound_rollover");
             menuSound_select = content.Load<SoundEffect>("SoundEffects\\menuSound_select");
@@ -68,6 +70,44 @@ namespace GravityShift
             level_gravityShiftDown = content.Load<SoundEffect>("SoundEffects\\level_gravityShiftDown");
             level_gravityShiftLeft = content.Load<SoundEffect>("SoundEffects\\level_gravityShiftLeft");
             level_gravityShiftRight = content.Load<SoundEffect>("SoundEffects\\level_gravityShiftRight");
+
+            /* Level */
+            level_stageFailSource = content.Load<SoundEffect>("SoundEffects\\level_stageFail");
+            level_stageFail = level_stageFailSource.CreateInstance();
+            level_stageFail.Volume = volume;
+            level_stageVictorySource = content.Load<SoundEffect>("SoundEffects\\level_stageVictory");
+            level_stageVictory = level_stageVictorySource.CreateInstance();
+            level_stageVictory.Volume = volume;
+
+            /* Music */
+            menuMusic_titleSource = content.Load<SoundEffect>("music\\menuMusic_title");
+            menuMusic_title = menuMusic_titleSource.CreateInstance();
+            menuMusic_title.IsLooped = true;
+            menuMusic_title.Volume = volume;
+            music_level00Source = content.Load<SoundEffect>("music\\music_level00");
+            music_level00 =  music_level00Source.CreateInstance();
+            music_level00.IsLooped = true;
+            music_level00.Volume = volume;
+        }
+
+        /*
+         * StopOthersAndPlay
+         *
+         * This will stop any music already being played and replace it
+         * with the new music
+         *
+         */
+        public static void StopOthersAndPlay(SoundEffectInstance music)
+        {
+            //Stop music
+            level_stageFail.Stop();
+            level_stageVictory.Stop();
+            menuMusic_title.Stop();
+            music_level00.Stop();
+
+            //Start music
+            music.Volume = volume;
+            music.Play();
         }
     }
 }
