@@ -166,6 +166,8 @@ namespace GravityShift
         /// <param name="content">Content Manager to load from</param>
         public void Load(ContentManager content)
         {
+            mObjects.Clear();
+
             Importer importer = new Importer(content);
             importer.ImportLevel(this);
 
@@ -371,11 +373,6 @@ namespace GravityShift
 
             spriteBatch.Draw(mTexture, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
 
-            foreach (GameObject gObject in mObjects)
-            {
-                gObject.Draw(spriteBatch, gameTime);
-            }
-
             // Loops through all rail objects and draws the appropriate rail image.
             foreach (EntityInfo rail in mRails)
             {
@@ -406,6 +403,11 @@ namespace GravityShift
                             spriteBatch.Draw(mRailVert, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i * 64), width, height), Color.White); ;
                     }
                 }
+            }
+
+            foreach (GameObject gObject in mObjects)
+            {
+                gObject.Draw(spriteBatch, gameTime);
             }
 
             spriteBatch.End();
@@ -473,6 +475,7 @@ namespace GravityShift
             mCollected.Clear();
             mRemoveCollected.Clear();
             mTrigger.Clear();
+            TIMER = 0;
         }
 
         /// <summary>
