@@ -133,6 +133,23 @@ namespace GravityShift
                 mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             else if (mCurrentState == GameStates.Pause)
                 mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            else if (mCurrentState == GameStates.Unlock)
+            {
+                mLevelSelect.UnlockNextLevel();
+                mCurrentState = GameStates.Score;
+            }
+            else if (mCurrentState == GameStates.Next_Level)
+            {
+                Level tempLevel = mLevelSelect.GetNextLevel();
+                if (tempLevel != null)
+                {
+                    mCurrentLevel = tempLevel;
+                    mCurrentLevel.Load(Content);
+                    mCurrentState = GameStates.In_Game;
+                }
+                else
+                    mCurrentState = GameStates.Level_Selection;
+            }
         }
 
         /// <summary>

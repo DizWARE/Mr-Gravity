@@ -120,6 +120,30 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Unlocks the next level in the game(if it is already unlocked than it won't do anything)
+        /// </summary>
+        public void UnlockNextLevel()
+        {
+            if (mCurrentIndex + 12 * mCurrentPage < mLevels.Count)
+                mLevels[mCurrentIndex + 12 * mCurrentPage].Unlock();
+        }
+
+        /// <summary>
+        /// Gets the next level in the game
+        /// </summary>
+        /// <returns>The next level in the game, or null if there is none</returns>
+        public Level GetNextLevel()
+        {
+            if (mCurrentIndex + 12 * mCurrentPage < mLevels.Count)
+            {
+                if (++mCurrentIndex >= PREVIOUS) { mCurrentIndex = 1; mCurrentPage++; }
+                return mLevels[mCurrentIndex - 1 + 12 * mCurrentPage].Level;
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Handle actions for each direction the player may press on their controller
         /// </summary>
         private void HandleDirectionKeys()
@@ -197,9 +221,12 @@ namespace GravityShift
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
             Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
 
+            Vector2 stringLoc = mKootenay.MeasureString((mCurrentPage + 1) + "/" + mPageCount);
+
             spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)] , new Vector2(mScreenRect.Left, mScreenRect.Top), Color.White);
-            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Vector2(mScreenRect.Center.X - 50, mScreenRect.Bottom - 75), Color.White);
-            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Vector2(mScreenRect.Center.X + 50, mScreenRect.Bottom - 75), Color.White);
+            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Vector2(mScreenRect.Center.X - 75, mScreenRect.Bottom - 75), Color.White);
+            spriteBatch.DrawString(mKootenay, (mCurrentPage + 1) + "/" + mPageCount, new Vector2(mScreenRect.Center.X + 10,mScreenRect.Bottom - 60), Color.White);
+            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Vector2(mScreenRect.Center.X + 75, mScreenRect.Bottom - 75), Color.White);
 
             size.X -= 2*padding.X;
             size.Y -= 2*padding.Y;
@@ -236,6 +263,9 @@ namespace GravityShift
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class LevelChoice
     {
         private Level mLevel;
@@ -249,6 +279,12 @@ namespace GravityShift
         public bool Unlocked
         { get { return mUnlocked; } }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="levelInfo"></param>
+        /// <param name="controls"></param>
+        /// <param name="graphics"></param>
         public LevelChoice(XElement levelInfo, IControlScheme controls, GraphicsDevice graphics)
         {
             foreach(XElement element in levelInfo.Elements())
@@ -264,9 +300,15 @@ namespace GravityShift
                 }
                 if (element.Name == "unlocked")
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;
-
-
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Unlock()
+        {
+            mUnlocked = true;
         }
     }
 }

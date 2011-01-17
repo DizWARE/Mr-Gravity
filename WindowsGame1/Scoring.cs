@@ -39,7 +39,7 @@ namespace GravityShift
 
         private int mCurrent;
 
-        private const int NUM_OPTIONS = 2;
+        private const int NUM_OPTIONS = 3;
 
         #endregion
 
@@ -196,6 +196,13 @@ namespace GravityShift
                 {
                     /*Back To Level Selection*/
                     gameState = GameStates.Level_Selection;
+
+                    mCurrent = 0;
+                }
+                else if (mCurrent == 2)
+                {
+                    /*Back To Level Selection*/
+                    gameState = GameStates.Next_Level;
 
                     mCurrent = 0;
                 }

@@ -507,7 +507,7 @@ namespace GravityShift
                         {
                             Respawn();
                             GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
-                            gameState = GameStates.Score;
+                            gameState = GameStates.Unlock;
                             TIMER = 0;
                         }
 
