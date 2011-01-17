@@ -114,8 +114,9 @@ namespace GravityShift
         /// <param name="gametime">Current gametime</param>
         public override void Draw(SpriteBatch canvas, GameTime gametime)
         {
+            //TODO: put rotation back in later
             canvas.Draw(mTexture, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y), 
-                new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+                new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White, 0.0f, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
             //canvas.Draw(mTexture, mPosition, null, Color.White, mRotation, new Vector2(mTexture.Width / 2, mTexture.Height / 2), 1.0f, SpriteEffects.None, 0);
         }
 
