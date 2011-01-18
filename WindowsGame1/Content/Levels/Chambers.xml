@@ -4057,12 +4057,12 @@
     </Entity>
     <Entity>
       <ID>827</ID>
-      <Name>DangerNeonPink</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="26" Y="16" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -4070,12 +4070,12 @@
     </Entity>
     <Entity>
       <ID>828</ID>
-      <Name>DangerNeonPink</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="24" Y="5" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -4083,12 +4083,12 @@
     </Entity>
     <Entity>
       <ID>829</ID>
-      <Name>DangerNeonPink</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="14" Y="1" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -4096,12 +4096,12 @@
     </Entity>
     <Entity>
       <ID>831</ID>
-      <Name>DangerNeonPink</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="4" Y="13" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -5441,12 +5441,12 @@
     </Entity>
     <Entity>
       <ID>1030</ID>
-      <Name>DangerNeonPink</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="19" Y="21" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -5459,7 +5459,7 @@
       <Location X="5" Y="18" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
