@@ -1,0 +1,1683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>Cherries</Name>
+  <Size X="20" Y="26" />
+  <Background>Backgrounds\BlackBG</Background>
+  <Color>Color [Color]</Color>
+  <Entities>
+    <Entity>
+      <ID>117</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>122</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>124</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>187</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>191</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>192</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>204</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>208</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>209</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>221</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>225</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>226</ID>
+      <Name>NeonGreen</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonGreen</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>304</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="21" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>305</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="21" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>308</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>310</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>311</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>313</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>316</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>375</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>452</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>454</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>456</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>457</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>458</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>459</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>460</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>461</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>462</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>463</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>464</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>465</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>466</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>467</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>468</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>469</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>470</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>471</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>472</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>473</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>474</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>475</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>476</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>477</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>478</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>479</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>480</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>481</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>482</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>483</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="23" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>484</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>485</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>486</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>487</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="23" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>488</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>489</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>490</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>491</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>492</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>493</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>494</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>495</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>496</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>497</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>498</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>499</ID>
+      <Name>NeonRed</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_neonRed</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>544</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>545</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>546</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>547</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>548</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>549</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>550</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>551</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>552</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>553</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>554</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>555</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>556</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>557</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>558</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>559</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>560</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>561</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>562</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>563</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>564</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>565</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>566</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>567</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>568</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>569</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>570</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>571</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>572</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>573</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>574</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>575</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>576</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>577</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>578</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>579</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>580</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>581</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>582</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>583</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>584</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>585</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>586</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>587</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>588</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>589</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>590</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>591</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>592</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>593</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>594</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>595</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>596</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>597</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>598</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>599</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>600</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>601</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>602</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>603</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>604</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>605</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>606</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>607</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>608</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>609</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>610</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>611</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>612</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>613</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>614</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>615</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>616</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>617</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>618</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>619</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>664</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="4" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Level Positions\player_start</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>709</ID>
+      <Name>PlayerEnd</Name>
+      <Type>Level Positions</Type>
+      <Location X="13" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Level Positions\player_end</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>711</ID>
+      <Name>PlayerEnd</Name>
+      <Type>Level Positions</Type>
+      <Location X="13" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Level Positions\player_end</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>804</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>805</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>806</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>807</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>808</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="23" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>809</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>810</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>811</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>812</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>813</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>814</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="23" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>815</ID>
+      <Name>BrownMagma</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\groundi_magma</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>866</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="23" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>868</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="23" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>913</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>914</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>915</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>916</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="17" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>917</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="17" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+  </Entities>
+</Level>
