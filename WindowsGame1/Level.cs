@@ -33,9 +33,8 @@ namespace GravityShift
         /// </summary>
         public string Name { 
             get { return mName; } 
-            set { 
-                mName = value;
-            } }
+            set { mName = value; }
+        }
         private string mName;
 
         /// <summary>
@@ -71,7 +70,7 @@ namespace GravityShift
         private float mPrevZoom = 1.0f;
 
         /* Timer variable */
-        private static double TIMER;
+        public static double TIMER;
 
         private List<GameObject>[][] mCollisionMatrix;
 
@@ -96,11 +95,14 @@ namespace GravityShift
 
         /* SpriteFont */
         SpriteFont mKootenay;
+        SpriteFont mQuartz;
 
         #region HUD
 
         private Texture2D[] mDirections;
         private Texture2D[] mLives;
+        public static int mNumCollected;
+        public static int mNumCollectable;
 
         #endregion
 
@@ -139,6 +141,7 @@ namespace GravityShift
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
 
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
             mDirections = new Texture2D[4];
             mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
@@ -156,6 +159,9 @@ namespace GravityShift
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
+
+            mNumCollected = 0;
+            mNumCollectable = 0;
         }
 
         /// <summary>
@@ -179,10 +185,16 @@ namespace GravityShift
             mObjects.AddRange(importer.GetWalls(this));
 
             mRails = importer.GetRails();
-
+            
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
+
+            foreach (GameObject gObject in mObjects)
+            {
+                if (gObject.CollisionType == XmlKeys.COLLECTABLE)
+                    mNumCollectable++;
+            }
         }
 
         /// <summary>
@@ -279,6 +291,8 @@ namespace GravityShift
                 //Check to see if we collected anything
                 if (mRemoveCollected.Count > 0)
                 {
+                    mNumCollected = mNumCollectable - (mNumCollectable - mCollected.Count());
+
                     //Safely remove the collected objects
                     foreach (GameObject g in mRemoveCollected)
                     {
@@ -422,7 +436,9 @@ namespace GravityShift
                                 null,
                                 mCam1.get_transformation());
 
-            spriteBatch.DrawString(mKootenay, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.White);
+            spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.DarkTurquoise);
+
+            spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 200), Color.DarkTurquoise);
 
             if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
                 spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
@@ -497,8 +513,8 @@ namespace GravityShift
                         {
                             Respawn();
                             GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
+                            gameState = GameStates.Score;
                             gameState = GameStates.Unlock;
-                            TIMER = 0;
                         }
 
                         //If player collided with a collectable object

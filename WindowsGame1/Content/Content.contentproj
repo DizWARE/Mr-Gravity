@@ -604,6 +604,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fonts\QuartzLarge.spritefont">
+      <Name>QuartzLarge</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <Compile Include="menu\MainMenuSelected.png">
       <Name>MainMenuSelected</Name>
       <Importer>TextureImporter</Importer>
@@ -707,6 +712,16 @@
   <ItemGroup>
     <Compile Include="Images\Backgrounds\backgroundCogs1.png">
       <Name>backgroundCogs1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="menu\NextLevelSelected.png">
+      <Name>NextLevelSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="menu\NextLevelUnselected.png">
+      <Name>NextLevelUnselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
