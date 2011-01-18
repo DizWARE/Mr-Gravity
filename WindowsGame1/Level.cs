@@ -541,6 +541,7 @@ namespace GravityShift
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
+                            GameSound.playerCol_hazard.Play(GameSound.volume, 0.0f, 0.0f);
                             Respawn();
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
