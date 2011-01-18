@@ -65,11 +65,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Physics Objects\circle.png">
-      <Name>circle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Static Objects\grounda_magma.png">
       <Name>grounda_magma</Name>
       <Importer>TextureImporter</Importer>
@@ -369,22 +364,10 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Backgrounds\TestBackground.png">
-      <Name>TestBackground</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\Triggers\Trigger.png">
       <Name>Trigger</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Static Objects\collectableOld.png">
-      <Name>collectableOld</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -502,31 +485,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Backgrounds\Background1Resize.png">
-      <Name>Background1Resize</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Backgrounds\Background2aResize.png">
-      <Name>Background2aResize</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Backgrounds\Background2bResize.png">
-      <Name>Background2bResize</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Backgrounds\Background3Resize.png">
-      <Name>Background3Resize</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Backgrounds\Background4Resize.png">
-      <Name>Background4Resize</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Backgrounds\Background5Resize.png">
       <Name>Background5Resize</Name>
       <Importer>TextureImporter</Importer>
@@ -534,11 +492,6 @@
     </Compile>
     <Compile Include="Images\Backgrounds\Background7aResize.png">
       <Name>Background7aResize</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Backgrounds\Background7bResize.png">
-      <Name>Background7bResize</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -571,11 +524,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Physics Objects\AngryNewton.png">
-      <Name>AngryNewton</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Backgrounds\BlackBG.png">
       <Name>BlackBG</Name>
       <Importer>TextureImporter</Importer>
@@ -745,6 +693,34 @@
       <Name>playerCol_collectable</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+	</Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Physics Objects\circleHazard.png">
+      <Name>circleHazard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Physics Objects\starHazard.png">
+      <Name>starHazard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Static Objects\squareHazard.png">
+      <Name>squareHazard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Backgrounds\cogs.png">
+      <Name>cogs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
