@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>Apples</Name>
+  <Name>Cherries</Name>
   <Size X="20" Y="26" />
   <Background>Backgrounds\BlackBG</Background>
   <Color>Color [Color]</Color>
@@ -10,36 +10,6 @@
       <Name>NeonGreen</Name>
       <Type>Walls</Type>
       <Location X="5" Y="7" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>118</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="5" Y="6" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>119</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="6" Y="6" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>120</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="7" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonGreen</Texture>
@@ -76,26 +46,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>189</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="16" Y="2" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>190</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="17" Y="2" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>191</ID>
       <Name>NeonGreen</Name>
       <Type>Walls</Type>
@@ -126,36 +76,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>205</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="4" Y="17" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>206</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="5" Y="17" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>207</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="6" Y="17" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>208</ID>
       <Name>NeonGreen</Name>
       <Type>Walls</Type>
@@ -180,36 +100,6 @@
       <Name>NeonGreen</Name>
       <Type>Walls</Type>
       <Location X="13" Y="16" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>222</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="15" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>223</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="15" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>224</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="15" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\groundi_neonGreen</Texture>
@@ -1586,16 +1476,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>758</ID>
-      <Name>NeonGreen</Name>
-      <Type>Walls</Type>
-      <Location X="15" Y="2" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonGreen</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>804</ID>
       <Name>BrownMagma</Name>
       <Type>Walls</Type>
@@ -1716,71 +1596,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>860</ID>
-      <Name>BasicCollectable</Name>
-      <Type>Physics Objects</Type>
-      <Location X="11" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Physics Objects\collectable</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>2</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>861</ID>
-      <Name>BasicCollectable</Name>
-      <Type>Physics Objects</Type>
-      <Location X="2" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Physics Objects\collectable</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>2</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>862</ID>
-      <Name>BasicCollectable</Name>
-      <Type>Physics Objects</Type>
-      <Location X="17" Y="14" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Physics Objects\collectable</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>2</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>863</ID>
-      <Name>BasicCollectable</Name>
-      <Type>Physics Objects</Type>
-      <Location X="8" Y="17" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Physics Objects\collectable</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>2</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>864</ID>
-      <Name>BasicCollectable</Name>
-      <Type>Physics Objects</Type>
-      <Location X="10" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Physics Objects\collectable</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>2</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>866</ID>
       <Name>BasicCollectable</Name>
       <Type>Static Objects</Type>
@@ -1797,6 +1612,66 @@
       <Name>BasicCollectable</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="23" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>913</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>914</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>915</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>916</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="17" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Static Objects\collectable</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>917</ID>
+      <Name>BasicCollectable</Name>
+      <Type>Static Objects</Type>
+      <Location X="17" Y="14" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Static Objects\collectable</Texture>
