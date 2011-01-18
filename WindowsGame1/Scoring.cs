@@ -20,6 +20,7 @@ namespace GravityShift
 
         /* Spritefont */
         private SpriteFont mKootenay;
+        private SpriteFont mQuartz;
 
         ContentManager mContent;
 
@@ -39,7 +40,7 @@ namespace GravityShift
 
         private int mCurrent;
 
-        private const int NUM_OPTIONS = 3;
+        private const int NUM_OPTIONS = 4;
 
         #endregion
 
@@ -48,8 +49,12 @@ namespace GravityShift
         private Texture2D mApple;
         private Texture2D mApple_gray;
 
-        private Texture2D mBackUnsel;
-        private Texture2D mBackSel;
+        private Texture2D mNextLevelSel;
+        private Texture2D mNextLevelUnsel;
+        private Texture2D mSelectLevelSel;
+        private Texture2D mSelectLevelUnsel;
+        private Texture2D mMainMenuSel;
+        private Texture2D mMainMenuUnsel;
         private Texture2D mRestartSel;
         private Texture2D mRestartUnsel;
 
@@ -99,6 +104,7 @@ namespace GravityShift
         {
             mContent = content;
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
             mApple = content.Load<Texture2D>("scoring/apple");
             mApple_gray = content.Load<Texture2D>("scoring/apple_gray");
@@ -119,22 +125,34 @@ namespace GravityShift
             mUnselItems = new Texture2D[NUM_OPTIONS];
             mItems = new Texture2D[NUM_OPTIONS];
 
-            mBackUnsel = content.Load<Texture2D>("menu/BackUnselected");
-            mBackSel = content.Load<Texture2D>("menu/BackSelected");
-        
+            mNextLevelSel = content.Load<Texture2D>("menu/NextLevelSelected");
+            mNextLevelUnsel = content.Load<Texture2D>("menu/NextLevelUnselected");
+            
+            mSelectLevelSel = content.Load<Texture2D>("menu/SelectLevelSelected");
+            mSelectLevelUnsel = content.Load<Texture2D>("menu/SelectLevelUnselected");
+    
+            mMainMenuSel = content.Load<Texture2D>("menu/MainMenuSelected");
+            mMainMenuUnsel = content.Load<Texture2D>("menu/MainMenuUnselected");
+    
             mRestartUnsel = content.Load<Texture2D>("menu/RestartUnselected");
             mRestartSel = content.Load<Texture2D>("menu/RestartSelected");
 
             mTitle = content.Load<Texture2D>("menu/title");
 
             mSelItems[0] = mRestartSel;
-            mSelItems[1] = mBackSel;
+            mSelItems[1] = mNextLevelSel;
+            mSelItems[2] = mSelectLevelSel;
+            mSelItems[3] = mMainMenuSel;
 
             mUnselItems[0] = mRestartUnsel;
-            mUnselItems[1] = mBackUnsel;
+            mUnselItems[1] = mNextLevelUnsel;
+            mUnselItems[2] = mSelectLevelUnsel;
+            mUnselItems[3] = mMainMenuUnsel;
 
             mItems[0] = mRestartSel;
-            mItems[1] = mBackUnsel;
+            mItems[1] = mNextLevelUnsel;
+            mItems[2] = mSelectLevelUnsel;
+            mItems[3] = mMainMenuUnsel;
         }
 
         /*
@@ -181,7 +199,9 @@ namespace GravityShift
             /* If the user selects one of the menu items */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
+                GravityShift.Level.TIMER = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
+
                 /* Restart Game */
                 if (mCurrent == 0)
                 {
@@ -191,20 +211,45 @@ namespace GravityShift
                     level.Load(mContent);
                     mCurrent = 0;
                 }
-                /* Back Game */
+                /* Next Level */
                 else if (mCurrent == 1)
-                {
-                    /*Back To Level Selection*/
-                    gameState = GameStates.Level_Selection;
-
-                    mCurrent = 0;
-                }
-                else if (mCurrent == 2)
                 {
                     /*Back To Level Selection*/
                     gameState = GameStates.Next_Level;
 
                     mCurrent = 0;
+
+                    mItems[0] = mRestartSel;
+                    mItems[1] = mNextLevelUnsel;
+                    mItems[2] = mSelectLevelUnsel;
+                    mItems[3] = mMainMenuUnsel;
+                }
+
+                /* Level Select */
+                else if (mCurrent == 2)
+                {
+                    /*Back To Level Selection*/
+                    gameState = GameStates.Level_Selection;
+
+                    mCurrent = 0;
+
+                    mItems[0] = mRestartSel;
+                    mItems[1] = mNextLevelUnsel;
+                    mItems[2] = mSelectLevelUnsel;
+                    mItems[3] = mMainMenuUnsel;
+                }
+
+                /* Main Menu */
+                else if (mCurrent == 3)
+                {
+                    gameState = GameStates.Main_Menu;
+
+                    mCurrent = 0;
+
+                    mItems[0] = mRestartSel;
+                    mItems[1] = mNextLevelUnsel;
+                    mItems[2] = mSelectLevelUnsel;
+                    mItems[3] = mMainMenuUnsel;
                 }
             }
         }
@@ -224,13 +269,17 @@ namespace GravityShift
 
             spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
 
-            //spriteBatch.DrawString(kootenay, "Time: " + (int)GravityShiftMain.Timer + " Seconds", new Vector2(350.0f, 350.0f), Color.White);
-            spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 400.0f), Color.White);
-            spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 400.0f), Color.White);
-            spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 400.0f), Color.White);
+            spriteBatch.DrawString(mQuartz, "Time: " + (int)GravityShift.Level.TIMER + " Seconds", new Vector2(350.0f, 300.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Collected: " + (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(350.0f, 350.0f), Color.DarkOrange);
 
-            spriteBatch.Draw(mItems[0], new Vector2(900.0f, 600.0f), Color.White);
-            spriteBatch.Draw(mItems[1], new Vector2(900.0f, 675.0f), Color.White);
+            spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
+            spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
+            spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
+
+            spriteBatch.Draw(mItems[0], new Vector2(900.0f, 500.0f), Color.White);
+            spriteBatch.Draw(mItems[1], new Vector2(900.0f, 575.0f), Color.White);
+            spriteBatch.Draw(mItems[2], new Vector2(900.0f, 650.0f), Color.White);
+            spriteBatch.Draw(mItems[3], new Vector2(900.0f, 725.0f), Color.White);
 
             spriteBatch.End();
         }
