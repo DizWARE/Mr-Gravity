@@ -307,6 +307,9 @@ namespace GravityShift
                     //Clear the collection lists
                     mCollected.Clear();
                     mRemoveCollected.Clear();
+
+                    //Play death sound
+                    GameSound.playerCol_hazard.Play(GameSound.volume, 0.0f, 0.0f);
                 }
 
                 // Update the camera to keep the player at the center of the screen

@@ -125,7 +125,7 @@ namespace GravityShift
 
             if (mCurrentState == GameStates.In_Game)
             {
-                //Check for mute - not feature yet but could come
+                //Check for mute - not featured yet
                 GameSound.music_level00.Volume = GameSound.volume;
 
                 //If the correct music isn't already playing

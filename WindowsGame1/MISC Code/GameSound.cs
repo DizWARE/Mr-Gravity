@@ -94,6 +94,13 @@ namespace GravityShift
             music_level00.Volume = volume;
         }
 
+        private static void StopMusic()
+        {
+            level_stageFail.Stop();
+            level_stageVictory.Stop();
+            menuMusic_title.Stop();
+            music_level00.Stop();
+        }
         /*
          * StopOthersAndPlay
          *
@@ -103,14 +110,20 @@ namespace GravityShift
          */
         public static void StopOthersAndPlay(SoundEffectInstance music)
         {
-            //Stop music
-            level_stageFail.Stop();
-            level_stageVictory.Stop();
-            menuMusic_title.Stop();
-            music_level00.Stop();
-
-            //Start music
+            StopMusic();
             music.Volume = volume;
+            music.Play();
+        }
+
+        /*
+         * StopOthersAndPlay with volume multiplier
+         * 
+         * volumeMultiplier should be between 0.0f and 1.0f
+         */
+        public static void StopOthersAndPlay(SoundEffectInstance music, float volumeMultiplier)
+        {
+            StopMusic();
+            music.Volume = volume * volumeMultiplier;
             music.Play();
         }
     }
