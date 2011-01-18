@@ -609,7 +609,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-	<Compile Include="menu\MainMenuSelected.png">
+    <Compile Include="menu\MainMenuSelected.png">
       <Name>MainMenuSelected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -636,7 +636,7 @@
     </Compile>
     <Compile Include="menu\SelectLevelUnselected.png">
       <Name>SelectLevelUnselected</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\Back.png">
@@ -685,7 +685,7 @@
   <ItemGroup>
     <Compile Include="menu\paused.png">
       <Name>paused</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\LeftArrowSelect.png">
@@ -693,11 +693,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  <Compile Include="Images\RightArrowSelect.png">
-    <Name>RightArrowSelect</Name>
-    <Importer>TextureImporter</Importer>
-    <Processor>TextureProcessor</Processor>
-  </Compile>
+    <Compile Include="Images\RightArrowSelect.png">
+      <Name>RightArrowSelect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Images\rail_horizontal.png">
       <Name>rail_horizontal</Name>
       <Importer>TextureImporter</Importer>
@@ -705,6 +705,18 @@
     </Compile>
     <Compile Include="Images\rail_vertical.png">
       <Name>rail_vertical</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="menu\NextLevelSelected.png">
+      <Name>NextLevelSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="menu\NextLevelUnselected.png">
+      <Name>NextLevelUnselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

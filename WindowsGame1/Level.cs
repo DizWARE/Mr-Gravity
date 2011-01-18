@@ -104,6 +104,7 @@ namespace GravityShift
         private Texture2D[] mDirections;
         private Texture2D[] mLives;
         public static int mNumCollected;
+        public static int mNumCollectable;
 
         #endregion
 
@@ -162,6 +163,7 @@ namespace GravityShift
                 mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
 
             mNumCollected = 0;
+            mNumCollectable = 0;
         }
 
         /// <summary>
@@ -185,10 +187,16 @@ namespace GravityShift
             mObjects.AddRange(importer.GetWalls(this));
 
             mRails = importer.GetRails();
-
+            
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
+
+            foreach (GameObject gObject in mObjects)
+            {
+                if (gObject.CollisionType == XmlKeys.COLLECTABLE)
+                    mNumCollectable++;
+            }
         }
 
         /// <summary>
@@ -285,7 +293,7 @@ namespace GravityShift
                 //Check to see if we collected anything
                 if (mRemoveCollected.Count > 0)
                 {
-                    mNumCollected++;
+                    mNumCollected = mNumCollectable - (mNumCollectable - mCollected.Count());
 
                     //Safely remove the collected objects
                     foreach (GameObject g in mRemoveCollected)
