@@ -49,6 +49,11 @@ namespace GravityShift
         private Vector2 mAdditionalForces = new Vector2(0, 0);
 
         /// <summary>
+        /// number of pixels that the player can intersect the hazard without dying
+        /// </summary>
+        private const float HAZARDFORGIVENESS = 10.0f;
+
+        /// <summary>
         /// Directional force on this object
         /// </summary>
         public Vector2 TotalForce
@@ -201,10 +206,7 @@ namespace GravityShift
         /// </summary>
         public void UpdateBoundingBoxes()
         {
-            if (mCollisionType == XmlKeys.HAZARDOUS)// make hazardous object have a bit smaller collision
-                mBoundingBox = new Rectangle((int)mPosition.X+3, (int)mPosition.Y+3, (int)mSize.X - 6, (int)mSize.Y - 6);
-            else
-                mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y, (int)mSize.X, (int)mSize.Y);
+            mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y, (int)mSize.X, (int)mSize.Y);
         }
 
         /// <summary>
@@ -299,17 +301,27 @@ namespace GravityShift
             {
                 return 0;
             }
-
+            
             //Player collided with collectable
             if (otherObject.CollisionType == XmlKeys.COLLECTABLE || this.CollisionType == XmlKeys.COLLECTABLE && !(otherObject is StaticObject))
                 return 1;
 
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
+            
+
             // handle the shallowest collision
            
                 if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))// colliding top or bottom
                 {
+                    // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
+                    if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS))||
+                        ((this.CollisionType == XmlKeys.HAZARDOUS)&&(otherObject is Player)))
+                    {
+                        if (Math.Abs(colDepth.Y) < HAZARDFORGIVENESS)
+                            return 0;
+                    }
+
                     //Reset Y Velocity to 0
                     mVelocity.Y = 0;
 
@@ -322,6 +334,15 @@ namespace GravityShift
                 }
                 else// colliding left or right
                 {
+                    // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
+                    if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                        ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+                    {
+                        if (Math.Abs(colDepth.X) < HAZARDFORGIVENESS)
+                            return 0;
+                        mPosition += Vector2.Zero;
+                    }
+
                     //Reset X Velocity to 0
                     mVelocity.X = 0;
 
@@ -364,7 +385,15 @@ namespace GravityShift
 
             float delta = (radiusA + radiusB) - centerDiff.Length();
             centerDiff.Normalize();
-            Vector2 add = Vector2.Multiply(centerDiff, delta); 
+            Vector2 add = Vector2.Multiply(centerDiff, delta);
+
+            // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
+            if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+            {
+                if (add.Length() < HAZARDFORGIVENESS)
+                    return 0;
+            }
 
             HandleVelocitiesAfterCollision(otherObject, centerDiff);
 
@@ -414,7 +443,7 @@ namespace GravityShift
             {
                 return 0;// no collision
             }
-
+                
             //Player collided with collectable
             if (otherObject.CollisionType == XmlKeys.COLLECTABLE || this.CollisionType == XmlKeys.COLLECTABLE && !(otherObject is StaticObject))
                 return 1;
@@ -436,8 +465,7 @@ namespace GravityShift
              || ((center.Y >= p[1].Y) && (center.Y <= p[2].Y)))// right/left side
             {
                 // then treat like a square /square
-                HandleCollideBoxAndBox(otherObject);
-                return 1;// handled collision
+                return HandleCollideBoxAndBox(otherObject);
             }
             else // going to hit a corner
             {
@@ -468,6 +496,14 @@ namespace GravityShift
                 float delta = (radiusA) - centerDiff.Length();
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
+
+                // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
+                if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                    ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+                {
+                    if (add.Length() < HAZARDFORGIVENESS)
+                        return 0;
+                }
 
                 // normal of the collision
                 Vector2 N = centerDiff;
