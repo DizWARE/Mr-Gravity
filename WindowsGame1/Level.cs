@@ -31,8 +31,24 @@ namespace GravityShift
         /// <summary>
         /// Gets or sets the name of this level
         /// </summary>
-        public string Name { get { return mName; } set { mName = value; } }
+        public string Name { 
+            get { return mName; } 
+            set { mName = value; }
+        }
         private string mName;
+
+        /// <summary>
+        /// Gets or sets the filepath of this level
+        /// </summary>
+        public string Filepath { 
+            get { return mFilepath; } 
+            set{ 
+                mFilepath = value;
+                int start = mFilepath.LastIndexOf('\\');
+                int end = mFilepath.LastIndexOf('.');
+                mName = mFilepath.Substring(start+1, end - start - 1);
+            } }
+        private string mFilepath;
 
         /// <summary>
         /// Gets or sets the size of the level(in pixels)
@@ -60,7 +76,18 @@ namespace GravityShift
 
         List<GameObject> mObjects;
         List<GameObject> mCollected;
+        List<GameObject> mRemoveCollected;
         List<Trigger> mTrigger;
+
+        bool mDiedThisUpdate;
+		
+        List<EntityInfo> mRails;
+        Texture2D mRailLeft;
+        Texture2D mRailRight;
+        Texture2D mRailHor;
+        Texture2D mRailTop;
+        Texture2D mRailBottom;
+        Texture2D mRailVert;
 
         Player mPlayer;
 
@@ -86,16 +113,19 @@ namespace GravityShift
         /// <param name="name">The name of the level</param>
         /// <param name="controls">The controls scheme</param>
         /// <param name="viewport">The viewport for the cameras</param>
-        public Level(String name, IControlScheme controls, Viewport viewport)
+        public Level(String filepath, IControlScheme controls, Viewport viewport)
         {
-            mName = name;
+            Filepath = filepath;
             mControls = controls;
 
             mCam = new Camera(viewport);
             mCam1 = new Camera(viewport);
 
+            mRails = new List<EntityInfo>();
+
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
+            mRemoveCollected = new List<GameObject>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
         }
@@ -120,6 +150,13 @@ namespace GravityShift
             mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
             mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
 
+            mRailLeft = content.Load<Texture2D>("Images/rail_left");
+            mRailHor = content.Load<Texture2D>("Images/rail_horizontal");
+            mRailRight = content.Load<Texture2D>("Images/rail_right");
+            mRailTop = content.Load<Texture2D>("Images/rail_top");
+            mRailBottom = content.Load<Texture2D>("Images/rail_bottom");
+            mRailVert = content.Load<Texture2D>("Images/rail_vertical");
+
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
@@ -133,6 +170,8 @@ namespace GravityShift
         /// <param name="content">Content Manager to load from</param>
         public void Load(ContentManager content)
         {
+            mObjects.Clear();
+
             Importer importer = new Importer(content);
             importer.ImportLevel(this);
 
@@ -144,6 +183,8 @@ namespace GravityShift
             mObjects.Add(importer.GetPlayerEnd());
 
             mObjects.AddRange(importer.GetWalls(this));
+
+            mRails = importer.GetRails();
 
             mTrigger.AddRange(importer.GetTriggers());
 
@@ -242,19 +283,36 @@ namespace GravityShift
                 }
 
                 //Check to see if we collected anything
-                if (mCollected.Count > 0)
+                if (mRemoveCollected.Count > 0)
                 {
                     mNumCollected++;
 
                     //Safely remove the collected objects
-                    foreach (GameObject g in mCollected)
+                    foreach (GameObject g in mRemoveCollected)
                     {
                         RemoveFromMatrix(g);
                         mObjects.Remove(g);
                     }
 
                     //Then clear the list
+                    mRemoveCollected.Clear();
+                }
+
+                //Check to see if we died
+                if (mDiedThisUpdate)
+                {
+                    mDiedThisUpdate = false;
+
+                    //Add the collected objects back to the object list
+                    foreach (GameObject collected in mCollected)
+                        mObjects.Add(collected);
+
+                    //Reset the collision matrix
+                    PrepareCollisionMatrix();
+                    
+                    //Clear the collection lists
                     mCollected.Clear();
+                    mRemoveCollected.Clear();
                 }
 
                 // Update the camera to keep the player at the center of the screen
@@ -298,6 +356,9 @@ namespace GravityShift
                     mPlayer.mIsAlive = true;
                 }
             }
+
+            if (mControls.isStartPressed(false))
+                gameState = GameStates.Pause;
         }
 
         /// <summary>
@@ -318,8 +379,42 @@ namespace GravityShift
 
             spriteBatch.Draw(mTexture, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
 
+            // Loops through all rail objects and draws the appropriate rail image.
+            foreach (EntityInfo rail in mRails)
+            {
+                Vector2 position = new Vector2(rail.mLocation.X * 64, rail.mLocation.Y * 64);
+                int length = Convert.ToInt32(rail.mProperties["Length"]);
+                string type = rail.mProperties["Rail"];
+                int width = mRailTop.Width;
+                int height = mRailTop.Height;
+
+                for (int i = 0; i <= length; i++)
+                {
+                    if (type == "X")
+                    {
+                        if (i == 0)
+                            spriteBatch.Draw(mRailLeft, new Rectangle(Convert.ToInt32(position.X) + (i*64), Convert.ToInt32(position.Y), width, height), Color.White);
+                        else if (i == length)
+                            spriteBatch.Draw(mRailRight, new Rectangle(Convert.ToInt32(position.X) + (i*64), Convert.ToInt32(position.Y), width, height), Color.White);
+                        else
+                            spriteBatch.Draw(mRailHor, new Rectangle(Convert.ToInt32(position.X) + (i*64), Convert.ToInt32(position.Y), width, height), Color.White);
+                    }
+                    else
+                    {
+                        if (i == 0)
+                            spriteBatch.Draw(mRailTop, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i*64), width, height), Color.White);
+                        else if (i == length)
+                            spriteBatch.Draw(mRailBottom, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i * 64), width, height), Color.White);
+                        else
+                            spriteBatch.Draw(mRailVert, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y) + (i * 64), width, height), Color.White); ;
+                    }
+                }
+            }
+
             foreach (GameObject gObject in mObjects)
+            {
                 gObject.Draw(spriteBatch, gameTime);
+            }
 
             spriteBatch.End();
         }
@@ -367,11 +462,28 @@ namespace GravityShift
         /// <param name="player">Player object</param>
         private void Respawn()
         {
+
             mPlayer.Respawn();
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+
+            mDiedThisUpdate = true;
+
             foreach (GameObject gameObject in mObjects)
                 if(gameObject != mPlayer)
                     gameObject.Respawn();
+        }
+
+        /// <summary>
+        /// Preps the level to reload content
+        /// </summary>
+        public void Reset()
+        {
+            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+            mObjects.Clear();
+            mCollected.Clear();
+            mRemoveCollected.Clear();
+            mTrigger.Clear();
+            TIMER = 0;
         }
 
         /// <summary>
@@ -404,14 +516,23 @@ namespace GravityShift
                             Respawn();
                             GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
                             gameState = GameStates.Score;
+                            gameState = GameStates.Unlock;
                         }
 
                         //If player collided with a collectable object
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
                             mPlayer.mScore += 100;
-                            if (physObj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(physObj);
-                            else if (obj.CollisionType == XmlKeys.COLLECTABLE) mCollected.Add(obj);
+                            if (physObj.CollisionType == XmlKeys.COLLECTABLE)
+                            {
+                                mCollected.Add(physObj);
+                                mRemoveCollected.Add(physObj);
+                            }
+                            else if (obj.CollisionType == XmlKeys.COLLECTABLE)
+                            {
+                                mCollected.Add(obj);
+                                mRemoveCollected.Add(obj);
+                            }
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))

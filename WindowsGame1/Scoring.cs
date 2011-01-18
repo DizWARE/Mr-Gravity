@@ -22,6 +22,8 @@ namespace GravityShift
         private SpriteFont mKootenay;
         private SpriteFont mQuartz;
 
+        ContentManager mContent;
+
         IControlScheme mControls;
 
         /* Equivalent of stars */
@@ -38,7 +40,7 @@ namespace GravityShift
 
         private int mCurrent;
 
-        private const int NUM_OPTIONS = 2;
+        private const int NUM_OPTIONS = 3;
 
         #endregion
 
@@ -96,6 +98,7 @@ namespace GravityShift
          */
         public void Load(ContentManager content)
         {
+            mContent = content;
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
@@ -145,7 +148,7 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime, ref GameStates gameState)
+        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
 
             /* If the user hits up */
@@ -187,13 +190,22 @@ namespace GravityShift
                 {
                     /* Start the game*/
                     gameState = GameStates.In_Game;
+                    level.Reset();
+                    level.Load(mContent);
                     mCurrent = 0;
                 }
                 /* Back Game */
                 else if (mCurrent == 1)
                 {
                     /*Back To Level Selection*/
-                    gameState = GameStates.Main_Menu;
+                    gameState = GameStates.Level_Selection;
+
+                    mCurrent = 0;
+                }
+                else if (mCurrent == 2)
+                {
+                    /*Back To Level Selection*/
+                    gameState = GameStates.Next_Level;
 
                     mCurrent = 0;
                 }

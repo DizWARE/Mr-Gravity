@@ -32,6 +32,9 @@ namespace GravityShift
 
         //Instance of the level selection class
         LevelSelect mLevelSelect;
+
+        //Instance of the pause class
+        Pause mPause;
 		
         private GameStates mCurrentState = GameStates.Main_Menu;
 
@@ -42,7 +45,6 @@ namespace GravityShift
 
         //Fonts for this game
         SpriteFont mDefaultFont;
-        SpriteFont kootenay;
 
         //TO BE CHANGED- Actually, this may be ok since we use this to play test.
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
@@ -78,6 +80,7 @@ namespace GravityShift
             mMenu = new Menu(mControls);
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
+            mPause = new Pause(mControls);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -91,6 +94,7 @@ namespace GravityShift
         {
             mMenu.Load(Content);
             mScoring.Load(Content);
+            mPause.Load(Content);
             GameSound.Load(Content);
             mLevelSelect.Load(Content, mGraphics.GraphicsDevice);
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
@@ -116,7 +120,7 @@ namespace GravityShift
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (mControls.isBackPressed(false))
+            if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
                 this.Exit();
 
             if (mCurrentState == GameStates.In_Game)
@@ -124,10 +128,28 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Main_Menu)
                 mMenu.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Score)
-                mScoring.Update(gameTime, ref mCurrentState);
+                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             else if (mCurrentState == GameStates.Level_Selection)
-                mLevelSelect.Update(gameTime,ref mCurrentState,ref mCurrentLevel);
-            else if (mCurrentState == GameStates.Pause) ;
+                mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            else if (mCurrentState == GameStates.Pause)
+                mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            else if (mCurrentState == GameStates.Unlock)
+            {
+                mLevelSelect.UnlockNextLevel();
+                mCurrentState = GameStates.Score;
+            }
+            else if (mCurrentState == GameStates.Next_Level)
+            {
+                Level tempLevel = mLevelSelect.GetNextLevel();
+                if (tempLevel != null)
+                {
+                    mCurrentLevel = tempLevel;
+                    mCurrentLevel.Load(Content);
+                    mCurrentState = GameStates.In_Game;
+                }
+                else
+                    mCurrentState = GameStates.Level_Selection;
+            }
         }
 
         /// <summary>
@@ -157,7 +179,9 @@ namespace GravityShift
                 mScoring.Draw(mSpriteBatch, mGraphics);
             else if (mCurrentState == GameStates.Level_Selection)
                 mLevelSelect.Draw(mSpriteBatch, mGraphics);
-            else if (mCurrentState == GameStates.Pause) ;
+            else if (mCurrentState == GameStates.Pause)
+                mPause.Draw(mSpriteBatch, mGraphics);
+                
             base.Draw(gameTime);
         }
     }

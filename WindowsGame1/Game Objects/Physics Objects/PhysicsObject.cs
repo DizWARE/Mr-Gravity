@@ -201,8 +201,10 @@ namespace GravityShift
         /// </summary>
         public void UpdateBoundingBoxes()
         {
-            mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y,
-                (int)mSize.X, (int)mSize.Y);
+            if (mCollisionType == XmlKeys.HAZARDOUS)// make hazardous object have a bit smaller collision
+                mBoundingBox = new Rectangle((int)mPosition.X+3, (int)mPosition.Y+3, (int)mSize.X - 6, (int)mSize.Y - 6);
+            else
+                mBoundingBox = new Rectangle((int)mPosition.X, (int)mPosition.Y, (int)mSize.X, (int)mSize.Y);
         }
 
         /// <summary>
@@ -243,6 +245,8 @@ namespace GravityShift
             mPosition = Vector2.Add(mPosition, mVelocity);
             UpdateBoundingBoxes();
         }
+
+        #region Collision Code
 
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
@@ -674,6 +678,9 @@ namespace GravityShift
                     ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
             }
         }
+
+        #endregion
+
         public abstract int Kill();
         public abstract override string ToString();
     }
