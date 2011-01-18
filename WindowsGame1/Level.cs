@@ -462,8 +462,13 @@ namespace GravityShift
         /// <param name="player">Player object</param>
         private void Respawn()
         {
-
+            
             mPlayer.Respawn();
+
+            //Only play respawn noise when player is still alive
+            if (mPlayer.mNumLives > 1)
+                GameSound.playerSound_respawn.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
+            
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
 
             foreach (GameObject gameObject in mObjects)
@@ -512,8 +517,8 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             Respawn();
-                            GameSound.level_stageVictory.Play(GameSound.volume, 0.0f, 0.0f);
-                            gameState = GameStates.Score;
+                            GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
+
                             gameState = GameStates.Unlock;
                         }
 
