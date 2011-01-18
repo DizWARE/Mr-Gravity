@@ -25,6 +25,7 @@ namespace GravityShift
         /* Player Collision */
         public static SoundEffect playerCol_wall;
         public static SoundEffect playerCol_hazard;
+        public static SoundEffect playerSound_respawn;
 
         /* Gravity Shifting */
         public static SoundEffect level_gravityShiftUp;
@@ -64,6 +65,7 @@ namespace GravityShift
             /* Player Collision */
             playerCol_wall = content.Load<SoundEffect>("SoundEffects\\playerCol_wall");
             playerCol_hazard = content.Load<SoundEffect>("SoundEffects\\playerCol_hazard");
+            playerSound_respawn = content.Load<SoundEffect>("SoundEffects\\playerSound_respawn");
 
             /* Gravity Shifting */
             level_gravityShiftUp = content.Load<SoundEffect>("SoundEffects\\level_gravityShiftUp");
@@ -75,7 +77,8 @@ namespace GravityShift
             level_stageFailSource = content.Load<SoundEffect>("SoundEffects\\level_stageFail");
             level_stageFail = level_stageFailSource.CreateInstance();
             level_stageFail.Volume = volume;
-            level_stageVictorySource = content.Load<SoundEffect>("SoundEffects\\level_stageVictory");
+            
+            level_stageVictorySource = content.Load<SoundEffect>("SoundEffects\\level_stageFail");
             level_stageVictory = level_stageVictorySource.CreateInstance();
             level_stageVictory.Volume = volume;
 
@@ -84,6 +87,7 @@ namespace GravityShift
             menuMusic_title = menuMusic_titleSource.CreateInstance();
             menuMusic_title.IsLooped = true;
             menuMusic_title.Volume = volume;
+            
             music_level00Source = content.Load<SoundEffect>("music\\music_level00");
             music_level00 =  music_level00Source.CreateInstance();
             music_level00.IsLooped = true;

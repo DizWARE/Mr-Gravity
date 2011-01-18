@@ -454,7 +454,7 @@ namespace GravityShift
         /// <param name="player">Player object</param>
         private void Respawn()
         {
-
+            GameSound.playerSound_respawn.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
             mPlayer.Respawn();
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
 
