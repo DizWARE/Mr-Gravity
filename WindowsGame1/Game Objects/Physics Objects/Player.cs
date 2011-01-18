@@ -64,7 +64,7 @@ namespace GravityShift
             //SHIFT: Down
             if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
             {
-                GameSound.level_gravityShiftDown.Play(0.5f, 0.0f, 0.0f); //Play(GravityShiftMain.Volume, 0.0f, 0.0f)
+                GameSound.level_gravityShiftDown.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Down;
                 mGoalRotation = mRotationDown;
             }
@@ -72,7 +72,7 @@ namespace GravityShift
             //SHIFT: Up
             else if (mControls.isUpPressed(false) && mEnvironment.GravityDirection != GravityDirections.Up)
             {
-                GameSound.level_gravityShiftUp.Play(0.5f, 0.0f, 0.0f);
+                GameSound.level_gravityShiftUp.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Up;
                 mGoalRotation = mRotationUp;
             }
@@ -80,7 +80,7 @@ namespace GravityShift
             //SHIFT: Left
             else if (mControls.isLeftPressed(false) && mEnvironment.GravityDirection != GravityDirections.Left)
             {
-                GameSound.level_gravityShiftLeft.Play(0.5f, 0.0f, 0.0f);
+                GameSound.level_gravityShiftLeft.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Left;
                 mGoalRotation = mRotationLeft;
             }
@@ -88,7 +88,7 @@ namespace GravityShift
             //SHIFT: Right
             else if (mControls.isRightPressed(false) && mEnvironment.GravityDirection != GravityDirections.Right)
             {
-                GameSound.level_gravityShiftRight.Play(0.5f, 0.0f, 0.0f);
+                GameSound.level_gravityShiftRight.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Right;
                 mGoalRotation = mRotationRight;
             }
