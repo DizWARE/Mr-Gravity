@@ -79,8 +79,6 @@ namespace GravityShift
         List<GameObject> mCollected;
         List<GameObject> mRemoveCollected;
         List<Trigger> mTrigger;
-
-        bool mDiedThisUpdate;
 		
         List<EntityInfo> mRails;
         Texture2D mRailLeft;
@@ -292,23 +290,6 @@ namespace GravityShift
                     mRemoveCollected.Clear();
                 }
 
-                //Check to see if we died
-                if (mDiedThisUpdate)
-                {
-                    mDiedThisUpdate = false;
-
-                    //Add the collected objects back to the object list
-                    foreach (GameObject collected in mCollected)
-                        mObjects.Add(collected);
-
-                    //Reset the collision matrix
-                    PrepareCollisionMatrix();
-                    
-                    //Clear the collection lists
-                    mCollected.Clear();
-                    mRemoveCollected.Clear();
-                }
-
                 // Update the camera to keep the player at the center of the screen
                 // Also only update if the velocity if greater than 0.5f in either direction
                 if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
@@ -348,6 +329,17 @@ namespace GravityShift
                 {
                     mPlayer.mNumLives = 5;
                     mPlayer.mIsAlive = true;
+
+                    //Add the collected objects back to the object list
+                    foreach (GameObject collected in mCollected)
+                        mObjects.Add(collected);
+
+                    //Reset the collision matrix
+                    PrepareCollisionMatrix();
+
+                    //Clear the collection lists
+                    mCollected.Clear();
+                    mRemoveCollected.Clear();
                 }
             }
 
@@ -457,8 +449,6 @@ namespace GravityShift
 
             mPlayer.Respawn();
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
-
-            mDiedThisUpdate = true;
 
             foreach (GameObject gameObject in mObjects)
                 if(gameObject != mPlayer)

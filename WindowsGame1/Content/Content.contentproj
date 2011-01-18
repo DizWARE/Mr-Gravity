@@ -631,7 +631,7 @@
     </Compile>
     <Compile Include="menu\SelectLevelUnselected.png">
       <Name>SelectLevelUnselected</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\Back.png">
@@ -680,7 +680,7 @@
   <ItemGroup>
     <Compile Include="menu\paused.png">
       <Name>paused</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\LeftArrowSelect.png">
@@ -688,11 +688,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  <Compile Include="Images\RightArrowSelect.png">
-    <Name>RightArrowSelect</Name>
-    <Importer>TextureImporter</Importer>
-    <Processor>TextureProcessor</Processor>
-  </Compile>
+    <Compile Include="Images\RightArrowSelect.png">
+      <Name>RightArrowSelect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Images\rail_horizontal.png">
       <Name>rail_horizontal</Name>
       <Importer>TextureImporter</Importer>
@@ -700,6 +700,13 @@
     </Compile>
     <Compile Include="Images\rail_vertical.png">
       <Name>rail_vertical</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Backgrounds\backgroundCogs1.png">
+      <Name>backgroundCogs1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
