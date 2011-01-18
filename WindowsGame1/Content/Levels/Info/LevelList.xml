@@ -1,14 +1,14 @@
 <Levels>
 	<LevelData>
-		<name>Apples</name>
+		<name>Cherries</name>
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
-		<name>Level P</name>
+		<name>Retro</name>
 		<unlocked>False</unlocked>
 	</LevelData>
 	<LevelData>
-		<name>Level A</name>
+		<name>Cogs</name>
 		<unlocked>False</unlocked>
 	</LevelData>
 	<LevelData>

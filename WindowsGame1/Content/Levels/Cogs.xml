@@ -2,7 +2,7 @@
 <Level>
   <Name>Cogs</Name>
   <Size X="39" Y="29" />
-  <Background>Backgrounds\backgroundCogs1</Background>
+  <Background>Backgrounds\cogs</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>
@@ -5475,120 +5475,120 @@
     </Entity>
     <Entity>
       <ID>1628</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="23" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1629</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="24" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1630</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="25" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1631</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="21" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1632</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="4" Y="21" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1633</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="7" Y="23" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1634</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="7" Y="24" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1635</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="27" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1636</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="4" Y="27" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1637</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="27" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
@@ -5787,108 +5787,108 @@
     </Entity>
     <Entity>
       <ID>1762</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="13" Y="13" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1763</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="15" Y="14" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1764</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="14" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1765</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="11" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1766</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="7" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1767</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="15" Y="8" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1768</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="17" Y="3" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1769</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="3" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1806</ID>
-      <Name>MovingPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="21" Y="3" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -5896,12 +5896,12 @@
     </Entity>
     <Entity>
       <ID>1807</ID>
-      <Name>MovingPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="17" Y="13" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -5909,12 +5909,12 @@
     </Entity>
     <Entity>
       <ID>1808</ID>
-      <Name>MovingPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="14" Y="15" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>
@@ -5922,120 +5922,120 @@
     </Entity>
     <Entity>
       <ID>1899</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="26" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1900</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="25" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1901</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="24" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1902</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="23" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1903</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="22" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1904</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="26" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1905</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="25" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1906</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="21" Y="25" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1907</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="19" Y="23" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>1908</ID>
-      <Name>NeonPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Static Objects</Type>
       <Location X="19" Y="21" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
@@ -6208,12 +6208,12 @@
     </Entity>
     <Entity>
       <ID>2239</ID>
-      <Name>MovingPinkHazard</Name>
+      <Name>SquareHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="2" Y="26" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Static Objects\grounda_neonPink</Texture>
+      <Texture>Static Objects\squareHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>1</Mass>

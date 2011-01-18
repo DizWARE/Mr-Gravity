@@ -8096,7 +8096,7 @@
       <Location X="13" Y="16" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8109,7 +8109,7 @@
       <Location X="14" Y="16" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8122,7 +8122,7 @@
       <Location X="15" Y="16" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8135,7 +8135,7 @@
       <Location X="16" Y="16" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8148,7 +8148,7 @@
       <Location X="16" Y="15" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8161,7 +8161,7 @@
       <Location X="13" Y="15" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8174,7 +8174,7 @@
       <Location X="12" Y="12" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -8187,7 +8187,7 @@
       <Location X="17" Y="12" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\circle</Texture>
+      <Texture>Physics Objects\circleHazard</Texture>
       <Properties>
         <Shape>Circle</Shape>
         <Mass>1</Mass>
@@ -11027,12 +11027,12 @@
     </Entity>
     <Entity>
       <ID>1290</ID>
-      <Name>AngryNewton</Name>
+      <Name>FastHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="6" Y="6" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\AngryNewton</Texture>
+      <Texture>Physics Objects\starHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>.85</Mass>
@@ -11040,12 +11040,12 @@
     </Entity>
     <Entity>
       <ID>1291</ID>
-      <Name>AngryNewton</Name>
+      <Name>FastHazard</Name>
       <Type>Physics Objects</Type>
       <Location X="23" Y="6" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Physics Objects\AngryNewton</Texture>
+      <Texture>Physics Objects\starHazard</Texture>
       <Properties>
         <Shape>Square</Shape>
         <Mass>.85</Mass>
