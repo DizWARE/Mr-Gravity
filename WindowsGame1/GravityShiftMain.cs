@@ -149,7 +149,7 @@ namespace GravityShift
             {
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
-                GameSound.level_stageVictory.Volume = GameSound.volume;
+                GameSound.level_stageVictory.Volume = GameSound.volume * .75f;
 
                 //First play win, then menu
                 if (GameSound.level_stageVictory.State != SoundState.Playing)
