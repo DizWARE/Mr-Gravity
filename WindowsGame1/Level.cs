@@ -140,25 +140,25 @@ namespace GravityShift
             catch (Exception ex)
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
 
-            mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
-            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
+            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
             mDirections = new Texture2D[4];
-            mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
-            mDirections[2] = content.Load<Texture2D>("HUD/arrow_down");
-            mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
-            mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
+            mDirections[3] = content.Load<Texture2D>("Images/HUD/ArrowLeft");
+            mDirections[2] = content.Load<Texture2D>("Images/HUD/ArrowDown");
+            mDirections[1] = content.Load<Texture2D>("Images/HUD/ArrowRight");
+            mDirections[0] = content.Load<Texture2D>("Images/HUD/ArrowUp");
 
-            mRailLeft = content.Load<Texture2D>("Images/rail_left");
-            mRailHor = content.Load<Texture2D>("Images/rail_horizontal");
-            mRailRight = content.Load<Texture2D>("Images/rail_right");
-            mRailTop = content.Load<Texture2D>("Images/rail_top");
-            mRailBottom = content.Load<Texture2D>("Images/rail_bottom");
-            mRailVert = content.Load<Texture2D>("Images/rail_vertical");
+            mRailLeft = content.Load<Texture2D>("Images/NonHazards/Rails/RailLeft");
+            mRailHor = content.Load<Texture2D>("Images/NonHazards/Rails/RailHorizontal");
+            mRailRight = content.Load<Texture2D>("Images/NonHazards/Rails/RailRight");
+            mRailTop = content.Load<Texture2D>("Images/NonHazards/Rails/RailTop");
+            mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
+            mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
-                mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
+                mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
 
             mNumCollected = 0;
             mNumCollectable = 0;

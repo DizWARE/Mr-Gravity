@@ -2,7 +2,7 @@
 <Level>
   <Name>Retro</Name>
   <Size X="30" Y="33" />
-  <Background>Backgrounds\blank</Background>
+  <Background>Backgrounds\Blank</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>

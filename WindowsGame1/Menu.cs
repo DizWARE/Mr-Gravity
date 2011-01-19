@@ -115,42 +115,34 @@ namespace GravityShift
             mUnselMenuItems = new Texture2D[NUM_TITLE];
             mMenuItems = new Texture2D[NUM_TITLE];
 
-            mTitle = content.Load<Texture2D>("menu/Title");
+            mTitle = content.Load<Texture2D>("Images/Menu/Title");
 
             /* Title Screen */
-            mNewGameSel = content.Load<Texture2D>("menu/NewGameSelected");
-            mNewGameUnsel = content.Load<Texture2D>("menu/NewGameUnselected");
-            mLoadGameSel = content.Load<Texture2D>("menu/LoadGameSelected");
-            mLoadGameUnsel = content.Load<Texture2D>("menu/LoadGameUnselected");
-            mOptionsSel = content.Load<Texture2D>("menu/OptionsSelected");
-            mOptionsUnsel = content.Load<Texture2D>("menu/OptionsUnselected");
-            mCreditsSel = content.Load<Texture2D>("menu/CreditsSelected");
-            mCreditsUnsel = content.Load<Texture2D>("menu/CreditsUnselected");
+            mNewGameSel = content.Load<Texture2D>("Images/Menu/Main/NewGameSelected");
+            mNewGameUnsel = content.Load<Texture2D>("Images/Menu/Main/NewGameUnselected");
+            mLoadGameSel = content.Load<Texture2D>("Images/Menu/Main/LoadGameSelected");
+            mLoadGameUnsel = content.Load<Texture2D>("Images/Menu/Main/LoadGameUnselected");
+            mOptionsSel = content.Load<Texture2D>("Images/Menu/Main/OptionsSelected");
+            mOptionsUnsel = content.Load<Texture2D>("Images/Menu/Main/OptionsUnselected");
+            mCreditsSel = content.Load<Texture2D>("Images/Menu/Main/CreditsSelected");
+            mCreditsUnsel = content.Load<Texture2D>("Images/Menu/Main/CreditsUnselected");
 
             /* Options Screen */
-            mControlUnsel = content.Load<Texture2D>("menu/ControllerUnselected");
-            mControlSel = content.Load<Texture2D>("menu/ControllerSelected");
-            mSoundUnsel = content.Load<Texture2D>("menu/SoundUnselected");
-            mSoundSel = content.Load<Texture2D>("menu/SoundSelected");
-            mBackUnsel = content.Load<Texture2D>("menu/BackUnselected");
-            mBackSel = content.Load<Texture2D>("menu/BackSelected");
-
-            /* Level Select Screen */
-            //mOneUnsel = content.Load<Texture2D>("menu/OneUnselected");
-            //mOneSel = content.Load<Texture2D>("menu/OneSelected");
-            //mTwoUnsel = content.Load<Texture2D>("menu/TwoUnselected");
-            //mTwoSel = content.Load<Texture2D>("menu/TwoSelected");
-            //mThreeUnsel = content.Load<Texture2D>("menu/ThreeUnselected");
-            //mThreeSel = content.Load<Texture2D>("menu/ThreeSelected");
+            mControlUnsel = content.Load<Texture2D>("Images/Menu/Main/ControllerUnselected");
+            mControlSel = content.Load<Texture2D>("Images/Menu/Main/ControllerSelected");
+            mSoundUnsel = content.Load<Texture2D>("Images/Menu/Main/SoundUnselected");
+            mSoundSel = content.Load<Texture2D>("Images/Menu/Main/SoundSelected");
+            mBackUnsel = content.Load<Texture2D>("Images/Menu/Main/BackUnselected");
+            mBackSel = content.Load<Texture2D>("Images/Menu/Main/BackSelected");
 
             /* Controller */
-            mXboxControl = content.Load<Texture2D>("menu/XboxController");
+            mXboxControl = content.Load<Texture2D>("Images/Menu/Main/XboxController");
 
             /* Sound Screen */
-            mMute = content.Load<Texture2D>("menu/mute");
-            mUnMute = content.Load<Texture2D>("menu/unMute");
-            mMuteSel = content.Load<Texture2D>("menu/MuteSelected");
-            mMuteUnsel = content.Load<Texture2D>("menu/MuteUnselected");
+            mMute = content.Load<Texture2D>("Images/Menu/Main/Mute");
+            mUnMute = content.Load<Texture2D>("Images/Menu/Main/UnMute");
+            mMuteSel = content.Load<Texture2D>("Images/Menu/Main/MuteSelected");
+            mMuteUnsel = content.Load<Texture2D>("Images/Menu/Main/MuteUnselected");
 
             /* Initialize the menu item arrays */
             mSelMenuItems[0] = mNewGameSel;
@@ -169,7 +161,7 @@ namespace GravityShift
             mMenuItems[3] = mCreditsUnsel;
 
             /* Load the fonts */
-            mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
         }
 
         /*

@@ -75,23 +75,23 @@ namespace GravityShift
                 mLevels.Add(new LevelChoice(level,mControls,graphics));
 
             mContent = content;
-            mSelectBox = content.Load<Texture2D>("menu/selectbox");
-            mKootenay = content.Load<SpriteFont>("fonts/kootenay");
+            mSelectBox = content.Load<Texture2D>("Images/Menu/LevelSelect/SelectBox");
+            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
 
-            mBackground = content.Load<Texture2D>("Images/Backgrounds/stars");
+            mBackground = content.Load<Texture2D>("Images/Backgrounds/Stars");
 
             /*TODO - REMOVE THIS WHEN REAL ART COMES*/
             mPrevious = new Texture2D[2];
-            mPrevious[0] = content.Load<Texture2D>("Images/LeftArrow");
-            mPrevious[1] = content.Load<Texture2D>("Images/LeftArrowSelect");
+            mPrevious[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/LeftArrow");
+            mPrevious[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/LeftArrowSelect");
 
             mNext = new Texture2D[2];
-            mNext[0] = content.Load<Texture2D>("Images/RightArrow");
-            mNext[1] = content.Load<Texture2D>("Images/RightArrowSelect");
+            mNext[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/RightArrow");
+            mNext[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/RightArrowSelect");
 
             mBack = new Texture2D[2];
-            mBack[0] = content.Load<Texture2D>("Images/Back");
-            mBack[1] = content.Load<Texture2D>("Images/BackSelect");
+            mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
+            mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
 
             mPageCount = mLevels.Count / 12 +1;
 

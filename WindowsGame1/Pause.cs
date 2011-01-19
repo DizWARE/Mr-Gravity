@@ -60,9 +60,9 @@ namespace GravityShift
         {
             mContent = content;
 
-            mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
 
-            mPauseTitle = content.Load<Texture2D>("menu/paused");
+            mPauseTitle = content.Load<Texture2D>("Images/Menu/Pause/Paused");
 
             mCurrent = 0;
 
@@ -70,12 +70,12 @@ namespace GravityShift
             mUnselItems = new Texture2D[NUM_OPTIONS];
             mItems = new Texture2D[NUM_OPTIONS];
 
-            mResumeSel = content.Load<Texture2D>("menu/ResumeSelected");
-            mResumeUnsel = content.Load<Texture2D>("menu/ResumeUnselected");
-            mSelectLevelSel = content.Load<Texture2D>("menu/SelectLevelSelected");
-            mSelectLevelUnsel = content.Load<Texture2D>("menu/SelectLevelUnselected");
-            mMainMenuSel = content.Load<Texture2D>("menu/MainMenuSelected");
-            mMainMenuUnsel = content.Load<Texture2D>("menu/MainMenuUnselected");
+            mResumeSel = content.Load<Texture2D>("Images/Menu/Pause/ResumeSelected");
+            mResumeUnsel = content.Load<Texture2D>("Images/Menu/Pause/ResumeUnselected");
+            mSelectLevelSel = content.Load<Texture2D>("Images/Menu/SelectLevelSelected");
+            mSelectLevelUnsel = content.Load<Texture2D>("Images/Menu/SelectLevelUnselected");
+            mMainMenuSel = content.Load<Texture2D>("Images/Menu/MainMenuSelected");
+            mMainMenuUnsel = content.Load<Texture2D>("Images/Menu/MainMenuUnselected");
 
             mSelItems[0] = mResumeSel;
             mSelItems[1] = mSelectLevelSel;

@@ -103,11 +103,11 @@ namespace GravityShift
         public void Load(ContentManager content)
         {
             mContent = content;
-            mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
-            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
+            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
-            mApple = content.Load<Texture2D>("scoring/apple");
-            mApple_gray = content.Load<Texture2D>("scoring/apple_gray");
+            mApple = content.Load<Texture2D>("Images/Menu/Score/Apple");
+            mApple_gray = content.Load<Texture2D>("Images/Menu/Score/AppleGray");
 
             /* Set up with the number of worlds and levels */
             /* For now we have 1 world with 3 levels */
@@ -125,19 +125,19 @@ namespace GravityShift
             mUnselItems = new Texture2D[NUM_OPTIONS];
             mItems = new Texture2D[NUM_OPTIONS];
 
-            mNextLevelSel = content.Load<Texture2D>("menu/NextLevelSelected");
-            mNextLevelUnsel = content.Load<Texture2D>("menu/NextLevelUnselected");
-            
-            mSelectLevelSel = content.Load<Texture2D>("menu/SelectLevelSelected");
-            mSelectLevelUnsel = content.Load<Texture2D>("menu/SelectLevelUnselected");
-    
-            mMainMenuSel = content.Load<Texture2D>("menu/MainMenuSelected");
-            mMainMenuUnsel = content.Load<Texture2D>("menu/MainMenuUnselected");
-    
-            mRestartUnsel = content.Load<Texture2D>("menu/RestartUnselected");
-            mRestartSel = content.Load<Texture2D>("menu/RestartSelected");
+            mNextLevelSel = content.Load<Texture2D>("Images/Menu/Score/NextLevelSelected");
+            mNextLevelUnsel = content.Load<Texture2D>("Images/Menu/Score/NextLevelUnselected");
 
-            mTitle = content.Load<Texture2D>("menu/title");
+            mSelectLevelSel = content.Load<Texture2D>("Images/Menu/SelectLevelSelected");
+            mSelectLevelUnsel = content.Load<Texture2D>("Images/Menu/SelectLevelUnselected");
+
+            mMainMenuSel = content.Load<Texture2D>("Images/Menu/MainMenuSelected");
+            mMainMenuUnsel = content.Load<Texture2D>("Images/Menu/MainMenuUnselected");
+
+            mRestartUnsel = content.Load<Texture2D>("Images/Menu/Score/RestartUnselected");
+            mRestartSel = content.Load<Texture2D>("Images/Menu/Score/RestartSelected");
+
+            mTitle = content.Load<Texture2D>("Images/Menu/Title");
 
             mSelItems[0] = mRestartSel;
             mSelItems[1] = mNextLevelSel;

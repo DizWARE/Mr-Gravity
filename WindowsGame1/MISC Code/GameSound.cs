@@ -83,12 +83,12 @@ namespace GravityShift
             level_stageVictory.Volume = volume;
 
             /* Music */
-            menuMusic_titleSource = content.Load<SoundEffect>("music\\menuMusic_title");
+            menuMusic_titleSource = content.Load<SoundEffect>("Music\\menuMusic_title");
             menuMusic_title = menuMusic_titleSource.CreateInstance();
             menuMusic_title.IsLooped = true;
             menuMusic_title.Volume = volume;
             
-            music_level00Source = content.Load<SoundEffect>("music\\music_level00");
+            music_level00Source = content.Load<SoundEffect>("Music\\music_level00");
             music_level00 =  music_level00Source.CreateInstance();
             music_level00.IsLooped = true;
             music_level00.Volume = volume;

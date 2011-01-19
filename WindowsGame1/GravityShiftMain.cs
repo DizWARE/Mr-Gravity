@@ -103,7 +103,7 @@ namespace GravityShift
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
 
-            mDefaultFont = Content.Load<SpriteFont>("fonts/Kootenay");
+            mDefaultFont = Content.Load<SpriteFont>("Fonts/Kootenay");
     }
 
         /// <summary>

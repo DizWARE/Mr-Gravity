@@ -117,8 +117,8 @@ namespace GravityShift.Import_Code
                 }
                 //If the object is physics, make a physics object
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
-                { 
-                    if (entity.mName == "BasicRailX" || entity.mName == "BasicRailY")
+                {
+                    if (entity.mName == "RailX" || entity.mName == "RailY" || entity.mName == "HazardRailX" || entity.mName == "HazardRailY")
                     {
                         if (entity.mProperties.ContainsKey("Rail") && entity.mProperties.ContainsKey("Length"))
                         {

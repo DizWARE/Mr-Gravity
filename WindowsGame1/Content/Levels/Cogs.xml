@@ -2,7 +2,7 @@
 <Level>
   <Name>Cogs</Name>
   <Size X="39" Y="29" />
-  <Background>Backgrounds\cogs</Background>
+  <Background>Backgrounds\Blank</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>

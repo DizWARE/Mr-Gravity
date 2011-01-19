@@ -7,7 +7,7 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Level Positions\player_start</Texture>
+    <Texture>PlayerPositions\PlayerStart</Texture>
     <Properties />
   </Entity>
   <Entity>
@@ -17,176 +17,189 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Level Positions\player_end</Texture>
+    <Texture>PlayerPositions\PlayerEnd</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>Moving Ball</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Physics Objects\circle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>NeonGreen</Name>
+    <Name>Green</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_neonGreen</Texture>
+    <Texture>Walls\Green</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>NeonPink</Name>
+    <Name>Pink</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_neonPink</Texture>
+    <Texture>Walls\Pink</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>NeonBlue</Name>
+    <Name>Blue</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_neonBlue</Texture>
+    <Texture>Walls\Blue</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>NeonYellow</Name>
+    <Name>Yellow</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_neonYellow</Texture>
+    <Texture>Walls\Yellow</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BrownMagma</Name>
+    <Name>Red</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_magma</Texture>
+    <Texture>Walls\Red</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BlackMagma</Name>
-    <Type>Walls</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_magma2</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>DangerMagma</Name>
+    <Name>GreenHazard</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\grounda_magma</Texture>
+    <Texture>Hazards\GreenSquare</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>FallingYellow</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_neonYellow</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>MovingDangerMagma</Name>
-    <Type>Physics Objects</Type>
+    <Name>PinkHazard</Name>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Static Objects\grounda_magma</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>BallWall</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Physics Objects\circle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-    </Properties>
+    <Texture>Hazards\PinkSquare</Texture>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>DangerBall</Name>
-    <Type>Physics Objects</Type>
+    <Name>BlueHazard</Name>
+    <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Physics Objects\circle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\BlueSquare</Texture>
+    <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BasicCollectable</Name>
+    <Name>YellowHazard</Name>
+    <Type>Walls</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\YellowSquare</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>RedHazard</Name>
+    <Type>Walls</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\RedSquare</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>GreenDiamond</Name>
     <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Collectable</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Static Objects\collectable</Texture>
+    <Texture>NonHazards\GreenDiamond</Texture>
     <Properties>
       <Shape>Square</Shape>
     </Properties>
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BasicCollectable</Name>
-    <Type>Physics Objects</Type>
+    <Name>RedDiamond</Name>
+    <Type>Static Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Collectable</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Physics Objects\collectable</Texture>
+    <Texture>NonHazards\RedDiamond</Texture>
     <Properties>
       <Shape>Square</Shape>
-      <Mass>2</Mass>
     </Properties>
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BasicRailX</Name>
+    <Name>BlueGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\BlueGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PurpleGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PurpleGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>OrangeStar</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\OrangeStar</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>YellowStar</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\YellowStar</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>RailX</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Static Objects\grounda_neonPink</Texture>
+    <Texture>Walls\Yellow</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
@@ -196,12 +209,12 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BasicRailY</Name>
+    <Name>RailY</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Static Objects\grounda_neonYellow</Texture>
+    <Texture>Walls\Yellow</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
@@ -211,12 +224,185 @@
   </Entity>
   <Entity>
     <ID>0</ID>
+    <Name>HazardRailX</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Hazards\RedSquare</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>X</Rail>
+      <Length>3</Length>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>HazardRailY</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Hazards\RedSquare</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>Y</Rail>
+      <Length>3</Length>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>CircleGreen</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\GreenCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>CirclePink</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\PinkCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>CircleBlue</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\BlueCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>CircleYellow</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\YellowCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>CircleRed</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\RedCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>SawGreen</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\GreenSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>SawPink</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\PinkSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>SawBlue</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\BlueSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>SawYellow</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\YellowSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>SawRed</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\RedSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>Star</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\Star</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
     <Name>Force</Name>
     <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Triggers\Trigger</Texture>
+    <Texture>InvisibleObjects\Trigger</Texture>
     <Properties>
       <Width>3</Width>
       <Height>3</Height>
@@ -224,41 +410,5 @@
       <XForce>1</XForce>
       <YForce>1</YForce>
     </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>Moving Square</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Physics Objects\AngryNewton</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>DangerNeonPink</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Static Objects\grounda_neonPink</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>NeonRed</Name>
-    <Type>Walls</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Static Objects\groundi_neonRed</Texture>
-    <Properties />
   </Entity>
 </Entities>

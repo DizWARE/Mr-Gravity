@@ -2,7 +2,7 @@
 <Level>
   <Name>Cherries</Name>
   <Size X="20" Y="26" />
-  <Background>Backgrounds\blank</Background>
+  <Background>Backgrounds\Blank</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>
