@@ -636,6 +636,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="music\music_level00.wav">
+      <Name>music_level00</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="music\menuMusic_title.wav">
+      <Name>menuMusic_title</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SoundEffects\playerSound_respawn.wav">
+      <Name>playerSound_respawn</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
     <Compile Include="menu\NextLevelSelected.png">
       <Name>NextLevelSelected</Name>
       <Importer>TextureImporter</Importer>
