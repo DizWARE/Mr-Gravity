@@ -148,6 +148,19 @@ namespace GravityShift
         /// </summary>
         private void HandleDirectionKeys()
         {
+            Vector2 max = new Vector2(10, 11);
+
+            int countOnPage = 11;
+            if (mCurrentPage + 1 == mPageCount)
+                countOnPage = (mLevels.Count - 1) % 12;
+
+            int row = countOnPage / 4;
+            int col = countOnPage % 4;
+
+            max.X = max.Y = row * 4 + Math.Min(2,col);
+            if (col == 1) max.Y = ++max.X;
+            if(col >= 2) max.Y++;
+
             if (mControls.isLeftPressed(false))
             {
                 mCurrentIndex = (mCurrentIndex - 1);
@@ -162,17 +175,20 @@ namespace GravityShift
             {
                 if (mCurrentIndex > BACK && mCurrentIndex <= 4) mCurrentIndex = BACK;
                 else if (mCurrentIndex == BACK) mCurrentIndex = NEXT;
-                else if (mCurrentIndex == NEXT) mCurrentIndex = 11;
-                else if (mCurrentIndex == PREVIOUS) mCurrentIndex = 10;
+                else if (mCurrentIndex == NEXT) mCurrentIndex = (int)max.Y;
+                else if (mCurrentIndex == PREVIOUS) mCurrentIndex = (int)max.X;
                 else mCurrentIndex = (mCurrentIndex - 4);
             }
             else if (mControls.isDownPressed(false))
             {
-                if (mCurrentIndex < PREVIOUS && mCurrentIndex > 10) mCurrentIndex = NEXT;
-                else if (mCurrentIndex < 11 && mCurrentIndex > 8) mCurrentIndex = PREVIOUS;
+                if (mCurrentIndex < countOnPage + 2 && mCurrentIndex > max.X) mCurrentIndex = NEXT;
+                else if (mCurrentIndex < max.X + 1 && mCurrentIndex > row * 4) mCurrentIndex = PREVIOUS;
                 else if (mCurrentIndex == BACK) mCurrentIndex = 1;
                 else if (mCurrentIndex == NEXT || mCurrentIndex == PREVIOUS) mCurrentIndex = BACK;
                 else mCurrentIndex = (mCurrentIndex+ 4);
+
+                if (mCurrentIndex > row * 4 + col + 1 && mCurrentIndex < PREVIOUS) mCurrentIndex = row * 4 + col + 1;
+ 
             }
 
             if (mCurrentIndex < 0) mCurrentIndex += 15;  
