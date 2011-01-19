@@ -2,7 +2,7 @@
 <Level>
   <Name>Chambers</Name>
   <Size X="33" Y="23" />
-  <Background>Backgrounds\Background6Resize</Background>
+  <Background>Backgrounds\bubbles</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>

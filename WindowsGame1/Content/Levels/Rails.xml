@@ -2,7 +2,7 @@
 <Level>
   <Name>Rails</Name>
   <Size X="39" Y="17" />
-  <Background>Backgrounds\BlackBG</Background>
+  <Background>Backgrounds\blank</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>

@@ -78,7 +78,7 @@ namespace GravityShift
             mSelectBox = content.Load<Texture2D>("menu/selectbox");
             mKootenay = content.Load<SpriteFont>("fonts/kootenay");
 
-            mBackground = content.Load<Texture2D>("Images/Backgrounds/Background5Resize");
+            mBackground = content.Load<Texture2D>("Images/Backgrounds/stars");
 
             /*TODO - REMOVE THIS WHEN REAL ART COMES*/
             mPrevious = new Texture2D[2];
