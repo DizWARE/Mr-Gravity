@@ -525,6 +525,7 @@ namespace GravityShift
                         //If player collided with a collectable object
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
+                            GameSound.playerCol_collectable.Play(GameSound.volume, 0.0f, 0.0f);
                             mPlayer.mScore += 100;
                             if (physObj.CollisionType == XmlKeys.COLLECTABLE)
                             {
@@ -540,6 +541,7 @@ namespace GravityShift
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
+                            GameSound.playerCol_hazard.Play(GameSound.volume, 0.0f, 0.0f);
                             Respawn();
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();

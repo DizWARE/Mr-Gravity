@@ -655,6 +655,15 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SoundEffects\playerCol_collectable.wav">
+      <Name>playerCol_collectable</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+	</Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Images\Menu\Score\RestartUnselected.png">
       <Name>RestartUnselected</Name>
       <Importer>TextureImporter</Importer>
