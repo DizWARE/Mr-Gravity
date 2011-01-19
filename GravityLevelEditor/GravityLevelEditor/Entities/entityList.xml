@@ -411,4 +411,34 @@
       <YForce>1</YForce>
     </Properties>
   </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>RailSawX</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Hazards\RedSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Rail>X</Rail>
+      <Length>3</Length>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>RailSawY</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Hazards\RedSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Rail>Y</Rail>
+      <Length>3</Length>
+    </Properties>
+  </Entity>
 </Entities>
