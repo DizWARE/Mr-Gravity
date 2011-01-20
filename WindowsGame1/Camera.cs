@@ -28,7 +28,7 @@ namespace GravityShift
         #endregion
 
         /// <summary>
-        /// Construcs a camera object.
+        /// Constructs a camera object.
         /// </summary>
         /// <param name="viewport">Current viewport for the game</param>
         public Camera(Viewport viewport)

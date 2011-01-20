@@ -7,1122 +7,1122 @@
   <Entities>
     <Entity>
       <ID>45</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="1" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>46</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>47</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>48</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>49</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>50</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>51</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>52</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>53</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>54</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>55</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>56</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>57</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>58</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>59</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>60</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>61</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="16" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>62</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>63</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>64</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>65</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>66</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>67</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>68</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>69</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>70</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>71</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>72</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>73</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>74</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>75</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>76</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="31" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>77</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>78</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>79</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>80</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>81</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>82</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>83</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>84</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>85</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>86</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>87</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>88</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="11" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>89</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>90</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>91</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>92</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>93</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>94</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>95</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>96</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>97</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>98</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="21" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>99</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="32" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>100</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="31" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>101</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>102</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>103</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>104</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>105</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>106</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>107</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>108</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>109</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>110</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>111</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>114</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>115</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>116</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>117</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="16" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>118</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>119</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>120</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>121</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>122</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>123</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>124</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>125</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>126</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>127</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>128</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>129</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>130</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>131</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>132</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="1" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>133</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>134</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="21" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>135</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>136</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>137</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>138</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>139</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>140</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>141</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>142</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>143</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>144</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="11" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>145</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>146</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>147</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>148</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>149</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>150</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>151</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>152</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>153</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>154</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="0" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>155</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>156</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>157</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>158</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1132,1527 +1132,1527 @@
       <Location X="16" Y="11" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Level Positions\player_start</Texture>
+      <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>240</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>241</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>242</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>243</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>244</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>245</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>246</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>247</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>248</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>249</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>250</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>251</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>252</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>253</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>254</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>255</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>256</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>257</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>258</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>259</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>260</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>261</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>262</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>263</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>264</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>265</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>266</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>267</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>268</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>269</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>270</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>271</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>272</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>273</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>274</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>275</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>276</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>277</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>278</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>279</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>280</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>281</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>282</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>283</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>284</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>285</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>286</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>287</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>288</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>289</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>290</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>291</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>292</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>293</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>294</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>295</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>296</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>297</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>298</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>299</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>300</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>301</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>302</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>303</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>304</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>305</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>306</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>307</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>308</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>309</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>310</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>311</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>312</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>313</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>314</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>315</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>316</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>317</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>318</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>319</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>320</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>321</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>322</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="2" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>323</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>324</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>325</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>326</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>327</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>328</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>329</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>330</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>331</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>332</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>333</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="5" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>334</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>335</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="3" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>336</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>337</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="4" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>338</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>339</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>340</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>341</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>342</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>343</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>344</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>345</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>346</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>347</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>348</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>349</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="15" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>350</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>351</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>352</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>353</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>354</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="14" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>355</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="13" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>356</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>357</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>358</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>359</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="12" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>362</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>363</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>364</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>365</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>366</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>367</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>368</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>369</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>370</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>371</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>372</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>373</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="11" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>375</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>376</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>377</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>378</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>379</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>380</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="6" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>381</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>382</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>383</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>384</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>385</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>386</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>387</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>388</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="10" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>389</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="9" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>390</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>391</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>392</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>393</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="7" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>394</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2662,2809 +2662,2809 @@
       <Location X="7" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Level Positions\player_end</Texture>
+      <Texture>PlayerPositions\PlayerEnd</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>557</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>558</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>559</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>560</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>561</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>562</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>563</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>564</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>565</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>566</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>567</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>568</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>569</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>570</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>571</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>572</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>573</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>574</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>575</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>576</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>577</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>578</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>579</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>580</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>581</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>582</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>583</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>584</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>585</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>586</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>587</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>588</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>589</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>590</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>591</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>592</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>593</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>594</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>595</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>596</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>597</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>598</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>599</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>600</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>601</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>602</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>603</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>604</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>605</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>606</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>607</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>608</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>609</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>610</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>611</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>612</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>613</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>614</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>615</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>616</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>617</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>618</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>619</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>620</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>621</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>622</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>623</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>624</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>625</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>626</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>627</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>628</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>629</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>630</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>631</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>632</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>633</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>634</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>635</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>636</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>637</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>638</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>639</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>640</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>641</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>642</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>643</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>644</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>645</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>646</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="30" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>647</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>648</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>649</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>650</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>651</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>652</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>653</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="17" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>654</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>655</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>656</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>657</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>658</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>659</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="23" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>660</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>661</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>662</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>663</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>664</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>665</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="29" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>666</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>667</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>668</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="18" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>669</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>670</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>671</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>672</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>673</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>674</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>675</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>676</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>677</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>678</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="22" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>679</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="21" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>680</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="20" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>681</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="19" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>682</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>683</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>684</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>685</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>686</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>687</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>688</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>690</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>691</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>692</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="28" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>693</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="27" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>694</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="26" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>695</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="25" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
       <ID>696</ID>
-      <Name>NeonBlue</Name>
+      <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="24" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\groundi_neonBlue</Texture>
+      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
-      <ID>827</ID>
-      <Name>SquareHazard</Name>
-      <Type>Physics Objects</Type>
-      <Location X="26" Y="16" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\squareHazard</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>828</ID>
-      <Name>SquareHazard</Name>
-      <Type>Physics Objects</Type>
-      <Location X="24" Y="5" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\squareHazard</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>829</ID>
-      <Name>SquareHazard</Name>
-      <Type>Physics Objects</Type>
-      <Location X="14" Y="1" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\squareHazard</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>831</ID>
-      <Name>SquareHazard</Name>
-      <Type>Physics Objects</Type>
-      <Location X="4" Y="13" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\squareHazard</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>874</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>875</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="23" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>876</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>877</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="29" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>878</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="10" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>879</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>880</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="16" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>881</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>882</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="30" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>883</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="27" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>884</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="24" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>885</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="21" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>886</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>887</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="29" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>888</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="28" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>889</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="29" Y="14" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>890</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="27" Y="16" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>891</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="27" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>892</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>893</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>894</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="16" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>895</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>896</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>897</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="27" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>900</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="27" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>901</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="24" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>902</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>903</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>904</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="23" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>905</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="19" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>906</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>907</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="21" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>908</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="21" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>909</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>910</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="19" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>911</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="9" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>912</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="23" Y="9" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>913</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="9" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>914</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="29" Y="9" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>915</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>916</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="28" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>917</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="29" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>918</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="28" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>919</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>920</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>921</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>922</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>923</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="31" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>924</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="28" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>925</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="25" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>926</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>927</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="19" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>928</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="16" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>929</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="13" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>930</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="16" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>931</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="16" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>932</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>933</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>934</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>935</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="20" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>936</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="23" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>937</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>938</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="16" Y="14" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>939</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="16" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>940</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="16" Y="20" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>941</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>942</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="11" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>943</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="8" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>944</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>945</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="2" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>946</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>947</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="16" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>948</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>949</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="10" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>950</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>951</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>952</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>953</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="4" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>954</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="7" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>955</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>956</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>957</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="4" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>958</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>959</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>960</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>961</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="9" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>962</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="12" Y="11" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>963</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>964</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="13" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>965</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>966</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="8" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>967</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="9" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>968</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>969</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="7" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>970</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="8" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>971</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="11" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>972</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="11" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>973</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="13" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>974</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>975</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="14" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>976</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="12" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>977</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="12" Y="16" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>978</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>979</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="8" Y="14" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>980</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>981</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="13" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>982</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="17" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>983</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>985</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>986</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="7" Y="19" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>987</ID>
-      <Name>BasicCollectable</Name>
+      <Name>GreenDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="11" Y="18" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Static Objects\collectable</Texture>
+      <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Square</Shape>
       </Properties>
     </Entity>
     <Entity>
-      <ID>1030</ID>
-      <Name>SquareHazard</Name>
-      <Type>Physics Objects</Type>
-      <Location X="19" Y="21" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Static Objects\squareHazard</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1117</ID>
-      <Name>BasicRailX</Name>
+      <ID>1184</ID>
+      <Name>RailSawX</Name>
       <Type>Physics Objects</Type>
       <Location X="5" Y="18" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>False</Paintable>
-      <Texture>Static Objects\squareHazard</Texture>
+      <Texture>Hazards\RedSaw</Texture>
       <Properties>
-        <Shape>Square</Shape>
+        <Shape>Circle</Shape>
         <Mass>1</Mass>
         <Rail>X</Rail>
         <Length>4</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1251</ID>
+      <Name>CircleRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="4" Y="13" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedCircle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1252</ID>
+      <Name>CircleRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="26" Y="16" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedCircle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1253</ID>
+      <Name>CircleRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="19" Y="21" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedCircle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1254</ID>
+      <Name>CircleRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="24" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedCircle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1255</ID>
+      <Name>CircleRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="14" Y="1" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedCircle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
       </Properties>
     </Entity>
   </Entities>
