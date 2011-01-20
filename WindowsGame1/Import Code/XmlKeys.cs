@@ -56,5 +56,6 @@ namespace GravityShift.Import_Code
         public static string LEVEL_DATA = "LevelData";
         public static string LEVEL_NAME = "name";
         public static string UNLOCKED = "unlocked";
+        public static string APPLES = "apples";
     }
 }

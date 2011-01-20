@@ -3,17 +3,21 @@
   <LevelData>
     <name>Face</name>
     <unlocked>True</unlocked>
+    <apples>0</apples>
   </LevelData>
   <LevelData>
     <name>Retro</name>
     <unlocked>True</unlocked>
+    <apples>0</apples>
   </LevelData>
   <LevelData>
     <name>Rails</name>
     <unlocked>True</unlocked>
+    <apples>0</apples>
   </LevelData>
   <LevelData>
     <name>Chambers</name>
     <unlocked>False</unlocked>
+    <apples>0</apples>
   </LevelData>
 </Levels>

@@ -308,6 +308,7 @@ namespace GravityShift
         private Level mLevel;
         private Texture2D mThumbnail;
         private bool mUnlocked = false;
+        private int mApples;
 
         public Level Level
         { get { return mLevel; } }
@@ -315,6 +316,8 @@ namespace GravityShift
         { get { return mThumbnail; } }
         public bool Unlocked
         { get { return mUnlocked; } }
+        public int Apples
+        { get { return mApples; } }
 
         /// <summary>
         /// 
@@ -326,7 +329,7 @@ namespace GravityShift
         {
             foreach(XElement element in levelInfo.Elements())
             {
-                if (element.Name == "name")
+                if (element.Name == XmlKeys.LEVEL_NAME)
                 {
                     mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml", controls, graphics.Viewport);
                     
@@ -339,8 +342,11 @@ namespace GravityShift
                     filestream.Close();
 #endif
                 }
-                if (element.Name == "unlocked")
+                if (element.Name == XmlKeys.UNLOCKED)
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;
+
+                if (element.Name == XmlKeys.APPLES)
+                    mApples = Convert.ToInt32(element.Value);
             }
         }
 
@@ -356,7 +362,8 @@ namespace GravityShift
 
             XElement xLevel = new XElement(XmlKeys.LEVEL_DATA,
                 new XElement(XmlKeys.LEVEL_NAME, mLevel.Name),
-                new XElement(XmlKeys.UNLOCKED, xUnlock));
+                new XElement(XmlKeys.UNLOCKED, xUnlock),
+                new XElement(XmlKeys.APPLES, Apples.ToString()));
 
             return xLevel;
         }
@@ -367,6 +374,24 @@ namespace GravityShift
         public void Unlock()
         {
             mUnlocked = true;
+        }
+
+
+        /// <summary>
+        /// Submits a new score for this level, if it is higher than previously recorded, record the new high score
+        /// </summary>
+        /// <param name="score">A new score for this level</param>
+        /// <returns>True if a new high score was recorded, false otherwise</returns>
+        public bool SubmitScore(int score)
+        {
+            if (score > mApples)
+            {
+                mApples = score;
+                return true;
+            }
+            else
+                return false;
+
         }
     }
 }
