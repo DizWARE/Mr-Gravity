@@ -68,6 +68,24 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Saves level unlock and scoring information
+        /// </summary>
+        /// 
+        public void Save() 
+        {
+            XElement xLevels = new XElement(XmlKeys.LEVELS);
+            foreach (LevelChoice l in mLevels) 
+            {
+                xLevels.Add(l.Export());
+            }
+            XDocument xDoc = new XDocument();
+            xDoc.Add(xLevels);
+
+            xDoc.Save(LEVEL_LIST);
+
+        }
+
+        /// <summary>
         /// Load the data that is needed to show the Level selection screen
         /// </summary>
         /// <param name="content">Access to the content of the project</param>
@@ -324,6 +342,23 @@ namespace GravityShift
                 if (element.Name == "unlocked")
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;
             }
+        }
+
+        /// <summary>
+        /// Export an XElement of this level choice
+        /// </summary>
+        /// 
+        public XElement Export()
+        {
+            string xUnlock = XmlKeys.FALSE;
+            if (mUnlocked)
+                xUnlock = XmlKeys.TRUE;
+
+            XElement xLevel = new XElement(XmlKeys.LEVEL_DATA,
+                new XElement(XmlKeys.LEVEL_NAME, mLevel.Name),
+                new XElement(XmlKeys.UNLOCKED, xUnlock));
+
+            return xLevel;
         }
 
         /// <summary>

@@ -1,18 +1,19 @@
-<Levels>	
-	<LevelData>
-		<name>Face</name>
-		<unlocked>True</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Retro</name>
-		<unlocked>False</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Rails</name>
-		<unlocked>False</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Chambers</name>
-		<unlocked>False</unlocked>
-	</LevelData>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Levels>
+  <LevelData>
+    <name>Face</name>
+    <unlocked>True</unlocked>
+  </LevelData>
+  <LevelData>
+    <name>Retro</name>
+    <unlocked>True</unlocked>
+  </LevelData>
+  <LevelData>
+    <name>Rails</name>
+    <unlocked>True</unlocked>
+  </LevelData>
+  <LevelData>
+    <name>Chambers</name>
+    <unlocked>False</unlocked>
+  </LevelData>
 </Levels>
