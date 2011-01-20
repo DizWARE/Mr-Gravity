@@ -22,7 +22,7 @@ namespace GravityShift
     /// </summary>
     class LevelSelect
     {
-        public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
+        public static string LEVEL_DIRECTORY = ".\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
 
@@ -61,6 +61,9 @@ namespace GravityShift
         {
             mControls = controlScheme;
             mLevels = new List<LevelChoice>();
+#if XBOX360
+            LEVEL_LIST = LEVEL_LIST.Remove(0, 1);
+#endif
             mLevelInfo = XElement.Load(LEVEL_LIST);
         }
 
@@ -72,7 +75,7 @@ namespace GravityShift
         public void Load(ContentManager content, GraphicsDevice graphics)
         {
             foreach (XElement level in mLevelInfo.Elements())
-                mLevels.Add(new LevelChoice(level,mControls,graphics));
+                mLevels.Add(new LevelChoice(level,mControls, content, graphics));
 
             mContent = content;
             mSelectBox = content.Load<Texture2D>("Images/Menu/LevelSelect/SelectBox");
@@ -301,7 +304,7 @@ namespace GravityShift
         /// <param name="levelInfo"></param>
         /// <param name="controls"></param>
         /// <param name="graphics"></param>
-        public LevelChoice(XElement levelInfo, IControlScheme controls, GraphicsDevice graphics)
+        public LevelChoice(XElement levelInfo, IControlScheme controls, ContentManager content, GraphicsDevice graphics)
         {
             foreach(XElement element in levelInfo.Elements())
             {
@@ -309,10 +312,14 @@ namespace GravityShift
                 {
                     mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml", controls, graphics.Viewport);
                     
+#if XBOX360
+                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.value.ToString()");
+#else
                     FileStream filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + element.Value.ToString() + ".png", FileMode.Open);
 
                     mThumbnail = Texture2D.FromStream(graphics,filestream);
                     filestream.Close();
+#endif
                 }
                 if (element.Name == "unlocked")
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;

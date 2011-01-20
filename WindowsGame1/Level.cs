@@ -140,25 +140,25 @@ namespace GravityShift
             catch (Exception ex)
             { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
 
-            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
-            mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
+            mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
             mDirections = new Texture2D[4];
-            mDirections[3] = content.Load<Texture2D>("Images/HUD/ArrowLeft");
-            mDirections[2] = content.Load<Texture2D>("Images/HUD/ArrowDown");
-            mDirections[1] = content.Load<Texture2D>("Images/HUD/ArrowRight");
-            mDirections[0] = content.Load<Texture2D>("Images/HUD/ArrowUp");
+            mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
+            mDirections[2] = content.Load<Texture2D>("HUD/arrow_down");
+            mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
+            mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
 
-            mRailLeft = content.Load<Texture2D>("Images/NonHazards/Rails/RailLeft");
-            mRailHor = content.Load<Texture2D>("Images/NonHazards/Rails/RailHorizontal");
-            mRailRight = content.Load<Texture2D>("Images/NonHazards/Rails/RailRight");
-            mRailTop = content.Load<Texture2D>("Images/NonHazards/Rails/RailTop");
-            mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
-            mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
+            mRailLeft = content.Load<Texture2D>("Images/rail_left");
+            mRailHor = content.Load<Texture2D>("Images/rail_horizontal");
+            mRailRight = content.Load<Texture2D>("Images/rail_right");
+            mRailTop = content.Load<Texture2D>("Images/rail_top");
+            mRailBottom = content.Load<Texture2D>("Images/rail_bottom");
+            mRailVert = content.Load<Texture2D>("Images/rail_vertical");
 
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
-                mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
+                mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
 
             mNumCollected = 0;
             mNumCollectable = 0;
@@ -182,7 +182,7 @@ namespace GravityShift
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
             mObjects.Add(importer.GetPlayerEnd());
 
-            mObjects.AddRange(importer.GetWalls(this));
+            mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
             mRails = importer.GetRails();
             
@@ -525,7 +525,6 @@ namespace GravityShift
                         //If player collided with a collectable object
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
-                            GameSound.playerCol_collectable.Play(GameSound.volume, 0.0f, 0.0f);
                             mPlayer.mScore += 100;
                             if (physObj.CollisionType == XmlKeys.COLLECTABLE)
                             {
@@ -541,7 +540,6 @@ namespace GravityShift
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
-                            GameSound.playerCol_hazard.Play(GameSound.volume, 0.0f, 0.0f);
                             Respawn();
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();

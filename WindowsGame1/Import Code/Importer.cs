@@ -47,7 +47,7 @@ namespace GravityShift.Import_Code
         /// <returns>A level object</returns>
         public Level ImportLevel(Level level)
         {
-            XElement xLevel = XElement.Load(level.Filepath);
+            XElement xLevel = XElement.Load("Content\\Levels\\" + level.Name + ".xml");
 
             //Gets all the information for a level and places it into the level object
             foreach (XElement item in xLevel.Elements())

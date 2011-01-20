@@ -1,22 +1,6 @@
 <Levels>
 	<LevelData>
-		<name>Cherries</name>
-		<unlocked>True</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Retro</name>
-		<unlocked>False</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Cogs</name>
-		<unlocked>False</unlocked>
-	</LevelData>
-	<LevelData>
 		<name>Rails</name>
 		<unlocked>True</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Chambers</name>
-		<unlocked>False</unlocked>
 	</LevelData>
 </Levels>
