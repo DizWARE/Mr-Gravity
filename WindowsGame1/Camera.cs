@@ -34,7 +34,7 @@ namespace GravityShift
         public Camera(Viewport viewport)
         {
             mPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            mZoom = 1.0f;
+            mZoom = 0.75f;
             mHeight = viewport.Height;
             mWidth = viewport.Width;
         }
