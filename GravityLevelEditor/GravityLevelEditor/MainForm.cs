@@ -42,13 +42,15 @@ namespace GravityLevelEditor
             InitializeComponent();
             mData = new EditorData(new ArrayList(), null, 
                 new Level("New Level", new Point(10, 10), Color.Red,
-                     Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
+                     Image.FromFile("..\\..\\..\\..\\WindowsGame1\\Content\\Images\\Backgrounds\\blank.png")));
 
             this.SetStyle(ControlStyles.DoubleBuffer |
                            ControlStyles.UserPaint |
                           ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.OptimizedDoubleBuffer,
                           true);
+
+            pb_bg.Image = mData.Level.Background;
 
             this.DoubleBuffered = true;
 
