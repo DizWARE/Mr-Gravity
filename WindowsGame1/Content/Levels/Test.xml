@@ -1154,7 +1154,7 @@
       <ID>832</ID>
       <Name>RailY</Name>
       <Type>Physics Objects</Type>
-      <Location X="13" Y="4" />
+      <Location X="13" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Walls\Yellow</Texture>
