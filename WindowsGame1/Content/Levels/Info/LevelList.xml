@@ -1,14 +1,18 @@
-<Levels>
+<Levels>	
 	<LevelData>
-		<name>Rails</name>
-		<unlocked>True</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Chambers</name>
+		<name>Face</name>
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
 		<name>Retro</name>
-		<unlocked>True</unlocked>
+		<unlocked>False</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Rails</name>
+		<unlocked>False</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Chambers</name>
+		<unlocked>False</unlocked>
 	</LevelData>
 </Levels>
