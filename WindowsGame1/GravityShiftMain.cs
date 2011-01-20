@@ -55,11 +55,15 @@ namespace GravityShift
             mGraphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+#if XBOX360
+            mControls = new ControllerControl();
+#else
             if (GamePad.GetState(PlayerIndex.One).IsConnected || GamePad.GetState(PlayerIndex.Two).IsConnected ||
                 GamePad.GetState(PlayerIndex.Three).IsConnected || GamePad.GetState(PlayerIndex.Four).IsConnected)
                 mControls = new ControllerControl();
             else
                 mControls = new KeyboardControl();
+#endif
         }
 
         /// <summary>
