@@ -1,14 +1,10 @@
-<Levels>
+<Levels>	
 	<LevelData>
-		<name>Cherries</name>
+		<name>Face</name>
 		<unlocked>True</unlocked>
 	</LevelData>
 	<LevelData>
 		<name>Retro</name>
-		<unlocked>False</unlocked>
-	</LevelData>
-	<LevelData>
-		<name>Cogs</name>
 		<unlocked>False</unlocked>
 	</LevelData>
 	<LevelData>

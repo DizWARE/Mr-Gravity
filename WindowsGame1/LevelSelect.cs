@@ -61,6 +61,9 @@ namespace GravityShift
         {
             mControls = controlScheme;
             mLevels = new List<LevelChoice>();
+#if XBOX360
+            LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
+#endif
             mLevelInfo = XElement.Load(LEVEL_LIST);
         }
 
@@ -72,26 +75,26 @@ namespace GravityShift
         public void Load(ContentManager content, GraphicsDevice graphics)
         {
             foreach (XElement level in mLevelInfo.Elements())
-                mLevels.Add(new LevelChoice(level,mControls,graphics));
+                mLevels.Add(new LevelChoice(level,mControls, content, graphics));
 
             mContent = content;
-            mSelectBox = content.Load<Texture2D>("menu/selectbox");
-            mKootenay = content.Load<SpriteFont>("fonts/kootenay");
+            mSelectBox = content.Load<Texture2D>("Images/Menu/LevelSelect/SelectBox");
+            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
 
-            mBackground = content.Load<Texture2D>("Images/Backgrounds/Background5Resize");
+            mBackground = content.Load<Texture2D>("Images/Backgrounds/Stars");
 
             /*TODO - REMOVE THIS WHEN REAL ART COMES*/
             mPrevious = new Texture2D[2];
-            mPrevious[0] = content.Load<Texture2D>("Images/LeftArrow");
-            mPrevious[1] = content.Load<Texture2D>("Images/LeftArrowSelect");
+            mPrevious[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/LeftArrow");
+            mPrevious[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/LeftArrowSelect");
 
             mNext = new Texture2D[2];
-            mNext[0] = content.Load<Texture2D>("Images/RightArrow");
-            mNext[1] = content.Load<Texture2D>("Images/RightArrowSelect");
+            mNext[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/RightArrow");
+            mNext[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/RightArrowSelect");
 
             mBack = new Texture2D[2];
-            mBack[0] = content.Load<Texture2D>("Images/Back");
-            mBack[1] = content.Load<Texture2D>("Images/BackSelect");
+            mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
+            mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
 
             mPageCount = mLevels.Count / 12 +1;
 
@@ -148,6 +151,19 @@ namespace GravityShift
         /// </summary>
         private void HandleDirectionKeys()
         {
+            Vector2 max = new Vector2(10, 11);
+
+            int countOnPage = 11;
+            if (mCurrentPage + 1 == mPageCount)
+                countOnPage = (mLevels.Count - 1) % 12;
+
+            int row = countOnPage / 4;
+            int col = countOnPage % 4;
+
+            max.X = max.Y = row * 4 + Math.Min(2,col);
+            if (col == 1) max.Y = ++max.X;
+            if(col >= 2) max.Y++;
+
             if (mControls.isLeftPressed(false))
             {
                 mCurrentIndex = (mCurrentIndex - 1);
@@ -162,17 +178,20 @@ namespace GravityShift
             {
                 if (mCurrentIndex > BACK && mCurrentIndex <= 4) mCurrentIndex = BACK;
                 else if (mCurrentIndex == BACK) mCurrentIndex = NEXT;
-                else if (mCurrentIndex == NEXT) mCurrentIndex = 11;
-                else if (mCurrentIndex == PREVIOUS) mCurrentIndex = 10;
+                else if (mCurrentIndex == NEXT) mCurrentIndex = (int)max.Y;
+                else if (mCurrentIndex == PREVIOUS) mCurrentIndex = (int)max.X;
                 else mCurrentIndex = (mCurrentIndex - 4);
             }
             else if (mControls.isDownPressed(false))
             {
-                if (mCurrentIndex < PREVIOUS && mCurrentIndex > 10) mCurrentIndex = NEXT;
-                else if (mCurrentIndex < 11 && mCurrentIndex > 8) mCurrentIndex = PREVIOUS;
+                if (mCurrentIndex < countOnPage + 2 && mCurrentIndex > max.X) mCurrentIndex = NEXT;
+                else if (mCurrentIndex < max.X + 1 && mCurrentIndex > row * 4) mCurrentIndex = PREVIOUS;
                 else if (mCurrentIndex == BACK) mCurrentIndex = 1;
                 else if (mCurrentIndex == NEXT || mCurrentIndex == PREVIOUS) mCurrentIndex = BACK;
                 else mCurrentIndex = (mCurrentIndex+ 4);
+
+                if (mCurrentIndex > row * 4 + col + 1 && mCurrentIndex < PREVIOUS) mCurrentIndex = row * 4 + col + 1;
+ 
             }
 
             if (mCurrentIndex < 0) mCurrentIndex += 15;  
@@ -285,7 +304,7 @@ namespace GravityShift
         /// <param name="levelInfo"></param>
         /// <param name="controls"></param>
         /// <param name="graphics"></param>
-        public LevelChoice(XElement levelInfo, IControlScheme controls, GraphicsDevice graphics)
+        public LevelChoice(XElement levelInfo, IControlScheme controls, ContentManager content, GraphicsDevice graphics)
         {
             foreach(XElement element in levelInfo.Elements())
             {
@@ -293,10 +312,14 @@ namespace GravityShift
                 {
                     mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml", controls, graphics.Viewport);
                     
+#if XBOX360
+                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.value.ToString()");
+#else
                     FileStream filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + element.Value.ToString() + ".png", FileMode.Open);
 
                     mThumbnail = Texture2D.FromStream(graphics,filestream);
                     filestream.Close();
+#endif
                 }
                 if (element.Name == "unlocked")
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;

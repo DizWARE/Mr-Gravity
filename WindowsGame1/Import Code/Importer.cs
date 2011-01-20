@@ -47,7 +47,14 @@ namespace GravityShift.Import_Code
         /// <returns>A level object</returns>
         public Level ImportLevel(Level level)
         {
-            XElement xLevel = XElement.Load(level.Filepath);
+
+            XElement xLevel;
+#if XBOX360
+            xLevel = XElement.Load("Content\\Levels\\" + level.Name + ".xml");
+#else
+            xLevel = XElement.Load("..\\..\\..\\Content\\Levels\\" + level.Name + ".xml");
+#endif
+            
 
             //Gets all the information for a level and places it into the level object
             foreach (XElement item in xLevel.Elements())
@@ -117,14 +124,9 @@ namespace GravityShift.Import_Code
                 }
                 //If the object is physics, make a physics object
                 if (entity.mType == XmlKeys.PHYSICS_OBJECT)
-                { 
-                    if (entity.mName == "BasicRailX" || entity.mName == "BasicRailY")
-                    {
-                        if (entity.mProperties.ContainsKey("Rail") && entity.mProperties.ContainsKey("Length"))
-                        {
-                            mRails.Add(entity);
-                        }
-                    }
+                {
+                    if (entity.mProperties.ContainsKey("Rail") && entity.mProperties.ContainsKey("Length"))
+                        mRails.Add(entity);
 
                     bool isSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
                     float mass = 1;

@@ -28,13 +28,13 @@ namespace GravityShift
         #endregion
 
         /// <summary>
-        /// Construcs a camera object.
+        /// Constructs a camera object.
         /// </summary>
         /// <param name="viewport">Current viewport for the game</param>
         public Camera(Viewport viewport)
         {
             mPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            mZoom = 1.0f;
+            mZoom = 0.75f;
             mHeight = viewport.Height;
             mWidth = viewport.Width;
         }

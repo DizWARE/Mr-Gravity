@@ -149,16 +149,16 @@ namespace GravityShift
 //            mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
 //            mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
 
-            mRailLeft = content.Load<Texture2D>("Images/rail_left");
-            mRailHor = content.Load<Texture2D>("Images/rail_horizontal");
-            mRailRight = content.Load<Texture2D>("Images/rail_right");
-            mRailTop = content.Load<Texture2D>("Images/rail_top");
-            mRailBottom = content.Load<Texture2D>("Images/rail_bottom");
-            mRailVert = content.Load<Texture2D>("Images/rail_vertical");
+            mRailLeft = content.Load<Texture2D>("Images/NonHazards/Rails/RailLeft");
+            mRailHor = content.Load<Texture2D>("Images/NonHazards/Rails/RailHorizontal");
+            mRailRight = content.Load<Texture2D>("Images/NonHazards/Rails/RailRight");
+            mRailTop = content.Load<Texture2D>("Images/NonHazards/Rails/RailTop");
+            mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
+            mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
-                mLives[i] = content.Load<Texture2D>("HUD/NeonLifeCount" + i);
+                mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
 
             mNumCollected = 0;
             mNumCollectable = 0;
@@ -182,7 +182,7 @@ namespace GravityShift
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
             mObjects.Add(importer.GetPlayerEnd());
 
-            mObjects.AddRange(importer.GetWalls(this));
+            mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
             mRails = importer.GetRails();
             

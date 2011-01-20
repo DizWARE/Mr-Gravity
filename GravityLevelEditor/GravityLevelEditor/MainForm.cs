@@ -40,15 +40,20 @@ namespace GravityLevelEditor
         public MainForm()
         {
             InitializeComponent();
+
+            Image background = Image.FromFile("..\\..\\..\\..\\WindowsGame1\\Content\\Images\\Backgrounds\\blank.png");
+            background.Tag = "Backgrounds\\blank";
             mData = new EditorData(new ArrayList(), null, 
                 new Level("New Level", new Point(10, 10), Color.Red,
-                     Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png")));
+                     background));
 
             this.SetStyle(ControlStyles.DoubleBuffer |
                            ControlStyles.UserPaint |
                           ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.OptimizedDoubleBuffer,
                           true);
+
+            pb_bg.Image = mData.Level.Background;
 
             this.DoubleBuffered = true;
 
@@ -294,8 +299,12 @@ namespace GravityLevelEditor
 
             if (result != DialogResult.Cancel)
             {
+
+                Image background = Image.FromFile("..\\..\\..\\..\\WindowsGame1\\Content\\Images\\Backgrounds\\blank.png");
+                background.Tag = "Backgrounds\\blank";
                 mData.Level = new Level("New Level", new Point(10, 10), Color.Red,
-                         Image.FromFile("..\\..\\..\\..\\GravityLevelEditor\\GravityLevelEditor\\Content\\defaultBG.png"));
+                         background);
+                pb_bg.Image = background;
                 mData.SelectedEntities.Clear();
                 tb_cols.Text = tb_rows.Text = "10";
                 tb_name.Text = "New Level";
