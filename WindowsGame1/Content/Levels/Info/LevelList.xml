@@ -3,4 +3,12 @@
 		<name>Rails</name>
 		<unlocked>True</unlocked>
 	</LevelData>
+	<LevelData>
+		<name>Chambers</name>
+		<unlocked>True</unlocked>
+	</LevelData>
+	<LevelData>
+		<name>Retro</name>
+		<unlocked>True</unlocked>
+	</LevelData>
 </Levels>

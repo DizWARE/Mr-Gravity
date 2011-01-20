@@ -65,54 +65,54 @@
     <Name>Red</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
+    <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Walls\Red</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>GreenHazard</Name>
+    <Name>GreenSquiggle</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\GreenSquare</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>PinkHazard</Name>
+    <Name>PinkSquiggle</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\PinkSquare</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BlueHazard</Name>
+    <Name>BlueSquiggle</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\BlueSquare</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>YellowHazard</Name>
+    <Name>YellowSquiggle</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\YellowSquare</Texture>
     <Properties />
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>RedHazard</Name>
+    <Name>RedSquiggle</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
@@ -128,18 +128,6 @@
     <CollisionType>Collectable</CollisionType>
     <Paintable>True</Paintable>
     <Texture>NonHazards\GreenDiamond</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>RedDiamond</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\RedDiamond</Texture>
     <Properties>
       <Shape>Square</Shape>
     </Properties>
@@ -224,40 +212,10 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>HazardRailX</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Hazards\RedSquare</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
-      <Rail>X</Rail>
-      <Length>3</Length>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>HazardRailY</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Hazards\RedSquare</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-      <Mass>1</Mass>
-      <Rail>Y</Rail>
-      <Length>3</Length>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
     <Name>CircleGreen</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\GreenCircle</Texture>
     <Properties>
@@ -270,7 +228,7 @@
     <Name>CirclePink</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\PinkCircle</Texture>
     <Properties>
@@ -283,7 +241,7 @@
     <Name>CircleBlue</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\BlueCircle</Texture>
     <Properties>
@@ -296,7 +254,7 @@
     <Name>CircleYellow</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\YellowCircle</Texture>
     <Properties>
@@ -322,7 +280,7 @@
     <Name>SawGreen</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\GreenSaw</Texture>
     <Properties>
@@ -335,7 +293,7 @@
     <Name>SawPink</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\PinkSaw</Texture>
     <Properties>
@@ -348,7 +306,7 @@
     <Name>SawBlue</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\BlueSaw</Texture>
     <Properties>
@@ -361,7 +319,7 @@
     <Name>SawYellow</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\YellowSaw</Texture>
     <Properties>
@@ -387,7 +345,7 @@
     <Name>Star</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\Star</Texture>
     <Properties>
