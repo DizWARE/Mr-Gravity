@@ -99,7 +99,7 @@ namespace GravityShift
 
         #region HUD
 
-        private Texture2D[] mDirections;
+//        private Texture2D[] mDirections;
         private Texture2D[] mLives;
         public static int mNumCollected;
         public static int mNumCollectable;
@@ -143,11 +143,11 @@ namespace GravityShift
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
-            mDirections = new Texture2D[4];
-            mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
-            mDirections[2] = content.Load<Texture2D>("HUD/arrow_down");
-            mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
-            mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
+//            mDirections = new Texture2D[4];
+//            mDirections[3] = content.Load<Texture2D>("HUD/arrow_left");
+//            mDirections[2] = content.Load<Texture2D>("HUD/arrow_down");
+//            mDirections[1] = content.Load<Texture2D>("HUD/arrow_right");
+//            mDirections[0] = content.Load<Texture2D>("HUD/arrow_up");
 
             mRailLeft = content.Load<Texture2D>("Images/rail_left");
             mRailHor = content.Load<Texture2D>("Images/rail_horizontal");
@@ -440,14 +440,14 @@ namespace GravityShift
 
             spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 200), Color.DarkTurquoise);
 
-            if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-                spriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-                spriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-                spriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
+//            if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
+//                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
+//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
+//                spriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
+//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
+//                spriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
+//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
+//                spriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
 
             spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 200), Color.White);
 
