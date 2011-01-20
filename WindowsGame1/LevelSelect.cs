@@ -22,7 +22,7 @@ namespace GravityShift
     /// </summary>
     class LevelSelect
     {
-        public static string LEVEL_DIRECTORY = ".\\Content\\Levels\\";
+        public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
 
@@ -62,7 +62,7 @@ namespace GravityShift
             mControls = controlScheme;
             mLevels = new List<LevelChoice>();
 #if XBOX360
-            LEVEL_LIST = LEVEL_LIST.Remove(0, 1);
+            LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
 #endif
             mLevelInfo = XElement.Load(LEVEL_LIST);
         }
