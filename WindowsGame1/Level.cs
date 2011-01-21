@@ -505,7 +505,7 @@ namespace GravityShift
                 {
                     if (gridPos.X + j < 0 || gridPos.X + j >= mCollisionMatrix[(int)gridPos.Y + i].Length) continue;//Bounds check
 
-                    //For each object registered at this spot, check for collisions
+                    
                     foreach (GameObject obj in mCollisionMatrix[(int)gridPos.Y+i][(int)gridPos.X+j])
                     {
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
