@@ -1141,16 +1141,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>830</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="16" Y="7" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>832</ID>
       <Name>RailY</Name>
       <Type>Physics Objects</Type>
@@ -1163,19 +1153,6 @@
         <Mass>1</Mass>
         <Rail>Y</Rail>
         <Length>3</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>908</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="12" Y="8" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
       </Properties>
     </Entity>
     <Entity>
@@ -1223,7 +1200,7 @@
       <ID>1240</ID>
       <Name>RailY</Name>
       <Type>Physics Objects</Type>
-      <Location X="16" Y="6" />
+      <Location X="16" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>Walls\Yellow</Texture>
@@ -1261,7 +1238,27 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1245</ID>
+      <ID>1249</ID>
+      <Name>Green</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Green</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1260</ID>
+      <Name>Green</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Green</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1262</ID>
       <Name>CircleRed</Name>
       <Type>Physics Objects</Type>
       <Location X="12" Y="7" />
@@ -1274,79 +1271,10 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1247</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="10" Y="8" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1249</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="10" Y="6" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1251</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="16" Y="8" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1253</ID>
+      <ID>1263</ID>
       <Name>CircleRed</Name>
       <Type>Physics Objects</Type>
-      <Location X="11" Y="7" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1255</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="11" Y="8" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1257</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="15" Y="7" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1259</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="15" Y="8" />
+      <Location X="12" Y="8" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Hazards\RedCircle</Texture>
