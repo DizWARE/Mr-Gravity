@@ -462,7 +462,6 @@ namespace GravityShift
         /// <param name="player">Player object</param>
         private void Respawn()
         {
-            
             mPlayer.Respawn();
 
             //Only play respawn noise when player is still alive
@@ -513,12 +512,11 @@ namespace GravityShift
 
                         bool collided = physObj.HandleCollisions(obj);
 
-                        //If player reaches the end, respawn him and set the timer to 0
+                        //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
-                            Respawn();
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
-
+                            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
                             gameState = GameStates.Unlock;
                         }
 
@@ -540,6 +538,7 @@ namespace GravityShift
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
+                            gameState = GameStates.Death;
                             Respawn();
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();

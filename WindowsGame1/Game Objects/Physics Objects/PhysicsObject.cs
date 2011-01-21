@@ -42,6 +42,7 @@ namespace GravityShift
         private Vector2 mOriginalPosition;
         private float mHiBound;
         private float mLowBound;
+        private float mAxis;
         
         //All forces applied to this physicsObject
         private Vector2 mGravityForce = new Vector2(0,0);
@@ -91,14 +92,16 @@ namespace GravityShift
                 {
                     mHiBound = GridSpace.GetDrawingCoord(mOriginalPosition).X + (int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64);
                     mLowBound = GridSpace.GetDrawingCoord(mOriginalPosition).X;
+                    mAxis = GridSpace.GetDrawingCoord(mOriginalPosition).Y;
                 }
                 else
                 {
                     mHiBound = GridSpace.GetDrawingCoord(mOriginalPosition).Y + (int.Parse(mOriginalInfo.mProperties[XmlKeys.LENGTH]) * 64);
                     mLowBound = GridSpace.GetDrawingCoord(mOriginalPosition).Y;
+                    mAxis = GridSpace.GetDrawingCoord(mOriginalPosition).X;
                 }
             else
-                mHiBound = mLowBound = 0;
+                mHiBound = mLowBound = mAxis = 0;
 
             UpdateBoundingBoxes();
             mMass = 1;
@@ -185,6 +188,7 @@ namespace GravityShift
                     mPosition.X = mLowBound;
                     mVelocity = Vector2.Zero;
                 }
+                mPosition.Y = mAxis;
             }
             else
             {
@@ -198,6 +202,7 @@ namespace GravityShift
                     mPosition.Y = mLowBound;
                     mVelocity = Vector2.Zero;
                 }
+                mPosition.X = mAxis;
             }
         }
 
@@ -329,7 +334,7 @@ namespace GravityShift
                         // reduce x velocity for friction
                         mVelocity.X *= otherObject.mFriction;
 
-                    // place the Y pos just so it is not colliding. 
+                    // place the Y pos just so it is not colliding.
                     mPosition.Y += colDepth.Y;
                 }
                 else// colliding left or right
@@ -550,6 +555,7 @@ namespace GravityShift
             }
             return 0; // did not collide
         }
+
         /// <summary>
         /// finds how deep they are intersecting (That is what she said!)
         /// </summary>

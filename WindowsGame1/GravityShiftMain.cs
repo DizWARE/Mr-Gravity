@@ -38,6 +38,16 @@ namespace GravityShift
 		
         private GameStates mCurrentState = GameStates.Main_Menu;
 
+        //Max duration of a sequence
+        private static int VICTORY_DURATION = 100;
+        private static int DEATH_DURATION = 50;
+
+        //Duration of a sequence
+        private int mSequence = 0;
+
+        //Boolean toggle variable
+        private bool mToggledSequence = false;
+
         private IControlScheme mControls;
 
         //Current level
@@ -180,7 +190,8 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Unlock)
             {
                 mLevelSelect.UnlockNextLevel();
-                mCurrentState = GameStates.Score;
+                mSequence = VICTORY_DURATION;
+                mCurrentState = GameStates.Victory;
             }
             else if (mCurrentState == GameStates.Next_Level)
             {
@@ -193,6 +204,28 @@ namespace GravityShift
                 }
                 else
                     mCurrentState = GameStates.Level_Selection;
+            }
+            else if (mCurrentState == GameStates.Victory)
+            {
+                mSequence--;
+
+                if (mSequence <= 0)
+                    mCurrentState = GameStates.Score;
+            }
+            else if (mCurrentState == GameStates.Death)
+            {
+                if (!mToggledSequence)
+                {
+                    mSequence = DEATH_DURATION;
+                    mToggledSequence = true;
+                }
+                mSequence--;
+
+                if (mSequence <= 0)
+                {
+                    mCurrentState = GameStates.In_Game;
+                    mToggledSequence = false;
+                }
             }
         }
 
@@ -225,6 +258,17 @@ namespace GravityShift
                 mLevelSelect.Draw(mSpriteBatch, mGraphics);
             else if (mCurrentState == GameStates.Pause)
                 mPause.Draw(mSpriteBatch, mGraphics);
+            else if (mCurrentState == GameStates.Victory)
+            {
+                //TODO - Change this to a victory animation
+                mCurrentLevel.Draw(mSpriteBatch, gameTime);
+            }
+            else if (mCurrentState == GameStates.Death)
+            {
+                //TODO - Change this to a death animation
+                mCurrentLevel.Draw(mSpriteBatch, gameTime);
+                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);
+            }
                 
             base.Draw(gameTime);
         }
