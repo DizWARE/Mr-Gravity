@@ -36,7 +36,9 @@ namespace GravityShift
         private float mRotationRight = (float)(3.0 * Math.PI / 2.0f);
         private float mRotationUp = (float)Math.PI;
         private float mRotationLeft = (float)(Math.PI / 2.0);
-        
+
+        private bool mRumble = false;
+        private double elapsedTime = 0.0;
         /// <summary>
         /// Construcs a player object, that can live in a physical realm
         /// </summary>
@@ -60,6 +62,11 @@ namespace GravityShift
         public override void Update(GameTime gametime)
         {
             base.Update(gametime);
+
+            if (mRumble)
+            {
+                rumble(1.0, gametime);
+            }
 
             //SHIFT: Down
             if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
@@ -125,6 +132,8 @@ namespace GravityShift
         /// </summary>
         public override int Kill()
         {
+            mRumble = true;
+
             // reset player to start position
             this.mPosition = mSpawnPoint;
             // remove a life
@@ -133,6 +142,30 @@ namespace GravityShift
                 mIsAlive = false;
 
             return mNumLives;
+        }
+
+        /// <summary>
+        /// Sets the controller to rumble for the amount of time passed
+        /// </summary>
+        /// <param name="time">The amount of time to rumble</param>
+        /// <param name="gameTime">The current gameTime</param>
+        public void rumble(double time, GameTime gameTime)
+        {
+            double mTime = time;
+
+//            for (int i = 0; i < 4; i++)
+//            {
+//                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+
+                GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
+
+                if ((elapsedTime += gameTime.ElapsedGameTime.TotalSeconds) >= mTime)
+                {
+                    mRumble = false;
+                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+                    elapsedTime = 0.0;
+                }
+//            }
         }
 
         /// <summary>

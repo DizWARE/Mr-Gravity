@@ -31,7 +31,8 @@ namespace GravityShift
         /// <summary>
         /// Gets or sets the name of this level
         /// </summary>
-        public string Name { 
+        public string Name 
+        { 
             get { return mName; } 
             set { mName = value; }
         }
@@ -40,7 +41,8 @@ namespace GravityShift
         /// <summary>
         /// Gets or sets the filepath of this level
         /// </summary>
-        public string Filepath { 
+        public string Filepath 
+        { 
             get { return mFilepath; } 
             set{ 
                 mFilepath = value;
