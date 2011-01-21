@@ -50,5 +50,12 @@ namespace GravityShift.Import_Code
         public static string COLLECTABLE = "Collectable";
         public static string HAZARDOUS = "Hazardous";
         public static string ERROR_TEXTURE = "Images/Error";
+
+        //Level Select Keys
+        public static string LEVELS = "Levels";
+        public static string LEVEL_DATA = "LevelData";
+        public static string LEVEL_NAME = "name";
+        public static string UNLOCKED = "unlocked";
+        public static string APPLES = "apples";
     }
 }

@@ -135,7 +135,11 @@ namespace GravityShift
         {
             // Allows the game to exit
             if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
+            {
+                mLevelSelect.Save();
                 this.Exit();
+
+            }
 
             if (mCurrentState == GameStates.In_Game)
             {
