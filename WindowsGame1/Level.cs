@@ -516,7 +516,7 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
-
+                            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
                             gameState = GameStates.Unlock;
                         }
 

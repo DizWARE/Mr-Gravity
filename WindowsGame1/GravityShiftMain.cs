@@ -267,6 +267,7 @@ namespace GravityShift
             {
                 //TODO - Change this to a death animation
                 mCurrentLevel.Draw(mSpriteBatch, gameTime);
+                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);
             }
                 
             base.Draw(gameTime);
