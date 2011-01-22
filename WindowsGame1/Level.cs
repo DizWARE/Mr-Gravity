@@ -518,6 +518,7 @@ namespace GravityShift
                         //If player reaches the end, respawn him and set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
+                            mPlayer.mCurrentTexture = mPlayer.mPlayerTextures[1];
                             Respawn();
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
 
