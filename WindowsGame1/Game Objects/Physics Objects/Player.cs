@@ -95,7 +95,7 @@ namespace GravityShift
             }
 
             if (Math.Abs(mVelocity.X) >= 20 || Math.Abs(mVelocity.Y) >= 20)
-                mCurrentTexture = mPlayerTextures[10];
+                mCurrentTexture = mPlayerTextures[9];
             else if (!mRumble) 
                 mCurrentTexture = mPlayerTextures[0];
 
