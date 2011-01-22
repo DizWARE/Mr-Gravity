@@ -23,12 +23,6 @@ namespace GravityShift
     public class Level
     {
         /// <summary>
-        /// Gets the background texture of this level
-        /// </summary>
-        public Texture2D Texture { get { return mTexture; } }
-        private Texture2D mTexture;
-
-        /// <summary>
         /// Gets or sets the name of this level
         /// </summary>
         public string Name { 
@@ -61,6 +55,20 @@ namespace GravityShift
         /// </summary>
         public Vector2 StartingPoint { get { return mStartingPoint; } set { mStartingPoint = value; } }
         private Vector2 mStartingPoint;
+
+        //Enumerator for different states of death (playing game, in need of respawn, or panning back to start point)
+        private enum DeathStates
+        {
+            Playing,
+            Respawning,
+            Panning
+        }
+
+        private DeathStates mDeathState = DeathStates.Playing;
+
+        private Vector3 mDeathPanLength;
+        private float mDeathPanUpdates;
+        private static float SCALING_FACTOR = 50;
 
         // Camera
         public static Camera mCam;
@@ -135,11 +143,6 @@ namespace GravityShift
         /// <param name="content">Content Manager to load from</param>
         public void Load(ContentManager content, string assetName)
         {
-            try
-            { mTexture = content.Load<Texture2D>("Images\\" + assetName); }
-            catch (Exception ex)
-            { mTexture = content.Load<Texture2D>("Images\\errorBG"); }
-
             mKootenay = content.Load<SpriteFont>("fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("fonts/QuartzLarge");
 
@@ -263,78 +266,100 @@ namespace GravityShift
         /// <param name="gameState">State of the game.</param>
         public void Update(GameTime gameTime, ref GameStates gameState)
         {
-            TIMER += (gameTime.ElapsedGameTime.TotalSeconds);
-            if ((mPlayer.mIsAlive))// only update while player is alive
+            if (mPlayer.mIsAlive)// only update while player is alive
             {
-                foreach (GameObject gObject in mObjects)
+
+                if (mDeathState == DeathStates.Playing)
                 {
-                    if (gObject is PhysicsObject)
+                    TIMER += (gameTime.ElapsedGameTime.TotalSeconds);
+
+                    foreach (GameObject gObject in mObjects)
                     {
-                        PhysicsObject pObject = (PhysicsObject)gObject;
+                        if (gObject is PhysicsObject)
+                        {
+                            PhysicsObject pObject = (PhysicsObject)gObject;
 
-                        pObject.FixForBounds((int)Size.X, (int)Size.Y);
-                        Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
-                        pObject.Update(gameTime);
-                        // Update zoom based on players velocity                 
-                        pObject.FixForBounds((int)Size.X, (int)Size.Y);
-                        UpdateCollisionMatrix(pObject, oldPos);
+                            pObject.FixForBounds((int)Size.X, (int)Size.Y);
+                            Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
+                            pObject.Update(gameTime);
+                            // Update zoom based on players velocity                 
+                            pObject.FixForBounds((int)Size.X, (int)Size.Y);
+                            UpdateCollisionMatrix(pObject, oldPos);
 
-                        // handle collision right after you move
-                        HandleCollisions(pObject, ref gameState);
-                        if (pObject is Player)
-                            foreach (Trigger trigger in mTrigger)
-                                trigger.RunTrigger(mObjects, (Player)pObject);
+                            // handle collision right after you move
+                            HandleCollisions(pObject, ref gameState);
+                            if (pObject is Player)
+                                foreach (Trigger trigger in mTrigger)
+                                    trigger.RunTrigger(mObjects, (Player)pObject);
 
-                    }
-                }
-
-                //Check to see if we collected anything
-                if (mRemoveCollected.Count > 0)
-                {
-                    mNumCollected = mNumCollectable - (mNumCollectable - mCollected.Count());
-
-                    //Safely remove the collected objects
-                    foreach (GameObject g in mRemoveCollected)
-                    {
-                        RemoveFromMatrix(g);
-                        mObjects.Remove(g);
+                        }
                     }
 
-                    //Then clear the list
-                    mRemoveCollected.Clear();
+                    //Check to see if we collected anything
+                    if (mRemoveCollected.Count > 0)
+                    {
+                        mNumCollected = mNumCollectable - (mNumCollectable - mCollected.Count());
+
+                        //Safely remove the collected objects
+                        foreach (GameObject g in mRemoveCollected)
+                        {
+                            RemoveFromMatrix(g);
+                            mObjects.Remove(g);
+                        }
+
+                        //Then clear the list
+                        mRemoveCollected.Clear();
+                    }
+
+                    // Update the camera to keep the player at the center of the screen
+                    // Also only update if the velocity if greater than 0.5f in either direction
+                    if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
+                    {
+                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                    }
+
+                    /* Gradual Zoom Out */
+                    if (mControls.isLeftShoulderPressed(true)) //&&
+                    {
+                        if (mCam.Zoom > 0.4f)
+                            mCam.Zoom -= 0.003f;
+                        mPrevZoom = mCam.Zoom;
+                    }
+
+                    /* Gradual Zoom In */
+                    else if (mControls.isRightShoulderPressed(true)) //&&
+                    {
+                        if (mCam.Zoom < 1.0f)
+                            mCam.Zoom += 0.003f;
+                        mPrevZoom = mCam.Zoom;
+                    }
+
+                    /* Snap Zoom Out */
+                    else if (mControls.isYPressed(true))
+                        mCam.Zoom = 0.4f;
+
+                    /* Snap Zoom In */
+                    else if (mCam.Zoom == .4f && !mControls.isYPressed(false))
+                        mCam.Zoom = mPrevZoom;
+
+                    //Pause
+                    if (mControls.isStartPressed(false))
+                        gameState = GameStates.Pause;
                 }
 
-                // Update the camera to keep the player at the center of the screen
-                // Also only update if the velocity if greater than 0.5f in either direction
-                if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
+                else if (mDeathState == DeathStates.Respawning)
+                    mDeathState = DeathStates.Panning;
+
+                else//Pan back to player after death
                 {
-                    mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
-                    mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                    mCam.Position += mDeathPanLength;
+                    mCam1.Position += mDeathPanLength;
+                    mDeathPanUpdates++;
+
+                    if (mDeathPanUpdates == SCALING_FACTOR)
+                        mDeathState = DeathStates.Playing;
                 }
-
-                /* Gradual Zoom Out */
-                if (mControls.isLeftShoulderPressed(true)) //&&
-                {
-                    if (mCam.Zoom > 0.4f)
-                        mCam.Zoom -= 0.003f;
-                    mPrevZoom = mCam.Zoom;
-                }
-
-                /* Gradual Zoom In */
-                else if (mControls.isRightShoulderPressed(true)) //&&
-                {
-                    if (mCam.Zoom < 1.0f)
-                        mCam.Zoom += 0.003f;
-                    mPrevZoom = mCam.Zoom;
-                }
-
-                /* Snap Zoom Out */
-                else if (mControls.isYPressed(true))
-                    mCam.Zoom = 0.4f;
-
-                /* Snap Zoom In */
-                else if (mCam.Zoom == .4f && !mControls.isYPressed(false))
-                    mCam.Zoom = mPrevZoom;
             }
 
             if (!mPlayer.mIsAlive)
@@ -343,6 +368,8 @@ namespace GravityShift
                 {
                     mPlayer.mNumLives = 5;
                     mPlayer.mIsAlive = true;
+                    TIMER = 0;
+
 
                     //Add the collected objects back to the object list
                     foreach (GameObject collected in mCollected)
@@ -356,9 +383,6 @@ namespace GravityShift
                     mRemoveCollected.Clear();
                 }
             }
-
-            if (mControls.isStartPressed(false))
-                gameState = GameStates.Pause;
         }
 
         /// <summary>
@@ -375,9 +399,6 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation());
-            //spriteBatch.Begin();
-
-            spriteBatch.Draw(mTexture, new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White);
 
             // Loops through all rail objects and draws the appropriate rail image.
             foreach (EntityInfo rail in mRails)
@@ -412,9 +433,7 @@ namespace GravityShift
             }
 
             foreach (GameObject gObject in mObjects)
-            {
                 gObject.Draw(spriteBatch, gameTime);
-            }
 
             spriteBatch.End();
         }
@@ -451,6 +470,9 @@ namespace GravityShift
 
             spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 200), Color.White);
 
+            if (!mPlayer.mIsAlive)
+                spriteBatch.DrawString(mQuartz, "Out of Lives\nPress A to Restart", new Vector2(mCam1.Position.X + 200, mCam1.Position.Y + 200), Color.DarkTurquoise);
+
             spriteBatch.End();
         }
 
@@ -463,12 +485,12 @@ namespace GravityShift
         private void Respawn()
         {
             mPlayer.Respawn();
-
-            //Only play respawn noise when player is still alive
-            if (mPlayer.mNumLives > 1)
-                GameSound.playerSound_respawn.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
             
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+
+            //Only play respawn noise when player is still alive
+            if (mPlayer.mNumLives > 0)
+                GameSound.playerSound_respawn.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
 
             foreach (GameObject gameObject in mObjects)
                 if(gameObject != mPlayer)
@@ -538,10 +560,19 @@ namespace GravityShift
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
-                            gameState = GameStates.Death;
-                            Respawn();
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
+                            Respawn();
+
+                            //Get difference of two positions
+                            mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0), mCam.Position);
+                            //Divide by scaling factor to get camera pan at each update.
+                            mDeathPanLength = Vector3.Divide(mDeathPanLength, SCALING_FACTOR);
+                            //Set the update counter to zero
+                            mDeathPanUpdates = 0;
+
+                            gameState = GameStates.Death;
+                            mDeathState = DeathStates.Respawning;
                         }
                     }
                 }
