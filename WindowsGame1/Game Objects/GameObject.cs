@@ -69,7 +69,7 @@ namespace GravityShift
         {
             mName = "Images\\" + entity.mTextureFile;
             mFriction = friction;
-            mIsSquare = !entity.mProperties.ContainsKey("Shape") || entity.mProperties["Shape"] == "Square";
+            mIsSquare = entity.mProperties.ContainsKey("Shape") && entity.mProperties["Shape"] == "Square";
             mCollisionType = entity.mCollisionType;
             mOriginalInfo = entity;
 
