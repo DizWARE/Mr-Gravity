@@ -495,6 +495,9 @@ namespace GravityShift
         /// <param name="physObj">object to see if anything is colliding with it</param>
         private void HandleCollisions(PhysicsObject physObj, ref GameStates gameState)
         {
+            // keep track of all object colliding with physObj
+            List<GameObject> collidingList = new List<GameObject>();
+
             Vector2 gridPos = GridSpace.GetGridCoord(physObj.mPosition);
 
             //Goes through the 9 possible positions for collision to see if this physics object is colliding with anything
@@ -508,10 +511,31 @@ namespace GravityShift
                     
                     foreach (GameObject obj in mCollisionMatrix[(int)gridPos.Y+i][(int)gridPos.X+j])
                     {
+                        bool collided = false;
+
+                        if (!physObj.IsSquare && obj.IsSquare) // phys obj is circle
+                        {
+                            collided = physObj.IsCollidingBoxAndBox(obj);
+                        }
+                        else if (physObj.IsSquare && !obj.IsSquare) //obj is circle 
+                        {
+                            collided = physObj.IsCollidingBoxAndBox(obj);
+                        }
+                        else // both circles
+                        {
+                            collided = physObj.IsCollidingCircleandCircle(obj);
+                        }
+
+                        if (collided)
+                        {
+                            collidingList.Add(obj);
+                        }
+
+                        
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
 
-                        bool collided = physObj.HandleCollisions(obj);
+                        //bool collided = physObj.HandleCollisions(obj);
 
                         //If player reaches the end, respawn him and set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
@@ -544,7 +568,9 @@ namespace GravityShift
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
                         }
+                        
                     }
+                    physObj.HandleCollisionList(collidingList);
                 }
             }
         }

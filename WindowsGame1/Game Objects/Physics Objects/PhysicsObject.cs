@@ -252,14 +252,31 @@ namespace GravityShift
 
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
-        /// (only good for 2 boxes) (no circles yet)
-        /// TODO - Add pixel perfect collision
+        /// (only good for 2 boxes)
         /// </summary>
         /// <param name="otherObject">The other object to test against</param>
         /// <returns>True if they are colliding with each other; False otherwise</returns>
         public virtual bool IsCollidingBoxAndBox(GameObject otherObject)
         {
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
+        }
+        /// <summary>
+        /// Returns true if the physics objects are colliding with each other
+        /// Circle = this
+        /// </summary>
+        /// <param name="otherObject">The other object to test against</param>
+        /// <returns>True if they are colliding with each other; False otherwise</returns>
+        public virtual bool IsCollidingCircleAndBox(GameObject otherObject)
+        {   
+            BoundingSphere test1 = new BoundingSphere(
+                new Vector3(BoundingBox.Center.X,BoundingBox.Center.Y,0f),this.BoundingBox.Width/2);
+
+            BoundingBox test2 = new BoundingBox(
+                new Vector3(BoundingBox.X, BoundingBox.Y, 0f),
+                new Vector3(BoundingBox.X + BoundingBox.Width, BoundingBox.Y + BoundingBox.Height, 0f));
+
+            return test1.Intersects(test2);
+            
         }
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
@@ -289,6 +306,87 @@ namespace GravityShift
             else
                 return HandleCollideCircleAndCircle(obj) == 1;
         }
+        /// <summary>
+        /// Allows for only one collision to be done. 
+        /// Whichever object this is colliding with deepest, handle only that collision. 
+        /// </summary>
+        /// <param name="objList">list of objects that this is colliding with</param>
+        /// <returns></returns>
+        public void HandleCollisionList(List<GameObject> objList)
+        {
+            if (objList.Count < 1)
+                return;// short circuit
+
+            if (objList.Count == 1)
+            {
+                HandleCollisions(objList.First());
+                return;
+            }
+
+            float maxCollisionDepth = 0.0f;
+            GameObject maxObject = null;
+
+            foreach(GameObject gameObj in objList)
+            {
+                if (gameObj is StaticObject)
+                {
+                    // 1st Priority
+                    float depth = GetCollitionDepth(gameObj).Length();
+                    if ((depth >= maxCollisionDepth)||
+                        (maxObject == null)||
+                        (maxObject is PhysicsObject))
+                    {
+                        maxCollisionDepth = depth;// new deepest depth
+                        maxObject = gameObj; // new top object
+                    }
+                    
+                }
+                else if (gameObj is PhysicsObject)
+                {
+                    PhysicsObject physObj = (PhysicsObject)gameObj;
+                    if (physObj.IsRail)
+                    {
+                        //2nd Priority
+                        float depth = GetCollitionDepth(physObj).Length();
+                        if (depth >= maxCollisionDepth)
+                        {
+                            if ((maxObject == null) ||
+                                (!(maxObject is StaticObject)))
+                            {
+                                maxCollisionDepth = depth;// new deepest depth
+                                maxObject = physObj; // new top object
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        //3rd priority
+                        float depth = GetCollitionDepth(physObj).Length();
+                        if (depth >= maxCollisionDepth)
+                        {
+                            if (maxObject == null)
+                            {
+                                maxCollisionDepth = depth;// new deepest depth
+                                maxObject = physObj; // new top object
+                            }
+                            else if (maxObject is PhysicsObject)// Not Static
+                            {
+                                PhysicsObject maxPhys = (PhysicsObject)maxObject;
+                                if (!maxPhys.IsRail)
+                                {
+                                    maxCollisionDepth = depth;// new deepest depth
+                                    maxObject = physObj; // new top object
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }//End foreach
+
+            HandleCollisions(maxObject);
+        }
 
         /// <summary>
         /// Handles collision for two boxes (this, and other)
@@ -308,7 +406,8 @@ namespace GravityShift
 
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
-            
+            if (colDepth.Length() > 10f) 
+            { }
 
             // handle the shallowest collision
            
