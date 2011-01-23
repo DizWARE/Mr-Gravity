@@ -13,6 +13,7 @@ namespace GravityShift
         public PlayerEnd(ContentManager content,EntityInfo entity)
             : base(content, .8f, entity)
         {
+                mIsSquare = false;
         }
     }
 }
