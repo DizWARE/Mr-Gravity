@@ -6,6 +6,11 @@
     <apples>0</apples>
   </LevelData>
   <LevelData>
+    <name>DK</name>
+    <unlocked>True</unlocked>
+    <apples>0</apples>
+  </LevelData>
+  <LevelData>
     <name>Retro</name>
     <unlocked>True</unlocked>
     <apples>0</apples>
@@ -17,7 +22,7 @@
   </LevelData>
   <LevelData>
     <name>Chambers</name>
-    <unlocked>False</unlocked>
+    <unlocked>True</unlocked>
     <apples>0</apples>
   </LevelData>
 </Levels>

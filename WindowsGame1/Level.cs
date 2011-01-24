@@ -109,6 +109,7 @@ namespace GravityShift
 
         #region HUD
 
+        private Texture2D mHUDTrans;
 //        private Texture2D[] mDirections;
         private Texture2D[] mLives;
         public static int mNumCollected;
@@ -164,6 +165,8 @@ namespace GravityShift
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
+
+            mHUDTrans = content.Load<Texture2D>("Images/HUD/HUDTrans");
 
             mNumCollected = 0;
             mNumCollectable = 0;
@@ -456,6 +459,9 @@ namespace GravityShift
                                 RasterizerState.CullCounterClockwise,
                                 null,
                                 mCam1.get_transformation());
+
+            // Draw the black background behind HUD
+            spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 400), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
 
             spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.DarkTurquoise);
 

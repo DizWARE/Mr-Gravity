@@ -41,6 +41,7 @@ namespace GravityShift
         #region Art
 
         private Texture2D mPauseTitle;
+        private Texture2D mPausedTrans;
 
         private Texture2D mResumeSel;
         private Texture2D mResumeUnsel;
@@ -63,6 +64,7 @@ namespace GravityShift
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
 
             mPauseTitle = content.Load<Texture2D>("Images/Menu/Pause/Paused");
+            mPausedTrans = content.Load<Texture2D>("Images/Menu/Pause/PausedTrans");
 
             mCurrent = 0;
 
@@ -151,6 +153,9 @@ namespace GravityShift
         public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
         {
             spriteBatch.Begin();
+
+            /* Draw the transparent background */
+            spriteBatch.Draw(mPausedTrans, new Vector2(100.0f, 25.0f), Color.White); 
 
             /* Draw the pause title */
             spriteBatch.Draw(mPauseTitle, new Vector2(180.0f, 50.0f), Color.White);
