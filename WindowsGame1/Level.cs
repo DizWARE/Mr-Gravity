@@ -105,6 +105,9 @@ namespace GravityShift
         SpriteFont mKootenay;
         SpriteFont mQuartz;
 
+        // Particle Engine
+        ParticleEngine particleEngine;
+
         #region HUD
 
         private Texture2D[] mDirections;
@@ -165,6 +168,13 @@ namespace GravityShift
 
             mNumCollected = 0;
             mNumCollectable = 0;
+
+            // Particle Engine
+            List<Texture2D> textures = new List<Texture2D>();
+            textures.Add(content.Load<Texture2D>("Images/Particles/circle"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/star"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
+            particleEngine = new ParticleEngine(textures, new Vector2(400, 240));
         }
 
         /// <summary>
@@ -383,6 +393,43 @@ namespace GravityShift
                     mRemoveCollected.Clear();
                 }
             }
+
+            // Please don't touch, let me know and I will change the engine, Thanks! -Jeremy
+            #region ParticleEngine
+
+            // Update particles. Emission based on velocity (fewer particles if smaller velocity)
+            double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
+            particleEngine.Update(Convert.ToInt32(velocityVector / 2));
+
+            // Change origin of emitter.
+            double displacement;
+            int multiplier = 2;
+            float x;
+            float y;
+
+            //Calculate the x-origin offset
+            displacement = multiplier * mPlayer.mVelocity.X;
+
+            if (displacement < -28)
+                displacement = -28;
+            else if (displacement > 28)
+                displacement = 28;
+
+            x = (mPlayer.mPosition.X + 32) - (float)displacement;
+
+            //Calculate the y-orgin offset
+            displacement = multiplier * mPlayer.mVelocity.Y;
+
+            if (displacement < -28)
+                displacement = -28;
+            else if (displacement > 28)
+                displacement = 28;
+
+            y = (mPlayer.mPosition.Y + 32) - (float)displacement;
+
+            particleEngine.EmitterLocation = new Vector2(x, y);
+
+            #endregion
         }
 
         /// <summary>
@@ -401,6 +448,7 @@ namespace GravityShift
                 mCam.get_transformation());
 
             // Loops through all rail objects and draws the appropriate rail image.
+            #region DrawRails
             foreach (EntityInfo rail in mRails)
             {
                 Vector2 position = new Vector2(rail.mLocation.X * 64, rail.mLocation.Y * 64);
@@ -431,9 +479,12 @@ namespace GravityShift
                     }
                 }
             }
+            #endregion
 
             foreach (GameObject gObject in mObjects)
                 gObject.Draw(spriteBatch, gameTime);
+
+            particleEngine.Draw(spriteBatch);
 
             spriteBatch.End();
         }

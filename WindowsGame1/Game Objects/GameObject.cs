@@ -45,7 +45,7 @@ namespace GravityShift
         protected bool mIsSquare;
         public bool IsSquare { get { return mIsSquare; } }
 
-        protected String mName;
+        public String mName;
 
         /// <summary>
         /// float that acts as a multiplier per frame 
