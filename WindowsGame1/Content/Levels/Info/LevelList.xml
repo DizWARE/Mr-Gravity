@@ -30,4 +30,9 @@
     <unlocked>True</unlocked>
     <apples>0</apples>
   </LevelData>
+  <LevelData>
+    <name>Maze</name>
+    <unlocked>True</unlocked>
+    <apples>0</apples>
+  </LevelData>
 </Levels>

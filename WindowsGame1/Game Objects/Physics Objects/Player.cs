@@ -158,7 +158,7 @@ namespace GravityShift
         {
             //TODO: put rotation back in later
             canvas.Draw(mCurrentTexture, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y), 
-                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, 0.0f, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
         
             //canvas.Draw(mTexture, Vector2.Add(mPosition, new Vector2(mBoundingBox.Width / 2, mBoundingBox.Height / 2)), null, Color.White, mRotation, new Vector2(mBoundingBox.Width / 2, mBoundingBox.Height / 2), 1.0f, SpriteEffects.None, 0);
         }
