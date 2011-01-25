@@ -17,7 +17,7 @@
   </LevelData>
   <LevelData>
     <name>Chambers</name>
-    <unlocked>False</unlocked>
+    <unlocked>True</unlocked>
     <apples>0</apples>
   </LevelData>
 </Levels>
