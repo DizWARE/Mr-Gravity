@@ -171,8 +171,8 @@ namespace GravityShift
             // Random size
             float size = (float)random.NextDouble();
             
-            // Every particle lives for at least 20 updates but as many as 60 (time-to-live)
-            int ttl = 15 + random.Next(20);
+            // Every particle lives for at least 10 updates but as many as 25 (time-to-live)
+            int ttl = 10 + random.Next(15);
 
             return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);
         }
