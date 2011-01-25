@@ -178,9 +178,9 @@ namespace GravityShift
 
             // Particle Engine
             List<Texture2D> textures = new List<Texture2D>();
-            textures.Add(content.Load<Texture2D>("Images/Particles/circle"));
-            textures.Add(content.Load<Texture2D>("Images/Particles/star"));
-            textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
             particleEngine = new ParticleEngine(textures, new Vector2(400, 240));
         }
 

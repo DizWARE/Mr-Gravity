@@ -21,6 +21,11 @@
     <apples>0</apples>
   </LevelData>
   <LevelData>
+    <name>CloseCall</name>
+    <unlocked>True</unlocked>
+    <apples>0</apples>
+  </LevelData>
+  <LevelData>
     <name>Chambers</name>
     <unlocked>True</unlocked>
     <apples>0</apples>
