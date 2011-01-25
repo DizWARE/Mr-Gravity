@@ -13,13 +13,15 @@ namespace GravityShift
         public Vector2 EmitterLocation { get; set; }
         private List<Particle> particles;
         private List<Texture2D> textures;
+        public int colorScheme;
 
-        public ParticleEngine(List<Texture2D> textures, Vector2 location)
+        public ParticleEngine(List<Texture2D> textures, Vector2 location, int scheme)
         {
             EmitterLocation = location;
             this.textures = textures;
             this.particles = new List<Particle>();
             random = new Random();
+            colorScheme = scheme;
         }
 
         // Set variables. This is the guts of the whole system.
@@ -38,10 +40,133 @@ namespace GravityShift
             float angularVelocity = 0.1f * (float)(random.NextDouble() * 2 - 1);
             
             // Random RGB color values
-            Color color = new Color(
-                    (float)random.NextDouble(),
-                    (float)random.NextDouble(),
-                    (float)random.NextDouble());
+            Color color = new Color();
+            //Color color = new Color(
+            //        (float)random.NextDouble(),
+            //        (float)random.NextDouble(),
+            //        (float)random.NextDouble());
+
+            int whichScheme = random.Next(2);
+            int whichColor = random.Next(3);
+            switch (colorScheme)
+            {
+                // Color scheme 1
+                case 0:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(255, 86, 76);
+                            break;
+                        case 1:
+                            color = new Color(76, 36, 33);
+                            break;
+                        case 2:
+                            color = new Color(255, 14, 0);
+                            break;
+                        default:
+                            color = new Color(0, 0, 0);
+                            break;
+                    }
+                    break;
+                
+                // Color scheme 2
+                case 1:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(76, 86, 255);
+                            break;
+                        case 1:
+                            color = new Color(0, 14, 255);
+                            break;
+                        case 2:
+                            color = new Color(33, 36, 76);
+                            break;
+                        default:
+                            color = new Color(0, 0, 0);
+                            break;
+                    }
+                    break;
+
+                // Color scheme 3
+                case 2:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(15, 255, 0);
+                            break;
+                        case 1:
+                            color = new Color(36, 76, 33);
+                            break;
+                        case 2:
+                            color = new Color(87, 255, 76);
+                            break;
+                        default:
+                            color = new Color(0, 0, 0);
+                            break;
+                    }
+                    break;
+
+                // Color scheme 4
+                case 3:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(255, 115, 0);
+                            break;
+                        case 1:
+                            color = new Color(255, 157, 76);
+                            break;
+                        case 2:
+                            color = new Color(76, 53, 33);
+                            break;
+                        default:
+                            color = new Color(0, 0, 0);
+                            break;
+                    }
+                    break;
+
+                // Color scheme 5
+                case 4:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(0, 236, 255);
+                            break;
+                        case 1:
+                            color = new Color(76, 241, 255);
+                            break;
+                        case 2:
+                            color = new Color(33, 73, 76);
+                            break;
+                        default:
+                            color = new Color(0, 0, 0);
+                            break;
+                    }
+                    break;
+
+                // Color scheme 6
+                case 5:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(159, 4, 255);
+                            break;
+                        case 1:
+                            color = new Color(60, 35, 76);
+                            break;
+                        case 2:
+                            color = new Color(188, 81, 255);
+                            break;
+                        default:
+                            color = new Color(0, 0, 0);
+                            break;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
             
             // Random size
             float size = (float)random.NextDouble();
