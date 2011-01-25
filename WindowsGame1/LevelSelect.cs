@@ -338,7 +338,7 @@ namespace GravityShift
 #else
                     FileStream filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + element.Value.ToString() + ".png", FileMode.Open);
 
-                    mThumbnail = Texture2D.FromStream(graphics,filestream);
+                    mThumbnail = Texture2D.FromStream(graphics, filestream);
                     filestream.Close();
 #endif
                 }
