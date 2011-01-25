@@ -660,7 +660,7 @@ namespace GravityShift
         {
             return isPressed(Buttons.X, held);
         }
-
+        
         /// <summary>
         /// Checks to see if the control for Y has been interacted with
         /// Only work when the button has just been pushed
@@ -765,6 +765,7 @@ namespace GravityShift
         {
             return isPressed(Buttons.BigButton, held);
         }
+
 
         /// <summary>
         /// Gets the type of control scheme this is

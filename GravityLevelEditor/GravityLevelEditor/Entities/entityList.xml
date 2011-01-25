@@ -129,7 +129,7 @@
     <Paintable>True</Paintable>
     <Texture>NonHazards\GreenDiamond</Texture>
     <Properties>
-      <Shape>Square</Shape>
+      <Shape>Circle</Shape>
     </Properties>
   </Entity>
   <Entity>
@@ -219,7 +219,7 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>3</Length>
+      <Length>7</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -234,7 +234,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>3</Length>
+      <Length>1</Length>
     </Properties>
   </Entity>
   <Entity>

@@ -24,6 +24,9 @@ namespace GravityShift
         GraphicsDeviceManager mGraphics;
         SpriteBatch mSpriteBatch;
 
+        // Scale - Used to make sure the HUD is drawn based on the screen size
+        public Matrix scale;
+
         //Instance of the Menu class
         Menu mMenu;
 
@@ -84,8 +87,6 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
-            
-
             mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
             mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
@@ -106,6 +107,13 @@ namespace GravityShift
         /// </summary>
         protected override void LoadContent()
         {
+            // current viewport
+            float screenscale =
+                (float)mGraphics.GraphicsDevice.Viewport.Width / 800.0f;
+            // Create the scale transform for Draw. 
+            // Do not scale the sprite depth (Z=1).
+            scale = Matrix.CreateScale(screenscale, screenscale, 1);
+
             mMenu.Load(Content);
             mScoring.Load(Content);
             mPause.Load(Content);
