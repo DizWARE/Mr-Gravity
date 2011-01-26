@@ -178,10 +178,11 @@ namespace GravityShift
 
             // Particle Engine
             List<Texture2D> textures = new List<Texture2D>();
-            textures.Add(content.Load<Texture2D>("Images/Particles/circle"));
-            textures.Add(content.Load<Texture2D>("Images/Particles/star"));
-            textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
-            particleEngine = new ParticleEngine(textures, new Vector2(400, 240));
+            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/square"));
+
+            Random random = new Random();
+            particleEngine = new ParticleEngine(textures, new Vector2(400, 240), random.Next(6));
         }
 
         /// <summary>
@@ -422,7 +423,7 @@ namespace GravityShift
 
             // Update particles. Emission based on velocity (fewer particles if smaller velocity)
             double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
-            particleEngine.Update(Convert.ToInt32(velocityVector / 2));
+            particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
 
             // Change origin of emitter.
             double displacement;
