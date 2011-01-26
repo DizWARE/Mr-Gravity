@@ -269,7 +269,10 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Level_Selection)
                 mLevelSelect.Draw(mSpriteBatch, mGraphics);
             else if (mCurrentState == GameStates.Pause)
+            {
+                mCurrentLevel.Draw(mSpriteBatch, gameTime);
                 mPause.Draw(mSpriteBatch, mGraphics);
+            }
             else if (mCurrentState == GameStates.Victory)
             {
                 //TODO - Change this to a victory animation

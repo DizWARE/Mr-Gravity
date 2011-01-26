@@ -103,7 +103,7 @@ namespace GravityShift
 
         IControlScheme mControls;
 
-        bool mHasRespawned;
+        bool mHasRespawned = true;
 
         /* SpriteFont */
         SpriteFont mKootenay;
@@ -263,6 +263,15 @@ namespace GravityShift
             mCollisionMatrix[(int)oldPosition.Y][(int)oldPosition.X].Remove(obj);
             if(!mCollisionMatrix[(int)newPosition.Y][(int)newPosition.X].Contains(obj))
                 mCollisionMatrix[(int)newPosition.Y][(int)newPosition.X].Add(obj);
+        }
+
+        public void UpdatePlayer(GameTime gameTime)
+        {
+            Vector2 oldPosition = mPlayer.mPosition;
+            mPlayer.Update(gameTime);
+            UpdateCollisionMatrix(mPlayer, GridSpace.GetGridCoord(oldPosition));
+            GameStates fake = GameStates.In_Game;
+            this.HandleCollisions(mPlayer, ref fake);
         }
 
         /// <summary>
@@ -497,7 +506,7 @@ namespace GravityShift
 
             particleEngine.Draw(spriteBatch);
             foreach (GameObject gObject in mObjects)
-                gObject.Draw(spriteBatch, gameTime);            
+                    gObject.Draw(spriteBatch, gameTime);
 
             spriteBatch.End();
         }
@@ -617,14 +626,16 @@ namespace GravityShift
                             collided = physObj.IsCollidingCircleandCircle(obj);
                         }
 
-                        if (collided)
+                        if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
+                            continue;
+
+                        if (collided && !(obj is PlayerEnd) )
                         {
                             collidingList.Add(obj);
                         }
 
                         
-                        if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
-                            continue;
+                        
 
                         //bool collided = physObj.HandleCollisions(obj);
 
@@ -632,7 +643,6 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             mPlayer.mCurrentTexture = mPlayer.mPlayerTextures[1];
-                            Respawn();
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
