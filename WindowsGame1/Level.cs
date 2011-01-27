@@ -505,7 +505,8 @@ namespace GravityShift
             }
             #endregion
 
-            particleEngine.Draw(spriteBatch);
+            if(mDeathState == DeathStates.Playing) 
+                particleEngine.Draw(spriteBatch);
             foreach (GameObject gObject in mObjects)
                     gObject.Draw(spriteBatch, gameTime);
 

@@ -336,8 +336,15 @@ namespace GravityShift
 #if XBOX360
                     mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.value.ToString()");
 #else
-                    FileStream filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + element.Value.ToString() + ".png", FileMode.Open);
-
+                    FileStream filestream;
+                    try
+                    {
+                        filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + element.Value.ToString() + ".png", FileMode.Open);                       
+                    }
+                    catch (IOException e)
+                    {
+                        filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + "..\\..\\..\\Content\\Images\\Error.png", FileMode.Open);
+                    }
                     mThumbnail = Texture2D.FromStream(graphics, filestream);
                     filestream.Close();
 #endif

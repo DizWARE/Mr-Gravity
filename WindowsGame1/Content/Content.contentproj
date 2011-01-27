@@ -872,8 +872,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Images\Particles\square.png">
       <Name>square</Name>
       <Importer>TextureImporter</Importer>
