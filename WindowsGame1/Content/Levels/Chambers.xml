@@ -12,7 +12,7 @@
       <Location X="1" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -22,7 +22,7 @@
       <Location X="0" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -32,7 +32,7 @@
       <Location X="2" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -42,7 +42,7 @@
       <Location X="3" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -52,7 +52,7 @@
       <Location X="4" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -62,7 +62,7 @@
       <Location X="5" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -72,7 +72,7 @@
       <Location X="6" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -82,7 +82,7 @@
       <Location X="7" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -92,7 +92,7 @@
       <Location X="8" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -102,7 +102,7 @@
       <Location X="9" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -112,7 +112,7 @@
       <Location X="10" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -122,7 +122,7 @@
       <Location X="11" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -132,7 +132,7 @@
       <Location X="12" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -142,7 +142,7 @@
       <Location X="13" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -152,7 +152,7 @@
       <Location X="14" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -162,7 +162,7 @@
       <Location X="15" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -172,7 +172,7 @@
       <Location X="16" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -182,7 +182,7 @@
       <Location X="17" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -192,7 +192,7 @@
       <Location X="18" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -202,7 +202,7 @@
       <Location X="19" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -212,7 +212,7 @@
       <Location X="20" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -222,7 +222,7 @@
       <Location X="21" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -232,7 +232,7 @@
       <Location X="22" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -242,7 +242,7 @@
       <Location X="23" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -252,7 +252,7 @@
       <Location X="24" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -262,7 +262,7 @@
       <Location X="25" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -272,7 +272,7 @@
       <Location X="26" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -282,7 +282,7 @@
       <Location X="27" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -292,7 +292,7 @@
       <Location X="28" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -302,7 +302,7 @@
       <Location X="29" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -312,7 +312,7 @@
       <Location X="30" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -322,7 +322,7 @@
       <Location X="31" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -332,7 +332,7 @@
       <Location X="32" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -342,7 +342,7 @@
       <Location X="32" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -352,7 +352,7 @@
       <Location X="32" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -362,7 +362,7 @@
       <Location X="32" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -372,7 +372,7 @@
       <Location X="32" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -382,7 +382,7 @@
       <Location X="32" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -392,7 +392,7 @@
       <Location X="32" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -402,7 +402,7 @@
       <Location X="32" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -412,7 +412,7 @@
       <Location X="32" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -422,7 +422,7 @@
       <Location X="32" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -432,7 +432,7 @@
       <Location X="32" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -442,7 +442,7 @@
       <Location X="32" Y="11" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -452,7 +452,7 @@
       <Location X="32" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -462,7 +462,7 @@
       <Location X="32" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -472,7 +472,7 @@
       <Location X="32" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -482,7 +482,7 @@
       <Location X="32" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -492,7 +492,7 @@
       <Location X="32" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -502,7 +502,7 @@
       <Location X="32" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -512,7 +512,7 @@
       <Location X="32" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -522,7 +522,7 @@
       <Location X="32" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -532,7 +532,7 @@
       <Location X="32" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -542,7 +542,7 @@
       <Location X="32" Y="21" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -552,7 +552,7 @@
       <Location X="32" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -562,7 +562,7 @@
       <Location X="31" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -572,7 +572,7 @@
       <Location X="30" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -582,7 +582,7 @@
       <Location X="29" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -592,7 +592,7 @@
       <Location X="28" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -602,7 +602,7 @@
       <Location X="27" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -612,7 +612,7 @@
       <Location X="26" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -622,7 +622,7 @@
       <Location X="25" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -632,7 +632,7 @@
       <Location X="24" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -642,7 +642,7 @@
       <Location X="23" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -652,7 +652,7 @@
       <Location X="22" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -662,7 +662,7 @@
       <Location X="21" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -672,7 +672,7 @@
       <Location X="20" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -682,7 +682,7 @@
       <Location X="19" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -692,7 +692,7 @@
       <Location X="18" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -702,7 +702,7 @@
       <Location X="17" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -712,7 +712,7 @@
       <Location X="16" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -722,7 +722,7 @@
       <Location X="15" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -732,7 +732,7 @@
       <Location X="14" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -742,7 +742,7 @@
       <Location X="13" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -752,7 +752,7 @@
       <Location X="12" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -762,7 +762,7 @@
       <Location X="11" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -772,7 +772,7 @@
       <Location X="10" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -782,7 +782,7 @@
       <Location X="9" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -792,7 +792,7 @@
       <Location X="8" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -802,7 +802,7 @@
       <Location X="7" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -812,7 +812,7 @@
       <Location X="6" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -822,7 +822,7 @@
       <Location X="5" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -832,7 +832,7 @@
       <Location X="4" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -842,7 +842,7 @@
       <Location X="3" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -852,7 +852,7 @@
       <Location X="2" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -862,7 +862,7 @@
       <Location X="1" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -872,7 +872,7 @@
       <Location X="0" Y="22" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -882,7 +882,7 @@
       <Location X="0" Y="21" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -892,7 +892,7 @@
       <Location X="0" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -902,7 +902,7 @@
       <Location X="0" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -912,7 +912,7 @@
       <Location X="0" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -922,7 +922,7 @@
       <Location X="0" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -932,7 +932,7 @@
       <Location X="0" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -942,7 +942,7 @@
       <Location X="0" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -952,7 +952,7 @@
       <Location X="0" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -962,7 +962,7 @@
       <Location X="0" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -972,7 +972,7 @@
       <Location X="0" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -982,7 +982,7 @@
       <Location X="0" Y="11" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -992,7 +992,7 @@
       <Location X="0" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1002,7 +1002,7 @@
       <Location X="0" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1012,7 +1012,7 @@
       <Location X="0" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1022,7 +1022,7 @@
       <Location X="0" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1032,7 +1032,7 @@
       <Location X="0" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1042,7 +1042,7 @@
       <Location X="0" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1052,7 +1052,7 @@
       <Location X="0" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1062,7 +1062,7 @@
       <Location X="0" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1072,7 +1072,7 @@
       <Location X="0" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1082,7 +1082,7 @@
       <Location X="0" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1092,7 +1092,7 @@
       <Location X="2" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1102,7 +1102,7 @@
       <Location X="2" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1112,7 +1112,7 @@
       <Location X="2" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1122,7 +1122,7 @@
       <Location X="2" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1142,7 +1142,7 @@
       <Location X="15" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1152,7 +1152,7 @@
       <Location X="15" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1162,7 +1162,7 @@
       <Location X="15" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1172,7 +1172,7 @@
       <Location X="15" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1182,7 +1182,7 @@
       <Location X="15" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1192,7 +1192,7 @@
       <Location X="15" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1202,7 +1202,7 @@
       <Location X="15" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1212,7 +1212,7 @@
       <Location X="15" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1222,7 +1222,7 @@
       <Location X="15" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1232,7 +1232,7 @@
       <Location X="14" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1242,7 +1242,7 @@
       <Location X="12" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1252,7 +1252,7 @@
       <Location X="11" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1262,7 +1262,7 @@
       <Location X="10" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1272,7 +1272,7 @@
       <Location X="9" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1282,7 +1282,7 @@
       <Location X="8" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1292,7 +1292,7 @@
       <Location X="7" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1302,7 +1302,7 @@
       <Location X="6" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1312,7 +1312,7 @@
       <Location X="5" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1322,7 +1322,7 @@
       <Location X="4" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1332,7 +1332,7 @@
       <Location X="3" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1342,7 +1342,7 @@
       <Location X="6" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1352,7 +1352,7 @@
       <Location X="14" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1362,7 +1362,7 @@
       <Location X="13" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1372,7 +1372,7 @@
       <Location X="12" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1382,7 +1382,7 @@
       <Location X="11" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1392,7 +1392,7 @@
       <Location X="10" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1402,7 +1402,7 @@
       <Location X="9" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1412,7 +1412,7 @@
       <Location X="8" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1422,7 +1422,7 @@
       <Location X="7" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1432,7 +1432,7 @@
       <Location X="6" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1442,7 +1442,7 @@
       <Location X="5" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1452,7 +1452,7 @@
       <Location X="4" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1462,7 +1462,7 @@
       <Location X="3" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1472,7 +1472,7 @@
       <Location X="2" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1482,7 +1482,7 @@
       <Location X="2" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1492,7 +1492,7 @@
       <Location X="2" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1502,7 +1502,7 @@
       <Location X="2" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1512,7 +1512,7 @@
       <Location X="2" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1522,7 +1522,7 @@
       <Location X="4" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1532,7 +1532,7 @@
       <Location X="4" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1542,7 +1542,7 @@
       <Location X="4" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1552,7 +1552,7 @@
       <Location X="4" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1562,7 +1562,7 @@
       <Location X="4" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1572,7 +1572,7 @@
       <Location X="3" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1582,7 +1582,7 @@
       <Location X="12" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1592,7 +1592,7 @@
       <Location X="11" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1602,7 +1602,7 @@
       <Location X="10" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1612,7 +1612,7 @@
       <Location X="9" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1622,7 +1622,7 @@
       <Location X="8" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1632,7 +1632,7 @@
       <Location X="12" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1642,7 +1642,7 @@
       <Location X="13" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1652,7 +1652,7 @@
       <Location X="13" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1662,7 +1662,7 @@
       <Location X="13" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1672,7 +1672,7 @@
       <Location X="13" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1682,7 +1682,7 @@
       <Location X="13" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1692,7 +1692,7 @@
       <Location X="12" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1702,7 +1702,7 @@
       <Location X="11" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1712,7 +1712,7 @@
       <Location X="10" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1722,7 +1722,7 @@
       <Location X="9" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1732,7 +1732,7 @@
       <Location X="11" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1742,7 +1742,7 @@
       <Location X="10" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1752,7 +1752,7 @@
       <Location X="9" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1762,7 +1762,7 @@
       <Location X="8" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1772,7 +1772,7 @@
       <Location X="11" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1782,7 +1782,7 @@
       <Location X="11" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1792,7 +1792,7 @@
       <Location X="6" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1802,7 +1802,7 @@
       <Location X="6" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1812,7 +1812,7 @@
       <Location X="7" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1822,7 +1822,7 @@
       <Location X="8" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1832,7 +1832,7 @@
       <Location X="9" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1842,7 +1842,7 @@
       <Location X="7" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1852,7 +1852,7 @@
       <Location X="6" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1862,7 +1862,7 @@
       <Location X="6" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1872,7 +1872,7 @@
       <Location X="9" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1882,7 +1882,7 @@
       <Location X="2" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1892,7 +1892,7 @@
       <Location X="2" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1902,7 +1902,7 @@
       <Location X="2" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1912,7 +1912,7 @@
       <Location X="2" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1922,7 +1922,7 @@
       <Location X="2" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1932,7 +1932,7 @@
       <Location X="2" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1942,7 +1942,7 @@
       <Location X="2" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1952,7 +1952,7 @@
       <Location X="2" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1962,7 +1962,7 @@
       <Location X="2" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1972,7 +1972,7 @@
       <Location X="3" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1982,7 +1982,7 @@
       <Location X="3" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -1992,7 +1992,7 @@
       <Location X="5" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2002,7 +2002,7 @@
       <Location X="5" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2012,7 +2012,7 @@
       <Location X="5" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2022,7 +2022,7 @@
       <Location X="5" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2032,7 +2032,7 @@
       <Location X="5" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2042,7 +2042,7 @@
       <Location X="5" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2052,7 +2052,7 @@
       <Location X="5" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2062,7 +2062,7 @@
       <Location X="5" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2072,7 +2072,7 @@
       <Location X="5" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2082,7 +2082,7 @@
       <Location X="4" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2092,7 +2092,7 @@
       <Location X="3" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2102,7 +2102,7 @@
       <Location X="4" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2112,7 +2112,7 @@
       <Location X="4" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2122,7 +2122,7 @@
       <Location X="15" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2132,7 +2132,7 @@
       <Location X="14" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2142,7 +2142,7 @@
       <Location X="13" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2152,7 +2152,7 @@
       <Location X="14" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2162,7 +2162,7 @@
       <Location X="15" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2172,7 +2172,7 @@
       <Location X="15" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2182,7 +2182,7 @@
       <Location X="15" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2192,7 +2192,7 @@
       <Location X="15" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2202,7 +2202,7 @@
       <Location X="15" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2212,7 +2212,7 @@
       <Location X="15" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2222,7 +2222,7 @@
       <Location X="15" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2232,7 +2232,7 @@
       <Location X="15" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2242,7 +2242,7 @@
       <Location X="12" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2252,7 +2252,7 @@
       <Location X="12" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2262,7 +2262,7 @@
       <Location X="12" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2272,7 +2272,7 @@
       <Location X="13" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2282,7 +2282,7 @@
       <Location X="14" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2292,7 +2292,7 @@
       <Location X="13" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2302,7 +2302,7 @@
       <Location X="12" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2312,7 +2312,7 @@
       <Location X="12" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2322,7 +2322,7 @@
       <Location X="12" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2332,7 +2332,7 @@
       <Location X="12" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2342,7 +2342,7 @@
       <Location X="10" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2352,7 +2352,7 @@
       <Location X="9" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2362,7 +2362,7 @@
       <Location X="8" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2372,7 +2372,7 @@
       <Location X="7" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2382,7 +2382,7 @@
       <Location X="6" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2392,7 +2392,7 @@
       <Location X="10" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2402,7 +2402,7 @@
       <Location X="9" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2412,7 +2412,7 @@
       <Location X="8" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2422,7 +2422,7 @@
       <Location X="7" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2432,7 +2432,7 @@
       <Location X="6" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2442,7 +2442,7 @@
       <Location X="11" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2452,7 +2452,7 @@
       <Location X="11" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2462,7 +2462,7 @@
       <Location X="10" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2472,7 +2472,7 @@
       <Location X="9" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2482,7 +2482,7 @@
       <Location X="8" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2492,7 +2492,7 @@
       <Location X="7" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2502,7 +2502,7 @@
       <Location X="6" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2512,7 +2512,7 @@
       <Location X="6" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2522,7 +2522,7 @@
       <Location X="7" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2532,7 +2532,7 @@
       <Location X="8" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2542,7 +2542,7 @@
       <Location X="9" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2552,7 +2552,7 @@
       <Location X="10" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2562,7 +2562,7 @@
       <Location X="10" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2572,7 +2572,7 @@
       <Location X="10" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2582,7 +2582,7 @@
       <Location X="10" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2592,7 +2592,7 @@
       <Location X="10" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2602,7 +2602,7 @@
       <Location X="9" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2612,7 +2612,7 @@
       <Location X="8" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2622,7 +2622,7 @@
       <Location X="7" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2632,7 +2632,7 @@
       <Location X="7" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2642,7 +2642,7 @@
       <Location X="7" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2652,7 +2652,7 @@
       <Location X="8" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2672,7 +2672,7 @@
       <Location X="17" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2682,7 +2682,7 @@
       <Location X="17" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2692,7 +2692,7 @@
       <Location X="17" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2702,7 +2702,7 @@
       <Location X="17" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2712,7 +2712,7 @@
       <Location X="18" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2722,7 +2722,7 @@
       <Location X="17" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2732,7 +2732,7 @@
       <Location X="17" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2742,7 +2742,7 @@
       <Location X="17" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2752,7 +2752,7 @@
       <Location X="17" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2762,7 +2762,7 @@
       <Location X="30" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2772,7 +2772,7 @@
       <Location X="29" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2782,7 +2782,7 @@
       <Location X="28" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2792,7 +2792,7 @@
       <Location X="27" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2802,7 +2802,7 @@
       <Location X="26" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2812,7 +2812,7 @@
       <Location X="24" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2822,7 +2822,7 @@
       <Location X="23" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2832,7 +2832,7 @@
       <Location X="22" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2842,7 +2842,7 @@
       <Location X="21" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2852,7 +2852,7 @@
       <Location X="20" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2862,7 +2862,7 @@
       <Location X="19" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2872,7 +2872,7 @@
       <Location X="18" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2882,7 +2882,7 @@
       <Location X="30" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2892,7 +2892,7 @@
       <Location X="30" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2902,7 +2902,7 @@
       <Location X="30" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2912,7 +2912,7 @@
       <Location X="30" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2922,7 +2922,7 @@
       <Location X="29" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2932,7 +2932,7 @@
       <Location X="30" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2942,7 +2942,7 @@
       <Location X="30" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2952,7 +2952,7 @@
       <Location X="30" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2962,7 +2962,7 @@
       <Location X="20" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2972,7 +2972,7 @@
       <Location X="21" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2982,7 +2982,7 @@
       <Location X="22" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -2992,7 +2992,7 @@
       <Location X="23" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3002,7 +3002,7 @@
       <Location X="24" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3012,7 +3012,7 @@
       <Location X="25" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3022,7 +3022,7 @@
       <Location X="26" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3032,7 +3032,7 @@
       <Location X="27" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3042,7 +3042,7 @@
       <Location X="28" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3052,7 +3052,7 @@
       <Location X="29" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3062,7 +3062,7 @@
       <Location X="28" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3072,7 +3072,7 @@
       <Location X="27" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3082,7 +3082,7 @@
       <Location X="26" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3092,7 +3092,7 @@
       <Location X="25" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3102,7 +3102,7 @@
       <Location X="24" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3112,7 +3112,7 @@
       <Location X="27" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3122,7 +3122,7 @@
       <Location X="27" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3132,7 +3132,7 @@
       <Location X="27" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3142,7 +3142,7 @@
       <Location X="27" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3152,7 +3152,7 @@
       <Location X="28" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3162,7 +3162,7 @@
       <Location X="26" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3172,7 +3172,7 @@
       <Location X="25" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3182,7 +3182,7 @@
       <Location X="24" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3192,7 +3192,7 @@
       <Location X="23" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3202,7 +3202,7 @@
       <Location X="22" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3212,7 +3212,7 @@
       <Location X="21" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3222,7 +3222,7 @@
       <Location X="24" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3232,7 +3232,7 @@
       <Location X="23" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3242,7 +3242,7 @@
       <Location X="22" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3252,7 +3252,7 @@
       <Location X="21" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3262,7 +3262,7 @@
       <Location X="21" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3272,7 +3272,7 @@
       <Location X="19" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3282,7 +3282,7 @@
       <Location X="19" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3292,7 +3292,7 @@
       <Location X="19" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3302,7 +3302,7 @@
       <Location X="19" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3312,7 +3312,7 @@
       <Location X="19" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3322,7 +3322,7 @@
       <Location X="20" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3332,7 +3332,7 @@
       <Location X="21" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3342,7 +3342,7 @@
       <Location X="22" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3352,7 +3352,7 @@
       <Location X="17" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3362,7 +3362,7 @@
       <Location X="18" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3372,7 +3372,7 @@
       <Location X="19" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3382,7 +3382,7 @@
       <Location X="20" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3392,7 +3392,7 @@
       <Location X="21" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3402,7 +3402,7 @@
       <Location X="22" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3412,7 +3412,7 @@
       <Location X="23" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3422,7 +3422,7 @@
       <Location X="24" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3432,7 +3432,7 @@
       <Location X="25" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3442,7 +3442,7 @@
       <Location X="26" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3452,7 +3452,7 @@
       <Location X="27" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3462,7 +3462,7 @@
       <Location X="28" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3472,7 +3472,7 @@
       <Location X="29" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3482,7 +3482,7 @@
       <Location X="30" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3492,7 +3492,7 @@
       <Location X="30" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3502,7 +3502,7 @@
       <Location X="30" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3512,7 +3512,7 @@
       <Location X="30" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3522,7 +3522,7 @@
       <Location X="30" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3532,7 +3532,7 @@
       <Location X="30" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3542,7 +3542,7 @@
       <Location X="30" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3552,7 +3552,7 @@
       <Location X="30" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3562,7 +3562,7 @@
       <Location X="30" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3572,7 +3572,7 @@
       <Location X="17" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3582,7 +3582,7 @@
       <Location X="17" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3592,7 +3592,7 @@
       <Location X="17" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3602,7 +3602,7 @@
       <Location X="17" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3612,7 +3612,7 @@
       <Location X="17" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3622,7 +3622,7 @@
       <Location X="17" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3632,7 +3632,7 @@
       <Location X="17" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3642,7 +3642,7 @@
       <Location X="18" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3652,7 +3652,7 @@
       <Location X="19" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3662,7 +3662,7 @@
       <Location X="20" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3672,7 +3672,7 @@
       <Location X="21" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3682,7 +3682,7 @@
       <Location X="22" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3692,7 +3692,7 @@
       <Location X="23" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3702,7 +3702,7 @@
       <Location X="24" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3712,7 +3712,7 @@
       <Location X="25" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3722,7 +3722,7 @@
       <Location X="26" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3732,7 +3732,7 @@
       <Location X="27" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3742,7 +3742,7 @@
       <Location X="28" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3752,7 +3752,7 @@
       <Location X="29" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3762,7 +3762,7 @@
       <Location X="18" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3772,7 +3772,7 @@
       <Location X="18" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3782,7 +3782,7 @@
       <Location X="18" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3792,7 +3792,7 @@
       <Location X="19" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3802,7 +3802,7 @@
       <Location X="20" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3812,7 +3812,7 @@
       <Location X="21" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3822,7 +3822,7 @@
       <Location X="22" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3832,7 +3832,7 @@
       <Location X="20" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3842,7 +3842,7 @@
       <Location X="20" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3852,7 +3852,7 @@
       <Location X="22" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3862,7 +3862,7 @@
       <Location X="22" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3872,7 +3872,7 @@
       <Location X="22" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3882,7 +3882,7 @@
       <Location X="22" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3892,7 +3892,7 @@
       <Location X="21" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3902,7 +3902,7 @@
       <Location X="20" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3912,7 +3912,7 @@
       <Location X="19" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3922,7 +3922,7 @@
       <Location X="24" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3932,7 +3932,7 @@
       <Location X="24" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3942,7 +3942,7 @@
       <Location X="24" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3952,7 +3952,7 @@
       <Location X="25" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3962,7 +3962,7 @@
       <Location X="26" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3972,7 +3972,7 @@
       <Location X="27" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3982,7 +3982,7 @@
       <Location X="28" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -3992,7 +3992,7 @@
       <Location X="28" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -4002,7 +4002,7 @@
       <Location X="28" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -4012,7 +4012,7 @@
       <Location X="28" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -4022,7 +4022,7 @@
       <Location X="27" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -4032,7 +4032,7 @@
       <Location X="26" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -4042,7 +4042,7 @@
       <Location X="25" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -4052,7 +4052,7 @@
       <Location X="24" Y="14" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
+      <Texture>Walls\Yellow</Texture>
       <Properties />
     </Entity>
     <Entity>

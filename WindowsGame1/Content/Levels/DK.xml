@@ -836,16 +836,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>150</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="19" Y="16" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>151</ID>
       <Name>Green</Name>
       <Type>Walls</Type>
@@ -1676,16 +1666,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>236</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="19" Y="23" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>237</ID>
       <Name>Green</Name>
       <Type>Walls</Type>
@@ -1970,16 +1950,6 @@
       <Name>Green</Name>
       <Type>Walls</Type>
       <Location X="18" Y="17" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Green</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>266</ID>
-      <Name>Green</Name>
-      <Type>Walls</Type>
-      <Location X="19" Y="15" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Green</Texture>
@@ -3459,6 +3429,16 @@
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
+    </Entity>
+    <Entity>
+      <ID>1736</ID>
+      <Name>Green</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Green</Texture>
+      <Properties />
     </Entity>
   </Entities>
 </Level>

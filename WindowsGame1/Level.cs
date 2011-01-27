@@ -533,10 +533,11 @@ namespace GravityShift
             // Draw the black background behind HUD
             spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 500), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
 
-            spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
-
-            spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
-
+            if (mPlayer.mIsAlive)
+            {
+                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
+            }
 //            if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
 //                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
 //            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
@@ -549,7 +550,7 @@ namespace GravityShift
             spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 300), Color.White);
 
             if (!mPlayer.mIsAlive)
-                spriteBatch.DrawString(mQuartz, "Out of Lives\nPress A to Restart", new Vector2(mCam1.Position.X + 200, mCam1.Position.Y + 200), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
 
             spriteBatch.End();
         }
