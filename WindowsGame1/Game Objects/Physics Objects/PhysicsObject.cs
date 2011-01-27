@@ -331,20 +331,24 @@ namespace GravityShift
             float maxCollisionDepth = 0.0f;
             GameObject maxObject = null;
 
-            foreach(GameObject gameObj in objList)
+            foreach (GameObject gameObj in objList)
             {
+                if (gameObj.CollisionType == XmlKeys.COLLECTABLE)
+                    continue;
+
                 if (gameObj is StaticObject)
                 {
                     // 1st Priority
-                    float depth = GetCollitionDepth(gameObj).Length();
-                    if ((depth >= maxCollisionDepth)||
-                        (maxObject == null)||
+                    Vector2 depth = GetCollitionDepth(gameObj);
+                    float shallowDepth = Math.Min(Math.Abs(depth.X), Math.Abs(depth.Y));
+                    if ((shallowDepth >= maxCollisionDepth) ||
+                        (maxObject == null) ||
                         (maxObject is PhysicsObject))
                     {
-                        maxCollisionDepth = depth;// new deepest depth
+                        maxCollisionDepth = shallowDepth;// new deepest depth
                         maxObject = gameObj; // new top object
                     }
-                    
+
                 }
                 else if (gameObj is PhysicsObject)
                 {
@@ -352,13 +356,14 @@ namespace GravityShift
                     if (physObj.IsRail)
                     {
                         //2nd Priority
-                        float depth = GetCollitionDepth(physObj).Length();
-                        if (depth >= maxCollisionDepth)
+                        Vector2 depth = GetCollitionDepth(gameObj);
+                        float shallowDepth = Math.Min(Math.Abs(depth.X), Math.Abs(depth.Y));
+                        if (shallowDepth >= maxCollisionDepth)
                         {
                             if ((maxObject == null) ||
                                 (!(maxObject is StaticObject)))
                             {
-                                maxCollisionDepth = depth;// new deepest depth
+                                maxCollisionDepth = shallowDepth;// new deepest depth
                                 maxObject = physObj; // new top object
                             }
                         }
@@ -367,12 +372,13 @@ namespace GravityShift
                     else
                     {
                         //3rd priority
-                        float depth = GetCollitionDepth(physObj).Length();
-                        if (depth >= maxCollisionDepth)
+                        Vector2 depth = GetCollitionDepth(gameObj);
+                        float shallowDepth = Math.Min(Math.Abs(depth.X), Math.Abs(depth.Y));
+                        if (shallowDepth >= maxCollisionDepth)
                         {
                             if (maxObject == null)
                             {
-                                maxCollisionDepth = depth;// new deepest depth
+                                maxCollisionDepth = shallowDepth;// new deepest depth
                                 maxObject = physObj; // new top object
                             }
                             else if (maxObject is PhysicsObject)// Not Static
@@ -380,17 +386,19 @@ namespace GravityShift
                                 PhysicsObject maxPhys = (PhysicsObject)maxObject;
                                 if (!maxPhys.IsRail)
                                 {
-                                    maxCollisionDepth = depth;// new deepest depth
+                                    maxCollisionDepth = shallowDepth;// new deepest depth
                                     maxObject = physObj; // new top object
                                 }
                             }
                         }
-                        
+
                     }
                 }
             }//End foreach
-
-            HandleCollisions(maxObject);
+            if (maxObject != null)
+            {
+                HandleCollisions(maxObject);
+            }
         }
 
         /// <summary>
@@ -410,9 +418,6 @@ namespace GravityShift
                 return 1;
 
             Vector2 colDepth = GetCollitionDepth(otherObject);
-
-            if (colDepth.Length() > 10f) 
-            { }
 
             // handle the shallowest collision
            
