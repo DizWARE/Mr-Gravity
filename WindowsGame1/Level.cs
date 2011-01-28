@@ -470,6 +470,8 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation());
+            foreach (Trigger trigger in mTrigger)
+                trigger.Draw(spriteBatch, gameTime);
 
             // Loops through all rail objects and draws the appropriate rail image.
             #region DrawRails

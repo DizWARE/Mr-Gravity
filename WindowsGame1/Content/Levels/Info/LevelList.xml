@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <name>Face</name>
@@ -27,6 +27,11 @@
   </LevelData>
   <LevelData>
     <name>Maze</name>
+    <unlocked>True</unlocked>
+    <apples>0</apples>
+  </LevelData>
+  <LevelData>
+    <name>New Level</name>
     <unlocked>True</unlocked>
     <apples>0</apples>
   </LevelData>

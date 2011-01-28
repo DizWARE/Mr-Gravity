@@ -323,6 +323,11 @@ namespace GravityShift.Import_Code
                         FXTrigger trigger = new FXTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
+                    else if (entity.mName == "BlackHole")
+                    {
+                        BlackHoleTrigger trigger = new BlackHoleTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
                     //Add trigger by name
                 }
             }
