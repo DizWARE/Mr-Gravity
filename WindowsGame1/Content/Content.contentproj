@@ -269,13 +269,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\BlackHole.png">
-      <Name>BlackHole</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Images\Hazards\BlueCircle.png">
       <Name>BlueCircle</Name>
       <Importer>TextureImporter</Importer>
@@ -862,6 +855,34 @@
     </Compile>
     <Compile Include="Images\Particles\square.png">
       <Name>square</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\AnimatedSprites\YellowLabyrinth.png">
+      <Name>YellowLabyrinth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\AnimatedSprites\GreenPulse.png">
+      <Name>GreenPulse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\AnimatedSprites\YellowScan.png">
+      <Name>YellowScan</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\AnimatedSprites\PinkWarp.png">
+      <Name>PinkWarp</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
