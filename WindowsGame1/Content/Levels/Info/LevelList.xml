@@ -22,12 +22,12 @@
   </LevelData>
   <LevelData>
     <name>Chambers</name>
-    <unlocked>True</unlocked>
+    <unlocked>False</unlocked>
     <apples>0</apples>
   </LevelData>
   <LevelData>
     <name>Maze</name>
-    <unlocked>True</unlocked>
+    <unlocked>False</unlocked>
     <apples>0</apples>
   </LevelData>
 </Levels>
