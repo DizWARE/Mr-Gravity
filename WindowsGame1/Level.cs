@@ -538,14 +538,6 @@ namespace GravityShift
                 spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
                 spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
             }
-//            if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-//                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-//                spriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-//                spriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-//                spriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
 
             spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 300), Color.White);
 
@@ -636,10 +628,7 @@ namespace GravityShift
                         {
                             collidingList.Add(obj);
                         }
-
                         
-                        
-
                         //bool collided = physObj.HandleCollisions(obj);
 
                         //If player reaches the end, set the timer to 0

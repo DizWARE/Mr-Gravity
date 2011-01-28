@@ -313,6 +313,16 @@ namespace GravityShift.Import_Code
                         ForceTrigger trigger = new ForceTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
+                    else if (entity.mName == "Music")
+                    {
+                        MusicTrigger trigger = new MusicTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "SFX")
+                    {
+                        FXTrigger trigger = new FXTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
                     //Add trigger by name
                 }
             }

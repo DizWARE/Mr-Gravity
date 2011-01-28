@@ -253,7 +253,7 @@ namespace GravityShift
         {
             spriteBatch.Begin();
 
-            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+            //spriteBatch.Draw(mBackground, mScreenRect, Color.White);
 
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
             Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
