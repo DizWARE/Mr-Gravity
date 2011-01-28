@@ -30,9 +30,4 @@
     <unlocked>True</unlocked>
     <apples>0</apples>
   </LevelData>
-  <LevelData>
-    <name>New Level</name>
-    <unlocked>True</unlocked>
-    <apples>0</apples>
-  </LevelData>
 </Levels>

@@ -21,7 +21,7 @@ namespace GravityShift
     /// </summary>
     public class GravityShiftMain : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager mGraphics;
+        public static GraphicsDeviceManager mGraphics;
         SpriteBatch mSpriteBatch;
 
         // Scale - Used to make sure the HUD is drawn based on the screen size

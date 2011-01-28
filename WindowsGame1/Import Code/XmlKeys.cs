@@ -33,6 +33,7 @@ namespace GravityShift.Import_Code
         public static string MUSIC_FILE = "MusicFile";
         public static string SOUND_FILE = "SoundFile";
         public static string LOOP = "Loop";
+        public static string PLAYER_FACE = "PlayerFace";
         
         //Names
         public static string WIDTH = "Width";
@@ -61,5 +62,10 @@ namespace GravityShift.Import_Code
         public static string LEVEL_NAME = "name";
         public static string UNLOCKED = "unlocked";
         public static string APPLES = "apples";
+
+
+        //Smile Strings
+        public enum Faces
+        {   Smile,Laugh,Dazed,Dead,Dead2,Meh,Sad,Sad2,Skeptic,Surprise,Worry,Blank,Grid }
     }
 }
