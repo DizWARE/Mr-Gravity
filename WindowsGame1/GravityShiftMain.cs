@@ -196,6 +196,24 @@ namespace GravityShift
 
                 mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
+                //TODO: move this to options menu when new menu is in
+            else if (mCurrentState == GameStates.New_Level_Selection)
+            {
+
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+
+                //If the correct music isn't already playing
+                if (GameSound.menuMusic_title.State != SoundState.Playing)
+                    GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
+                mCurrentLevel = mLevelSelect.Reset();
+
+                mCurrentState = GameStates.Level_Selection;
+
+                mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+
+            }
             else if (mCurrentState == GameStates.Pause)
             {
                 mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);

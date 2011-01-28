@@ -59,13 +59,15 @@ namespace GravityShift.Import_Code
         //Level Select Keys
         public static string LEVELS = "Levels";
         public static string LEVEL_DATA = "LevelData";
-        public static string LEVEL_NAME = "name";
-        public static string UNLOCKED = "unlocked";
-        public static string APPLES = "apples";
+        public static string LEVEL_NAME = "Name";
+        public static string UNLOCKED = "Unlocked";
+        public static string TIMERSTAR = "Timerstar";
+        public static string COLLECTIONSTAR = "Collectionstar";
+        public static string DEATHSTAR = "Deathstar";
 
 
         //Smile Strings
         public enum Faces
-        {   Smile,Laugh,Dazed,Dead,Dead2,Meh,Sad,Sad2,Skeptic,Surprise,Worry,Blank,Grid }
+        { Smile, Laugh, Dazed, Dead, Dead2, Meh, Sad, Sad2, Skeptic, Surprise, Worry, Blank, Grid }
     }
 }
