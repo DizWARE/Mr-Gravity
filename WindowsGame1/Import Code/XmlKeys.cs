@@ -29,6 +29,7 @@ namespace GravityShift.Import_Code
         public static string RAIL_X = "X";
         public static string RAIL_Y = "Y";
         public static string LENGTH = "Length";
+        public static string REVERSE = "Reverse";
         
         //Names
         public static string WIDTH = "Width";

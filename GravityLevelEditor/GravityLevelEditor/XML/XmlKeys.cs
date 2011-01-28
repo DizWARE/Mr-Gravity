@@ -35,6 +35,7 @@ namespace GravityLevelEditor.XML
         public static string RAIL_X = "X";
         public static string RAIL_Y = "Y";
         public static string LENGTH = "Length";
+        public static string REVERSE = "Reverse";
 
         //File Extensions
         public static string PNG = ".png";

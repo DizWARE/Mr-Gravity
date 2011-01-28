@@ -1656,16 +1656,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>793</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="29" Y="15" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>794</ID>
       <Name>Yellow</Name>
       <Type>Walls</Type>

@@ -42,7 +42,7 @@ namespace GravityShift
         private GameStates mCurrentState = GameStates.Main_Menu;
 
         //Max duration of a sequence
-        private static int VICTORY_DURATION = 100;
+        private static int VICTORY_DURATION = 120;
         private static int DEATH_DURATION = 50;
 
         //Duration of a sequence

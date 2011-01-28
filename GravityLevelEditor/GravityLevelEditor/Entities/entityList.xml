@@ -410,4 +410,208 @@
       <Shape>Circle</Shape>
     </Properties>
   </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseRailX</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Walls\Yellow</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>X</Rail>
+      <Length>3</Length>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseRailY</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Walls\Yellow</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+      <Mass>1</Mass>
+      <Rail>Y</Rail>
+      <Length>3</Length>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseRailSawX</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Hazards\RedSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Rail>X</Rail>
+      <Length>3</Length>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseRailSawY</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>False</Paintable>
+    <Texture>Hazards\RedSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Rail>Y</Rail>
+      <Length>3</Length>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseCircleGreen</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\GreenCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseCirclePink</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\PinkCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseCircleBlue</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\BlueCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseCircleYellow</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\YellowCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseCircleRed</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\RedCircle</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseSawGreen</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\GreenSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseSawPink</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\PinkSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseSawBlue</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\BlueSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseSawYellow</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\YellowSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>ReverseSawRed</Name>
+    <Type>Physics Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Hazardous</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Hazards\RedSaw</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+      <Mass>1</Mass>
+      <Reverse>Tile</Reverse>
+    </Properties>
+  </Entity>
 </Entities>

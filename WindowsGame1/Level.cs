@@ -70,7 +70,7 @@ namespace GravityShift
 
         private Vector3 mDeathPanLength;
         private float mDeathPanUpdates;
-        private static float SCALING_FACTOR = 50;
+        private static float SCALING_FACTOR = 85;
 
         // Camera
         public static Camera mCam;
@@ -507,6 +507,9 @@ namespace GravityShift
 
             if(mDeathState == DeathStates.Playing) 
                 particleEngine.Draw(spriteBatch);
+            //else if(mDeathState == DeathStates.Respawning)
+
+
             foreach (GameObject gObject in mObjects)
                     gObject.Draw(spriteBatch, gameTime);
 

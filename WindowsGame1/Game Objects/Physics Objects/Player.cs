@@ -202,7 +202,6 @@ namespace GravityShift
                 PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
                 mRumble = false;
                 GamePad.SetVibration(current, 0.0f, 0.0f);
-                mCurrentTexture = mPlayerTextures[0];
             }
         }
 
@@ -237,6 +236,7 @@ namespace GravityShift
 
             mRotation = mRotationDown;
             mGoalRotation = mRotation;
+            mCurrentTexture = mPlayerTextures[0];
         }
 
         /// <summary>
