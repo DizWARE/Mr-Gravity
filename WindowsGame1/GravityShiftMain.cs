@@ -21,7 +21,7 @@ namespace GravityShift
     /// </summary>
     public class GravityShiftMain : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager mGraphics;
+        public static GraphicsDeviceManager mGraphics;
         SpriteBatch mSpriteBatch;
 
         // Scale - Used to make sure the HUD is drawn based on the screen size
@@ -195,6 +195,24 @@ namespace GravityShift
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
                 mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
+                //TODO: move this to options menu when new menu is in
+            else if (mCurrentState == GameStates.New_Level_Selection)
+            {
+
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+
+                //If the correct music isn't already playing
+                if (GameSound.menuMusic_title.State != SoundState.Playing)
+                    GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
+                mCurrentLevel = mLevelSelect.Reset();
+
+                mCurrentState = GameStates.Level_Selection;
+
+                mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+
             }
             else if (mCurrentState == GameStates.Pause)
             {

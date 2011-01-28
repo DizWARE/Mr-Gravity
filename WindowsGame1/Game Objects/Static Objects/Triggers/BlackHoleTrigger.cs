@@ -13,7 +13,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
     {
         List<PhysicsObject> affectedObjects = new List<PhysicsObject>();
         AnimatedSprite blackHole = new AnimatedSprite();
-        int mForce = 5;
+        float mForce = 2;
 
         /// <summary>
         /// Constructs a trigger that is capable of acting like a black hole
@@ -24,7 +24,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             : base(content, entity)
         {
             if (entity.mProperties.ContainsKey(XmlKeys.FORCE))
-                mForce = int.Parse(entity.mProperties[XmlKeys.FORCE]);
+                mForce = float.Parse(entity.mProperties[XmlKeys.FORCE]);
             blackHole.Load(content, "BlackHole",3, 6);            
         }
 
@@ -39,20 +39,27 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             blackHole.Draw(canvas,Vector2.Subtract(mPosition, GridSpace.GetPixelCoord(new Vector2(1.5f,1.5f))));
         }
 
+        /// <summary>
+        /// Runs the black hole trigger
+        /// </summary>
+        /// <param name="objects">List of objects in the game</param>
+        /// <param name="player">Player in the game</param>
         public override void RunTrigger(List<GameObject> objects, Player player)
         {
             foreach(GameObject gObj in objects)
             {
                 if (!mBoundingBox.Intersects(gObj.BoundingBox)) continue;
 
+                if (gObj is Player && player.mCurrentTexture == PlayerFaces.SMILE) 
+                    player.mCurrentTexture = PlayerFaces.WORRY;
+
                 if (gObj is PhysicsObject)
                 {
-                    
-
                     PhysicsObject pObj = (PhysicsObject)gObj;
 
                     Vector2 posDiff = Vector2.Subtract(mPosition, pObj.mPosition);
 
+                    //Gets the angle that the player is at
                     double degrees = 0;
                     if(posDiff.X > 0) degrees = Math.Atan(posDiff.Y/posDiff.X);
                     if(posDiff.X < 0 && posDiff.Y >= 0) degrees = Math.Atan(posDiff.Y/posDiff.X) + Math.PI;
@@ -60,15 +67,17 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
                     if(posDiff.X == 0 && posDiff.Y > 0) degrees = Math.PI/2;
                     if(posDiff.X == 0 && posDiff.Y <0) degrees = - Math.PI/2;
 
-                    float distance = Vector2.Distance(GridSpace.GetGridCoord(pObj.mPosition), GridSpace.GetGridCoord(mPosition))+1;
-                   
-                    Vector2 newForce = new Vector2(mForce/distance * (float)Math.Cos(degrees), mForce/distance * (float)Math.Sin(degrees));
+                    //Distance of this trigger and pObj, squared
+                    float distance = Vector2.DistanceSquared(GridSpace.GetGridCoord(pObj.mPosition), 
+                                                                    GridSpace.GetGridCoord(mPosition))+1;
 
+                    //Force on the object( G * M / r^2)
+                    Vector2 newForce = new Vector2(mForce * (1 / pObj.Mass) / distance * (float)Math.Cos(degrees), 
+                        mForce * (1 / pObj.Mass) / distance * (float)Math.Sin(degrees));
                    
+                    //Imediately add this to the objects velocity so that we don't have lingering force additions left over
                     pObj.mVelocity = new Vector2(Math.Min(newForce.X + pObj.mVelocity.X, pObj.Environment.TerminalSpeed), 
                             Math.Min(newForce.Y + pObj.mVelocity.Y, pObj.Environment.TerminalSpeed));
-
-                    System.Console.WriteLine(pObj.mVelocity);
                 }
             }
         }

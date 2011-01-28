@@ -266,15 +266,6 @@ namespace GravityShift
                 mCollisionMatrix[(int)newPosition.Y][(int)newPosition.X].Add(obj);
         }
 
-        public void UpdatePlayer(GameTime gameTime)
-        {
-            Vector2 oldPosition = mPlayer.mPosition;
-            mPlayer.Update(gameTime);
-            UpdateCollisionMatrix(mPlayer, GridSpace.GetGridCoord(oldPosition));
-            GameStates fake = GameStates.In_Game;
-            this.HandleCollisions(mPlayer, ref fake);
-        }
-
         /// <summary>
         /// Removes the object from the matrix(for collectables
         /// </summary>
@@ -636,7 +627,7 @@ namespace GravityShift
                         //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
-                            mPlayer.mCurrentTexture = mPlayer.mPlayerTextures[1];
+                            mPlayer.mCurrentTexture = PlayerFaces.LAUGH;
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;

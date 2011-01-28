@@ -144,6 +144,7 @@ namespace GravityShift
         /// <param name="name"></param>
         public virtual void Load(ContentManager content, String name)
         {
+
             try
             {   mTexture = content.Load<Texture2D>(name);   }
             catch (Exception ex)

@@ -127,6 +127,15 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Applies the force immediately. This will not be permanant
+        /// </summary>
+        /// <param name="force">Force to apply</param>
+        public void ApplyImmediateForce(Vector2 force)
+        {
+            mVelocity = Vector2.Add(force, mVelocity);
+        }
+
+        /// <summary>
         /// TEMP METHOD - WILL GIVE THE PLAYER THE ABILITY TO FALL FROM ONE END OF THE SCREEN TO THE OTHER
         /// </summary>
         public void FixForBounds(int width, int height)
@@ -222,9 +231,9 @@ namespace GravityShift
             if (mIsRail)
             {
                 if(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
-                    mVelocity.X += (mEnvironment.GravityForce.X / mMass);
+                    mVelocity.X += (mEnvironment.GravityForce.X / mMass) + mAdditionalForces.X;
                 else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_Y)
-                    mVelocity.Y += (mEnvironment.GravityForce.Y / mMass);
+                    mVelocity.Y += (mEnvironment.GravityForce.Y / mMass) + mAdditionalForces.Y;
             }
             else
             {

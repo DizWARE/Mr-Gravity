@@ -123,6 +123,7 @@
     <Compile Include="Game Objects\Static Objects\Triggers\FXTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\ForceTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\MusicTrigger.cs" />
+    <Compile Include="Game Objects\Static Objects\Triggers\PlayerFaceTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="LevelSelect.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Game Objects\Physics Objects\MovingTile.cs" />
+    <Compile Include="MISC Code\PlayerFaces.cs" />
     <Compile Include="ParticleEngine\ParticleEngine.cs" />
     <Compile Include="ParticleEngine\Particle.cs" />
     <Compile Include="Pause.cs" />

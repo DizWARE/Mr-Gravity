@@ -328,6 +328,11 @@ namespace GravityShift.Import_Code
                         BlackHoleTrigger trigger = new BlackHoleTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
+                    else if (entity.mName == "PlayerFace")
+                    {
+                        PlayerFaceTrigger trigger = new PlayerFaceTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
                     //Add trigger by name
                 }
             }
