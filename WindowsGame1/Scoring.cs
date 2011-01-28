@@ -202,7 +202,7 @@ namespace GravityShift
                 GravityShift.Level.TIMER = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
-                /* Restart Game */
+                /* Next Level */
                 if (mCurrent == 0)
                 {
                     /*Back To Level Selection*/
@@ -210,13 +210,13 @@ namespace GravityShift
 
                     mCurrent = 0;
 
-                    mItems[0] = mRestartSel;
-                    mItems[1] = mNextLevelUnsel;
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
                     mItems[2] = mSelectLevelUnsel;
                     mItems[3] = mMainMenuUnsel;
                     
                 }
-                /* Next Level */
+                /* Restart Level */
                 else if (mCurrent == 1)
                 {
                     
@@ -225,6 +225,11 @@ namespace GravityShift
                     level.Reset();
                     level.Load(mContent);
                     mCurrent = 0;
+
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
+                    mItems[2] = mSelectLevelUnsel;
+                    mItems[3] = mMainMenuUnsel;
                 }
 
                 /* Level Select */
@@ -235,8 +240,8 @@ namespace GravityShift
 
                     mCurrent = 0;
 
-                    mItems[0] = mRestartSel;
-                    mItems[1] = mNextLevelUnsel;
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
                     mItems[2] = mSelectLevelUnsel;
                     mItems[3] = mMainMenuUnsel;
                 }
@@ -248,8 +253,8 @@ namespace GravityShift
 
                     mCurrent = 0;
 
-                    mItems[0] = mRestartSel;
-                    mItems[1] = mNextLevelUnsel;
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
                     mItems[2] = mSelectLevelUnsel;
                     mItems[3] = mMainMenuUnsel;
                 }

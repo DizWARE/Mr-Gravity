@@ -119,6 +119,18 @@ namespace GravityShift
             mScreenRect = graphics.Viewport.TitleSafeArea;
         }
 
+        public Level Reset()
+        {
+            foreach (LevelChoice l in mLevels)
+            {
+                l.Reset(false);
+            }
+
+            mLevels[0].Reset(true);
+
+            return mLevels[0].Level;
+        }
+
         /// <summary>
         /// Handle any changes while on the level selection menu
         /// </summary>
@@ -308,7 +320,9 @@ namespace GravityShift
         private Level mLevel;
         private Texture2D mThumbnail;
         private bool mUnlocked = false;
-        private int mApples;
+        private int mTimerStar;
+        private int mCollectionStar;
+        private int mDeathStar;
 
         public Level Level
         { get { return mLevel; } }
@@ -316,8 +330,12 @@ namespace GravityShift
         { get { return mThumbnail; } }
         public bool Unlocked
         { get { return mUnlocked; } }
-        public int Apples
-        { get { return mApples; } }
+        public int TimerStar
+        { get { return mTimerStar; } }
+        public int CollectionStar
+        { get { return mCollectionStar; } }
+        public int DeathStar
+        { get { return mDeathStar; } }
 
         /// <summary>
         /// 
@@ -352,9 +370,21 @@ namespace GravityShift
                 if (element.Name == XmlKeys.UNLOCKED)
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;
 
-                if (element.Name == XmlKeys.APPLES)
-                    mApples = Convert.ToInt32(element.Value);
+                if (element.Name == XmlKeys.TIMERSTAR)
+                    mTimerStar = Convert.ToInt32(element.Value);
+
+                if (element.Name == XmlKeys.COLLECTIONSTAR)
+                    mCollectionStar = Convert.ToInt32(element.Value);
+
+                if (element.Name == XmlKeys.DEATHSTAR)
+                    mDeathStar = Convert.ToInt32(element.Value);
             }
+        }
+
+        public void Reset(bool rUnlock)
+        {
+            mUnlocked = rUnlock;
+            mTimerStar = mCollectionStar = mDeathStar = 0;
         }
 
         /// <summary>
@@ -370,7 +400,9 @@ namespace GravityShift
             XElement xLevel = new XElement(XmlKeys.LEVEL_DATA,
                 new XElement(XmlKeys.LEVEL_NAME, mLevel.Name),
                 new XElement(XmlKeys.UNLOCKED, xUnlock),
-                new XElement(XmlKeys.APPLES, Apples.ToString()));
+                new XElement(XmlKeys.TIMERSTAR, mTimerStar.ToString()),
+                new XElement(XmlKeys.COLLECTIONSTAR, mCollectionStar.ToString()),
+                new XElement(XmlKeys.DEATHSTAR, mDeathStar.ToString()));
 
             return xLevel;
         }
@@ -385,19 +417,43 @@ namespace GravityShift
 
 
         /// <summary>
-        /// Submits a new score for this level, if it is higher than previously recorded, record the new high score
+        /// Submits new scores for the 3 scoring factors for this level, and if the new score is higher than
+        /// previously recorded it makes note of this.  Scores should be between values of 0 and 3.
         /// </summary>
-        /// <param name="score">A new score for this level</param>
-        /// <returns>True if a new high score was recorded, false otherwise</returns>
-        public bool SubmitScore(int score)
+        /// <param name="timerStar">High Score for the Timer stars</param>
+        /// <param name="collectionStar">High Score for the Collection stars</param>
+        /// <param name="deathStar">High Score for the Death stars</param>
+        public void SubmitScore(int timerStar, int collectionStar, int deathStar)
         {
-            if (score > mApples)
+            if (timerStar > mTimerStar)
             {
-                mApples = score;
-                return true;
+                if (timerStar > 3)
+                    mTimerStar = 3;
+                else if (timerStar < 0)
+                    mTimerStar = 0;
+                else
+                    mTimerStar = timerStar;
             }
-            else
-                return false;
+
+            if (collectionStar > mCollectionStar)
+            {
+                if (collectionStar > 3)
+                    mCollectionStar = 3;
+                else if (collectionStar < 0)
+                    mCollectionStar = 0;
+                else
+                    mCollectionStar = collectionStar;
+            }
+
+            if (deathStar > mDeathStar)
+            {
+                if (deathStar > 3)
+                    mDeathStar = 3;
+                else if (deathStar < 0)
+                    mDeathStar = 0;
+                else
+                    mDeathStar = deathStar;
+            }
 
         }
     }
