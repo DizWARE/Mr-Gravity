@@ -708,10 +708,10 @@ namespace GravityShift
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
                             }
-                            else if (cObject is MovingTile && cObject.CollisionType != XmlKeys.HAZARDOUS)
-                            {
+                            else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
                                 ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
-                            }
+                            else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((ReverseTile)cObject).StartAnimation(GetAnimation(cObject.mName));
                             else if (cObject is StaticObject && cObject.CollisionType != XmlKeys.COLLECTABLE)
                                 if (!mActiveAnimations.ContainsKey(cObject.mPosition))
                                     mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));

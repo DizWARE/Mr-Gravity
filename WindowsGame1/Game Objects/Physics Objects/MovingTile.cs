@@ -21,6 +21,8 @@ namespace GravityShift
     class MovingTile : PhysicsObject
     {
         private bool mBeingAnimated;
+        public bool BeingAnimated { get { return mBeingAnimated; } }
+
         private AnimatedSprite mAnimationTexture;
 
         /// <summary>

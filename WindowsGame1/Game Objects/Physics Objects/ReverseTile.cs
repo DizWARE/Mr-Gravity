@@ -20,6 +20,11 @@ namespace GravityShift
     /// </summary>
     class ReverseTile : PhysicsObject
     {
+        private bool mBeingAnimated;
+        public bool BeingAnimated { get { return mBeingAnimated; } }
+
+        private AnimatedSprite mAnimationTexture;
+
         /// <summary>
         /// Constructs a tile that reacts to gravity in the opposite direction
         /// </summary>
@@ -32,7 +37,14 @@ namespace GravityShift
         public ReverseTile(ContentManager content, ref PhysicsEnvironment environment, float friction, EntityInfo entity) :
             base(content, ref environment, friction, entity)
         {
+            mBeingAnimated = false;
+            mAnimationTexture = new AnimatedSprite();
+        }
 
+        public void StartAnimation(AnimatedSprite sprite)
+        {
+            mAnimationTexture = sprite;
+            mBeingAnimated = true;
         }
 
         public override void Update(GameTime gametime)
@@ -41,6 +53,20 @@ namespace GravityShift
             mPrevPos = mPosition;
             mPosition = Vector2.Add(mPosition, -mVelocity);
             UpdateBoundingBoxes();
+
+            if (mBeingAnimated)
+            {
+                mAnimationTexture.Update((float)gametime.ElapsedGameTime.TotalSeconds);
+                if (mAnimationTexture.Frame == mAnimationTexture.LastFrame)
+                    mBeingAnimated = false;
+            }
+        }
+
+        public override void Draw(SpriteBatch canvas, GameTime gametime)
+        {
+            base.Draw(canvas, gametime);
+            if (mBeingAnimated)
+                mAnimationTexture.Draw(canvas, mPosition);
         }
 
         public override int Kill()
