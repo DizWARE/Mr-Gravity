@@ -70,7 +70,7 @@ namespace GravityShift
 
         private Vector3 mDeathPanLength;
         private float mDeathPanUpdates;
-        private static float SCALING_FACTOR = 50;
+        private static float SCALING_FACTOR = 85;
 
         // Camera
         public static Camera mCam;
@@ -96,6 +96,13 @@ namespace GravityShift
         Texture2D mRailTop;
         Texture2D mRailBottom;
         Texture2D mRailVert;
+
+        AnimatedSprite mYellowLabyrinth;
+        AnimatedSprite mYellowScan;
+        AnimatedSprite mGreenPulse;
+        AnimatedSprite mPinkWarp;
+
+        Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
 
         Player mPlayer;
 
@@ -141,6 +148,7 @@ namespace GravityShift
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
             mRemoveCollected = new List<GameObject>();
+            mActiveAnimations = new Dictionary<Vector2, AnimatedSprite>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
         }
@@ -166,6 +174,15 @@ namespace GravityShift
             mRailTop = content.Load<Texture2D>("Images/NonHazards/Rails/RailTop");
             mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
             mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
+
+            mYellowLabyrinth = new AnimatedSprite();
+            mYellowLabyrinth.Load(content, "YellowLabyrinth", 5, 0.1f);
+            mYellowScan = new AnimatedSprite();
+            mYellowScan.Load(content, "YellowScan", 7, 0.05f);
+            mGreenPulse = new AnimatedSprite();
+            mGreenPulse.Load(content, "GreenPulse", 4, 0.1f);
+            mPinkWarp = new AnimatedSprite();
+            mPinkWarp.Load(content, "PinkWarp", 4, 0.11f);
 
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
@@ -306,12 +323,20 @@ namespace GravityShift
 
                             // handle collision right after you move
                             HandleCollisions(pObject, ref gameState);
+
                             if (pObject is Player)
                                 foreach (Trigger trigger in mTrigger)
                                     trigger.RunTrigger(mObjects, (Player)pObject);
-
                         }
                         if (!mHasRespawned) break;
+                    }
+
+                    for(int i = 0; i < mActiveAnimations.Count; i++)
+                    {
+                        KeyValuePair<Vector2, AnimatedSprite> current = mActiveAnimations.ElementAt(i);
+                        current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        if (current.Value.Frame == current.Value.LastFrame)
+                            mActiveAnimations.Remove(current.Key);
                     }
 
                     //Check to see if we collected anything
@@ -500,8 +525,14 @@ namespace GravityShift
 
             if(mDeathState == DeathStates.Playing) 
                 particleEngine.Draw(spriteBatch);
+
+            //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
                     gObject.Draw(spriteBatch, gameTime);
+
+            //Draw all of our active animations
+            for (int i = 0; i < mActiveAnimations.Count; i++)
+                mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
 
             spriteBatch.End();
         }
@@ -672,6 +703,16 @@ namespace GravityShift
                         }
                         
                     }
+
+                    if (physObj is Player)
+                        foreach (GameObject cObject in collidingList)
+                            if (cObject is Wall)
+                            {
+                                Vector2 pos = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
+                                if (!mActiveAnimations.ContainsKey(pos))
+                                    mActiveAnimations.Add(pos, mPinkWarp);
+                            }
+                   
                     physObj.HandleCollisionList(collidingList);
                 }
             }

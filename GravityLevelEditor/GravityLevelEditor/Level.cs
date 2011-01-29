@@ -445,7 +445,11 @@ namespace GravityLevelEditor
             { MessageBox.Show("Failed to save \"" + Name + "\". Invalid background image."); return; }
 
             XElement entityTree = new XElement(XmlKeys.ENTITIES);
-            foreach (Entity entity in mEntities) {
+            foreach (Entity entity in mEntities)
+            {
+                if (entity.Type == "Walls")
+                    CheckForInvalidWalls(entity);
+
                 entityTree.Add(entity.Export());
             }
             XDocument xDoc = new XDocument(
@@ -464,6 +468,17 @@ namespace GravityLevelEditor
             image.Save(currentDirectory + "\\Thumbnail\\" + this.Name + ".png");
             image.Dispose();
             MessageBox.Show(this.Name + ".xml saved correctly");
+        }
+
+        void CheckForInvalidWalls(Entity entity)
+        {
+            foreach (Entity ent in mEntities)
+            {
+                if (ent.Equals(entity)) break;
+
+                if (ent.Type == "Walls" && entity.Location.X == ent.Location.X && entity.Location.Y == ent.Location.Y)
+                    MessageBox.Show("Warning! Level has overlapping walls at position: " + ent.Location.X.ToString() + ", " + ent.Location.Y.ToString());
+            }
         }
     }
 }

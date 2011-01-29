@@ -58,5 +58,18 @@ namespace GravityShift.Game_Objects.Static_Objects
             foreach (StaticObject obj in mWalls)
                 obj.Draw(canvas, gametime);
         }
+
+        public Vector2 NearestWallPosition(Vector2 position)
+        {
+            float currDist = float.MaxValue;
+            Vector2 pos = Vector2.Zero;
+            foreach (StaticObject obj in mWalls)
+                if (Vector2.Distance(position, obj.mPosition) < currDist)
+                {
+                    currDist = Vector2.Distance(position, obj.mPosition);
+                    pos = obj.mPosition;
+                }
+            return pos;
+        }
     }
 }

@@ -134,9 +134,18 @@ namespace GravityShift.Import_Code
                     {
                         mass = (float)Convert.ToDouble(entity.mProperties["Mass"]);
                     }
-                    MovingTile tile = new MovingTile(mContent, ref environment, 0.8f, entity);
-                    tile.Mass = mass;
-                    objects.Add(tile);
+                    if (entity.mProperties.ContainsKey(XmlKeys.REVERSE))
+                    {
+                        ReverseTile rTile = new ReverseTile(mContent, ref environment, 0.8f, entity);
+                        rTile.Mass = mass;
+                        objects.Add(rTile);
+                    }
+                    else
+                    {
+                        MovingTile mTile = new MovingTile(mContent, ref environment, 0.8f, entity);
+                        mTile.Mass = mass;
+                        objects.Add(mTile);
+                    }
                 }
             }
 
