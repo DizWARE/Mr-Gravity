@@ -283,15 +283,6 @@ namespace GravityShift
                 mCollisionMatrix[(int)newPosition.Y][(int)newPosition.X].Add(obj);
         }
 
-        public void UpdatePlayer(GameTime gameTime)
-        {
-            Vector2 oldPosition = mPlayer.mPosition;
-            mPlayer.Update(gameTime);
-            UpdateCollisionMatrix(mPlayer, GridSpace.GetGridCoord(oldPosition));
-            GameStates fake = GameStates.In_Game;
-            this.HandleCollisions(mPlayer, ref fake);
-        }
-
         /// <summary>
         /// Removes the object from the matrix(for collectables
         /// </summary>
@@ -495,6 +486,8 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation());
+            foreach (Trigger trigger in mTrigger)
+                trigger.Draw(spriteBatch, gameTime);
 
             // Loops through all rail objects and draws the appropriate rail image.
             #region DrawRails
@@ -569,14 +562,6 @@ namespace GravityShift
                 spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
                 spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
             }
-//            if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-//                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-//                spriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-//                spriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-//                spriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
 
             spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 300), Color.White);
 
@@ -667,16 +652,13 @@ namespace GravityShift
                         {
                             collidingList.Add(obj);
                         }
-
                         
-                        
-
                         //bool collided = physObj.HandleCollisions(obj);
 
                         //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
-                            mPlayer.mCurrentTexture = mPlayer.mPlayerTextures[1];
+                            mPlayer.mCurrentTexture = PlayerFaces.LAUGH;
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;

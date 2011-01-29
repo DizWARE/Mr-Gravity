@@ -30,7 +30,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         {
             this.mSize = new Vector2(3, 3);
             if(entity.mProperties.ContainsKey(XmlKeys.WIDTH)) this.mSize.X = int.Parse(entity.mProperties[XmlKeys.WIDTH]);
-            if (entity.mProperties.ContainsKey(XmlKeys.HEIGHT)) this.mSize.X = int.Parse(entity.mProperties[XmlKeys.HEIGHT]);
+            if (entity.mProperties.ContainsKey(XmlKeys.HEIGHT)) this.mSize.Y = int.Parse(entity.mProperties[XmlKeys.HEIGHT]);
 
             mSize = GridSpace.GetDrawingCoord(mSize);
             this.mBoundingBox.X -= (int)mSize.X / 2;

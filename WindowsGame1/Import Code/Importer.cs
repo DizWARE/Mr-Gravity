@@ -322,6 +322,26 @@ namespace GravityShift.Import_Code
                         ForceTrigger trigger = new ForceTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
+                    else if (entity.mName == "Music")
+                    {
+                        MusicTrigger trigger = new MusicTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "SFX")
+                    {
+                        FXTrigger trigger = new FXTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "BlackHole")
+                    {
+                        BlackHoleTrigger trigger = new BlackHoleTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "PlayerFace")
+                    {
+                        PlayerFaceTrigger trigger = new PlayerFaceTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
                     //Add trigger by name
                 }
             }

@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
+using GravityShift.MISC_Code;
 
 namespace GravityShift
 {
@@ -41,11 +42,6 @@ namespace GravityShift
         private float mRotationUp = (float)Math.PI;
         private float mRotationLeft = (float)(Math.PI / 2.0);
 
-        // Number of player textures
-        private const int NUM_PLAYER_TEXTURES = 13;
-
-        // Array of player textures.
-        public Texture2D[] mPlayerTextures = new Texture2D[NUM_PLAYER_TEXTURES];
 
         public Texture2D mCurrentTexture;
 
@@ -68,21 +64,9 @@ namespace GravityShift
             mGoalRotation = 0.0f;
             ID = entity.mId;
 
-            mPlayerTextures[0] = content.Load<Texture2D>("Images/Player/NeonCharSmile");
-            mPlayerTextures[1] = content.Load<Texture2D>("Images/Player/NeonCharLaugh");
-            mPlayerTextures[2] = content.Load<Texture2D>("Images/Player/NeonCharDazed");
-            mPlayerTextures[3] = content.Load<Texture2D>("Images/Player/NeonCharDead");
-            mPlayerTextures[4] = content.Load<Texture2D>("Images/Player/NeonCharDead2");
-            mPlayerTextures[5] = content.Load<Texture2D>("Images/Player/NeonCharMeh");
-            mPlayerTextures[6] = content.Load<Texture2D>("Images/Player/NeonCharSad");
-            mPlayerTextures[7] = content.Load<Texture2D>("Images/Player/NeonCharSad2");
-            mPlayerTextures[8] = content.Load<Texture2D>("Images/Player/NeonCharSkeptic");
-            mPlayerTextures[9] = content.Load<Texture2D>("Images/Player/NeonCharSurprise");
-            mPlayerTextures[10] = content.Load<Texture2D>("Images/Player/NeonCharWorry");
-            mPlayerTextures[11] = content.Load<Texture2D>("Images/Player/NeonCharBlank");
-            mPlayerTextures[12] = content.Load<Texture2D>("Images/Player/NeonCharGrid");
+            PlayerFaces.Load(content);
 
-            mCurrentTexture = mPlayerTextures[0];
+            mCurrentTexture = PlayerFaces.SMILE;
 
             mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
         }
@@ -98,9 +82,9 @@ namespace GravityShift
                 StopRumble();
 
             if (Math.Abs(mVelocity.X) >= 15 || Math.Abs(mVelocity.Y) >= 15)
-                mCurrentTexture = mPlayerTextures[9];
+                mCurrentTexture = PlayerFaces.SURPRISE;
             else if (!mRumble) 
-                mCurrentTexture = mPlayerTextures[0];
+                mCurrentTexture = PlayerFaces.SMILE;
 
             //SHIFT: Down
             if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
@@ -170,7 +154,7 @@ namespace GravityShift
         {
             mRumble = true;
 
-            mCurrentTexture = mPlayerTextures[4];
+            mCurrentTexture = PlayerFaces.DEAD2;
 
             StartRumble();
 
@@ -225,7 +209,7 @@ namespace GravityShift
                     mRumble = false;
                     GamePad.SetVibration(current, 0.0f, 0.0f);
                     elapsedTime = 0.0;
-                    mCurrentTexture = mPlayerTextures[0];
+                    mCurrentTexture = PlayerFaces.SMILE;
                 }
             }
         }
@@ -236,7 +220,7 @@ namespace GravityShift
 
             mRotation = mRotationDown;
             mGoalRotation = mRotation;
-            mCurrentTexture = mPlayerTextures[0];
+            mCurrentTexture = PlayerFaces.SMILE;
         }
 
         /// <summary>

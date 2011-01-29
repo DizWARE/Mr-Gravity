@@ -139,18 +139,18 @@ namespace GravityShift
 
             mTitle = content.Load<Texture2D>("Images/Menu/Title");
 
-            mSelItems[0] = mRestartSel;
-            mSelItems[1] = mNextLevelSel;
+            mSelItems[0] = mNextLevelSel;
+            mSelItems[1] = mRestartSel;
             mSelItems[2] = mSelectLevelSel;
             mSelItems[3] = mMainMenuSel;
 
-            mUnselItems[0] = mRestartUnsel;
-            mUnselItems[1] = mNextLevelUnsel;
+            mUnselItems[0] = mNextLevelUnsel;
+            mUnselItems[1] = mRestartUnsel;
             mUnselItems[2] = mSelectLevelUnsel;
             mUnselItems[3] = mMainMenuUnsel;
 
-            mItems[0] = mRestartSel;
-            mItems[1] = mNextLevelUnsel;
+            mItems[0] = mNextLevelSel;
+            mItems[1] = mRestartUnsel;
             mItems[2] = mSelectLevelUnsel;
             mItems[3] = mMainMenuUnsel;
         }
@@ -202,25 +202,32 @@ namespace GravityShift
                 GravityShift.Level.TIMER = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
-                /* Restart Game */
-                if (mCurrent == 0)
-                {
-                    /* Start the game*/
-                    gameState = GameStates.In_Game;
-                    level.Reset();
-                    level.Load(mContent);
-                    mCurrent = 0;
-                }
                 /* Next Level */
-                else if (mCurrent == 1)
+                if (mCurrent == 0)
                 {
                     /*Back To Level Selection*/
                     gameState = GameStates.Next_Level;
 
                     mCurrent = 0;
 
-                    mItems[0] = mRestartSel;
-                    mItems[1] = mNextLevelUnsel;
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
+                    mItems[2] = mSelectLevelUnsel;
+                    mItems[3] = mMainMenuUnsel;
+                    
+                }
+                /* Restart Level */
+                else if (mCurrent == 1)
+                {
+                    
+                    /* Start the game*/
+                    gameState = GameStates.In_Game;
+                    level.Reset();
+                    level.Load(mContent);
+                    mCurrent = 0;
+
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
                     mItems[2] = mSelectLevelUnsel;
                     mItems[3] = mMainMenuUnsel;
                 }
@@ -233,8 +240,8 @@ namespace GravityShift
 
                     mCurrent = 0;
 
-                    mItems[0] = mRestartSel;
-                    mItems[1] = mNextLevelUnsel;
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
                     mItems[2] = mSelectLevelUnsel;
                     mItems[3] = mMainMenuUnsel;
                 }
@@ -246,8 +253,8 @@ namespace GravityShift
 
                     mCurrent = 0;
 
-                    mItems[0] = mRestartSel;
-                    mItems[1] = mNextLevelUnsel;
+                    mItems[0] = mNextLevelSel;
+                    mItems[1] = mRestartUnsel;
                     mItems[2] = mSelectLevelUnsel;
                     mItems[3] = mMainMenuUnsel;
                 }

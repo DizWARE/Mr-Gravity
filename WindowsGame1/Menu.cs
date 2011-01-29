@@ -217,7 +217,29 @@ namespace GravityShift
                         if (mCurrent == 0)
                         {
                             /* Start the game */
-                            gameState = GameStates.Level_Selection;
+                            gameState = GameStates.New_Level_Selection;
+
+                            /* Initialize variables to the load menu items */
+                            mSelMenuItems = new Texture2D[NUM_LOAD];
+                            mUnselMenuItems = new Texture2D[NUM_LOAD];
+                            mMenuItems = new Texture2D[NUM_LOAD];
+
+                            mSelMenuItems[0] = mNewGameSel;
+                            mSelMenuItems[1] = mLoadGameSel;
+                            mSelMenuItems[2] = mOptionsSel;
+                            mSelMenuItems[3] = mCreditsSel;
+
+                            mUnselMenuItems[0] = mNewGameUnsel;
+                            mUnselMenuItems[1] = mLoadGameUnsel;
+                            mUnselMenuItems[2] = mOptionsUnsel;
+                            mUnselMenuItems[3] = mCreditsUnsel;
+
+                            mMenuItems[0] = mNewGameSel;
+                            mMenuItems[1] = mLoadGameUnsel;
+                            mMenuItems[2] = mOptionsUnsel;
+                            mMenuItems[3] = mCreditsUnsel;
+
+                            mCurrent = 0;
                         }
                         /* Load Game */
                         if (mCurrent == 1)

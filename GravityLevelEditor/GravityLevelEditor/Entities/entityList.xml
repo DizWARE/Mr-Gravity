@@ -400,14 +400,63 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>BlackHole</Name>
-    <Type>Static Objects</Type>
+    <Name>Music</Name>
+    <Type>Triggers</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
-    <Paintable>False</Paintable>
-    <Texture>Hazards\BlackHole</Texture>
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\Trigger</Texture>
     <Properties>
-      <Shape>Circle</Shape>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
+      <MusicFile>music_level00</MusicFile>
+      <Loop>True</Loop>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>SFX</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\Trigger</Texture>
+    <Properties>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
+      <SoundFile>menuSound_select</SoundFile>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BlackHole</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\Trigger</Texture>
+    <Properties>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
+      <Force>3</Force>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PlayerFace</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\Trigger</Texture>
+    <Properties>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
+      <PlayerFace>Worry</PlayerFace>
     </Properties>
   </Entity>
   <Entity>

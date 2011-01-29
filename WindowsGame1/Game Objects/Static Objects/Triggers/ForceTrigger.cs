@@ -41,7 +41,6 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             {
                 if(gObj is PhysicsObject)
                 {
-                    //bool isColliding = (mIsSquare && player.IsCollidingBoxAndBox(this)) || (!IsSquare && player.IsCollidingCircleandCircle(this));
                     bool isColliding = mBoundingBox.Intersects(gObj.BoundingBox);
                     PhysicsObject pObj = (PhysicsObject)gObj;
 
