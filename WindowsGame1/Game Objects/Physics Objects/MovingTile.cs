@@ -20,6 +20,9 @@ namespace GravityShift
     /// </summary>
     class MovingTile : PhysicsObject
     {
+        private bool mBeingAnimated;
+        private AnimatedSprite mAnimationTexture;
+
         /// <summary>
         /// Constructs a tile that is capable of moving around the screen
         /// </summary>
@@ -32,7 +35,32 @@ namespace GravityShift
         public MovingTile(ContentManager content, ref PhysicsEnvironment environment, float friction, EntityInfo entity) :
             base(content, ref environment, friction, entity)
         {
+            mBeingAnimated = false;
+            mAnimationTexture = new AnimatedSprite();
+        }
 
+        public void StartAnimation(AnimatedSprite sprite)
+        {
+            mAnimationTexture = sprite;
+            mBeingAnimated = true;
+        }
+
+        public override void Update(GameTime gametime)
+        {
+            base.Update(gametime);
+            if (mBeingAnimated)
+            {
+                mAnimationTexture.Update((float)gametime.ElapsedGameTime.TotalSeconds);
+                if (mAnimationTexture.Frame == mAnimationTexture.LastFrame)
+                    mBeingAnimated = false;
+            }
+        }
+
+        public override void Draw(SpriteBatch canvas, GameTime gametime)
+        {
+            base.Draw(canvas, gametime);
+            if (mBeingAnimated)
+                mAnimationTexture.Draw(canvas, mPosition);
         }
 
         public override int Kill()
