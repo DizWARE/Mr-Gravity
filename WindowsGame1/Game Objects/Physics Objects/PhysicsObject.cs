@@ -316,6 +316,8 @@ namespace GravityShift
                 {
                     depthY = -minDistY - distY;
                 }
+                depthX = Math.Abs(depthX);
+                depthY = Math.Abs(depthY);
                 #endregion 
                 float shallow = Math.Min(depthX, depthY);
                 if (shallow < HAZARDFORGIVENESS)
