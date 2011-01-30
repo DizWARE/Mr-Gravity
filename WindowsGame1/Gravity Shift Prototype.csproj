@@ -140,6 +140,7 @@
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Game Objects\Physics Objects\MovingTile.cs" />
+    <Compile Include="MISC Code\PlayerFaces.cs" />
     <Compile Include="ParticleEngine\ParticleEngine.cs" />
     <Compile Include="ParticleEngine\Particle.cs" />
     <Compile Include="Pause.cs" />

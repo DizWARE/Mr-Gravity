@@ -97,10 +97,7 @@ namespace GravityShift
         Texture2D mRailBottom;
         Texture2D mRailVert;
 
-        AnimatedSprite mYellowLabyrinth;
-        AnimatedSprite mYellowScan;
-        AnimatedSprite mGreenPulse;
-        AnimatedSprite mPinkWarp;
+        ContentManager mContent;
 
         Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
 
@@ -175,14 +172,7 @@ namespace GravityShift
             mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
             mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
-            mYellowLabyrinth = new AnimatedSprite();
-            mYellowLabyrinth.Load(content, "YellowLabyrinth", 5, 0.1f);
-            mYellowScan = new AnimatedSprite();
-            mYellowScan.Load(content, "YellowScan", 7, 0.05f);
-            mGreenPulse = new AnimatedSprite();
-            mGreenPulse.Load(content, "GreenPulse", 4, 0.1f);
-            mPinkWarp = new AnimatedSprite();
-            mPinkWarp.Load(content, "PinkWarp", 4, 0.11f);
+            mContent = content;
 
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
@@ -316,7 +306,9 @@ namespace GravityShift
 
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
+
                             pObject.Update(gameTime);
+
                             // Update zoom based on players velocity                 
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             UpdateCollisionMatrix(pObject, oldPos);
@@ -584,6 +576,8 @@ namespace GravityShift
             mPlayer.StopRumble();
             mHasRespawned = true;
 
+            mActiveAnimations.Clear();
+
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
 
             //Only play respawn noise when player is still alive
@@ -704,18 +698,71 @@ namespace GravityShift
                         
                     }
 
+                    //Start any animations on walls we are touching
                     if (physObj is Player)
                         foreach (GameObject cObject in collidingList)
+                        {
                             if (cObject is Wall)
                             {
-                                Vector2 pos = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
-                                if (!mActiveAnimations.ContainsKey(pos))
-                                    mActiveAnimations.Add(pos, mPinkWarp);
+                                KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
+                                if (!mActiveAnimations.ContainsKey(animation.Key))
+                                    mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
                             }
+                            else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
+                            else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((ReverseTile)cObject).StartAnimation(GetAnimation(cObject.mName));
+                            else if (cObject is StaticObject && cObject.CollisionType != XmlKeys.COLLECTABLE)
+                                if (!mActiveAnimations.ContainsKey(cObject.mPosition))
+                                    mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
+                        }
                    
                     physObj.HandleCollisionList(collidingList);
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the proper animation for the given tile
+        /// </summary>
+        /// <param name="name">Name of the tile that needs to be animated</param>
+        /// <returns></returns>
+        private AnimatedSprite GetAnimation(string name)
+        {
+            string concatName = name.Substring(name.LastIndexOf('\\') + 1);
+            AnimatedSprite newAnimation = new AnimatedSprite();
+
+            switch (concatName)
+            {
+                case "Green":
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f);
+                    break;
+                case "Pink":
+                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                case "Blue":
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+                case "Yellow":
+                    newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
+                    break;
+                case "GreenSquiggle":
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
+                    break;
+                case "PinkSquiggle":
+                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                case "BlueSquiggle":
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+                case "YellowSquiggle":
+                    newAnimation.Load(mContent, "YellowScan", 7, 0.05f);
+                    break;
+                default:
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+            }
+            return newAnimation;
         }
     }
 }
