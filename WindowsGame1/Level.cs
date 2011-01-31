@@ -178,8 +178,8 @@ namespace GravityShift
 
             // Particle Engine
             List<Texture2D> textures = new List<Texture2D>();
-            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
-            textures.Add(content.Load<Texture2D>("Images/Particles/square"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/star"));
 
             Random random = new Random();
             particleEngine = new ParticleEngine(textures, new Vector2(400, 240), random.Next(6));
@@ -410,41 +410,42 @@ namespace GravityShift
             }
 
             // Please don't touch, let me know and I will change the engine, Thanks! -Jeremy
-            #region ParticleEngine
+            //#region ParticleEngine
 
-            // Update particles. Emission based on velocity (fewer particles if smaller velocity)
-            double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
-            particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
+            //// Update particles. Emission based on velocity (fewer particles if smaller velocity)
+            //double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
+            //particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
 
-            // Change origin of emitter.
-            double displacement;
-            int multiplier = 2;
-            float x;
-            float y;
+            //// Change origin of emitter.
+            //double displacement;
+            //int multiplier = 2;
+            //float x;
+            //float y;
 
-            //Calculate the x-origin offset
-            displacement = multiplier * mPlayer.mVelocity.X;
+            ////Calculate the x-origin offset
+            //displacement = multiplier * mPlayer.mVelocity.X;
 
-            if (displacement < -28)
-                displacement = -28;
-            else if (displacement > 28)
-                displacement = 28;
+            //if (displacement < -28)
+            //    displacement = -28;
+            //else if (displacement > 28)
+            //    displacement = 28;
 
-            x = (mPlayer.mPosition.X + 32) - (float)displacement;
+            //x = (mPlayer.mPosition.X + 32) - (float)displacement;
 
-            //Calculate the y-orgin offset
-            displacement = multiplier * mPlayer.mVelocity.Y;
+            ////Calculate the y-orgin offset
+            //displacement = multiplier * mPlayer.mVelocity.Y;
 
-            if (displacement < -28)
-                displacement = -28;
-            else if (displacement > 28)
-                displacement = 28;
+            //if (displacement < -28)
+            //    displacement = -28;
+            //else if (displacement > 28)
+            //    displacement = 28;
 
-            y = (mPlayer.mPosition.Y + 32) - (float)displacement;
+            //y = (mPlayer.mPosition.Y + 32) - (float)displacement;
 
-            particleEngine.EmitterLocation = new Vector2(x, y);
+            //particleEngine.EmitterLocation = new Vector2(x, y);
 
-            #endregion
+            //#endregion
+            particleEngine.Update(0);
         }
 
         /// <summary>
@@ -648,6 +649,8 @@ namespace GravityShift
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
                             }
+                            particleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            particleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
@@ -669,6 +672,24 @@ namespace GravityShift
                             mHasRespawned = false;
 
                             return;
+                        }
+                        
+                        // Particle Engine
+                        //
+                        // Midpoint Formula: (x1 + x2 / 2, y1 + y2 / 2)
+                        if (collided && physObj is Player)
+                        {
+                            Console.WriteLine("Player: " + mPlayer.Position);
+                            Console.WriteLine("Obj: " + obj.mPosition);
+
+                            float x1 = mPlayer.Position.X;
+                            float y1 = mPlayer.Position.Y;
+                            float x2 = obj.mPosition.X;
+                            float y2 = obj.mPosition.Y;
+
+                            Vector2 midpoint = new Vector2((x1 + x2) / 2, (y1 + y2) / 2);
+                            //particleEngine.EmitterLocation = midpoint;
+                            //particleEngine.Update(10);
                         }
                         
                     }
