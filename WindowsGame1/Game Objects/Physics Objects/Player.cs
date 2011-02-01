@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
+using GravityShift.MISC_Code;
 
 namespace GravityShift
 {
@@ -21,7 +22,11 @@ namespace GravityShift
     class Player : PhysicsObject
     {
         IControlScheme mControls;
+
         Vector2 mSpawnPoint;
+        public Vector2 SpawnPoint
+        {   get { return mSpawnPoint; } }
+
         public int mNumLives = 5;
         public int mScore = 0;
         public bool mIsAlive = true;
@@ -29,7 +34,7 @@ namespace GravityShift
         //Player rotation values (current, goal, and speed)
         private float mRotation;
         private float mGoalRotation;
-        private float mRotationFactor = (float)(Math.PI / 60.0f);
+        private float mRotationFactor = (float)(Math.PI / 30.0f);
 
         //rotation goals for the 4 directions
         private float mRotationDown = 0.0f;
@@ -37,11 +42,6 @@ namespace GravityShift
         private float mRotationUp = (float)Math.PI;
         private float mRotationLeft = (float)(Math.PI / 2.0);
 
-        // Number of player textures
-        private const int NUM_PLAYER_TEXTURES = 13;
-
-        // Array of player textures.
-        public Texture2D[] mPlayerTextures = new Texture2D[NUM_PLAYER_TEXTURES];
 
         public Texture2D mCurrentTexture;
 
@@ -64,22 +64,11 @@ namespace GravityShift
             mGoalRotation = 0.0f;
             ID = entity.mId;
 
-            mPlayerTextures[0] = content.Load<Texture2D>("Images/Player/NeonCharSmile");
-            mPlayerTextures[1] = content.Load<Texture2D>("Images/Player/NeonCharLaugh");
-            mPlayerTextures[2] = content.Load<Texture2D>("Images/Player/NeonCharDazed");
-            mPlayerTextures[3] = content.Load<Texture2D>("Images/Player/NeonCharDead");
-            mPlayerTextures[4] = content.Load<Texture2D>("Images/Player/NeonCharDead2");
-            mPlayerTextures[5] = content.Load<Texture2D>("Images/Player/NeonCharMeh");
-            mPlayerTextures[6] = content.Load<Texture2D>("Images/Player/NeonCharSad");
-            mPlayerTextures[7] = content.Load<Texture2D>("Images/Player/NeonCharSad2");
-            mPlayerTextures[8] = content.Load<Texture2D>("Images/Player/NeonCharSkeptic");
-            mPlayerTextures[9] = content.Load<Texture2D>("Images/Player/NeonCharSurprise");
-            mPlayerTextures[10] = content.Load<Texture2D>("Images/Player/NeonCharWorry");
-            mPlayerTextures[11] = content.Load<Texture2D>("Images/Player/NeonCharBlank");
-            mPlayerTextures[12] = content.Load<Texture2D>("Images/Player/NeonCharGrid");
+            PlayerFaces.Load(content);
 
-            mCurrentTexture = mPlayerTextures[0];
+            mCurrentTexture = PlayerFaces.SMILE;
 
+            mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
         }
         /// <summary>
         /// Updates the player location and the player controls
@@ -90,14 +79,12 @@ namespace GravityShift
             base.Update(gametime);
 
             if (mRumble)
-            {
-                rumble(1.0, gametime);
-            }
+                StopRumble();
 
-            if (Math.Abs(mVelocity.X) >= 20 || Math.Abs(mVelocity.Y) >= 20)
-                mCurrentTexture = mPlayerTextures[9];
+            if (Math.Abs(mVelocity.X) >= 15 || Math.Abs(mVelocity.Y) >= 15)
+                mCurrentTexture = PlayerFaces.SURPRISE;
             else if (!mRumble) 
-                mCurrentTexture = mPlayerTextures[0];
+                mCurrentTexture = PlayerFaces.SMILE;
 
             //SHIFT: Down
             if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
@@ -155,8 +142,9 @@ namespace GravityShift
         {
             //TODO: put rotation back in later
             canvas.Draw(mCurrentTexture, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y), 
-                new Rectangle(0, 0, (int)mSize.X, (int)mSize.Y), Color.White, 0.0f, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
-            //canvas.Draw(mTexture, mPosition, null, Color.White, mRotation, new Vector2(mTexture.Width / 2, mTexture.Height / 2), 1.0f, SpriteEffects.None, 0);
+                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, 0.0f, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+        
+            //canvas.Draw(mTexture, Vector2.Add(mPosition, new Vector2(mBoundingBox.Width / 2, mBoundingBox.Height / 2)), null, Color.White, mRotation, new Vector2(mBoundingBox.Width / 2, mBoundingBox.Height / 2), 1.0f, SpriteEffects.None, 0);
         }
 
         /// <summary>
@@ -166,14 +154,39 @@ namespace GravityShift
         {
             mRumble = true;
 
+            mCurrentTexture = PlayerFaces.DEAD2;
+
+            StartRumble();
+
             // reset player to start position
-            this.mPosition = mSpawnPoint;
+            //this.mPosition = mSpawnPoint;
+
             // remove a life
             mNumLives--;
             if (mNumLives <= 0)
                 mIsAlive = false;
 
             return mNumLives;
+        }
+
+        public void StartRumble()
+        {
+            mRumble = true;
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+
+                GamePad.SetVibration(current, .25f, .25f);
+            }
+        }
+        public void StopRumble()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
+                mRumble = false;
+                GamePad.SetVibration(current, 0.0f, 0.0f);
+            }
         }
 
         /// <summary>
@@ -185,22 +198,29 @@ namespace GravityShift
         {
             double mTime = time;
 
-            mCurrentTexture = mPlayerTextures[4];
+            for (int i = 0; i < 4; i++)
+            {
+                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
 
-//            for (int i = 0; i < 4; i++)
-//            {
-//                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-
-                GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
+                GamePad.SetVibration(current, 1.0f, 1.0f);
 
                 if ((elapsedTime += gameTime.ElapsedGameTime.TotalSeconds) >= mTime)
                 {
                     mRumble = false;
-                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+                    GamePad.SetVibration(current, 0.0f, 0.0f);
                     elapsedTime = 0.0;
-                    mCurrentTexture = mPlayerTextures[0];
+                    mCurrentTexture = PlayerFaces.SMILE;
                 }
-//            }
+            }
+        }
+
+        public override void Respawn()
+        {
+            base.Respawn();
+
+            mRotation = mRotationDown;
+            mGoalRotation = mRotation;
+            mCurrentTexture = PlayerFaces.SMILE;
         }
 
         /// <summary>

@@ -161,9 +161,9 @@ namespace GravityShift
             spriteBatch.Draw(mPauseTitle, new Vector2(180.0f, 50.0f), Color.White);
 
             /* Draw the pause options */
-            spriteBatch.Draw(mItems[0], new Vector2(500.0f, 425.0f), Color.White);
-            spriteBatch.Draw(mItems[1], new Vector2(500.0f, 500.0f), Color.White);
-            spriteBatch.Draw(mItems[2], new Vector2(500.0f, 580.0f), Color.White);
+            spriteBatch.Draw(mItems[0], new Vector2(575.0f, 425.0f), Color.White);
+            spriteBatch.Draw(mItems[1], new Vector2(495.0f, 500.0f), Color.White);
+            spriteBatch.Draw(mItems[2], new Vector2(505.0f, 580.0f), Color.White);
 
             spriteBatch.End();
         }

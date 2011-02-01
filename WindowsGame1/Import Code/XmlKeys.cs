@@ -25,10 +25,16 @@ namespace GravityShift.Import_Code
         public static string MASS = "Mass";
         public static string XFORCE = "XForce";
         public static string YFORCE = "YForce";
+        public static string FORCE = "Force";
         public static string RAIL = "Rail";
         public static string RAIL_X = "X";
         public static string RAIL_Y = "Y";
         public static string LENGTH = "Length";
+        public static string REVERSE = "Reverse";
+        public static string MUSIC_FILE = "MusicFile";
+        public static string SOUND_FILE = "SoundFile";
+        public static string LOOP = "Loop";
+        public static string PLAYER_FACE = "PlayerFace";
         
         //Names
         public static string WIDTH = "Width";
@@ -54,8 +60,15 @@ namespace GravityShift.Import_Code
         //Level Select Keys
         public static string LEVELS = "Levels";
         public static string LEVEL_DATA = "LevelData";
-        public static string LEVEL_NAME = "name";
-        public static string UNLOCKED = "unlocked";
-        public static string APPLES = "apples";
+        public static string LEVEL_NAME = "Name";
+        public static string UNLOCKED = "Unlocked";
+        public static string TIMERSTAR = "Timerstar";
+        public static string COLLECTIONSTAR = "Collectionstar";
+        public static string DEATHSTAR = "Deathstar";
+
+
+        //Smile Strings
+        public enum Faces
+        { Smile, Laugh, Dazed, Dead, Dead2, Meh, Sad, Sad2, Skeptic, Surprise, Worry, Blank, Grid }
     }
 }

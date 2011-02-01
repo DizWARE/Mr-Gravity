@@ -42,10 +42,13 @@ namespace GravityShift
         public Rectangle mBoundingBox;
         public Vector2 mVelocity;
 
+        private bool mBeingAnimated;
+        private AnimatedSprite mAnimationTexture;
+
         protected bool mIsSquare;
         public bool IsSquare { get { return mIsSquare; } }
 
-        protected String mName;
+        public String mName;
 
         /// <summary>
         /// float that acts as a multiplier per frame 
@@ -144,6 +147,7 @@ namespace GravityShift
         /// <param name="name"></param>
         public virtual void Load(ContentManager content, String name)
         {
+
             try
             {   mTexture = content.Load<Texture2D>(name);   }
             catch (Exception ex)

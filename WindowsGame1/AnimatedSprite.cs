@@ -18,12 +18,14 @@ namespace GravityShift
     {
         /* Number of frames the animation has */
         private int mFrameCount;
+        public int LastFrame { get { return mFrameCount - 1; } }
 
         /* Frames Per Second */
         private float mFPS;
 
         /* The current frame to show */
         private int mFrame;
+        public int Frame { get { return mFrame; } }
 
         private Texture2D mTexture;
 
@@ -42,7 +44,7 @@ namespace GravityShift
         public void Load(ContentManager content, string name, int frameCount, float FPS)
         {
             mFrameCount = frameCount;
-            mTexture = content.Load<Texture2D>("animatedSprites/" + name);
+            mTexture = content.Load<Texture2D>("Images/AnimatedSprites/" + name);
             mFPS = FPS;
             mFrame = 0;
             mElapsed = 0.0f;

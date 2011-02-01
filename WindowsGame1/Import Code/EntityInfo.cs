@@ -70,6 +70,7 @@ namespace GravityShift.Import_Code
         public static EntityInfo CreatePlayerEndInfo(Vector2 startLocation)
         {
             EntityInfo playerEnd = new EntityInfo("PlayerEnd", startLocation);
+            playerEnd.mProperties.Add("Shape", "Circle");
             playerEnd.mId = -2;
             return playerEnd;
         }

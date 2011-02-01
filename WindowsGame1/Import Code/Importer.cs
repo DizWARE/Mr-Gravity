@@ -134,9 +134,18 @@ namespace GravityShift.Import_Code
                     {
                         mass = (float)Convert.ToDouble(entity.mProperties["Mass"]);
                     }
-                    MovingTile tile = new MovingTile(mContent, ref environment, 0.8f, entity);
-                    tile.Mass = mass;
-                    objects.Add(tile);
+                    if (entity.mProperties.ContainsKey(XmlKeys.REVERSE))
+                    {
+                        ReverseTile rTile = new ReverseTile(mContent, ref environment, 0.8f, entity);
+                        rTile.Mass = mass;
+                        objects.Add(rTile);
+                    }
+                    else
+                    {
+                        MovingTile mTile = new MovingTile(mContent, ref environment, 0.8f, entity);
+                        mTile.Mass = mass;
+                        objects.Add(mTile);
+                    }
                 }
             }
 
@@ -311,6 +320,26 @@ namespace GravityShift.Import_Code
                     if (entity.mName == "Force")
                     {
                         ForceTrigger trigger = new ForceTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "Music")
+                    {
+                        MusicTrigger trigger = new MusicTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "SFX")
+                    {
+                        FXTrigger trigger = new FXTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "BlackHole")
+                    {
+                        BlackHoleTrigger trigger = new BlackHoleTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
+                    else if (entity.mName == "PlayerFace")
+                    {
+                        PlayerFaceTrigger trigger = new PlayerFaceTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
                     //Add trigger by name

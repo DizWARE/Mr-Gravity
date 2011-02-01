@@ -70,7 +70,7 @@ namespace GravityShift
 
         private Vector3 mDeathPanLength;
         private float mDeathPanUpdates;
-        private static float SCALING_FACTOR = 50;
+        private static float SCALING_FACTOR = 85;
 
         // Camera
         public static Camera mCam;
@@ -97,15 +97,24 @@ namespace GravityShift
         Texture2D mRailBottom;
         Texture2D mRailVert;
 
+        ContentManager mContent;
+
+        Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
+
         Player mPlayer;
 
         PhysicsEnvironment mPhysicsEnvironment;
 
         IControlScheme mControls;
 
+        bool mHasRespawned = true;
+
         /* SpriteFont */
         SpriteFont mKootenay;
         SpriteFont mQuartz;
+
+        // Particle Engine
+        ParticleEngine particleEngine;
 
         #region HUD
 
@@ -136,6 +145,7 @@ namespace GravityShift
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
             mRemoveCollected = new List<GameObject>();
+            mActiveAnimations = new Dictionary<Vector2, AnimatedSprite>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
         }
@@ -162,6 +172,8 @@ namespace GravityShift
             mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
             mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
+            mContent = content;
+
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
@@ -170,6 +182,14 @@ namespace GravityShift
 
             mNumCollected = 0;
             mNumCollectable = 0;
+
+            // Particle Engine
+            List<Texture2D> textures = new List<Texture2D>();
+            textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/star"));
+
+            Random random = new Random();
+            particleEngine = new ParticleEngine(textures, new Vector2(400, 240), random.Next(6));
         }
 
         /// <summary>
@@ -286,18 +306,29 @@ namespace GravityShift
 
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
+
                             pObject.Update(gameTime);
+
                             // Update zoom based on players velocity                 
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             UpdateCollisionMatrix(pObject, oldPos);
 
                             // handle collision right after you move
                             HandleCollisions(pObject, ref gameState);
+
                             if (pObject is Player)
                                 foreach (Trigger trigger in mTrigger)
                                     trigger.RunTrigger(mObjects, (Player)pObject);
-
                         }
+                        if (!mHasRespawned) break;
+                    }
+
+                    for(int i = 0; i < mActiveAnimations.Count; i++)
+                    {
+                        KeyValuePair<Vector2, AnimatedSprite> current = mActiveAnimations.ElementAt(i);
+                        current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        if (current.Value.Frame == current.Value.LastFrame)
+                            mActiveAnimations.Remove(current.Key);
                     }
 
                     //Check to see if we collected anything
@@ -354,7 +385,10 @@ namespace GravityShift
                 }
 
                 else if (mDeathState == DeathStates.Respawning)
+                {
                     mDeathState = DeathStates.Panning;
+                    Respawn();
+                }
 
                 else//Pan back to player after death
                 {
@@ -363,12 +397,15 @@ namespace GravityShift
                     mDeathPanUpdates++;
 
                     if (mDeathPanUpdates == SCALING_FACTOR)
+                    {
                         mDeathState = DeathStates.Playing;
+                    }
                 }
             }
 
             if (!mPlayer.mIsAlive)
             {
+                mPlayer.StopRumble();
                 if (mControls.isAPressed(false))// resets game after game over
                 {
                     mPlayer.mNumLives = 5;
@@ -388,6 +425,44 @@ namespace GravityShift
                     mRemoveCollected.Clear();
                 }
             }
+
+            // Please don't touch, let me know and I will change the engine, Thanks! -Jeremy
+            //#region ParticleEngine
+
+            //// Update particles. Emission based on velocity (fewer particles if smaller velocity)
+            //double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
+            //particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
+
+            //// Change origin of emitter.
+            //double displacement;
+            //int multiplier = 2;
+            //float x;
+            //float y;
+
+            ////Calculate the x-origin offset
+            //displacement = multiplier * mPlayer.mVelocity.X;
+
+            //if (displacement < -28)
+            //    displacement = -28;
+            //else if (displacement > 28)
+            //    displacement = 28;
+
+            //x = (mPlayer.mPosition.X + 32) - (float)displacement;
+
+            ////Calculate the y-orgin offset
+            //displacement = multiplier * mPlayer.mVelocity.Y;
+
+            //if (displacement < -28)
+            //    displacement = -28;
+            //else if (displacement > 28)
+            //    displacement = 28;
+
+            //y = (mPlayer.mPosition.Y + 32) - (float)displacement;
+
+            //particleEngine.EmitterLocation = new Vector2(x, y);
+
+            //#endregion
+            particleEngine.Update(0);
         }
 
         /// <summary>
@@ -404,8 +479,11 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation());
+            foreach (Trigger trigger in mTrigger)
+                trigger.Draw(spriteBatch, gameTime);
 
             // Loops through all rail objects and draws the appropriate rail image.
+            #region DrawRails
             foreach (EntityInfo rail in mRails)
             {
                 Vector2 position = new Vector2(rail.mLocation.X * 64, rail.mLocation.Y * 64);
@@ -436,9 +514,18 @@ namespace GravityShift
                     }
                 }
             }
+            #endregion
 
+            if(mDeathState == DeathStates.Playing) 
+                particleEngine.Draw(spriteBatch);
+
+            //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
-                gObject.Draw(spriteBatch, gameTime);
+                    gObject.Draw(spriteBatch, gameTime);
+
+            //Draw all of our active animations
+            for (int i = 0; i < mActiveAnimations.Count; i++)
+                mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
 
             spriteBatch.End();
         }
@@ -461,25 +548,18 @@ namespace GravityShift
                                 mCam1.get_transformation());
 
             // Draw the black background behind HUD
-            spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 400), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 500), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
 
-            spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 200), Color.DarkTurquoise);
+            if (mPlayer.mIsAlive)
+            {
+                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
+            }
 
-            spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 200), Color.DarkTurquoise);
-
-//            if (mPhysicsEnvironment.GravityDirection == GravityDirections.Up)
-//                spriteBatch.Draw(mDirections[0], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Right)
-//                spriteBatch.Draw(mDirections[1], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Down)
-//                spriteBatch.Draw(mDirections[2], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-//            else if (mPhysicsEnvironment.GravityDirection == GravityDirections.Left)
-//                spriteBatch.Draw(mDirections[3], new Vector2(mCam1.Position.X + 500, mCam1.Position.Y - 200), Color.White);
-
-            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 200), Color.White);
+            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 300), Color.White);
 
             if (!mPlayer.mIsAlive)
-                spriteBatch.DrawString(mQuartz, "Out of Lives\nPress A to Restart", new Vector2(mCam1.Position.X + 200, mCam1.Position.Y + 200), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
 
             spriteBatch.End();
         }
@@ -493,7 +573,12 @@ namespace GravityShift
         private void Respawn()
         {
             mPlayer.Respawn();
-            
+
+            mPlayer.StopRumble();
+            mHasRespawned = true;
+
+            mActiveAnimations.Clear();
+
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
 
             //Only play respawn noise when player is still alive
@@ -524,6 +609,9 @@ namespace GravityShift
         /// <param name="physObj">object to see if anything is colliding with it</param>
         private void HandleCollisions(PhysicsObject physObj, ref GameStates gameState)
         {
+            // keep track of all object colliding with physObj
+            List<GameObject> collidingList = new List<GameObject>();
+
             Vector2 gridPos = GridSpace.GetGridCoord(physObj.mPosition);
 
             //Goes through the 9 possible positions for collision to see if this physics object is colliding with anything
@@ -534,19 +622,38 @@ namespace GravityShift
                 {
                     if (gridPos.X + j < 0 || gridPos.X + j >= mCollisionMatrix[(int)gridPos.Y + i].Length) continue;//Bounds check
 
-                    //For each object registered at this spot, check for collisions
+                    
                     foreach (GameObject obj in mCollisionMatrix[(int)gridPos.Y+i][(int)gridPos.X+j])
                     {
+                        bool collided = false;
+
+                        if (!physObj.IsSquare && obj.IsSquare) // phys obj is circle
+                        {
+                            collided = physObj.IsCollidingBoxAndBox(obj);
+                        }
+                        else if (physObj.IsSquare && !obj.IsSquare) //obj is circle 
+                        {
+                            collided = physObj.IsCollidingBoxAndBox(obj);
+                        }
+                        else // both circles
+                        {
+                            collided = physObj.IsCollidingCircleandCircle(obj);
+                        }
+
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
 
-                        bool collided = physObj.HandleCollisions(obj);
+                        if (collided && !(obj is PlayerEnd) )
+                        {
+                            collidingList.Add(obj);
+                        }
+                        
+                        //bool collided = physObj.HandleCollisions(obj);
 
                         //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
-                            mPlayer.mCurrentTexture = mPlayer.mPlayerTextures[1];
-                            Respawn();
+                            mPlayer.mCurrentTexture = PlayerFaces.LAUGH;
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
@@ -567,16 +674,18 @@ namespace GravityShift
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
                             }
+                            particleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            particleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
-                            Respawn();
+                            
 
                             //Get difference of two positions
-                            mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0), mCam.Position);
+                            mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0), mCam.Position);
                             //Divide by scaling factor to get camera pan at each update.
                             mDeathPanLength = Vector3.Divide(mDeathPanLength, SCALING_FACTOR);
                             //Set the update counter to zero
@@ -584,10 +693,79 @@ namespace GravityShift
 
                             gameState = GameStates.Death;
                             mDeathState = DeathStates.Respawning;
+
+                            mHasRespawned = false;
+
+                            return;
                         }
+                        
                     }
+
+                    //Start any animations on walls we are touching
+                    if (physObj is Player)
+                        foreach (GameObject cObject in collidingList)
+                        {
+                            if (cObject is Wall)
+                            {
+                                KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
+                                if (!mActiveAnimations.ContainsKey(animation.Key))
+                                    mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
+                            }
+                            else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
+                            else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((ReverseTile)cObject).StartAnimation(GetAnimation(cObject.mName));
+                            else if (cObject is StaticObject && cObject.CollisionType != XmlKeys.COLLECTABLE)
+                                if (!mActiveAnimations.ContainsKey(cObject.mPosition))
+                                    mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
+                        }
+                   
+                    physObj.HandleCollisionList(collidingList);
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the proper animation for the given tile
+        /// </summary>
+        /// <param name="name">Name of the tile that needs to be animated</param>
+        /// <returns></returns>
+        private AnimatedSprite GetAnimation(string name)
+        {
+            string concatName = name.Substring(name.LastIndexOf('\\') + 1);
+            AnimatedSprite newAnimation = new AnimatedSprite();
+
+            switch (concatName)
+            {
+                case "Green":
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f);
+                    break;
+                case "Pink":
+                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                case "Blue":
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+                case "Yellow":
+                    newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
+                    break;
+                case "GreenSquiggle":
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
+                    break;
+                case "PinkSquiggle":
+                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                case "BlueSquiggle":
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+                case "YellowSquiggle":
+                    newAnimation.Load(mContent, "YellowScan", 7, 0.05f);
+                    break;
+                default:
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+            }
+            return newAnimation;
         }
     }
 }

@@ -44,7 +44,9 @@ namespace GravityShift
         private static SoundEffect menuMusic_titleSource;
         public static SoundEffectInstance menuMusic_title;
         private static SoundEffect music_level00Source;
-        public static SoundEffectInstance music_level00; 
+        public static SoundEffectInstance music_level00;
+
+        public static SoundEffectInstance gameMusic_generic;
 
         public GameSound() { }
 
@@ -96,12 +98,20 @@ namespace GravityShift
             music_level00.Volume = volume;
         }
 
+        public static void SetGeneric(SoundEffectInstance generic)
+        {
+            gameMusic_generic = generic;
+        }
+
         private static void StopMusic()
         {
             level_stageFail.Stop();
             level_stageVictory.Stop();
             menuMusic_title.Stop();
             music_level00.Stop();
+
+            if (gameMusic_generic != null)
+                gameMusic_generic.Stop();
         }
         /*
          * StopOthersAndPlay
