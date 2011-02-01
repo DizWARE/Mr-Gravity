@@ -699,24 +699,6 @@ namespace GravityShift
                             return;
                         }
                         
-                        // Particle Engine
-                        //
-                        // Midpoint Formula: (x1 + x2 / 2, y1 + y2 / 2)
-                        if (collided && physObj is Player)
-                        {
-                            Console.WriteLine("Player: " + mPlayer.Position);
-                            Console.WriteLine("Obj: " + obj.mPosition);
-
-                            float x1 = mPlayer.Position.X;
-                            float y1 = mPlayer.Position.Y;
-                            float x2 = obj.mPosition.X;
-                            float y2 = obj.mPosition.Y;
-
-                            Vector2 midpoint = new Vector2((x1 + x2) / 2, (y1 + y2) / 2);
-                            //particleEngine.EmitterLocation = midpoint;
-                            //particleEngine.Update(10);
-                        }
-                        
                     }
 
                     //Start any animations on walls we are touching
