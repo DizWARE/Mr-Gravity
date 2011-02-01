@@ -640,14 +640,13 @@ namespace GravityShift
                     spriteBatch.DrawString(mKootenay, "Developed By:", new Vector2(400.0f, 375.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Lukas Black", new Vector2(400.0f, 425.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Nate Bradford", new Vector2(400.0f, 450.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Michael DeVico", new Vector2(400.0f, 475.0f), Color.White);
+                    spriteBatch.DrawString(mKootenay, "Curtis Taylor", new Vector2(400.0f, 475.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Steven Doxey", new Vector2(400.0f, 500.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Kamron Egan", new Vector2(400.0f, 525.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Jeremy Heintz", new Vector2(400.0f, 550.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Morgan Reynolds", new Vector2(400.0f, 575.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Tyler Robinson", new Vector2(400.0f, 600.0f), Color.White);
                     spriteBatch.DrawString(mKootenay, "Casey Spencer", new Vector2(400.0f, 625.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Curtis Taylor", new Vector2(400.0f, 650.0f), Color.White);
 
                     spriteBatch.Draw(mBackSel, new Vector2(900.0f, 700.0f), Color.White);
 
