@@ -123,6 +123,7 @@ namespace GravityShift
         private Texture2D[] mLives;
         public static int mNumCollected;
         public static int mNumCollectable;
+        public static int mDeaths;
 
         #endregion
 
@@ -346,6 +347,9 @@ namespace GravityShift
                         //Then clear the list
                         mRemoveCollected.Clear();
                     }
+                    
+                    //Update number of deaths occured
+                    mDeaths = 5 - mPlayer.mNumLives;
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction

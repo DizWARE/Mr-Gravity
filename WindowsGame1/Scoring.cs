@@ -278,6 +278,7 @@ namespace GravityShift
 
             spriteBatch.DrawString(mQuartz, "Time: " + (int)GravityShift.Level.TIMER + " Seconds", new Vector2(350.0f, 300.0f), Color.DarkOrange);
             spriteBatch.DrawString(mQuartz, "Collected: " + (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(350.0f, 350.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Deaths: " + (int)GravityShift.Level.mDeaths, new Vector2(350.0f, 400.0f), Color.DarkOrange);
 
             spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
             spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
