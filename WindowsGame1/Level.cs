@@ -70,7 +70,7 @@ namespace GravityShift
 
         private Vector3 mDeathPanLength;
         private float mDeathPanUpdates;
-        private static float SCALING_FACTOR = 50;
+        private static float SCALING_FACTOR = 85;
 
         // Camera
         public static Camera mCam;
@@ -96,6 +96,10 @@ namespace GravityShift
         Texture2D mRailTop;
         Texture2D mRailBottom;
         Texture2D mRailVert;
+
+        ContentManager mContent;
+
+        Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
 
         Player mPlayer;
 
@@ -141,6 +145,7 @@ namespace GravityShift
             mObjects = new List<GameObject>();
             mCollected = new List<GameObject>();
             mRemoveCollected = new List<GameObject>();
+            mActiveAnimations = new Dictionary<Vector2, AnimatedSprite>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
         }
@@ -167,6 +172,8 @@ namespace GravityShift
             mRailBottom = content.Load<Texture2D>("Images/NonHazards/Rails/RailBottom");
             mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
+            mContent = content;
+
             mLives = new Texture2D[10];
             for (int i = 0; i < mLives.Length; i++)
                 mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
@@ -178,8 +185,8 @@ namespace GravityShift
 
             // Particle Engine
             List<Texture2D> textures = new List<Texture2D>();
-            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
-            textures.Add(content.Load<Texture2D>("Images/Particles/square"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/star"));
 
             Random random = new Random();
             particleEngine = new ParticleEngine(textures, new Vector2(400, 240), random.Next(6));
@@ -299,19 +306,29 @@ namespace GravityShift
 
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
+
                             pObject.Update(gameTime);
+
                             // Update zoom based on players velocity                 
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             UpdateCollisionMatrix(pObject, oldPos);
 
                             // handle collision right after you move
                             HandleCollisions(pObject, ref gameState);
+
                             if (pObject is Player)
                                 foreach (Trigger trigger in mTrigger)
                                     trigger.RunTrigger(mObjects, (Player)pObject);
-
                         }
                         if (!mHasRespawned) break;
+                    }
+
+                    for(int i = 0; i < mActiveAnimations.Count; i++)
+                    {
+                        KeyValuePair<Vector2, AnimatedSprite> current = mActiveAnimations.ElementAt(i);
+                        current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        if (current.Value.Frame == current.Value.LastFrame)
+                            mActiveAnimations.Remove(current.Key);
                     }
 
                     //Check to see if we collected anything
@@ -410,41 +427,42 @@ namespace GravityShift
             }
 
             // Please don't touch, let me know and I will change the engine, Thanks! -Jeremy
-            #region ParticleEngine
+            //#region ParticleEngine
 
-            // Update particles. Emission based on velocity (fewer particles if smaller velocity)
-            double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
-            particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
+            //// Update particles. Emission based on velocity (fewer particles if smaller velocity)
+            //double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
+            //particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
 
-            // Change origin of emitter.
-            double displacement;
-            int multiplier = 2;
-            float x;
-            float y;
+            //// Change origin of emitter.
+            //double displacement;
+            //int multiplier = 2;
+            //float x;
+            //float y;
 
-            //Calculate the x-origin offset
-            displacement = multiplier * mPlayer.mVelocity.X;
+            ////Calculate the x-origin offset
+            //displacement = multiplier * mPlayer.mVelocity.X;
 
-            if (displacement < -28)
-                displacement = -28;
-            else if (displacement > 28)
-                displacement = 28;
+            //if (displacement < -28)
+            //    displacement = -28;
+            //else if (displacement > 28)
+            //    displacement = 28;
 
-            x = (mPlayer.mPosition.X + 32) - (float)displacement;
+            //x = (mPlayer.mPosition.X + 32) - (float)displacement;
 
-            //Calculate the y-orgin offset
-            displacement = multiplier * mPlayer.mVelocity.Y;
+            ////Calculate the y-orgin offset
+            //displacement = multiplier * mPlayer.mVelocity.Y;
 
-            if (displacement < -28)
-                displacement = -28;
-            else if (displacement > 28)
-                displacement = 28;
+            //if (displacement < -28)
+            //    displacement = -28;
+            //else if (displacement > 28)
+            //    displacement = 28;
 
-            y = (mPlayer.mPosition.Y + 32) - (float)displacement;
+            //y = (mPlayer.mPosition.Y + 32) - (float)displacement;
 
-            particleEngine.EmitterLocation = new Vector2(x, y);
+            //particleEngine.EmitterLocation = new Vector2(x, y);
 
-            #endregion
+            //#endregion
+            particleEngine.Update(0);
         }
 
         /// <summary>
@@ -500,8 +518,14 @@ namespace GravityShift
 
             if(mDeathState == DeathStates.Playing) 
                 particleEngine.Draw(spriteBatch);
+
+            //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
                     gObject.Draw(spriteBatch, gameTime);
+
+            //Draw all of our active animations
+            for (int i = 0; i < mActiveAnimations.Count; i++)
+                mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
 
             spriteBatch.End();
         }
@@ -552,6 +576,8 @@ namespace GravityShift
 
             mPlayer.StopRumble();
             mHasRespawned = true;
+
+            mActiveAnimations.Clear();
 
             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
 
@@ -648,6 +674,8 @@ namespace GravityShift
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
                             }
+                            particleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            particleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
@@ -671,10 +699,91 @@ namespace GravityShift
                             return;
                         }
                         
+                        // Particle Engine
+                        //
+                        // Midpoint Formula: (x1 + x2 / 2, y1 + y2 / 2)
+                        if (collided && physObj is Player)
+                        {
+                            Console.WriteLine("Player: " + mPlayer.Position);
+                            Console.WriteLine("Obj: " + obj.mPosition);
+
+                            float x1 = mPlayer.Position.X;
+                            float y1 = mPlayer.Position.Y;
+                            float x2 = obj.mPosition.X;
+                            float y2 = obj.mPosition.Y;
+
+                            Vector2 midpoint = new Vector2((x1 + x2) / 2, (y1 + y2) / 2);
+                            //particleEngine.EmitterLocation = midpoint;
+                            //particleEngine.Update(10);
+                        }
+                        
                     }
+
+                    //Start any animations on walls we are touching
+                    if (physObj is Player)
+                        foreach (GameObject cObject in collidingList)
+                        {
+                            if (cObject is Wall)
+                            {
+                                KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
+                                if (!mActiveAnimations.ContainsKey(animation.Key))
+                                    mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
+                            }
+                            else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
+                            else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
+                                ((ReverseTile)cObject).StartAnimation(GetAnimation(cObject.mName));
+                            else if (cObject is StaticObject && cObject.CollisionType != XmlKeys.COLLECTABLE)
+                                if (!mActiveAnimations.ContainsKey(cObject.mPosition))
+                                    mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
+                        }
+                   
                     physObj.HandleCollisionList(collidingList);
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the proper animation for the given tile
+        /// </summary>
+        /// <param name="name">Name of the tile that needs to be animated</param>
+        /// <returns></returns>
+        private AnimatedSprite GetAnimation(string name)
+        {
+            string concatName = name.Substring(name.LastIndexOf('\\') + 1);
+            AnimatedSprite newAnimation = new AnimatedSprite();
+
+            switch (concatName)
+            {
+                case "Green":
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f);
+                    break;
+                case "Pink":
+                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                case "Blue":
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+                case "Yellow":
+                    newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
+                    break;
+                case "GreenSquiggle":
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
+                    break;
+                case "PinkSquiggle":
+                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                case "BlueSquiggle":
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+                case "YellowSquiggle":
+                    newAnimation.Load(mContent, "YellowScan", 7, 0.05f);
+                    break;
+                default:
+                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    break;
+            }
+            return newAnimation;
         }
     }
 }

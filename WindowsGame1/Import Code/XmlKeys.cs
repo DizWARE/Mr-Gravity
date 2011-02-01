@@ -30,6 +30,7 @@ namespace GravityShift.Import_Code
         public static string RAIL_X = "X";
         public static string RAIL_Y = "Y";
         public static string LENGTH = "Length";
+        public static string REVERSE = "Reverse";
         public static string MUSIC_FILE = "MusicFile";
         public static string SOUND_FILE = "SoundFile";
         public static string LOOP = "Loop";

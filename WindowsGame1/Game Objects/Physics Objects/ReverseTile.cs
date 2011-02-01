@@ -18,7 +18,7 @@ namespace GravityShift
     /// <summary>
     /// Moving tile
     /// </summary>
-    class MovingTile : PhysicsObject
+    class ReverseTile : PhysicsObject
     {
         private bool mBeingAnimated;
         public bool BeingAnimated { get { return mBeingAnimated; } }
@@ -26,7 +26,7 @@ namespace GravityShift
         private AnimatedSprite mAnimationTexture;
 
         /// <summary>
-        /// Constructs a tile that is capable of moving around the screen
+        /// Constructs a tile that reacts to gravity in the opposite direction
         /// </summary>
         /// <param name="content">The games content manager</param>
         /// <param name="name">Name of the Object("Images/{Type}/{Name}"</param>
@@ -34,7 +34,7 @@ namespace GravityShift
         /// <param name="friction">Friction that reacts to physics objects</param>
         /// <param name="isSquare">True if the object should behave like a square</param>
         /// <param name="isHazardous">True if the object should kill the player when touched</param>
-        public MovingTile(ContentManager content, ref PhysicsEnvironment environment, float friction, EntityInfo entity) :
+        public ReverseTile(ContentManager content, ref PhysicsEnvironment environment, float friction, EntityInfo entity) :
             base(content, ref environment, friction, entity)
         {
             mBeingAnimated = false;
@@ -49,7 +49,11 @@ namespace GravityShift
 
         public override void Update(GameTime gametime)
         {
-            base.Update(gametime);
+            UpdateVelocities();
+            mPrevPos = mPosition;
+            mPosition = Vector2.Add(mPosition, -mVelocity);
+            UpdateBoundingBoxes();
+
             if (mBeingAnimated)
             {
                 mAnimationTexture.Update((float)gametime.ElapsedGameTime.TotalSeconds);

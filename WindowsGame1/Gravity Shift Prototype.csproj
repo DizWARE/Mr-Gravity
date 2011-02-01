@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="AnimatedSprite.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="Game Objects\Physics Objects\ReverseTile.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\BlackHoleTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\FXTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\ForceTrigger.cs" />

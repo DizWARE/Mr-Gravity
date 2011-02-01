@@ -42,6 +42,9 @@ namespace GravityShift
         public Rectangle mBoundingBox;
         public Vector2 mVelocity;
 
+        private bool mBeingAnimated;
+        private AnimatedSprite mAnimationTexture;
+
         protected bool mIsSquare;
         public bool IsSquare { get { return mIsSquare; } }
 

@@ -58,5 +58,22 @@ namespace GravityShift.Game_Objects.Static_Objects
             foreach (StaticObject obj in mWalls)
                 obj.Draw(canvas, gametime);
         }
+
+        public KeyValuePair<Vector2, string> NearestWallPosition(Vector2 position)
+        {
+            if (mWalls.Count == 1)
+                return new KeyValuePair<Vector2, string>(mWalls[0].mPosition, mWalls[0].mName);
+
+            float currDist = float.MaxValue;
+            KeyValuePair<Vector2, string> animation = new KeyValuePair<Vector2,string>();
+
+            foreach (StaticObject obj in mWalls)
+                if (Vector2.Distance(position, obj.mPosition) < currDist)
+                {
+                    currDist = Vector2.Distance(position, obj.mPosition);
+                    animation = new KeyValuePair<Vector2, string>(obj.mPosition, obj.mName);
+                }
+            return animation;
+        }
     }
 }

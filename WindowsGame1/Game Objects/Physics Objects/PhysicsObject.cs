@@ -226,7 +226,7 @@ namespace GravityShift
         /// <summary>
         /// Updates the velocity based on the force
         /// </summary>
-        private void UpdateVelocities()
+        protected void UpdateVelocities()
         {
             if (mIsRail)
             {
