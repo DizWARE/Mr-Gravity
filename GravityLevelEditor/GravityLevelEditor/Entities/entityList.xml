@@ -60,14 +60,24 @@
     <Texture>Walls\Yellow</Texture>
     <Properties />
   </Entity>
-  <Entity>
+    <Entity>
     <ID>0</ID>
-    <Name>Red</Name>
+    <Name>Purple</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
-    <CollisionType>Hazardous</CollisionType>
+    <CollisionType>Normal</CollisionType>
     <Paintable>True</Paintable>
-    <Texture>Walls\Red</Texture>
+    <Texture>Walls\Purple</Texture>
+    <Properties />
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>Orange</Name>
+    <Type>Walls</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>Walls\Orange</Texture>
     <Properties />
   </Entity>
   <Entity>

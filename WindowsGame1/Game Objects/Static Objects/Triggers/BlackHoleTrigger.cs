@@ -25,7 +25,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         {
             if (entity.mProperties.ContainsKey(XmlKeys.FORCE))
                 mForce = float.Parse(entity.mProperties[XmlKeys.FORCE]);
-            blackHole.Load(content, "BlackHole",3, 6);            
+            blackHole.Load(content, "BlackHole",3, 6);
         }
 
         /// <summary>
