@@ -30,21 +30,21 @@
   </LevelData>
   <LevelData>
     <Name>Chambers</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Maze</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>SpaceInvaders</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
