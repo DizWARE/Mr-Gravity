@@ -52,7 +52,7 @@ namespace GravityShift
         /// <summary>
         /// number of pixels that the player can intersect the hazard without dying
         /// </summary>
-        private const float HAZARDFORGIVENESS = 10.0f;
+        private const float HAZARDFORGIVENESS = 12.0f;
 
         /// <summary>
         /// Directional force on this object
@@ -272,6 +272,58 @@ namespace GravityShift
         /// <returns>True if they are colliding with each other; False otherwise</returns>
         public virtual bool IsCollidingBoxAndBox(GameObject otherObject)
         {
+            // if player has not collided with a hazard deeper than HAZARDFORGIVENESS pixels, do not handle the collision
+            if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+            {
+                # region Find depth
+                //Find Center
+                float halfHeight1 = this.BoundingBox.Height / 2;
+                float halfWidth1 = this.BoundingBox.Width / 2;
+
+                //Calculate Center Position
+                Vector2 center1 = new Vector2(this.BoundingBox.Left + halfWidth1, this.BoundingBox.Top + halfHeight1);
+
+                //Find Center of otherObject
+                float halfHeight2 = otherObject.BoundingBox.Height / 2;
+                float halfWidth2 = otherObject.BoundingBox.Width / 2;
+
+                //Calculate Center Position
+                Vector2 center2 = new Vector2(otherObject.BoundingBox.Left + halfWidth2, otherObject.BoundingBox.Top + halfHeight2);
+
+                //Center distances between both objects
+                float distX = center1.X - center2.X;
+                float distY = center1.Y - center2.Y;
+
+                //Minimum distance 
+                float minDistX = halfWidth1 + halfWidth2;
+                float minDistY = halfHeight1 + halfHeight2;
+
+                float depthX, depthY;
+                if (distX > 0)
+                {
+                    depthX = minDistX - distX;
+                }
+                else
+                {
+                    depthX = -minDistX - distX;
+                }
+                if (distY > 0)
+                {
+                    depthY = minDistY - distY;
+                }
+                else
+                {
+                    depthY = -minDistY - distY;
+                }
+                depthX = Math.Abs(depthX);
+                depthY = Math.Abs(depthY);
+                #endregion 
+                float shallow = Math.Min(depthX, depthY);
+                if (shallow < HAZARDFORGIVENESS)
+                    return false;
+            }
+
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
         }
         /// <summary>
@@ -304,12 +356,21 @@ namespace GravityShift
             Point centerPosA = this.mBoundingBox.Center;
             Point centerPosB = otherObject.mBoundingBox.Center;
             Vector2 centers = new Vector2((float)(centerPosA.X - centerPosB.X), (float)(centerPosA.Y - centerPosB.Y));
+
+             // if player has not collided with a hazard deeper than HAZARDFORGIVENESS pixels, do not handle the collision
+            if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+            {
+                if ((centers.Length() + HAZARDFORGIVENESS) > (radiusA+radiusB))
+                    return false;
+            }
+
             return !Equals(otherObject) && (centers.Length()<(radiusA+radiusB));
         }
 
         /// <summary>
         /// Decides on the collision detection method for this and the given object
-        /// </summary>
+        /// </summary>)
         /// <param name="obj">object we are testing</param>
         public bool HandleCollisions(GameObject obj)
         {
@@ -429,48 +490,33 @@ namespace GravityShift
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             // handle the shallowest collision
-           
-                if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))// colliding top or bottom
-                {
-                    // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
-                    if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS))||
-                        ((this.CollisionType == XmlKeys.HAZARDOUS)&&(otherObject is Player)))
-                    {
-                        if (Math.Abs(colDepth.Y) < HAZARDFORGIVENESS)
-                            return 0;
-                    }
 
-                    //Reset Y Velocity to 0
-                    mVelocity.Y = 0;
+            if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))// colliding top or bottom
+            {
 
-                    if(!mIsRail || (mIsRail && !(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_Y)))
-                        // reduce x velocity for friction
-                        mVelocity.X *= otherObject.mFriction;
+                //Reset Y Velocity to 0
+                mVelocity.Y = 0;
 
-                    // place the Y pos just so it is not colliding.
-                    mPosition.Y += colDepth.Y;
-                }
-                else// colliding left or right
-                {
-                    // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
-                    if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
-                        ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
-                    {
-                        if (Math.Abs(colDepth.X) < HAZARDFORGIVENESS)
-                            return 0;
-                        mPosition += Vector2.Zero;
-                    }
+                if (!mIsRail || (mIsRail && !(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_Y)))
+                    // reduce x velocity for friction
+                    mVelocity.X *= otherObject.mFriction;
 
-                    //Reset X Velocity to 0
-                    mVelocity.X = 0;
+                // place the Y pos just so it is not colliding.
+                mPosition.Y += colDepth.Y;
+            }
+            else// colliding left or right
+            {
 
-                    if (!mIsRail || (mIsRail && !(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)))
-                        // reduce Y velocity for friction
-                        mVelocity.Y *= otherObject.mFriction;
+                //Reset X Velocity to 0
+                mVelocity.X = 0;
 
-                    // place the X pos just so it is not colliding.
-                    mPosition.X += colDepth.X;
-                }
+                if (!mIsRail || (mIsRail && !(mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)))
+                    // reduce Y velocity for friction
+                    mVelocity.Y *= otherObject.mFriction;
+
+                // place the X pos just so it is not colliding.
+                mPosition.X += colDepth.X;
+            }
             
             UpdateBoundingBoxes();
             return 1;// handled collision 
@@ -504,14 +550,6 @@ namespace GravityShift
             float delta = (radiusA + radiusB) - centerDiff.Length();
             centerDiff.Normalize();
             Vector2 add = Vector2.Multiply(centerDiff, delta);
-
-            // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
-            if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
-                ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
-            {
-                if (add.Length() < HAZARDFORGIVENESS)
-                    return 0;
-            }
 
             HandleVelocitiesAfterCollision(otherObject, centerDiff);
 
@@ -614,14 +652,6 @@ namespace GravityShift
                 float delta = (radiusA) - centerDiff.Length();
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
-
-                // if player has not collided with a hazard deeper than 3 pixels, do not handle the collision
-                if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
-                    ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
-                {
-                    if (add.Length() < HAZARDFORGIVENESS)
-                        return 0;
-                }
 
                 // normal of the collision
                 Vector2 N = centerDiff;

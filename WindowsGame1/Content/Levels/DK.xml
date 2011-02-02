@@ -2347,7 +2347,7 @@
     </Entity>
     <Entity>
       <ID>686</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="2" Y="28" />
       <CollisionType>Hazardous</CollisionType>
@@ -2357,7 +2357,7 @@
     </Entity>
     <Entity>
       <ID>687</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="2" Y="27" />
       <CollisionType>Hazardous</CollisionType>
@@ -2367,7 +2367,7 @@
     </Entity>
     <Entity>
       <ID>688</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="2" Y="6" />
       <CollisionType>Hazardous</CollisionType>
@@ -2377,7 +2377,7 @@
     </Entity>
     <Entity>
       <ID>689</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="2" Y="7" />
       <CollisionType>Hazardous</CollisionType>
@@ -2387,7 +2387,7 @@
     </Entity>
     <Entity>
       <ID>690</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="2" Y="8" />
       <CollisionType>Hazardous</CollisionType>
@@ -2397,7 +2397,7 @@
     </Entity>
     <Entity>
       <ID>691</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="3" Y="8" />
       <CollisionType>Hazardous</CollisionType>
@@ -2407,7 +2407,7 @@
     </Entity>
     <Entity>
       <ID>692</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="3" Y="7" />
       <CollisionType>Hazardous</CollisionType>
@@ -2417,7 +2417,7 @@
     </Entity>
     <Entity>
       <ID>693</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="3" Y="6" />
       <CollisionType>Hazardous</CollisionType>
@@ -2427,7 +2427,7 @@
     </Entity>
     <Entity>
       <ID>694</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="4" Y="7" />
       <CollisionType>Hazardous</CollisionType>
@@ -2437,7 +2437,7 @@
     </Entity>
     <Entity>
       <ID>695</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="5" Y="7" />
       <CollisionType>Hazardous</CollisionType>
@@ -2447,7 +2447,7 @@
     </Entity>
     <Entity>
       <ID>696</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="5" Y="8" />
       <CollisionType>Hazardous</CollisionType>
@@ -2457,7 +2457,7 @@
     </Entity>
     <Entity>
       <ID>697</ID>
-      <Name>RedHazard</Name>
+      <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="4" Y="8" />
       <CollisionType>Hazardous</CollisionType>
