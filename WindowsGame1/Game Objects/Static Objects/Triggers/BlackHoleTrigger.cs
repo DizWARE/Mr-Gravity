@@ -50,7 +50,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
             {
                 if (!mBoundingBox.Intersects(gObj.BoundingBox)) continue;
 
-                if (gObj is Player && player.mCurrentTexture == PlayerFaces.SMILE) 
+                if (gObj is Player && player.mCurrentTexture != PlayerFaces.DEAD2) 
                     player.mCurrentTexture = PlayerFaces.WORRY;
 
                 if (gObj is PhysicsObject)

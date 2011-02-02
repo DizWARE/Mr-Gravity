@@ -31,19 +31,27 @@ namespace GravityShift
         public int mScore = 0;
         public bool mIsAlive = true;
 
-        //Player rotation values (current, goal, and speed)
+        //Player rotation values for outer circle (current, goal, and speed)
         private float mRotation;
         private float mGoalRotation;
-        private float mRotationFactor = (float)(Math.PI / 30.0f);
+        private float mRotationFactor = 0.0f;
+
+        //Player rotation values for face (current, goal, and speed)
+        private float mFaceRotation;
+        private float mFaceGoalRotation;
+        private float mFaceRotationFactor = (float)(Math.PI / 90.0f);
 
         //rotation goals for the 4 directions
         private float mRotationDown = 0.0f;
-        private float mRotationRight = (float)(3.0 * Math.PI / 2.0f);
-        private float mRotationUp = (float)Math.PI;
-        private float mRotationLeft = (float)(Math.PI / 2.0);
 
+        private float mFaceRotationStraight = 0.0f;
+        private float mFaceRotationRight = (float)(Math.PI / 8.0f);
+        private float mFaceRotationLeft = (float)(-Math.PI / 8.0);
 
         public Texture2D mCurrentTexture;
+        public Texture2D mCurrentTexture1;
+
+        public Texture2D playerBase;
 
         private bool mRumble = false;
         private double elapsedTime = 0.0;
@@ -62,13 +70,20 @@ namespace GravityShift
             mSpawnPoint = mPosition;
             mRotation = 0.0f;
             mGoalRotation = 0.0f;
+
+            mFaceGoalRotation = 0.0f;
+            mFaceRotation = 0.0f;
+
             ID = entity.mId;
 
             PlayerFaces.Load(content);
 
-            mCurrentTexture = PlayerFaces.SMILE;
+            playerBase = content.Load<Texture2D>("Images/Player/NeonCharBlankDottedTEMP");
+            mCurrentTexture1 = content.Load<Texture2D>("Images/Player/NeonCharFaceTEMP");
+//            mCurrentTexture = PlayerFaces.SMILE;
+            mSize = new Vector2(mCurrentTexture1.Width, mCurrentTexture1.Height);
 
-            mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
+//            mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
         }
         /// <summary>
         /// Updates the player location and the player controls
@@ -92,6 +107,8 @@ namespace GravityShift
                 GameSound.level_gravityShiftDown.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Down;
                 mGoalRotation = mRotationDown;
+                mRotationFactor = 0.0f;
+                setFaceStraight();
             }
 
             //SHIFT: Up
@@ -99,7 +116,8 @@ namespace GravityShift
             {
                 GameSound.level_gravityShiftUp.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Up;
-                mGoalRotation = mRotationUp;
+                mRotationFactor = 0.0f;
+                setFaceStraight();
             }
 
             //SHIFT: Left
@@ -107,7 +125,8 @@ namespace GravityShift
             {
                 GameSound.level_gravityShiftLeft.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Left;
-                mGoalRotation = mRotationLeft;
+                mRotationFactor = (float)(-Math.PI / 60.0f);
+                mFaceGoalRotation = mFaceRotationLeft;
             }
 
             //SHIFT: Right
@@ -115,22 +134,33 @@ namespace GravityShift
             {
                 GameSound.level_gravityShiftRight.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Right;
-                mGoalRotation = mRotationRight;
+                mRotationFactor = (float)(Math.PI / 60.0f);
+                mFaceGoalRotation = mFaceRotationRight;
             }
 
-            if (Math.Abs(mGoalRotation - mRotation) < 0.1)
+            if (Math.Abs(mRotation) > 2.0 * Math.PI)
             {
-                mRotation = mGoalRotation;
+                mRotation -= (float)(2.0 * Math.PI);
             }
-            else if (mRotation > mGoalRotation)
+            else if (Math.Abs(mRotation) < -2.0 * Math.PI)
             {
-                mRotation -= mRotationFactor;
+                mRotation += (float)(2.0 * Math.PI);
+            }
+
+            mRotation += mRotationFactor;
+
+            if (Math.Abs(mFaceGoalRotation - mFaceRotation) < 0.1)
+            {
+                mFaceRotation = mFaceGoalRotation;
+            }
+            else if (mFaceRotation > mFaceGoalRotation)
+            {
+                mFaceRotation -= mFaceRotationFactor;
             }
             else
             {
-                mRotation += mRotationFactor;
+                mFaceRotation += mFaceRotationFactor;
             }
-
         }
 
         /// <summary>
@@ -141,9 +171,15 @@ namespace GravityShift
         public override void Draw(SpriteBatch canvas, GameTime gametime)
         {
             //TODO: put rotation back in later
-            canvas.Draw(mCurrentTexture, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y), 
-                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, 0.0f, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
-        
+            canvas.Draw(playerBase, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+                new Rectangle(0, 0, (int)mCurrentTexture1.Width, (int)mCurrentTexture1.Height), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+            canvas.Draw(mCurrentTexture1, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+                new Rectangle(0, 0, (int)mCurrentTexture1.Width, (int)mCurrentTexture1.Height), Color.White, mFaceRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+//            canvas.Draw(playerBase, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+//                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+//            canvas.Draw(mCurrentTexture1, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+//                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mFaceRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+
             //canvas.Draw(mTexture, Vector2.Add(mPosition, new Vector2(mBoundingBox.Width / 2, mBoundingBox.Height / 2)), null, Color.White, mRotation, new Vector2(mBoundingBox.Width / 2, mBoundingBox.Height / 2), 1.0f, SpriteEffects.None, 0);
         }
 
@@ -154,6 +190,7 @@ namespace GravityShift
         {
             mRumble = true;
 
+            setFaceStraight();
             mCurrentTexture = PlayerFaces.DEAD2;
 
             StartRumble();
@@ -167,6 +204,11 @@ namespace GravityShift
                 mIsAlive = false;
 
             return mNumLives;
+        }
+
+        public void setFaceStraight()
+        {
+            mFaceGoalRotation = mFaceRotationStraight;
         }
 
         public void StartRumble()
