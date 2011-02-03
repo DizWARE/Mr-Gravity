@@ -260,6 +260,20 @@ namespace GravityShift
                 }
             }
         }
+        /* GetRank
+         * 
+         * int timeScore: time to complete level
+         * 
+         * int timeGoal: goal time
+         * 
+         * int 
+         * 
+         * return string: Bad, Okay, Good, Great
+         */
+        //public string[] GetRank(int score)
+        //{
+
+        //}
 
         /*
          * Draw
@@ -274,15 +288,26 @@ namespace GravityShift
         {
             spriteBatch.Begin();
 
+            //TODO: CHANGE TO DYNAMIC PLACING
+
             spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Time: " + (int)GravityShift.Level.TIMER + " Seconds", new Vector2(350.0f, 300.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, "Collected: " + (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(350.0f, 350.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, "Deaths: " + (int)GravityShift.Level.mDeaths, new Vector2(350.0f, 400.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(250.0f, 300.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(500.0f, 300.0f), Color.DarkOrange);
+            //TODO: Get rank
 
-            spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
-            spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
-            spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(250.0f, 350.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(500.0f, 350.0f), Color.DarkOrange);
+            //TODO: Get rank
+
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(250.0f, 400.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(500.0f, 400.0f), Color.DarkOrange);
+            //TODO: Get rank
+
+
+            //spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
+            //spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
+            //spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
 
             spriteBatch.Draw(mItems[0], new Vector2(900.0f, 500.0f), Color.White);
             spriteBatch.Draw(mItems[1], new Vector2(900.0f, 575.0f), Color.White);

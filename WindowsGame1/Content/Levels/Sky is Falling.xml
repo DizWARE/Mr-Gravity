@@ -3,7 +3,7 @@
   <Name>Sky is Falling</Name>
   <Size X="33" Y="22" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Red]</Color>
+  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>103</ID>
