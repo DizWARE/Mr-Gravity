@@ -46,9 +46,6 @@ namespace GravityShift
 
         #region Art
 
-        private Texture2D mApple;
-        private Texture2D mApple_gray;
-
         private Texture2D mNextLevelSel;
         private Texture2D mNextLevelUnsel;
         private Texture2D mSelectLevelSel;
@@ -105,14 +102,6 @@ namespace GravityShift
             mContent = content;
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
-
-            mApple = content.Load<Texture2D>("Images/Menu/Score/Apple");
-            mApple_gray = content.Load<Texture2D>("Images/Menu/Score/AppleGray");
-
-            /* Set up with the number of worlds and levels */
-            /* For now we have 1 world with 3 levels */
-            mLevel = new int[1, 3];
-            mScore = new int[1, 3];
 
             mCurrent = 0;
 
@@ -269,20 +258,20 @@ namespace GravityShift
          * 
          * return int[] (number of stars-- 0=Bad, 1=Okay, 2=Good, 3=Perfect): [Time, Collectables, Death]
          */
-        public int[] GetRank(double time, double timeGoal, double collect, double collectGoal, int deathTotal)
+        public int[] GetRank(int time, int timeGoal, int collect, int collectGoal, int deathTotal)
         {
             int[] result = new int[3];
 
-            /* TIME -- 100%+, >80%, >60%, <60% */
+            /* TIME -- 100%+, <120%, <140%, >140% */
             if (time < timeGoal) { result[0] = 3; }
-            else if ((time / timeGoal) > 0.8) { result[0] = 2; }
-            else if ((time / timeGoal) > 0.6) { result[0] = 1; }
+            else if (((double) time / (double) timeGoal) > 1.2) { result[0] = 2; }
+            else if (((double) time / (double) timeGoal) > 1.4) { result[0] = 1; }
             else { result[0] = 0; }
 
             /* COLLECTABLES -- 100%, >80%, >60%, <60% */
             if (collect == collectGoal) { result[1] = 3; }
-            else if ((collect / collectGoal) > 0.8) { result[1] = 2; }
-            else if ((collect / collectGoal) > 0.6) { result[1] = 1; }
+            else if (((double) collect / (double) collectGoal) > 0.8) { result[1] = 2; }
+            else if (((double) collect / (double) collectGoal) > 0.6) { result[1] = 1; }
             else { result[1] = 0; }
 
             /* DEATHS -- 0, 1, 2-3, >3 */

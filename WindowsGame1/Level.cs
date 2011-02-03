@@ -667,7 +667,6 @@ namespace GravityShift
                         //If player collided with a collectable object
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
-                            mPlayer.mScore += 100;
                             if (physObj.CollisionType == XmlKeys.COLLECTABLE)
                             {
                                 mCollected.Add(physObj);
