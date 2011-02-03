@@ -113,11 +113,6 @@ namespace GravityShift
             /* For now we have 1 world with 3 levels */
             mLevel = new int[1, 3];
             mScore = new int[1, 3];
-            mNumApples = new Texture2D[3];
-
-            mNumApples[0] = mApple;
-            mNumApples[1] = mApple;
-            mNumApples[2] = mApple;
 
             mCurrent = 0;
 
@@ -262,18 +257,42 @@ namespace GravityShift
         }
         /* GetRank
          * 
-         * int timeScore: time to complete level
+         * int time: time to complete level
          * 
          * int timeGoal: goal time
          * 
-         * int 
+         * int collect: collectables received
          * 
-         * return string: Bad, Okay, Good, Great
+         * int collectGoal: Total collectables in level
+         * 
+         * int deathTotal: number of deaths
+         * 
+         * return int[] (number of stars-- 0=Bad, 1=Okay, 2=Good, 3=Perfect): [Time, Collectables, Death]
          */
-        //public string[] GetRank(int score)
-        //{
+        public int[] GetRank(double time, double timeGoal, double collect, double collectGoal, int deathTotal)
+        {
+            int[] result = new int[3];
 
-        //}
+            /* TIME -- 100%+, >80%, >60%, <60% */
+            if (time < timeGoal) { result[0] = 3; }
+            else if ((time / timeGoal) > 0.8) { result[0] = 2; }
+            else if ((time / timeGoal) > 0.6) { result[0] = 1; }
+            else { result[0] = 0; }
+
+            /* COLLECTABLES -- 100%, >80%, >60%, <60% */
+            if (collect == collectGoal) { result[1] = 3; }
+            else if ((collect / collectGoal) > 0.8) { result[1] = 2; }
+            else if ((collect / collectGoal) > 0.6) { result[1] = 1; }
+            else { result[1] = 0; }
+
+            /* DEATHS -- 0, 1, 2-3, >3 */
+            if (deathTotal == 0) { result[2] = 3; }
+            else if (deathTotal == 1) { result[2] = 2; }
+            else if (deathTotal <= 3) { result[2] = 1; }
+            else { result[2] = 0; }
+
+            return result;
+        }
 
         /*
          * Draw
