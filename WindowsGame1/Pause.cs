@@ -150,9 +150,15 @@ namespace GravityShift
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 
             /* Draw the transparent background */
             spriteBatch.Draw(mPausedTrans, new Vector2(100.0f, 25.0f), Color.White); 
