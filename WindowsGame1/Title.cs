@@ -18,18 +18,62 @@ namespace GravityShift
     class Title
     {
 
+        //Title Image
         private Texture2D mTitle;
-        private SpriteFont mKootenay;
+        private SpriteFont mQuartz;
 
-        public Title() 
+        /* Title Safe Area */
+        Rectangle mScreenRect;
+
+        /* Controls */
+        IControlScheme mControls;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Title(IControlScheme controls) 
         {
+            mControls = controls;
         }
 
-        public void Load(ContentManager content)
+        public void Load(ContentManager content, GraphicsDevice graphics)
         {
             mTitle = content.Load<Texture2D>("Images/Menu/Title");
 
-            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
+
+            mScreenRect = graphics.Viewport.TitleSafeArea;
+        }
+
+        public void Update(GameTime gameTime, ref GameStates gameState)
+        {
+            if (mControls.isStartPressed(false) || mControls.isAPressed(false))
+            {
+                gameState = GameStates.Main_Menu;
+            }
+
+        }
+
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
+        {
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
+
+         
+            spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
+
+            string request = "Press Start Or A To Begin";
+
+            Vector2 stringSize = mQuartz.MeasureString(request);
+
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Center.Y - (stringSize.Y / 2)), Color.White);
+
+            spriteBatch.End();
         }
 
 

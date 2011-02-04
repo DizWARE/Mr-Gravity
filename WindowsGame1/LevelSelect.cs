@@ -54,6 +54,10 @@ namespace GravityShift
         /* SpriteFont */
         SpriteFont mKootenay;
 
+        /* Trial Mode Loading */
+        bool mTrialMode;
+        public bool TrialMode { get { return mTrialMode; } set { mTrialMode = value; } }
+
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -64,8 +68,24 @@ namespace GravityShift
             mLevels = new List<LevelChoice>();
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
+            TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
 #endif
-            mLevelInfo = XElement.Load(LEVEL_LIST);
+            if (Guide.IsTrialMode)
+                mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+            else
+                mLevelInfo = XElement.Load(LEVEL_LIST);
+
+            TrialMode = Guide.IsTrialMode;
+        }
+
+        public void Reload()
+        {
+            if (TrialMode)
+            {
+                mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+            }
+            else
+                mLevelInfo = XElement.Load(LEVEL_LIST);
         }
 
         /// <summary>
@@ -82,7 +102,10 @@ namespace GravityShift
             XDocument xDoc = new XDocument();
             xDoc.Add(xLevels);
 
-            xDoc.Save(LEVEL_LIST);
+            if (TrialMode)
+                xDoc.Save(TRIAL_LEVEL_LIST);
+            else
+                xDoc.Save(LEVEL_LIST);
 
         }
 

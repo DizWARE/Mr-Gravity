@@ -27,6 +27,8 @@ namespace GravityShift
         // Scale - Used to make sure the HUD is drawn based on the screen size
         public Matrix scale;
 
+        Title mTitle;
+
         //Instance of the Menu class
         Menu mMenu;
 
@@ -39,7 +41,7 @@ namespace GravityShift
         //Instance of the pause class
         Pause mPause;
 		
-        private GameStates mCurrentState = GameStates.Main_Menu;
+        private GameStates mCurrentState = GameStates.Title;
 
         //Max duration of a sequence
         private static int VICTORY_DURATION = 120;
@@ -65,6 +67,8 @@ namespace GravityShift
 
         public GravityShiftMain()
         {
+
+            Components.Add(new GamerServicesComponent(this));
             mGraphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
@@ -76,6 +80,7 @@ namespace GravityShift
                 mControls = new ControllerControl();
             else
                 mControls = new KeyboardControl();
+
 #endif
         }
 
@@ -87,11 +92,15 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
+            //COMMENT OUT AFTER TESTING TRIAL MODE
+            //Guide.SimulateTrialMode = false;
+
             mGraphics.PreferredBackBufferWidth = 1280;
             mGraphics.PreferredBackBufferHeight = 720;
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
+            mTitle = new Title(mControls);
             mMenu = new Menu(mControls);
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
@@ -119,6 +128,7 @@ namespace GravityShift
             //mGraphics.PreferredBackBufferHeight = 720;
             //mGraphics.ApplyChanges();
 
+            mTitle.Load(Content, mGraphics.GraphicsDevice);
             mMenu.Load(Content, mGraphics.GraphicsDevice);
             mScoring.Load(Content);
             mPause.Load(Content);
@@ -146,6 +156,13 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            if (mLevelSelect.TrialMode != Guide.IsTrialMode)
+            {
+                mLevelSelect.Save();
+                mLevelSelect.TrialMode = Guide.IsTrialMode;
+                mLevelSelect.Reload();
+            }
+            
 
             //if (mGraphics.PreferredBackBufferWidth != 1280 || mGraphics.PreferredBackBufferHeight != 720)
             //{
@@ -157,9 +174,40 @@ namespace GravityShift
             if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
             {
                 mLevelSelect.Save();
-                //if (Guide.IsTrialMode && !Guide.IsVisible)
+                if (mControls.controlScheme() == ControlSchemes.Gamepad)
+                {
+
+                    if (Guide.IsTrialMode && !Guide.IsVisible)
+                    {
+                        if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] != null)
+                        {
+                            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+                            {
+                                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+                                {
+                                    Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+                                }
+                            }
+                        }
+
+                    }
+
+                }
                 //if(Gamer.SignedInGamers[PlayerIndex.One].Privileges.AllowPurchaseContent)
                 this.Exit();
+
+            }
+
+            if (mCurrentState == GameStates.Title)
+            {
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+
+                //If the correct music isn't already playing
+                if (GameSound.menuMusic_title.State != SoundState.Playing)
+                    GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
+                mTitle.Update(gameTime, ref mCurrentState);
 
             }
 
@@ -317,6 +365,10 @@ namespace GravityShift
                 //TODO - Change this to a death animation
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
                 mCurrentLevel.DrawHud(mSpriteBatch, gameTime, scale);
+            }
+            else if (mCurrentState == GameStates.Title)
+            {
+                mTitle.Draw(mSpriteBatch, gameTime, scale);
             }
                 
             base.Draw(gameTime);
