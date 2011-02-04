@@ -41,7 +41,8 @@ namespace GravityShift
         Texture2D[] mNext;
         Texture2D[] mBack;
         Texture2D mBackground;
-        
+        Texture2D mLocked;
+
         int mCurrentIndex = 1;
         int mPageCount;
         int mCurrentPage = 0;
@@ -113,6 +114,8 @@ namespace GravityShift
             mBack = new Texture2D[2];
             mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
             mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
+
+            mLocked = content.Load<Texture2D>("Images/Lock/locked1a");
 
             mPageCount = mLevels.Count / 12 +1;
 
@@ -300,9 +303,9 @@ namespace GravityShift
                 spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
                 if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
 
-                stringSize = mKootenay.MeasureString("Locked");
-                if (!mLevels[i + 12 * mCurrentPage].Unlocked) spriteBatch.DrawString(mKootenay,"Locked",
-                    new Vector2(rect.Center.X - stringSize.X/2,rect.Center.Y - stringSize.Y/2),Color.White);//DRAW LOCKED SYMBOL
+                if (!mLevels[i + 12 * mCurrentPage].Unlocked) 
+                    spriteBatch.Draw(mLocked, new Vector2(rect.Center.X - (mLocked.Width/2 * 0.25f), rect.Center.Y - (mLocked.Height/2 * 0.25f)),
+                        null, Color.White, 0.0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);//DRAW LOCKED SYMBOL
 
                 currentLocation.X += size.X + padding.X;
                 index++;
