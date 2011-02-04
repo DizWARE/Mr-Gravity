@@ -378,6 +378,11 @@ namespace GravityShift
 
         Vector2 joystickDirection;
 
+        private bool mControllerIndexSet = false;
+        private PlayerIndex mControllerIndex;
+        public PlayerIndex ControllerIndex
+        { get { return mControllerIndex; } }
+
         /// <summary>
         /// Finds the first player index that is connected
         /// </summary>
@@ -389,10 +394,15 @@ namespace GravityShift
         private bool isPressed(Buttons button, bool held)
         {
             bool pressed = false;
-            if (GamePad.GetState(PlayerIndex.One).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.One);
-            if (GamePad.GetState(PlayerIndex.Two).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Two);
-            if (GamePad.GetState(PlayerIndex.Three).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Three);
-            if (GamePad.GetState(PlayerIndex.Four).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Four);
+            if (!mControllerIndexSet)
+            {
+                if (GamePad.GetState(PlayerIndex.One).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.One);
+                if (GamePad.GetState(PlayerIndex.Two).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Two);
+                if (GamePad.GetState(PlayerIndex.Three).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Three);
+                if (GamePad.GetState(PlayerIndex.Four).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Four);
+                if(pressed) mControllerIndexSet = true;
+            }
+            else pressed = pressed || isPressed(button, held, mControllerIndex);
             return pressed;
         }
 
@@ -411,6 +421,7 @@ namespace GravityShift
             
             if (state.IsButtonDown(button))
             {
+                if (!mControllerIndexSet) { mControllerIndex = playerIndex; }
                 if (pressedButtons.Contains(button) && !held) return false;
                 if (!pressedButtons.Contains(button))
                     pressedButtons.Add(button);
@@ -433,17 +444,13 @@ namespace GravityShift
         /// </returns>
         public bool isLeftPressed(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                bool isLeftPressed = GamePad.GetState(current).DPad.Left == ButtonState.Pressed;
-                bool isUpPressed = pressedButtons.Contains(Buttons.DPadUp);
-                bool isDownPressed = pressedButtons.Contains(Buttons.DPadDown);
+            bool isLeftPressed = GamePad.GetState(mControllerIndex).DPad.Left == ButtonState.Pressed;
+            bool isUpPressed = pressedButtons.Contains(Buttons.DPadUp);
+            bool isDownPressed = pressedButtons.Contains(Buttons.DPadDown);
 
-                if (!isLeftPressed && pressedButtons.Contains(Buttons.DPadLeft)) pressedButtons.Remove(Buttons.DPadLeft);
-                else if (!isUpPressed && !isDownPressed && isLeftPressed) return ((isPressed(Buttons.DPadLeft, held, current)));
-                else if (!isUpPressed && !isDownPressed) return (LeftThumbStickIsLeft(held));
-            }
+            if (!isLeftPressed && pressedButtons.Contains(Buttons.DPadLeft)) pressedButtons.Remove(Buttons.DPadLeft);
+            else if (!isUpPressed && !isDownPressed && isLeftPressed) return ((isPressed(Buttons.DPadLeft, held, mControllerIndex)));
+            else if (!isUpPressed && !isDownPressed) return (LeftThumbStickIsLeft(held));
             return false;
         }
 
@@ -457,17 +464,14 @@ namespace GravityShift
         /// </returns>
         public bool isRightPressed(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                bool isRightPressed = GamePad.GetState(current).DPad.Right == ButtonState.Pressed;
-                bool isUpPressed = pressedButtons.Contains(Buttons.DPadUp);
-                bool isDownPressed = pressedButtons.Contains(Buttons.DPadDown);
+            bool isRightPressed = GamePad.GetState(mControllerIndex).DPad.Right == ButtonState.Pressed;
+            bool isUpPressed = pressedButtons.Contains(Buttons.DPadUp);
+            bool isDownPressed = pressedButtons.Contains(Buttons.DPadDown);
 
-                if (!isRightPressed && pressedButtons.Contains(Buttons.DPadRight)) pressedButtons.Remove(Buttons.DPadRight);
-                else if (!isUpPressed && !isDownPressed && isRightPressed) return ((isPressed(Buttons.DPadRight, held, current)));
-                else if (!isUpPressed && !isDownPressed) return (LeftThumbStickIsRight(held));
-            }
+            if (!isRightPressed && pressedButtons.Contains(Buttons.DPadRight)) pressedButtons.Remove(Buttons.DPadRight);
+            else if (!isUpPressed && !isDownPressed && isRightPressed) return ((isPressed(Buttons.DPadRight, held, mControllerIndex)));
+            else if (!isUpPressed && !isDownPressed) return (LeftThumbStickIsRight(held));
+
             return false;
         }
 
@@ -481,17 +485,13 @@ namespace GravityShift
         /// </returns>
         public bool isDownPressed(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                bool isDownPressed = GamePad.GetState(current).DPad.Down == ButtonState.Pressed;
-                bool isLeftPressed = pressedButtons.Contains(Buttons.DPadLeft);
-                bool isRightPressed = pressedButtons.Contains(Buttons.DPadRight);
+            bool isDownPressed = GamePad.GetState(mControllerIndex).DPad.Down == ButtonState.Pressed;
+            bool isLeftPressed = pressedButtons.Contains(Buttons.DPadLeft);
+            bool isRightPressed = pressedButtons.Contains(Buttons.DPadRight);
 
-                if (!isDownPressed && pressedButtons.Contains(Buttons.DPadDown)) pressedButtons.Remove(Buttons.DPadDown);
-                else if (!isLeftPressed && !isRightPressed && isDownPressed) return ((isPressed(Buttons.DPadDown, held, current)));
-                else if (!isLeftPressed && !isRightPressed) return (LeftThumbStickIsDown(held));
-            }
+            if (!isDownPressed && pressedButtons.Contains(Buttons.DPadDown)) pressedButtons.Remove(Buttons.DPadDown);
+            else if (!isLeftPressed && !isRightPressed && isDownPressed) return ((isPressed(Buttons.DPadDown, held, mControllerIndex)));
+            else if (!isLeftPressed && !isRightPressed) return (LeftThumbStickIsDown(held));
             return false;
         }
 
@@ -505,17 +505,13 @@ namespace GravityShift
         /// </returns>
         public bool isUpPressed(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                bool isUpPressed = GamePad.GetState(current).DPad.Up == ButtonState.Pressed;
-                bool isLeftPressed = pressedButtons.Contains(Buttons.DPadLeft);
-                bool isRightPressed = pressedButtons.Contains(Buttons.DPadRight);
+            bool isUpPressed = GamePad.GetState(mControllerIndex).DPad.Up == ButtonState.Pressed;
+            bool isLeftPressed = pressedButtons.Contains(Buttons.DPadLeft);
+            bool isRightPressed = pressedButtons.Contains(Buttons.DPadRight);
 
-                if (!isUpPressed && pressedButtons.Contains(Buttons.DPadUp)) pressedButtons.Remove(Buttons.DPadUp);
-                else if (!isLeftPressed && !isRightPressed && isUpPressed) return ((isPressed(Buttons.DPadUp, held, current)));
-                else if (!isLeftPressed && !isRightPressed) return (LeftThumbStickIsUp(held));
-            }
+            if (!isUpPressed && pressedButtons.Contains(Buttons.DPadUp)) pressedButtons.Remove(Buttons.DPadUp);
+            else if (!isLeftPressed && !isRightPressed && isUpPressed) return ((isPressed(Buttons.DPadUp, held, mControllerIndex)));
+            else if (!isLeftPressed && !isRightPressed) return (LeftThumbStickIsUp(held));
             return false;
         }
 
@@ -528,21 +524,18 @@ namespace GravityShift
         /// </returns>
         private bool LeftThumbStickIsLeft(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                GamePadState state = GamePad.GetState(current);
+            GamePadState state = GamePad.GetState(mControllerIndex);
 
-                Vector2 direction = new Vector2(-1, 0);
-                if (state.ThumbSticks.Left.X < -.8f)//Check to see if this is slipping in from a diagnal
-                {
-                    if (Math.Abs(state.ThumbSticks.Left.Y) > .8 && Math.Abs(joystickDirection.Y) == 1) return false;
-                    if (!held && direction == joystickDirection) return false;
-                    if (held && direction == joystickDirection) return true;
-                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
-                }
-                else if (state.ThumbSticks.Left.X >= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            Vector2 direction = new Vector2(-1, 0);
+            if (state.ThumbSticks.Left.X < -.8f)//Check to see if this is slipping in from a diagnal
+            {
+                if (Math.Abs(state.ThumbSticks.Left.Y) > .8 && Math.Abs(joystickDirection.Y) == 1) return false;
+                if (!held && direction == joystickDirection) return false;
+                if (held && direction == joystickDirection) return true;
+                if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
             }
+            else if (state.ThumbSticks.Left.X >= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+
             return false;
         }
         /// <summary>
@@ -554,21 +547,18 @@ namespace GravityShift
         /// </returns>
         private bool LeftThumbStickIsRight(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                GamePadState state = GamePad.GetState(current);
+            GamePadState state = GamePad.GetState(mControllerIndex);
 
-                Vector2 direction = new Vector2(1, 0);
-                if (state.ThumbSticks.Left.X > .8f)
-                {
-                    if (Math.Abs(state.ThumbSticks.Left.Y) > .8 && Math.Abs(joystickDirection.Y) == 1) return false;
-                    if (!held && direction == joystickDirection) return false;
-                    if (held && direction == joystickDirection) return true;
-                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
-                }
-                else if (state.ThumbSticks.Left.X <= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            Vector2 direction = new Vector2(1, 0);
+            if (state.ThumbSticks.Left.X > .8f)
+            {
+                if (Math.Abs(state.ThumbSticks.Left.Y) > .8 && Math.Abs(joystickDirection.Y) == 1) return false;
+                if (!held && direction == joystickDirection) return false;
+                if (held && direction == joystickDirection) return true;
+                if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
             }
+            else if (state.ThumbSticks.Left.X <= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            
             return false;
         }
         /// <summary>
@@ -580,20 +570,17 @@ namespace GravityShift
         /// </returns>
         private bool LeftThumbStickIsDown(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                GamePadState state = GamePad.GetState(current);
+            GamePadState state = GamePad.GetState(mControllerIndex);
                 
-                Vector2 direction = new Vector2(0, -1);
-                if (state.ThumbSticks.Left.Y < -.8f)
-                {
-                    if (!held && direction == joystickDirection) return false;
-                    if (held && direction == joystickDirection) return true;
-                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
-                }
-                else if (state.ThumbSticks.Left.Y >= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            Vector2 direction = new Vector2(0, -1);
+            if (state.ThumbSticks.Left.Y < -.8f)
+            {
+                if (!held && direction == joystickDirection) return false;
+                if (held && direction == joystickDirection) return true;
+                if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
             }
+            else if (state.ThumbSticks.Left.Y >= 0 && joystickDirection == direction) { joystickDirection = new Vector2(); return false; }
+            
             return false;
         }
         /// <summary>
@@ -605,20 +592,17 @@ namespace GravityShift
         /// </returns>
         private bool LeftThumbStickIsUp(bool held)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerIndex current = (PlayerIndex)Enum.ToObject(typeof(PlayerIndex), i);
-                GamePadState state = GamePad.GetState(current);
+            GamePadState state = GamePad.GetState(mControllerIndex);
 
-                Vector2 direction = new Vector2(0, 1);
-                if (state.ThumbSticks.Left.Y > .8f)
-                {
-                    if (!held && direction == joystickDirection) return false;
-                    if (held && direction == joystickDirection) return true;
-                    if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
-                }
-                else if (state.ThumbSticks.Left.Y <= 0 && joystickDirection == direction) joystickDirection = new Vector2();
+            Vector2 direction = new Vector2(0, 1);
+            if (state.ThumbSticks.Left.Y > .8f)
+            {
+                if (!held && direction == joystickDirection) return false;
+                if (held && direction == joystickDirection) return true;
+                if (!held && direction != joystickDirection) { joystickDirection = direction; return true; }
             }
+            else if (state.ThumbSticks.Left.Y <= 0 && joystickDirection == direction) joystickDirection = new Vector2();
+            
             return false;
         }
 
