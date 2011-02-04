@@ -25,6 +25,7 @@ namespace GravityShift
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
+        public static string TRIAL_LEVEL_LIST = LEVEL_DIRECTORY + "Info\\TrialLevelList.xml";
 
         public static int BACK = 0;
         public static int PREVIOUS = 13;
@@ -119,6 +120,10 @@ namespace GravityShift
             mScreenRect = graphics.Viewport.TitleSafeArea;
         }
 
+        /// <summary>
+        /// Resets all levels to be locked (except the first level) and resets all scores to 0
+        /// </summary>
+        /// <returns>The first level</returns>
         public Level Reset()
         {
             foreach (LevelChoice l in mLevels)
@@ -377,20 +382,25 @@ namespace GravityShift
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;
 
                 if (element.Name == XmlKeys.TIMERSTAR)
-                    mTimerStar = Convert.ToInt32(element.Value);
+                    mTimerStar = mLevel.TimerStar = Convert.ToInt32(element.Value);
 
                 if (element.Name == XmlKeys.COLLECTIONSTAR)
-                    mCollectionStar = Convert.ToInt32(element.Value);
+                    mCollectionStar = mLevel.CollectionStar = Convert.ToInt32(element.Value);
 
                 if (element.Name == XmlKeys.DEATHSTAR)
-                    mDeathStar = Convert.ToInt32(element.Value);
+                    mDeathStar = mLevel.DeathStar = Convert.ToInt32(element.Value);
             }
         }
 
+        /// <summary>
+        /// Resets this level choice to unlocked/locked depending on rUnlock, and resets scores to 0.
+        /// </summary>
+        /// <param name="rUnlock">True if level is locked, false otherwise</param>
         public void Reset(bool rUnlock)
         {
             mUnlocked = rUnlock;
             mTimerStar = mCollectionStar = mDeathStar = 0;
+            mLevel.ResetScores();
         }
 
         /// <summary>
@@ -399,6 +409,7 @@ namespace GravityShift
         /// 
         public XElement Export()
         {
+            SubmitScore(mLevel.TimerStar, mLevel.CollectionStar, mLevel.DeathStar);
             string xUnlock = XmlKeys.FALSE;
             if (mUnlocked)
                 xUnlock = XmlKeys.TRUE;

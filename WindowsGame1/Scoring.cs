@@ -150,7 +150,11 @@ namespace GravityShift
          */
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
-
+            int []scores = GetRank((int)GravityShift.Level.TIMER, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
+            level.TimerStar = scores[0];
+            level.CollectionStar = scores[1];
+            level.DeathStar = scores[2];
+            
             /* If the user hits up */
             if (mControls.isUpPressed(false))
             {

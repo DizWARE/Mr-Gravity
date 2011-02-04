@@ -128,6 +128,53 @@ namespace GravityShift
         /* Title Safe Area */
         Rectangle mScreenRect;
 
+        /* Scoring Values */
+        int mTimerStar;
+        int mCollectionStar;
+        int mDeathStar;
+
+        public int TimerStar 
+        { 
+            get { return mTimerStar; }
+            set
+            {
+                if (value > mTimerStar)
+                {
+                    mTimerStar = value;
+                }
+            } 
+        }
+        public int DeathStar
+        {
+            get { return mDeathStar; }
+            set
+            {
+                if (value > mDeathStar)
+                {
+                    mDeathStar = value;
+                }
+            }
+        }
+        public int CollectionStar
+        {
+            get { return mCollectionStar; }
+            set
+            {
+                if (value > mCollectionStar)
+                {
+                    mCollectionStar = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Resets the Scores for this level to 0.
+        /// </summary>
+        public void ResetScores()
+        {
+            mTimerStar = mDeathStar = mCollectionStar = 0;
+        }
+
         #region HUD
 
         private Texture2D mHUDTrans;
@@ -163,6 +210,8 @@ namespace GravityShift
             mActiveAnimations = new Dictionary<Vector2, AnimatedSprite>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
+
+            mTimerStar = mDeathStar = mTimerStar = 0;
         }
 
         /// <summary>

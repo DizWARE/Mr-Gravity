@@ -3,13 +3,13 @@
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
+    <Timerstar>3</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>

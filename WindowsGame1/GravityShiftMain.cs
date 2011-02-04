@@ -197,6 +197,8 @@ namespace GravityShift
                     if (GameSound.menuMusic_title.State != SoundState.Playing)
                         GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
+                
+
                 mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
             else if (mCurrentState == GameStates.Level_Selection)
@@ -210,7 +212,6 @@ namespace GravityShift
 
                 mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
-                //TODO: move this to options menu when new menu is in
             else if (mCurrentState == GameStates.New_Level_Selection)
             {
 
