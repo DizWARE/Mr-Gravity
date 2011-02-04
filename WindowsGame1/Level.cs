@@ -774,7 +774,8 @@ namespace GravityShift
                         {
                             if (cObject is Wall)
                             {
-                                mPlayer.setFaceStraight();
+                                if (!mPlayer.isFaceStraight())
+                                    mPlayer.setFaceStraight();
 
                                 KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
