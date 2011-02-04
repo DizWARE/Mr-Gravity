@@ -60,7 +60,7 @@
     <Texture>Walls\Yellow</Texture>
     <Properties />
   </Entity>
-    <Entity>
+  <Entity>
     <ID>0</ID>
     <Name>Purple</Name>
     <Type>Walls</Type>
@@ -82,47 +82,7 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>GreenSquiggle</Name>
-    <Type>Walls</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\GreenSquare</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>PinkSquiggle</Name>
-    <Type>Walls</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\PinkSquare</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>BlueSquiggle</Name>
-    <Type>Walls</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\BlueSquare</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>YellowSquiggle</Name>
-    <Type>Walls</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\YellowSquare</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>RedSquiggle</Name>
+    <Name>Hazard</Name>
     <Type>Walls</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
