@@ -125,7 +125,8 @@ namespace GravityShift
         SpriteFont mQuartz;
 
         // Particle Engine
-        ParticleEngine particleEngine;
+        ParticleEngine collectibleEngine;
+        ParticleEngine wallEngine;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -255,8 +256,12 @@ namespace GravityShift
             textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
             textures.Add(content.Load<Texture2D>("Images/Particles/star"));
 
-            Random random = new Random();
-            particleEngine = new ParticleEngine(textures, new Vector2(400, 240), random.Next(6));
+            collectibleEngine = new ParticleEngine(textures, new Vector2(400, 240), 1, 20);
+
+            textures = new List<Texture2D>();
+            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/square"));
+            wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 2, 15);
         }
 
         /// <summary>
@@ -487,43 +492,8 @@ namespace GravityShift
                 }
             }
 
-            // Please don't touch, let me know and I will change the engine, Thanks! -Jeremy
-            //#region ParticleEngine
-
-            //// Update particles. Emission based on velocity (fewer particles if smaller velocity)
-            //double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
-            //particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
-
-            //// Change origin of emitter.
-            //double displacement;
-            //int multiplier = 2;
-            //float x;
-            //float y;
-
-            ////Calculate the x-origin offset
-            //displacement = multiplier * mPlayer.mVelocity.X;
-
-            //if (displacement < -28)
-            //    displacement = -28;
-            //else if (displacement > 28)
-            //    displacement = 28;
-
-            //x = (mPlayer.mPosition.X + 32) - (float)displacement;
-
-            ////Calculate the y-orgin offset
-            //displacement = multiplier * mPlayer.mVelocity.Y;
-
-            //if (displacement < -28)
-            //    displacement = -28;
-            //else if (displacement > 28)
-            //    displacement = 28;
-
-            //y = (mPlayer.mPosition.Y + 32) - (float)displacement;
-
-            //particleEngine.EmitterLocation = new Vector2(x, y);
-
-            //#endregion
-            particleEngine.Update(0);
+            collectibleEngine.Update(0);
+            wallEngine.Update(0);
         }
 
         /// <summary>
@@ -577,8 +547,11 @@ namespace GravityShift
             }
             #endregion
 
-            if(mDeathState == DeathStates.Playing) 
-                particleEngine.Draw(spriteBatch);
+            if (mDeathState == DeathStates.Playing)
+            {
+                collectibleEngine.Draw(spriteBatch);
+                wallEngine.Draw(spriteBatch);
+            }
 
             //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
@@ -705,12 +678,10 @@ namespace GravityShift
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
 
-                        if (collided && !(obj is PlayerEnd) )
+                        if (collided && !(obj is PlayerEnd))
                         {
                             collidingList.Add(obj);
                         }
-                        
-                        //bool collided = physObj.HandleCollisions(obj);
 
                         //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
@@ -735,8 +706,8 @@ namespace GravityShift
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
                             }
-                            particleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
-                            particleEngine.Update(10);
+                            collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            collectibleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
@@ -774,6 +745,14 @@ namespace GravityShift
                                 KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
+
+                                // Particle Effects.
+                                Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
+                                //Vector2 two = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                                Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
+                                Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                                wallEngine.EmitterLocation = midpoint;
+                                wallEngine.Update(1);
                             }
                             else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
                                 ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
