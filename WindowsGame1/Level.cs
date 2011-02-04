@@ -116,6 +116,9 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine particleEngine;
 
+        /* Title Safe Area */
+        Rectangle mScreenRect;
+
         #region HUD
 
         private Texture2D mHUDTrans;
@@ -134,11 +137,13 @@ namespace GravityShift
         /// <param name="viewport">The viewport for the cameras</param>
         public Level(String filepath, IControlScheme controls, Viewport viewport)
         {
+
             Filepath = filepath;
             mControls = controls;
 
             mCam = new Camera(viewport);
             mCam1 = new Camera(viewport);
+            mScreenRect = viewport.TitleSafeArea;
 
             mRails = new List<EntityInfo>();
 
@@ -351,8 +356,8 @@ namespace GravityShift
                     // Also only update if the velocity if greater than 0.5f in either direction
                     if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
                     {
-                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
-                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
+                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
                     }
 
                     /* Gradual Zoom Out */
@@ -469,7 +474,7 @@ namespace GravityShift
         /// Draws the level background on to the screen
         /// </summary>
         /// <param name="spriteBatch">Sprite batch that we use to draw textures</param>
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
         {
             /* Cam is used to draw everything except the HUD - SEE BELOW FOR DRAWING HUD */
             spriteBatch.Begin(SpriteSortMode.Immediate,
@@ -478,7 +483,7 @@ namespace GravityShift
                 DepthStencilState.None,
                 RasterizerState.CullCounterClockwise,
                 null,
-                mCam.get_transformation());
+                mCam.get_transformation() * scale);
             foreach (Trigger trigger in mTrigger)
                 trigger.Draw(spriteBatch, gameTime);
 
@@ -535,31 +540,32 @@ namespace GravityShift
         /// </summary>
         /// <param name="spriteBatch">The sprite batch.</param>
         /// <param name="gameTime">The game time.</param>
-        public void DrawHud(SpriteBatch spriteBatch, GameTime gameTime)
+        public void DrawHud(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
         {
             /* Cam 1 is for drawing the HUD - PLACE ALL YOUR HUD STUFF IN THIS SECTION */
             // Begin spritebatch with the desired camera transformations
+
             spriteBatch.Begin(SpriteSortMode.Immediate,
                                 BlendState.AlphaBlend,
                                 SamplerState.LinearClamp,
                                 DepthStencilState.None,
                                 RasterizerState.CullCounterClockwise,
                                 null,
-                                mCam1.get_transformation());
+                                mCam1.get_transformation() * scale);
 
             // Draw the black background behind HUD
             spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 500), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-
+            //spriteBatch.Draw(mHUDTrans, new Vector2(mScreenRect.Center.X - mHUDTrans.Width / 2, mScreenRect.Top), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
             if (mPlayer.mIsAlive)
             {
-                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
-                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
             }
 
-            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 300), Color.White);
+            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 275), Color.White);
 
             if (!mPlayer.mIsAlive)
-                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
 
             spriteBatch.End();
         }

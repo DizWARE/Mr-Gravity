@@ -87,8 +87,8 @@ namespace GravityShift
         /// </summary>
         protected override void Initialize()
         {
-            mGraphics.PreferredBackBufferWidth = mGraphics.GraphicsDevice.DisplayMode.Width;
-            mGraphics.PreferredBackBufferHeight = mGraphics.GraphicsDevice.DisplayMode.Height;
+            mGraphics.PreferredBackBufferWidth = 1280;
+            mGraphics.PreferredBackBufferHeight = 720;
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
@@ -108,13 +108,18 @@ namespace GravityShift
         protected override void LoadContent()
         {
             // current viewport
-            float screenscale =
-                (float)mGraphics.GraphicsDevice.Viewport.Width / 800.0f;
+            float screenscaleX =
+                (float)mGraphics.GraphicsDevice.Viewport.Width / 1280.0f;
+            float screenscaleY = (float)mGraphics.GraphicsDevice.Viewport.Height / 720.0f;
             // Create the scale transform for Draw. 
             // Do not scale the sprite depth (Z=1).
-            scale = Matrix.CreateScale(screenscale, screenscale, 1);
+            scale = Matrix.CreateScale(screenscaleX, screenscaleY, 1);
 
-            mMenu.Load(Content);
+            //mGraphics.PreferredBackBufferWidth = 1280;
+            //mGraphics.PreferredBackBufferHeight = 720;
+            //mGraphics.ApplyChanges();
+
+            mMenu.Load(Content, mGraphics.GraphicsDevice);
             mScoring.Load(Content);
             mPause.Load(Content);
             GameSound.Load(Content);
@@ -141,10 +146,19 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
+            //if (mGraphics.PreferredBackBufferWidth != 1280 || mGraphics.PreferredBackBufferHeight != 720)
+            //{
+            //    mGraphics.PreferredBackBufferWidth = 1280;
+            //    mGraphics.PreferredBackBufferHeight = 720;
+            //    mGraphics.ApplyChanges();
+            //}
             // Allows the game to exit
             if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
             {
                 mLevelSelect.Save();
+                //if (Guide.IsTrialMode && !Guide.IsVisible)
+                //if(Gamer.SignedInGamers[PlayerIndex.One].Privileges.AllowPurchaseContent)
                 this.Exit();
 
             }
@@ -277,31 +291,31 @@ namespace GravityShift
             GraphicsDevice.Clear(Color.Black);
             if (mCurrentState == GameStates.In_Game)
             {
-                mCurrentLevel.Draw(mSpriteBatch, gameTime);
-                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);
+                mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
+                mCurrentLevel.DrawHud(mSpriteBatch, gameTime, scale);
             }
             else if (mCurrentState == GameStates.Main_Menu)
-                mMenu.Draw(mSpriteBatch, mGraphics);
+                mMenu.Draw(mSpriteBatch, mGraphics, scale);
             
             else if (mCurrentState == GameStates.Score)
-                mScoring.Draw(mSpriteBatch, mGraphics);
+                mScoring.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Level_Selection)
-                mLevelSelect.Draw(mSpriteBatch, mGraphics);
+                mLevelSelect.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Pause)
             {
-                mCurrentLevel.Draw(mSpriteBatch, gameTime);
-                mPause.Draw(mSpriteBatch, mGraphics);
+                mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
+                mPause.Draw(mSpriteBatch, mGraphics, scale);
             }
             else if (mCurrentState == GameStates.Victory)
             {
                 //TODO - Change this to a victory animation
-                mCurrentLevel.Draw(mSpriteBatch, gameTime);
+                mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
             }
             else if (mCurrentState == GameStates.Death)
             {
                 //TODO - Change this to a death animation
-                mCurrentLevel.Draw(mSpriteBatch, gameTime);
-                mCurrentLevel.DrawHud(mSpriteBatch, gameTime);
+                mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
+                mCurrentLevel.DrawHud(mSpriteBatch, gameTime, scale);
             }
                 
             base.Draw(gameTime);

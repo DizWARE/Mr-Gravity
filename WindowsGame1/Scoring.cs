@@ -270,9 +270,15 @@ namespace GravityShift
          * 
          * GraphicsDeviceManager graphics: The current graphics manager
          */
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 
             spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
 

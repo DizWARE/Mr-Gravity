@@ -39,9 +39,9 @@ namespace GravityShift
 
         states mState;
 
-        private const int NUM_TITLE = 4;
+        private const int NUM_TITLE = 3;
         private const int NUM_LOAD = 4;
-        private const int NUM_OPTIONS = 3;
+        private const int NUM_OPTIONS = 4;
         private const int NUM_SOUND = 2;
         private const int NUM_ACHIEVE = 10;
 
@@ -84,6 +84,9 @@ namespace GravityShift
         private Texture2D mMuteSel;
         private Texture2D mMuteUnsel;
 
+        /* Title Safe Area */
+        private Rectangle mScreenRect;
+
         #endregion
 
         /*
@@ -104,10 +107,12 @@ namespace GravityShift
          *
          * ContentManager content: the Content file used in the game.
          */
-        public void Load(ContentManager content)
+        public void Load(ContentManager content, GraphicsDevice graphics)
         {
             mState = states.TITLE;
             mCurrent = 0;
+
+            mScreenRect = graphics.Viewport.TitleSafeArea;
 
             mMuted = false;
 
@@ -145,20 +150,20 @@ namespace GravityShift
             mMuteUnsel = content.Load<Texture2D>("Images/Menu/Main/MuteUnselected");
 
             /* Initialize the menu item arrays */
-            mSelMenuItems[0] = mNewGameSel;
-            mSelMenuItems[1] = mLoadGameSel;
-            mSelMenuItems[2] = mOptionsSel;
-            mSelMenuItems[3] = mCreditsSel;
+            //mSelMenuItems[0] = mNewGameSel;
+            mSelMenuItems[0] = mLoadGameSel;
+            mSelMenuItems[1] = mOptionsSel;
+            mSelMenuItems[2] = mCreditsSel;
 
-            mUnselMenuItems[0] = mNewGameUnsel;
-            mUnselMenuItems[1] = mLoadGameUnsel;
-            mUnselMenuItems[2] = mOptionsUnsel;
-            mUnselMenuItems[3] = mCreditsUnsel;
+            //mUnselMenuItems[0] = mNewGameUnsel;
+            mUnselMenuItems[0] = mLoadGameUnsel;
+            mUnselMenuItems[1] = mOptionsUnsel;
+            mUnselMenuItems[2] = mCreditsUnsel;
 
-            mMenuItems[0] = mNewGameSel;
-            mMenuItems[1] = mLoadGameUnsel;
-            mMenuItems[2] = mOptionsUnsel;
-            mMenuItems[3] = mCreditsUnsel;
+            //mMenuItems[0] = mNewGameSel;
+            mMenuItems[0] = mLoadGameSel;
+            mMenuItems[1] = mOptionsUnsel;
+            mMenuItems[2] = mCreditsUnsel;
 
             /* Load the fonts */
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
@@ -217,60 +222,60 @@ namespace GravityShift
                         if (mCurrent == 0)
                         {
                             /* Start the game */
-                            gameState = GameStates.New_Level_Selection;
+                            gameState = GameStates.Level_Selection;
 
                             /* Initialize variables to the load menu items */
-                            mSelMenuItems = new Texture2D[NUM_LOAD];
-                            mUnselMenuItems = new Texture2D[NUM_LOAD];
-                            mMenuItems = new Texture2D[NUM_LOAD];
+                            mSelMenuItems = new Texture2D[NUM_TITLE];
+                            mUnselMenuItems = new Texture2D[NUM_TITLE];
+                            mMenuItems = new Texture2D[NUM_TITLE];
 
-                            mSelMenuItems[0] = mNewGameSel;
-                            mSelMenuItems[1] = mLoadGameSel;
-                            mSelMenuItems[2] = mOptionsSel;
-                            mSelMenuItems[3] = mCreditsSel;
+                            //mSelMenuItems[0] = mNewGameSel;
+                            mSelMenuItems[0] = mLoadGameSel;
+                            mSelMenuItems[1] = mOptionsSel;
+                            mSelMenuItems[2] = mCreditsSel;
 
-                            mUnselMenuItems[0] = mNewGameUnsel;
-                            mUnselMenuItems[1] = mLoadGameUnsel;
-                            mUnselMenuItems[2] = mOptionsUnsel;
-                            mUnselMenuItems[3] = mCreditsUnsel;
+                            //mUnselMenuItems[0] = mNewGameUnsel;
+                            mUnselMenuItems[0] = mLoadGameUnsel;
+                            mUnselMenuItems[1] = mOptionsUnsel;
+                            mUnselMenuItems[2] = mCreditsUnsel;
 
-                            mMenuItems[0] = mNewGameSel;
-                            mMenuItems[1] = mLoadGameUnsel;
-                            mMenuItems[2] = mOptionsUnsel;
-                            mMenuItems[3] = mCreditsUnsel;
+                            //mMenuItems[0] = mNewGameSel;
+                            mMenuItems[0] = mLoadGameSel;
+                            mMenuItems[1] = mOptionsUnsel;
+                            mMenuItems[2] = mCreditsUnsel;
 
                             mCurrent = 0;
                         }
                         /* Load Game */
-                        if (mCurrent == 1)
-                        {
+                        //if (mCurrent == 1)
+                        //{
                             /* Change to the load screen */
-                            gameState = GameStates.Level_Selection;
+                            //gameState = GameStates.Level_Selection;
 
                             /* Initialize variables to the load menu items */
-                            mSelMenuItems = new Texture2D[NUM_LOAD];
-                            mUnselMenuItems = new Texture2D[NUM_LOAD];
-                            mMenuItems = new Texture2D[NUM_LOAD];
+                            //mSelMenuItems = new Texture2D[NUM_LOAD];
+                            //mUnselMenuItems = new Texture2D[NUM_LOAD];
+                            //mMenuItems = new Texture2D[NUM_LOAD];
 
-                            mSelMenuItems[0] = mNewGameSel;
-                            mSelMenuItems[1] = mLoadGameSel;
-                            mSelMenuItems[2] = mOptionsSel;
-                            mSelMenuItems[3] = mCreditsSel;
+                            //mSelMenuItems[0] = mNewGameSel;
+                            //mSelMenuItems[1] = mLoadGameSel;
+                            //mSelMenuItems[2] = mOptionsSel;
+                            //mSelMenuItems[3] = mCreditsSel;
 
-                            mUnselMenuItems[0] = mNewGameUnsel;
-                            mUnselMenuItems[1] = mLoadGameUnsel;
-                            mUnselMenuItems[2] = mOptionsUnsel;
-                            mUnselMenuItems[3] = mCreditsUnsel;
+                            //mUnselMenuItems[0] = mNewGameUnsel;
+                            //mUnselMenuItems[1] = mLoadGameUnsel;
+                            //mUnselMenuItems[2] = mOptionsUnsel;
+                            //mUnselMenuItems[3] = mCreditsUnsel;
 
-                            mMenuItems[0] = mNewGameSel;
-                            mMenuItems[1] = mLoadGameUnsel;
-                            mMenuItems[2] = mOptionsUnsel;
-                            mMenuItems[3] = mCreditsUnsel;
+                            //mMenuItems[0] = mNewGameSel;
+                            //mMenuItems[1] = mLoadGameUnsel;
+                            //mMenuItems[2] = mOptionsUnsel;
+                            //mMenuItems[3] = mCreditsUnsel;
 
-                            mCurrent = 0;
-                        }
+                            //mCurrent = 0;
+                        //}
                         /* Options */
-                        else if (mCurrent == 2)
+                        else if (mCurrent == 1)
                         {
                             /* Change to the options menu */
                             mState = states.OPTIONS;
@@ -281,20 +286,23 @@ namespace GravityShift
 
                             mSelMenuItems[0] = mControlSel;
                             mSelMenuItems[1] = mSoundSel;
-                            mSelMenuItems[2] = mBackSel;
+                            mSelMenuItems[2] = mNewGameSel;
+                            mSelMenuItems[3] = mBackSel;
 
                             mUnselMenuItems[0] = mControlUnsel;
                             mUnselMenuItems[1] = mSoundUnsel;
-                            mUnselMenuItems[2] = mBackUnsel;
+                            mUnselMenuItems[2] = mNewGameUnsel;
+                            mUnselMenuItems[3] = mBackUnsel;
 
                             mMenuItems[0] = mControlSel;
                             mMenuItems[1] = mSoundUnsel;
-                            mMenuItems[2] = mBackUnsel;
+                            mMenuItems[2] = mNewGameUnsel;
+                            mMenuItems[3] = mBackUnsel;
 
                             mCurrent = 0;
                         }
                         /* Credits */
-                        else if (mCurrent == 3)
+                        else if (mCurrent == 2)
                         {
                             /* Change to the credits */
                             mState = states.CREDITS;
@@ -357,8 +365,39 @@ namespace GravityShift
                    
                             mCurrent = 0;
                         }
+
+                        /* Load Game */
+                        if (mCurrent == 2)
+                        {
+                            /* Change to the load screen */
+                            gameState = GameStates.New_Level_Selection;
+
+                            /* Initialize variables to the load menu items */
+                            mSelMenuItems = new Texture2D[NUM_TITLE];
+                            mUnselMenuItems = new Texture2D[NUM_TITLE];
+                            mMenuItems = new Texture2D[NUM_TITLE];
+
+                            //mSelMenuItems[0] = mNewGameSel;
+                            mSelMenuItems[0] = mLoadGameSel;
+                            mSelMenuItems[1] = mOptionsSel;
+                            mSelMenuItems[2] = mCreditsSel;
+
+                            //mUnselMenuItems[0] = mNewGameUnsel;
+                            mUnselMenuItems[0] = mLoadGameUnsel;
+                            mUnselMenuItems[1] = mOptionsUnsel;
+                            mUnselMenuItems[2] = mCreditsUnsel;
+
+                            //mMenuItems[0] = mNewGameSel;
+                            mMenuItems[0] = mLoadGameSel;
+                            mMenuItems[1] = mOptionsUnsel;
+                            mMenuItems[2] = mCreditsUnsel;
+
+                            mCurrent = 0;
+
+                            mState = states.TITLE;
+                        }
                         /* Back */
-                        else if (mCurrent == 2)
+                        else if (mCurrent == 3)
                         {
                             mState = states.TITLE;
 
@@ -366,20 +405,20 @@ namespace GravityShift
                             mUnselMenuItems = new Texture2D[NUM_TITLE];
                             mMenuItems = new Texture2D[NUM_TITLE];
 
-                            mSelMenuItems[0] = mNewGameSel;
-                            mSelMenuItems[1] = mLoadGameSel;
-                            mSelMenuItems[2] = mOptionsSel;
-                            mSelMenuItems[3] = mCreditsSel;
+                            //mSelMenuItems[0] = mNewGameSel;
+                            mSelMenuItems[0] = mLoadGameSel;
+                            mSelMenuItems[1] = mOptionsSel;
+                            mSelMenuItems[2] = mCreditsSel;
 
-                            mUnselMenuItems[0] = mNewGameUnsel;
-                            mUnselMenuItems[1] = mLoadGameUnsel;
-                            mUnselMenuItems[2] = mOptionsUnsel;
-                            mUnselMenuItems[3] = mCreditsUnsel;
+                            //mUnselMenuItems[0] = mNewGameUnsel;
+                            mUnselMenuItems[0] = mLoadGameUnsel;
+                            mUnselMenuItems[1] = mOptionsUnsel;
+                            mUnselMenuItems[2] = mCreditsUnsel;
 
-                            mMenuItems[0] = mNewGameSel;
-                            mMenuItems[1] = mLoadGameUnsel;
-                            mMenuItems[2] = mOptionsUnsel;
-                            mMenuItems[3] = mCreditsUnsel;
+                            //mMenuItems[0] = mNewGameSel;
+                            mMenuItems[0] = mLoadGameSel;
+                            mMenuItems[1] = mOptionsUnsel;
+                            mMenuItems[2] = mCreditsUnsel;
 
                             mCurrent = 0;
                         }
@@ -439,20 +478,20 @@ namespace GravityShift
                             mUnselMenuItems = new Texture2D[NUM_TITLE];
                             mMenuItems = new Texture2D[NUM_TITLE];
 
-                            mSelMenuItems[0] = mNewGameSel;
-                            mSelMenuItems[1] = mLoadGameSel;
-                            mSelMenuItems[2] = mOptionsSel;
-                            mSelMenuItems[3] = mCreditsSel;
+                            //mSelMenuItems[0] = mNewGameSel;
+                            mSelMenuItems[0] = mLoadGameSel;
+                            mSelMenuItems[1] = mOptionsSel;
+                            mSelMenuItems[2] = mCreditsSel;
 
-                            mUnselMenuItems[0] = mNewGameUnsel;
-                            mUnselMenuItems[1] = mLoadGameUnsel;
-                            mUnselMenuItems[2] = mOptionsUnsel;
-                            mUnselMenuItems[3] = mCreditsUnsel;
+                            //mUnselMenuItems[0] = mNewGameUnsel;
+                            mUnselMenuItems[0] = mLoadGameUnsel;
+                            mUnselMenuItems[1] = mOptionsUnsel;
+                            mUnselMenuItems[2] = mCreditsUnsel;
 
-                            mMenuItems[0] = mNewGameSel;
-                            mMenuItems[1] = mLoadGameUnsel;
-                            mMenuItems[2] = mOptionsUnsel;
-                            mMenuItems[3] = mCreditsUnsel;
+                            //mMenuItems[0] = mNewGameSel;
+                            mMenuItems[0] = mLoadGameSel;
+                            mMenuItems[1] = mOptionsUnsel;
+                            mMenuItems[2] = mCreditsUnsel;
 
                             mCurrent = 0;
                         }
@@ -471,20 +510,20 @@ namespace GravityShift
                         mUnselMenuItems = new Texture2D[NUM_TITLE];
                         mMenuItems = new Texture2D[NUM_TITLE];
                         
-                        mSelMenuItems[0] = mNewGameSel;
-                        mSelMenuItems[1] = mLoadGameSel;
-                        mSelMenuItems[2] = mOptionsSel;
-                        mSelMenuItems[3] = mCreditsSel;
+                        //mSelMenuItems[0] = mNewGameSel;
+                        mSelMenuItems[0] = mLoadGameSel;
+                        mSelMenuItems[1] = mOptionsSel;
+                        mSelMenuItems[2] = mCreditsSel;
 
-                        mUnselMenuItems[0] = mNewGameUnsel;
-                        mUnselMenuItems[1] = mLoadGameUnsel;
-                        mUnselMenuItems[2] = mOptionsUnsel;
-                        mUnselMenuItems[3] = mCreditsUnsel;
+                        //mUnselMenuItems[0] = mNewGameUnsel;
+                        mUnselMenuItems[0] = mLoadGameUnsel;
+                        mUnselMenuItems[1] = mOptionsUnsel;
+                        mUnselMenuItems[2] = mCreditsUnsel;
 
-                        mMenuItems[0] = mNewGameSel;
-                        mMenuItems[1] = mLoadGameUnsel;
-                        mMenuItems[2] = mOptionsUnsel;
-                        mMenuItems[3] = mCreditsUnsel;
+                        //mMenuItems[0] = mNewGameSel;
+                        mMenuItems[0] = mLoadGameSel;
+                        mMenuItems[1] = mOptionsUnsel;
+                        mMenuItems[2] = mCreditsUnsel;
 
                         mCurrent = 0;
                     }
@@ -505,15 +544,18 @@ namespace GravityShift
 
                         mSelMenuItems[0] = mControlSel;
                         mSelMenuItems[1] = mSoundSel;
-                        mSelMenuItems[2] = mBackSel;
+                        mSelMenuItems[2] = mNewGameSel;
+                        mSelMenuItems[3] = mBackSel;
 
                         mUnselMenuItems[0] = mControlUnsel;
                         mUnselMenuItems[1] = mSoundUnsel;
-                        mUnselMenuItems[2] = mBackUnsel;
+                        mUnselMenuItems[2] = mNewGameUnsel;
+                        mUnselMenuItems[3] = mBackUnsel;
 
                         mMenuItems[0] = mControlSel;
                         mMenuItems[1] = mSoundUnsel;
-                        mMenuItems[2] = mBackUnsel;
+                        mMenuItems[2] = mNewGameUnsel;
+                        mMenuItems[3] = mBackUnsel;
 
                         mCurrent = 0;
                     }
@@ -565,27 +607,27 @@ namespace GravityShift
                         /* Back */
                         else if (mCurrent == 1)
                         {
-                            /* Return back to the title screen */
-                            mState = states.TITLE;
+                            /* Change to the options menu */
+                            mState = states.OPTIONS;
 
-                            mSelMenuItems = new Texture2D[NUM_TITLE];
-                            mUnselMenuItems = new Texture2D[NUM_TITLE];
-                            mMenuItems = new Texture2D[NUM_TITLE];
+                            mSelMenuItems = new Texture2D[NUM_OPTIONS];
+                            mUnselMenuItems = new Texture2D[NUM_OPTIONS];
+                            mMenuItems = new Texture2D[NUM_OPTIONS];
 
-                            mSelMenuItems[0] = mNewGameSel;
-                            mSelMenuItems[1] = mLoadGameSel;
-                            mSelMenuItems[2] = mOptionsSel;
-                            mSelMenuItems[3] = mCreditsSel;
+                            mSelMenuItems[0] = mControlSel;
+                            mSelMenuItems[1] = mSoundSel;
+                            mSelMenuItems[2] = mNewGameSel;
+                            mSelMenuItems[3] = mBackSel;
 
-                            mUnselMenuItems[0] = mNewGameUnsel;
-                            mUnselMenuItems[1] = mLoadGameUnsel;
-                            mUnselMenuItems[2] = mOptionsUnsel;
-                            mUnselMenuItems[3] = mCreditsUnsel;
+                            mUnselMenuItems[0] = mControlUnsel;
+                            mUnselMenuItems[1] = mSoundUnsel;
+                            mUnselMenuItems[2] = mNewGameUnsel;
+                            mUnselMenuItems[3] = mBackUnsel;
 
-                            mMenuItems[0] = mNewGameSel;
-                            mMenuItems[1] = mLoadGameUnsel;
-                            mMenuItems[2] = mOptionsUnsel;
-                            mMenuItems[3] = mCreditsUnsel;
+                            mMenuItems[0] = mControlSel;
+                            mMenuItems[1] = mSoundUnsel;
+                            mMenuItems[2] = mNewGameUnsel;
+                            mMenuItems[3] = mBackUnsel;
 
                             mCurrent = 0;
                         }
@@ -603,22 +645,36 @@ namespace GravityShift
          * 
          * GraphicsDeviceManager graphics: The current graphics manager
          */
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 
             /* Draw the title of the game  and main background */
-            spriteBatch.Draw(mTitle, new Vector2(180.0f, 50.0f), Color.White);
+            //spriteBatch.Draw(mTitle, new Vector2(180.0f, 50.0f), Color.White);
+            spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 
             /* If on the title screen */
             switch (mState)
             {
                 case states.TITLE:
                     /* Draw the title items */
-                    spriteBatch.Draw(mMenuItems[0], new Vector2(500.0f, 425.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[1], new Vector2(480.0f, 500.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[2], new Vector2(540.0f, 580.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[3], new Vector2(552.0f, 655.0f), Color.White);
+                    //spriteBatch.Draw(mMenuItems[0], new Vector2(500.0f, 425.0f), Color.White);
+                    //spriteBatch.Draw(mMenuItems[1], new Vector2(480.0f, 500.0f), Color.White);
+                    //spriteBatch.Draw(mMenuItems[2], new Vector2(540.0f, 580.0f), Color.White);
+                    //spriteBatch.Draw(mMenuItems[3], new Vector2(552.0f, 655.0f), Color.White);
+                    float height = mMenuItems[2].Height;
+                    for (int i = mMenuItems.Length - 1; i >= 0; i--)
+                    {
+                        height += mMenuItems[i].Height;
+                        spriteBatch.Draw(mMenuItems[i], new Vector2(mScreenRect.Center.X - mMenuItems[i].Width / 2, mScreenRect.Bottom - height), Color.White);
+                    }
+                    //spriteBatch.Draw(mMenuItems[3], new Vector2(mScreenRect.Left + (mScreenRect.Width - 
                     break;
 
                 /* If on the load screen */  //Is this doing anything?
@@ -631,43 +687,102 @@ namespace GravityShift
 
                 /* If on the options menu */
                 case states.OPTIONS:
-                    spriteBatch.Draw(mMenuItems[0], new Vector2(300.0f, 300.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[1], new Vector2(300.0f, 400.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[2], new Vector2(900.0f, 700.0f), Color.White);
+                    height = mScreenRect.Center.Y - mMenuItems[2].Height*3;
+                    for (int i = mMenuItems.Length - 1; i >= 0; i--)
+                    {
+                        height += mMenuItems[i].Height;
+                        spriteBatch.Draw(mMenuItems[i], new Vector2(mScreenRect.Center.X - mMenuItems[i].Width / 2, mScreenRect.Bottom - height), Color.White);
+                    }
+                    //spriteBatch.Draw(mMenuItems[0], new Vector2(300.0f, 300.0f), Color.White);
+                    //spriteBatch.Draw(mMenuItems[1], new Vector2(300.0f, 400.0f), Color.White);
+                    //spriteBatch.Draw(mMenuItems[2], new Vector2(900.0f, 700.0f), Color.White);
                     break;
 
                 case states.CREDITS:
-                    spriteBatch.DrawString(mKootenay, "Developed By:", new Vector2(400.0f, 375.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Lukas Black", new Vector2(400.0f, 425.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Nate Bradford", new Vector2(400.0f, 450.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Curtis Taylor", new Vector2(400.0f, 475.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Steven Doxey", new Vector2(400.0f, 500.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Kamron Egan", new Vector2(400.0f, 525.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Jeremy Heintz", new Vector2(400.0f, 550.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Morgan Reynolds", new Vector2(400.0f, 575.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Tyler Robinson", new Vector2(400.0f, 600.0f), Color.White);
-                    spriteBatch.DrawString(mKootenay, "Casey Spencer", new Vector2(400.0f, 625.0f), Color.White);
+                    string text = "Casey Spencer";
+                    Vector2 size = mKootenay.MeasureString(text);
+                    height = mScreenRect.Bottom - mBackSel.Height * 2.5f;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Tyler Robinson";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Morgan Reynolds";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Jeremy Heintz";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Kamron Egan";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Steven Doxley";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Curtis Taylor";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Nate Bradford";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Lukas Black";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
+                    text = "Developed By:";
+                    size = mKootenay.MeasureString(text);
+                    height -= size.Y * 2;
+                    spriteBatch.DrawString(mKootenay, text, new Vector2(mScreenRect.Center.X - (size.X / 2), height), Color.White);
 
-                    spriteBatch.Draw(mBackSel, new Vector2(900.0f, 700.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Developed By:", new Vector2(400.0f, 375.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Lukas Black", new Vector2(400.0f, 425.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Nate Bradford", new Vector2(400.0f, 450.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Curtis Taylor", new Vector2(400.0f, 475.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Steven Doxey", new Vector2(400.0f, 500.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Kamron Egan", new Vector2(400.0f, 525.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Jeremy Heintz", new Vector2(400.0f, 550.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Morgan Reynolds", new Vector2(400.0f, 575.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Tyler Robinson", new Vector2(400.0f, 600.0f), Color.White);
+                    //spriteBatch.DrawString(mKootenay, "Casey Spencer", new Vector2(400.0f, 625.0f), Color.White);
+                    
 
+                    spriteBatch.Draw(mBackSel, new Vector2(mScreenRect.Center.X - mBackSel.Width / 2, mScreenRect.Bottom - mBackSel.Height * 2), Color.White);
                     break;
 
                 /* If on the controller settings screen */
                 case states.CONTROLLER:
-                    spriteBatch.Draw(mXboxControl, new Vector2(300.0f, 30.0f), Color.White);
-                    spriteBatch.Draw(mBackSel, new Vector2(900.0f, 700.0f), Color.White);
+                    //spriteBatch.Draw(mXboxControl, new Vector2(300.0f, 30.0f), Color.White);
+                    //spriteBatch.Draw(mBackSel, new Vector2(900.0f, 700.0f), Color.White);
+                    spriteBatch.Draw(mXboxControl, new Vector2(mScreenRect.Center.X - mXboxControl.Width / 2, mScreenRect.Center.Y - mXboxControl.Height / 3), Color.White);
+                    spriteBatch.Draw(mBackSel, new Vector2(mScreenRect.Center.X - mBackSel.Width / 2, mScreenRect.Bottom - mBackSel.Height), Color.White);
                     /* TODO */
                     break;
 
                 /* If on the sound settings screen */
                 case states.SOUNDS:
 
-                    spriteBatch.Draw(mMenuItems[0], new Vector2(300.0f, 300.0f), Color.White);
+                    height = mScreenRect.Center.Y - mMenuItems[0].Height*2;
+                    int offset = 0;
+                    for (int i = mMenuItems.Length - 1; i >= 0; i--)
+                    {
+                        height += mMenuItems[i].Height;
+                        spriteBatch.Draw(mMenuItems[i], new Vector2(mScreenRect.Center.X - (mMenuItems[i].Width) / 2  - offset, mScreenRect.Bottom - height), Color.White);
+                        offset = mMute.Width / 2;
+                    }
+                    //spriteBatch.Draw(mMenuItems[0], new Vector2(300.0f, 300.0f), Color.White);
+
+                    height = mScreenRect.Center.Y;
                     if (mMuted)
-                        spriteBatch.Draw(mMute, new Vector2(550.0f, 290.0f), Color.White);
+                        spriteBatch.Draw(mMute, new Vector2(mScreenRect.Center.X + (mMenuItems[0].Width) / 2, mScreenRect.Bottom - height), Color.White);
                     else
-                        spriteBatch.Draw(mUnMute, new Vector2(550.0f, 290.0f), Color.White);
-                    spriteBatch.Draw(mMenuItems[1], new Vector2(900.0f, 700.0f), Color.White);
+                        spriteBatch.Draw(mUnMute, new Vector2(mScreenRect.Center.X + (mMenuItems[0].Width) / 2, mScreenRect.Bottom - height), Color.White);
+                    //spriteBatch.Draw(mMenuItems[1], new Vector2(900.0f, 700.0f), Color.White);
                     /* TODO */
                     break;
             }

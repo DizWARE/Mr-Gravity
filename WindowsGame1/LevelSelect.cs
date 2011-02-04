@@ -261,9 +261,15 @@ namespace GravityShift
         /// </summary>
         /// <param name="spriteBatch">Canvas we are drawing to</param>
         /// <param name="graphics">Information on the device's graphics</param>
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 
             //spriteBatch.Draw(mBackground, mScreenRect, Color.White);
 
@@ -285,7 +291,7 @@ namespace GravityShift
 
             for (int i = 0; i < 12 && i + 12 * mCurrentPage < mLevels.Count; i++)
             {
-                if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.Width)
+                if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.TitleSafeArea.Width)
                 {
                     currentLocation.X = 0;
                     currentLocation.Y += padding.Y + size.Y;

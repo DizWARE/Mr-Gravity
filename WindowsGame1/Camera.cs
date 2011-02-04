@@ -47,7 +47,7 @@ namespace GravityShift
         {
               return Matrix.CreateTranslation(new Vector3(-mPosition.X, -mPosition.Y, 0.0f)) *
                            Matrix.CreateScale(new Vector3(Zoom, Zoom, 0.0f)) *
-                           Matrix.CreateTranslation(new Vector3(mWidth * .3f, mHeight * .3f, 0.0f));
+                           Matrix.CreateTranslation(new Vector3(mWidth * 0.3f, mHeight * 0.3f, 0.0f));
         }
 
         /// <summary>
