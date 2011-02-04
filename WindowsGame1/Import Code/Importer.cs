@@ -110,8 +110,7 @@ namespace GravityShift.Import_Code
                     return new PlayerEnd(mContent, entity);
 
             //Need to fix ---- TODODODODODODODO
-            return new PlayerEnd(mContent, EntityInfo.CreatePlayerEndInfo(
-                Vector2.Add(GridSpace.SIZE,new Vector2(1,1))));
+            return null;
         }
 
         /// <summary>

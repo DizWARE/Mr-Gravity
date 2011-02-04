@@ -81,6 +81,8 @@ namespace GravityShift
         private float mDeathPanUpdates;
         private static float SCALING_FACTOR = 85;
 
+        private bool isCameraFixed = false;
+
         // Camera
         public static Camera mCam;
         public static Camera mCam1;
@@ -200,6 +202,7 @@ namespace GravityShift
 
             mCam = new Camera(viewport);
             mCam1 = new Camera(viewport);
+
             mScreenRect = viewport.TitleSafeArea;
 
             mRails = new List<EntityInfo>();
@@ -272,7 +275,14 @@ namespace GravityShift
 
             mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
-            mObjects.Add(importer.GetPlayerEnd());
+
+            PlayerEnd playerEnd = importer.GetPlayerEnd();
+            if(playerEnd != null)
+                mObjects.Add(playerEnd);
+
+
+            mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
+            mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
@@ -416,26 +426,10 @@ namespace GravityShift
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
-                    if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
+                    if (!isCameraFixed && Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
                     {
-                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
-                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
-                    }
-
-                    /* Gradual Zoom Out */
-                    if (mControls.isLeftShoulderPressed(true)) //&&
-                    {
-                        if (mCam.Zoom > 0.4f)
-                            mCam.Zoom -= 0.003f;
-                        mPrevZoom = mCam.Zoom;
-                    }
-
-                    /* Gradual Zoom In */
-                    else if (mControls.isRightShoulderPressed(true)) //&&
-                    {
-                        if (mCam.Zoom < 1.0f)
-                            mCam.Zoom += 0.003f;
-                        mPrevZoom = mCam.Zoom;
+                       mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
+                       mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
                     }
 
                     /* Snap Zoom Out */
@@ -836,6 +830,13 @@ namespace GravityShift
                     break;
             }
             return newAnimation;
+        }
+
+        public static Level MainMenuLevel(ContentManager content, string filepath, IControlScheme controls, Viewport viewport)
+        {
+            Level main = new Level(filepath,controls,viewport);
+            main.isCameraFixed = true;
+            return main;
         }
     }
 }
