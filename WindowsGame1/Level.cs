@@ -418,8 +418,8 @@ namespace GravityShift
                     // Also only update if the velocity if greater than 0.5f in either direction
                     if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
                     {
-                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
-                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
+                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
+                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
                     }
 
                     /* Gradual Zoom Out */
