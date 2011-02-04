@@ -92,7 +92,7 @@ namespace GravityShift
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
-            mMenu = new Menu(mControls);
+            mMenu = new Menu(mControls, mGraphics);
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
             mPause = new Pause(mControls);
@@ -199,7 +199,6 @@ namespace GravityShift
                 //TODO: move this to options menu when new menu is in
             else if (mCurrentState == GameStates.New_Level_Selection)
             {
-
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
 

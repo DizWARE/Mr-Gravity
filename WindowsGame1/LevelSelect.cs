@@ -418,7 +418,6 @@ namespace GravityShift
             mUnlocked = true;
         }
 
-
         /// <summary>
         /// Submits new scores for the 3 scoring factors for this level, and if the new score is higher than
         /// previously recorded it makes note of this.  Scores should be between values of 0 and 3.
