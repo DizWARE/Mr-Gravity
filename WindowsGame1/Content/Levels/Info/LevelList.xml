@@ -29,6 +29,13 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+    <Name>CloseCall</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
     <Name>Chambers</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>

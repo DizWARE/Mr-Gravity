@@ -28,7 +28,6 @@ namespace GravityShift
         {   get { return mSpawnPoint; } }
 
         public int mNumLives = 5;
-        public int mScore = 0;
         public bool mIsAlive = true;
 
         //Player rotation values for outer circle (current, goal, and speed)
@@ -166,6 +165,14 @@ namespace GravityShift
         /// <param name="gametime">Current gametime</param>
         public override void Draw(SpriteBatch canvas, GameTime gametime)
         {
+            //TODO: put rotation back in later
+//            canvas.Draw(playerBase, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+//                new Rectangle(0, 0, (int)mCurrentTexture1.Width, (int)mCurrentTexture1.Height), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+//            canvas.Draw(mCurrentTexture1, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+//                new Rectangle(0, 0, (int)mCurrentTexture1.Width, (int)mCurrentTexture1.Height), Color.White, mFaceRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+//            canvas.Draw(playerBase, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
+//                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+
             canvas.Draw(mCurrentTexture, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
                 new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mFaceRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
 

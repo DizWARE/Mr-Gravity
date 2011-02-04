@@ -35,6 +35,7 @@ namespace GravityShift.Import_Code
         public static string SOUND_FILE = "SoundFile";
         public static string LOOP = "Loop";
         public static string PLAYER_FACE = "PlayerFace";
+        public static string IDEAL_TIME = "IdealTime";
         
         //Names
         public static string WIDTH = "Width";
