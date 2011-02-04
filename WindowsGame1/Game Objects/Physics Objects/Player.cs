@@ -77,12 +77,8 @@ namespace GravityShift
 
             PlayerFaces.Load(content);
 
-            playerBase = content.Load<Texture2D>("Images/Player/NeonCharBlankDottedTEMP");
-            mCurrentTexture1 = content.Load<Texture2D>("Images/Player/NeonCharFaceTEMP");
             mCurrentTexture = PlayerFaces.SMILE;
-            mSize = new Vector2(mCurrentTexture1.Width, mCurrentTexture1.Height);
-
-//            mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
+            mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
         }
         /// <summary>
         /// Updates the player location and the player controls
@@ -176,6 +172,7 @@ namespace GravityShift
 //                new Rectangle(0, 0, (int)mCurrentTexture1.Width, (int)mCurrentTexture1.Height), Color.White, mFaceRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
 //            canvas.Draw(playerBase, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
 //                new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
+
             canvas.Draw(mCurrentTexture, new Rectangle((int)mPosition.X + (int)(mSize.X / 2), (int)mPosition.Y + (int)(mSize.Y / 2), (int)mSize.X, (int)mSize.Y),
                 new Rectangle(0, 0, (int)mCurrentTexture.Width, (int)mCurrentTexture.Height), Color.White, mFaceRotation, new Vector2((mSize.X / 2), (mSize.Y / 2)), SpriteEffects.None, 0);
 
