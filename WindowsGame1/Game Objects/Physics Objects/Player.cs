@@ -28,7 +28,6 @@ namespace GravityShift
         {   get { return mSpawnPoint; } }
 
         public int mNumLives = 5;
-        public int mScore = 0;
         public bool mIsAlive = true;
 
         //Player rotation values for outer circle (current, goal, and speed)

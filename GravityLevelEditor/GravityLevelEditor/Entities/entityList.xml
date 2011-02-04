@@ -204,7 +204,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>16</Length>
+      <Length>5</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -219,7 +219,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>1</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
