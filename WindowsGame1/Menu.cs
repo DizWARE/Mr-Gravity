@@ -335,7 +335,7 @@ namespace GravityShift
                         else if (mCurrent == 2)
                         {
                             gameState = GameStates.New_Level_Selection;
-                            gameState = GameStates.Main_Menu;
+//                            gameState = GameStates.Main_Menu;
                             mState = states.TITLE;
 
                             mSelMenuItems = new Texture2D[NUM_TITLE];

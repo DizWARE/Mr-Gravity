@@ -207,6 +207,11 @@ namespace GravityShift
             mFaceGoalRotation = mFaceRotationStraight;
         }
 
+        public bool isFaceStraight()
+        {
+            return mFaceGoalRotation == mFaceRotationStraight;
+        }
+
         public void StartRumble()
         {
             mRumble = true;
