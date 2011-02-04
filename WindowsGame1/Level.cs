@@ -58,6 +58,15 @@ namespace GravityShift
         public Vector2 StartingPoint { get { return mStartingPoint; } set { mStartingPoint = value; } }
         private Vector2 mStartingPoint;
 
+        private int mIdealTime;
+        public int IdealTime
+        { get { return mIdealTime; } set { mIdealTime = value; } }
+
+        private int mCollectableCount;
+        public int CollectableCount
+        { get { return mCollectableCount; } set { mCollectableCount = value; } }
+
+
         //Enumerator for different states of death (playing game, in need of respawn, or panning back to start point)
         private enum DeathStates
         {
