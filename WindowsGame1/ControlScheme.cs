@@ -421,7 +421,8 @@ namespace GravityShift
             
             if (state.IsButtonDown(button))
             {
-                if (!mControllerIndexSet) { mControllerIndex = playerIndex; }
+                if (!mControllerIndexSet) 
+                { mControllerIndex = playerIndex; }
                 if (pressedButtons.Contains(button) && !held) return false;
                 if (!pressedButtons.Contains(button))
                     pressedButtons.Add(button);
