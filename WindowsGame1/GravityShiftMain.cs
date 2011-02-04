@@ -100,12 +100,9 @@ namespace GravityShift
             //mGraphics.ToggleFullScreen();// REMEMBER TO RESET AFTER DEBUGGING!!!!!!!!!
             mGraphics.ApplyChanges();
 
-<<<<<<< HEAD
+
             mTitle = new Title(mControls);
-            mMenu = new Menu(mControls);
-=======
             mMenu = new Menu(mControls, mGraphics);
->>>>>>> upstream/master
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
             mPause = new Pause(mControls);
