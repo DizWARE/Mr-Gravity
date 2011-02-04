@@ -58,6 +58,15 @@ namespace GravityShift
         public Vector2 StartingPoint { get { return mStartingPoint; } set { mStartingPoint = value; } }
         private Vector2 mStartingPoint;
 
+        private int mIdealTime;
+        public int IdealTime
+        { get { return mIdealTime; } set { mIdealTime = value; } }
+
+        private int mCollectableCount;
+        public int CollectableCount
+        { get { return mCollectableCount; } set { mCollectableCount = value; } }
+
+
         //Enumerator for different states of death (playing game, in need of respawn, or panning back to start point)
         private enum DeathStates
         {
@@ -126,6 +135,7 @@ namespace GravityShift
         private Texture2D[] mLives;
         public static int mNumCollected;
         public static int mNumCollectable;
+        public static int mDeaths;
 
         #endregion
 
@@ -351,6 +361,9 @@ namespace GravityShift
                         //Then clear the list
                         mRemoveCollected.Clear();
                     }
+                    
+                    //Update number of deaths occured
+                    mDeaths = 5 - mPlayer.mNumLives;
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
@@ -669,7 +682,6 @@ namespace GravityShift
                         //If player collided with a collectable object
                         if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.COLLECTABLE || (obj is Player) && physObj.CollisionType == XmlKeys.COLLECTABLE))
                         {
-                            mPlayer.mScore += 100;
                             if (physObj.CollisionType == XmlKeys.COLLECTABLE)
                             {
                                 mCollected.Add(physObj);
@@ -713,6 +725,8 @@ namespace GravityShift
                         {
                             if (cObject is Wall)
                             {
+                                mPlayer.setFaceStraight();
+
                                 KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));

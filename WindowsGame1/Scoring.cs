@@ -46,9 +46,6 @@ namespace GravityShift
 
         #region Art
 
-        private Texture2D mApple;
-        private Texture2D mApple_gray;
-
         private Texture2D mNextLevelSel;
         private Texture2D mNextLevelUnsel;
         private Texture2D mSelectLevelSel;
@@ -105,19 +102,6 @@ namespace GravityShift
             mContent = content;
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
-
-            mApple = content.Load<Texture2D>("Images/Menu/Score/Apple");
-            mApple_gray = content.Load<Texture2D>("Images/Menu/Score/AppleGray");
-
-            /* Set up with the number of worlds and levels */
-            /* For now we have 1 world with 3 levels */
-            mLevel = new int[1, 3];
-            mScore = new int[1, 3];
-            mNumApples = new Texture2D[3];
-
-            mNumApples[0] = mApple;
-            mNumApples[1] = mApple;
-            mNumApples[2] = mApple;
 
             mCurrent = 0;
 
@@ -260,6 +244,44 @@ namespace GravityShift
                 }
             }
         }
+        /* GetRank
+         * 
+         * int time: time to complete level
+         * 
+         * int timeGoal: goal time
+         * 
+         * int collect: collectables received
+         * 
+         * int collectGoal: Total collectables in level
+         * 
+         * int deathTotal: number of deaths
+         * 
+         * return int[] (number of stars-- 0=Bad, 1=Okay, 2=Good, 3=Perfect): [Time, Collectables, Death]
+         */
+        public int[] GetRank(int time, int timeGoal, int collect, int collectGoal, int deathTotal)
+        {
+            int[] result = new int[3];
+
+            /* TIME -- 100%+, <120%, <140%, >140% */
+            if (time < timeGoal) { result[0] = 3; }
+            else if (((double) time / (double) timeGoal) > 1.2) { result[0] = 2; }
+            else if (((double) time / (double) timeGoal) > 1.4) { result[0] = 1; }
+            else { result[0] = 0; }
+
+            /* COLLECTABLES -- 100%, >80%, >60%, <60% */
+            if (collect == collectGoal) { result[1] = 3; }
+            else if (((double) collect / (double) collectGoal) > 0.8) { result[1] = 2; }
+            else if (((double) collect / (double) collectGoal) > 0.6) { result[1] = 1; }
+            else { result[1] = 0; }
+
+            /* DEATHS -- 0, 1, 2-3, >3 */
+            if (deathTotal == 0) { result[2] = 3; }
+            else if (deathTotal == 1) { result[2] = 2; }
+            else if (deathTotal <= 3) { result[2] = 1; }
+            else { result[2] = 0; }
+
+            return result;
+        }
 
         /*
          * Draw
@@ -280,14 +302,26 @@ namespace GravityShift
                 null,
                 scale);
 
+            //TODO: CHANGE TO DYNAMIC PLACING
+
             spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Time: " + (int)GravityShift.Level.TIMER + " Seconds", new Vector2(350.0f, 300.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, "Collected: " + (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(350.0f, 350.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(250.0f, 300.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(500.0f, 300.0f), Color.DarkOrange);
+            //TODO: Get rank
 
-            spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
-            spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
-            spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(250.0f, 350.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(500.0f, 350.0f), Color.DarkOrange);
+            //TODO: Get rank
+
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(250.0f, 400.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(500.0f, 400.0f), Color.DarkOrange);
+            //TODO: Get rank
+
+
+            //spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
+            //spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
+            //spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
 
             spriteBatch.Draw(mItems[0], new Vector2(900.0f, 500.0f), Color.White);
             spriteBatch.Draw(mItems[1], new Vector2(900.0f, 575.0f), Color.White);
