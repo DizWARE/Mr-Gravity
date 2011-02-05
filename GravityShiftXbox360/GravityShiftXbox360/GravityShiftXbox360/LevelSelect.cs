@@ -70,11 +70,11 @@ namespace GravityShift
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
             TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
-#endif
             if (Guide.IsTrialMode)
                 mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
             else
-                mLevelInfo = XElement.Load(LEVEL_LIST);
+#endif
+            mLevelInfo = XElement.Load(LEVEL_LIST);
 
             TrialMode = Guide.IsTrialMode;
         }
@@ -103,7 +103,7 @@ namespace GravityShift
             XDocument xDoc = new XDocument();
             xDoc.Add(xLevels);
 
-//#if XBOX360
+#if XBOX360
             FileStream stream;
             if (TrialMode)
                 stream = new FileStream(TRIAL_LEVEL_LIST, FileMode.Create);
@@ -111,12 +111,12 @@ namespace GravityShift
                 stream = new FileStream(LEVEL_LIST, FileMode.Create);
             xDoc.Save(stream);
                
-/*#else
+#else
             if (TrialMode)
                 xDoc.Save(TRIAL_LEVEL_LIST);
             else
                 xDoc.Save(LEVEL_LIST);
-#endif*/
+#endif
 
         }
 
