@@ -279,11 +279,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Hazards\BlueSquare.png">
-      <Name>BlueSquare</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Hazards\GreenCircle.png">
       <Name>GreenCircle</Name>
       <Importer>TextureImporter</Importer>
@@ -294,11 +289,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Hazards\GreenSquare.png">
-      <Name>GreenSquare</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Hazards\PinkCircle.png">
       <Name>PinkCircle</Name>
       <Importer>TextureImporter</Importer>
@@ -306,11 +296,6 @@
     </Compile>
     <Compile Include="Images\Hazards\PinkSaw.png">
       <Name>PinkSaw</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Hazards\PinkSquare.png">
-      <Name>PinkSquare</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -336,11 +321,6 @@
     </Compile>
     <Compile Include="Images\Hazards\YellowSaw.png">
       <Name>YellowSaw</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Hazards\YellowSquare.png">
-      <Name>YellowSquare</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
