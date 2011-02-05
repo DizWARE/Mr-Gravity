@@ -1,0 +1,1468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Images\AnimatedSprites\BlackHole.png</Source>
+      <Name>Images\AnimatedSprites\BlackHole</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\BlackHole.xnb</Output>
+      <Time>2011-02-05T09:59:57.4087605-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\AnimatedSprites\GreenPulse.png</Source>
+      <Name>Images\AnimatedSprites\GreenPulse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\GreenPulse.xnb</Output>
+      <Time>2011-02-05T09:59:57.4387622-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\AnimatedSprites\PinkWarp.png</Source>
+      <Name>Images\AnimatedSprites\PinkWarp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\PinkWarp.xnb</Output>
+      <Time>2011-02-05T09:59:57.4617635-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\AnimatedSprites\YellowLabyrinth.png</Source>
+      <Name>Images\AnimatedSprites\YellowLabyrinth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\YellowLabyrinth.xnb</Output>
+      <Time>2011-02-05T09:59:57.4997657-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\AnimatedSprites\YellowScan.png</Source>
+      <Name>Images\AnimatedSprites\YellowScan</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\YellowScan.xnb</Output>
+      <Time>2011-02-05T09:59:57.5157666-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Backgrounds\blank.png</Source>
+      <Name>Images\Backgrounds\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Backgrounds\blank.xnb</Output>
+      <Time>2011-02-05T09:59:57.5557689-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Backgrounds\stars.png</Source>
+      <Name>Images\Backgrounds\stars</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Backgrounds\stars.xnb</Output>
+      <Time>2011-02-05T09:59:57.6517744-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\error.png</Source>
+      <Name>Images\error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\error.xnb</Output>
+      <Time>2011-02-05T09:59:57.6587748-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\errorBG.png</Source>
+      <Name>Images\errorBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\errorBG.xnb</Output>
+      <Time>2011-02-05T09:59:57.7307789-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\BlackHole.png</Source>
+      <Name>Images\Hazards\BlackHole</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\BlackHole.xnb</Output>
+      <Time>2011-02-05T09:59:57.7937825-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\BlueCircle.png</Source>
+      <Name>Images\Hazards\BlueCircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\BlueCircle.xnb</Output>
+      <Time>2011-02-05T09:59:57.8137837-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\BlueSaw.png</Source>
+      <Name>Images\Hazards\BlueSaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\BlueSaw.xnb</Output>
+      <Time>2011-02-05T09:59:57.8347849-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\GreenCircle.png</Source>
+      <Name>Images\Hazards\GreenCircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\GreenCircle.xnb</Output>
+      <Time>2011-02-05T09:59:57.8797874-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\GreenSaw.png</Source>
+      <Name>Images\Hazards\GreenSaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\GreenSaw.xnb</Output>
+      <Time>2011-02-05T09:59:57.9117893-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\PinkCircle.png</Source>
+      <Name>Images\Hazards\PinkCircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\PinkCircle.xnb</Output>
+      <Time>2011-02-05T09:59:57.9397909-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\PinkSaw.png</Source>
+      <Name>Images\Hazards\PinkSaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\PinkSaw.xnb</Output>
+      <Time>2011-02-05T09:59:57.9547917-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\RedCircle.png</Source>
+      <Name>Images\Hazards\RedCircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\RedCircle.xnb</Output>
+      <Time>2011-02-05T09:59:57.959792-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\RedSaw.png</Source>
+      <Name>Images\Hazards\RedSaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\RedSaw.xnb</Output>
+      <Time>2011-02-05T09:59:57.9647923-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\RedSquare.png</Source>
+      <Name>Images\Hazards\RedSquare</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\RedSquare.xnb</Output>
+      <Time>2011-02-05T09:59:57.9697926-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\YellowCircle.png</Source>
+      <Name>Images\Hazards\YellowCircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\YellowCircle.xnb</Output>
+      <Time>2011-02-05T09:59:57.994794-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Hazards\YellowSaw.png</Source>
+      <Name>Images\Hazards\YellowSaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Hazards\YellowSaw.xnb</Output>
+      <Time>2011-02-05T09:59:58.0337962-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\ArrowDown.png</Source>
+      <Name>Images\HUD\ArrowDown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\ArrowDown.xnb</Output>
+      <Time>2011-02-05T09:59:58.063798-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\ArrowLeft.png</Source>
+      <Name>Images\HUD\ArrowLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\ArrowLeft.xnb</Output>
+      <Time>2011-02-05T09:59:58.0687982-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\ArrowRight.png</Source>
+      <Name>Images\HUD\ArrowRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\ArrowRight.xnb</Output>
+      <Time>2011-02-05T09:59:58.0757986-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\ArrowUp.png</Source>
+      <Name>Images\HUD\ArrowUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\ArrowUp.xnb</Output>
+      <Time>2011-02-05T09:59:58.0807989-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\HUDTrans.png</Source>
+      <Name>Images\HUD\HUDTrans</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\HUDTrans.xnb</Output>
+      <Time>2011-02-05T09:59:58.0947997-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount0.png</Source>
+      <Name>Images\HUD\NeonLifeCount0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount0.xnb</Output>
+      <Time>2011-02-05T09:59:58.1138008-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount1.png</Source>
+      <Name>Images\HUD\NeonLifeCount1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount1.xnb</Output>
+      <Time>2011-02-05T09:59:58.1788045-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount2.png</Source>
+      <Name>Images\HUD\NeonLifeCount2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount2.xnb</Output>
+      <Time>2011-02-05T09:59:58.2098063-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount3.png</Source>
+      <Name>Images\HUD\NeonLifeCount3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount3.xnb</Output>
+      <Time>2011-02-05T09:59:58.2228071-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount4.png</Source>
+      <Name>Images\HUD\NeonLifeCount4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount4.xnb</Output>
+      <Time>2011-02-05T09:59:58.2438083-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount5.png</Source>
+      <Name>Images\HUD\NeonLifeCount5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount5.xnb</Output>
+      <Time>2011-02-05T09:59:58.2598092-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount6.png</Source>
+      <Name>Images\HUD\NeonLifeCount6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount6.xnb</Output>
+      <Time>2011-02-05T09:59:58.2808104-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount7.png</Source>
+      <Name>Images\HUD\NeonLifeCount7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount7.xnb</Output>
+      <Time>2011-02-05T09:59:58.2998115-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount8.png</Source>
+      <Name>Images\HUD\NeonLifeCount8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount8.xnb</Output>
+      <Time>2011-02-05T09:59:58.3138123-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\HUD\NeonLifeCount9.png</Source>
+      <Name>Images\HUD\NeonLifeCount9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\HUD\NeonLifeCount9.xnb</Output>
+      <Time>2011-02-05T09:59:58.3568147-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\InvisibleObjects\InvisibleBlock.png</Source>
+      <Name>Images\InvisibleObjects\InvisibleBlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\InvisibleObjects\InvisibleBlock.xnb</Output>
+      <Time>2011-02-05T09:59:58.3628151-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\InvisibleObjects\Trigger.png</Source>
+      <Name>Images\InvisibleObjects\Trigger</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\InvisibleObjects\Trigger.xnb</Output>
+      <Time>2011-02-05T09:59:58.3698155-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Lock\locked1a.png</Source>
+      <Name>Images\Lock\locked1a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Lock\locked1a.xnb</Output>
+      <Time>2011-02-05T09:59:58.3898166-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Lock\locked1b.png</Source>
+      <Name>Images\Lock\locked1b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Lock\locked1b.xnb</Output>
+      <Time>2011-02-05T09:59:58.4058175-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Lock\locked1c.png</Source>
+      <Name>Images\Lock\locked1c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Lock\locked1c.xnb</Output>
+      <Time>2011-02-05T09:59:58.4228185-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Lock\locked1d.png</Source>
+      <Name>Images\Lock\locked1d</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Lock\locked1d.xnb</Output>
+      <Time>2011-02-05T09:59:58.4588206-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\Back.png</Source>
+      <Name>Images\Menu\LevelSelect\Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\Back.xnb</Output>
+      <Time>2011-02-05T09:59:58.4758215-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\BackSelect.png</Source>
+      <Name>Images\Menu\LevelSelect\BackSelect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\BackSelect.xnb</Output>
+      <Time>2011-02-05T09:59:58.5118236-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\LeftArrow.png</Source>
+      <Name>Images\Menu\LevelSelect\LeftArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\LeftArrow.xnb</Output>
+      <Time>2011-02-05T09:59:58.5378251-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\LeftArrowSelect.png</Source>
+      <Name>Images\Menu\LevelSelect\LeftArrowSelect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\LeftArrowSelect.xnb</Output>
+      <Time>2011-02-05T09:59:58.5558261-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\RightArrow.png</Source>
+      <Name>Images\Menu\LevelSelect\RightArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\RightArrow.xnb</Output>
+      <Time>2011-02-05T09:59:58.5788274-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\RightArrowSelect.png</Source>
+      <Name>Images\Menu\LevelSelect\RightArrowSelect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\RightArrowSelect.xnb</Output>
+      <Time>2011-02-05T09:59:58.6108292-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\LevelSelect\SelectBox.png</Source>
+      <Name>Images\Menu\LevelSelect\SelectBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\LevelSelect\SelectBox.xnb</Output>
+      <Time>2011-02-05T09:59:58.6318304-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\MainMenuSelected.png</Source>
+      <Name>Images\Menu\MainMenuSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\MainMenuSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.6058862-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\MainMenuUnselected.png</Source>
+      <Name>Images\Menu\MainMenuUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\MainMenuUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.637888-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\BackSelected.png</Source>
+      <Name>Images\Menu\Main\BackSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\BackSelected.xnb</Output>
+      <Time>2011-02-05T09:59:58.6608321-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\BackUnselected.png</Source>
+      <Name>Images\Menu\Main\BackUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\BackUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:58.8038403-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\ControllerSelected.png</Source>
+      <Name>Images\Menu\Main\ControllerSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ControllerSelected.xnb</Output>
+      <Time>2011-02-05T09:59:58.8588434-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\ControllerUnselected.png</Source>
+      <Name>Images\Menu\Main\ControllerUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ControllerUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:58.9028459-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\CreditsSelected.png</Source>
+      <Name>Images\Menu\Main\CreditsSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\CreditsSelected.xnb</Output>
+      <Time>2011-02-05T09:59:58.9468485-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\CreditsUnselected.png</Source>
+      <Name>Images\Menu\Main\CreditsUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\CreditsUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.0158524-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\LoadGameSelected.png</Source>
+      <Name>Images\Menu\Main\LoadGameSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\LoadGameSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.0548546-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\LoadGameUnselected.png</Source>
+      <Name>Images\Menu\Main\LoadGameUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\LoadGameUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.0858564-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\Mute.png</Source>
+      <Name>Images\Menu\Main\Mute</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\Mute.xnb</Output>
+      <Time>2011-02-05T09:59:59.1398595-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\MuteSelected.png</Source>
+      <Name>Images\Menu\Main\MuteSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\MuteSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.1818619-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\MuteUnselected.png</Source>
+      <Name>Images\Menu\Main\MuteUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\MuteUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.2118636-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\NewGameSelected.png</Source>
+      <Name>Images\Menu\Main\NewGameSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\NewGameSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.2518659-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\NewGameUnselected.png</Source>
+      <Name>Images\Menu\Main\NewGameUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\NewGameUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.2868679-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\OptionsSelected.png</Source>
+      <Name>Images\Menu\Main\OptionsSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\OptionsSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.3728728-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\OptionsUnselected.png</Source>
+      <Name>Images\Menu\Main\OptionsUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\OptionsUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.4068748-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\ResetSelected.png</Source>
+      <Name>Images\Menu\Main\ResetSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ResetSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.4138752-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\ResetUnselected.png</Source>
+      <Name>Images\Menu\Main\ResetUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ResetUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.4208756-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\SoundSelected.png</Source>
+      <Name>Images\Menu\Main\SoundSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\SoundSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.4548775-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\SoundUnselected.png</Source>
+      <Name>Images\Menu\Main\SoundUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\SoundUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.4948798-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\UnMute.png</Source>
+      <Name>Images\Menu\Main\UnMute</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\UnMute.xnb</Output>
+      <Time>2011-02-05T09:59:59.5258816-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Main\XboxController.png</Source>
+      <Name>Images\Menu\Main\XboxController</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\XboxController.xnb</Output>
+      <Time>2011-02-05T09:59:59.5588835-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Pause\Paused.png</Source>
+      <Name>Images\Menu\Pause\Paused</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Pause\Paused.xnb</Output>
+      <Time>2011-02-05T09:59:59.6818905-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Pause\PausedTrans.png</Source>
+      <Name>Images\Menu\Pause\PausedTrans</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Pause\PausedTrans.xnb</Output>
+      <Time>2011-02-05T09:59:59.6998915-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Pause\ResumeSelected.png</Source>
+      <Name>Images\Menu\Pause\ResumeSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Pause\ResumeSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.7278931-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Pause\ResumeUnselected.png</Source>
+      <Name>Images\Menu\Pause\ResumeUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Pause\ResumeUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.7688955-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Score\Apple.png</Source>
+      <Name>Images\Menu\Score\Apple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Score\Apple.xnb</Output>
+      <Time>2011-02-05T09:59:59.8238986-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Score\AppleGray.png</Source>
+      <Name>Images\Menu\Score\AppleGray</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Score\AppleGray.xnb</Output>
+      <Time>2011-02-05T09:59:59.8448998-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Score\NextLevelSelected.png</Source>
+      <Name>Images\Menu\Score\NextLevelSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Score\NextLevelSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.8769017-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Score\NextLevelUnselected.png</Source>
+      <Name>Images\Menu\Score\NextLevelUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Score\NextLevelUnselected.xnb</Output>
+      <Time>2011-02-05T09:59:59.9219042-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Score\RestartSelected.png</Source>
+      <Name>Images\Menu\Score\RestartSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Score\RestartSelected.xnb</Output>
+      <Time>2011-02-05T09:59:59.9849078-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Score\RestartUnselected.png</Source>
+      <Name>Images\Menu\Score\RestartUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Score\RestartUnselected.xnb</Output>
+      <Time>2011-02-05T10:00:00.0319105-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\SelectLevelSelected.png</Source>
+      <Name>Images\Menu\SelectLevelSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\SelectLevelSelected.xnb</Output>
+      <Time>2011-02-05T10:00:00.0669125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\SelectLevelUnselected.png</Source>
+      <Name>Images\Menu\SelectLevelUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\SelectLevelUnselected.xnb</Output>
+      <Time>2011-02-05T10:00:00.0959142-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Menu\Title.png</Source>
+      <Name>Images\Menu\Title</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Title.xnb</Output>
+      <Time>2011-02-05T10:00:00.1519174-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\BlueGem.png</Source>
+      <Name>Images\NonHazards\BlueGem</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\BlueGem.xnb</Output>
+      <Time>2011-02-05T10:00:00.1589178-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\GreenDiamond.png</Source>
+      <Name>Images\NonHazards\GreenDiamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\GreenDiamond.xnb</Output>
+      <Time>2011-02-05T10:00:00.1639181-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\OrangeStar.png</Source>
+      <Name>Images\NonHazards\OrangeStar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\OrangeStar.xnb</Output>
+      <Time>2011-02-05T10:00:00.1899196-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\PurpleGem.png</Source>
+      <Name>Images\NonHazards\PurpleGem</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\PurpleGem.xnb</Output>
+      <Time>2011-02-05T10:00:00.1939198-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Rails\RailBottom.png</Source>
+      <Name>Images\NonHazards\Rails\RailBottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Rails\RailBottom.xnb</Output>
+      <Time>2011-02-05T10:00:00.2219214-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Rails\RailHorizontal.png</Source>
+      <Name>Images\NonHazards\Rails\RailHorizontal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Rails\RailHorizontal.xnb</Output>
+      <Time>2011-02-05T10:00:00.2459228-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Rails\RailLeft.png</Source>
+      <Name>Images\NonHazards\Rails\RailLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Rails\RailLeft.xnb</Output>
+      <Time>2011-02-05T10:00:00.2659239-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Rails\RailRight.png</Source>
+      <Name>Images\NonHazards\Rails\RailRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Rails\RailRight.xnb</Output>
+      <Time>2011-02-05T10:00:00.2739244-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Rails\RailTop.png</Source>
+      <Name>Images\NonHazards\Rails\RailTop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Rails\RailTop.xnb</Output>
+      <Time>2011-02-05T10:00:00.3409282-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Rails\RailVertical.png</Source>
+      <Name>Images\NonHazards\Rails\RailVertical</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Rails\RailVertical.xnb</Output>
+      <Time>2011-02-05T10:00:00.4289332-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\RedDiamond.png</Source>
+      <Name>Images\NonHazards\RedDiamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\RedDiamond.xnb</Output>
+      <Time>2011-02-05T10:00:00.4389338-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\Star.png</Source>
+      <Name>Images\NonHazards\Star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\Star.xnb</Output>
+      <Time>2011-02-05T10:00:00.4469343-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NonHazards\YellowStar.png</Source>
+      <Name>Images\NonHazards\YellowStar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\NonHazards\YellowStar.xnb</Output>
+      <Time>2011-02-05T10:00:00.4859365-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Particles\circle.png</Source>
+      <Name>Images\Particles\circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Particles\circle.xnb</Output>
+      <Time>2011-02-05T10:00:00.4929369-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Particles\diamond.png</Source>
+      <Name>Images\Particles\diamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Particles\diamond.xnb</Output>
+      <Time>2011-02-05T10:00:00.4959371-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Particles\line.png</Source>
+      <Name>Images\Particles\line</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Particles\line.xnb</Output>
+      <Time>2011-02-05T10:00:00.5269388-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Particles\square.png</Source>
+      <Name>Images\Particles\square</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Particles\square.xnb</Output>
+      <Time>2011-02-05T10:00:00.5359394-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Particles\star.png</Source>
+      <Name>Images\Particles\star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Particles\star.xnb</Output>
+      <Time>2011-02-05T10:00:00.5399396-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player.png</Source>
+      <Name>Images\Player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player.xnb</Output>
+      <Time>2011-02-05T10:00:01.193977-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\PlayerPositions\PlayerEnd.png</Source>
+      <Name>Images\PlayerPositions\PlayerEnd</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\PlayerPositions\PlayerEnd.xnb</Output>
+      <Time>2011-02-05T10:00:01.2019775-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\PlayerPositions\PlayerStart.png</Source>
+      <Name>Images\PlayerPositions\PlayerStart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\PlayerPositions\PlayerStart.xnb</Output>
+      <Time>2011-02-05T10:00:01.2089779-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharBlank.png</Source>
+      <Name>Images\Player\NeonCharBlank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharBlank.xnb</Output>
+      <Time>2011-02-05T10:00:00.5799419-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharBlankDottedTEMP.png</Source>
+      <Name>Images\Player\NeonCharBlankDottedTEMP</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharBlankDottedTEMP.xnb</Output>
+      <Time>2011-02-05T10:00:00.6029432-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharDazed.png</Source>
+      <Name>Images\Player\NeonCharDazed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharDazed.xnb</Output>
+      <Time>2011-02-05T10:00:00.6189441-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharDead.png</Source>
+      <Name>Images\Player\NeonCharDead</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharDead.xnb</Output>
+      <Time>2011-02-05T10:00:00.6359451-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharDead2.png</Source>
+      <Name>Images\Player\NeonCharDead2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharDead2.xnb</Output>
+      <Time>2011-02-05T10:00:00.7589521-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharFaceTEMP.png</Source>
+      <Name>Images\Player\NeonCharFaceTEMP</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharFaceTEMP.xnb</Output>
+      <Time>2011-02-05T10:00:00.9559634-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharGrid.png</Source>
+      <Name>Images\Player\NeonCharGrid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharGrid.xnb</Output>
+      <Time>2011-02-05T10:00:00.9929655-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharLaugh.png</Source>
+      <Name>Images\Player\NeonCharLaugh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharLaugh.xnb</Output>
+      <Time>2011-02-05T10:00:01.019967-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharMeh.png</Source>
+      <Name>Images\Player\NeonCharMeh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharMeh.xnb</Output>
+      <Time>2011-02-05T10:00:01.0809705-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharSad.png</Source>
+      <Name>Images\Player\NeonCharSad</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharSad.xnb</Output>
+      <Time>2011-02-05T10:00:01.1149725-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharSad2.png</Source>
+      <Name>Images\Player\NeonCharSad2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharSad2.xnb</Output>
+      <Time>2011-02-05T10:00:01.1329735-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharSkeptic.png</Source>
+      <Name>Images\Player\NeonCharSkeptic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharSkeptic.xnb</Output>
+      <Time>2011-02-05T10:00:01.1429741-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharSmile.png</Source>
+      <Name>Images\Player\NeonCharSmile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharSmile.xnb</Output>
+      <Time>2011-02-05T10:00:01.1619752-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharSurprise.png</Source>
+      <Name>Images\Player\NeonCharSurprise</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharSurprise.xnb</Output>
+      <Time>2011-02-05T10:00:01.175976-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Player\NeonCharWorry.png</Source>
+      <Name>Images\Player\NeonCharWorry</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Player\NeonCharWorry.xnb</Output>
+      <Time>2011-02-05T10:00:01.1829764-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Walls\Blue.png</Source>
+      <Name>Images\Walls\Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Walls\Blue.xnb</Output>
+      <Time>2011-02-05T10:00:01.2149782-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Walls\Green.png</Source>
+      <Name>Images\Walls\Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Walls\Green.xnb</Output>
+      <Time>2011-02-05T10:00:01.2189784-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Walls\Orange.png</Source>
+      <Name>Images\Walls\Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Walls\Orange.xnb</Output>
+      <Time>2011-02-05T10:00:01.2239787-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Walls\Pink.png</Source>
+      <Name>Images\Walls\Pink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Walls\Pink.xnb</Output>
+      <Time>2011-02-05T10:00:01.228979-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Walls\Purple.png</Source>
+      <Name>Images\Walls\Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Walls\Purple.xnb</Output>
+      <Time>2011-02-05T10:00:01.2339793-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Walls\Yellow.png</Source>
+      <Name>Images\Walls\Yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Walls\Yellow.xnb</Output>
+      <Time>2011-02-05T10:00:01.2379795-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\BlackHoleMagic.png</Source>
+      <Name>Levels\Thumbnail\BlackHoleMagic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\BlackHoleMagic.xnb</Output>
+      <Time>2011-02-05T09:59:55.6226583-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Chambers.png</Source>
+      <Name>Levels\Thumbnail\Chambers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Chambers.xnb</Output>
+      <Time>2011-02-05T09:59:55.6366591-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\DK.png</Source>
+      <Name>Levels\Thumbnail\DK</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\DK.xnb</Output>
+      <Time>2011-02-05T09:59:55.6426595-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Face.png</Source>
+      <Name>Levels\Thumbnail\Face</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Face.xnb</Output>
+      <Time>2011-02-05T09:59:55.6546602-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\MainMenu.png</Source>
+      <Name>Levels\Thumbnail\MainMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\MainMenu.xnb</Output>
+      <Time>2011-02-05T09:59:55.6726612-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Maze.png</Source>
+      <Name>Levels\Thumbnail\Maze</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Maze.xnb</Output>
+      <Time>2011-02-05T09:59:55.6836618-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\New Level.png</Source>
+      <Name>Levels\Thumbnail\New Level</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\New Level.xnb</Output>
+      <Time>2011-02-05T09:59:55.687662-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Rails.png</Source>
+      <Name>Levels\Thumbnail\Rails</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Rails.xnb</Output>
+      <Time>2011-02-05T09:59:55.7146636-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Retro.png</Source>
+      <Name>Levels\Thumbnail\Retro</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Retro.xnb</Output>
+      <Time>2011-02-05T09:59:55.7206639-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Sky is Falling.png</Source>
+      <Name>Levels\Thumbnail\Sky is Falling</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Sky is Falling.xnb</Output>
+      <Time>2011-02-05T09:59:55.8076689-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\SpaceInvaders.png</Source>
+      <Name>Levels\Thumbnail\SpaceInvaders</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\SpaceInvaders.xnb</Output>
+      <Time>2011-02-05T09:59:55.8166694-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Test.png</Source>
+      <Name>Levels\Thumbnail\Test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Test.xnb</Output>
+      <Time>2011-02-05T09:59:55.878673-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\TriggerHappy.png</Source>
+      <Name>Levels\Thumbnail\TriggerHappy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\TriggerHappy.xnb</Output>
+      <Time>2011-02-05T09:59:55.9166751-07:00</Time>
+    </Item>
+    <Item>
+      <Source>music\menuMusic_title.wav</Source>
+      <Name>music\menuMusic_title</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\music\menuMusic_title.xnb</Output>
+      <Time>2011-02-05T09:59:56.2386936-07:00</Time>
+    </Item>
+    <Item>
+      <Source>music\music_level00.wav</Source>
+      <Name>music\music_level00</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\music\music_level00.xnb</Output>
+      <Time>2011-02-05T09:59:56.4507057-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_goal.wav</Source>
+      <Name>SoundEffects\level_goal</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_goal.xnb</Output>
+      <Time>2011-02-05T09:59:56.4947082-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_gravityShiftDown.wav</Source>
+      <Name>SoundEffects\level_gravityShiftDown</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_gravityShiftDown.xnb</Output>
+      <Time>2011-02-05T09:59:56.5117092-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_gravityShiftLeft.wav</Source>
+      <Name>SoundEffects\level_gravityShiftLeft</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_gravityShiftLeft.xnb</Output>
+      <Time>2011-02-05T09:59:56.5377107-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_gravityShiftRight.wav</Source>
+      <Name>SoundEffects\level_gravityShiftRight</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_gravityShiftRight.xnb</Output>
+      <Time>2011-02-05T09:59:56.5527115-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_gravityShiftUp.wav</Source>
+      <Name>SoundEffects\level_gravityShiftUp</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_gravityShiftUp.xnb</Output>
+      <Time>2011-02-05T09:59:56.5627121-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_stageFail.wav</Source>
+      <Name>SoundEffects\level_stageFail</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_stageFail.xnb</Output>
+      <Time>2011-02-05T09:59:56.6157151-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\level_stageVictory.wav</Source>
+      <Name>SoundEffects\level_stageVictory</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\level_stageVictory.xnb</Output>
+      <Time>2011-02-05T09:59:56.6587176-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\menuSound_rollover.wav</Source>
+      <Name>SoundEffects\menuSound_rollover</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\menuSound_rollover.xnb</Output>
+      <Time>2011-02-05T09:59:56.6907194-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\menuSound_select.wav</Source>
+      <Name>SoundEffects\menuSound_select</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\menuSound_select.xnb</Output>
+      <Time>2011-02-05T09:59:56.7127207-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\playerCol_collectable.wav</Source>
+      <Name>SoundEffects\playerCol_collectable</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\playerCol_collectable.xnb</Output>
+      <Time>2011-02-05T09:59:56.9607349-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\playerCol_hazard.wav</Source>
+      <Name>SoundEffects\playerCol_hazard</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\playerCol_hazard.xnb</Output>
+      <Time>2011-02-05T09:59:56.9857363-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\playerCol_wall.wav</Source>
+      <Name>SoundEffects\playerCol_wall</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\playerCol_wall.xnb</Output>
+      <Time>2011-02-05T09:59:57.1807474-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\playerSound_death.wav</Source>
+      <Name>SoundEffects\playerSound_death</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\playerSound_death.xnb</Output>
+      <Time>2011-02-05T09:59:57.2287502-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SoundEffects\playerSound_respawn.wav</Source>
+      <Name>SoundEffects\playerSound_respawn</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\SoundEffects\playerSound_respawn.xnb</Output>
+      <Time>2011-02-05T09:59:57.2837533-07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\Kootenay.spritefont</Source>
+      <Name>fonts\Kootenay</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\fonts\Kootenay.xnb</Output>
+      <Time>2011-02-05T09:59:57.3007543-07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\QuartzLarge.spritefont</Source>
+      <Name>fonts\QuartzLarge</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\fonts\QuartzLarge.xnb</Output>
+      <Time>2011-02-05T09:59:57.3497571-07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360Content\obj\Xbox 360\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-06:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-06:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-06:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-06:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-06:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-06:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2010-11-12T07:52:45.4109672-07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

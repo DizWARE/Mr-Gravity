@@ -128,6 +128,7 @@
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="LevelSelect.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="Game Objects\Static Objects\StaticObject.cs" />
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
     <Compile Include="Scoring.cs" />
+    <Compile Include="Title.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

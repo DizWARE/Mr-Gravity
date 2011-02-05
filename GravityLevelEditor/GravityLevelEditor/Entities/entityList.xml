@@ -8,7 +8,9 @@
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
     <Texture>PlayerPositions\PlayerStart</Texture>
-    <Properties />
+    <Properties>
+      <IdealTime>400</IdealTime>
+    </Properties>
   </Entity>
   <Entity>
     <ID>0</ID>
@@ -128,42 +130,6 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>OrangeStar</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\OrangeStar</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>YellowStar</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\YellowStar</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>Star</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\Star</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
     <Name>RailX</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -204,7 +170,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>16</Length>
+      <Length>5</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -219,59 +185,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>1</Length>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>CircleGreen</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\GreenCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>CirclePink</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\PinkCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>CircleBlue</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\BlueCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>CircleYellow</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\YellowCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -282,58 +196,6 @@
     <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\RedCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>SawGreen</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\GreenSaw</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>SawPink</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\PinkSaw</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>SawBlue</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\BlueSaw</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>SawYellow</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\YellowSaw</Texture>
     <Properties>
       <Shape>Circle</Shape>
       <Mass>1</Mass>
@@ -495,124 +357,12 @@
   </Entity>
   <Entity>
     <ID>0</ID>
-    <Name>ReverseCircleGreen</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\GreenCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseCirclePink</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\PinkCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseCircleBlue</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\BlueCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseCircleYellow</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\YellowCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
     <Name>ReverseCircleRed</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
     <CollisionType>Hazardous</CollisionType>
     <Paintable>True</Paintable>
     <Texture>Hazards\RedCircle</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseSawGreen</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\GreenSaw</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseSawPink</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\PinkSaw</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseSawBlue</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\BlueSaw</Texture>
-    <Properties>
-      <Shape>Circle</Shape>
-      <Mass>1</Mass>
-      <Reverse>Tile</Reverse>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>ReverseSawYellow</Name>
-    <Type>Physics Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Normal</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>Hazards\YellowSaw</Texture>
     <Properties>
       <Shape>Circle</Shape>
       <Mass>1</Mass>
@@ -632,5 +382,15 @@
       <Mass>1</Mass>
       <Reverse>Tile</Reverse>
     </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>Invisible</Name>
+    <Type>Walls</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\InvisibleBlock</Texture>
+    <Properties />
   </Entity>
 </Entities>
