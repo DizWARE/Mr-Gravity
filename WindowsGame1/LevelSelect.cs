@@ -103,10 +103,20 @@ namespace GravityShift
             XDocument xDoc = new XDocument();
             xDoc.Add(xLevels);
 
+//#if XBOX360
+            FileStream stream;
+            if (TrialMode)
+                stream = new FileStream(TRIAL_LEVEL_LIST, FileMode.Create);
+            else
+                stream = new FileStream(LEVEL_LIST, FileMode.Create);
+            xDoc.Save(stream);
+               
+/*#else
             if (TrialMode)
                 xDoc.Save(TRIAL_LEVEL_LIST);
             else
                 xDoc.Save(LEVEL_LIST);
+#endif*/
 
         }
 
@@ -389,7 +399,7 @@ namespace GravityShift
                     mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml", controls, graphics.Viewport);
                     
 #if XBOX360
-                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.value.ToString()");
+                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.Value.ToString());
 #else
                     FileStream filestream;
                     try

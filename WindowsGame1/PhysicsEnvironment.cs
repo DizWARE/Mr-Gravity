@@ -17,7 +17,7 @@ namespace GravityShift
     /// <summary>
     /// Environment where Physics objects exist
     /// </summary>
-    class PhysicsEnvironment
+    public class PhysicsEnvironment
     {
         //Vectorized directions
         public Vector2 DIRECTION_UP = new Vector2(0, -1f);

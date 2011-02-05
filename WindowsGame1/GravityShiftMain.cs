@@ -32,6 +32,9 @@ namespace GravityShift
         //Instance of the Menu class
         Menu mMenu;
 
+        MainMenu mMainMenu;
+        Level mMainMenuLevel;
+
         //Instance of the scoring class
         Scoring mScoring;
 
@@ -102,6 +105,9 @@ namespace GravityShift
 
 
             mTitle = new Title(mControls);
+            mMainMenu = new MainMenu(mControls, mGraphics);
+            mMainMenuLevel = Level.MainMenuLevel("..\\..\\..\\Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport);
+
             mMenu = new Menu(mControls, mGraphics);
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
@@ -130,6 +136,10 @@ namespace GravityShift
             //mGraphics.ApplyChanges();
 
             mTitle.Load(Content, mGraphics.GraphicsDevice);
+
+            mMainMenuLevel.Load(Content);
+            mMainMenu.Load(Content);
+
             mMenu.Load(Content, mGraphics.GraphicsDevice);
             mScoring.Load(Content);
             mPause.Load(Content);
@@ -149,6 +159,17 @@ namespace GravityShift
         /// all content.
         /// </summary>
         protected override void UnloadContent() {}
+
+        protected override void OnExiting(object sender, EventArgs args)
+        {
+            mLevelSelect.Save();
+            if (mControls.controlScheme() == ControlSchemes.Gamepad)
+                if (Guide.IsTrialMode && !Guide.IsVisible)
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] != null)
+                        if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+                            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+                                Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+        }
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -174,26 +195,6 @@ namespace GravityShift
             // Allows the game to exit
             if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
             {
-                mLevelSelect.Save();
-                if (mControls.controlScheme() == ControlSchemes.Gamepad)
-                {
-
-                    if (Guide.IsTrialMode && !Guide.IsVisible)
-                    {
-                        if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] != null)
-                        {
-                            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
-                            {
-                                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
-                                {
-                                    Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
-                                }
-                            }
-                        }
-
-                    }
-
-                }
                 //if(Gamer.SignedInGamers[PlayerIndex.One].Privileges.AllowPurchaseContent)
                 this.Exit();
 
@@ -233,7 +234,10 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                mMenu.Update(gameTime, ref mCurrentState);
+                //mMenu.Update(gameTime, ref mCurrentState);
+                mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel.Environment);
+                mMainMenuLevel.Update(gameTime, ref mCurrentState);
+                
             }
             else if (mCurrentState == GameStates.Score)
             {
@@ -344,8 +348,12 @@ namespace GravityShift
                 mCurrentLevel.DrawHud(mSpriteBatch, gameTime, scale);
             }
             else if (mCurrentState == GameStates.Main_Menu)
-                mMenu.Draw(mSpriteBatch, mGraphics, scale);
-            
+            {
+                mMainMenu.Draw(gameTime, mSpriteBatch, scale);
+                mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
+            }
+            else if (mCurrentState == GameStates.Exit)
+                this.Exit();
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Level_Selection)

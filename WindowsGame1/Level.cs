@@ -82,6 +82,7 @@ namespace GravityShift
         private static float SCALING_FACTOR = 85;
 
         private bool isCameraFixed = false;
+        private bool shouldAnimate = true;
 
         // Camera
         public static Camera mCam;
@@ -114,7 +115,9 @@ namespace GravityShift
 
         Player mPlayer;
 
-        PhysicsEnvironment mPhysicsEnvironment;
+        private PhysicsEnvironment mPhysicsEnvironment;
+        public PhysicsEnvironment Environment
+        { get { return mPhysicsEnvironment; } }
 
         IControlScheme mControls;
 
@@ -285,10 +288,6 @@ namespace GravityShift
             if(playerEnd != null)
                 mObjects.Add(playerEnd);
 
-
-            mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
-            mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
-
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
             mRails = importer.GetRails();
@@ -431,10 +430,15 @@ namespace GravityShift
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
-                    if (!isCameraFixed && Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
+                    if (!isCameraFixed && (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f))
                     {
                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
+                    }
+                    else if(isCameraFixed)
+                    {
+                        mCam.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
+                        mCam1.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
                     }
 
                     /* Snap Zoom Out */
@@ -558,8 +562,9 @@ namespace GravityShift
                     gObject.Draw(spriteBatch, gameTime);
 
             //Draw all of our active animations
-            for (int i = 0; i < mActiveAnimations.Count; i++)
-                mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
+            if(shouldAnimate)
+                for (int i = 0; i < mActiveAnimations.Count; i++)
+                    mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
 
             spriteBatch.End();
         }
@@ -811,10 +816,11 @@ namespace GravityShift
             return newAnimation;
         }
 
-        public static Level MainMenuLevel(ContentManager content, string filepath, IControlScheme controls, Viewport viewport)
+        public static Level MainMenuLevel(string filepath, IControlScheme controls, Viewport viewport)
         {
             Level main = new Level(filepath,controls,viewport);
             main.isCameraFixed = true;
+            main.shouldAnimate = false;
             return main;
         }
     }
