@@ -1,7 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
-    <Name>Face</Name>
+    <Name>Level1</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
+  </LevelData>
+    <LevelData>
+    <Name>Level2</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
+  </LevelData>
+    <LevelData>
+    <Name>Level3</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>1</Collectionstar>

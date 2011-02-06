@@ -753,12 +753,12 @@ namespace GravityShift
 
                                 // Particle Effects.
                                 Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
-                                //Vector2 two = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
                                 Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
                                 Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                                 wallEngine.EmitterLocation = midpoint;
                                 wallEngine.Update(1);
                             }
+
                             else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
                                 ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
                             else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
@@ -797,20 +797,14 @@ namespace GravityShift
                 case "Yellow":
                     newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
                     break;
-                case "GreenSquiggle":
+                case "Purple":
                     newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
                     break;
-                case "PinkSquiggle":
+                case "Orange":
                     newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
                     break;
-                case "BlueSquiggle":
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
-                    break;
-                case "YellowSquiggle":
-                    newAnimation.Load(mContent, "YellowScan", 7, 0.05f);
-                    break;
                 default:
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);
                     break;
             }
             return newAnimation;
