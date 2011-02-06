@@ -14,7 +14,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
-  <LevelData>
+    <LevelData>
     <Name>Level3</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
@@ -23,6 +23,20 @@
   </LevelData>
   <LevelData>
     <Name>Level4</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Level5</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Level6</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
@@ -58,13 +72,6 @@
   </LevelData>
   <LevelData>
     <Name>Chambers</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
-  </LevelData>
-  <LevelData>
-    <Name>Maze</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
