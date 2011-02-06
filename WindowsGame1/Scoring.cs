@@ -150,7 +150,11 @@ namespace GravityShift
          */
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
-
+            int []scores = GetRank((int)GravityShift.Level.TIMER, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
+            level.TimerStar = scores[0];
+            level.CollectionStar = scores[1];
+            level.DeathStar = scores[2];
+            
             /* If the user hits up */
             if (mControls.isUpPressed(false))
             {
@@ -292,9 +296,15 @@ namespace GravityShift
          * 
          * GraphicsDeviceManager graphics: The current graphics manager
          */
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 
             //TODO: CHANGE TO DYNAMIC PLACING
 

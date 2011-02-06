@@ -25,6 +25,7 @@ namespace GravityShift
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
+        public static string TRIAL_LEVEL_LIST = LEVEL_DIRECTORY + "Info\\TrialLevelList.xml";
 
         public static int BACK = 0;
         public static int PREVIOUS = 13;
@@ -41,7 +42,8 @@ namespace GravityShift
         Texture2D[] mNext;
         Texture2D[] mBack;
         Texture2D mBackground;
-        
+        Texture2D mLocked;
+
         int mCurrentIndex = 1;
         int mPageCount;
         int mCurrentPage = 0;
@@ -53,6 +55,10 @@ namespace GravityShift
         /* SpriteFont */
         SpriteFont mKootenay;
 
+        /* Trial Mode Loading */
+        bool mTrialMode;
+        public bool TrialMode { get { return mTrialMode; } set { mTrialMode = value; } }
+
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -63,8 +69,25 @@ namespace GravityShift
             mLevels = new List<LevelChoice>();
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
+            TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
+            if (Guide.IsTrialMode)
+                mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+            else
 #endif
+
             mLevelInfo = XElement.Load(LEVEL_LIST);
+
+            TrialMode = Guide.IsTrialMode;
+        }
+
+        public void Reload()
+        {
+            if (TrialMode)
+            {
+                mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+            }
+            else
+                mLevelInfo = XElement.Load(LEVEL_LIST);
         }
 
         /// <summary>
@@ -81,7 +104,20 @@ namespace GravityShift
             XDocument xDoc = new XDocument();
             xDoc.Add(xLevels);
 
-            xDoc.Save(LEVEL_LIST);
+#if XBOX360
+            FileStream stream;
+            if (TrialMode)
+                stream = new FileStream(TRIAL_LEVEL_LIST, FileMode.Create);
+            else
+                stream = new FileStream(LEVEL_LIST, FileMode.Create);
+            xDoc.Save(stream);
+               
+#else
+            if (TrialMode)
+                xDoc.Save(TRIAL_LEVEL_LIST);
+            else
+                xDoc.Save(LEVEL_LIST);
+#endif
 
         }
 
@@ -114,11 +150,17 @@ namespace GravityShift
             mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
             mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
 
+            mLocked = content.Load<Texture2D>("Images/Lock/locked1a");
+
             mPageCount = mLevels.Count / 12 +1;
 
             mScreenRect = graphics.Viewport.TitleSafeArea;
         }
 
+        /// <summary>
+        /// Resets all levels to be locked (except the first level) and resets all scores to 0
+        /// </summary>
+        /// <returns>The first level</returns>
         public Level Reset()
         {
             foreach (LevelChoice l in mLevels)
@@ -261,9 +303,15 @@ namespace GravityShift
         /// </summary>
         /// <param name="spriteBatch">Canvas we are drawing to</param>
         /// <param name="graphics">Information on the device's graphics</param>
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 
             //spriteBatch.Draw(mBackground, mScreenRect, Color.White);
 
@@ -285,7 +333,7 @@ namespace GravityShift
 
             for (int i = 0; i < 12 && i + 12 * mCurrentPage < mLevels.Count; i++)
             {
-                if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.Width)
+                if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.TitleSafeArea.Width)
                 {
                     currentLocation.X = 0;
                     currentLocation.Y += padding.Y + size.Y;
@@ -300,9 +348,9 @@ namespace GravityShift
                 spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
                 if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
 
-                stringSize = mKootenay.MeasureString("Locked");
-                if (!mLevels[i + 12 * mCurrentPage].Unlocked) spriteBatch.DrawString(mKootenay,"Locked",
-                    new Vector2(rect.Center.X - stringSize.X/2,rect.Center.Y - stringSize.Y/2),Color.White);//DRAW LOCKED SYMBOL
+                if (!mLevels[i + 12 * mCurrentPage].Unlocked) 
+                    spriteBatch.Draw(mLocked, new Vector2(rect.Center.X - (mLocked.Width/2 * 0.25f), rect.Center.Y - (mLocked.Height/2 * 0.25f)),
+                        null, Color.White, 0.0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);//DRAW LOCKED SYMBOL
 
                 currentLocation.X += size.X + padding.X;
                 index++;
@@ -352,7 +400,7 @@ namespace GravityShift
                     mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml", controls, graphics.Viewport);
                     
 #if XBOX360
-                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.value.ToString()");
+                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.Value.ToString());
 #else
                     FileStream filestream;
                     try
@@ -371,20 +419,25 @@ namespace GravityShift
                     mUnlocked = element.Value == Import_Code.XmlKeys.TRUE;
 
                 if (element.Name == XmlKeys.TIMERSTAR)
-                    mTimerStar = Convert.ToInt32(element.Value);
+                    mTimerStar = mLevel.TimerStar = Convert.ToInt32(element.Value);
 
                 if (element.Name == XmlKeys.COLLECTIONSTAR)
-                    mCollectionStar = Convert.ToInt32(element.Value);
+                    mCollectionStar = mLevel.CollectionStar = Convert.ToInt32(element.Value);
 
                 if (element.Name == XmlKeys.DEATHSTAR)
-                    mDeathStar = Convert.ToInt32(element.Value);
+                    mDeathStar = mLevel.DeathStar = Convert.ToInt32(element.Value);
             }
         }
 
+        /// <summary>
+        /// Resets this level choice to unlocked/locked depending on rUnlock, and resets scores to 0.
+        /// </summary>
+        /// <param name="rUnlock">True if level is locked, false otherwise</param>
         public void Reset(bool rUnlock)
         {
             mUnlocked = rUnlock;
             mTimerStar = mCollectionStar = mDeathStar = 0;
+            mLevel.ResetScores();
         }
 
         /// <summary>
@@ -393,6 +446,7 @@ namespace GravityShift
         /// 
         public XElement Export()
         {
+            SubmitScore(mLevel.TimerStar, mLevel.CollectionStar, mLevel.DeathStar);
             string xUnlock = XmlKeys.FALSE;
             if (mUnlocked)
                 xUnlock = XmlKeys.TRUE;
@@ -414,7 +468,6 @@ namespace GravityShift
         {
             mUnlocked = true;
         }
-
 
         /// <summary>
         /// Submits new scores for the 3 scoring factors for this level, and if the new score is higher than

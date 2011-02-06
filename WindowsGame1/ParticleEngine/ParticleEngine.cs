@@ -14,14 +14,16 @@ namespace GravityShift
         private List<Particle> particles;
         private List<Texture2D> textures;
         public int colorScheme;
+        public int TTL;
 
-        public ParticleEngine(List<Texture2D> textures, Vector2 location, int scheme)
+        public ParticleEngine(List<Texture2D> textures, Vector2 location, int scheme, int ttl)
         {
             EmitterLocation = location;
             this.textures = textures;
             this.particles = new List<Particle>();
             random = new Random();
             colorScheme = scheme;
+            TTL = ttl;
         }
 
         // Set variables. This is the guts of the whole system.
@@ -47,29 +49,70 @@ namespace GravityShift
             //        (float)random.NextDouble());
 
             int whichColor = random.Next(3);
-            // Color scheme 1
-            switch (whichColor)
+            switch (colorScheme)
             {
-                case 0:
-                    color = new Color(247, 255, 0);
-                    break;
+                // collectible (yellow)
                 case 1:
-                    color = new Color(250, 255, 76);
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(247, 255, 0);
+                            break;
+                        case 1:
+                            color = new Color(250, 255, 76);
+                            break;
+                        case 2:
+                            color = new Color(239, 255, 143);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
+
+                // wall
                 case 2:
-                    color = new Color(239, 255, 143);
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(0, 211, 255);
+                            break;
+                        case 1:
+                            color = new Color(0, 106, 127);
+                            break;
+                        case 2:
+                            color = new Color(76, 224, 255);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
+
+                // hazard
+                case 3:
+                    switch (whichColor)
+                    {
+                        case 0:
+                            color = new Color(247, 255, 0);
+                            break;
+                        case 1:
+                            color = new Color(250, 255, 76);
+                            break;
+                        case 2:
+                            color = new Color(239, 255, 143);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
                 default:
                     break;
             }
 
             // Random size
             float size = (float)random.NextDouble();
-            
-            // Every particle lives for at least 10 updates but as many as 25 (time-to-live)
-            int ttl = 20 + random.Next(20);
 
-            return new Particle(texture, position, velocity, angle, angularVelocity, color, size, ttl);
+            return new Particle(texture, position, velocity, angle, angularVelocity, color, size, (TTL + random.Next(15)));
         }
 
         public void Update(int particleCount)

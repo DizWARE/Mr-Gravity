@@ -58,6 +58,15 @@ namespace GravityShift
         public Vector2 StartingPoint { get { return mStartingPoint; } set { mStartingPoint = value; } }
         private Vector2 mStartingPoint;
 
+        private int mIdealTime;
+        public int IdealTime
+        { get { return mIdealTime; } set { mIdealTime = value; } }
+
+        private int mCollectableCount;
+        public int CollectableCount
+        { get { return mCollectableCount; } set { mCollectableCount = value; } }
+
+
         //Enumerator for different states of death (playing game, in need of respawn, or panning back to start point)
         private enum DeathStates
         {
@@ -71,6 +80,9 @@ namespace GravityShift
         private Vector3 mDeathPanLength;
         private float mDeathPanUpdates;
         private static float SCALING_FACTOR = 85;
+
+        private bool isCameraFixed = false;
+        private bool shouldAnimate = true;
 
         // Camera
         public static Camera mCam;
@@ -103,7 +115,9 @@ namespace GravityShift
 
         Player mPlayer;
 
-        PhysicsEnvironment mPhysicsEnvironment;
+        private PhysicsEnvironment mPhysicsEnvironment;
+        public PhysicsEnvironment Environment
+        { get { return mPhysicsEnvironment; } }
 
         IControlScheme mControls;
 
@@ -114,7 +128,58 @@ namespace GravityShift
         SpriteFont mQuartz;
 
         // Particle Engine
-        ParticleEngine particleEngine;
+        ParticleEngine collectibleEngine;
+        ParticleEngine wallEngine;
+
+        /* Title Safe Area */
+        Rectangle mScreenRect;
+
+        /* Scoring Values */
+        int mTimerStar;
+        int mCollectionStar;
+        int mDeathStar;
+
+        public int TimerStar 
+        { 
+            get { return mTimerStar; }
+            set
+            {
+                if (value > mTimerStar)
+                {
+                    mTimerStar = value;
+                }
+            } 
+        }
+        public int DeathStar
+        {
+            get { return mDeathStar; }
+            set
+            {
+                if (value > mDeathStar)
+                {
+                    mDeathStar = value;
+                }
+            }
+        }
+        public int CollectionStar
+        {
+            get { return mCollectionStar; }
+            set
+            {
+                if (value > mCollectionStar)
+                {
+                    mCollectionStar = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Resets the Scores for this level to 0.
+        /// </summary>
+        public void ResetScores()
+        {
+            mTimerStar = mDeathStar = mCollectionStar = 0;
+        }
 
         #region HUD
 
@@ -135,11 +200,14 @@ namespace GravityShift
         /// <param name="viewport">The viewport for the cameras</param>
         public Level(String filepath, IControlScheme controls, Viewport viewport)
         {
+
             Filepath = filepath;
             mControls = controls;
 
             mCam = new Camera(viewport);
             mCam1 = new Camera(viewport);
+
+            mScreenRect = viewport.TitleSafeArea;
 
             mRails = new List<EntityInfo>();
 
@@ -149,6 +217,8 @@ namespace GravityShift
             mActiveAnimations = new Dictionary<Vector2, AnimatedSprite>();
             mTrigger = new List<Trigger>();
             mPhysicsEnvironment = new PhysicsEnvironment();
+
+            mTimerStar = mDeathStar = mTimerStar = 0;
         }
 
         /// <summary>
@@ -189,8 +259,12 @@ namespace GravityShift
             textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
             textures.Add(content.Load<Texture2D>("Images/Particles/star"));
 
-            Random random = new Random();
-            particleEngine = new ParticleEngine(textures, new Vector2(400, 240), random.Next(6));
+            collectibleEngine = new ParticleEngine(textures, new Vector2(400, 240), 1, 20);
+
+            textures = new List<Texture2D>();
+            textures.Add(content.Load<Texture2D>("Images/Particles/line"));
+            textures.Add(content.Load<Texture2D>("Images/Particles/square"));
+            wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 2, 15);
         }
 
         /// <summary>
@@ -209,7 +283,10 @@ namespace GravityShift
 
             mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
-            mObjects.Add(importer.GetPlayerEnd());
+
+            PlayerEnd playerEnd = importer.GetPlayerEnd();
+            if(playerEnd != null)
+                mObjects.Add(playerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
@@ -353,26 +430,15 @@ namespace GravityShift
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
-                    if (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
+                    if (!isCameraFixed && (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f))
                     {
-                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
-                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 100, 0);
+                       mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
+                       mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
                     }
-
-                    /* Gradual Zoom Out */
-                    if (mControls.isLeftShoulderPressed(true)) //&&
+                    else if(isCameraFixed)
                     {
-                        if (mCam.Zoom > 0.4f)
-                            mCam.Zoom -= 0.003f;
-                        mPrevZoom = mCam.Zoom;
-                    }
-
-                    /* Gradual Zoom In */
-                    else if (mControls.isRightShoulderPressed(true)) //&&
-                    {
-                        if (mCam.Zoom < 1.0f)
-                            mCam.Zoom += 0.003f;
-                        mPrevZoom = mCam.Zoom;
+                        mCam.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
+                        mCam1.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
                     }
 
                     /* Snap Zoom Out */
@@ -430,50 +496,15 @@ namespace GravityShift
                 }
             }
 
-            // Please don't touch, let me know and I will change the engine, Thanks! -Jeremy
-            //#region ParticleEngine
-
-            //// Update particles. Emission based on velocity (fewer particles if smaller velocity)
-            //double velocityVector = Math.Sqrt(Math.Pow(mPlayer.mVelocity.X, 2) + Math.Pow(mPlayer.mVelocity.Y, 2));
-            //particleEngine.Update(Convert.ToInt32(velocityVector / 2) * 2);
-
-            //// Change origin of emitter.
-            //double displacement;
-            //int multiplier = 2;
-            //float x;
-            //float y;
-
-            ////Calculate the x-origin offset
-            //displacement = multiplier * mPlayer.mVelocity.X;
-
-            //if (displacement < -28)
-            //    displacement = -28;
-            //else if (displacement > 28)
-            //    displacement = 28;
-
-            //x = (mPlayer.mPosition.X + 32) - (float)displacement;
-
-            ////Calculate the y-orgin offset
-            //displacement = multiplier * mPlayer.mVelocity.Y;
-
-            //if (displacement < -28)
-            //    displacement = -28;
-            //else if (displacement > 28)
-            //    displacement = 28;
-
-            //y = (mPlayer.mPosition.Y + 32) - (float)displacement;
-
-            //particleEngine.EmitterLocation = new Vector2(x, y);
-
-            //#endregion
-            particleEngine.Update(0);
+            collectibleEngine.Update(0);
+            wallEngine.Update(0);
         }
 
         /// <summary>
         /// Draws the level background on to the screen
         /// </summary>
         /// <param name="spriteBatch">Sprite batch that we use to draw textures</param>
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
         {
             /* Cam is used to draw everything except the HUD - SEE BELOW FOR DRAWING HUD */
             spriteBatch.Begin(SpriteSortMode.Immediate,
@@ -482,7 +513,7 @@ namespace GravityShift
                 DepthStencilState.None,
                 RasterizerState.CullCounterClockwise,
                 null,
-                mCam.get_transformation());
+                mCam.get_transformation() * scale);
             foreach (Trigger trigger in mTrigger)
                 trigger.Draw(spriteBatch, gameTime);
 
@@ -520,16 +551,20 @@ namespace GravityShift
             }
             #endregion
 
-            if(mDeathState == DeathStates.Playing) 
-                particleEngine.Draw(spriteBatch);
+            if (mDeathState == DeathStates.Playing)
+            {
+                collectibleEngine.Draw(spriteBatch);
+                wallEngine.Draw(spriteBatch);
+            }
 
             //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
                     gObject.Draw(spriteBatch, gameTime);
 
             //Draw all of our active animations
-            for (int i = 0; i < mActiveAnimations.Count; i++)
-                mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
+            if(shouldAnimate)
+                for (int i = 0; i < mActiveAnimations.Count; i++)
+                    mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
 
             spriteBatch.End();
         }
@@ -539,31 +574,32 @@ namespace GravityShift
         /// </summary>
         /// <param name="spriteBatch">The sprite batch.</param>
         /// <param name="gameTime">The game time.</param>
-        public void DrawHud(SpriteBatch spriteBatch, GameTime gameTime)
+        public void DrawHud(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
         {
             /* Cam 1 is for drawing the HUD - PLACE ALL YOUR HUD STUFF IN THIS SECTION */
             // Begin spritebatch with the desired camera transformations
+
             spriteBatch.Begin(SpriteSortMode.Immediate,
                                 BlendState.AlphaBlend,
                                 SamplerState.LinearClamp,
                                 DepthStencilState.None,
                                 RasterizerState.CullCounterClockwise,
                                 null,
-                                mCam1.get_transformation());
+                                mCam1.get_transformation() * scale);
 
             // Draw the black background behind HUD
             spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 500), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-
+            //spriteBatch.Draw(mHUDTrans, new Vector2(mScreenRect.Center.X - mHUDTrans.Width / 2, mScreenRect.Top), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
             if (mPlayer.mIsAlive)
             {
-                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
-                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 300), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
             }
 
-            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 300), Color.White);
+            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 275), Color.White);
 
             if (!mPlayer.mIsAlive)
-                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 300), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
 
             spriteBatch.End();
         }
@@ -647,12 +683,10 @@ namespace GravityShift
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
 
-                        if (collided && !(obj is PlayerEnd) )
+                        if (collided && !(obj is PlayerEnd))
                         {
                             collidingList.Add(obj);
                         }
-                        
-                        //bool collided = physObj.HandleCollisions(obj);
 
                         //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
@@ -677,8 +711,8 @@ namespace GravityShift
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
                             }
-                            particleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
-                            particleEngine.Update(10);
+                            collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            collectibleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
@@ -710,10 +744,21 @@ namespace GravityShift
                         {
                             if (cObject is Wall)
                             {
+                                if (!mPlayer.isFaceStraight())
+                                    mPlayer.setFaceStraight();
+
                                 KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
+
+                                // Particle Effects.
+                                Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
+                                Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
+                                Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                                wallEngine.EmitterLocation = midpoint;
+                                wallEngine.Update(1);
                             }
+
                             else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
                                 ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
                             else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
@@ -752,23 +797,25 @@ namespace GravityShift
                 case "Yellow":
                     newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
                     break;
-                case "GreenSquiggle":
+                case "Purple":
                     newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
                     break;
-                case "PinkSquiggle":
+                case "Orange":
                     newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
                     break;
-                case "BlueSquiggle":
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
-                    break;
-                case "YellowSquiggle":
-                    newAnimation.Load(mContent, "YellowScan", 7, 0.05f);
-                    break;
                 default:
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);
                     break;
             }
             return newAnimation;
+        }
+
+        public static Level MainMenuLevel(string filepath, IControlScheme controls, Viewport viewport)
+        {
+            Level main = new Level(filepath,controls,viewport);
+            main.isCameraFixed = true;
+            main.shouldAnimate = false;
+            return main;
         }
     }
 }

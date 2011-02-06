@@ -44,11 +44,17 @@ namespace GravityShift.MISC_Code
             BLANK = content.Load<Texture2D>("Images/Player/NeonCharBlank");
             GRID = content.Load<Texture2D>("Images/Player/NeonCharGrid");
         }
-
+        /// <summary>
+        /// Given a name of one of the faces, returns the face texture
+        /// </summary>
+        /// <param name="faceName">Name of the face</param>
+        /// <returns>Texture of that face</returns>
         public static Texture2D FromString(string faceName)
         {
             if(faceName.Equals(XmlKeys.Faces.Smile.ToString()))
                 return SMILE;
+            if(faceName.Equals(XmlKeys.Faces.Surprise.ToString()))
+                return SURPRISE;
             if (faceName.Equals(XmlKeys.Faces.Laugh.ToString()))
                 return LAUGH;
             if (faceName.Equals(XmlKeys.Faces.Dazed.ToString()))

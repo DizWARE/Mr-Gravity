@@ -71,7 +71,7 @@ namespace GravityShift.Import_Code
                         mEntities.Add(new EntityInfo(element));
             }
 
-            level.StartingPoint = GetPlayerStart();
+            GetPlayerStart(level);
 
             return level;
         }
@@ -80,13 +80,23 @@ namespace GravityShift.Import_Code
         /// Gets the players start position
         /// </summary>
         /// <returns>A vector2 with the players start position(or -100,-100 if none is provided)</returns>
-        public Vector2 GetPlayerStart()
+        public void GetPlayerStart(Level level)
         {
             foreach (EntityInfo entity in mEntities)
+            {
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_START)
-                    return GridSpace.GetDrawingCoord(entity.mLocation);
-
-            return new Vector2(-100, -100);
+                {
+                    level.StartingPoint = GridSpace.GetDrawingCoord(entity.mLocation);
+                    if (entity.mProperties.ContainsKey(XmlKeys.IDEAL_TIME))
+                        level.IdealTime = int.Parse(entity.mProperties[XmlKeys.IDEAL_TIME]);
+                    else
+                        level.IdealTime = 400;
+                }
+                if (entity.mType == XmlKeys.STATIC_OBJECT && entity.mCollisionType == XmlKeys.COLLECTABLE)
+                {
+                    level.CollectableCount++;
+                }
+            }
         } 
 
         /// <summary>
@@ -100,8 +110,7 @@ namespace GravityShift.Import_Code
                     return new PlayerEnd(mContent, entity);
 
             //Need to fix ---- TODODODODODODODO
-            return new PlayerEnd(mContent, EntityInfo.CreatePlayerEndInfo(
-                Vector2.Add(GridSpace.GetGridCoord(GetPlayerStart()),new Vector2(1,1))));
+            return null;
         }
 
         /// <summary>
