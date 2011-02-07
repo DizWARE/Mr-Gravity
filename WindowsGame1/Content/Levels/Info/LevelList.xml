@@ -43,6 +43,13 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+    <Name>X Trio</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
     <Name>DK</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>

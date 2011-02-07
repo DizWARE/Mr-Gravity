@@ -835,6 +835,7 @@ namespace GravityShift
                 if (phys.mVelocity.Length() > speed)
                 {
                     GameSound.playerCol_wall.Play(Math.Min(volume, 1.0f), 0.0f, 0.0f);
+                    ((Player)phys).StartRumble();
                 }
             }
             else if (game is Player)
@@ -843,6 +844,7 @@ namespace GravityShift
                 if (((PhysicsObject)game).mVelocity.Length() > speed)
                 {
                     GameSound.playerCol_wall.Play(Math.Min(volume, 1.0f), 0.0f, 0.0f);
+                    ((Player)game).StartRumble();
                 }
             }
         }
