@@ -185,7 +185,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>8</Length>
+      <Length>7</Length>
     </Properties>
   </Entity>
   <Entity>
