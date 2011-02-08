@@ -3,7 +3,6 @@
   <Name>Chambers</Name>
   <Size X="33" Y="23" />
   <Background>Backgrounds\Blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>45</ID>

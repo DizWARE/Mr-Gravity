@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>Level4</Name>
+  <Name>Hazards</Name>
   <Size X="15" Y="10" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>59</ID>

@@ -3,7 +3,6 @@
   <Name>Face</Name>
   <Size X="13" Y="13" />
   <Background>Backgrounds\Blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>138</ID>

@@ -28,10 +28,6 @@ namespace GravityLevelEditor
 
         private Point mSize;
         public Point Size { get { return mSize; } set { mSize = value; } }
-        //TODO - Anchor for modifying level size
-
-        private Color mColor;
-        public Color Color { get { return mColor; } set { mColor = value; } }
 
         private Image mBackground;
         public Image Background { get { return mBackground; } set { mBackground = value; } }
@@ -52,14 +48,13 @@ namespace GravityLevelEditor
          * 
          * Image background: background image to be drawn for the level.
          */
-        public Level(string name, Point size, Color color, Image background)
+        public Level(string name, Point size, Image background)
         {
             mEntities = new ArrayList();
             Entity.objectID = 0;
             mClipboard = new ArrayList();
             mName = name;
             mSize = size;
-            mColor = color;
             mBackground = background;
         }
 
@@ -99,10 +94,6 @@ namespace GravityLevelEditor
                     try { this.Background = Image.FromFile(d.FullName + "\\" + el.Value + XmlKeys.PNG); }
                     catch (Exception ex) { this.Background = Image.FromFile(d.FullName + "\\errorBG" + XmlKeys.PNG); }
                     this.Background.Tag = el.Value;
-                }
-                if (el.Name == XmlKeys.COLOR)
-                {
-                    this.Color = Color.FromName(el.Name.ToString());
                 }
                 if (el.Name == XmlKeys.ENTITIES)
                 {
@@ -459,7 +450,6 @@ namespace GravityLevelEditor
                         new XAttribute(XmlKeys.L_X, this.Size.X),
                         new XAttribute(XmlKeys.L_Y, this.Size.Y)),
                     new XElement(XmlKeys.BACKGROUND, this.Background.Tag.ToString()),
-                    new XElement(XmlKeys.COLOR, this.Color.ToString()),
                     entityTree));
 
             xDoc.Save(currentDirectory + this.Name + XmlKeys.XML);

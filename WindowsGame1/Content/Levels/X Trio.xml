@@ -3,7 +3,6 @@
   <Name>X Trio</Name>
   <Size X="30" Y="20" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>106</ID>

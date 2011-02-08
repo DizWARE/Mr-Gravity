@@ -3,7 +3,6 @@
   <Name>CurtisLevel4</Name>
   <Size X="25" Y="17" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Red]</Color>
   <Entities>
     <Entity>
       <ID>3459</ID>

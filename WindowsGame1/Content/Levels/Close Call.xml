@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>CloseCall</Name>
+  <Name>Close Call</Name>
   <Size X="34" Y="21" />
   <Background>Backgrounds\Blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>71</ID>

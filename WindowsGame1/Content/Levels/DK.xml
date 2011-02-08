@@ -3,7 +3,6 @@
   <Name>DK</Name>
   <Size X="20" Y="30" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>65</ID>

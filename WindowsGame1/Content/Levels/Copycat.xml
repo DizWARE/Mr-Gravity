@@ -3,7 +3,6 @@
   <Name>Copycat</Name>
   <Size X="29" Y="9" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>307</ID>

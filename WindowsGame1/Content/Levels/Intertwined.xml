@@ -3,7 +3,6 @@
   <Name>Intertwined</Name>
   <Size X="15" Y="11" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>1436</ID>
