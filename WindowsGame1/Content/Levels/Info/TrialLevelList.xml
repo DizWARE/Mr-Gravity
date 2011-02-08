@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Level1</Name>
@@ -9,7 +9,7 @@
   </LevelData>
   <LevelData>
     <Name>Level2</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
