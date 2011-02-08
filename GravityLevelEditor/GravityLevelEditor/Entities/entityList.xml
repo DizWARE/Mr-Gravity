@@ -185,7 +185,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>3</Length>
+      <Length>8</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -351,7 +351,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>3</Length>
+      <Length>8</Length>
       <Reverse>Tile</Reverse>
     </Properties>
   </Entity>
@@ -382,5 +382,15 @@
       <Mass>1</Mass>
       <Reverse>Tile</Reverse>
     </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>Invisible</Name>
+    <Type>Walls</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\InvisibleBlock</Texture>
+    <Properties />
   </Entity>
 </Entities>

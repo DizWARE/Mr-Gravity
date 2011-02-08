@@ -1,0 +1,2 @@
+c:\users\tydiz\documents\visual studio 2010\Projects\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360Content\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
+C:\Users\Tydiz\Documents\Visual Studio 2008\Projects\Gravity Shift Prototype\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360Content\obj\Xbox 360\Debug\ResolveAssemblyReference.cache

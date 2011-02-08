@@ -729,14 +729,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fonts\QuartzSmall.spritefont">
+      <Name>QuartzSmall</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Levels\Chambers.xml">
       <Name>Chambers</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Levels\DefaultLevel.xml">
-      <Name>DefaultLevel</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -925,6 +924,20 @@
   <ItemGroup>
     <Compile Include="Images\Menu\Main\ResetSelected.png">
       <Name>ResetSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\InvisibleObjects\InvisibleBlock.png">
+      <Name>InvisibleBlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\AnimatedSprites\NoAnimation.png">
+      <Name>NoAnimation</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

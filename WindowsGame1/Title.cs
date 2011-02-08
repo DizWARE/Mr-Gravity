@@ -47,10 +47,10 @@ namespace GravityShift
 
         public void Update(GameTime gameTime, ref GameStates gameState)
         {
+            if (mControls.isBackPressed(false))
+                gameState = GameStates.Exit;
             if (mControls.isStartPressed(false) || mControls.isAPressed(false))
-            {
                 gameState = GameStates.Main_Menu;
-            }
 
         }
 

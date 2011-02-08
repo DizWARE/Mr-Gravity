@@ -1,18 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
-    <Name>Face</Name>
+    <Name>Level1</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>Maze</Name>
+    <Name>Level2</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>2</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Level3</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Level4</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Level5</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Level6</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -23,6 +51,34 @@
   </LevelData>
   <LevelData>
     <Name>Retro</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Rails</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>CloseCall</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Chambers</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>SpaceInvaders</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>

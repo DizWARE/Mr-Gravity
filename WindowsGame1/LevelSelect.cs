@@ -43,6 +43,7 @@ namespace GravityShift
         Texture2D[] mBack;
         Texture2D mBackground;
         Texture2D mLocked;
+        Texture2D mStar;
 
         int mCurrentIndex = 1;
         int mPageCount;
@@ -70,11 +71,12 @@ namespace GravityShift
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
             TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
-#endif
             if (Guide.IsTrialMode)
                 mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
             else
-                mLevelInfo = XElement.Load(LEVEL_LIST);
+#endif
+
+            mLevelInfo = XElement.Load(LEVEL_LIST);
 
             TrialMode = Guide.IsTrialMode;
         }
@@ -103,10 +105,20 @@ namespace GravityShift
             XDocument xDoc = new XDocument();
             xDoc.Add(xLevels);
 
+#if XBOX360
+            FileStream stream;
+            if (TrialMode)
+                stream = new FileStream(TRIAL_LEVEL_LIST, FileMode.Create);
+            else
+                stream = new FileStream(LEVEL_LIST, FileMode.Create);
+            xDoc.Save(stream);
+               
+#else
             if (TrialMode)
                 xDoc.Save(TRIAL_LEVEL_LIST);
             else
                 xDoc.Save(LEVEL_LIST);
+#endif
 
         }
 
@@ -138,6 +150,8 @@ namespace GravityShift
             mBack = new Texture2D[2];
             mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
             mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
+
+            mStar = content.Load<Texture2D>("Images/NonHazards/Star"); ;
 
             mLocked = content.Load<Texture2D>("Images/Lock/locked1a");
 
@@ -175,7 +189,7 @@ namespace GravityShift
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))
                 HandleAPressed(ref gameState,ref currentLevel);
 
-            if (mControls.isBackPressed(false))
+            if (mControls.isBackPressed(false) || mControls.isBPressed(false))
             {
                 gameState = GameStates.Main_Menu;
                 mCurrentPage = 0;
@@ -337,9 +351,56 @@ namespace GravityShift
                 spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
                 if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
 
-                if (!mLevels[i + 12 * mCurrentPage].Unlocked) 
-                    spriteBatch.Draw(mLocked, new Vector2(rect.Center.X - (mLocked.Width/2 * 0.25f), rect.Center.Y - (mLocked.Height/2 * 0.25f)),
-                        null, Color.White, 0.0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);//DRAW LOCKED SYMBOL
+                if (!mLevels[i + 12 * mCurrentPage].Unlocked)
+                {
+                    //DRAW LOCKED SYMBOL
+                    spriteBatch.Draw(mLocked, new Vector2(rect.Center.X - (mLocked.Width / 2 * 0.25f), rect.Center.Y - (mLocked.Height / 2 * 0.25f)),
+                        null, Color.White, 0.0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);
+                }
+                else
+                {
+                    int time = mLevels[i + 12 * mCurrentPage].TimerStar;
+                    int collect = mLevels[i + 12 * mCurrentPage].CollectionStar;
+                    int death = mLevels[i + 12 * mCurrentPage].DeathStar;
+                    float starScale = 0.5f;
+
+                    //DUBUG//
+                    //time = collect = death = 3;
+                    //END DEBUG//
+
+                    //TIME SCORE
+                    if (time >= 1)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Bottom - (mStar.Height * 0.8f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (time >= 2)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Bottom - (mStar.Height * 0.4f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (time == 3)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Left + (mStar.Width * 0.4f), rect.Bottom - (mStar.Height * 0.6f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+
+                    //COLLECTABLES SCORE
+                    if (collect >= 1)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Center.X - (mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.8f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (collect >= 2)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Center.X - (mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.4f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (collect == 3)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Center.X - (mStar.Width * starScale) + (mStar.Width * 0.4f), rect.Bottom - (mStar.Height * 0.6f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+
+                    //DEATH SCORE
+                    if (death >= 1)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Right - (2 * mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.8f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (death >= 2)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Right - (2 * mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.4f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (death == 3)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Right - (2 * mStar.Width * starScale) + (mStar.Width * 0.4f), rect.Bottom - (mStar.Height * 0.6f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                }
 
                 currentLocation.X += size.X + padding.X;
                 index++;
@@ -389,7 +450,7 @@ namespace GravityShift
                     mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml", controls, graphics.Viewport);
                     
 #if XBOX360
-                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.value.ToString()");
+                    mThumbnail = content.Load<Texture2D>("Levels\\Thumbnail\\" + element.Value.ToString());
 #else
                     FileStream filestream;
                     try

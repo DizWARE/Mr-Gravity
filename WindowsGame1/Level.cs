@@ -82,6 +82,7 @@ namespace GravityShift
         private static float SCALING_FACTOR = 85;
 
         private bool isCameraFixed = false;
+        private bool shouldAnimate = true;
 
         // Camera
         public static Camera mCam;
@@ -114,7 +115,9 @@ namespace GravityShift
 
         Player mPlayer;
 
-        PhysicsEnvironment mPhysicsEnvironment;
+        private PhysicsEnvironment mPhysicsEnvironment;
+        public PhysicsEnvironment Environment
+        { get { return mPhysicsEnvironment; } }
 
         IControlScheme mControls;
 
@@ -127,6 +130,7 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine collectibleEngine;
         ParticleEngine wallEngine;
+        GameObject lastCollided;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -261,7 +265,9 @@ namespace GravityShift
             textures = new List<Texture2D>();
             textures.Add(content.Load<Texture2D>("Images/Particles/line"));
             textures.Add(content.Load<Texture2D>("Images/Particles/square"));
-            wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 2, 15);
+            wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 2, 20);
+
+            lastCollided = null;
         }
 
         /// <summary>
@@ -284,10 +290,6 @@ namespace GravityShift
             PlayerEnd playerEnd = importer.GetPlayerEnd();
             if(playerEnd != null)
                 mObjects.Add(playerEnd);
-
-
-            mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
-            mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 89, 0);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
@@ -431,10 +433,15 @@ namespace GravityShift
 
                     // Update the camera to keep the player at the center of the screen
                     // Also only update if the velocity if greater than 0.5f in either direction
-                    if (!isCameraFixed && Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f)
+                    if (!isCameraFixed && (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f))
                     {
                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
                        mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
+                    }
+                    else if(isCameraFixed)
+                    {
+                        mCam.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
+                        mCam1.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
                     }
 
                     /* Snap Zoom Out */
@@ -558,8 +565,9 @@ namespace GravityShift
                     gObject.Draw(spriteBatch, gameTime);
 
             //Draw all of our active animations
-            for (int i = 0; i < mActiveAnimations.Count; i++)
-                mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
+            if(shouldAnimate)
+                for (int i = 0; i < mActiveAnimations.Count; i++)
+                    mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
 
             spriteBatch.End();
         }
@@ -712,9 +720,15 @@ namespace GravityShift
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
+                            // Particle Effects.
+                            Vector2 one = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            Vector2 two = new Vector2(physObj.mPosition.X + 32, physObj.mPosition.Y + 32);
+                            Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                            wallEngine.EmitterLocation = midpoint;
+                            wallEngine.Update(10);
+
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
-                            
 
                             //Get difference of two positions
                             mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0), mCam.Position);
@@ -747,20 +761,37 @@ namespace GravityShift
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
 
                                 // Particle Effects.
-                                Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
-                                //Vector2 two = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
-                                Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
-                                Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
-                                wallEngine.EmitterLocation = midpoint;
-                                wallEngine.Update(1);
+                                if (cObject != lastCollided)
+                                {
+                                    Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
+                                    Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
+                                    Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                                    wallEngine.EmitterLocation = midpoint;
+                                    wallEngine.Update(10);
+                                    lastCollided = cObject;
+                                }
                             }
+
                             else if (cObject is MovingTile && !((MovingTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
                                 ((MovingTile)cObject).StartAnimation(GetAnimation(cObject.mName));
                             else if (cObject is ReverseTile && !((ReverseTile)cObject).BeingAnimated && cObject.CollisionType != XmlKeys.HAZARDOUS)
                                 ((ReverseTile)cObject).StartAnimation(GetAnimation(cObject.mName));
                             else if (cObject is StaticObject && cObject.CollisionType != XmlKeys.COLLECTABLE)
+                            {
                                 if (!mActiveAnimations.ContainsKey(cObject.mPosition))
                                     mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
+
+                                // Particle Effects.
+                                if (cObject != lastCollided)
+                                {
+                                    Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
+                                    Vector2 two = new Vector2(cObject.mPosition.X + 32, cObject.mPosition.Y + 32);
+                                    Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                                    wallEngine.EmitterLocation = midpoint;
+                                    wallEngine.Update(10);
+                                    lastCollided = cObject;
+                                }
+                            }
                         }
                    
                     physObj.HandleCollisionList(collidingList);
@@ -792,29 +823,24 @@ namespace GravityShift
                 case "Yellow":
                     newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
                     break;
-                case "GreenSquiggle":
+                case "Purple":
                     newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
                     break;
-                case "PinkSquiggle":
+                case "Orange":
                     newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
                     break;
-                case "BlueSquiggle":
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
-                    break;
-                case "YellowSquiggle":
-                    newAnimation.Load(mContent, "YellowScan", 7, 0.05f);
-                    break;
                 default:
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);
                     break;
             }
             return newAnimation;
         }
 
-        public static Level MainMenuLevel(ContentManager content, string filepath, IControlScheme controls, Viewport viewport)
+        public static Level MainMenuLevel(string filepath, IControlScheme controls, Viewport viewport)
         {
             Level main = new Level(filepath,controls,viewport);
             main.isCameraFixed = true;
+            main.shouldAnimate = false;
             return main;
         }
     }
