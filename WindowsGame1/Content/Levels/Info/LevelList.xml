@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
-    <Name>Level1</Name>
+    <Name>Face</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>3</Collectionstar>
@@ -20,6 +20,13 @@
     <Timerstar>3</Timerstar>
     <Collectionstar>1</Collectionstar>
     <Deathstar>3</Deathstar>
+ </LevelData>
+ <LevelData>
+    <Name>Maze</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Level4</Name>

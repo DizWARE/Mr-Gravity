@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>Level3</Name>
+  <Name>Maze</Name>
   <Size X="19" Y="19" />
   <Background>Backgrounds\blank</Background>
   <Color>Color [Color]</Color>
