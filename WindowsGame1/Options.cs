@@ -102,15 +102,15 @@ namespace GravityShift
 
             if (choice == MenuChoices.Controls)
                 return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
-                    viewport.TitleSafeArea.Bottom - 25 - texture.Height, texture.Width, texture.Height);
+                    viewport.TitleSafeArea.Bottom - texture.Height, texture.Width, texture.Height);
             if (choice == MenuChoices.Back)
                 return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
-                    viewport.TitleSafeArea.Top + texture.Height, texture.Width, texture.Height);
+                    viewport.TitleSafeArea.Top, texture.Width, texture.Height);
             if (choice == MenuChoices.Volume)
                 return new Rectangle(viewport.TitleSafeArea.Right - (texture.Width),
                     viewport.TitleSafeArea.Center.Y - (texture.Height / 2), texture.Width, texture.Height);
             if (choice == MenuChoices.Reset)
-                return new Rectangle(viewport.TitleSafeArea.Left + (texture.Width),
+                return new Rectangle(viewport.TitleSafeArea.Left,
                     viewport.TitleSafeArea.Center.Y - (texture.Height / 2), texture.Width, texture.Height);
             return new Rectangle();
         }
