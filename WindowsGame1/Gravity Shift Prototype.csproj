@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="AnimatedSprite.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="Credits.cs" />
     <Compile Include="Game Objects\Physics Objects\ReverseTile.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\BlackHoleTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\FXTrigger.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Menu.cs" />
     <Compile Include="Game Objects\Physics Objects\MovingTile.cs" />
     <Compile Include="MISC Code\PlayerFaces.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="ParticleEngine\ParticleEngine.cs" />
     <Compile Include="ParticleEngine\Particle.cs" />
     <Compile Include="Pause.cs" />

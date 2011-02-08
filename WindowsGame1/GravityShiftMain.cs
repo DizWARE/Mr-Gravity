@@ -43,6 +43,9 @@ namespace GravityShift
 
         //Instance of the pause class
         Pause mPause;
+
+        Options mOptions;
+        Credits mCredits;
 		
         private GameStates mCurrentState = GameStates.Title;
 
@@ -112,6 +115,8 @@ namespace GravityShift
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
             mPause = new Pause(mControls);
+            mCredits = new Credits(mControls, mGraphics);
+            mOptions = new Options(mControls, mGraphics);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -139,6 +144,8 @@ namespace GravityShift
 
             mMainMenuLevel.Load(Content);
             mMainMenu.Load(Content);
+            mCredits.Load(Content);
+            mOptions.Load(Content);
 
             mMenu.Load(Content, mGraphics.GraphicsDevice);
             mScoring.Load(Content);
@@ -160,6 +167,11 @@ namespace GravityShift
         /// </summary>
         protected override void UnloadContent() {}
 
+        /// <summary>
+        /// Handle when the game exits
+        /// </summary>
+        /// <param name="sender">Typical event stuff</param>
+        /// <param name="args">Typical event stuff</param>
         protected override void OnExiting(object sender, EventArgs args)
         {
             mLevelSelect.Save();
@@ -184,20 +196,14 @@ namespace GravityShift
                 mLevelSelect.TrialMode = Guide.IsTrialMode;
                 mLevelSelect.Reload();
             }
-            
 
-            //if (mGraphics.PreferredBackBufferWidth != 1280 || mGraphics.PreferredBackBufferHeight != 720)
-            //{
-            //    mGraphics.PreferredBackBufferWidth = 1280;
-            //    mGraphics.PreferredBackBufferHeight = 720;
-            //    mGraphics.ApplyChanges();
-            //}
-            // Allows the game to exit
-            if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
+            if (mCurrentState == GameStates.Credits)
+                mCredits.Update(gameTime, ref mCurrentState);
+
+            if (mCurrentState == GameStates.Options)
             {
-                //if(Gamer.SignedInGamers[PlayerIndex.One].Privileges.AllowPurchaseContent)
-                this.Exit();
-
+                mOptions.Update(gameTime, ref mCurrentState, mMainMenuLevel.Environment);
+                mMainMenuLevel.Update(gameTime, ref mCurrentState);
             }
 
             if (mCurrentState == GameStates.Title)
@@ -210,21 +216,10 @@ namespace GravityShift
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
                 mTitle.Update(gameTime, ref mCurrentState);
-
             }
 
             if (mCurrentState == GameStates.In_Game)
-            {
-                //Check for mute - not featured yet
-                //GameSound.music_level00.Volume = GameSound.volume;
-
-
-                //If the correct music isn't already playing
-                //if (GameSound.music_level00.State != SoundState.Playing)
-                //    GameSound.StopOthersAndPlay(GameSound.music_level00);
-                
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
-            }
             else if (mCurrentState == GameStates.Main_Menu)
             {
                 //Check for mute
@@ -234,7 +229,6 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                //mMenu.Update(gameTime, ref mCurrentState);
                 mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel.Environment);
                 mMainMenuLevel.Update(gameTime, ref mCurrentState);
                 
@@ -350,6 +344,13 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Main_Menu)
             {
                 mMainMenu.Draw(gameTime, mSpriteBatch, scale);
+                mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
+            }
+            else if (mCurrentState == GameStates.Credits)
+                mCredits.Draw(gameTime, mSpriteBatch, scale);
+            else if (mCurrentState == GameStates.Options)
+            {
+                mOptions.Draw(gameTime, mSpriteBatch, scale);
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
             else if (mCurrentState == GameStates.Exit)

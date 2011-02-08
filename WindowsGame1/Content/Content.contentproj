@@ -729,6 +729,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fonts\QuartzSmall.spritefont">
+      <Name>QuartzSmall</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Levels\Chambers.xml">
       <Name>Chambers</Name>
       <Importer>XmlImporter</Importer>

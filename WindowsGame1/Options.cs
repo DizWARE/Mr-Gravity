@@ -8,12 +8,9 @@ using Microsoft.Xna.Framework.Content;
 
 namespace GravityShift
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    class MainMenu
+    class Options
     {
-        public enum MenuChoices { StartGame, Options, Exit, Credits }
+        public enum MenuChoices { Volume, Controls, Reset, Back }
 
         Dictionary<MenuChoices, Texture2D> mUnselected;
         Dictionary<MenuChoices, Texture2D> mSelected;
@@ -23,9 +20,9 @@ namespace GravityShift
         IControlScheme mControls;
         GraphicsDeviceManager mGraphics;
 
-        MenuChoices mCurrentChoice = MenuChoices.StartGame;
+        MenuChoices mCurrentChoice = MenuChoices.Controls;
 
-        public MainMenu(IControlScheme controlScheme, GraphicsDeviceManager graphics)
+        public Options(IControlScheme controlScheme, GraphicsDeviceManager graphics)
         {
             mControls = controlScheme;
             mGraphics = graphics;
@@ -36,15 +33,15 @@ namespace GravityShift
 
         public void Load(ContentManager content)
         {
-            mUnselected.Add(MenuChoices.StartGame, content.Load<Texture2D>("Images\\Menu\\Main\\LoadGameUnselected"));
-            mUnselected.Add(MenuChoices.Exit, content.Load<Texture2D>("Images\\Menu\\Main\\BackUnselected"));
-            mUnselected.Add(MenuChoices.Options, content.Load<Texture2D>("Images\\Menu\\Main\\OptionsUnselected"));
-            mUnselected.Add(MenuChoices.Credits, content.Load<Texture2D>("Images\\Menu\\Main\\CreditsUnselected"));
+            mSelected.Add(MenuChoices.Back, content.Load<Texture2D>("Images\\Menu\\Main\\BackSelected"));
+            mSelected.Add(MenuChoices.Volume, content.Load<Texture2D>("Images\\Menu\\Main\\MuteSelected"));
+            mSelected.Add(MenuChoices.Controls, content.Load<Texture2D>("Images\\Menu\\Main\\ControllerSelected"));
+            mSelected.Add(MenuChoices.Reset, content.Load<Texture2D>("Images\\Menu\\Main\\ResetSelected"));
 
-            mSelected.Add(MenuChoices.StartGame, content.Load<Texture2D>("Images\\Menu\\Main\\LoadGameSelected"));
-            mSelected.Add(MenuChoices.Exit, content.Load<Texture2D>("Images\\Menu\\Main\\BackSelected"));
-            mSelected.Add(MenuChoices.Options, content.Load<Texture2D>("Images\\Menu\\Main\\OptionsSelected"));
-            mSelected.Add(MenuChoices.Credits, content.Load<Texture2D>("Images\\Menu\\Main\\CreditsSelected"));
+            mUnselected.Add(MenuChoices.Back, content.Load<Texture2D>("Images\\Menu\\Main\\BackUnselected"));
+            mUnselected.Add(MenuChoices.Volume, content.Load<Texture2D>("Images\\Menu\\Main\\MuteUnselected"));
+            mUnselected.Add(MenuChoices.Controls, content.Load<Texture2D>("Images\\Menu\\Main\\ControllerUnselected"));
+            mUnselected.Add(MenuChoices.Reset, content.Load<Texture2D>("Images\\Menu\\Main\\ResetUnselected"));
 
             mTitle = content.Load<Texture2D>("Images\\Menu\\Title");
         }
@@ -52,28 +49,26 @@ namespace GravityShift
 
         public void Update(GameTime gametime, ref GameStates states, PhysicsEnvironment env)
         {
-            if (mControls.isBackPressed(false))
-                states = GameStates.Exit;
+            if (mControls.isBackPressed(false) || mControls.isBPressed(false))
+                states = GameStates.Main_Menu;
+
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                if (mCurrentChoice == MenuChoices.StartGame)
-                    states = GameStates.Level_Selection;
-                if (mCurrentChoice == MenuChoices.Exit)
-                    states = GameStates.Exit;
-                if (mCurrentChoice == MenuChoices.Options)
-                    states = GameStates.Options;
-                if (mCurrentChoice == MenuChoices.Credits)
-                    states = GameStates.Credits;
+                if (mCurrentChoice == MenuChoices.Volume) ;
+                if (mCurrentChoice == MenuChoices.Controls) ;
+                if (mCurrentChoice == MenuChoices.Reset) ;
+                if (mCurrentChoice == MenuChoices.Back)
+                    states = GameStates.Main_Menu;
             }
 
             if (env.GravityDirection == GravityDirections.Down)
-                mCurrentChoice = MenuChoices.StartGame;
+                mCurrentChoice = MenuChoices.Controls;
             if (env.GravityDirection == GravityDirections.Left)
-                mCurrentChoice = MenuChoices.Credits;
+                mCurrentChoice = MenuChoices.Reset;
             if (env.GravityDirection == GravityDirections.Right)
-                mCurrentChoice = MenuChoices.Options;
+                mCurrentChoice = MenuChoices.Volume;
             if (env.GravityDirection == GravityDirections.Up)
-                mCurrentChoice = MenuChoices.Exit;
+                mCurrentChoice = MenuChoices.Back;
         }
 
         public void Draw(GameTime gametime, SpriteBatch spriteBatch, Matrix scale)
@@ -96,7 +91,7 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[choice], GetRegion(choice, mUnselected[choice]), Color.White);
 #endif
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
-            spriteBatch.Draw(mTitle, new Rectangle(center.X + 30 - mTitle.Width / 2, center.Y - mTitle.Height / 2, mTitle.Width, mTitle.Height), Color.White);
+            //spriteBatch.Draw(mTitle, new Rectangle(center.X + 30 - mTitle.Width / 2, center.Y - mTitle.Height / 2, mTitle.Width, mTitle.Height), Color.White);
 
             spriteBatch.End();
         }
@@ -105,16 +100,16 @@ namespace GravityShift
         {
             Viewport viewport = mGraphics.GraphicsDevice.Viewport;
 
-            if (choice == MenuChoices.StartGame)
+            if (choice == MenuChoices.Controls)
                 return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
                     viewport.TitleSafeArea.Bottom - 25 - texture.Height, texture.Width, texture.Height);
-            if (choice == MenuChoices.Exit)
+            if (choice == MenuChoices.Back)
                 return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
                     viewport.TitleSafeArea.Top + texture.Height, texture.Width, texture.Height);
-            if (choice == MenuChoices.Options)
+            if (choice == MenuChoices.Volume)
                 return new Rectangle(viewport.TitleSafeArea.Right - (texture.Width),
                     viewport.TitleSafeArea.Center.Y - (texture.Height / 2), texture.Width, texture.Height);
-            if (choice == MenuChoices.Credits)
+            if (choice == MenuChoices.Reset)
                 return new Rectangle(viewport.TitleSafeArea.Left + (texture.Width),
                     viewport.TitleSafeArea.Center.Y - (texture.Height / 2), texture.Width, texture.Height);
             return new Rectangle();

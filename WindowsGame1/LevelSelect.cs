@@ -186,7 +186,7 @@ namespace GravityShift
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))
                 HandleAPressed(ref gameState,ref currentLevel);
 
-            if (mControls.isBackPressed(false))
+            if (mControls.isBackPressed(false) || mControls.isBPressed(false))
             {
                 gameState = GameStates.Main_Menu;
                 mCurrentPage = 0;

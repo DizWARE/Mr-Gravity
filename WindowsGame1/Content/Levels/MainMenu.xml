@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
   <Name>MainMenu</Name>
-  <Size X="22" Y="11" />
-  <Background>Menu\Title</Background>
+  <Size X="23" Y="11" />
+  <Background>Backgrounds\blank</Background>
   <Color>Color [Color]</Color>
   <Entities>
     <Entity>
@@ -219,7 +219,7 @@
       <ID>325</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="10" />
+      <Location X="22" Y="10" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -229,7 +229,7 @@
       <ID>326</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="9" />
+      <Location X="22" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -239,7 +239,7 @@
       <ID>327</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="8" />
+      <Location X="22" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -249,7 +249,7 @@
       <ID>328</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="7" />
+      <Location X="22" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -259,7 +259,7 @@
       <ID>329</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="6" />
+      <Location X="22" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -269,7 +269,7 @@
       <ID>330</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="5" />
+      <Location X="22" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -279,7 +279,7 @@
       <ID>331</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="4" />
+      <Location X="22" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -289,7 +289,7 @@
       <ID>332</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="3" />
+      <Location X="22" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -299,7 +299,7 @@
       <ID>333</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="2" />
+      <Location X="22" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -309,7 +309,7 @@
       <ID>334</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="1" />
+      <Location X="22" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -319,7 +319,7 @@
       <ID>335</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
-      <Location X="21" Y="0" />
+      <Location X="22" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
@@ -566,18 +566,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>425</ID>
-      <Name>PlayerStart</Name>
-      <Type>Level Positions</Type>
-      <Location X="10" Y="4" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>PlayerPositions\PlayerStart</Texture>
-      <Properties>
-        <IdealTime>400</IdealTime>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>487</ID>
       <Name>Invisible</Name>
       <Type>Walls</Type>
@@ -636,6 +624,38 @@
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\InvisibleBlock</Texture>
       <Properties />
+    </Entity>
+    <Entity>
+      <ID>497</ID>
+      <Name>Invisible</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\InvisibleBlock</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>498</ID>
+      <Name>Invisible</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\InvisibleBlock</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>861</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="10" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>400</IdealTime>
+      </Properties>
     </Entity>
   </Entities>
 </Level>
