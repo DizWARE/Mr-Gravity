@@ -41,6 +41,7 @@
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+<<<<<<< HEAD
   </LevelData>
   <LevelData>
     <Name>X Trio</Name>
@@ -48,6 +49,8 @@
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+=======
+>>>>>>> jeremy/master
   </LevelData>
   <LevelData>
     <Name>DK</Name>
