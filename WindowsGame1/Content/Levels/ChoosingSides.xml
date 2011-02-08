@@ -3,7 +3,7 @@
   <Name>ChoosingSides</Name>
   <Size X="20" Y="20" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Red]</Color>
+  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>330</ID>
