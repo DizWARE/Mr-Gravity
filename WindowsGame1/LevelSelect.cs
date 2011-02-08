@@ -114,9 +114,6 @@ namespace GravityShift
             xDoc.Save(stream);
                
 #else
-            if (TrialMode)
-                xDoc.Save(TRIAL_LEVEL_LIST);
-            else
                 xDoc.Save(LEVEL_LIST);
 #endif
 
