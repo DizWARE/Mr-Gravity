@@ -44,6 +44,7 @@
   </LevelData>
   <LevelData>
     <Name>Level6</Name>
+<<<<<<< HEAD
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>3</Collectionstar>
@@ -55,6 +56,19 @@
     <Timerstar>3</Timerstar>
     <Collectionstar>3</Collectionstar>
     <Deathstar>3</Deathstar>
+=======
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>X Trio</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+>>>>>>> curtis/master
   </LevelData>
   <LevelData>
     <Name>DK</Name>
