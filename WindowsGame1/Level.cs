@@ -453,7 +453,7 @@ namespace GravityShift
                         mCam.Zoom = mPrevZoom;
 
                     //Pause
-                    if (mControls.isStartPressed(false))
+                    if (mControls.isStartPressed(false) || Guide.IsVisible)
                         gameState = GameStates.Pause;
                 }
 
