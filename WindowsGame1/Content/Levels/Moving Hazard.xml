@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>Level6</Name>
+  <Name>Moving Hazard</Name>
   <Size X="15" Y="20" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>59</ID>

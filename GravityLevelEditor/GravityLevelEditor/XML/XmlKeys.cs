@@ -14,7 +14,6 @@ namespace GravityLevelEditor.XML
         public static string L_X = "X";
         public static string L_Y = "Y";
         public static string BACKGROUND = "Background";
-        public static string COLOR = "Color";
         public static string ENTITIES = "Entities";
 
         //Entity Keys

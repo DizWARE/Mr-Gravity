@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>ChoosingSides</Name>
+  <Name>Choosing Sides</Name>
   <Size X="20" Y="20" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>330</ID>

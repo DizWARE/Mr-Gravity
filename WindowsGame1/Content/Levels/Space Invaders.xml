@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>SpaceInvaders</Name>
+  <Name>Space Invaders</Name>
   <Size X="20" Y="15" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>67</ID>

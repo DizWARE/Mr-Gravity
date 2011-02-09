@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>Level2</Name>
+  <Name>Compartments</Name>
   <Size X="20" Y="10" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Red]</Color>
   <Entities>
     <Entity>
       <ID>59</ID>

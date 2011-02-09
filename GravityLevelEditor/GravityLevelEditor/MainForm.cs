@@ -44,7 +44,7 @@ namespace GravityLevelEditor
             Image background = Image.FromFile("..\\..\\..\\..\\WindowsGame1\\Content\\Images\\Backgrounds\\blank.png");
             background.Tag = "Backgrounds\\blank";
             mData = new EditorData(new ArrayList(), null, 
-                new Level("New Level", new Point(10, 10), Color.Red,
+                new Level("New Level", new Point(10, 10),
                      background));
 
             this.SetStyle(ControlStyles.DoubleBuffer |
@@ -302,7 +302,7 @@ namespace GravityLevelEditor
 
                 Image background = Image.FromFile("..\\..\\..\\..\\WindowsGame1\\Content\\Images\\Backgrounds\\blank.png");
                 background.Tag = "Backgrounds\\blank";
-                mData.Level = new Level("New Level", new Point(10, 10), Color.Red,
+                mData.Level = new Level("New Level", new Point(10, 10),
                          background);
                 pb_bg.Image = background;
                 mData.SelectedEntities.Clear();

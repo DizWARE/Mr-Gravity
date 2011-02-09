@@ -3,7 +3,6 @@
   <Name>Maze</Name>
   <Size X="19" Y="19" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>135</ID>

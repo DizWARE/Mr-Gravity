@@ -3,6 +3,5 @@
   <Name>DefaultLevel</Name>
   <Size X="1" Y="1" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Red]</Color>
   <Entities />
 </Level>

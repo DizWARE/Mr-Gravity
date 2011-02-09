@@ -3,7 +3,6 @@
   <Name>MainMenu</Name>
   <Size X="23" Y="11" />
   <Background>Backgrounds\blank</Background>
-  <Color>Color [Color]</Color>
   <Entities>
     <Entity>
       <ID>304</ID>
