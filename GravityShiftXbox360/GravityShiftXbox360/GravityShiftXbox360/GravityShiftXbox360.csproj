@@ -114,9 +114,9 @@
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="GravityShiftMain.cs" />
-    <Compile Include="Game Objects\Import Code\EntityInfo.cs" />
-    <Compile Include="Game Objects\Import Code\Importer.cs" />
-    <Compile Include="Game Objects\Import Code\XmlKeys.cs" />
+    <Compile Include="Import Code\EntityInfo.cs" />
+    <Compile Include="Import Code\Importer.cs" />
+    <Compile Include="Import Code\XmlKeys.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelSelect.cs" />
     <Compile Include="MainMenu.cs" />
