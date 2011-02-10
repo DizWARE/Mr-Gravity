@@ -89,7 +89,7 @@ namespace GravityShift
         public static Camera mCam1;
 
         /* Tracks the previous zoom of the camera */
-        private float mPrevZoom = 1.0f;
+        private float mPrevZoom = 0.75f;
 
         /* Timer variable */
         public static double TIMER;
