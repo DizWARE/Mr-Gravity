@@ -259,13 +259,14 @@ namespace GravityShift
             List<Texture2D> textures = new List<Texture2D>();
             textures.Add(content.Load<Texture2D>("Images/Particles/diamond"));
             textures.Add(content.Load<Texture2D>("Images/Particles/star"));
-
-            collectibleEngine = new ParticleEngine(textures, new Vector2(400, 240), 1, 20);
+            collectibleEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
+            collectibleEngine.colorScheme = "Yellow";
 
             textures = new List<Texture2D>();
             textures.Add(content.Load<Texture2D>("Images/Particles/line"));
             textures.Add(content.Load<Texture2D>("Images/Particles/square"));
-            wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 2, 20);
+            wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
+            wallEngine.colorScheme = "Blue";
 
             lastCollided = null;
         }
@@ -809,10 +810,12 @@ namespace GravityShift
             string concatName = name.Substring(name.LastIndexOf('\\') + 1);
             AnimatedSprite newAnimation = new AnimatedSprite();
 
+            wallEngine.colorScheme = concatName;
+
             switch (concatName)
             {
                 case "Green":
-                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f);
+                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f); 
                     break;
                 case "Pink":
                     newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);

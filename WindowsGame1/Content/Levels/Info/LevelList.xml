@@ -11,7 +11,7 @@
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
-    <Collectionstar>0</Collectionstar>
+    <Collectionstar>1</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
@@ -33,14 +33,14 @@
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>3</Collectionstar>
-    <Deathstar>2</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>1</Collectionstar>
-    <Deathstar>2</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>X Trio</Name>
