@@ -43,8 +43,12 @@ namespace GravityShift
 
         //Instance of the pause class
         Pause mPause;
+
+        Options mOptions;
+        Credits mCredits;
 		
         private GameStates mCurrentState = GameStates.Title;
+        private GameStates mReloadState = GameStates.Title;
 
         //Max duration of a sequence
         private static int VICTORY_DURATION = 120;
@@ -96,7 +100,7 @@ namespace GravityShift
         protected override void Initialize()
         {
             //COMMENT OUT AFTER TESTING TRIAL MODE
-            //Guide.SimulateTrialMode = false;
+            //Guide.SimulateTrialMode = true;
 
             mGraphics.PreferredBackBufferWidth = 1280;
             mGraphics.PreferredBackBufferHeight = 720;
@@ -112,9 +116,15 @@ namespace GravityShift
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
             mPause = new Pause(mControls);
+            mCredits = new Credits(mControls, mGraphics);
+            mOptions = new Options(mControls, mGraphics);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
+
+            Components.Add(new GamerServicesComponent(this));
+
+
 		}
 
         /// <summary>
@@ -139,6 +149,8 @@ namespace GravityShift
 
             mMainMenuLevel.Load(Content);
             mMainMenu.Load(Content);
+            mCredits.Load(Content);
+            mOptions.Load(Content);
 
             mMenu.Load(Content, mGraphics.GraphicsDevice);
             mScoring.Load(Content);
@@ -160,15 +172,25 @@ namespace GravityShift
         /// </summary>
         protected override void UnloadContent() {}
 
+        /// <summary>
+        /// Handle when the game exits
+        /// </summary>
+        /// <param name="sender">Typical event stuff</param>
+        /// <param name="args">Typical event stuff</param>
         protected override void OnExiting(object sender, EventArgs args)
         {
-            mLevelSelect.Save();
-            if (mControls.controlScheme() == ControlSchemes.Gamepad)
-                if (Guide.IsTrialMode && !Guide.IsVisible)
-                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] != null)
-                        if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
-                            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
-                                Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+            //if (Gamer.SignedInGamers.Count == 0 && !Guide.IsVisible)
+            //{
+            //    Guide.ShowSignIn(1, true);
+            //}
+            mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+            //if (mControls.controlScheme() == ControlSchemes.Gamepad)
+            //    if (Guide.IsTrialMode && !Guide.IsVisible)
+            //        if (Gamer.SignedInGamers[(int)((ControllerControl)mControls).ControllerIndex] != null)
+            //            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+            //                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+            //                    Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+
         }
 
         /// <summary>
@@ -178,26 +200,40 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            base.Update(gameTime);
             if (mLevelSelect.TrialMode != Guide.IsTrialMode)
             {
-                mLevelSelect.Save();
-                mLevelSelect.TrialMode = Guide.IsTrialMode;
-                mLevelSelect.Reload();
+                if (!Guide.IsVisible)
+                {
+                    //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+                    mLevelSelect.TrialMode = Guide.IsTrialMode;
+                    mLevelSelect.Reload(((ControllerControl)mControls).ControllerIndex);
+                }
+                else
+                {
+                    mReloadState = GameStates.WaitOnReload;
+                }
+
             }
-            
 
-            //if (mGraphics.PreferredBackBufferWidth != 1280 || mGraphics.PreferredBackBufferHeight != 720)
-            //{
-            //    mGraphics.PreferredBackBufferWidth = 1280;
-            //    mGraphics.PreferredBackBufferHeight = 720;
-            //    mGraphics.ApplyChanges();
-            //}
-            // Allows the game to exit
-            if (mCurrentState == GameStates.Main_Menu && mControls.isBackPressed(false))
+            if (mReloadState == GameStates.WaitOnReload)
             {
-                //if(Gamer.SignedInGamers[PlayerIndex.One].Privileges.AllowPurchaseContent)
-                this.Exit();
+                if (!Guide.IsVisible)
+                {
+                    mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+                    mLevelSelect.TrialMode = Guide.IsTrialMode;
+                    mLevelSelect.Reload(((ControllerControl)mControls).ControllerIndex);
+                    mReloadState = GameStates.Title;
+                }
+            }
 
+            if (mCurrentState == GameStates.Credits)
+                mCredits.Update(gameTime, ref mCurrentState);
+
+            if (mCurrentState == GameStates.Options)
+            {
+                mOptions.Update(gameTime, ref mCurrentState, mMainMenuLevel.Environment);
+                mMainMenuLevel.Update(gameTime, ref mCurrentState);
             }
 
             if (mCurrentState == GameStates.Title)
@@ -210,23 +246,13 @@ namespace GravityShift
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
                 mTitle.Update(gameTime, ref mCurrentState);
-
             }
 
             if (mCurrentState == GameStates.In_Game)
-            {
-                //Check for mute - not featured yet
-                //GameSound.music_level00.Volume = GameSound.volume;
-
-
-                //If the correct music isn't already playing
-                //if (GameSound.music_level00.State != SoundState.Playing)
-                //    GameSound.StopOthersAndPlay(GameSound.music_level00);
-                
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
-            }
             else if (mCurrentState == GameStates.Main_Menu)
             {
+                //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
 
@@ -234,7 +260,6 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                //mMenu.Update(gameTime, ref mCurrentState);
                 mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel.Environment);
                 mMainMenuLevel.Update(gameTime, ref mCurrentState);
                 
@@ -325,6 +350,64 @@ namespace GravityShift
                     mToggledSequence = false;
                 }
             }
+            else if (mCurrentState == GameStates.Exit)
+            {
+                if (Guide.IsTrialMode)
+                {
+                    mCurrentState = GameStates.TrialExit;
+                }
+                else
+                    mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.TrialExit)
+            {
+                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
+                {
+                    Guide.ShowSignIn(1, true);
+                    mCurrentState = GameStates.WaitingForSignIn;
+                }
+                else
+                    mCurrentState = GameStates.ShowMarketplace;
+            }
+            else if (mCurrentState == GameStates.WaitingForSignIn)
+            {
+                if (!Guide.IsVisible)
+                {
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
+                    {
+                        mCurrentState = GameStates.WaitingToExit;
+                    }
+                    else
+                        mCurrentState = GameStates.ShowMarketplace;
+                }
+            }
+            else if (mCurrentState == GameStates.ShowMarketplace)
+            {
+                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+                {
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+                    {
+                        Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+                        mCurrentState = GameStates.WaitForMarketplace;
+                    }
+                    else
+                        mCurrentState = GameStates.WaitingToExit;
+                }
+                else
+                    mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.WaitForMarketplace)
+            {
+                if (!Guide.IsVisible)
+                    mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.WaitingToExit)
+            {
+                if (!Guide.IsVisible)
+                    this.Exit();
+            }
+
+
         }
 
         /// <summary>
@@ -352,8 +435,13 @@ namespace GravityShift
                 mMainMenu.Draw(gameTime, mSpriteBatch, scale);
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
-            else if (mCurrentState == GameStates.Exit)
-                this.Exit();
+            else if (mCurrentState == GameStates.Credits)
+                mCredits.Draw(gameTime, mSpriteBatch, scale);
+            else if (mCurrentState == GameStates.Options)
+            {
+                mOptions.Draw(gameTime, mSpriteBatch, scale);
+                mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
+            }
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Level_Selection)

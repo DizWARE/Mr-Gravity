@@ -454,7 +454,8 @@ namespace GravityShift
 
                     //Pause
                     if (mControls.isStartPressed(false) || Guide.IsVisible)
-                        gameState = GameStates.Pause;
+                        if (gameState == GameStates.In_Game)
+                            gameState = GameStates.Pause;
                 }
 
                 else if (mDeathState == DeathStates.Respawning)

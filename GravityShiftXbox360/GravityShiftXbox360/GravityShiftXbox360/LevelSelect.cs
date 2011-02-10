@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -11,6 +12,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using System.Xml;
+using System.Xml.Serialization;
 using System.Xml.Linq;
 using GravityShift.Import_Code;
 using System.IO;
@@ -22,6 +25,11 @@ namespace GravityShift
     /// </summary>
     class LevelSelect
     {
+        public struct SaveGameData
+        {
+            public XElement savedata;
+        }
+
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
@@ -43,6 +51,7 @@ namespace GravityShift
         Texture2D[] mBack;
         Texture2D mBackground;
         Texture2D mLocked;
+        Texture2D mStar;
 
         int mCurrentIndex = 1;
         int mPageCount;
@@ -59,6 +68,16 @@ namespace GravityShift
         bool mTrialMode;
         public bool TrialMode { get { return mTrialMode; } set { mTrialMode = value; } }
 
+        bool mDeviceSelected;
+        public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
+
+        StorageDevice device;
+        StorageContainer container;
+
+        PlayerIndex playerIndex;
+
+        int frame = 0;
+
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -74,47 +93,143 @@ namespace GravityShift
                 mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
             else
 #endif
+
             mLevelInfo = XElement.Load(LEVEL_LIST);
 
             TrialMode = Guide.IsTrialMode;
+
+            mDeviceSelected = false;
         }
 
-        public void Reload()
+        public void Reload(PlayerIndex player)
         {
+#if XBOX360
+            IAsyncResult result;
+            if (!mDeviceSelected)
+            {
+                result = StorageDevice.BeginShowSelector(player, null, null);
+                result.AsyncWaitHandle.WaitOne();
+                device = StorageDevice.EndShowSelector(result);
+                result.AsyncWaitHandle.Close();
+                mDeviceSelected = true;
+            }
+
+            result = device.BeginOpenContainer("GravityShift", null, null);
+            result.AsyncWaitHandle.WaitOne();
+            container = device.EndOpenContainer(result);
+            result.AsyncWaitHandle.Close();
+
+            if (TrialMode)
+            {
+                if (container.FileExists("TrialLevelList.xml"))
+                {
+                    Stream stream = container.OpenFile("TrialLevelList.xml", FileMode.Open);
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                    SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
+                    stream.Close();
+                    mLevelInfo = data.savedata;
+                }
+                else
+                {
+
+                    mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+                }
+            }
+            else
+            {
+                if (container.FileExists("LevelList.xml"))
+                {
+                    Stream stream = container.OpenFile("LevelList.xml", FileMode.Open);
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                    SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
+                    stream.Close();
+                    mLevelInfo = data.savedata;
+                }
+                else
+                {
+                    mLevelInfo = XElement.Load(LEVEL_LIST);
+                }
+            }
+            container.Dispose();
+
+
+#else
             if (TrialMode)
             {
                 mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
             }
             else
                 mLevelInfo = XElement.Load(LEVEL_LIST);
+
+#endif
         }
 
         /// <summary>
         /// Saves level unlock and scoring information
         /// </summary>
         /// 
-        public void Save() 
+        public void Save(PlayerIndex player) 
         {
+            playerIndex = player;
             XElement xLevels = new XElement(XmlKeys.LEVELS);
             foreach (LevelChoice l in mLevels) 
             {
                 xLevels.Add(l.Export());
             }
-            XDocument xDoc = new XDocument();
-            xDoc.Add(xLevels);
+            //Debug.WriteLine(xDoc.ToString());
+            
 
 #if XBOX360
-            FileStream stream;
+            IAsyncResult result;
+            if (!mDeviceSelected)
+            {
+                result = StorageDevice.BeginShowSelector(player, null, null);
+                result.AsyncWaitHandle.WaitOne();
+                device = StorageDevice.EndShowSelector(result);
+                result.AsyncWaitHandle.Close();
+                mDeviceSelected = true;
+            }
+
+            result = device.BeginOpenContainer("GravityShift", null, null);
+            result.AsyncWaitHandle.WaitOne();
+            container = device.EndOpenContainer(result);
+            result.AsyncWaitHandle.Close();
+            //container.DeleteFile("TrialLevelList.xml");
+            //container.DeleteFile("LevelList.xml");
+
+            Stream stream;
             if (TrialMode)
-                stream = new FileStream(TRIAL_LEVEL_LIST, FileMode.Create);
+            {
+                if (container.FileExists("TrialLevelList.xml"))
+                {
+                    container.DeleteFile("TrialLevelList.xml");
+                }
+                stream = container.CreateFile("TrialLevelList.xml");
+                XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                SaveGameData data = new SaveGameData();
+                data.savedata = xLevels;
+                serializer.Serialize(stream, data);
+                stream.Close();
+            }
+
             else
-                stream = new FileStream(LEVEL_LIST, FileMode.Create);
-            xDoc.Save(stream);
+            {
+                {
+                    if (container.FileExists("LevelList.xml"))
+                    {
+                        container.DeleteFile("LevelList.xml");
+                    }
+                    stream = container.CreateFile("LevelList.xml");
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                    SaveGameData data = new SaveGameData();
+                    data.savedata = xLevels;
+                    serializer.Serialize(stream, data);
+                    stream.Close();
+                }
+            }
+            container.Dispose();
                
 #else
-            if (TrialMode)
-                xDoc.Save(TRIAL_LEVEL_LIST);
-            else
                 xDoc.Save(LEVEL_LIST);
 #endif
 
@@ -149,6 +264,8 @@ namespace GravityShift
             mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
             mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
 
+            mStar = content.Load<Texture2D>("Images/NonHazards/Star"); ;
+
             mLocked = content.Load<Texture2D>("Images/Lock/locked1a");
 
             mPageCount = mLevels.Count / 12 +1;
@@ -180,12 +297,18 @@ namespace GravityShift
         /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
+            frame++;
+            if (frame >= 60)
+            {
+                this.Save(playerIndex);
+                frame = 0;
+            }
             HandleDirectionKeys();          
 
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))
                 HandleAPressed(ref gameState,ref currentLevel);
 
-            if (mControls.isBackPressed(false))
+            if (mControls.isBackPressed(false) || mControls.isBPressed(false))
             {
                 gameState = GameStates.Main_Menu;
                 mCurrentPage = 0;
@@ -347,9 +470,56 @@ namespace GravityShift
                 spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
                 if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
 
-                if (!mLevels[i + 12 * mCurrentPage].Unlocked) 
-                    spriteBatch.Draw(mLocked, new Vector2(rect.Center.X - (mLocked.Width/2 * 0.25f), rect.Center.Y - (mLocked.Height/2 * 0.25f)),
-                        null, Color.White, 0.0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);//DRAW LOCKED SYMBOL
+                if (!mLevels[i + 12 * mCurrentPage].Unlocked)
+                {
+                    //DRAW LOCKED SYMBOL
+                    spriteBatch.Draw(mLocked, new Vector2(rect.Center.X - (mLocked.Width / 2 * 0.25f), rect.Center.Y - (mLocked.Height / 2 * 0.25f)),
+                        null, Color.White, 0.0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);
+                }
+                else
+                {
+                    int time = mLevels[i + 12 * mCurrentPage].TimerStar;
+                    int collect = mLevels[i + 12 * mCurrentPage].CollectionStar;
+                    int death = mLevels[i + 12 * mCurrentPage].DeathStar;
+                    float starScale = 0.5f;
+
+                    //DUBUG//
+                    //time = collect = death = 3;
+                    //END DEBUG//
+
+                    //TIME SCORE
+                    if (time >= 1)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Bottom - (mStar.Height * 0.8f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (time >= 2)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Bottom - (mStar.Height * 0.4f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (time == 3)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Left + (mStar.Width * 0.4f), rect.Bottom - (mStar.Height * 0.6f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+
+                    //COLLECTABLES SCORE
+                    if (collect >= 1)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Center.X - (mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.8f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (collect >= 2)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Center.X - (mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.4f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (collect == 3)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Center.X - (mStar.Width * starScale) + (mStar.Width * 0.4f), rect.Bottom - (mStar.Height * 0.6f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+
+                    //DEATH SCORE
+                    if (death >= 1)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Right - (2 * mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.8f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (death >= 2)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Right - (2 * mStar.Width * starScale), rect.Bottom - (mStar.Height * 0.4f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                    if (death == 3)
+                        spriteBatch.Draw(mStar, new Vector2(rect.Right - (2 * mStar.Width * starScale) + (mStar.Width * 0.4f), rect.Bottom - (mStar.Height * 0.6f)),
+                            null, Color.White, 0.0f, Vector2.Zero, starScale, SpriteEffects.None, 0.0f);
+                }
 
                 currentLocation.X += size.X + padding.X;
                 index++;

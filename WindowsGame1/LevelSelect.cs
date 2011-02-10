@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -11,6 +12,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using System.Xml;
+using System.Xml.Serialization;
 using System.Xml.Linq;
 using GravityShift.Import_Code;
 using System.IO;
@@ -22,6 +25,11 @@ namespace GravityShift
     /// </summary>
     class LevelSelect
     {
+        public struct SaveGameData
+        {
+            public XElement savedata;
+        }
+
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
         public static string LEVEL_THUMBS_DIRECTORY = LEVEL_DIRECTORY + "Thumbnail\\";
         public static string LEVEL_LIST = LEVEL_DIRECTORY + "Info\\LevelList.xml";
@@ -60,6 +68,16 @@ namespace GravityShift
         bool mTrialMode;
         public bool TrialMode { get { return mTrialMode; } set { mTrialMode = value; } }
 
+        bool mDeviceSelected;
+        public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
+
+        StorageDevice device;
+        StorageContainer container;
+
+        PlayerIndex playerIndex;
+
+        int frame = 0;
+
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -79,24 +97,80 @@ namespace GravityShift
             mLevelInfo = XElement.Load(LEVEL_LIST);
 
             TrialMode = Guide.IsTrialMode;
+
+            mDeviceSelected = false;
         }
 
-        public void Reload()
+        public void Reload(PlayerIndex player)
         {
+#if XBOX360
+            IAsyncResult result;
+            if (!mDeviceSelected)
+            {
+                result = StorageDevice.BeginShowSelector(player, null, null);
+                result.AsyncWaitHandle.WaitOne();
+                device = StorageDevice.EndShowSelector(result);
+                result.AsyncWaitHandle.Close();
+                mDeviceSelected = true;
+            }
+
+            result = device.BeginOpenContainer("GravityShift", null, null);
+            result.AsyncWaitHandle.WaitOne();
+            container = device.EndOpenContainer(result);
+            result.AsyncWaitHandle.Close();
+
+            if (TrialMode)
+            {
+                if (container.FileExists("TrialLevelList.xml"))
+                {
+                    Stream stream = container.OpenFile("TrialLevelList.xml", FileMode.Open);
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                    SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
+                    stream.Close();
+                    mLevelInfo = data.savedata;
+                }
+                else
+                {
+
+                    mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+                }
+            }
+            else
+            {
+                if (container.FileExists("LevelList.xml"))
+                {
+                    Stream stream = container.OpenFile("LevelList.xml", FileMode.Open);
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                    SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
+                    stream.Close();
+                    mLevelInfo = data.savedata;
+                }
+                else
+                {
+                    mLevelInfo = XElement.Load(LEVEL_LIST);
+                }
+            }
+            container.Dispose();
+
+
+#else
             if (TrialMode)
             {
                 mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
             }
             else
                 mLevelInfo = XElement.Load(LEVEL_LIST);
+
+#endif
         }
 
         /// <summary>
         /// Saves level unlock and scoring information
         /// </summary>
         /// 
-        public void Save() 
+        public void Save(PlayerIndex player) 
         {
+            playerIndex = player;
             XElement xLevels = new XElement(XmlKeys.LEVELS);
             foreach (LevelChoice l in mLevels) 
             {
@@ -104,14 +178,58 @@ namespace GravityShift
             }
             XDocument xDoc = new XDocument();
             xDoc.Add(xLevels);
+            //Debug.WriteLine(xDoc.ToString());
+            
 
 #if XBOX360
-            FileStream stream;
+            IAsyncResult result;
+            if (!mDeviceSelected)
+            {
+                result = StorageDevice.BeginShowSelector(player, null, null);
+                result.AsyncWaitHandle.WaitOne();
+                device = StorageDevice.EndShowSelector(result);
+                result.AsyncWaitHandle.Close();
+                mDeviceSelected = true;
+            }
+
+            result = device.BeginOpenContainer("GravityShift", null, null);
+            result.AsyncWaitHandle.WaitOne();
+            container = device.EndOpenContainer(result);
+            result.AsyncWaitHandle.Close();
+            //container.DeleteFile("TrialLevelList.xml");
+            //container.DeleteFile("LevelList.xml");
+
+            Stream stream;
             if (TrialMode)
-                stream = new FileStream(TRIAL_LEVEL_LIST, FileMode.Create);
+            {
+                if (container.FileExists("TrialLevelList.xml"))
+                {
+                    container.DeleteFile("TrialLevelList.xml");
+                }
+                stream = container.CreateFile("TrialLevelList.xml");
+                XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                SaveGameData data = new SaveGameData();
+                data.savedata = xLevels;
+                serializer.Serialize(stream, data);
+                stream.Close();
+            }
+
             else
-                stream = new FileStream(LEVEL_LIST, FileMode.Create);
-            xDoc.Save(stream);
+            {
+                {
+                    if (container.FileExists("LevelList.xml"))
+                    {
+                        container.DeleteFile("LevelList.xml");
+                    }
+                    stream = container.CreateFile("LevelList.xml");
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                    SaveGameData data = new SaveGameData();
+                    data.savedata = xLevels;
+                    serializer.Serialize(stream, data);
+                    stream.Close();
+                }
+            }
+            container.Dispose();
                
 #else
                 xDoc.Save(LEVEL_LIST);
@@ -181,7 +299,12 @@ namespace GravityShift
         /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
-            this.Save();
+            frame++;
+            if (frame >= 60)
+            {
+                this.Save(playerIndex);
+                frame = 0;
+            }
             HandleDirectionKeys();          
 
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))

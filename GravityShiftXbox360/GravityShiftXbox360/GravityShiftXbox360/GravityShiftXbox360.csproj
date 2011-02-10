@@ -90,11 +90,13 @@
     <Reference Include="System.Net">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimatedSprite.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="ControlScheme.cs" />
+    <Compile Include="Credits.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
     <Compile Include="Game Objects\Physics Objects\MovingTile.cs" />
     <Compile Include="Game Objects\Physics Objects\PhysicsObject.cs" />
@@ -112,9 +114,9 @@
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="GravityShiftMain.cs" />
-    <Compile Include="Import Code\EntityInfo.cs" />
-    <Compile Include="Import Code\Importer.cs" />
-    <Compile Include="Import Code\XmlKeys.cs" />
+    <Compile Include="Game Objects\Import Code\EntityInfo.cs" />
+    <Compile Include="Game Objects\Import Code\Importer.cs" />
+    <Compile Include="Game Objects\Import Code\XmlKeys.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelSelect.cs" />
     <Compile Include="MainMenu.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="MISC Code\GravityDirections.cs" />
     <Compile Include="MISC Code\GridSpace.cs" />
     <Compile Include="MISC Code\PlayerFaces.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="ParticleEngine\Particle.cs" />
     <Compile Include="ParticleEngine\ParticleEngine.cs" />
     <Compile Include="Pause.cs" />

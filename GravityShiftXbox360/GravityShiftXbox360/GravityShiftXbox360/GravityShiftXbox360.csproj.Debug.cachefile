@@ -156,6 +156,8 @@ Content\SoundEffects\playerSound_death.xnb
 Content\SoundEffects\playerSound_respawn.xnb
 Content\fonts\Kootenay.xnb
 Content\fonts\QuartzLarge.xnb
+Content\fonts\QuartzSmall.xnb
+Content\Images\AnimatedSprites\NoAnimation.xnb
 Content\Levels\BlackHoleMagic.xml
 Content\Levels\Chambers.xml
 Content\Levels\CloseCall.xml

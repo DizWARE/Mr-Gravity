@@ -48,6 +48,7 @@ namespace GravityShift
         Credits mCredits;
 		
         private GameStates mCurrentState = GameStates.Title;
+        private GameStates mReloadState = GameStates.Title;
 
         //Max duration of a sequence
         private static int VICTORY_DURATION = 120;
@@ -99,7 +100,7 @@ namespace GravityShift
         protected override void Initialize()
         {
             //COMMENT OUT AFTER TESTING TRIAL MODE
-            //Guide.SimulateTrialMode = false;
+            //Guide.SimulateTrialMode = true;
 
             mGraphics.PreferredBackBufferWidth = 1280;
             mGraphics.PreferredBackBufferHeight = 720;
@@ -120,6 +121,10 @@ namespace GravityShift
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
+
+            Components.Add(new GamerServicesComponent(this));
+
+
 		}
 
         /// <summary>
@@ -174,13 +179,20 @@ namespace GravityShift
         /// <param name="args">Typical event stuff</param>
         protected override void OnExiting(object sender, EventArgs args)
         {
-            mLevelSelect.Save();
-            if (mControls.controlScheme() == ControlSchemes.Gamepad)
-                if (Guide.IsTrialMode && !Guide.IsVisible)
-                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] != null)
-                        if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
-                            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
-                                Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+#if XBOX360
+
+            mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+
+#else
+            mLevelSelect.Save(PlayerIndex.One);
+#endif
+            //if (mControls.controlScheme() == ControlSchemes.Gamepad)
+            //    if (Guide.IsTrialMode && !Guide.IsVisible)
+            //        if (Gamer.SignedInGamers[(int)((ControllerControl)mControls).ControllerIndex] != null)
+            //            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+            //                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+            //                    Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+
         }
 
         /// <summary>
@@ -190,11 +202,44 @@ namespace GravityShift
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            base.Update(gameTime);
             if (mLevelSelect.TrialMode != Guide.IsTrialMode)
             {
-                mLevelSelect.Save();
-                mLevelSelect.TrialMode = Guide.IsTrialMode;
-                mLevelSelect.Reload();
+#if XBOX360
+                if (!Guide.IsVisible)
+                {
+                    mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+                    mLevelSelect.TrialMode = Guide.IsTrialMode;
+                    mLevelSelect.Reload(((ControllerControl)mControls).ControllerIndex);
+                }
+                else
+                {
+                    mReloadState = GameStates.WaitOnReload;
+                }
+#else
+                if (!Guide.IsVisible)
+                {
+                    mLevelSelect.Save(PlayerIndex.One);
+                    mLevelSelect.TrialMode = Guide.IsTrialMode;
+                    mLevelSelect.Reload(PlayerIndex.One);
+                }
+                else
+                {
+                    mReloadState = GameStates.WaitOnReload;
+                }
+#endif
+
+            }
+
+            if (mReloadState == GameStates.WaitOnReload)
+            {
+                if (!Guide.IsVisible)
+                {
+                    mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+                    mLevelSelect.TrialMode = Guide.IsTrialMode;
+                    mLevelSelect.Reload(((ControllerControl)mControls).ControllerIndex);
+                    mReloadState = GameStates.Title;
+                }
             }
 
             if (mCurrentState == GameStates.Credits)
@@ -222,6 +267,7 @@ namespace GravityShift
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Main_Menu)
             {
+                //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
 
@@ -319,6 +365,64 @@ namespace GravityShift
                     mToggledSequence = false;
                 }
             }
+            else if (mCurrentState == GameStates.Exit)
+            {
+                if (Guide.IsTrialMode)
+                {
+                    mCurrentState = GameStates.TrialExit;
+                }
+                else
+                    mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.TrialExit)
+            {
+                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
+                {
+                    Guide.ShowSignIn(1, true);
+                    mCurrentState = GameStates.WaitingForSignIn;
+                }
+                else
+                    mCurrentState = GameStates.ShowMarketplace;
+            }
+            else if (mCurrentState == GameStates.WaitingForSignIn)
+            {
+                if (!Guide.IsVisible)
+                {
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
+                    {
+                        mCurrentState = GameStates.WaitingToExit;
+                    }
+                    else
+                        mCurrentState = GameStates.ShowMarketplace;
+                }
+            }
+            else if (mCurrentState == GameStates.ShowMarketplace)
+            {
+                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+                {
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+                    {
+                        Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+                        mCurrentState = GameStates.WaitForMarketplace;
+                    }
+                    else
+                        mCurrentState = GameStates.WaitingToExit;
+                }
+                else
+                    mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.WaitForMarketplace)
+            {
+                if (!Guide.IsVisible)
+                    mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.WaitingToExit)
+            {
+                if (!Guide.IsVisible)
+                    this.Exit();
+            }
+
+
         }
 
         /// <summary>
@@ -353,8 +457,6 @@ namespace GravityShift
                 mOptions.Draw(gameTime, mSpriteBatch, scale);
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
-            else if (mCurrentState == GameStates.Exit)
-                this.Exit();
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Level_Selection)
