@@ -493,7 +493,6 @@ C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityS
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Rails.xnb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Retro.xnb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Sky is Falling.xnb
-C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\SpaceInvaders.xnb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Test.xnb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\TriggerHappy.xnb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\music\menuMusic_title.xnb
@@ -521,13 +520,11 @@ C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityS
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\DK.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Face.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Info\LevelList.xml
-C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Info\TrialLevelList.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\MainMenu.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Maze.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Rails.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Retro.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Sky is Falling.xml
-C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\SpaceInvaders.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\TriggerHappy.xml
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\GravityShiftXbox360.exe
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\GravityShiftXbox360.pdb
@@ -537,3 +534,28 @@ C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityS
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\obj\Xbox 360\Debug\GravityShiftXbox360.pdb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\fonts\QuartzSmall.xnb
 C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\NoAnimation.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Close Call.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Compartments.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Corners.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Hazards.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Moving Hazard.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Space Invaders.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\X Trio.xnb
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Avoidance.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Choosing Sides.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Close Call.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Compartments.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Copycat.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Corners.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\CurtisLevel1.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\CurtisLevel2.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\CurtisLevel3.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\CurtisLevel4.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Hazards.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Intertwined.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Moving Hazard.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\mytestlevel.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Space Invaders.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Trap Em.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Uniform.xml
+C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\X Trio.xml

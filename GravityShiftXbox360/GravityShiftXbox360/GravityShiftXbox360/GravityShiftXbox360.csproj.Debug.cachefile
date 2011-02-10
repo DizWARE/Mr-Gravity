@@ -135,7 +135,6 @@ Content\Levels\Thumbnail\New Level.xnb
 Content\Levels\Thumbnail\Rails.xnb
 Content\Levels\Thumbnail\Retro.xnb
 Content\Levels\Thumbnail\Sky is Falling.xnb
-Content\Levels\Thumbnail\SpaceInvaders.xnb
 Content\Levels\Thumbnail\Test.xnb
 Content\Levels\Thumbnail\TriggerHappy.xnb
 Content\music\menuMusic_title.xnb
@@ -158,6 +157,13 @@ Content\fonts\Kootenay.xnb
 Content\fonts\QuartzLarge.xnb
 Content\fonts\QuartzSmall.xnb
 Content\Images\AnimatedSprites\NoAnimation.xnb
+Content\Levels\Thumbnail\Close Call.xnb
+Content\Levels\Thumbnail\Compartments.xnb
+Content\Levels\Thumbnail\Corners.xnb
+Content\Levels\Thumbnail\Hazards.xnb
+Content\Levels\Thumbnail\Moving Hazard.xnb
+Content\Levels\Thumbnail\Space Invaders.xnb
+Content\Levels\Thumbnail\X Trio.xnb
 Content\Levels\BlackHoleMagic.xml
 Content\Levels\Chambers.xml
 Content\Levels\CloseCall.xml
@@ -165,11 +171,27 @@ Content\Levels\DefaultLevel.xml
 Content\Levels\DK.xml
 Content\Levels\Face.xml
 Content\Levels\Info\LevelList.xml
-Content\Levels\Info\TrialLevelList.xml
 Content\Levels\MainMenu.xml
 Content\Levels\Maze.xml
 Content\Levels\Rails.xml
 Content\Levels\Retro.xml
 Content\Levels\Sky is Falling.xml
-Content\Levels\SpaceInvaders.xml
 Content\Levels\TriggerHappy.xml
+Content\Levels\Avoidance.xml
+Content\Levels\Choosing Sides.xml
+Content\Levels\Close Call.xml
+Content\Levels\Compartments.xml
+Content\Levels\Copycat.xml
+Content\Levels\Corners.xml
+Content\Levels\CurtisLevel1.xml
+Content\Levels\CurtisLevel2.xml
+Content\Levels\CurtisLevel3.xml
+Content\Levels\CurtisLevel4.xml
+Content\Levels\Hazards.xml
+Content\Levels\Intertwined.xml
+Content\Levels\Moving Hazard.xml
+Content\Levels\mytestlevel.xml
+Content\Levels\Space Invaders.xml
+Content\Levels\Trap Em.xml
+Content\Levels\Uniform.xml
+Content\Levels\X Trio.xml

@@ -8,6 +8,48 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+    <Name>Compartments</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Maze</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Hazards</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Corners</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Moving Hazard</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>X Trio</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
     <Name>DK</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
@@ -16,42 +58,35 @@
   </LevelData>
   <LevelData>
     <Name>Retro</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Rails</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>CloseCall</Name>
-    <Unlocked>False</Unlocked>
+    <Name>Close Call</Name>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Chambers</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>Maze</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
-  </LevelData>
-  <LevelData>
-    <Name>SpaceInvaders</Name>
-    <Unlocked>False</Unlocked>
+    <Name>Space Invaders</Name>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>

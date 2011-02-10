@@ -48,7 +48,6 @@ namespace GravityShift
         Credits mCredits;
 		
         private GameStates mCurrentState = GameStates.Title;
-        private GameStates mReloadState = GameStates.Title;
 
         //Max duration of a sequence
         private static int VICTORY_DURATION = 120;
@@ -71,6 +70,8 @@ namespace GravityShift
         //TO BE CHANGED- Actually, this may be ok since we use this to play test.
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
         private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
+
+        private bool mCheckedForSave = false;
 
         public GravityShiftMain()
         {
@@ -179,11 +180,13 @@ namespace GravityShift
         /// <param name="args">Typical event stuff</param>
         protected override void OnExiting(object sender, EventArgs args)
         {
-            //if (Gamer.SignedInGamers.Count == 0 && !Guide.IsVisible)
-            //{
-            //    Guide.ShowSignIn(1, true);
-            //}
+#if XBOX360
+
             mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+
+#else
+            mLevelSelect.Save(PlayerIndex.One);
+#endif
             //if (mControls.controlScheme() == ControlSchemes.Gamepad)
             //    if (Guide.IsTrialMode && !Guide.IsVisible)
             //        if (Gamer.SignedInGamers[(int)((ControllerControl)mControls).ControllerIndex] != null)
@@ -201,31 +204,8 @@ namespace GravityShift
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (mLevelSelect.TrialMode != Guide.IsTrialMode)
-            {
-                if (!Guide.IsVisible)
-                {
-                    //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
-                    mLevelSelect.TrialMode = Guide.IsTrialMode;
-                    mLevelSelect.Reload(((ControllerControl)mControls).ControllerIndex);
-                }
-                else
-                {
-                    mReloadState = GameStates.WaitOnReload;
-                }
 
-            }
-
-            if (mReloadState == GameStates.WaitOnReload)
-            {
-                if (!Guide.IsVisible)
-                {
-                    mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
-                    mLevelSelect.TrialMode = Guide.IsTrialMode;
-                    mLevelSelect.Reload(((ControllerControl)mControls).ControllerIndex);
-                    mReloadState = GameStates.Title;
-                }
-            }
+            //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
 
             if (mCurrentState == GameStates.Credits)
                 mCredits.Update(gameTime, ref mCurrentState);
@@ -252,6 +232,11 @@ namespace GravityShift
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Main_Menu)
             {
+                if (!mCheckedForSave)
+                {
+                    mLevelSelect.CheckForSave(((ControllerControl)mControls).ControllerIndex);
+                    mCheckedForSave = true;
+                }
                 //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;

@@ -467,7 +467,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\BackSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.636-07:00</Time>
+      <Time>2011-02-10T03:05:25.164-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\BackUnselected.png</Source>
@@ -476,7 +476,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\BackUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.637-07:00</Time>
+      <Time>2011-02-10T03:05:25.173-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\ControllerSelected.png</Source>
@@ -485,7 +485,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ControllerSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.68-07:00</Time>
+      <Time>2011-02-10T03:05:33.176-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\ControllerUnselected.png</Source>
@@ -494,7 +494,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ControllerUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.682-07:00</Time>
+      <Time>2011-02-10T03:05:34.696-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\CreditsSelected.png</Source>
@@ -503,7 +503,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\CreditsSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.683-07:00</Time>
+      <Time>2011-02-10T03:05:34.7-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\CreditsUnselected.png</Source>
@@ -512,7 +512,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\CreditsUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.684-07:00</Time>
+      <Time>2011-02-10T03:05:35.634-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\LoadGameSelected.png</Source>
@@ -521,7 +521,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\LoadGameSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.686-07:00</Time>
+      <Time>2011-02-10T03:05:36.544-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\LoadGameUnselected.png</Source>
@@ -530,7 +530,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\LoadGameUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.687-07:00</Time>
+      <Time>2011-02-10T03:05:36.551-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\Mute.png</Source>
@@ -539,7 +539,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\Mute.xnb</Output>
-      <Time>2011-02-08T12:38:22.688-07:00</Time>
+      <Time>2011-02-10T03:05:36.557-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\MuteSelected.png</Source>
@@ -548,7 +548,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\MuteSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.69-07:00</Time>
+      <Time>2011-02-10T03:05:36.563-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\MuteUnselected.png</Source>
@@ -557,7 +557,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\MuteUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.691-07:00</Time>
+      <Time>2011-02-10T03:05:36.569-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\NewGameSelected.png</Source>
@@ -566,7 +566,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\NewGameSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.692-07:00</Time>
+      <Time>2011-02-10T03:05:36.575-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\NewGameUnselected.png</Source>
@@ -575,7 +575,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\NewGameUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.693-07:00</Time>
+      <Time>2011-02-10T03:05:36.626-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\OptionsSelected.png</Source>
@@ -584,7 +584,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\OptionsSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.695-07:00</Time>
+      <Time>2011-02-10T03:05:36.647-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\OptionsUnselected.png</Source>
@@ -593,7 +593,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\OptionsUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.696-07:00</Time>
+      <Time>2011-02-10T03:05:36.664-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\ResetSelected.png</Source>
@@ -602,7 +602,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ResetSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.697-07:00</Time>
+      <Time>2011-02-10T03:05:36.693-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\ResetUnselected.png</Source>
@@ -611,7 +611,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\ResetUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.698-07:00</Time>
+      <Time>2011-02-10T03:05:36.764-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\SoundSelected.png</Source>
@@ -620,7 +620,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\SoundSelected.xnb</Output>
-      <Time>2011-02-08T12:38:22.716-07:00</Time>
+      <Time>2011-02-10T03:05:36.797-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\SoundUnselected.png</Source>
@@ -629,7 +629,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\SoundUnselected.xnb</Output>
-      <Time>2011-02-08T12:38:22.718-07:00</Time>
+      <Time>2011-02-10T03:05:36.807-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\UnMute.png</Source>
@@ -638,7 +638,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\UnMute.xnb</Output>
-      <Time>2011-02-08T12:38:22.719-07:00</Time>
+      <Time>2011-02-10T03:05:36.846-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Main\XboxController.png</Source>
@@ -647,7 +647,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\Menu\Main\XboxController.xnb</Output>
-      <Time>2011-02-08T12:38:22.721-07:00</Time>
+      <Time>2011-02-10T03:05:41.143-07:00</Time>
     </Item>
     <Item>
       <Source>Images\Menu\Pause\Paused.png</Source>
@@ -1160,7 +1160,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Chambers.xnb</Output>
-      <Time>2011-02-08T12:38:23.379-07:00</Time>
+      <Time>2011-02-10T01:33:24.094-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\DK.png</Source>
@@ -1169,7 +1169,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\DK.xnb</Output>
-      <Time>2011-02-08T12:38:23.381-07:00</Time>
+      <Time>2011-02-10T01:33:24.251-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\Face.png</Source>
@@ -1178,7 +1178,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Face.xnb</Output>
-      <Time>2011-02-08T12:38:23.382-07:00</Time>
+      <Time>2011-02-10T01:33:24.275-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\MainMenu.png</Source>
@@ -1196,7 +1196,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Maze.xnb</Output>
-      <Time>2011-02-08T12:38:23.459-07:00</Time>
+      <Time>2011-02-10T01:33:24.367-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\New Level.png</Source>
@@ -1214,7 +1214,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Rails.xnb</Output>
-      <Time>2011-02-08T12:38:23.461-07:00</Time>
+      <Time>2011-02-10T01:33:24.42-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\Retro.png</Source>
@@ -1223,7 +1223,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Retro.xnb</Output>
-      <Time>2011-02-08T12:38:23.463-07:00</Time>
+      <Time>2011-02-10T01:33:24.441-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\Sky is Falling.png</Source>
@@ -1233,15 +1233,6 @@
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Sky is Falling.xnb</Output>
       <Time>2011-02-08T12:38:23.464-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Levels\Thumbnail\SpaceInvaders.png</Source>
-      <Name>Levels\Thumbnail\SpaceInvaders</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\SpaceInvaders.xnb</Output>
-      <Time>2011-02-08T12:38:23.465-07:00</Time>
     </Item>
     <Item>
       <Source>Levels\Thumbnail\Test.png</Source>
@@ -1440,6 +1431,69 @@
       <Options>None</Options>
       <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Images\AnimatedSprites\NoAnimation.xnb</Output>
       <Time>2011-02-09T17:50:53.103-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Close Call.png</Source>
+      <Name>Levels\Thumbnail\Close Call</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Close Call.xnb</Output>
+      <Time>2011-02-10T01:33:24.106-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Compartments.png</Source>
+      <Name>Levels\Thumbnail\Compartments</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Compartments.xnb</Output>
+      <Time>2011-02-10T01:33:24.2-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Corners.png</Source>
+      <Name>Levels\Thumbnail\Corners</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Corners.xnb</Output>
+      <Time>2011-02-10T01:33:24.228-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Hazards.png</Source>
+      <Name>Levels\Thumbnail\Hazards</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Hazards.xnb</Output>
+      <Time>2011-02-10T01:33:24.296-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Moving Hazard.png</Source>
+      <Name>Levels\Thumbnail\Moving Hazard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Moving Hazard.xnb</Output>
+      <Time>2011-02-10T01:33:24.395-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\Space Invaders.png</Source>
+      <Name>Levels\Thumbnail\Space Invaders</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\Space Invaders.xnb</Output>
+      <Time>2011-02-10T01:33:24.463-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels\Thumbnail\X Trio.png</Source>
+      <Name>Levels\Thumbnail\X Trio</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Raynorel\Gravity-Shift\GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360\bin\Xbox 360\Debug\Content\Levels\Thumbnail\X Trio.xnb</Output>
+      <Time>2011-02-10T01:33:24.498-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

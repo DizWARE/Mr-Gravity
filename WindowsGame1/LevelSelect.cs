@@ -61,6 +61,8 @@ namespace GravityShift
 
         ContentManager mContent;
 
+        GraphicsDevice mGraphics;
+
         /* SpriteFont */
         SpriteFont mKootenay;
 
@@ -89,9 +91,6 @@ namespace GravityShift
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
             TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
-            if (Guide.IsTrialMode)
-                mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
-            else
 #endif
 
             mLevelInfo = XElement.Load(LEVEL_LIST);
@@ -101,9 +100,13 @@ namespace GravityShift
             mDeviceSelected = false;
         }
 
-        public void Reload(PlayerIndex player)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void CheckForSave(PlayerIndex player)
         {
-#if XBOX360
+
             IAsyncResult result;
             if (!mDeviceSelected)
             {
@@ -119,50 +122,44 @@ namespace GravityShift
             container = device.EndOpenContainer(result);
             result.AsyncWaitHandle.Close();
 
-            if (TrialMode)
+            if (container.FileExists("LevelList.xml"))
             {
-                if (container.FileExists("TrialLevelList.xml"))
-                {
-                    Stream stream = container.OpenFile("TrialLevelList.xml", FileMode.Open);
-                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
-                    SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
-                    stream.Close();
-                    mLevelInfo = data.savedata;
-                }
-                else
+                Stream stream = container.OpenFile("LevelList.xml", FileMode.Open);
+                XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
+                stream.Close();
+                int i = 0;
+                foreach (XElement xLevels in data.savedata.Elements())
                 {
 
-                    mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
+                    foreach (XElement xLevelData in xLevels.Elements())
+                    {
+                        foreach (XElement xLevel in xLevelData.Elements())
+                        {
+                            if (xLevel.Name == XmlKeys.UNLOCKED)
+                                mLevels[i].Unlocked = xLevel.Value == XmlKeys.TRUE;
+
+                            if (xLevel.Name == XmlKeys.TIMERSTAR)
+                                mLevels[i].TimerStar = Convert.ToInt32(xLevel.Value);
+
+                            if (xLevel.Name == XmlKeys.COLLECTIONSTAR)
+                                mLevels[i].CollectionStar = Convert.ToInt32(xLevel.Value);
+
+                            if (xLevel.Name == XmlKeys.DEATHSTAR)
+                                mLevels[i].DeathStar = Convert.ToInt32(xLevel.Value);
+
+                        }
+                        i++;
+                    }
                 }
-            }
-            else
-            {
-                if (container.FileExists("LevelList.xml"))
-                {
-                    Stream stream = container.OpenFile("LevelList.xml", FileMode.Open);
-                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
-                    SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
-                    stream.Close();
-                    mLevelInfo = data.savedata;
-                }
-                else
-                {
-                    mLevelInfo = XElement.Load(LEVEL_LIST);
-                }
+
             }
             container.Dispose();
 
 
-#else
-            if (TrialMode)
-            {
-                mLevelInfo = XElement.Load(TRIAL_LEVEL_LIST);
-            }
-            else
-                mLevelInfo = XElement.Load(LEVEL_LIST);
-
-#endif
         }
+
+
 
         /// <summary>
         /// Saves level unlock and scoring information
@@ -200,35 +197,16 @@ namespace GravityShift
             //container.DeleteFile("LevelList.xml");
 
             Stream stream;
-            if (TrialMode)
+            if (container.FileExists("LevelList.xml"))
             {
-                if (container.FileExists("TrialLevelList.xml"))
-                {
-                    container.DeleteFile("TrialLevelList.xml");
-                }
-                stream = container.CreateFile("TrialLevelList.xml");
-                XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
-                SaveGameData data = new SaveGameData();
-                data.savedata = xLevels;
-                serializer.Serialize(stream, data);
-                stream.Close();
+                container.DeleteFile("LevelList.xml");
             }
-
-            else
-            {
-                {
-                    if (container.FileExists("LevelList.xml"))
-                    {
-                        container.DeleteFile("LevelList.xml");
-                    }
-                    stream = container.CreateFile("LevelList.xml");
-                    XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
-                    SaveGameData data = new SaveGameData();
-                    data.savedata = xLevels;
-                    serializer.Serialize(stream, data);
-                    stream.Close();
-                }
-            }
+            stream = container.CreateFile("LevelList.xml");
+            XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+            SaveGameData data = new SaveGameData();
+            data.savedata = xLevels;
+            serializer.Serialize(stream, data);
+            stream.Close();
             container.Dispose();
                
 #else
@@ -248,6 +226,8 @@ namespace GravityShift
                 mLevels.Add(new LevelChoice(level,mControls, content, graphics));
 
             mContent = content;
+            mGraphics = graphics;
+
             mSelectBox = content.Load<Texture2D>("Images/Menu/LevelSelect/SelectBox");
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
 
@@ -548,13 +528,13 @@ namespace GravityShift
         public Texture2D Thumbnail
         { get { return mThumbnail; } }
         public bool Unlocked
-        { get { return mUnlocked; } }
+        { get { return mUnlocked; } set { mUnlocked = value; } }
         public int TimerStar
-        { get { return mTimerStar; } }
+        { get { return mTimerStar; } set { mTimerStar = value; } }
         public int CollectionStar
-        { get { return mCollectionStar; } }
+        { get { return mCollectionStar; } set { mCollectionStar = value; } }
         public int DeathStar
-        { get { return mDeathStar; } }
+        { get { return mDeathStar; } set { mDeathStar = value; } }
 
         /// <summary>
         /// 
