@@ -38,7 +38,7 @@ namespace GravityShift
 
         public void Load(ContentManager content, GraphicsDevice graphics)
         {
-            mTitle = content.Load<Texture2D>("Images/Menu/Title");
+            mTitle = content.Load<Texture2D>("Images/Menu/Mr_Gravity");
 
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 

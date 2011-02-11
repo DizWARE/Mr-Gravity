@@ -50,7 +50,7 @@ namespace GravityShift
         /// <param name="content">Content manager this game is using</param>
         public void Load(ContentManager content)
         {
-            mTitle = content.Load<Texture2D>("Images\\Menu\\Title");
+            mTitle = content.Load<Texture2D>("Images\\Menu\\Mr_Gravity");
             mBack = content.Load<Texture2D>("Images\\Menu\\Main\\BackSelected");
             mFontBig = content.Load<SpriteFont>("Fonts\\QuartzLarge");
             mFontSmall = content.Load<SpriteFont>("Fonts\\QuartzSmall");
