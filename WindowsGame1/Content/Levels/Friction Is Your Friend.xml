@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>CurtisLevel3</Name>
+  <Name>Friction Is Your Friend</Name>
   <Size X="15" Y="10" />
   <Background>Backgrounds\blank</Background>
   <Entities>
@@ -559,6 +559,22 @@
       <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>3459</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="4" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
       </Properties>
     </Entity>
   </Entities>
