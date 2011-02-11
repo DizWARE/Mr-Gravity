@@ -300,6 +300,13 @@ namespace GravityShift
 
             PrepareCollisionMatrix();
 
+            mNumCollected = 0;
+            mNumCollectable = 0;
+
+            //Clear the collection lists
+            mCollected.Clear();
+            mRemoveCollected.Clear();
+
             foreach (GameObject gObject in mObjects)
             {
                 if (gObject.CollisionType == XmlKeys.COLLECTABLE)
