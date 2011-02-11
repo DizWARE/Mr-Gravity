@@ -685,6 +685,9 @@ namespace GravityShift
                             collided = physObj.IsCollidingCircleandCircle(obj);
                         }
 
+                        if (!collided)
+                            physObj.collidedLastFrame = false;
+
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
 
@@ -770,6 +773,8 @@ namespace GravityShift
                                     Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
+                                    // play wall collision sound
+                                    GameSound.playerCol_wall.Play();
                                     lastCollided = cObject;
                                 }
                             }
@@ -791,6 +796,8 @@ namespace GravityShift
                                     Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
+                                    // play wall collision sound
+                                    GameSound.playerCol_wall.Play();
                                     lastCollided = cObject;
                                 }
                             }
