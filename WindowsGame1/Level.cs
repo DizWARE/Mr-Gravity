@@ -130,7 +130,7 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine collectibleEngine;
         ParticleEngine wallEngine;
-        GameObject lastCollided;
+        GameObject[] lastCollided;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -268,7 +268,8 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
-            lastCollided = null;
+            lastCollided = new GameObject[2];
+            lastCollided[0] = lastCollided[1] = null;
         }
 
         /// <summary>
@@ -760,14 +761,16 @@ namespace GravityShift
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided)
+                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
                                     Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
-                                    lastCollided = cObject;
+
+                                    lastCollided[1] = lastCollided[0];
+                                    lastCollided[0] = cObject;
                                 }
                             }
 
@@ -781,14 +784,16 @@ namespace GravityShift
                                     mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided)
+                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(cObject.mPosition.X + 32, cObject.mPosition.Y + 32);
                                     Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
-                                    lastCollided = cObject;
+
+                                    lastCollided[1] = lastCollided[0];
+                                    lastCollided[0] = cObject;
                                 }
                             }
                         }
