@@ -908,13 +908,27 @@
     <Folder Include="Levels\Thumbnail\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Menu\Main\LoadGameSelected.png">
-      <Name>LoadGameSelected</Name>
+    <Compile Include="Images\Menu\Pause\Paused.png">
+      <Name>Paused</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Menu\Main\LoadGameUnselected.png">
-      <Name>LoadGameUnselected</Name>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\Mr_Gravity.png">
+      <Name>Mr_Gravity</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\Main\ContinueSelected.png">
+      <Name>ContinueSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\Main\ContinueUnselected.png">
+      <Name>ContinueUnselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -945,20 +959,6 @@
     </Compile>
     <Compile Include="Images\Menu\Main\OptionsUnselected.png">
       <Name>OptionsUnselected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Mr_Gravity.png">
-      <Name>Mr_Gravity</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Pause\Paused.png">
-      <Name>Paused</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
