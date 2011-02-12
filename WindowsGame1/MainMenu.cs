@@ -18,7 +18,7 @@ namespace GravityShift
         Dictionary<MenuChoices, Texture2D> mUnselected;
         Dictionary<MenuChoices, Texture2D> mSelected;
 
-        Texture2D mTitle;
+        Texture2D mBackground;
 
         IControlScheme mControls;
         GraphicsDeviceManager mGraphics;
@@ -46,7 +46,7 @@ namespace GravityShift
             mSelected.Add(MenuChoices.Options, content.Load<Texture2D>("Images\\Menu\\Main\\OptionsSelected"));
             mSelected.Add(MenuChoices.Credits, content.Load<Texture2D>("Images\\Menu\\Main\\CreditsSelected"));
 
-            mTitle = content.Load<Texture2D>("Images\\Menu\\Mr_Gravity");
+            mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
         }
 
 
@@ -89,6 +89,9 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[choice], GetRegion(choice, mUnselected[choice]), Color.White);
             }
 #else
+
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
+
             foreach (MenuChoices choice in Enum.GetValues(typeof(MenuChoices)))
                 if (choice == mCurrentChoice)
                     spriteBatch.Draw(mSelected[choice], GetRegion(choice, mSelected[choice]), Color.White);
@@ -96,7 +99,6 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[choice], GetRegion(choice, mUnselected[choice]), Color.White);
 #endif
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
-            spriteBatch.Draw(mTitle, new Rectangle(center.X + 30 - mTitle.Width / 2, center.Y - mTitle.Height / 2, mTitle.Width, mTitle.Height), Color.White);
 
             spriteBatch.End();
         }
