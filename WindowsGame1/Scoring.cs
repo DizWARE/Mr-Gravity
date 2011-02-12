@@ -22,6 +22,8 @@ namespace GravityShift
         private SpriteFont mKootenay;
         private SpriteFont mQuartz;
 
+        private Rectangle mScreenRect;
+
         ContentManager mContent;
 
         IControlScheme mControls;
@@ -97,13 +99,15 @@ namespace GravityShift
          *
          * ContentManager content: the Content file used in the game.
          */
-        public void Load(ContentManager content)
+        public void Load(ContentManager content, GraphicsDevice graphics)
         {
             mContent = content;
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
             mCurrent = 0;
+
+            mScreenRect = graphics.Viewport.TitleSafeArea;
 
             mSelItems = new Texture2D[NUM_OPTIONS];
             mUnselItems = new Texture2D[NUM_OPTIONS];
@@ -121,7 +125,7 @@ namespace GravityShift
             mRestartUnsel = content.Load<Texture2D>("Images/Menu/Score/RestartUnselected");
             mRestartSel = content.Load<Texture2D>("Images/Menu/Score/RestartSelected");
 
-            mTitle = content.Load<Texture2D>("Images/Menu/Title");
+            mTitle = content.Load<Texture2D>("Images/Menu/Mr_Gravity");
 
             mSelItems[0] = mNextLevelSel;
             mSelItems[1] = mRestartSel;
@@ -308,25 +312,28 @@ namespace GravityShift
 
             //TODO: CHANGE TO DYNAMIC PLACING
 
-            spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
+            spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(250.0f, 300.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(500.0f, 300.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) , mScreenRect.Top + mScreenRect.Height / 3), Color.White);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 3 + 1), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 3), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(250.0f, 350.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(500.0f, 350.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 3 + 50), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 3 + 51), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 3 + 50), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(250.0f, 400.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(500.0f, 400.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 3 + 100), Color.White);
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 3 + 101), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 3 + 100), Color.White);
 
             //spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
             //spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
             //spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
 
-            spriteBatch.Draw(mItems[0], new Vector2(900.0f, 500.0f), Color.White);
-            spriteBatch.Draw(mItems[1], new Vector2(900.0f, 575.0f), Color.White);
-            spriteBatch.Draw(mItems[2], new Vector2(900.0f, 650.0f), Color.White);
-            spriteBatch.Draw(mItems[3], new Vector2(900.0f, 725.0f), Color.White);
+            spriteBatch.Draw(mItems[0], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2), Color.White);
+            spriteBatch.Draw(mItems[1], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2 + 75), Color.White);
+            spriteBatch.Draw(mItems[2], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2 + 150), Color.White);
+            spriteBatch.Draw(mItems[3], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2 + 225), Color.White);
 
             spriteBatch.End();
         }

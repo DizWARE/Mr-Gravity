@@ -38,7 +38,7 @@ namespace GravityShift
 
         public void Load(ContentManager content, GraphicsDevice graphics)
         {
-            mTitle = content.Load<Texture2D>("Images/Menu/Title");
+            mTitle = content.Load<Texture2D>("Images/Menu/Mr_Gravity");
 
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
@@ -71,7 +71,8 @@ namespace GravityShift
 
             Vector2 stringSize = mQuartz.MeasureString(request);
 
-            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Center.Y - (stringSize.Y / 2)), Color.White);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Center.Y - (stringSize.Y / 2)), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2) + 2, mScreenRect.Center.Y - (stringSize.Y / 2) + 2), Color.White);
 
             spriteBatch.End();
         }

@@ -154,7 +154,7 @@ namespace GravityShift
             mOptions.Load(Content);
 
             mMenu.Load(Content, mGraphics.GraphicsDevice);
-            mScoring.Load(Content);
+            mScoring.Load(Content, mGraphics.GraphicsDevice);
             mPause.Load(Content);
             GameSound.Load(Content);
             mLevelSelect.Load(Content, mGraphics.GraphicsDevice);

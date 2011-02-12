@@ -89,7 +89,7 @@ namespace GravityShift
         public static Camera mCam1;
 
         /* Tracks the previous zoom of the camera */
-        private float mPrevZoom = 1.0f;
+        private float mPrevZoom = 0.75f;
 
         /* Timer variable */
         public static double TIMER;
@@ -756,9 +756,6 @@ namespace GravityShift
                         {
                             if (cObject is Wall)
                             {
-                                if (!mPlayer.isFaceStraight())
-                                    mPlayer.setFaceStraight();
-
                                 KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
