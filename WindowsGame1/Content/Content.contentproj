@@ -699,6 +699,11 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <Compile Include="Fonts\QuartzSmaller.spritefont">
+      <Name>QuartzSmaller</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Levels\Chambers.xml">
       <Name>Chambers</Name>
       <Importer>XmlImporter</Importer>
@@ -901,41 +906,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Levels\Thumbnail\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Mr_Gravity_Green2.png">
-      <Name>Mr_Gravity_Green2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Mr_Gravity_Orange2.png">
-      <Name>Mr_Gravity_Orange2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Mr_Gravity_Blue.png">
-      <Name>Mr_Gravity_Blue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Mr_Gravity_Orange.png">
-      <Name>Mr_Gravity_Orange</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\Menu\Mr_Gravity_Green.png">
-      <Name>Mr_Gravity_Green</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\Menu\Main\LoadGameSelected.png">
