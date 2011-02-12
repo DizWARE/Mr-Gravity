@@ -370,6 +370,11 @@ namespace GravityShift
  
             }
 
+            if (mControls.isLeftShoulderPressed(false))
+                if (--mCurrentPage < 0) mCurrentPage = 0;
+            if (mControls.isRightShoulderPressed(false))
+                if (++mCurrentPage == mPageCount) mCurrentPage = mPageCount - 1;
+
             if (mCurrentIndex < 0) mCurrentIndex += 15;  
         }
 
