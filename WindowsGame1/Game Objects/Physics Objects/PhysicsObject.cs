@@ -54,6 +54,8 @@ namespace GravityShift
         /// </summary>
         private const float HAZARDFORGIVENESS = 12.0f;
 
+        public bool collidedLastFrame = false;
+
         /// <summary>
         /// Directional force on this object
         /// </summary>
@@ -490,9 +492,6 @@ namespace GravityShift
 
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
-            // play sound if player hit object at a high speed
-            PlaySoundAfterCollision(this, otherObject);
-
             // handle the shallowest collision
             if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))// colliding top or bottom
             {
@@ -553,9 +552,6 @@ namespace GravityShift
             float delta = (radiusA + radiusB) - centerDiff.Length();
             centerDiff.Normalize();
             Vector2 add = Vector2.Multiply(centerDiff, delta);
-
-            // play sound if player hit object at a high speed
-            PlaySoundAfterCollision(this, otherObject);
 
             HandleVelocitiesAfterCollision(otherObject, centerDiff);
 
@@ -636,18 +632,26 @@ namespace GravityShift
                 Point centerB = new Point();
                 if ((center.X < p[0].X) && (center.Y < p[0].Y))// top left corner
                 {
+                    // and no tile is above me or to the left!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[0];
                 }
                 else if ((center.X > p[1].X) && (center.Y < p[1].Y))// top right corner
                 {
+                    // and no tile is above me or to the right!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[1];
                 }
                 else if ((center.X > p[2].X) && (center.Y > p[2].Y))// bottom right corner
                 {
+                    // and no tile is below me or to the right!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[2];
                 }
                 else if ((center.X < p[3].X) && (center.Y > p[3].Y))// bottom left corner
                 {
+                    // and no tile is below me or to the left!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[3];
                 }
 
@@ -677,9 +681,6 @@ namespace GravityShift
                 float vbfn = ((e + 1.0f) * vain - vbin * (1 - e)) / 2;
                 float vaft = vait;
                 float vbft = vbit;
-
-                // play sound if player hit object at a high speed
-                PlaySoundAfterCollision(this, otherObject);
 
                 if (!mIsRail)
                 {
@@ -817,35 +818,6 @@ namespace GravityShift
                     ((PhysicsObject)otherObject).mVelocity.X = vbfn * N.X + vbft * T.X;
                 else
                     ((PhysicsObject)otherObject).mVelocity.Y = vbfn * N.Y + vbft * T.Y;
-            }
-        }
-        /// <summary>
-        /// Plays sound after a collision
-        /// </summary>
-        /// <param name="phys">physics object </param>
-        /// <param name="game">game object</param>
-        public void PlaySoundAfterCollision(PhysicsObject phys, GameObject game)
-        {
-            float speed = 5.0f;
-            float volume = 0.0f;
-            // play sound if player hit object at a high speed
-            if (phys is Player)
-            {
-                volume = phys.mVelocity.Length() / mEnvironment.TerminalSpeed;
-                if (phys.mVelocity.Length() > speed)
-                {
-                    GameSound.playerCol_wall.Play(Math.Min(volume, 1.0f), 0.0f, 0.0f);
-                    ((Player)phys).StartRumble();
-                }
-            }
-            else if (game is Player)
-            {
-                volume = ((PhysicsObject)game).mVelocity.Length() / mEnvironment.TerminalSpeed;
-                if (((PhysicsObject)game).mVelocity.Length() > speed)
-                {
-                    GameSound.playerCol_wall.Play(Math.Min(volume, 1.0f), 0.0f, 0.0f);
-                    ((Player)game).StartRumble();
-                }
             }
         }
 
