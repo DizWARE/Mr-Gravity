@@ -778,11 +778,13 @@ namespace GravityShift
                                     Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
-                                    lastCollided[1] = lastCollided[0];
-                                    lastCollided[0] = cObject;
+
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play();
-                                    
+
+                                    lastCollided[1] = lastCollided[0];
+                                    lastCollided[0] = cObject;
+
                                 }
                             }
 
@@ -804,10 +806,12 @@ namespace GravityShift
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
 
-                                    lastCollided[1] = lastCollided[0];
-                                    lastCollided[0] = cObject;
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play();
+
+                                    lastCollided[1] = lastCollided[0];
+                                    lastCollided[0] = cObject;
+
                                 }
                             }
                         }
