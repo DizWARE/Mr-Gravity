@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>CurtisLevel1</Name>
+  <Name>You Shall Not Pass</Name>
   <Size X="16" Y="10" />
   <Background>Backgrounds\blank</Background>
   <Entities>
@@ -715,6 +715,22 @@
         <Mass>1</Mass>
         <Rail>Y</Rail>
         <Length>3</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1529</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="5" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
       </Properties>
     </Entity>
   </Entities>

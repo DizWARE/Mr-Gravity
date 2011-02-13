@@ -94,7 +94,7 @@ namespace GravityShift
 #else
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
-            spriteBatch.Draw(mTitle, new Rectangle(center.X + 30 - mTitle.Width / 2, center.Y - mTitle.Height / 2, mTitle.Width, mTitle.Height), Color.White);
+            spriteBatch.Draw(mTitle, new Vector2(center.X + 30 - mTitle.Width / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White);
 
             foreach (MenuChoices choice in Enum.GetValues(typeof(MenuChoices)))
                 if (choice == mCurrentChoice)
@@ -102,6 +102,7 @@ namespace GravityShift
                 else
                     spriteBatch.Draw(mUnselected[choice], GetRegion(choice, mUnselected[choice]), Color.White);
 #endif
+
             spriteBatch.End();
         }
 
@@ -114,13 +115,13 @@ namespace GravityShift
                     viewport.TitleSafeArea.Bottom - texture.Height, texture.Width, texture.Height);
             if (choice == MenuChoices.Exit)
                 return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
-                    viewport.TitleSafeArea.Top, texture.Width, texture.Height);
+                    viewport.TitleSafeArea.Top + mTitle.Height, texture.Width, texture.Height);
             if (choice == MenuChoices.Options)
-                return new Rectangle(viewport.TitleSafeArea.Right - (texture.Width),
-                    viewport.TitleSafeArea.Center.Y - (texture.Height / 2), texture.Width, texture.Height);
+                return new Rectangle(viewport.TitleSafeArea.Right - (texture.Width) - mTitle.Height,
+                    viewport.TitleSafeArea.Center.Y + mTitle.Height/2 - (texture.Height / 2), texture.Width, texture.Height);
             if (choice == MenuChoices.Credits)
-                return new Rectangle(viewport.TitleSafeArea.Left,
-                    viewport.TitleSafeArea.Center.Y - (texture.Height / 2), texture.Width, texture.Height);
+                return new Rectangle(viewport.TitleSafeArea.Left+mTitle.Height,
+                    viewport.TitleSafeArea.Center.Y + mTitle.Height/2 - (texture.Height / 2), texture.Width, texture.Height);
             return new Rectangle();
         }
     }

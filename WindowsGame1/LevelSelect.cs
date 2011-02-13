@@ -231,7 +231,7 @@ namespace GravityShift
             mSelectBox = content.Load<Texture2D>("Images/Menu/LevelSelect/SelectBox");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzSmaller");
 
-            mBackground = content.Load<Texture2D>("Images/Backgrounds/Stars");
+            mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
 
             /*TODO - REMOVE THIS WHEN REAL ART COMES*/
             mPrevious = new Texture2D[2];
@@ -370,6 +370,11 @@ namespace GravityShift
  
             }
 
+            if (mControls.isLeftShoulderPressed(false))
+                if (--mCurrentPage < 0) mCurrentPage = 0;
+            if (mControls.isRightShoulderPressed(false))
+                if (++mCurrentPage == mPageCount) mCurrentPage = mPageCount - 1;
+
             if (mCurrentIndex < 0) mCurrentIndex += 15;  
         }
 
@@ -417,7 +422,7 @@ namespace GravityShift
                 null,
                 scale);
 
-            //spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
 
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
             Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
