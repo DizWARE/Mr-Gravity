@@ -17,7 +17,6 @@ namespace GravityShift
     //TODO:This will be used for our intial splash screen before the main menu
     class Title
     {
-
         //Title Image
         private Texture2D mTitle;
         private SpriteFont mQuartz;

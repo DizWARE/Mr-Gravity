@@ -143,7 +143,7 @@ namespace GravityShift
                      level.Reset();
                      mCurrent = 0;
                  }
-
+                 
                  mItems[0] = mResumeSel;
                  mItems[1] = mSelectLevelUnsel;
                  mItems[2] = mMainMenuUnsel;
