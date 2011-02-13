@@ -314,26 +314,42 @@ namespace GravityShift
 
             spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) , mScreenRect.Top + mScreenRect.Height / 3), Color.White);
-            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 3 + 1), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 3), Color.White);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) , mScreenRect.Top + mScreenRect.Height / 4), Color.White);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 1), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 3 + 50), Color.White);
-            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 3 + 51), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 3 + 50), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 4 + 50), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 51), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4 + 50), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 3 + 100), Color.White);
-            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 3 + 101), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 3 + 100), Color.White);
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 4 + 100), Color.White);
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 101), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4 + 100), Color.White);
 
-            //spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
-            //spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
-            //spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
-
-            spriteBatch.Draw(mItems[0], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2), Color.White);
-            spriteBatch.Draw(mItems[1], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2 + 75), Color.White);
-            spriteBatch.Draw(mItems[2], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2 + 150), Color.White);
-            spriteBatch.Draw(mItems[3], new Vector2(mScreenRect.Left + (mScreenRect.Width - mItems[2].Width), mScreenRect.Bottom - mScreenRect.Height / 2 + 225), Color.White);
+//            spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Right - (mItems[0].Width), 
+//                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[0].Height - 250, 
+//                mItems[0].Width, mItems[0].Height), Color.White);
+//            spriteBatch.Draw(mItems[1], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Right - (mItems[1].Width) - (mItems[1].Width / 4),
+//                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[1].Height - 175,
+//                mItems[1].Width, mItems[1].Height), Color.White);
+//            spriteBatch.Draw(mItems[2], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Right - (mItems[2].Width),
+//                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[2].Height - 100,
+//                mItems[2].Width, mItems[2].Height), Color.White);
+//            spriteBatch.Draw(mItems[3], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Right - (mItems[3].Width) - (mItems[1].Width / 8),
+//                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[3].Height - 25,
+//                mItems[3].Width, mItems[3].Height), Color.White);
+            spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[0].Width / 2) + (mItems[0].Width/3),
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[0].Height - 250,
+                mItems[0].Width, mItems[0].Height), Color.White);
+            spriteBatch.Draw(mItems[1], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[1].Width / 2) + (mItems[0].Width/3),
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[1].Height - 175,
+                mItems[1].Width, mItems[1].Height), Color.White);
+            spriteBatch.Draw(mItems[2], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[2].Width / 2) + (mItems[0].Width/3),
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[2].Height - 100,
+                mItems[2].Width, mItems[2].Height), Color.White);
+            spriteBatch.Draw(mItems[3], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[3].Width / 2) + (mItems[0].Width/3),
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[3].Height - 25,
+                mItems[3].Width, mItems[3].Height), Color.White);
 
             spriteBatch.End();
         }

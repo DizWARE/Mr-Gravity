@@ -94,9 +94,9 @@
   <LevelData>
     <Name>Avoidance</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Choosing Sides</Name>
@@ -117,7 +117,7 @@
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>3</Collectionstar>
-    <Deathstar>1</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Guards</Name>
@@ -138,7 +138,7 @@
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
     <Collectionstar>3</Collectionstar>
-    <Deathstar>2</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Sky is Falling</Name>

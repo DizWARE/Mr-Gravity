@@ -160,16 +160,24 @@ namespace GravityShift
                 null,
                 scale);
 
+            Point center = graphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
+
             /* Draw the transparent background */
-            spriteBatch.Draw(mPausedTrans, new Vector2(100.0f, 25.0f), Color.White); 
+            spriteBatch.Draw(mPausedTrans, new Vector2(graphics.GraphicsDevice.Viewport.TitleSafeArea.Left, graphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White); 
 
             /* Draw the pause title */
-            spriteBatch.Draw(mPauseTitle, new Vector2(180.0f, 50.0f), Color.White);
+            spriteBatch.Draw(mPauseTitle, new Vector2(center.X + 30 - mPauseTitle.Width / 2, graphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White);
 
             /* Draw the pause options */
-            spriteBatch.Draw(mItems[0], new Vector2(575.0f, 425.0f), Color.White);
-            spriteBatch.Draw(mItems[1], new Vector2(495.0f, 500.0f), Color.White);
-            spriteBatch.Draw(mItems[2], new Vector2(505.0f, 580.0f), Color.White);
+            spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[0].Width / 2),
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[0].Height - 300,
+                mItems[0].Width, mItems[0].Height), Color.White);
+            spriteBatch.Draw(mItems[1], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[1].Width / 2),
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[1].Height - 200,
+                mItems[1].Width, mItems[1].Height), Color.White);
+            spriteBatch.Draw(mItems[2], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[2].Width / 2), 
+                graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[2].Height - 100, 
+                mItems[2].Width, mItems[2].Height), Color.White);
 
             spriteBatch.End();
         }
