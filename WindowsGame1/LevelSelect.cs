@@ -429,10 +429,10 @@ namespace GravityShift
 
             Vector2 stringLoc = mQuartz.MeasureString((mCurrentPage + 1) + "/" + mPageCount);
 
-            spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)] , new Vector2(mScreenRect.Left, mScreenRect.Top), Color.White);
-            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Vector2(mScreenRect.Center.X - 75, mScreenRect.Bottom - 75), Color.White);
+            spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)] , new Rectangle(mScreenRect.Left, mScreenRect.Top, 70,70), Color.White);
+            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Rectangle(mScreenRect.Center.X - 85, mScreenRect.Bottom - 75, 75, 50), Color.White);
             spriteBatch.DrawString(mQuartz, (mCurrentPage + 1) + "/" + mPageCount, new Vector2(mScreenRect.Center.X + 10,mScreenRect.Bottom - 60), Color.White);
-            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Vector2(mScreenRect.Center.X + 75, mScreenRect.Bottom - 75), Color.White);
+            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Rectangle(mScreenRect.Center.X + 75, mScreenRect.Bottom - 75, 75, 50), Color.White);
 
             size.X -= 2*padding.X;
             size.Y -= 2*padding.Y;
