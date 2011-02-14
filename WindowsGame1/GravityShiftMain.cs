@@ -112,7 +112,7 @@ namespace GravityShift
             mGraphics.ApplyChanges();
 
 
-            mTitle = new Title(mControls);
+            mTitle = new Title(mControls, mGraphics);
             mMainMenu = new MainMenu(mControls, mGraphics);
             mMainMenuLevel = Level.MainMenuLevel("..\\..\\..\\Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport);
 
@@ -269,7 +269,7 @@ namespace GravityShift
 
                 
 
-                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel, ref mLevelSelect);
             }
             else if (mCurrentState == GameStates.Level_Selection)
             {

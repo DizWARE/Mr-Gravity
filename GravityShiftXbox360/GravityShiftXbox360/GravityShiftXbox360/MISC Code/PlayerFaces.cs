@@ -12,7 +12,7 @@ namespace GravityShift.MISC_Code
     {
         public static Texture2D SMILE;
         public static Texture2D LAUGH;
-        public static Texture2D DAZED;
+        public static Texture2D DIZZY;
         public static Texture2D DEAD;
         public static Texture2D DEAD2;
         public static Texture2D MEH;
@@ -21,8 +21,6 @@ namespace GravityShift.MISC_Code
         public static Texture2D SKEPTIC;
         public static Texture2D SURPRISE;
         public static Texture2D WORRY;
-        public static Texture2D BLANK;
-        public static Texture2D GRID;
 
         /// <summary>
         /// Loads all the faces from the content
@@ -30,19 +28,17 @@ namespace GravityShift.MISC_Code
         /// <param name="content">Content to load from</param>
         public static void Load(ContentManager content)
         {
-            SMILE = content.Load<Texture2D>("Images/Player/NeonCharSmile");
-            LAUGH = content.Load<Texture2D>("Images/Player/NeonCharLaugh");
-            DAZED = content.Load<Texture2D>("Images/Player/NeonCharDazed");
-            DEAD = content.Load<Texture2D>("Images/Player/NeonCharDead");
-            DEAD2 = content.Load<Texture2D>("Images/Player/NeonCharDead2");
+            SMILE = content.Load<Texture2D>("Images/Player/Smile");
+            LAUGH = content.Load<Texture2D>("Images/Player/Laugh");
+            DIZZY = content.Load<Texture2D>("Images/Player/Dizzy");
+            DEAD = content.Load<Texture2D>("Images/Player/Dead");
+            DEAD2 = content.Load<Texture2D>("Images/Player/Dead2");
             MEH = content.Load<Texture2D>("Images/Player/NeonCharMeh");
-            SAD = content.Load<Texture2D>("Images/Player/NeonCharSad");
-            SAD2 = content.Load<Texture2D>("Images/Player/NeonCharSad2");
+            SAD = content.Load<Texture2D>("Images/Player/Sad");
+            SAD2 = content.Load<Texture2D>("Images/Player/Sad2");
             SKEPTIC = content.Load<Texture2D>("Images/Player/NeonCharSkeptic");
-            SURPRISE = content.Load<Texture2D>("Images/Player/NeonCharSurprise");
-            WORRY = content.Load<Texture2D>("Images/Player/NeonCharWorry");
-            BLANK = content.Load<Texture2D>("Images/Player/NeonCharBlank");
-            GRID = content.Load<Texture2D>("Images/Player/NeonCharGrid");
+            SURPRISE = content.Load<Texture2D>("Images/Player/Surprise");
+            WORRY = content.Load<Texture2D>("Images/Player/Worry");
         }
         /// <summary>
         /// Given a name of one of the faces, returns the face texture
@@ -57,8 +53,8 @@ namespace GravityShift.MISC_Code
                 return SURPRISE;
             if (faceName.Equals(XmlKeys.Faces.Laugh.ToString()))
                 return LAUGH;
-            if (faceName.Equals(XmlKeys.Faces.Dazed.ToString()))
-                return DAZED;
+            if (faceName.Equals(XmlKeys.Faces.Dizzy.ToString()))
+                return DIZZY;
             if (faceName.Equals(XmlKeys.Faces.Dead.ToString()))
                 return DEAD;
             if (faceName.Equals(XmlKeys.Faces.Dead2.ToString()))
@@ -73,10 +69,6 @@ namespace GravityShift.MISC_Code
                 return SKEPTIC;
             if (faceName.Equals(XmlKeys.Faces.Worry.ToString()))
                 return WORRY;
-            if (faceName.Equals(XmlKeys.Faces.Blank.ToString()))
-                return BLANK;
-            if (faceName.Equals(XmlKeys.Faces.Grid.ToString()))
-                return GRID;
 
             return SMILE;
         }

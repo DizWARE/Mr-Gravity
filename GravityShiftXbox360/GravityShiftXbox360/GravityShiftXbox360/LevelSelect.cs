@@ -64,7 +64,7 @@ namespace GravityShift
         GraphicsDevice mGraphics;
 
         /* SpriteFont */
-        SpriteFont mKootenay;
+        SpriteFont mQuartz;
 
         /* Trial Mode Loading */
         bool mTrialMode;
@@ -77,8 +77,6 @@ namespace GravityShift
         StorageContainer container;
 
         PlayerIndex playerIndex;
-
-        int frame = 0;
 
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
@@ -229,9 +227,9 @@ namespace GravityShift
             mGraphics = graphics;
 
             mSelectBox = content.Load<Texture2D>("Images/Menu/LevelSelect/SelectBox");
-            mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
+            mQuartz = content.Load<SpriteFont>("Fonts/QuartzSmaller");
 
-            mBackground = content.Load<Texture2D>("Images/Backgrounds/Stars");
+            mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
 
             /*TODO - REMOVE THIS WHEN REAL ART COMES*/
             mPrevious = new Texture2D[2];
@@ -279,12 +277,7 @@ namespace GravityShift
         /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
-            frame++;
-            if (frame >= 60)
-            {
-                this.Save(playerIndex);
-                frame = 0;
-            }
+
             HandleDirectionKeys();          
 
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))
@@ -370,6 +363,11 @@ namespace GravityShift
  
             }
 
+            if (mControls.isLeftShoulderPressed(false))
+                if (--mCurrentPage < 0) mCurrentPage = 0;
+            if (mControls.isRightShoulderPressed(false))
+                if (++mCurrentPage == mPageCount) mCurrentPage = mPageCount - 1;
+
             if (mCurrentIndex < 0) mCurrentIndex += 15;  
         }
 
@@ -417,17 +415,17 @@ namespace GravityShift
                 null,
                 scale);
 
-            //spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
 
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
             Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
 
-            Vector2 stringLoc = mKootenay.MeasureString((mCurrentPage + 1) + "/" + mPageCount);
+            Vector2 stringLoc = mQuartz.MeasureString((mCurrentPage + 1) + "/" + mPageCount);
 
-            spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)] , new Vector2(mScreenRect.Left, mScreenRect.Top), Color.White);
-            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Vector2(mScreenRect.Center.X - 75, mScreenRect.Bottom - 75), Color.White);
-            spriteBatch.DrawString(mKootenay, (mCurrentPage + 1) + "/" + mPageCount, new Vector2(mScreenRect.Center.X + 10,mScreenRect.Bottom - 60), Color.White);
-            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Vector2(mScreenRect.Center.X + 75, mScreenRect.Bottom - 75), Color.White);
+            spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)] , new Rectangle(mScreenRect.Left, mScreenRect.Top, 70,70), Color.White);
+            spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], new Rectangle(mScreenRect.Center.X - 85, mScreenRect.Bottom - 75, 75, 50), Color.White);
+            spriteBatch.DrawString(mQuartz, (mCurrentPage + 1) + "/" + mPageCount, new Vector2(mScreenRect.Center.X + 10,mScreenRect.Bottom - 60), Color.White);
+            spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], new Rectangle(mScreenRect.Center.X + 75, mScreenRect.Bottom - 75, 75, 50), Color.White);
 
             size.X -= 2*padding.X;
             size.Y -= 2*padding.Y;
@@ -439,7 +437,7 @@ namespace GravityShift
             {
                 if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.TitleSafeArea.Width)
                 {
-                    currentLocation.X = 0;
+                    currentLocation.X = mScreenRect.X;
                     currentLocation.Y += padding.Y + size.Y;
                 }
                 currentLocation.X += padding.X;
@@ -447,9 +445,9 @@ namespace GravityShift
 
                 spriteBatch.Draw(mLevels[i + 12 * mCurrentPage].Thumbnail, rect, Color.White);
 
-                Vector2 stringSize = mKootenay.MeasureString(mLevels[i + 12 * mCurrentPage].Level.Name);
+                Vector2 stringSize = mQuartz.MeasureString(mLevels[i + 12 * mCurrentPage].Level.Name);
                 Vector2 stringLocation = new Vector2(rect.Center.X - stringSize.X/2, rect.Top - stringSize.Y);
-                spriteBatch.DrawString(mKootenay, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
+                spriteBatch.DrawString(mQuartz, mLevels[i + 12 * mCurrentPage].Level.Name, stringLocation, Color.White);
                 if (index == mCurrentIndex - 1) spriteBatch.Draw(mSelectBox, rect, Color.White);
 
                 if (!mLevels[i + 12 * mCurrentPage].Unlocked)

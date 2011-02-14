@@ -156,6 +156,7 @@ namespace GravityShift
             {
                 mFaceRotation += mFaceRotationFactor;
             }
+
         }
 
         /// <summary>

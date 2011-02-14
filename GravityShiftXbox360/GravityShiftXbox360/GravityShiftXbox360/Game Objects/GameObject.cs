@@ -99,7 +99,7 @@ namespace GravityShift
         /// Resets this object to its initial position
         /// </summary>
         public virtual void Respawn()
-        {
+        {   
             mPosition = mInitialPosition;
         }
 

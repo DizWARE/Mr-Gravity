@@ -100,7 +100,7 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
+        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level, ref LevelSelect mSelect)
         {
             int []scores = GetRank((int)GravityShift.Level.TIMER, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
             level.TimerStar = scores[0];
@@ -108,7 +108,14 @@ namespace GravityShift
             level.DeathStar = scores[2];
 
             if (mControls.isStartPressed(false) || mControls.isAPressed(false))
+            {
                 gameState = GameStates.AfterScore;
+#if XBOX360
+                mSelect.Save(((ControllerControl)mControls).ControllerIndex);
+#else
+                mSelect.Save(PlayerIndex.One);
+#endif
+            }
             
         }
         /* GetRank

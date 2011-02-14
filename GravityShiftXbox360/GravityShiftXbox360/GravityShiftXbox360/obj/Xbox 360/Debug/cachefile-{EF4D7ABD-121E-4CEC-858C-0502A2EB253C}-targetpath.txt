@@ -137,6 +137,48 @@ Content\Levels\Thumbnail\Retro.xnb
 Content\Levels\Thumbnail\Sky is Falling.xnb
 Content\Levels\Thumbnail\Test.xnb
 Content\Levels\Thumbnail\TriggerHappy.xnb
+Content\Images\AnimatedSprites\NoAnimation.xnb
+Content\Levels\Thumbnail\Close Call.xnb
+Content\Levels\Thumbnail\Compartments.xnb
+Content\Levels\Thumbnail\Corners.xnb
+Content\Levels\Thumbnail\Hazards.xnb
+Content\Levels\Thumbnail\Moving Hazard.xnb
+Content\Levels\Thumbnail\Space Invaders.xnb
+Content\Levels\Thumbnail\X Trio.xnb
+Content\Images\Menu\backgroundSquares1.xnb
+Content\Images\Menu\Mr_Gravity.xnb
+Content\Images\Menu\Main\ContinueSelected.xnb
+Content\Images\Menu\Main\ContinueUnselected.xnb
+Content\Images\Menu\Main\ExitSelected.xnb
+Content\Images\Menu\Main\ExitUnselected.xnb
+Content\Images\Player\Angry.xnb
+Content\Images\Player\Angry2.xnb
+Content\Images\Player\Bored.xnb
+Content\Images\Player\Dead.xnb
+Content\Images\Player\Dead2.xnb
+Content\Images\Player\Dizzy.xnb
+Content\Images\Player\Dizzy2.xnb
+Content\Images\Player\Laugh.xnb
+Content\Images\Player\Laugh2.xnb
+Content\Images\Player\Sad.xnb
+Content\Images\Player\Sad2.xnb
+Content\Images\Player\Smile.xnb
+Content\Images\Player\Surprise.xnb
+Content\Images\Player\Worry.xnb
+Content\Levels\Thumbnail\Avoidance.xnb
+Content\Levels\Thumbnail\Choosing Sides.xnb
+Content\Levels\Thumbnail\Copycat.xnb
+Content\Levels\Thumbnail\Friction Is Your Friend.xnb
+Content\Levels\Thumbnail\Guards.xnb
+Content\Levels\Thumbnail\Intertwined.xnb
+Content\Levels\Thumbnail\Labyrinth.xnb
+Content\Levels\Thumbnail\Trap Em.xnb
+Content\Levels\Thumbnail\Uniform.xnb
+Content\Levels\Thumbnail\You Shall Not Pass.xnb
+Content\fonts\QuartzSmall.xnb
+Content\fonts\QuartzSmaller.xnb
+Content\fonts\Kootenay.xnb
+Content\fonts\QuartzLarge.xnb
 Content\music\menuMusic_title.xnb
 Content\music\music_level00.xnb
 Content\SoundEffects\level_goal.xnb
@@ -153,17 +195,6 @@ Content\SoundEffects\playerCol_hazard.xnb
 Content\SoundEffects\playerCol_wall.xnb
 Content\SoundEffects\playerSound_death.xnb
 Content\SoundEffects\playerSound_respawn.xnb
-Content\fonts\Kootenay.xnb
-Content\fonts\QuartzLarge.xnb
-Content\fonts\QuartzSmall.xnb
-Content\Images\AnimatedSprites\NoAnimation.xnb
-Content\Levels\Thumbnail\Close Call.xnb
-Content\Levels\Thumbnail\Compartments.xnb
-Content\Levels\Thumbnail\Corners.xnb
-Content\Levels\Thumbnail\Hazards.xnb
-Content\Levels\Thumbnail\Moving Hazard.xnb
-Content\Levels\Thumbnail\Space Invaders.xnb
-Content\Levels\Thumbnail\X Trio.xnb
 Content\Levels\BlackHoleMagic.xml
 Content\Levels\Chambers.xml
 Content\Levels\CloseCall.xml
@@ -195,3 +226,8 @@ Content\Levels\Space Invaders.xml
 Content\Levels\Trap Em.xml
 Content\Levels\Uniform.xml
 Content\Levels\X Trio.xml
+Content\Levels\AutomatedRails.xml
+Content\Levels\Friction Is Your Friend.xml
+Content\Levels\Guards.xml
+Content\Levels\Labyrinth.xml
+Content\Levels\You Shall Not Pass.xml

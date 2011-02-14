@@ -78,8 +78,6 @@ namespace GravityShift
 
         PlayerIndex playerIndex;
 
-        int frame = 0;
-
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -279,12 +277,7 @@ namespace GravityShift
         /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
-            frame++;
-            if (frame >= 60)
-            {
-                this.Save(playerIndex);
-                frame = 0;
-            }
+
             HandleDirectionKeys();          
 
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))
@@ -422,7 +415,7 @@ namespace GravityShift
                 null,
                 scale);
 
-            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
 
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
             Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
@@ -444,7 +437,7 @@ namespace GravityShift
             {
                 if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.TitleSafeArea.Width)
                 {
-                    currentLocation.X = 0;
+                    currentLocation.X = mScreenRect.X;
                     currentLocation.Y += padding.Y + size.Y;
                 }
                 currentLocation.X += padding.X;
