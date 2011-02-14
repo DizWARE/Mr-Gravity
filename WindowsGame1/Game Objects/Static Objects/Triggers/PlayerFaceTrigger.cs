@@ -20,7 +20,7 @@ namespace GravityShift.Game_Objects.Static_Objects.Triggers
         }
         public override void RunTrigger(List<GameObject> objects, Player player)
         {
-            if (player.IsCollidingBoxAndBox(this) && player.mCurrentTexture != PlayerFaces.DEAD2)
+            if (player.IsCollidingBoxAndBox(this) && player.mCurrentTexture != PlayerFaces.FromString("Dead2"))
                 player.mCurrentTexture = face;
         }
     }

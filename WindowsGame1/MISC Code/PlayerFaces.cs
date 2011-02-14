@@ -5,22 +5,31 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using GravityShift.Import_Code;
+using System.IO;
 
 namespace GravityShift.MISC_Code
 {
     public class PlayerFaces
     {
-        public static Texture2D SMILE;
-        public static Texture2D LAUGH;
-        public static Texture2D DIZZY;
-        public static Texture2D DEAD;
-        public static Texture2D DEAD2;
-        public static Texture2D MEH;
-        public static Texture2D SAD;
-        public static Texture2D SAD2;
-        public static Texture2D SKEPTIC;
-        public static Texture2D SURPRISE;
-        public static Texture2D WORRY;
+        /// <summary>
+        /// List of current faces
+        /// 
+        /// ANGRY
+        /// ANGRY2
+        /// BORED
+        /// DEAD 
+        /// DEAD2 
+        /// DIZZY 
+        /// DIZZY2
+        /// LAUGH 
+        /// LAUGH2
+        /// SAD 
+        /// SAD2 
+        /// SMILE 
+        /// SURPRISE 
+        /// WORRY 
+        /// </summary>     
+        private static Dictionary<String, Texture2D> mFaces;
 
         /// <summary>
         /// Loads all the faces from the content
@@ -28,17 +37,14 @@ namespace GravityShift.MISC_Code
         /// <param name="content">Content to load from</param>
         public static void Load(ContentManager content)
         {
-            SMILE = content.Load<Texture2D>("Images/Player/Smile");
-            LAUGH = content.Load<Texture2D>("Images/Player/Laugh");
-            DIZZY = content.Load<Texture2D>("Images/Player/Dizzy");
-            DEAD = content.Load<Texture2D>("Images/Player/Dead");
-            DEAD2 = content.Load<Texture2D>("Images/Player/Dead2");
-            MEH = content.Load<Texture2D>("Images/Player/NeonCharMeh");
-            SAD = content.Load<Texture2D>("Images/Player/Sad");
-            SAD2 = content.Load<Texture2D>("Images/Player/Sad2");
-            SKEPTIC = content.Load<Texture2D>("Images/Player/NeonCharSkeptic");
-            SURPRISE = content.Load<Texture2D>("Images/Player/Surprise");
-            WORRY = content.Load<Texture2D>("Images/Player/Worry");
+            mFaces = new Dictionary<string, Texture2D>();
+
+            DirectoryInfo directory = new DirectoryInfo("Content/Images/Player");
+            foreach (FileInfo file in directory.GetFiles())
+            {
+                string name = file.Name.Substring(0,file.Name.IndexOf('.'));
+                mFaces.Add(name, content.Load<Texture2D>("Images/Player/" + name));
+            }
         }
         /// <summary>
         /// Given a name of one of the faces, returns the face texture
@@ -47,30 +53,7 @@ namespace GravityShift.MISC_Code
         /// <returns>Texture of that face</returns>
         public static Texture2D FromString(string faceName)
         {
-            if(faceName.Equals(XmlKeys.Faces.Smile.ToString()))
-                return SMILE;
-            if(faceName.Equals(XmlKeys.Faces.Surprise.ToString()))
-                return SURPRISE;
-            if (faceName.Equals(XmlKeys.Faces.Laugh.ToString()))
-                return LAUGH;
-            if (faceName.Equals(XmlKeys.Faces.Dizzy.ToString()))
-                return DIZZY;
-            if (faceName.Equals(XmlKeys.Faces.Dead.ToString()))
-                return DEAD;
-            if (faceName.Equals(XmlKeys.Faces.Dead2.ToString()))
-                return DEAD2;
-            if (faceName.Equals(XmlKeys.Faces.Meh.ToString()))
-                return MEH;
-            if (faceName.Equals(XmlKeys.Faces.Sad.ToString()))
-                return SAD;
-            if (faceName.Equals(XmlKeys.Faces.Sad2.ToString()))
-                return SAD2;
-            if (faceName.Equals(XmlKeys.Faces.Skeptic.ToString()))
-                return SKEPTIC;
-            if (faceName.Equals(XmlKeys.Faces.Worry.ToString()))
-                return WORRY;
-
-            return SMILE;
+            return mFaces[faceName];
         }
 
     }

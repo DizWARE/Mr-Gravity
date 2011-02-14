@@ -707,7 +707,7 @@ namespace GravityShift
                         //If player reaches the end, set the timer to 0
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
-                            mPlayer.mCurrentTexture = PlayerFaces.LAUGH;
+                            mPlayer.mCurrentTexture = PlayerFaces.FromString("Laugh");
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
