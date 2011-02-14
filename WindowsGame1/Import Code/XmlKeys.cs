@@ -70,6 +70,6 @@ namespace GravityShift.Import_Code
 
         //Smile Strings
         public enum Faces
-        { Smile, Laugh, Dazed, Dead, Dead2, Meh, Sad, Sad2, Skeptic, Surprise, Worry, Blank, Grid }
+        { Smile, Laugh, Dizzy, Dead, Dead2, Meh, Sad, Sad2, Skeptic, Surprise, Worry }
     }
 }
