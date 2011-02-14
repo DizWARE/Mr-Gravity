@@ -123,7 +123,7 @@ namespace GravityShift
             mUnselMenuItems = new Texture2D[NUM_TITLE];
             mMenuItems = new Texture2D[NUM_TITLE];
 
-            mTitle = content.Load<Texture2D>("Images/Menu/Title");
+            mTitle = content.Load<Texture2D>("Images/Menu/Mr_Gravity");
 
             /* Title Screen */
             mNewGameSel = content.Load<Texture2D>("Images/Menu/Main/NewGameSelected");

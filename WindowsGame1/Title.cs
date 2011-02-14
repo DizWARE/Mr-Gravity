@@ -17,9 +17,9 @@ namespace GravityShift
     //TODO:This will be used for our intial splash screen before the main menu
     class Title
     {
-
         //Title Image
         private Texture2D mTitle;
+        private Texture2D mBackground;
         private SpriteFont mQuartz;
 
         /* Title Safe Area */
@@ -38,8 +38,8 @@ namespace GravityShift
 
         public void Load(ContentManager content, GraphicsDevice graphics)
         {
-            mTitle = content.Load<Texture2D>("Images/Menu/Title");
-
+            mTitle = content.Load<Texture2D>("Images/Menu/Mr_Gravity");
+            mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
             mScreenRect = graphics.Viewport.TitleSafeArea;
@@ -64,14 +64,16 @@ namespace GravityShift
                 null,
                 scale);
 
-         
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mScreenRect.Width, mScreenRect.Height), Color.White);
+            
             spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 
             string request = "Press Start Or A To Begin";
 
             Vector2 stringSize = mQuartz.MeasureString(request);
 
-            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Center.Y - (stringSize.Y / 2)), Color.White);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Center.Y - (stringSize.Y / 2)), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2) + 2, mScreenRect.Center.Y - (stringSize.Y / 2) + 2), Color.White);
 
             spriteBatch.End();
         }

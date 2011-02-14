@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
-  <Name>CurtisLevel4</Name>
+  <Name>Labyrinth</Name>
   <Size X="25" Y="17" />
   <Background>Backgrounds\blank</Background>
   <Entities>
@@ -2479,6 +2479,50 @@
       <Texture>NonHazards\GreenDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>4514</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="2" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>4575</ID>
+      <Name>CircleRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="21" Y="9" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedCircle</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>4880</ID>
+      <Name>RailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="13" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>6</Length>
       </Properties>
     </Entity>
   </Entities>

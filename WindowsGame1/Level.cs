@@ -89,7 +89,7 @@ namespace GravityShift
         public static Camera mCam1;
 
         /* Tracks the previous zoom of the camera */
-        private float mPrevZoom = 1.0f;
+        private float mPrevZoom = 0.75f;
 
         /* Timer variable */
         public static double TIMER;
@@ -300,6 +300,13 @@ namespace GravityShift
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
+
+            mNumCollected = 0;
+            mNumCollectable = 0;
+
+            //Clear the collection lists
+            mCollected.Clear();
+            mRemoveCollected.Clear();
 
             foreach (GameObject gObject in mObjects)
             {
@@ -686,6 +693,9 @@ namespace GravityShift
                             collided = physObj.IsCollidingCircleandCircle(obj);
                         }
 
+                        if (!collided)
+                            physObj.collidedLastFrame = false;
+
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
 
@@ -756,9 +766,6 @@ namespace GravityShift
                         {
                             if (cObject is Wall)
                             {
-                                if (!mPlayer.isFaceStraight())
-                                    mPlayer.setFaceStraight();
-
                                 KeyValuePair<Vector2, string> animation = ((Wall)cObject).NearestWallPosition(physObj.mPosition);
                                 if (!mActiveAnimations.ContainsKey(animation.Key))
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
@@ -772,8 +779,12 @@ namespace GravityShift
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
 
+                                    // play wall collision sound
+                                    GameSound.playerCol_wall.Play();
+
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;
+
                                 }
                             }
 
@@ -795,8 +806,12 @@ namespace GravityShift
                                     wallEngine.EmitterLocation = midpoint;
                                     wallEngine.Update(10);
 
+                                    // play wall collision sound
+                                    GameSound.playerCol_wall.Play();
+
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;
+
                                 }
                             }
                         }

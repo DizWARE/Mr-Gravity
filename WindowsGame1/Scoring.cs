@@ -22,40 +22,22 @@ namespace GravityShift
         private SpriteFont mKootenay;
         private SpriteFont mQuartz;
 
+        private Rectangle mScreenRect;
+
         ContentManager mContent;
 
         IControlScheme mControls;
-
-        /* Equivalent of stars */
-        private static Texture2D[] mNumApples;
-        private const int POSSIBLE_APPLES = 3;
 
         /* Keep track of the level */
         private static int[,] mLevel;
         private static int[,] mScore;
 
-        private Texture2D[] mSelItems;
-        private Texture2D[] mUnselItems;
-        private Texture2D[] mItems;
-
-        private int mCurrent;
-
-        private const int NUM_OPTIONS = 4;
-
         #endregion
 
         #region Art
 
-        private Texture2D mNextLevelSel;
-        private Texture2D mNextLevelUnsel;
-        private Texture2D mSelectLevelSel;
-        private Texture2D mSelectLevelUnsel;
-        private Texture2D mMainMenuSel;
-        private Texture2D mMainMenuUnsel;
-        private Texture2D mRestartSel;
-        private Texture2D mRestartUnsel;
-
         private Texture2D mTitle;
+        private Texture2D mBackground;
 
         #endregion
 
@@ -97,46 +79,16 @@ namespace GravityShift
          *
          * ContentManager content: the Content file used in the game.
          */
-        public void Load(ContentManager content)
+        public void Load(ContentManager content, GraphicsDevice graphics)
         {
             mContent = content;
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
-            mCurrent = 0;
+            mScreenRect = graphics.Viewport.TitleSafeArea;
 
-            mSelItems = new Texture2D[NUM_OPTIONS];
-            mUnselItems = new Texture2D[NUM_OPTIONS];
-            mItems = new Texture2D[NUM_OPTIONS];
-
-            mNextLevelSel = content.Load<Texture2D>("Images/Menu/Score/NextLevelSelected");
-            mNextLevelUnsel = content.Load<Texture2D>("Images/Menu/Score/NextLevelUnselected");
-
-            mSelectLevelSel = content.Load<Texture2D>("Images/Menu/SelectLevelSelected");
-            mSelectLevelUnsel = content.Load<Texture2D>("Images/Menu/SelectLevelUnselected");
-
-            mMainMenuSel = content.Load<Texture2D>("Images/Menu/MainMenuSelected");
-            mMainMenuUnsel = content.Load<Texture2D>("Images/Menu/MainMenuUnselected");
-
-            mRestartUnsel = content.Load<Texture2D>("Images/Menu/Score/RestartUnselected");
-            mRestartSel = content.Load<Texture2D>("Images/Menu/Score/RestartSelected");
-
-            mTitle = content.Load<Texture2D>("Images/Menu/Title");
-
-            mSelItems[0] = mNextLevelSel;
-            mSelItems[1] = mRestartSel;
-            mSelItems[2] = mSelectLevelSel;
-            mSelItems[3] = mMainMenuSel;
-
-            mUnselItems[0] = mNextLevelUnsel;
-            mUnselItems[1] = mRestartUnsel;
-            mUnselItems[2] = mSelectLevelUnsel;
-            mUnselItems[3] = mMainMenuUnsel;
-
-            mItems[0] = mNextLevelSel;
-            mItems[1] = mRestartUnsel;
-            mItems[2] = mSelectLevelUnsel;
-            mItems[3] = mMainMenuUnsel;
+            mTitle = content.Load<Texture2D>("Images/Menu/Mr_Gravity");
+            mBackground = content.Load<Texture2D>("Images/Menu/backgroundSquares1");
         }
 
         /*
@@ -154,99 +106,10 @@ namespace GravityShift
             level.TimerStar = scores[0];
             level.CollectionStar = scores[1];
             level.DeathStar = scores[2];
+
+            if (mControls.isStartPressed(false) || mControls.isAPressed(false))
+                gameState = GameStates.AfterScore;
             
-            /* If the user hits up */
-            if (mControls.isUpPressed(false))
-            {
-                /* If we are not on the first element already */
-                if (mCurrent > 0)
-                {
-                    GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
-                    /* Decrement current and change the images */
-                    mCurrent--;
-                    for (int i = 0; i < NUM_OPTIONS; i++)
-                        mItems[i] = mUnselItems[i];
-                    mItems[mCurrent] = mSelItems[mCurrent];
-                }
-            }
-            /* If the user hits the down button */
-            if (mControls.isDownPressed(false))
-            {
-                /* If we are on the last element in the menu */
-                if (mCurrent < NUM_OPTIONS - 1)
-                {
-                    GameSound.menuSound_rollover.Play(GameSound.volume, 0.0f, 0.0f);
-                    /* Increment current and update graphics */
-                    mCurrent++;
-                    for (int i = 0; i < NUM_OPTIONS; i++)
-                        mItems[i] = mUnselItems[i];
-                    mItems[mCurrent] = mSelItems[mCurrent];
-                }
-            }
-
-            /* If the user selects one of the menu items */
-            if (mControls.isAPressed(false) || mControls.isStartPressed(false))
-            {
-                GravityShift.Level.TIMER = 0;
-                GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
-
-                /* Next Level */
-                if (mCurrent == 0)
-                {
-                    /*Back To Level Selection*/
-                    gameState = GameStates.Next_Level;
-
-                    mCurrent = 0;
-
-                    mItems[0] = mNextLevelSel;
-                    mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
-                    
-                }
-                /* Restart Level */
-                else if (mCurrent == 1)
-                {
-                    
-                    /* Start the game*/
-                    gameState = GameStates.In_Game;
-                    level.Reset();
-                    level.Load(mContent);
-                    mCurrent = 0;
-
-                    mItems[0] = mNextLevelSel;
-                    mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
-                }
-
-                /* Level Select */
-                else if (mCurrent == 2)
-                {
-                    /*Back To Level Selection*/
-                    gameState = GameStates.Level_Selection;
-
-                    mCurrent = 0;
-
-                    mItems[0] = mNextLevelSel;
-                    mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
-                }
-
-                /* Main Menu */
-                else if (mCurrent == 3)
-                {
-                    gameState = GameStates.Main_Menu;
-
-                    mCurrent = 0;
-
-                    mItems[0] = mNextLevelSel;
-                    mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
-                }
-            }
         }
         /* GetRank
          * 
@@ -308,25 +171,27 @@ namespace GravityShift
 
             //TODO: CHANGE TO DYNAMIC PLACING
 
-            spriteBatch.Draw(mTitle, new Vector2(150.0f, 50.0f), Color.White);
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
+            spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(250.0f, 300.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(500.0f, 300.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) , mScreenRect.Top + mScreenRect.Height / 4), Color.White);
+            spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 1), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(250.0f, 350.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(500.0f, 350.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 4 + 50), Color.White);
+            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 51), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4 + 50), Color.White);
 
-            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(250.0f, 400.0f), Color.DarkOrange);
-            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(500.0f, 400.0f), Color.DarkOrange);
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 4 + 100), Color.White);
+            spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 101), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4 + 100), Color.White);
 
-            //spriteBatch.Draw(mNumApples[0], new Vector2(350.0f, 450.0f), Color.White);
-            //spriteBatch.Draw(mNumApples[1], new Vector2(425.0f, 450.0f), Color.White);
-            //spriteBatch.Draw(mNumApples[2], new Vector2(500.0f, 450.0f), Color.White);
+            string request = "Press Start Or A To Continue";
 
-            spriteBatch.Draw(mItems[0], new Vector2(900.0f, 500.0f), Color.White);
-            spriteBatch.Draw(mItems[1], new Vector2(900.0f, 575.0f), Color.White);
-            spriteBatch.Draw(mItems[2], new Vector2(900.0f, 650.0f), Color.White);
-            spriteBatch.Draw(mItems[3], new Vector2(900.0f, 725.0f), Color.White);
+            Vector2 stringSize = mQuartz.MeasureString(request);
+
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) - 50), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) - 48), Color.White);
 
             spriteBatch.End();
         }
