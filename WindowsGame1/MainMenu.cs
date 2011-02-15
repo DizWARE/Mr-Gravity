@@ -83,6 +83,10 @@ namespace GravityShift
         {
             spriteBatch.Begin();
 #if XBOX360
+            Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
+            spriteBatch.Draw(mTitle, new Vector2(center.X - mTitle.Width / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White);
+
             for (int i = 0; i < 4; i++)
             {
                 MenuChoices choice = (MenuChoices)i;

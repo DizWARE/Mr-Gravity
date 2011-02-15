@@ -54,6 +54,8 @@ namespace GravityShift
         /// </summary>
         private const float HAZARDFORGIVENESS = 12.0f;
 
+        public bool collidedLastFrame = false;
+
         /// <summary>
         /// Directional force on this object
         /// </summary>
@@ -329,6 +331,7 @@ namespace GravityShift
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
         /// Circle = this
+        /// Currently not used
         /// </summary>
         /// <param name="otherObject">The other object to test against</param>
         /// <returns>True if they are colliding with each other; False otherwise</returns>
@@ -490,7 +493,6 @@ namespace GravityShift
             Vector2 colDepth = GetCollitionDepth(otherObject);
 
             // handle the shallowest collision
-
             if (Math.Abs(colDepth.X) > Math.Abs(colDepth.Y))// colliding top or bottom
             {
 
@@ -630,18 +632,26 @@ namespace GravityShift
                 Point centerB = new Point();
                 if ((center.X < p[0].X) && (center.Y < p[0].Y))// top left corner
                 {
+                    // and no tile is above me or to the left!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[0];
                 }
                 else if ((center.X > p[1].X) && (center.Y < p[1].Y))// top right corner
                 {
+                    // and no tile is above me or to the right!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[1];
                 }
                 else if ((center.X > p[2].X) && (center.Y > p[2].Y))// bottom right corner
                 {
+                    // and no tile is below me or to the right!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[2];
                 }
                 else if ((center.X < p[3].X) && (center.Y > p[3].Y))// bottom left corner
                 {
+                    // and no tile is below me or to the left!!!!!!!!!!!!!!!!!!!!!!!!!TODO
+                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[3];
                 }
 
@@ -751,59 +761,6 @@ namespace GravityShift
             }
 
             return new Vector2(depthX, depthY);
-        }
-
-
-        /// <summary>
-        /// Handles collision for a circle and box(circle = this)
-        /// WORKS IN THEORY, NOT IN PRACTICE (DO NOT USE)
-        /// </summary>
-        /// <param name="otherObject">square object to do collision on</param>
-        public virtual void HandleCollidePixelPerfect(GameObject otherObject)
-        {
-            while (IntersectPixels(this.mBoundingBox, this.mSpriteImageData, otherObject.mBoundingBox, otherObject.mSpriteImageData))
-            {
-                // keep going back till you are no longer collding
-                Vector2 reverse = Vector2.Multiply(mVelocity, -1);
-                reverse.Normalize();
-                mPosition += reverse;
-                mVelocity = Vector2.Zero;
-                UpdateBoundingBoxes();
-            }
-        }
-
-        //IntersectPixels method taken directly from the XNA 2D per pixel collision check. Doesn't need to be changed as far as I can see. 
-        /// <summary>
-        /// MAY NEED TO BE CHANGED "taken directly from the XNA 2D per pixel collision check."
-        /// </summary>
-        /// <param name="rectangleA"></param>
-        /// <param name="dataA"></param>
-        /// <param name="rectangleB"></param>
-        /// <param name="dataB"></param>
-        /// <returns></returns>
-        private bool IntersectPixels(Rectangle rectangleA, Color[] dataA, Rectangle rectangleB, Color[] dataB)
-        {
-            int top = Math.Max(rectangleA.Top, rectangleB.Top);
-            int bottom = Math.Min(rectangleA.Bottom, rectangleB.Bottom);
-            int left = Math.Max(rectangleA.Left, rectangleB.Left);
-            int right = Math.Min(rectangleA.Right, rectangleB.Right);
-
-            for (int y = top; y < bottom; y++)
-            {
-                for (int x = left; x < right; x++)
-                {
-                    Color colorA = dataA[(x - rectangleA.Left) +
-                                (y - rectangleA.Top) * rectangleA.Width];
-                    Color colorB = dataB[(x - rectangleB.Left) +
-                                (y - rectangleB.Top) * rectangleB.Width];
-
-                    if (colorA.A != 0 && colorB.A != 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
         }
 
         private void HandleVelocitiesAfterCollision(GameObject otherObject,Vector2 normal)

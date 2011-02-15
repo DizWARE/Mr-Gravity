@@ -109,7 +109,6 @@ namespace GravityShift.Import_Code
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_END)
                     return new PlayerEnd(mContent, entity);
 
-            //Need to fix ---- TODODODODODODODO
             return null;
         }
 

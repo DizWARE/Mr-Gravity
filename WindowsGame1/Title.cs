@@ -21,6 +21,7 @@ namespace GravityShift
         private Texture2D mTitle;
         private Texture2D mBackground;
         private SpriteFont mQuartz;
+        private GraphicsDeviceManager mGraphics;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -31,9 +32,10 @@ namespace GravityShift
         /// <summary>
         /// 
         /// </summary>
-        public Title(IControlScheme controls) 
+        public Title(IControlScheme controls, GraphicsDeviceManager graphics) 
         {
             mControls = controls;
+            mGraphics = graphics;
         }
 
         public void Load(ContentManager content, GraphicsDevice graphics)
@@ -64,7 +66,7 @@ namespace GravityShift
                 null,
                 scale);
 
-            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mScreenRect.Width, mScreenRect.Height), Color.White);
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
             
             spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 

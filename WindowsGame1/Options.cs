@@ -56,7 +56,8 @@ namespace GravityShift
             {
                 if (mCurrentChoice == MenuChoices.Volume) ;
                 if (mCurrentChoice == MenuChoices.Controls) ;
-                if (mCurrentChoice == MenuChoices.Reset) ;
+                if (mCurrentChoice == MenuChoices.Reset)
+                    states = GameStates.New_Level_Selection;
                 if (mCurrentChoice == MenuChoices.Back)
                     states = GameStates.Main_Menu;
             }

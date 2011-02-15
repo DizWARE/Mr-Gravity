@@ -78,8 +78,6 @@ namespace GravityShift
 
         PlayerIndex playerIndex;
 
-        int frame = 0;
-
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -279,12 +277,7 @@ namespace GravityShift
         /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
-            frame++;
-            if (frame >= 60)
-            {
-                this.Save(playerIndex);
-                frame = 0;
-            }
+
             HandleDirectionKeys();          
 
             if(mControls.isAPressed(false)||mControls.isStartPressed(false))
@@ -422,10 +415,10 @@ namespace GravityShift
                 null,
                 scale);
 
-            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
 
             Vector2 size = new Vector2(this.mScreenRect.Width / 4, this.mScreenRect.Height / 3);
-            Vector2 padding = new Vector2(size.X * .20f, size.Y * .20f);
+            Vector2 padding = new Vector2(size.X * .25f, size.Y * .25f);
 
             Vector2 stringLoc = mQuartz.MeasureString((mCurrentPage + 1) + "/" + mPageCount);
 
@@ -436,18 +429,18 @@ namespace GravityShift
 
             size.X -= 2*padding.X;
             size.Y -= 2*padding.Y;
-            
-            Vector2 currentLocation = new Vector2(mScreenRect.X, 2*padding.Y);
+
+            Vector2 currentLocation = new Vector2(mScreenRect.X + 70, mScreenRect.Top + 70);
             int index = 0;
 
             for (int i = 0; i < 12 && i + 12 * mCurrentPage < mLevels.Count; i++)
             {
-                if (currentLocation.X + size.X + padding.X >= graphics.GraphicsDevice.Viewport.TitleSafeArea.Width)
+                if (currentLocation.X + size.X + (padding.X / 4) >= graphics.GraphicsDevice.Viewport.TitleSafeArea.Width)
                 {
-                    currentLocation.X = 0;
-                    currentLocation.Y += padding.Y + size.Y;
+                    currentLocation.X = mScreenRect.X + 70;
+                    currentLocation.Y += 1.5f * padding.Y + size.Y;
                 }
-                currentLocation.X += padding.X;
+                currentLocation.X += (padding.X / 4);
                 Rectangle rect = new Rectangle((int)currentLocation.X, (int)currentLocation.Y, (int)size.X, (int)size.Y);
 
                 spriteBatch.Draw(mLevels[i + 12 * mCurrentPage].Thumbnail, rect, Color.White);
