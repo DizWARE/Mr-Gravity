@@ -135,7 +135,7 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Walls\Yellow</Texture>
+    <Texture>Walls\Pink</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
@@ -150,7 +150,7 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Walls\Yellow</Texture>
+    <Texture>Walls\Pink</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
