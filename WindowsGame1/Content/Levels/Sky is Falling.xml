@@ -1228,7 +1228,7 @@
       <ID>1488</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="3" Y="3" />
+      <Location X="3" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>

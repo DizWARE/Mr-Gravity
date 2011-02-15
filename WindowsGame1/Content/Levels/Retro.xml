@@ -8246,5 +8246,21 @@
         <Mass>0.8</Mass>
       </Properties>
     </Entity>
+    <Entity>
+      <ID>1801</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="14" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>

@@ -14,7 +14,7 @@
     <Collectionstar>3</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
-    <LevelData>
+  <LevelData>
     <Name>X Trio</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
@@ -144,7 +144,7 @@
     <Name>Sky is Falling</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
+    <Collectionstar>2</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>

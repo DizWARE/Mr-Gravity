@@ -814,5 +814,21 @@
       <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
+    <Entity>
+      <ID>671</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="6" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>
