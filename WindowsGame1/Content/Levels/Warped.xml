@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>Warped</Name>
+  <Size X="10" Y="9" />
+  <Background>Backgrounds\blank</Background>
+  <Entities>
+    <Entity>
+      <ID>59</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>60</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>61</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>62</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>63</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>64</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>65</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>66</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>67</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>68</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>80</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>81</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>82</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>83</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>84</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>85</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>86</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>87</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>88</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>89</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>90</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>91</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>92</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>93</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>94</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>95</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>96</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>97</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>98</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>99</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>100</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>101</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>102</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>103</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>104</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>105</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>106</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>107</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>108</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>109</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>110</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>111</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>112</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>113</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>114</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>115</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>116</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>117</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>118</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>119</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>120</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>242</ID>
+      <Name>PlayerEnd</Name>
+      <Type>Level Positions</Type>
+      <Location X="3" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerEnd</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>424</ID>
+      <Name>BlueGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="0" Y="1" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>425</ID>
+      <Name>BlueGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>426</ID>
+      <Name>BlueGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>427</ID>
+      <Name>BlueGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>428</ID>
+      <Name>BlueGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>551</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="2" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>673</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="3" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>8</IdealTime>
+      </Properties>
+    </Entity>
+  </Entities>
+</Level>
