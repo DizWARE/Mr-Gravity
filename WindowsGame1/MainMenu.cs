@@ -81,7 +81,13 @@ namespace GravityShift
 
         public void Draw(GameTime gametime, SpriteBatch spriteBatch, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
 #if XBOX360
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
