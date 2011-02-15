@@ -77,7 +77,7 @@ namespace GravityShift
 
             PlayerFaces.Load(content);
 
-            mCurrentTexture = PlayerFaces.SMILE;
+            mCurrentTexture = PlayerFaces.FromString("Smile");
             mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
         }
         /// <summary>
@@ -92,9 +92,9 @@ namespace GravityShift
                 StopRumble();
 
             if (Math.Abs(mVelocity.X) >= 15 || Math.Abs(mVelocity.Y) >= 15)
-                mCurrentTexture = PlayerFaces.SURPRISE;
+                mCurrentTexture = PlayerFaces.FromString("Surprise");
             else if (!mRumble) 
-                mCurrentTexture = PlayerFaces.SMILE;
+                mCurrentTexture = PlayerFaces.FromString("Smile");
 
             //SHIFT: Down
             if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
@@ -188,7 +188,7 @@ namespace GravityShift
             mRumble = true;
 
             setFaceStraight();
-            mCurrentTexture = PlayerFaces.DEAD2;
+            mCurrentTexture = PlayerFaces.FromString("Dead2");
 
             StartRumble();
 
@@ -253,7 +253,7 @@ namespace GravityShift
                     mRumble = false;
                     GamePad.SetVibration(current, 0.0f, 0.0f);
                     elapsedTime = 0.0;
-                    mCurrentTexture = PlayerFaces.SMILE;
+                    mCurrentTexture = PlayerFaces.FromString("Smile");
                 }
             }
         }
@@ -264,7 +264,7 @@ namespace GravityShift
 
             mRotation = mRotationDown;
             mGoalRotation = mRotation;
-            mCurrentTexture = PlayerFaces.SMILE;
+            mCurrentTexture = PlayerFaces.FromString("Smile");
         }
 
         /// <summary>
