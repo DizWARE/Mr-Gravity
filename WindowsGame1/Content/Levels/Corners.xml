@@ -5,26 +5,6 @@
   <Background>Backgrounds\blank</Background>
   <Entities>
     <Entity>
-      <ID>59</ID>
-      <Name>Purple</Name>
-      <Type>Walls</Type>
-      <Location X="3" Y="6" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Purple</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>60</ID>
-      <Name>Purple</Name>
-      <Type>Walls</Type>
-      <Location X="3" Y="7" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Purple</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>61</ID>
       <Name>Purple</Name>
       <Type>Walls</Type>
@@ -231,16 +211,6 @@
       <Name>Purple</Name>
       <Type>Walls</Type>
       <Location X="3" Y="9" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Purple</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>394</ID>
-      <Name>Purple</Name>
-      <Type>Walls</Type>
-      <Location X="3" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Purple</Texture>
@@ -927,40 +897,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1096</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="3" Y="10" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1097</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="3" Y="11" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>1098</ID>
       <Name>Hazard</Name>
       <Type>Walls</Type>
       <Location X="3" Y="12" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1099</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="4" Y="11" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Hazards\RedSquare</Texture>
@@ -1173,36 +1113,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1362</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="2" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1363</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="1" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1364</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="12" Y="0" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>1365</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
@@ -1217,6 +1127,96 @@
         <MusicFile>music_level00</MusicFile>
         <Loop>True</Loop>
       </Properties>
+    </Entity>
+    <Entity>
+      <ID>1426</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1427</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1428</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1429</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1430</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1431</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1492</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="8" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1493</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="7" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1494</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="6" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
     </Entity>
   </Entities>
 </Level>
