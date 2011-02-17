@@ -606,7 +606,7 @@ namespace GravityShift
             if (mPlayer.mIsAlive)
             {
                 spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
-                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected + "/"+ mNumCollectable, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
             }
 
             spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 275), Color.White);
