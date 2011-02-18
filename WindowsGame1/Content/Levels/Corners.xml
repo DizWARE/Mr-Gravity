@@ -937,162 +937,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1223</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1224</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1225</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1226</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="6" Y="9" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1227</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="4" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1228</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1229</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1230</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="13" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1231</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="12" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1232</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="13" Y="13" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1233</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="12" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1234</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="12" Y="2" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1235</ID>
-      <Name>BlueGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="1" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\BlueGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1298</ID>
       <Name>Purple</Name>
       <Type>Walls</Type>
@@ -1216,6 +1060,136 @@
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1561</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1562</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1563</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1564</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1565</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1566</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1567</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1568</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1569</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1570</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1571</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1572</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="2" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1573</ID>
+      <Name>OrangeDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="1" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeDiamond</Texture>
       <Properties />
     </Entity>
   </Entities>
