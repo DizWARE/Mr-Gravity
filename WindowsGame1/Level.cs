@@ -390,6 +390,11 @@ namespace GravityShift
 
                     foreach (GameObject gObject in mObjects)
                     {
+                        if (gObject.CollisionType == XmlKeys.COLLECTABLE)
+                        {
+                            if (!mActiveAnimations.ContainsKey(new Vector2(gObject.mPosition.X, gObject.mPosition.Y)))
+                                mActiveAnimations.Add(new Vector2(gObject.mPosition.X, gObject.mPosition.Y), GetAnimation(gObject.mName));
+                        }
                         if (gObject is PhysicsObject)
                         {
                             PhysicsObject pObject = (PhysicsObject)gObject;
@@ -418,7 +423,16 @@ namespace GravityShift
                         KeyValuePair<Vector2, AnimatedSprite> current = mActiveAnimations.ElementAt(i);
                         current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                         if (current.Value.Frame == current.Value.LastFrame)
-                            mActiveAnimations.Remove(current.Key);
+                        {
+                            if (current.Value.CollectAnimation)
+                            {
+                                mActiveAnimations[current.Key].Reset();
+                            }
+                            else
+                            {
+                                mActiveAnimations.Remove(current.Key);
+                            }
+                        }
                     }
 
                     //Check to see if we collected anything
@@ -431,6 +445,7 @@ namespace GravityShift
                         {
                             RemoveFromMatrix(g);
                             mObjects.Remove(g);
+                            mActiveAnimations.Remove(g.mPosition);
                         }
 
                         //Then clear the list
@@ -527,6 +542,7 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation() * scale);
+
             foreach (Trigger trigger in mTrigger)
                 trigger.Draw(spriteBatch, gameTime);
 
@@ -572,7 +588,13 @@ namespace GravityShift
 
             //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
+            {
+                if (gObject.CollisionType != XmlKeys.COLLECTABLE)
+                {
                     gObject.Draw(spriteBatch, gameTime);
+                }
+                
+            }
 
             //Draw all of our active animations
             if(shouldAnimate)
@@ -721,11 +743,13 @@ namespace GravityShift
                             {
                                 mCollected.Add(physObj);
                                 mRemoveCollected.Add(physObj);
+                                mActiveAnimations.Remove(physObj.mPosition);
                             }
                             else if (obj.CollisionType == XmlKeys.COLLECTABLE)
                             {
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
+                                mActiveAnimations.Remove(obj.mPosition);
                             }
                             collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
                             collectibleEngine.Update(10);
@@ -852,6 +876,47 @@ namespace GravityShift
                     break;
                 case "Orange":
                     newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    break;
+                    //TODO: Change to animations once those are added to content folder
+                case "GreenDiamond":
+                    newAnimation.Load(mContent, "GreenDiamond", 3, 0.5f);
+                    newAnimation.CollectAnimation = true;
+                    break;
+                case "BlueDiamond":
+                    newAnimation.Load(mContent, "BlueDiamond", 3, 0.5f);
+                    newAnimation.CollectAnimation = true;
+                    break;
+                case "OrangeDiamond":
+                    newAnimation.Load(mContent, "OrangeDiamond", 3, 0.5f);
+                    break;
+                case "PinkDiamond":
+                    newAnimation.Load(mContent, "PinkDiamond", 3, 0.5f);
+                    break;
+                case "PurpleDiamond":
+                    newAnimation.Load(mContent, "PurpleDiamond", 3, 0.5f);
+                    break;
+                case "YellowDiamond":
+                    newAnimation.Load(mContent, "YellowDiamond", 3, 0.5f);
+                    break;
+                case "YellowStar":
+                    newAnimation.Load(mContent, "YellowStar", 1, 0.5f);
+                    newAnimation.CollectAnimation = true;
+                    break;
+                case "OrangeStar":
+                    newAnimation.Load(mContent, "OrangeStar", 1, 0.5f);
+                    newAnimation.CollectAnimation = true;
+                    break;
+                case "Star":
+                    newAnimation.Load(mContent, "Star", 1, 0.5f);
+                    newAnimation.CollectAnimation = true;
+                    break;
+                case "BlueGem":
+                    newAnimation.Load(mContent, "BlueGem", 1, 0.5f);
+                    newAnimation.CollectAnimation = true;
+                    break;
+                case "PurpleGem":
+                    newAnimation.Load(mContent, "PurpleGem", 1, 0.5f);
+                    newAnimation.CollectAnimation = true;
                     break;
                 default:
                     newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);
