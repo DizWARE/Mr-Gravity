@@ -132,6 +132,7 @@
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="LevelSelect.cs" />
     <Compile Include="Menu Code\MainMenu.cs" />
+    <Compile Include="Menu Code\SoundOptions.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />

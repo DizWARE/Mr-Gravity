@@ -106,7 +106,7 @@ namespace GravityShift
 #else
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
-            spriteBatch.Draw(mTitle, new Vector2(center.X + 30 - mTitle.Width / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White);
+            spriteBatch.Draw(mTitle, new Rectangle(center.X - (int)(mTitle.Width * mSize[0]) / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top, (int)(mTitle.Width * mSize[0]), (int)(mTitle.Height * mSize[1])), Color.White);
 
             foreach (MenuChoices choice in Enum.GetValues(typeof(MenuChoices)))
                 if (choice == mCurrentChoice)

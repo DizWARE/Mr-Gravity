@@ -3,51 +3,51 @@
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
+    <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>X Trio</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Maze</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Corners</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -142,10 +142,10 @@
   </LevelData>
   <LevelData>
     <Name>Sky is Falling</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>2</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Trap Em</Name>
@@ -170,16 +170,16 @@
   </LevelData>
   <LevelData>
     <Name>Dropping In</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Rail Reversal</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
 </Levels>

@@ -35,12 +35,12 @@ namespace GravityShift
         public void Load(ContentManager content)
         {
             mSelected.Add(MenuChoices.Back, content.Load<Texture2D>("Images\\Menu\\Main\\BackSelected"));
-            mSelected.Add(MenuChoices.Volume, content.Load<Texture2D>("Images\\Menu\\Main\\MuteSelected"));
+            mSelected.Add(MenuChoices.Volume, content.Load<Texture2D>("Images\\Menu\\Main\\SoundSelected"));
             mSelected.Add(MenuChoices.Controls, content.Load<Texture2D>("Images\\Menu\\Main\\ControllerSelected"));
             mSelected.Add(MenuChoices.Reset, content.Load<Texture2D>("Images\\Menu\\Main\\ResetSelected"));
 
             mUnselected.Add(MenuChoices.Back, content.Load<Texture2D>("Images\\Menu\\Main\\BackUnselected"));
-            mUnselected.Add(MenuChoices.Volume, content.Load<Texture2D>("Images\\Menu\\Main\\MuteUnselected"));
+            mUnselected.Add(MenuChoices.Volume, content.Load<Texture2D>("Images\\Menu\\Main\\SoundUnselected"));
             mUnselected.Add(MenuChoices.Controls, content.Load<Texture2D>("Images\\Menu\\Main\\ControllerUnselected"));
             mUnselected.Add(MenuChoices.Reset, content.Load<Texture2D>("Images\\Menu\\Main\\ResetUnselected"));
 
@@ -56,7 +56,8 @@ namespace GravityShift
 
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                if (mCurrentChoice == MenuChoices.Volume) ;
+                if (mCurrentChoice == MenuChoices.Volume) 
+                    states = GameStates.SoundOptions;
                 if (mCurrentChoice == MenuChoices.Controls) 
                     states = GameStates.Controls;
                 if (mCurrentChoice == MenuChoices.Reset)
