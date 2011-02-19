@@ -18,7 +18,7 @@
     <Name>X Trio</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
-    <Collectionstar>0</Collectionstar>
+    <Collectionstar>3</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
@@ -101,9 +101,9 @@
   <LevelData>
     <Name>Choosing Sides</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
+    <Timerstar>3</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Copycat</Name>

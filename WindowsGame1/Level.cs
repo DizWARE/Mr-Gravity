@@ -112,6 +112,8 @@ namespace GravityShift
         ContentManager mContent;
 
         Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
+        List<Vector2> mCollectableLocations;
+        AnimatedSprite mCollectableAnimation = null;
 
         Player mPlayer;
 
@@ -270,6 +272,8 @@ namespace GravityShift
 
             lastCollided = new GameObject[2];
             lastCollided[0] = lastCollided[1] = null;
+
+            mCollectableLocations = new List<Vector2>();
         }
 
         /// <summary>
@@ -392,8 +396,14 @@ namespace GravityShift
                     {
                         if (gObject.CollisionType == XmlKeys.COLLECTABLE)
                         {
-                            if (!mActiveAnimations.ContainsKey(new Vector2(gObject.mPosition.X, gObject.mPosition.Y)))
-                                mActiveAnimations.Add(new Vector2(gObject.mPosition.X, gObject.mPosition.Y), GetAnimation(gObject.mName));
+                            if (mCollectableAnimation == null)
+                            {
+                                mCollectableAnimation = GetAnimation(gObject.mName);
+                            }
+                            if (!mCollectableLocations.Contains(gObject.mPosition))
+                            {
+                                mCollectableLocations.Add(gObject.mPosition);
+                            }
                         }
                         if (gObject is PhysicsObject)
                         {
@@ -424,14 +434,16 @@ namespace GravityShift
                         current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                         if (current.Value.Frame == current.Value.LastFrame)
                         {
-                            if (current.Value.CollectAnimation)
-                            {
-                                mActiveAnimations[current.Key].Reset();
-                            }
-                            else
-                            {
-                                mActiveAnimations.Remove(current.Key);
-                            }
+                            mActiveAnimations.Remove(current.Key); 
+                        }
+                    }
+
+                    if (mCollectableAnimation != null)
+                    {
+                        mCollectableAnimation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+                        if (mCollectableAnimation.Frame == mCollectableAnimation.LastFrame)
+                        {
+                            mCollectableAnimation.Reset();
                         }
                     }
 
@@ -445,7 +457,7 @@ namespace GravityShift
                         {
                             RemoveFromMatrix(g);
                             mObjects.Remove(g);
-                            mActiveAnimations.Remove(g.mPosition);
+                            mCollectableLocations.Remove(g.mPosition);
                         }
 
                         //Then clear the list
@@ -597,9 +609,19 @@ namespace GravityShift
             }
 
             //Draw all of our active animations
-            if(shouldAnimate)
+            if (shouldAnimate)
+            {
                 for (int i = 0; i < mActiveAnimations.Count; i++)
                     mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
+                if (mCollectableAnimation != null)
+                {
+                    for (int i = 0; i < mCollectableLocations.Count; i++)
+                    {
+                        mCollectableAnimation.Draw(spriteBatch, mCollectableLocations.ElementAt(i));
+                    }
+                }
+
+            }
 
             spriteBatch.End();
         }
@@ -743,13 +765,13 @@ namespace GravityShift
                             {
                                 mCollected.Add(physObj);
                                 mRemoveCollected.Add(physObj);
-                                mActiveAnimations.Remove(physObj.mPosition);
+                                mCollectableLocations.Remove(physObj.mPosition);
                             }
                             else if (obj.CollisionType == XmlKeys.COLLECTABLE)
                             {
                                 mCollected.Add(obj);
                                 mRemoveCollected.Add(obj);
-                                mActiveAnimations.Remove(obj.mPosition);
+                                mCollectableLocations.Remove(obj.mPosition);
                             }
                             collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
                             collectibleEngine.Update(10);
@@ -880,11 +902,9 @@ namespace GravityShift
                     //TODO: Change to animations once those are added to content folder
                 case "GreenDiamond":
                     newAnimation.Load(mContent, "GreenDiamond", 3, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 case "BlueDiamond":
                     newAnimation.Load(mContent, "BlueDiamond", 3, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 case "OrangeDiamond":
                     newAnimation.Load(mContent, "OrangeDiamond", 3, 0.5f);
@@ -900,23 +920,18 @@ namespace GravityShift
                     break;
                 case "YellowStar":
                     newAnimation.Load(mContent, "YellowStar", 1, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 case "OrangeStar":
                     newAnimation.Load(mContent, "OrangeStar", 1, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 case "Star":
                     newAnimation.Load(mContent, "Star", 1, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 case "BlueGem":
                     newAnimation.Load(mContent, "BlueGem", 1, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 case "PurpleGem":
                     newAnimation.Load(mContent, "PurpleGem", 1, 0.5f);
-                    newAnimation.CollectAnimation = true;
                     break;
                 default:
                     newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);

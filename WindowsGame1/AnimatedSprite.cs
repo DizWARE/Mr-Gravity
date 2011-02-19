@@ -32,9 +32,6 @@ namespace GravityShift
         /* Elapsed time */
         private float mElapsed;
 
-        bool mCollectAnimation = false;
-        public bool CollectAnimation { get { return mCollectAnimation; } set { mCollectAnimation = value; } }
-
         public AnimatedSprite() { }
 
         /// <summary>
