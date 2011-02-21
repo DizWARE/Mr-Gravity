@@ -130,7 +130,7 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine collectibleEngine;
         ParticleEngine wallEngine;
-        GameObject lastCollided;
+        GameObject[] lastCollided;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -268,7 +268,8 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
-            lastCollided = null;
+            lastCollided = new GameObject[2];
+            lastCollided[0] = lastCollided[1] = null;
         }
 
         /// <summary>
@@ -679,22 +680,23 @@ namespace GravityShift
                     {
                         bool collided = false;
 
-                        if (physObj.IsSquare && obj.IsSquare)// square aquare
+                        if (physObj.IsSquare && obj.IsSquare)// both squares
                         {
                             collided = physObj.IsCollidingBoxAndBox(obj);
                         }
                         else if (!physObj.IsSquare && obj.IsSquare) // phys obj is circle
                         {
-                            collided = physObj.IsCollidingCircleAndBox(obj);
+                            collided = physObj.IsCollidingBoxAndBox(obj);
                         }
                         else if (physObj.IsSquare && !obj.IsSquare) //obj is circle 
                         {
-                            collided = physObj.IsCollidingBoxAndCircle(obj);
+                            collided = physObj.IsCollidingBoxAndBox(obj);
                         }
                         else // both circles
                         {
                             collided = physObj.IsCollidingCircleandCircle(obj);
                         }
+
 
                         if (obj.Equals(physObj) || obj is PlayerEnd && !(physObj is Player))
                             continue;
@@ -771,7 +773,7 @@ namespace GravityShift
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided)
+                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
@@ -782,7 +784,8 @@ namespace GravityShift
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play();
 
-                                    lastCollided = cObject;
+                                    lastCollided[1] = lastCollided[0];
+                                    lastCollided[0] = cObject;
 
                                 }
                             }
@@ -797,7 +800,7 @@ namespace GravityShift
                                     mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided)
+                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(cObject.mPosition.X + 32, cObject.mPosition.Y + 32);
@@ -808,7 +811,8 @@ namespace GravityShift
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play();
 
-                                    lastCollided = cObject;
+                                    lastCollided[1] = lastCollided[0];
+                                    lastCollided[0] = cObject;
 
                                 }
                             }
