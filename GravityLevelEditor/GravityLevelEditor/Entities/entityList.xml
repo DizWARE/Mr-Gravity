@@ -9,7 +9,7 @@
     <Paintable>False</Paintable>
     <Texture>PlayerPositions\PlayerStart</Texture>
     <Properties>
-      <IdealTime>400</IdealTime>
+      <IdealTime>30</IdealTime>
     </Properties>
   </Entity>
   <Entity>
@@ -173,7 +173,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>7</Length>
+      <Length>1</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -339,7 +339,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>7</Length>
+      <Length>1</Length>
       <Reverse>Tile</Reverse>
     </Properties>
   </Entity>

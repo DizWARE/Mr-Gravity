@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
-    <Collectionstar>0</Collectionstar>
+    <Collectionstar>3</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
