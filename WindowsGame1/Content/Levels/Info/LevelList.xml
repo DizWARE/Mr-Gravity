@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
-    <Collectionstar>0</Collectionstar>
+    <Collectionstar>3</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
-    <Collectionstar>0</Collectionstar>
+    <Collectionstar>3</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
@@ -24,41 +24,41 @@
   <LevelData>
     <Name>Maze</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
+    <Timerstar>3</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Corners</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>2</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Copycat</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>2</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Avoidance</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -227,22 +227,29 @@
   <LevelData>
     <Name>Into The Fire</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>2</Timerstar>
+    <Collectionstar>2</Collectionstar>
+    <Deathstar>1</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Up Is Down</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>2</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Warped</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Rail Jam</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
   </LevelData>
 </Levels>
