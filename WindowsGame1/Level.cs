@@ -270,14 +270,9 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
-<<<<<<< HEAD
-            lastCollided = new GameObject[2];
-            lastCollided[0] = lastCollided[1] = null;
+            lastCollided = null;
 
             mCollectableLocations = new List<Vector2>();
-=======
-            lastCollided = null;
->>>>>>> upstream/master
         }
 
         /// <summary>
