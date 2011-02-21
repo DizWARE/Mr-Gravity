@@ -494,8 +494,14 @@ namespace GravityShift
             mSpriteBatch.Draw(mLives[mCurrentLevel.NumLives], new Vector2(mScreenRect.Right - mLives[0].Width * 2, mScreenRect.Top), Color.White);
 
             if (mCurrentLevel.NumLives <= 0)
-                mSpriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mScreenRect.Center.X, mScreenRect.Center.Y), Color.DarkTurquoise);
+            {
+                string request = "Out of Lives       Press A to Restart";
 
+                Vector2 stringSize = mQuartz.MeasureString(request);
+                mSpriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - stringSize.X/2, mScreenRect.Center.Y), Color.DarkTurquoise);
+                mSpriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2 + 2, mScreenRect.Center.Y + 2), Color.White);
+
+            }
             mSpriteBatch.End();
         }
     }
