@@ -30,6 +30,11 @@ namespace GravityShift
         public int mNumLives = 5;
         public bool mIsAlive = true;
 
+        public int NumLives
+        {
+            get { return mNumLives; }
+        }
+
         //Player rotation values for outer circle (current, goal, and speed)
         private float mRotation;
         private float mGoalRotation;

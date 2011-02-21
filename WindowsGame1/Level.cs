@@ -66,6 +66,25 @@ namespace GravityShift
         public int CollectableCount
         { get { return mCollectableCount; } set { mCollectableCount = value; } }
 
+        public int Timer
+        {
+            get { return (int)TIMER; }
+        }
+
+        public int NumCollected
+        {
+            get { return mNumCollected; }
+        }
+
+        public int NumCollectable
+        {
+            get { return mNumCollectable; }
+        }
+
+        public int NumLives
+        {
+            get { return mPlayer.NumLives; }
+        }
 
         //Enumerator for different states of death (playing game, in need of respawn, or panning back to start point)
         private enum DeathStates
@@ -186,7 +205,6 @@ namespace GravityShift
 
         private Texture2D mHUDTrans;
 //        private Texture2D[] mDirections;
-        private Texture2D[] mLives;
         public static int mNumCollected;
         public static int mNumCollectable;
         public static int mDeaths;
@@ -245,12 +263,6 @@ namespace GravityShift
             mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
             mContent = content;
-
-            mLives = new Texture2D[10];
-            for (int i = 0; i < mLives.Length; i++)
-                mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
-
-            mHUDTrans = content.Load<Texture2D>("Images/HUD/HUDTrans");
 
             mNumCollected = 0;
             mNumCollectable = 0;
@@ -526,6 +538,7 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation() * scale);
+
             foreach (Trigger trigger in mTrigger)
                 trigger.Draw(spriteBatch, gameTime);
 
@@ -577,41 +590,6 @@ namespace GravityShift
             if(shouldAnimate)
                 for (int i = 0; i < mActiveAnimations.Count; i++)
                     mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
-
-            spriteBatch.End();
-        }
-
-        /// <summary>
-        /// Draws the hud.
-        /// </summary>
-        /// <param name="spriteBatch">The sprite batch.</param>
-        /// <param name="gameTime">The game time.</param>
-        public void DrawHud(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
-        {
-            /* Cam 1 is for drawing the HUD - PLACE ALL YOUR HUD STUFF IN THIS SECTION */
-            // Begin spritebatch with the desired camera transformations
-
-            spriteBatch.Begin(SpriteSortMode.Immediate,
-                                BlendState.AlphaBlend,
-                                SamplerState.LinearClamp,
-                                DepthStencilState.None,
-                                RasterizerState.CullCounterClockwise,
-                                null,
-                                mCam1.get_transformation() * scale);
-
-            // Draw the black background behind HUD
-            spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 500), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-            //spriteBatch.Draw(mHUDTrans, new Vector2(mScreenRect.Center.X - mHUDTrans.Width / 2, mScreenRect.Top), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-            if (mPlayer.mIsAlive)
-            {
-                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
-                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected + "/"+ mNumCollectable, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
-            }
-
-            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 275), Color.White);
-
-            if (!mPlayer.mIsAlive)
-                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
 
             spriteBatch.End();
         }
