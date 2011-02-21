@@ -1206,7 +1206,7 @@
         <Height>3</Height>
         <Shape>Square</Shape>
         <XForce>0</XForce>
-        <YForce>-100</YForce>
+        <YForce>-50</YForce>
       </Properties>
     </Entity>
     <Entity>
@@ -1250,7 +1250,7 @@
       <Texture>Hazards\RedSaw</Texture>
       <Properties>
         <Shape>Circle</Shape>
-        <Mass>1</Mass>
+        <Mass>0.9</Mass>
         <Rail>Y</Rail>
         <Length>9</Length>
       </Properties>
@@ -1281,7 +1281,7 @@
       <Texture>Hazards\RedSaw</Texture>
       <Properties>
         <Shape>Circle</Shape>
-        <Mass>1</Mass>
+        <Mass>0.8</Mass>
         <Rail>Y</Rail>
         <Length>9</Length>
       </Properties>
@@ -1299,7 +1299,7 @@
         <Height>3</Height>
         <Shape>Square</Shape>
         <XForce>0</XForce>
-        <YForce>-100</YForce>
+        <YForce>-10</YForce>
       </Properties>
     </Entity>
     <Entity>
@@ -1688,7 +1688,7 @@
         <Height>3</Height>
         <Shape>Square</Shape>
         <XForce>0</XForce>
-        <YForce>100</YForce>
+        <YForce>10</YForce>
       </Properties>
     </Entity>
     <Entity>
@@ -1696,6 +1696,16 @@
       <Name>Green</Name>
       <Type>Walls</Type>
       <Location X="10" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Green</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>662</ID>
+      <Name>Green</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="5" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Green</Texture>

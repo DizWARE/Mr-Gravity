@@ -18,12 +18,17 @@
     <Name>X Trio</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
+<<<<<<< HEAD
     <Collectionstar>3</Collectionstar>
+=======
+    <Collectionstar>0</Collectionstar>
+>>>>>>> upstream/master
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Maze</Name>
     <Unlocked>True</Unlocked>
+<<<<<<< HEAD
     <Timerstar>3</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>3</Deathstar>
@@ -48,22 +53,87 @@
     <Timerstar>3</Timerstar>
     <Collectionstar>2</Collectionstar>
     <Deathstar>1</Deathstar>
+=======
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Hazards</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Corners</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Copycat</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Avoidance</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Moving Hazard</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Trap Em</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+>>>>>>> upstream/master
   </LevelData>
   <LevelData>
     <Name>DK</Name>
     <Unlocked>True</Unlocked>
+<<<<<<< HEAD
     <Timerstar>3</Timerstar>
+=======
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>You Shall Not Pass</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+>>>>>>> upstream/master
     <Collectionstar>0</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Retro</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
+=======
+    <Name>Friction Is Your Friend</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+>>>>>>> upstream/master
     <Collectionstar>0</Collectionstar>
     <Deathstar>2</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Rails</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
@@ -73,6 +143,31 @@
   <LevelData>
     <Name>Close Call</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Guards</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Uniform</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Tortoise and Hare</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Labyrinth</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -85,15 +180,25 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Space Invaders</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Rails</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Avoidance</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Corridors</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -106,55 +211,91 @@
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Copycat</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>DK</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Friction Is Your Friend</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Retro</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Guards</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Sky is Falling</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Intertwined</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Space Invaders</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Labyrinth</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Nort</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Sky is Falling</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Intertwined</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Trap Em</Name>
     <Unlocked>True</Unlocked>
+=======
+    <Name>Rail Reversal</Name>
+    <Unlocked>False</Unlocked>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Uniform</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
@@ -165,21 +306,57 @@
     <Name>You Shall Not Pass</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>3</Timerstar>
+=======
+    <Name>Close Call</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Cramped</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+>>>>>>> upstream/master
     <Collectionstar>0</Collectionstar>
     <Deathstar>3</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Dropping In</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Full Circle</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Into The Fire</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>Rail Reversal</Name>
+    <Name>Up Is Down</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+<<<<<<< HEAD
+=======
+  </LevelData>
+  <LevelData>
+    <Name>Warped</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+>>>>>>> upstream/master
   </LevelData>
 </Levels>

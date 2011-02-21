@@ -392,11 +392,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\NonHazards\RedDiamond.png">
-      <Name>RedDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\NonHazards\YellowStar.png">
       <Name>YellowStar</Name>
       <Importer>TextureImporter</Importer>
@@ -972,6 +967,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\GreenDiamond.png">
       <Name>GreenDiamond</Name>
       <Importer>TextureImporter</Importer>
@@ -979,6 +975,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+=======
+>>>>>>> upstream/master
     <Compile Include="Images\AnimatedSprites\BlueDiamond.png">
       <Name>BlueDiamond</Name>
       <Importer>TextureImporter</Importer>
@@ -986,6 +984,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\YellowStar.png">
       <Name>YellowStar</Name>
       <Importer>TextureImporter</Importer>
@@ -995,25 +994,45 @@
   <ItemGroup>
     <Compile Include="Images\AnimatedSprites\BlueGem.png">
       <Name>BlueGem</Name>
+=======
+    <Compile Include="Images\AnimatedSprites\GreenDiamond.png">
+      <Name>GreenDiamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\AnimatedSprites\PinkDiamond.png">
+      <Name>PinkDiamond</Name>
+>>>>>>> upstream/master
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\PurpleGem.png">
       <Name>PurpleGem</Name>
+=======
+    <Compile Include="Images\AnimatedSprites\OrangeDiamond.png">
+      <Name>OrangeDiamond</Name>
+>>>>>>> upstream/master
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\OrangeStar.png">
       <Name>OrangeStar</Name>
+=======
+    <Compile Include="Images\AnimatedSprites\PurpleDiamond.png">
+      <Name>PurpleDiamond</Name>
+>>>>>>> upstream/master
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\RedDiamond.png">
       <Name>RedDiamond</Name>
       <Importer>TextureImporter</Importer>
@@ -1027,15 +1046,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\AnimatedSprites\OrangeDiamond.png">
+=======
+    <Compile Include="Images\AnimatedSprites\YellowDiamond.png">
+      <Name>YellowDiamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\NonHazards\BlueDiamond.png">
+      <Name>BlueDiamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\NonHazards\OrangeDiamond.png">
+>>>>>>> upstream/master
       <Name>OrangeDiamond</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\PinkDiamond.png">
+=======
+    <Compile Include="Images\NonHazards\PinkDiamond.png">
+>>>>>>> upstream/master
       <Name>PinkDiamond</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Images\AnimatedSprites\YellowDiamond.png">
       <Name>YellowDiamond</Name>
       <Importer>TextureImporter</Importer>
@@ -1045,6 +1084,15 @@
   <ItemGroup>
     <Compile Include="Images\AnimatedSprites\PurpleDiamond.png">
       <Name>PurpleDiamond</Name>
+=======
+    <Compile Include="Images\NonHazards\PurpleDiamond.png">
+      <Name>PurpleDiamond</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\NonHazards\YellowDiamond.png">
+      <Name>YellowDiamond</Name>
+>>>>>>> upstream/master
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
