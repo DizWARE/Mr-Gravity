@@ -159,6 +159,7 @@
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
     <Compile Include="Scoring.cs" />
     <Compile Include="Title.cs" />
+    <Compile Include="WorldSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
