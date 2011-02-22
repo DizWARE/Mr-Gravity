@@ -105,7 +105,6 @@ namespace GravityShift
 
         // Camera
         public static Camera mCam;
-        public static Camera mCam1;
 
         /* Tracks the previous zoom of the camera */
         private float mPrevZoom = 0.75f;
@@ -224,7 +223,6 @@ namespace GravityShift
             mControls = controls;
 
             mCam = new Camera(viewport);
-            mCam1 = new Camera(viewport);
 
             mScreenRect = viewport.TitleSafeArea;
 
@@ -456,12 +454,10 @@ namespace GravityShift
                     if (!isCameraFixed && (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f))
                     {
                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
-                       mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
                     }
                     else if(isCameraFixed)
                     {
                         mCam.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
-                        mCam1.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
                     }
 
                     /* Snap Zoom Out */
@@ -487,7 +483,6 @@ namespace GravityShift
                 else//Pan back to player after death
                 {
                     mCam.Position += mDeathPanLength;
-                    mCam1.Position += mDeathPanLength;
                     mDeathPanUpdates++;
 
                     if (mDeathPanUpdates == SCALING_FACTOR)
@@ -504,6 +499,7 @@ namespace GravityShift
                 {
                     mPlayer.mNumLives = 5;
                     mPlayer.mIsAlive = true;
+                    mNumCollected = 0;
                     TIMER = 0;
 
 

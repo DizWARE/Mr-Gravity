@@ -118,6 +118,8 @@ namespace GravityShift
             }
             else if (mControls.isAPressed(false))
             {
+                GravityShift.Level.TIMER = 0;
+
                 gameState = GameStates.Next_Level;
 #if XBOX360
                 mSelect.Save(((ControllerControl)mControls).ControllerIndex);
