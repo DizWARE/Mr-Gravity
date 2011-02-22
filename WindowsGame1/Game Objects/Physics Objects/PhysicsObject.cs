@@ -713,6 +713,7 @@ namespace GravityShift
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
 
+                
                 // normal of the collision
                 Vector2 N = centerDiff;
                 N.Normalize();
@@ -741,7 +742,7 @@ namespace GravityShift
                     this.mVelocity.X = vafn * N.X + vaft * T.X;
                 else
                     this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
-
+                
                 // place the Y pos just so it is not colliding.
                 if (!mIsRail)
                     mPosition += add;

@@ -13,7 +13,7 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>400</IdealTime>
+        <IdealTime>5</IdealTime>
       </Properties>
     </Entity>
     <Entity>
@@ -510,7 +510,7 @@
       <ID>2130</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="2" />
+      <Location X="1" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -655,6 +655,126 @@
         <Mass>1</Mass>
         <Rail>Y</Rail>
         <Length>8</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2326</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2327</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2328</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2329</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2330</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2331</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2332</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2333</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="2" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2334</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2335</ID>
+      <Name>BlueDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\BlueDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
       </Properties>
     </Entity>
   </Entities>
