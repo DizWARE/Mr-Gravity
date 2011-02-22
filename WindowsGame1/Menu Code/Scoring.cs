@@ -107,8 +107,26 @@ namespace GravityShift
             level.CollectionStar = scores[1];
             level.DeathStar = scores[2];
 
-            if (mControls.isStartPressed(false) || mControls.isAPressed(false))
+            if (mControls.isStartPressed(false))
+            {
                 gameState = GameStates.AfterScore;
+//#if XBOX360
+//                mSelect.Save(((ControllerControl)mControls).ControllerIndex);
+//#else
+//                mSelect.Save(PlayerIndex.One);
+//#endif
+            }
+            else if (mControls.isAPressed(false))
+            {
+                level.mTimer = 0;
+
+                gameState = GameStates.Next_Level;
+//#if XBOX360
+//                mSelect.Save(((ControllerControl)mControls).ControllerIndex);
+//#else
+//                mSelect.Save(PlayerIndex.One);
+//#endif
+            }
             
         }
         /* GetRank
@@ -167,7 +185,7 @@ namespace GravityShift
                 null,
                 scale);
 
-            //TODO: CHANGE TO DYNAMIC PLACING
+            // TODO - CHANGE TO DYNAMIC PLACEMENT
 
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
             spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
@@ -184,12 +202,19 @@ namespace GravityShift
             spriteBatch.DrawString(mQuartz, "Deaths:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 101), Color.SteelBlue);
             spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4 + 100), Color.White);
 
-            string request = "Press Start Or A To Continue";
+            string request = "Press A To Continue To Next Level";
 
             Vector2 stringSize = mQuartz.MeasureString(request);
 
-            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) - 50), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) - 48), Color.White);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) * 3), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2)  + 2, mScreenRect.Bottom - (stringSize.Y) * 3  + 2), Color.White);
+
+            request = "Press Start To Access The Menu";
+
+            stringSize = mQuartz.MeasureString(request);
+
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) * 2), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2) + 2, mScreenRect.Bottom - (stringSize.Y) * 2 + 2), Color.White);
 
             spriteBatch.End();
         }

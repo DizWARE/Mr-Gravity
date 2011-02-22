@@ -425,179 +425,169 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>391</ID>
-      <Name>PlayerStart</Name>
-      <Type>Level Positions</Type>
-      <Location X="6" Y="11" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>PlayerPositions\PlayerStart</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>462</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="4" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>463</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>464</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="8" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>465</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="7" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>466</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="11" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>467</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>468</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>469</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="11" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>470</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="2" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>471</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="2" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>472</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>473</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="5" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>475</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>476</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="7" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
@@ -644,12 +634,12 @@
     </Entity>
     <Entity>
       <ID>547</ID>
-      <Name>YellowStar</Name>
+      <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\YellowStar</Texture>
+      <Texture>NonHazards\YellowDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
@@ -828,6 +818,18 @@
         <Shape>Square</Shape>
         <MusicFile>music_level00</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>738</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="6" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>15</IdealTime>
       </Properties>
     </Entity>
   </Entities>
