@@ -1063,18 +1063,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1354</ID>
-      <Name>PlayerStart</Name>
-      <Type>Level Positions</Type>
-      <Location X="1" Y="1" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>PlayerPositions\PlayerStart</Texture>
-      <Properties>
-        <IdealTime>10</IdealTime>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1416</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
@@ -1088,6 +1076,18 @@
         <Shape>Square</Shape>
         <MusicFile>music_level00</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1418</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="1" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>10</IdealTime>
       </Properties>
     </Entity>
   </Entities>

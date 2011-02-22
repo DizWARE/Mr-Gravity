@@ -645,18 +645,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>249</ID>
-      <Name>PlayerStart</Name>
-      <Type>Level Positions</Type>
-      <Location X="1" Y="1" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>PlayerPositions\PlayerStart</Texture>
-      <Properties>
-        <IdealTime>400</IdealTime>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>310</ID>
       <Name>PlayerEnd</Name>
       <Type>Level Positions</Type>
@@ -683,7 +671,7 @@
       <ID>432</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="1" />
+      <Location X="1" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -765,6 +753,18 @@
       <Texture>NonHazards\BlueDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>637</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="1" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>10</IdealTime>
       </Properties>
     </Entity>
   </Entities>
