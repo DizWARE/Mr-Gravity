@@ -150,7 +150,7 @@ namespace GravityShift
             /* If the user selects one of the menu items */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                GravityShift.Level.TIMER = 0;
+                level.mTimer = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
                 /* Next Level */

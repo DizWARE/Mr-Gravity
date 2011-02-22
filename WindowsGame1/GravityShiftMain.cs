@@ -285,8 +285,8 @@ namespace GravityShift
                     if (GameSound.menuMusic_title.State != SoundState.Playing)
                         GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
+                mWorldSelect.UpdateStarCount();
                 
-
                 mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
             else if (mCurrentState == GameStates.Level_Selection)
@@ -331,7 +331,6 @@ namespace GravityShift
             }
             else if (mCurrentState == GameStates.Unlock)
             {
-                mLevelSelect.UnlockNextLevel();
                 mSequence = VICTORY_DURATION;
                 mCurrentState = GameStates.Victory;
             }
@@ -468,7 +467,7 @@ namespace GravityShift
             else if (mCurrentState == GameStates.SoundOptions)
                 mSoundOptions.Draw(gameTime, mSpriteBatch, scale);
             else if (mCurrentState == GameStates.Score)
-                mScoring.Draw(mSpriteBatch, mGraphics, scale);
+                mScoring.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
             else if (mCurrentState == GameStates.Level_Selection)
                 mWorldSelect.Draw(mSpriteBatch, scale);
             else if (mCurrentState == GameStates.Pause)
@@ -493,7 +492,7 @@ namespace GravityShift
             }
             else if (mCurrentState == GameStates.AfterScore)
             {
-                mScoring.Draw(mSpriteBatch, mGraphics, scale);
+                mScoring.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
                 mAfterScore.Draw(mSpriteBatch, mGraphics, scale);
             }
                 

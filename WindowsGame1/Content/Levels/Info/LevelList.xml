@@ -8,16 +8,16 @@
     <Unlocked />False<GoalTime>10</GoalTime><GoalCollectable>18</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
   <LevelData>
     <Name>X Trio</Name>
-    <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>48</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
+    <Unlocked />False<GoalTime>20</GoalTime><GoalCollectable>48</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
   <LevelData>
     <Name>Maze</Name>
-    <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>79</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
+    <Unlocked />False<GoalTime>20</GoalTime><GoalCollectable>79</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
   <LevelData>
     <Name>Hazards</Name>
-    <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>8</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
+    <Unlocked />False<GoalTime>20</GoalTime><GoalCollectable>8</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
   <LevelData>
     <Name>Corners</Name>
-    <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>13</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
+    <Unlocked />False<GoalTime>20</GoalTime><GoalCollectable>13</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
   <LevelData>
     <Name>You Shall Not Pass</Name>
     <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>8</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>

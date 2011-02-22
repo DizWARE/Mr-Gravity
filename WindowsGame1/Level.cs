@@ -92,7 +92,7 @@ namespace GravityShift
         private float mPrevZoom = 0.75f;
 
         /* Timer variable */
-        public static double TIMER;
+        public double mTimer;
 
         private List<GameObject>[][] mCollisionMatrix;
 
@@ -393,7 +393,7 @@ namespace GravityShift
 
                 if (mDeathState == DeathStates.Playing)
                 {
-                    TIMER += (gameTime.ElapsedGameTime.TotalSeconds);
+                    mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
 
                     foreach (GameObject gObject in mObjects)
                     {
@@ -523,7 +523,7 @@ namespace GravityShift
                 {
                     mPlayer.mNumLives = 5;
                     mPlayer.mIsAlive = true;
-                    TIMER = 0;
+                    mTimer = 0;
 
 
                     //Add the collected objects back to the object list
@@ -652,7 +652,7 @@ namespace GravityShift
             //spriteBatch.Draw(mHUDTrans, new Vector2(mScreenRect.Center.X - mHUDTrans.Width / 2, mScreenRect.Top), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
             if (mPlayer.mIsAlive)
             {
-                spriteBatch.DrawString(mQuartz, "Timer: " + (int)TIMER, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
+                spriteBatch.DrawString(mQuartz, "Timer: " + (int)mTimer, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
                 spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected + "/"+ mNumCollectable, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
             }
 
@@ -700,7 +700,7 @@ namespace GravityShift
             mCollected.Clear();
             mRemoveCollected.Clear();
             mTrigger.Clear();
-            TIMER = 0;
+            mTimer = 0;
         }
 
         /// <summary>

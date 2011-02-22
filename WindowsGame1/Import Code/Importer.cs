@@ -86,17 +86,7 @@ namespace GravityShift.Import_Code
             foreach (EntityInfo entity in mEntities)
             {
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_START)
-                {
                     level.StartingPoint = GridSpace.GetDrawingCoord(entity.mLocation);
-                    if (entity.mProperties.ContainsKey(XmlKeys.IDEAL_TIME))
-                        level.IdealTime = int.Parse(entity.mProperties[XmlKeys.IDEAL_TIME]);
-                    else
-                        level.IdealTime = 400;
-                }
-                if (entity.mType == XmlKeys.STATIC_OBJECT && entity.mCollisionType == XmlKeys.COLLECTABLE)
-                {
-                    level.CollectableCount++;
-                }
             }
         } 
 
