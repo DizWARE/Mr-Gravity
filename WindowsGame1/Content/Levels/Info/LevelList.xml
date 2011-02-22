@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Face</Name>
@@ -6,6 +6,18 @@
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>18</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
+  </LevelData>
+  <LevelData>
+    <Name>Compartments</Name>
+    <Unlocked>True</Unlocked>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
+  </LevelData>
   <LevelData>
     <Name>X Trio</Name>
     <Unlocked />False<GoalTime>0</GoalTime><GoalCollectable>48</GoalCollectable><Timerstar>0</Timerstar><Collectionstar>0</Collectionstar><Deathstar>0</Deathstar></LevelData>
