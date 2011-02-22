@@ -16,6 +16,7 @@ namespace GravityShift
         Dictionary<MenuChoices, Texture2D> mSelected;
 
         Texture2D mTitle;
+        Texture2D mBackground;
 
         IControlScheme mControls;
         GraphicsDeviceManager mGraphics;
@@ -44,6 +45,7 @@ namespace GravityShift
             mUnselected.Add(MenuChoices.Reset, content.Load<Texture2D>("Images\\Menu\\Main\\ResetUnselected"));
 
             mTitle = content.Load<Texture2D>("Images\\Menu\\Title");
+            mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
         }
 
 
@@ -57,7 +59,7 @@ namespace GravityShift
                 if (mCurrentChoice == MenuChoices.Volume) ;
                 if (mCurrentChoice == MenuChoices.Controls) ;
                 if (mCurrentChoice == MenuChoices.Reset)
-                    states = GameStates.New_Level_Selection;
+                    states = GameStates.ResetConfirm;
                 if (mCurrentChoice == MenuChoices.Back)
                     states = GameStates.Main_Menu;
             }
@@ -85,6 +87,8 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[choice], GetRegion(choice, mUnselected[choice]), Color.White);
             }
 #else
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
+
             foreach (MenuChoices choice in Enum.GetValues(typeof(MenuChoices)))
                 if (choice == mCurrentChoice)
                     spriteBatch.Draw(mSelected[choice], GetRegion(choice, mSelected[choice]), Color.White);

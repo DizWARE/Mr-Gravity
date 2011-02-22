@@ -157,6 +157,7 @@
     <Compile Include="GravityShiftMain.cs" />
     <Compile Include="Game Objects\Static Objects\StaticObject.cs" />
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
+    <Compile Include="ResetConfirm.cs" />
     <Compile Include="Scoring.cs" />
     <Compile Include="Title.cs" />
   </ItemGroup>

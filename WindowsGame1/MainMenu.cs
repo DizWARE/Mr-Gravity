@@ -29,7 +29,7 @@ namespace GravityShift
         public MainMenu(IControlScheme controlScheme, GraphicsDeviceManager graphics)
         {
             mControls = controlScheme;
-            mGraphics = graphics;
+            mGraphics = graphics;   
 
             mUnselected = new Dictionary<MenuChoices, Texture2D>();
             mSelected = new Dictionary<MenuChoices, Texture2D>();
@@ -49,7 +49,6 @@ namespace GravityShift
 
             mTitle = content.Load<Texture2D>("Images\\Menu\\Mr_Gravity");
             mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
-
         }
 
 

@@ -35,6 +35,8 @@ namespace GravityShift
         // Instance of the AfterScore class
         AfterScore mAfterScore;
 
+        ResetConfirm mResetConfirm;
+
         MainMenu mMainMenu;
         Level mMainMenuLevel;
 
@@ -130,6 +132,7 @@ namespace GravityShift
             mCredits = new Credits(mControls, mGraphics);
             mOptions = new Options(mControls, mGraphics);
             mAfterScore = new AfterScore(mControls);
+            mResetConfirm = new ResetConfirm(mControls);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -172,6 +175,7 @@ namespace GravityShift
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
             mCurrentLevel.Load(Content);
             mAfterScore.Load(Content, GraphicsDevice);
+            mResetConfirm.Load(Content);
 
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
@@ -415,6 +419,10 @@ namespace GravityShift
             {
                 mAfterScore.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
+            else if (mCurrentState == GameStates.ResetConfirm)
+            {
+                mResetConfirm.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
         }
 
         /// <summary>
@@ -478,6 +486,10 @@ namespace GravityShift
             {
                 mScoring.Draw(mSpriteBatch, mGraphics, scale);
                 mAfterScore.Draw(mSpriteBatch, mGraphics, scale);
+            }
+            else if (mCurrentState == GameStates.ResetConfirm)
+            {
+                mResetConfirm.Draw(mSpriteBatch, mGraphics, scale);
             }
                 
             base.Draw(gameTime);

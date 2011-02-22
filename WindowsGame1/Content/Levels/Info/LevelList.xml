@@ -3,62 +3,62 @@
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>X Trio</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Maze</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>2</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Corners</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Copycat</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Avoidance</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -72,63 +72,63 @@
   </LevelData>
   <LevelData>
     <Name>DK</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>1</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>You Shall Not Pass</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Friction Is Your Friend</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Guards</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>2</Collectionstar>
-    <Deathstar>1</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Uniform</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Tortoise and Hare</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Labyrinth</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Chambers</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
-    <Deathstar>2</Deathstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Rails</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -226,23 +226,23 @@
   </LevelData>
   <LevelData>
     <Name>Into The Fire</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
-    <Collectionstar>2</Collectionstar>
-    <Deathstar>1</Deathstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Up Is Down</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
     <Name>Warped</Name>
-    <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
   </LevelData>
 </Levels>
