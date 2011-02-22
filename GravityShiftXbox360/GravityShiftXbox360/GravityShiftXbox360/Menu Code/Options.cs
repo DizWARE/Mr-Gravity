@@ -44,7 +44,11 @@ namespace GravityShift
             mUnselected.Add(MenuChoices.Controls, content.Load<Texture2D>("Images\\Menu\\Main\\ControllerUnselected"));
             mUnselected.Add(MenuChoices.Reset, content.Load<Texture2D>("Images\\Menu\\Main\\ResetUnselected"));
 
+<<<<<<< HEAD:WindowsGame1/Options.cs
+            mTitle = content.Load<Texture2D>("Images\\Menu\\Title");
+=======
             mTitle = content.Load<Texture2D>("Images\\Menu\\Mr_Gravity");
+>>>>>>> upstream/master:GravityShiftXbox360/GravityShiftXbox360/GravityShiftXbox360/Menu Code/Options.cs
             mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
         }
 
@@ -61,7 +65,7 @@ namespace GravityShift
                 if (mCurrentChoice == MenuChoices.Controls) 
                     states = GameStates.Controls;
                 if (mCurrentChoice == MenuChoices.Reset)
-                    states = GameStates.New_Level_Selection;
+                    states = GameStates.ResetConfirm;
                 if (mCurrentChoice == MenuChoices.Back)
                     states = GameStates.Main_Menu;
             }
@@ -101,6 +105,10 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[choice], GetRegion(choice, mUnselected[choice]), Color.White);
             }
 #else
+<<<<<<< HEAD:WindowsGame1/Options.cs
+            spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
+=======
+>>>>>>> upstream/master:GravityShiftXbox360/GravityShiftXbox360/GravityShiftXbox360/Menu Code/Options.cs
 
             foreach (MenuChoices choice in Enum.GetValues(typeof(MenuChoices)))
                 if (choice == mCurrentChoice)
