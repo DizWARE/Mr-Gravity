@@ -159,6 +159,9 @@ namespace GravityShift
                 mLevels[world * 6 + i].Unlock();
         }
 
+        /// <summary>
+        /// Updates the star count.
+        /// </summary>
         public void UpdateStarCount()
         {
             mStarCount = 0;
@@ -500,14 +503,28 @@ namespace GravityShift
     /// </summary>
     public class LevelInfo
     {
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
         public string Name
         { get { return mLevel.Name; } }
 
         private Level mLevel;
+
+        /// <summary>
+        /// Gets the level.
+        /// </summary>
         public Level Level
         { get { return mLevel; } }
 
         private bool mUnlocked;
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="LevelInfo"/> is unlocked.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if unlocked; otherwise, <c>false</c>.
+        /// </value>
         public bool Unlocked
         { get { return mUnlocked; } }
 
@@ -553,21 +570,37 @@ namespace GravityShift
             mControls = controls;
         }
 
+        /// <summary>
+        /// Unlocks this level
+        /// </summary>
         public void Unlock()
         {
             mUnlocked = true;
         }
 
+        /// <summary>
+        /// Gets if there is a tenth star or not
+        /// </summary>
+        /// <returns></returns>
         public bool TenthStar()
         {
             return 9 == GetStar(StarTypes.Collection) + GetStar(StarTypes.Death) + GetStar(StarTypes.Time);
         }
 
+        /// <summary>
+        /// Gets the star count
+        /// </summary>
+        /// <returns></returns>
         public int StarCount()
         {
             return GetStar(StarTypes.Collection) + GetStar(StarTypes.Death) + GetStar(StarTypes.Time) + Convert.ToInt32(TenthStar());
         }
 
+        /// <summary>
+        /// Gets the star.
+        /// </summary>
+        /// <param name="starType">Type of the star.</param>
+        /// <returns></returns>
         public int GetStar(StarTypes starType)
         {
             if (starType == StarTypes.Collection)
@@ -578,6 +611,11 @@ namespace GravityShift
                 return Math.Max(mTimeStars,Level.TimerStar);
         }
 
+        /// <summary>
+        /// Gets the goal.
+        /// </summary>
+        /// <param name="starType">Type of the star.</param>
+        /// <returns></returns>
         public int GetGoal(StarTypes starType)
         {
             if (starType == StarTypes.Collection)
