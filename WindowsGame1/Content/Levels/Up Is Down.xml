@@ -875,162 +875,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>2156</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="0" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2157</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2158</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="5" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2159</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="0" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2160</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="5" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2162</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2163</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="9" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2164</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="9" Y="9" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2165</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2166</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2167</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="0" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2168</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="12" Y="7" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>2169</ID>
-      <Name>PurpleGem</Name>
-      <Type>Static Objects</Type>
-      <Location X="13" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>2230</ID>
       <Name>Hazard</Name>
       <Type>Walls</Type>
@@ -1044,7 +888,7 @@
       <ID>2354</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="0" />
+      <Location X="1" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -1065,8 +909,118 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>20</IdealTime>
+        <IdealTime>15</IdealTime>
       </Properties>
+    </Entity>
+    <Entity>
+      <ID>2483</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="0" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2484</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2485</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2486</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2487</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2488</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2489</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2490</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2491</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="1" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2492</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2493</ID>
+      <Name>PurpleDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
     </Entity>
   </Entities>
 </Level>

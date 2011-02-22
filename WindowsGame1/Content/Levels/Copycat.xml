@@ -375,16 +375,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>2325</ID>
-      <Name>PlayerStart</Name>
-      <Type>Level Positions</Type>
-      <Location X="14" Y="1" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>PlayerPositions\PlayerStart</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>2429</ID>
       <Name>Pink</Name>
       <Type>Walls</Type>
@@ -1319,7 +1309,7 @@
       <ID>3751</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="14" Y="1" />
+      <Location X="14" Y="2" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -1329,6 +1319,18 @@
         <Shape>Square</Shape>
         <MusicFile>music_level00</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>3752</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="14" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>3</IdealTime>
       </Properties>
     </Entity>
   </Entities>

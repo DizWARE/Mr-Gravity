@@ -61,7 +61,7 @@ namespace GravityShift
                 if (mCurrentChoice == MenuChoices.Controls) 
                     states = GameStates.Controls;
                 if (mCurrentChoice == MenuChoices.Reset)
-                    states = GameStates.New_Level_Selection;
+                    states = GameStates.ResetConfirm;
                 if (mCurrentChoice == MenuChoices.Back)
                     states = GameStates.Main_Menu;
             }

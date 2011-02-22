@@ -66,6 +66,25 @@ namespace GravityShift
         public int CollectableCount
         { get { return mCollectableCount; } set { mCollectableCount = value; } }
 
+        public int Timer
+        {
+            get { return (int)mTimer; }
+        }
+
+        public int NumCollected
+        {
+            get { return mNumCollected; }
+        }
+
+        public int NumCollectable
+        {
+            get { return mNumCollectable; }
+        }
+
+        public int NumLives
+        {
+            get { return mPlayer.NumLives; }
+        }
 
         //Enumerator for different states of death (playing game, in need of respawn, or panning back to start point)
         private enum DeathStates
@@ -86,7 +105,6 @@ namespace GravityShift
 
         // Camera
         public static Camera mCam;
-        public static Camera mCam1;
 
         /* Tracks the previous zoom of the camera */
         private float mPrevZoom = 0.75f;
@@ -188,7 +206,6 @@ namespace GravityShift
 
         private Texture2D mHUDTrans;
 //        private Texture2D[] mDirections;
-        private Texture2D[] mLives;
         public static int mNumCollected;
         public static int mNumCollectable;
         public static int mDeaths;
@@ -208,7 +225,6 @@ namespace GravityShift
             mControls = controls;
 
             mCam = new Camera(viewport);
-            mCam1 = new Camera(viewport);
 
             mScreenRect = viewport.TitleSafeArea;
 
@@ -247,12 +263,6 @@ namespace GravityShift
             mRailVert = content.Load<Texture2D>("Images/NonHazards/Rails/RailVertical");
 
             mContent = content;
-
-            mLives = new Texture2D[10];
-            for (int i = 0; i < mLives.Length; i++)
-                mLives[i] = content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
-
-            mHUDTrans = content.Load<Texture2D>("Images/HUD/HUDTrans");
 
             mNumCollected = 0;
             mNumCollectable = 0;
@@ -475,12 +485,10 @@ namespace GravityShift
                     if (!isCameraFixed && (Math.Abs(mPlayer.ObjectVelocity.X) > 0.5f || Math.Abs(mPlayer.ObjectVelocity.Y) > 0.5f))
                     {
                        mCam.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
-                       mCam1.Position = new Vector3(mPlayer.Position.X - 275, mPlayer.Position.Y - 175, 0);
                     }
                     else if(isCameraFixed)
                     {
                         mCam.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
-                        mCam1.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
                     }
 
                     /* Snap Zoom Out */
@@ -506,7 +514,6 @@ namespace GravityShift
                 else//Pan back to player after death
                 {
                     mCam.Position += mDeathPanLength;
-                    mCam1.Position += mDeathPanLength;
                     mDeathPanUpdates++;
 
                     if (mDeathPanUpdates == SCALING_FACTOR)
@@ -523,8 +530,8 @@ namespace GravityShift
                 {
                     mPlayer.mNumLives = 5;
                     mPlayer.mIsAlive = true;
+                    mNumCollected = 0;
                     mTimer = 0;
-
 
                     //Add the collected objects back to the object list
                     foreach (GameObject collected in mCollected)
@@ -630,40 +637,6 @@ namespace GravityShift
         }
 
         /// <summary>
-        /// Draws the hud.
-        /// </summary>
-        /// <param name="spriteBatch">The sprite batch.</param>
-        /// <param name="gameTime">The game time.</param>
-        public void DrawHud(SpriteBatch spriteBatch, GameTime gameTime, Matrix scale)
-        {
-            /* Cam 1 is for drawing the HUD - PLACE ALL YOUR HUD STUFF IN THIS SECTION */
-            // Begin spritebatch with the desired camera transformations
-
-            spriteBatch.Begin(SpriteSortMode.Immediate,
-                                BlendState.AlphaBlend,
-                                SamplerState.LinearClamp,
-                                DepthStencilState.None,
-                                RasterizerState.CullCounterClockwise,
-                                null,
-                                mCam1.get_transformation() * scale);
-
-            // Draw the black background behind HUD
-            spriteBatch.Draw(mHUDTrans, new Vector2(mCam1.Position.X - 300, mCam1.Position.Y - 500), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-            //spriteBatch.Draw(mHUDTrans, new Vector2(mScreenRect.Center.X - mHUDTrans.Width / 2, mScreenRect.Top), null, Color.White, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-            if (mPlayer.mIsAlive)
-            {
-                spriteBatch.DrawString(mQuartz, "Timer: " + (int)mTimer, new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
-                spriteBatch.DrawString(mQuartz, "Collected: " + mNumCollected + "/"+ mNumCollectable, new Vector2(mCam1.Position.X, mCam1.Position.Y - 275), Color.DarkTurquoise);
-            }
-
-            spriteBatch.Draw(mLives[mPlayer.mNumLives], new Vector2(mCam1.Position.X + 600, mCam1.Position.Y - 275), Color.White);
-
-            if (!mPlayer.mIsAlive)
-                spriteBatch.DrawString(mQuartz, "Out of Lives       Press A to Restart", new Vector2(mCam1.Position.X - 275, mCam1.Position.Y - 275), Color.DarkTurquoise);
-
-            spriteBatch.End();
-        }
-
         /// <summary>
         /// Respawn the player. Reset gravity direction and clear player velocity
         /// 
