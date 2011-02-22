@@ -117,10 +117,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfterScore.cs" />
+    <Compile Include="Menu Code\AfterScore.cs" />
     <Compile Include="AnimatedSprite.cs" />
     <Compile Include="Camera.cs" />
-    <Compile Include="Credits.cs" />
+    <Compile Include="Menu Code\Controller.cs" />
+    <Compile Include="Menu Code\Credits.cs" />
     <Compile Include="Game Objects\Physics Objects\ReverseTile.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\BlackHoleTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\FXTrigger.cs" />
@@ -130,7 +131,10 @@
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="LevelSelect.cs" />
-    <Compile Include="MainMenu.cs" />
+    <Compile Include="Menu Code\MainMenu.cs" />
+    <Compile Include="Menu Code\Scoring.cs" />
+    <Compile Include="Menu Code\SoundOptions.cs" />
+    <Compile Include="Menu Code\Title.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />
@@ -141,13 +145,13 @@
     <Compile Include="Import Code\Importer.cs" />
     <Compile Include="Import Code\XmlKeys.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Menu Code\Menu.cs" />
     <Compile Include="Game Objects\Physics Objects\MovingTile.cs" />
     <Compile Include="MISC Code\PlayerFaces.cs" />
-    <Compile Include="Options.cs" />
+    <Compile Include="Menu Code\Options.cs" />
     <Compile Include="ParticleEngine\ParticleEngine.cs" />
     <Compile Include="ParticleEngine\Particle.cs" />
-    <Compile Include="Pause.cs" />
+    <Compile Include="Menu Code\Pause.cs" />
     <Compile Include="PhysicsEnvironment.cs" />
     <Compile Include="Game Objects\Physics Objects\PhysicsObject.cs" />
     <Compile Include="Game Objects\Physics Objects\Player.cs" />
@@ -158,8 +162,7 @@
     <Compile Include="Game Objects\Static Objects\StaticObject.cs" />
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
     <Compile Include="ResetConfirm.cs" />
-    <Compile Include="Scoring.cs" />
-    <Compile Include="Title.cs" />
+    <Compile Include="WorldSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -150,7 +150,7 @@ namespace GravityShift
             /* If the user selects one of the menu items */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                GravityShift.Level.TIMER = 0;
+                level.mTimer = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
                 /* Next Level */
@@ -231,19 +231,21 @@ namespace GravityShift
                 null,
                 scale);
 
-            spriteBatch.Draw(mTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White); 
+            float[] mSize = new float[2] { (float)mScreenRect.Width / (float)graphics.GraphicsDevice.Viewport.Width, (float)mScreenRect.Height / (float)graphics.GraphicsDevice.Viewport.Height };
 
-            spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
+            spriteBatch.Draw(mTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White);
 
-            Vector2 currentLocation = new Vector2(mScreenRect.Left, mScreenRect.Top + mTitle.Height);
-            int height = mScreenRect.Height - mTitle.Height;
-            height -= (mItems[0].Height + mItems[1].Height + mItems[2].Height + mItems[3].Height);
+            spriteBatch.Draw(mTitle, new Rectangle(mScreenRect.Center.X - (int)(mTitle.Width * mSize[0]) / 2, mScreenRect.Top, (int)(mTitle.Width * mSize[0]), (int)(mTitle.Height * mSize[1])), Color.White);
+
+            Vector2 currentLocation = new Vector2(mScreenRect.Left, mScreenRect.Top + (int)(mTitle.Height * mSize[1]));
+            int height = mScreenRect.Height - (int)(mTitle.Height * mSize[1]);
+            height -= ((int)(mItems[0].Height * mSize[1]) + (int)(mItems[1].Height * mSize[1]) + (int)(mItems[2].Height * mSize[1]) + (int)(mItems[3].Height * mSize[1]));
             height /= 2;
             currentLocation.Y += height;
             for (int i = 0; i < 4; i++)
             {
-                spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - (mItems[i].Width / 2), (int)currentLocation.Y, mItems[i].Width, mItems[i].Height), Color.White);
-                currentLocation.Y += mItems[i].Height;
+                spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - ((int)(mItems[i].Width * mSize[0]) / 2), (int)currentLocation.Y, (int)(mItems[i].Width * mSize[0]), (int)(mItems[i].Height * mSize[1])), Color.White);
+                currentLocation.Y += (int)(mItems[i].Height * mSize[1]);
             }
 
             //spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[0].Width / 2),

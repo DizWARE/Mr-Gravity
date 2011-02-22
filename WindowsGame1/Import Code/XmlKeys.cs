@@ -66,6 +66,8 @@ namespace GravityShift.Import_Code
         public static string TIMERSTAR = "Timerstar";
         public static string COLLECTIONSTAR = "Collectionstar";
         public static string DEATHSTAR = "Deathstar";
+        public static string GOALTIME = "GoalTime";
+        public static string GOALCOLLECTABLE = "GoalCollectable";
 
 
         //Smile Strings
