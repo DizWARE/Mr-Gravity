@@ -432,4 +432,13 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
   </LevelData>
+  <LevelData>
+    <Name>Invisi-Wall</Name>
+    <Unlocked>False</Unlocked>
+    <GoalTime>0</GoalTime>
+    <GoalCollectable>0</GoalCollectable>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+  </LevelData>
 </Levels>
