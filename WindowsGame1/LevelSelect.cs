@@ -88,7 +88,6 @@ namespace GravityShift
             mLevels = new List<LevelChoice>();
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
-            TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
 #endif
 
             mLevelInfo = XElement.Load(LEVEL_LIST);
@@ -163,7 +162,7 @@ namespace GravityShift
         /// Saves level unlock and scoring information
         /// </summary>
         /// 
-        public void Save(PlayerIndex player) 
+ /*       public void Save(PlayerIndex player) 
         {
             playerIndex = player;
             XElement xLevels = new XElement(XmlKeys.LEVELS);
@@ -211,7 +210,7 @@ namespace GravityShift
                 xDoc.Save(LEVEL_LIST);
 #endif
 
-        }
+        }*/
 
         /// <summary>
         /// Load the data that is needed to show the Level selection screen

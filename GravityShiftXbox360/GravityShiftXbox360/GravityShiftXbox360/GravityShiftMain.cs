@@ -49,6 +49,11 @@ namespace GravityShift
 
         Options mOptions;
         Credits mCredits;
+
+        //Instance of the Controller class
+        Controller mController;
+
+        SoundOptions mSoundOptions;
 		
         private GameStates mCurrentState = GameStates.Title;
 
@@ -124,6 +129,9 @@ namespace GravityShift
             mOptions = new Options(mControls, mGraphics);
             mAfterScore = new AfterScore(mControls);
 
+            mController = new Controller(mControls, mGraphics);
+            mSoundOptions = new SoundOptions(mControls, mGraphics);
+
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
 
@@ -165,6 +173,8 @@ namespace GravityShift
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
             mCurrentLevel.Load(Content);
             mAfterScore.Load(Content, GraphicsDevice);
+            mController.Load(Content);
+            mSoundOptions.Load(Content);
 
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
@@ -302,6 +312,14 @@ namespace GravityShift
             {
                 mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
+            else if (mCurrentState == GameStates.Controls)
+            {
+                mController.Update(gameTime, ref mCurrentState);
+            }
+            else if (mCurrentState == GameStates.SoundOptions)
+            {
+                mSoundOptions.Update(gameTime, ref mCurrentState);
+            }
             else if (mCurrentState == GameStates.Unlock)
             {
                 mLevelSelect.UnlockNextLevel();
@@ -436,6 +454,10 @@ namespace GravityShift
                 mOptions.Draw(gameTime, mSpriteBatch, scale);
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
+            else if (mCurrentState == GameStates.Controls)
+                mController.Draw(gameTime, mSpriteBatch, scale);
+            else if (mCurrentState == GameStates.SoundOptions)
+                mSoundOptions.Draw(gameTime, mSpriteBatch, scale);
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Level_Selection)

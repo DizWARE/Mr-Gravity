@@ -79,12 +79,20 @@ namespace GravityShift
         /// <param name="scale">Not sure yet :)</param>
         public void Draw(GameTime gametime, SpriteBatch spriteBatch, Matrix scale)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullCounterClockwise,
+                null,
+                scale);
+
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
-            
+
+            float[] mSize = new float[2] { (float)mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Width / (float)mGraphics.GraphicsDevice.Viewport.Width, (float)mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Height / (float)mGraphics.GraphicsDevice.Viewport.Height };
             //Draws the back button. TODO - Better back button and probably better placement
-            spriteBatch.Draw(mBack, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Right - mBack.Width/2,
-                                                mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mBack.Height, mBack.Width/2,mBack.Height/2), Color.White);
+            spriteBatch.Draw(mBack, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Right - (int)(mBack.Width * mSize[0]) / 2,
+                                                mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - (int)(mBack.Height * mSize[1]) / 2, (int)(mBack.Width * mSize[0]) / 2, (int)(mBack.Height * mSize[1]) / 2), Color.White);
 
             //Draw the game title before the words. Scrolls too
             spriteBatch.Draw(mTitle, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - mTitle.Width / 4, (int)mTopY,mTitle.Width/2,mTitle.Height/2),

@@ -100,22 +100,15 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level, ref LevelSelect mSelect)
+        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
-            int []scores = GetRank((int)GravityShift.Level.TIMER, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
+            int []scores = GetRank((int)level.mTimer, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
             level.TimerStar = scores[0];
             level.CollectionStar = scores[1];
             level.DeathStar = scores[2];
 
             if (mControls.isStartPressed(false) || mControls.isAPressed(false))
-            {
                 gameState = GameStates.AfterScore;
-#if XBOX360
-                mSelect.Save(((ControllerControl)mControls).ControllerIndex);
-#else
-                mSelect.Save(PlayerIndex.One);
-#endif
-            }
             
         }
         /* GetRank
@@ -137,22 +130,20 @@ namespace GravityShift
             int[] result = new int[3];
 
             /* TIME -- 100%+, <120%, <140%, >140% */
-            if (time < timeGoal) { result[0] = 3; }
-            else if (((double) time / (double) timeGoal) > 1.2) { result[0] = 2; }
-            else if (((double) time / (double) timeGoal) > 1.4) { result[0] = 1; }
-            else { result[0] = 0; }
+            if (time < timeGoal) 
+            { result[0] = 3; }
+            else if (((double) time / (double) timeGoal) < 1.2) { result[0] = 2; }
+            else { result[0] = 1; }
 
             /* COLLECTABLES -- 100%, >80%, >60%, <60% */
             if (collect == collectGoal) { result[1] = 3; }
             else if (((double) collect / (double) collectGoal) > 0.8) { result[1] = 2; }
-            else if (((double) collect / (double) collectGoal) > 0.6) { result[1] = 1; }
-            else { result[1] = 0; }
+            else { result[1] = 1; }
 
             /* DEATHS -- 0, 1, 2-3, >3 */
             if (deathTotal == 0) { result[2] = 3; }
-            else if (deathTotal == 1) { result[2] = 2; }
-            else if (deathTotal <= 3) { result[2] = 1; }
-            else { result[2] = 0; }
+            else if (deathTotal >= 2) { result[2] = 2; }
+            else { result[2] = 1; }
 
             return result;
         }
@@ -166,7 +157,7 @@ namespace GravityShift
          * 
          * GraphicsDeviceManager graphics: The current graphics manager
          */
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Level level, Matrix scale)
         {
             spriteBatch.Begin(SpriteSortMode.Immediate,
                 BlendState.AlphaBlend,
@@ -183,7 +174,7 @@ namespace GravityShift
 
             spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) , mScreenRect.Top + mScreenRect.Height / 4), Color.White);
             spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 1), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4), Color.White);
+            spriteBatch.DrawString(mQuartz, (int)level.mTimer + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4), Color.White);
 
             spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 4 + 50), Color.White);
             spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 51), Color.SteelBlue);
