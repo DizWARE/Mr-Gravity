@@ -102,7 +102,7 @@ namespace GravityShift
          */
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
-            int []scores = GetRank((int)GravityShift.Level.TIMER, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
+            int []scores = GetRank((int)level.mTimer, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
             level.TimerStar = scores[0];
             level.CollectionStar = scores[1];
             level.DeathStar = scores[2];
@@ -132,7 +132,7 @@ namespace GravityShift
             /* TIME -- 100%+, <120%, <140%, >140% */
             if (time < timeGoal) 
             { result[0] = 3; }
-            else if (((double) time / (double) timeGoal) > 1.2) { result[0] = 2; }
+            else if (((double) time / (double) timeGoal) < 1.2) { result[0] = 2; }
             else { result[0] = 1; }
 
             /* COLLECTABLES -- 100%, >80%, >60%, <60% */
@@ -157,7 +157,7 @@ namespace GravityShift
          * 
          * GraphicsDeviceManager graphics: The current graphics manager
          */
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Level level, Matrix scale)
         {
             spriteBatch.Begin(SpriteSortMode.Immediate,
                 BlendState.AlphaBlend,
@@ -174,7 +174,7 @@ namespace GravityShift
 
             spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) , mScreenRect.Top + mScreenRect.Height / 4), Color.White);
             spriteBatch.DrawString(mQuartz, "Time:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 1), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.TIMER + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4), Color.White);
+            spriteBatch.DrawString(mQuartz, (int)level.mTimer + " Seconds", new Vector2(mScreenRect.Left + (mScreenRect.Width / 3 + 100), mScreenRect.Top + mScreenRect.Height / 4), Color.White);
 
             spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5), mScreenRect.Top + mScreenRect.Height / 4 + 50), Color.White);
             spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 5) + 1, mScreenRect.Top + mScreenRect.Height / 4 + 51), Color.SteelBlue);
