@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
-using GravityShift.Game_Objects.Static_Objects.Triggers;
+using GravityShift.Game_Objects.Static_Objects.Triggers; 
 using GravityShift.MISC_Code;
 
 namespace GravityShift
@@ -44,11 +44,18 @@ namespace GravityShift
         //Instance of the level selection class
         LevelSelect mLevelSelect;
 
+        WorldSelect mWorldSelect;
+
         //Instance of the pause class
         Pause mPause;
 
         Options mOptions;
         Credits mCredits;
+
+        //Instance of the Controller class
+        Controller mController;
+
+        SoundOptions mSoundOptions;
 		
         private GameStates mCurrentState = GameStates.Title;
 
@@ -78,7 +85,6 @@ namespace GravityShift
 
         public GravityShiftMain()
         {
-
             Components.Add(new GamerServicesComponent(this));
             mGraphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -91,6 +97,8 @@ namespace GravityShift
                 mControls = new ControllerControl();
             else
                 mControls = new KeyboardControl();
+
+            mGraphics.GraphicsProfile = GraphicsProfile.Reach;
 
 #endif
         }
@@ -119,10 +127,16 @@ namespace GravityShift
             mMenu = new Menu(mControls, mGraphics);
             mScoring = new Scoring(mControls);
             mLevelSelect = new LevelSelect(mControls);
+
+            mWorldSelect = new WorldSelect(mControls, mGraphics);
+
             mPause = new Pause(mControls);
             mCredits = new Credits(mControls, mGraphics);
             mOptions = new Options(mControls, mGraphics);
             mAfterScore = new AfterScore(mControls);
+
+            mController = new Controller(mControls, mGraphics);
+            mSoundOptions = new SoundOptions(mControls, mGraphics);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -161,10 +175,14 @@ namespace GravityShift
             mScoring.Load(Content, mGraphics.GraphicsDevice);
             mPause.Load(Content);
             GameSound.Load(Content);
-            mLevelSelect.Load(Content, mGraphics.GraphicsDevice);
+            //mLevelSelect.Load(Content, mGraphics.GraphicsDevice);
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
             mCurrentLevel.Load(Content);
+
+            mWorldSelect.Load(Content);
             mAfterScore.Load(Content, GraphicsDevice);
+            mController.Load(Content);
+            mSoundOptions.Load(Content);
 
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
@@ -187,10 +205,10 @@ namespace GravityShift
         {
 #if XBOX360
 
-            mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
+            //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
 
 #else
-            mLevelSelect.Save(PlayerIndex.One);
+           // mLevelSelect.Save(PlayerIndex.One);
 #endif
             //if (mControls.controlScheme() == ControlSchemes.Gamepad)
             //    if (Guide.IsTrialMode && !Guide.IsVisible)
@@ -269,7 +287,7 @@ namespace GravityShift
 
                 
 
-                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel, ref mLevelSelect);
+                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
             else if (mCurrentState == GameStates.Level_Selection)
             {
@@ -280,7 +298,8 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+                //mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+                mWorldSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
             else if (mCurrentState == GameStates.New_Level_Selection)
             {
@@ -301,6 +320,14 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Pause)
             {
                 mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
+            else if (mCurrentState == GameStates.Controls)
+            {
+                mController.Update(gameTime, ref mCurrentState);
+            }
+            else if (mCurrentState == GameStates.SoundOptions)
+            {
+                mSoundOptions.Update(gameTime, ref mCurrentState);
             }
             else if (mCurrentState == GameStates.Unlock)
             {
@@ -436,10 +463,14 @@ namespace GravityShift
                 mOptions.Draw(gameTime, mSpriteBatch, scale);
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
+            else if (mCurrentState == GameStates.Controls)
+                mController.Draw(gameTime, mSpriteBatch, scale);
+            else if (mCurrentState == GameStates.SoundOptions)
+                mSoundOptions.Draw(gameTime, mSpriteBatch, scale);
             else if (mCurrentState == GameStates.Score)
                 mScoring.Draw(mSpriteBatch, mGraphics, scale);
             else if (mCurrentState == GameStates.Level_Selection)
-                mLevelSelect.Draw(mSpriteBatch, mGraphics, scale);
+                mWorldSelect.Draw(mSpriteBatch, scale);
             else if (mCurrentState == GameStates.Pause)
             {
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);

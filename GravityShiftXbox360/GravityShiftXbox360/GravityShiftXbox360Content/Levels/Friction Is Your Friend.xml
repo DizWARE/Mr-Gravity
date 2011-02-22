@@ -565,7 +565,7 @@
       <ID>3459</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="4" Y="2" />
+      <Location X="4" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>

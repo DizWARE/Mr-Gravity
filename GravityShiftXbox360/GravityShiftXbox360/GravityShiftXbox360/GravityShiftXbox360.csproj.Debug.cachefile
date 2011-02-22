@@ -195,6 +195,24 @@ Content\SoundEffects\playerCol_hazard.xnb
 Content\SoundEffects\playerCol_wall.xnb
 Content\SoundEffects\playerSound_death.xnb
 Content\SoundEffects\playerSound_respawn.xnb
+Content\Images\AnimatedSprites\BlueDiamond.xnb
+Content\Images\AnimatedSprites\BlueGem.xnb
+Content\Images\AnimatedSprites\GreenDiamond.xnb
+Content\Images\AnimatedSprites\OrangeDiamond.xnb
+Content\Images\AnimatedSprites\OrangeStar.xnb
+Content\Images\AnimatedSprites\PinkDiamond.xnb
+Content\Images\AnimatedSprites\PurpleDiamond.xnb
+Content\Images\AnimatedSprites\PurpleGem.xnb
+Content\Images\AnimatedSprites\RedDiamond.xnb
+Content\Images\AnimatedSprites\Star.xnb
+Content\Images\AnimatedSprites\YellowDiamond.xnb
+Content\Images\AnimatedSprites\YellowStar.xnb
+Content\Levels\Thumbnail\AutomatedRails.xnb
+Content\Levels\Thumbnail\Corridors.xnb
+Content\Levels\Thumbnail\Cramped.xnb
+Content\Levels\Thumbnail\Dropping In.xnb
+Content\Levels\Thumbnail\Rail Reversal.xnb
+Content\Levels\Thumbnail\Tortoise and Hare.xnb
 Content\Levels\BlackHoleMagic.xml
 Content\Levels\Chambers.xml
 Content\Levels\CloseCall.xml
@@ -231,3 +249,8 @@ Content\Levels\Friction Is Your Friend.xml
 Content\Levels\Guards.xml
 Content\Levels\Labyrinth.xml
 Content\Levels\You Shall Not Pass.xml
+Content\Levels\Corridors.xml
+Content\Levels\Cramped.xml
+Content\Levels\Dropping In.xml
+Content\Levels\Rail Reversal.xml
+Content\Levels\Tortoise and Hare.xml

@@ -82,6 +82,7 @@ namespace GravityShift.Import_Code
         /// <returns>A vector2 with the players start position(or -100,-100 if none is provided)</returns>
         public void GetPlayerStart(Level level)
         {
+            level.CollectableCount = 0;
             foreach (EntityInfo entity in mEntities)
             {
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_START)
