@@ -13,7 +13,7 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>400</IdealTime>
+        <IdealTime>8</IdealTime>
       </Properties>
     </Entity>
     <Entity>
