@@ -88,10 +88,12 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 scale);
+
+            float[] mSize = new float[2] { (float)mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Width / (float)mGraphics.GraphicsDevice.Viewport.Width, (float)mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Height / (float)mGraphics.GraphicsDevice.Viewport.Height };
 #if XBOX360
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
-            spriteBatch.Draw(mTitle, new Vector2(center.X - mTitle.Width / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White);
+            spriteBatch.Draw(mTitle, new Rectangle(center.X - (int)(mTitle.Width * mSize[0]) / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top, (int)(mTitle.Width * mSize[0]), (int)(mTitle.Height * mSize[1])), Color.White);
 
             for (int i = 0; i < 4; i++)
             {
@@ -104,7 +106,7 @@ namespace GravityShift
 #else
             Point center = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, mGraphics.GraphicsDevice.Viewport.Width, mGraphics.GraphicsDevice.Viewport.Height), Color.White);
-            spriteBatch.Draw(mTitle, new Vector2(center.X + 30 - mTitle.Width / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top), Color.White);
+            spriteBatch.Draw(mTitle, new Rectangle(center.X - (int)(mTitle.Width * mSize[0]) / 2, mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top, (int)(mTitle.Width * mSize[0]), (int)(mTitle.Height * mSize[1])), Color.White);
 
             foreach (MenuChoices choice in Enum.GetValues(typeof(MenuChoices)))
                 if (choice == mCurrentChoice)
@@ -120,18 +122,20 @@ namespace GravityShift
         {
             Viewport viewport = mGraphics.GraphicsDevice.Viewport;
 
+            float[] mSize = new float[2] { (float)viewport.TitleSafeArea.Width / (float)mGraphics.GraphicsDevice.Viewport.Width, (float)viewport.TitleSafeArea.Height / (float)mGraphics.GraphicsDevice.Viewport.Height };
+
             if (choice == MenuChoices.StartGame)
-                return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
-                    viewport.TitleSafeArea.Bottom - texture.Height, texture.Width, texture.Height);
+                return new Rectangle(viewport.TitleSafeArea.Center.X - ((int)(texture.Width * mSize[0]) / 2),
+                    viewport.TitleSafeArea.Bottom - (int)(texture.Height * mSize[1]), (int)(texture.Width * mSize[0]), (int)(texture.Height * mSize[1]));
             if (choice == MenuChoices.Exit)
-                return new Rectangle(viewport.TitleSafeArea.Center.X - (texture.Width / 2),
-                    viewport.TitleSafeArea.Top + mTitle.Height, texture.Width, texture.Height);
+                return new Rectangle(viewport.TitleSafeArea.Center.X - ((int)(texture.Width * mSize[0]) / 2),
+                    viewport.TitleSafeArea.Top + (int)(mTitle.Height * mSize[1]), (int)(texture.Width * mSize[0]), (int)(texture.Height * mSize[1]));
             if (choice == MenuChoices.Options)
-                return new Rectangle(viewport.TitleSafeArea.Right - (texture.Width) - mTitle.Height,
-                    viewport.TitleSafeArea.Center.Y + mTitle.Height/2 - (texture.Height / 2), texture.Width, texture.Height);
+                return new Rectangle(viewport.TitleSafeArea.Right - ((int)(texture.Width * mSize[0])) - (int)(mTitle.Height * mSize[1]),
+                    viewport.TitleSafeArea.Center.Y + (int)(mTitle.Height * mSize[1]) / 2 - ((int)(texture.Height * mSize[1]) / 2), (int)(texture.Width * mSize[0]), (int)(texture.Height * mSize[1]));
             if (choice == MenuChoices.Credits)
-                return new Rectangle(viewport.TitleSafeArea.Left+mTitle.Height,
-                    viewport.TitleSafeArea.Center.Y + mTitle.Height/2 - (texture.Height / 2), texture.Width, texture.Height);
+                return new Rectangle(viewport.TitleSafeArea.Left + (int)(mTitle.Height * mSize[1]),
+                    viewport.TitleSafeArea.Center.Y + (int)(mTitle.Height * mSize[1]) / 2 - ((int)(texture.Height * mSize[1]) / 2), (int)(texture.Width * mSize[0]), (int)(texture.Height * mSize[1]));
             return new Rectangle();
         }
     }

@@ -163,15 +163,17 @@ namespace GravityShift
             Point center = graphics.GraphicsDevice.Viewport.TitleSafeArea.Center;
             Rectangle mScreenRect = graphics.GraphicsDevice.Viewport.TitleSafeArea;
 
+            float[] mSize = new float[2] { (float)mScreenRect.Width / (float)graphics.GraphicsDevice.Viewport.Width, (float)mScreenRect.Height / (float)graphics.GraphicsDevice.Viewport.Height };
+
             /* Draw the transparent background */
-            spriteBatch.Draw(mPausedTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White); 
+            spriteBatch.Draw(mPausedTrans, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White); 
 
             /* Draw the pause title */
-            spriteBatch.Draw(mPauseTitle, new Vector2(center.X - mPauseTitle.Width / 2, mScreenRect.Top), Color.White);
+            spriteBatch.Draw(mPauseTitle, new Rectangle(center.X - (int)(mPauseTitle.Width * mSize[0]) / 2, mScreenRect.Top, (int)(mPauseTitle.Width * mSize[0]), (int)(mPauseTitle.Height * mSize[1])), Color.White);
 
-            Vector2 currentLocation = new Vector2(mScreenRect.Left, mScreenRect.Top + mPauseTitle.Height);
-            int height = mScreenRect.Height - mPauseTitle.Height;
-            height -= (mItems[0].Height + mItems[1].Height + mItems[2].Height);
+            Vector2 currentLocation = new Vector2(mScreenRect.Left, mScreenRect.Top + (int)(mPauseTitle.Height  * mSize[1]));
+            int height = mScreenRect.Height - (int)(mPauseTitle.Height  * mSize[1]);
+            height -= ((int)(mItems[0].Height * mSize[1]) + (int)(mItems[1].Height * mSize[1]) + (int)(mItems[2].Height * mSize[1]));
             height /= 2;
             currentLocation.Y += height;
 
@@ -179,8 +181,8 @@ namespace GravityShift
             /* Draw the pause options */
             for (int i = 0; i < 3; i++)
             {
-                spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - (mItems[i].Width / 2), (int)currentLocation.Y, mItems[i].Width, mItems[i].Height), Color.White);
-                currentLocation.Y += mItems[i].Height;
+                spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - ((int)(mItems[i].Width * mSize[0]) / 2), (int)currentLocation.Y, (int)(mItems[i].Width * mSize[0]), (int)(mItems[i].Height * mSize[1])), Color.White);
+                currentLocation.Y += (int)(mItems[i].Height * mSize[1]);
             }
 
             /* Draw the pause options */

@@ -430,9 +430,7 @@ namespace GravityShift
             size.X -= 2*padding.X;
             size.Y -= 2*padding.Y;
 
-            //float offset = mScreenRect.Width - (70 + 4 * size.X + padding.X);
-            //offset /= 2;
-            Vector2 currentLocation = new Vector2(mScreenRect.X + 70, mScreenRect.Top);
+            Vector2 currentLocation = new Vector2(mScreenRect.X + 70, mScreenRect.Top + 70);
             int index = 0;
 
             for (int i = 0; i < 12 && i + 12 * mCurrentPage < mLevels.Count; i++)

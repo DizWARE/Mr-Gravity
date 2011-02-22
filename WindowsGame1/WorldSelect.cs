@@ -204,7 +204,6 @@ namespace GravityShift
                 else
                 {
                    currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex-1].Level;
-                   currentLevel.Reset();
                    currentLevel.Load(mContent);
                    gameState = GameStates.In_Game;
                 }

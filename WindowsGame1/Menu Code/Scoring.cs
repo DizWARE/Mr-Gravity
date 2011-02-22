@@ -130,7 +130,8 @@ namespace GravityShift
             int[] result = new int[3];
 
             /* TIME -- 100%+, <120%, <140%, >140% */
-            if (time < timeGoal) { result[0] = 3; }
+            if (time < timeGoal) 
+            { result[0] = 3; }
             else if (((double) time / (double) timeGoal) > 1.2) { result[0] = 2; }
             else { result[0] = 1; }
 
