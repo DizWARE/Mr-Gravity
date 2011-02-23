@@ -271,7 +271,7 @@ namespace GravityShift
                     spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
                     spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
                 }
-                else
+                else 
                 {
                     spriteBatch.DrawString(mQuartz, "Your Best!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
                     spriteBatch.DrawString(mQuartz, "Your Best!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
