@@ -237,7 +237,7 @@ namespace GravityShift
                    currentLevel.Load(mContent);
                    currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Time);
                    currentLevel.CollectableCount = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Collection);
-                   gameState = GameStates.In_Game;
+                   gameState = GameStates.StartLevelSplash;
                 }
 
                 //Handle level select
