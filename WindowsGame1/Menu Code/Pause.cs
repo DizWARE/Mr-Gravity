@@ -34,7 +34,7 @@ namespace GravityShift
 
         ContentManager mContent;
 
-        private const int NUM_OPTIONS = 3;
+        private const int NUM_OPTIONS = 4;
 
         #endregion
 
@@ -49,6 +49,8 @@ namespace GravityShift
         private Texture2D mSelectLevelUnsel;
         private Texture2D mMainMenuSel;
         private Texture2D mMainMenuUnsel;
+        private Texture2D mRestartSel;
+        private Texture2D mRestartUnsel;
 
         #endregion
 
@@ -78,18 +80,23 @@ namespace GravityShift
             mSelectLevelUnsel = content.Load<Texture2D>("Images/Menu/SelectLevelUnselected");
             mMainMenuSel = content.Load<Texture2D>("Images/Menu/MainMenuSelected");
             mMainMenuUnsel = content.Load<Texture2D>("Images/Menu/MainMenuUnselected");
+            mRestartSel = content.Load<Texture2D>("Images/Menu/Score/RestartSelected");
+            mRestartUnsel = content.Load<Texture2D>("Images/Menu/Score/RestartUnselected");
 
             mSelItems[0] = mResumeSel;
-            mSelItems[1] = mSelectLevelSel;
-            mSelItems[2] = mMainMenuSel;
+            mSelItems[1] = mRestartSel;
+            mSelItems[2] = mSelectLevelSel;
+            mSelItems[3] = mMainMenuSel;
 
             mUnselItems[0] = mResumeUnsel;
-            mUnselItems[1] = mSelectLevelUnsel;
-            mUnselItems[2] = mMainMenuUnsel;
+            mUnselItems[1] = mRestartUnsel;
+            mUnselItems[2] = mSelectLevelUnsel;
+            mUnselItems[3] = mMainMenuUnsel;
 
             mItems[0] = mResumeSel;
-            mItems[1] = mSelectLevelUnsel;
-            mItems[2] = mMainMenuUnsel;
+            mItems[1] = mRestartUnsel;
+            mItems[2] = mSelectLevelUnsel;
+            mItems[3] = mMainMenuUnsel;
         }
 
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
@@ -129,15 +136,24 @@ namespace GravityShift
                 /* Resume Game */
                  if (mCurrent == 0)
                      gameState = GameStates.In_Game;
-                 /* Select Level */
+                 /* Restart */
                  else if (mCurrent == 1)
+                 {
+                     /* Start the game*/
+                     gameState = GameStates.In_Game;
+                     level.Reset();
+                     level.Load(mContent);
+                     mCurrent = 0;
+                 }
+                 /* Select Level */
+                 else if (mCurrent == 2)
                  {
                      gameState = GameStates.Level_Selection;
                      level.Reset();
                      mCurrent = 0;
                  }
                  /* Main Menu */
-                 else if (mCurrent == 2)
+                 else if (mCurrent == 3)
                  {
                      gameState = GameStates.Main_Menu;
                      level.Reset();
@@ -145,8 +161,9 @@ namespace GravityShift
                  }
                  
                  mItems[0] = mResumeSel;
-                 mItems[1] = mSelectLevelUnsel;
-                 mItems[2] = mMainMenuUnsel;
+                 mItems[1] = mRestartUnsel;
+                 mItems[2] = mSelectLevelUnsel;
+                 mItems[3] = mMainMenuUnsel;
             }
         }
 
@@ -179,7 +196,7 @@ namespace GravityShift
 
 
             /* Draw the pause options */
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < NUM_OPTIONS; i++)
             {
                 spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - ((int)(mItems[i].Width * mSize[0]) / 2), (int)currentLocation.Y, (int)(mItems[i].Width * mSize[0]), (int)(mItems[i].Height * mSize[1])), Color.White);
                 currentLocation.Y += (int)(mItems[i].Height * mSize[1]);

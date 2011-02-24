@@ -248,19 +248,6 @@ namespace GravityShift
                 currentLocation.Y += (int)(mItems[i].Height * mSize[1]);
             }
 
-            //spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[0].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.Y - mItems[0].Height,
-                //mItems[0].Width, mItems[0].Height), Color.White);
-            //spriteBatch.Draw(mItems[1], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[1].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.Y,
-                //mItems[1].Width, mItems[1].Height), Color.White);
-            //spriteBatch.Draw(mItems[2], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[2].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[2].Height - 200,
-                //mItems[2].Width, mItems[2].Height), Color.White);
-            //spriteBatch.Draw(mItems[3], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[3].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[3].Height - 125,
-                //mItems[3].Width, mItems[3].Height), Color.White);
-
             spriteBatch.End();
         }
     }

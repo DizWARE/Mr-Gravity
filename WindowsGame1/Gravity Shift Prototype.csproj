@@ -134,6 +134,7 @@
     <Compile Include="Menu Code\MainMenu.cs" />
     <Compile Include="Menu Code\Scoring.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />
+    <Compile Include="Menu Code\StartLevelSplash.cs" />
     <Compile Include="Menu Code\Title.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="GravityShiftMain.cs" />
     <Compile Include="Game Objects\Static Objects\StaticObject.cs" />
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
+    <Compile Include="ResetConfirm.cs" />
     <Compile Include="WorldSelect.cs" />
   </ItemGroup>
   <ItemGroup>

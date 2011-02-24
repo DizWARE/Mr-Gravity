@@ -9,7 +9,7 @@
     <Paintable>False</Paintable>
     <Texture>PlayerPositions\PlayerStart</Texture>
     <Properties>
-      <IdealTime>10</IdealTime>
+      <IdealTime>15</IdealTime>
     </Properties>
   </Entity>
   <Entity>

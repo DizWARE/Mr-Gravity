@@ -35,6 +35,10 @@ namespace GravityShift
         // Instance of the AfterScore class
         AfterScore mAfterScore;
 
+        ResetConfirm mResetConfirm;
+
+        StartLevelSplash mStartLevelSplash;
+
         MainMenu mMainMenu;
         Level mMainMenuLevel;
 
@@ -42,7 +46,7 @@ namespace GravityShift
         Scoring mScoring;
 
         //Instance of the level selection class
-        LevelSelect mLevelSelect;
+        //LevelSelect mLevelSelect;
 
         WorldSelect mWorldSelect;
 
@@ -76,6 +80,13 @@ namespace GravityShift
 
         //Fonts for this game
         SpriteFont mDefaultFont;
+        SpriteFont mQuartz;
+
+        //Transparant HUD
+        Texture2D mHUDTrans;
+
+        //Lives
+        private Texture2D[] mLives;
 
         //TO BE CHANGED- Actually, this may be ok since we use this to play test.
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
@@ -122,11 +133,10 @@ namespace GravityShift
 
             mTitle = new Title(mControls, mGraphics);
             mMainMenu = new MainMenu(mControls, mGraphics);
-            mMainMenuLevel = Level.MainMenuLevel("..\\..\\..\\Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport);
+            mMainMenuLevel = Level.MainMenuLevel("Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport);
 
             mMenu = new Menu(mControls, mGraphics);
             mScoring = new Scoring(mControls);
-            mLevelSelect = new LevelSelect(mControls);
 
             mWorldSelect = new WorldSelect(mControls, mGraphics);
 
@@ -134,6 +144,8 @@ namespace GravityShift
             mCredits = new Credits(mControls, mGraphics);
             mOptions = new Options(mControls, mGraphics);
             mAfterScore = new AfterScore(mControls);
+            mResetConfirm = new ResetConfirm(mControls);
+            mStartLevelSplash = new StartLevelSplash(mControls);
 
             mController = new Controller(mControls, mGraphics);
             mSoundOptions = new SoundOptions(mControls, mGraphics);
@@ -181,13 +193,20 @@ namespace GravityShift
 
             mWorldSelect.Load(Content);
             mAfterScore.Load(Content, GraphicsDevice);
+            mResetConfirm.Load(Content);
             mController.Load(Content);
             mSoundOptions.Load(Content);
-
+            mStartLevelSplash.Load(Content, GraphicsDevice, ref mCurrentLevel);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
 
             mDefaultFont = Content.Load<SpriteFont>("Fonts/Kootenay");
+            mQuartz = Content.Load<SpriteFont>("Fonts/QuartzLarge");
+            mHUDTrans = Content.Load<Texture2D>("Images/HUD/HUDTrans");
+
+            mLives = new Texture2D[10];
+            for (int i = 0; i < mLives.Length; i++)
+                mLives[i] = Content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
     }
 
         /// <summary>
@@ -310,11 +329,11 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                mCurrentLevel = mLevelSelect.Reset();
+                mWorldSelect.Reset();
 
                 mCurrentState = GameStates.Level_Selection;
 
-                mLevelSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+                mWorldSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
 
             }
             else if (mCurrentState == GameStates.Pause)
@@ -336,8 +355,8 @@ namespace GravityShift
             }
             else if (mCurrentState == GameStates.Next_Level)
             {
-                Level tempLevel = mLevelSelect.GetNextLevel();
-                if (tempLevel != null)
+                Level tempLevel = mWorldSelect.NextLevel();
+                if (tempLevel != null && !tempLevel.Name.Equals(mCurrentLevel.Name))
                 {
                     mCurrentLevel = tempLevel;
                     mCurrentLevel.Load(Content);
@@ -428,6 +447,14 @@ namespace GravityShift
             {
                 mAfterScore.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
+            else if (mCurrentState == GameStates.ResetConfirm)
+            {
+                mResetConfirm.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
+            else if (mCurrentState == GameStates.StartLevelSplash)
+            {
+                mStartLevelSplash.Update(gameTime, ref mCurrentState);
+            }
         }
 
         /// <summary>
@@ -448,7 +475,7 @@ namespace GravityShift
             if (mCurrentState == GameStates.In_Game)
             {
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
-                mCurrentLevel.DrawHud(mSpriteBatch, gameTime, scale);
+                DrawHUD();
             }
             else if (mCurrentState == GameStates.Main_Menu)
             {
@@ -479,12 +506,13 @@ namespace GravityShift
             {
                 //TODO - Change this to a victory animation
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
+                DrawHUD();
             }
             else if (mCurrentState == GameStates.Death)
             {
                 //TODO - Change this to a death animation
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
-                mCurrentLevel.DrawHud(mSpriteBatch, gameTime, scale);
+                DrawHUD();
             }
             else if (mCurrentState == GameStates.Title)
             {
@@ -495,8 +523,39 @@ namespace GravityShift
                 mScoring.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
                 mAfterScore.Draw(mSpriteBatch, mGraphics, scale);
             }
+            else if (mCurrentState == GameStates.ResetConfirm)
+            {
+                mResetConfirm.Draw(mSpriteBatch, mGraphics, scale);
+            }
+            else if (mCurrentState == GameStates.StartLevelSplash)
+            {
+                mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
+                mStartLevelSplash.Draw(mSpriteBatch, mGraphics, scale);
+            }
                 
             base.Draw(gameTime);
+        }
+
+        public void DrawHUD()
+        {
+            Rectangle mScreenRect = mGraphics.GraphicsDevice.Viewport.TitleSafeArea;
+            mSpriteBatch.Begin();
+            mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Right, mScreenRect.Height / 10), Color.White);
+            mSpriteBatch.DrawString(mQuartz, "Timer: " + mCurrentLevel.Timer, new Vector2(mScreenRect.Left + mScreenRect.Width / 10, mScreenRect.Top), Color.DarkTurquoise);
+            mSpriteBatch.DrawString(mQuartz, "Collected: " + mCurrentLevel.NumCollected + "/" + mCurrentLevel.NumCollectable, new Vector2(mScreenRect.Left + mScreenRect.Width / 3, mScreenRect.Top), Color.DarkTurquoise);
+
+            mSpriteBatch.Draw(mLives[mCurrentLevel.NumLives], new Vector2(mScreenRect.Right - mLives[0].Width * 2, mScreenRect.Top), Color.White);
+
+            if (mCurrentLevel.NumLives <= 0)
+            {
+                string request = "Out of Lives       Press A to Restart";
+
+                Vector2 stringSize = mQuartz.MeasureString(request);
+                mSpriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - stringSize.X/2, mScreenRect.Center.Y), Color.DarkTurquoise);
+                mSpriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2 + 2, mScreenRect.Center.Y + 2), Color.White);
+
+            }
+            mSpriteBatch.End();
         }
     }
 }
