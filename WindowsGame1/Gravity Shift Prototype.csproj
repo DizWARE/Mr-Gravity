@@ -134,6 +134,7 @@
     <Compile Include="Menu Code\MainMenu.cs" />
     <Compile Include="Menu Code\Scoring.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />
+    <Compile Include="Menu Code\StartLevelSplash.cs" />
     <Compile Include="Menu Code\Title.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />

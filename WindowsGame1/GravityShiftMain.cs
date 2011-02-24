@@ -37,6 +37,8 @@ namespace GravityShift
 
         ResetConfirm mResetConfirm;
 
+        StartLevelSplash mStartLevelSplash;
+
         MainMenu mMainMenu;
         Level mMainMenuLevel;
 
@@ -144,6 +146,7 @@ namespace GravityShift
             mOptions = new Options(mControls, mGraphics);
             mAfterScore = new AfterScore(mControls);
             mResetConfirm = new ResetConfirm(mControls);
+            mStartLevelSplash = new StartLevelSplash(mControls);
 
             mController = new Controller(mControls, mGraphics);
             mSoundOptions = new SoundOptions(mControls, mGraphics);
@@ -194,7 +197,7 @@ namespace GravityShift
             mResetConfirm.Load(Content);
             mController.Load(Content);
             mSoundOptions.Load(Content);
-
+            mStartLevelSplash.Load(Content, GraphicsDevice, ref mCurrentLevel);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -449,6 +452,10 @@ namespace GravityShift
             {
                 mResetConfirm.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
+            else if (mCurrentState == GameStates.StartLevelSplash)
+            {
+                mStartLevelSplash.Update(gameTime, ref mCurrentState);
+            }
         }
 
         /// <summary>
@@ -520,6 +527,11 @@ namespace GravityShift
             else if (mCurrentState == GameStates.ResetConfirm)
             {
                 mResetConfirm.Draw(mSpriteBatch, mGraphics, scale);
+            }
+            else if (mCurrentState == GameStates.StartLevelSplash)
+            {
+                mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
+                mStartLevelSplash.Draw(mSpriteBatch, mGraphics, scale);
             }
                 
             base.Draw(gameTime);
