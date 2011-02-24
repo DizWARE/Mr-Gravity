@@ -209,6 +209,8 @@ namespace GravityShift
 
             if (attempt[0] >= level.TimerStar)
             {
+                level.TimerStar = attempt[0];
+
                 if (attempt[0] == 3)
                 {
                     spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
@@ -238,6 +240,7 @@ namespace GravityShift
 
             if (attempt[1] >= level.CollectionStar)
             {
+                level.CollectionStar = attempt[1];
                 if (attempt[1] == 3)
                 {
                     spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
@@ -266,6 +269,7 @@ namespace GravityShift
 
             if (attempt[2] >= level.DeathStar)
             {
+                level.DeathStar = attempt[2];
                 if (attempt[2] == 3)
                 {
                     spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);

@@ -24,7 +24,13 @@ namespace GravityShift
     /// Level selection menu that allows you to pick the level to start
     /// </summary>
     class WorldSelect
-    {        
+    {
+        //struct needed for serializing on xbox
+        public struct SaveGameData
+        {
+            public XElement savedata;
+        }
+
         private const int NAME_REGION = 0;
         private const int STARS_REGION = 1;
         private const int TIMER_REGION = 2;
@@ -77,6 +83,17 @@ namespace GravityShift
         int mCurrentIndex = 1;
         int mCurrentWorld = 0;
 
+        /* Trial Mode Loading */
+        public bool TrialMode { get { return Guide.IsTrialMode; } }
+
+        //record whether we have asked for a storage device already
+        bool mDeviceSelected;
+        public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
+
+        //store the storage device we are using, and the container within it.
+        StorageDevice device;
+        StorageContainer container;
+
         /// <summary>
         /// Constructs the menu screen that allows the player to select a level
         /// </summary>
@@ -95,9 +112,131 @@ namespace GravityShift
 
             mLevels = new List<LevelInfo>();
 #if XBOX360
+            CheckForSave();
 #else
             mLevelInfo = XElement.Load("..\\..\\..\\Content\\Levels\\Info\\LevelList.xml");
 #endif
+
+            mDeviceSelected = false;
+
+        }
+
+        /// <summary>
+        /// Saves level unlock and scoring information
+        /// 
+        /// PC saving is straightforward - but xDoc.Save() will not work on xbox360.
+        /// Instead we use the built in XmlSerializer class to serialize an element out to an xml file.
+        /// We build our Xelement like normal - but instead of saving that directly using XDocument.Save()
+        /// we place this XElement into a struct, and use XmlSerializer to serialize the data out into a storage
+        /// device on the xbox.
+        /// </summary>
+        /// 
+        public void Save()
+        {
+            XElement xLevels = new XElement(XmlKeys.LEVELS);
+            foreach (LevelInfo l in mLevels)
+                xLevels.Add(l.Export());
+            XDocument xDoc = new XDocument();
+            xDoc.Add(xLevels);
+
+#if XBOX360
+            IAsyncResult result;
+            if (!mDeviceSelected)
+            {
+                result = StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, null, null);
+                result.AsyncWaitHandle.WaitOne();
+                device = StorageDevice.EndShowSelector(result);
+                result.AsyncWaitHandle.Close();
+                mDeviceSelected = true;
+            }
+
+            result = device.BeginOpenContainer("GravityShift", null, null);
+            result.AsyncWaitHandle.WaitOne();
+            container = device.EndOpenContainer(result);
+            result.AsyncWaitHandle.Close();
+            //container.DeleteFile("TrialLevelList.xml");
+            //container.DeleteFile("LevelList.xml");
+
+            Stream stream;
+            if (container.FileExists("LevelList.xml"))
+            {
+                container.DeleteFile("LevelList.xml");
+            }
+            stream = container.CreateFile("LevelList.xml");
+            XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+            SaveGameData data = new SaveGameData();
+            data.savedata = xLevels;
+            serializer.Serialize(stream, data);
+            stream.Close();
+            container.Dispose();
+               
+#else
+            xDoc.Save("..\\..\\..\\Content\\Levels\\Info\\LevelList.xml");
+#endif
+
+        }
+
+        /// <summary>
+        /// Checks if a save file for the game already exists - and loads it if so.
+        /// Meant to be used solely on XBOX360.  Should be used as soon as we know what
+        /// PlayerIndex the "gamer" is using (IE right after the title screen).
+        /// 
+        /// Note: if a save game does not exist the constructor for this class should have
+        /// filled in the default values (0 stars, all but the first locked - on xbox our default xml file
+        /// should always have the default values - we cannot save information to that file as it is a binary xnb file
+        /// that can't be changed at run time)
+        /// 
+        /// Do not call this until we know the PlayerIndex the player is using!
+        /// </summary>
+        public void CheckForSave()
+        {
+            IAsyncResult result;
+            if (!mDeviceSelected)
+            {
+                result = StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, null, null);
+                result.AsyncWaitHandle.WaitOne();
+                device = StorageDevice.EndShowSelector(result);
+                result.AsyncWaitHandle.Close();
+                mDeviceSelected = true;
+            }
+
+            result = device.BeginOpenContainer("Mr Gravity", null, null);
+            result.AsyncWaitHandle.WaitOne();
+            container = device.EndOpenContainer(result);
+            result.AsyncWaitHandle.Close();
+
+            if (container.FileExists("LevelList.xml"))
+            {
+                Stream stream = container.OpenFile("LevelList.xml", FileMode.Open);
+                XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
+                SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
+                stream.Close();
+                int i = 0;
+                foreach (XElement xLevels in data.savedata.Elements())
+                {
+                    foreach (XElement xLevelData in xLevels.Elements())
+                    {
+                        foreach (XElement xLevel in xLevelData.Elements())
+                        {
+                            if (xLevel.Name == XmlKeys.UNLOCKED && xLevel.Value == XmlKeys.TRUE)
+                                mLevels[i].Unlock();
+
+                            if (xLevel.Name == XmlKeys.TIMERSTAR)
+                                mLevels[i].SetStar(LevelInfo.StarTypes.Time, Convert.ToInt32(xLevel.Value));
+
+                            if (xLevel.Name == XmlKeys.COLLECTIONSTAR)
+                                mLevels[i].SetStar(LevelInfo.StarTypes.Collection, Convert.ToInt32(xLevel.Value));
+
+                            if (xLevel.Name == XmlKeys.DEATHSTAR)
+                                mLevels[i].SetStar(LevelInfo.StarTypes.Death, Convert.ToInt32(xLevel.Value));
+
+                        }
+                        i++;
+                    }
+                }
+
+            }
+            container.Dispose();
         }
 
         /// <summary>
@@ -148,6 +287,29 @@ namespace GravityShift
                     mInfoBar.Width, 7 * mInfoBar.Height / 24);
         }
 
+        /// <summary>
+        /// Resets the world system
+        /// </summary>
+        public void Reset()
+        {
+            foreach (LevelInfo level in mLevels)
+                level.Lock();
+
+            UnlockWorld(0);
+        }
+
+        public Level NextLevel()
+        {
+            if (++mCurrentIndex > 6 && mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
+            {
+                mCurrentIndex = 1;
+                mCurrentWorld = (mCurrentWorld + 1) % 8;
+            }
+            else if (!mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
+                mCurrentIndex--;
+
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Level;
+        }
 
         /// <summary>
         /// Unlocks the given world
@@ -155,8 +317,14 @@ namespace GravityShift
         /// <param name="world">The world.</param>
         public void UnlockWorld(int world)
         {
+#if XBOX360
+            if(!this.mTrialMode && world > 0)
+#endif
             for (int i = 0; i < 6; i++)
                 mLevels[world * 6 + i].Unlock();
+#if XBOX360
+            else;                
+#endif
         }
 
         /// <summary>
@@ -237,6 +405,11 @@ namespace GravityShift
                    currentLevel.Load(mContent);
                    currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Time);
                    currentLevel.CollectableCount = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Collection);
+                   
+                   currentLevel.TimerStar = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Time);
+                   currentLevel.CollectionStar = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Collection);
+                   currentLevel.DeathStar = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Death);
+
                    gameState = GameStates.StartLevelSplash;
                 }
 
@@ -578,6 +751,11 @@ namespace GravityShift
             mUnlocked = true;
         }
 
+        public void Lock()
+        {
+            mUnlocked = false;
+        }
+
         /// <summary>
         /// Gets if there is a tenth star or not
         /// </summary>
@@ -603,12 +781,16 @@ namespace GravityShift
         /// <returns></returns>
         public int GetStar(StarTypes starType)
         {
+            int starCount = 0;
+
             if (starType == StarTypes.Collection)
-                return Math.Max(mCollectableStars, Level.CollectionStar);
+                starCount = mCollectableStars = Math.Max(mCollectableStars, Level.CollectionStar);
             else if (starType == StarTypes.Death)
-                return Math.Max(mDeathStars, Level.DeathStar);
+                starCount = mDeathStars = Math.Max(mDeathStars, Level.DeathStar);
             else
-                return Math.Max(mTimeStars,Level.TimerStar);
+                starCount = mTimeStars =Math.Max(mTimeStars, Level.TimerStar);
+
+            return starCount;
         }
 
         /// <summary>
@@ -624,6 +806,43 @@ namespace GravityShift
                 return 0;
             else
                 return mGoalTime;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="starType"></param>
+        /// <param name="value"></param>
+        public void SetStar(StarTypes starType, int value)
+        {
+            if (starType == StarTypes.Collection)
+                mCollectableStars = value;
+            else if (starType == StarTypes.Death)
+                mDeathStars = value;
+            else
+                mTimeStars = value;
+        }
+
+        /// <summary>
+        /// Exports this level to a level info
+        /// </summary>
+        /// <returns>The higher level of xml</returns>
+        public XElement Export()
+        {
+            string xUnlock = XmlKeys.FALSE;
+            if (mUnlocked)
+                xUnlock = XmlKeys.TRUE;
+
+            XElement xLevel = new XElement(XmlKeys.LEVEL_DATA,
+                new XElement(XmlKeys.LEVEL_NAME, this.Name),
+                new XElement(XmlKeys.UNLOCKED, xUnlock),
+                new XElement(XmlKeys.TIMERSTAR, mTimeStars.ToString()),
+                new XElement(XmlKeys.COLLECTIONSTAR, mCollectableStars.ToString()),
+                new XElement(XmlKeys.DEATHSTAR, mDeathStars.ToString()),
+                new XElement(XmlKeys.GOALCOLLECTABLE, mGoalCollectable.ToString()),
+                new XElement(XmlKeys.GOALTIME, mGoalTime));
+
+            return xLevel;
         }
     }
 }

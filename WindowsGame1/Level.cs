@@ -296,6 +296,7 @@ namespace GravityShift
         public void Load(ContentManager content)
         {
             mObjects.Clear();
+            Reset();
 
             Importer importer = new Importer(content);
             importer.ImportLevel(this);
@@ -674,6 +675,8 @@ namespace GravityShift
             mRemoveCollected.Clear();
             mTrigger.Clear();
             mTimer = 0;
+
+            ResetScores();
         }
 
         /// <summary>

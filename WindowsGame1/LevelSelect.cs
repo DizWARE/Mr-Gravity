@@ -180,7 +180,7 @@ namespace GravityShift
         /// device on the xbox.
         /// </summary>
         /// 
- /*       public void Save(PlayerIndex player) 
+        public void Save(PlayerIndex player) 
         {
             playerIndex = player;
             XElement xLevels = new XElement(XmlKeys.LEVELS);
@@ -228,7 +228,7 @@ namespace GravityShift
                 xDoc.Save(LEVEL_LIST);
 #endif
 
-        }*/
+        }
 
         /// <summary>
         /// Load the data that is needed to show the Level selection screen
@@ -285,9 +285,7 @@ namespace GravityShift
         public Level Reset()
         {
             foreach (LevelChoice l in mLevels)
-            {
                 l.Reset(false);
-            }
 
             mLevels[0].Reset(true);
 
