@@ -293,9 +293,13 @@ namespace GravityShift
         public void Reset()
         {
             foreach (LevelInfo level in mLevels)
-                level.Lock();
+                level.Reset();
 
-            UnlockWorld(0);
+            mCurrentWorld = 0;
+            mCurrentIndex = 1;
+
+            //UnlockWorld(0);
+            UpdateStarCount();
         }
 
         public Level NextLevel()
@@ -751,11 +755,6 @@ namespace GravityShift
             mUnlocked = true;
         }
 
-        public void Lock()
-        {
-            mUnlocked = false;
-        }
-
         /// <summary>
         /// Gets if there is a tenth star or not
         /// </summary>
@@ -821,6 +820,18 @@ namespace GravityShift
                 mDeathStars = value;
             else
                 mTimeStars = value;
+        }
+
+        /// <summary>
+        /// Resets this level
+        /// </summary>
+        public void Reset()
+        {
+            mLevel.ResetScores();
+            mCollectableStars = 0;
+            mTimeStars = 0;
+            mDeathStars = 0;
+            mUnlocked = false;
         }
 
         /// <summary>

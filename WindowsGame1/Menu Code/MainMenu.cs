@@ -67,6 +67,7 @@ namespace GravityShift
                     states = GameStates.Options;
                 if (mCurrentChoice == MenuChoices.Credits)
                     states = GameStates.Credits;
+                env.GravityDirection = GravityDirections.Down;
             }
 
             if (env.GravityDirection == GravityDirections.Down)

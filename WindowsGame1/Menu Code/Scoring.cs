@@ -104,10 +104,6 @@ namespace GravityShift
          */
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
-            int []scores = GetRank((int)level.mTimer, level.IdealTime, (int)GravityShift.Level.mNumCollected, level.CollectableCount, GravityShift.Level.mDeaths);
-            level.TimerStar = scores[0];
-            level.CollectionStar = scores[1];
-            level.DeathStar = scores[2];
 
             if (mControls.isStartPressed(false))
             {
@@ -144,29 +140,29 @@ namespace GravityShift
          * int deathTotal: number of deaths
          * 
          * return int[] (number of stars-- 0=Bad, 1=Okay, 2=Good, 3=Perfect): [Time, Collectables, Death]
-         */
+         
         public int[] GetRank(int time, int timeGoal, int collect, int collectGoal, int deathTotal)
         {
             int[] result = new int[3];
 
-            /* TIME -- 100%+, <120%, <140%, >140% */
+            // TIME -- 100%+, <120%, <140%, >140% 
             if (time < timeGoal) 
             { result[0] = 3; }
             else if (((double) time / (double) timeGoal) < 1.2) { result[0] = 2; }
             else { result[0] = 1; }
 
-            /* COLLECTABLES -- 100%, >80%, >60%, <60% */
+            // COLLECTABLES -- 100%, >80%, >60%, <60% 
             if (collect == collectGoal) { result[1] = 3; }
             else if (((double) collect / (double) collectGoal) > 0.8) { result[1] = 2; }
             else { result[1] = 1; }
 
-            /* DEATHS -- 0, 1, 2-3, >3 */
+            // DEATHS -- 0, 1, 2-3, >3 //
             if (deathTotal == 0) { result[2] = 3; }
             else if (deathTotal >= 2) { result[2] = 2; }
             else { result[2] = 1; }
 
             return result;
-        }
+        }*/
 
         /*
          * Draw
@@ -190,8 +186,8 @@ namespace GravityShift
             // TODO - CHANGE TO DYNAMIC PLACEMENT
 
             int topPadding = mScreenRect.Top + mScreenRect.Height / 4;
-            int[] attempt = new int[3];
-            attempt = GetRank((int)level.mTimer, (int)level.IdealTime, (int)GravityShift.Level.mNumCollected, (int)GravityShift.Level.mNumCollectable, (int)GravityShift.Level.mDeaths);
+            int[] attempt = {level.TimerStar, level.CollectionStar, level.DeathStar};
+            //attempt = GetRank((int)level.mTimer, (int)level.IdealTime, (int)GravityShift.Level.mNumCollected, (int)GravityShift.Level.mNumCollectable, (int)GravityShift.Level.mDeaths);
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
             spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
 
