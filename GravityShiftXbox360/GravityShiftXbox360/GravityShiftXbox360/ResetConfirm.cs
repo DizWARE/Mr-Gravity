@@ -154,7 +154,7 @@ namespace GravityShift
             Rectangle mScreenRect = graphics.GraphicsDevice.Viewport.TitleSafeArea;
 
             /* Draw the transparent background */
-            spriteBatch.Draw(mBackground, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White);
+            spriteBatch.Draw(mBackground, graphics.GraphicsDevice.Viewport.Bounds, Color.White);
 
             /* Draw the pause title */
             spriteBatch.Draw(mTitle, new Vector2(center.X - mTitle.Width / 2, mScreenRect.Top), Color.White);
