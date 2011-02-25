@@ -227,7 +227,7 @@ namespace GravityShift
             //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
 
 #else
-           // mLevelSelect.Save(PlayerIndex.One);
+            mWorldSelect.Save();
 #endif
             //if (mControls.controlScheme() == ControlSchemes.Gamepad)
             //    if (Guide.IsTrialMode && !Guide.IsVisible)
@@ -246,8 +246,6 @@ namespace GravityShift
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
-            //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
 
             if (mCurrentState == GameStates.Credits)
                 mCredits.Update(gameTime, ref mCurrentState);

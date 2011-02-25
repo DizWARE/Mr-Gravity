@@ -293,9 +293,13 @@ namespace GravityShift
         public void Reset()
         {
             foreach (LevelInfo level in mLevels)
+            {
                 level.Lock();
+                level.ResetStars();
+            }
 
             UnlockWorld(0);
+            mStarCount = 0;
         }
 
         public Level NextLevel()
@@ -772,6 +776,14 @@ namespace GravityShift
         public int StarCount()
         {
             return GetStar(StarTypes.Collection) + GetStar(StarTypes.Death) + GetStar(StarTypes.Time) + Convert.ToInt32(TenthStar());
+        }
+
+        public void ResetStars()
+        {
+            mTimeStars = 0;
+            mCollectableStars = 0;
+            mDeathStars = 0;
+            Level.ResetScores();
         }
 
         /// <summary>
