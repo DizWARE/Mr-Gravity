@@ -392,6 +392,25 @@ namespace GravityShift
             mCollisionMatrix[(int)position.Y][(int)position.X].Remove(obj);
         }
 
+        public void UpdateStars()
+        {
+            /* TIME -- 100%+, <120%, <140%, >140% */
+            if (mTimer < mIdealTime)
+            { mTimerStar = 3; }
+            else if ((mTimer / mIdealTime) < 1.2) { mTimerStar = 2; }
+            else { mTimerStar = 1; }
+
+            /* COLLECTABLES -- 100%, >80%, >60%, <60% */
+            if (NumCollected == NumCollectable) { mCollectionStar = 3; }
+            else if ((NumCollected / NumCollectable) > 0.8) { mCollectionStar = 2; }
+            else { mCollectionStar = 1; }
+
+            /* DEATHS -- 0, 1, 2-3, >3 */
+            if (mDeaths == 0) { mDeathStar = 3; }
+            else if (mDeaths <= 2) { mDeathStar = 2; }
+            else { mDeathStar = 1; }
+        }
+
         /// <summary>
         /// Updates the level's progress
         /// </summary>
@@ -492,14 +511,6 @@ namespace GravityShift
                         mCam.Position = new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0);
                     }
 
-                    /* Snap Zoom Out */
-                    else if (mControls.isYPressed(true))
-                        mCam.Zoom = 0.4f;
-
-                    /* Snap Zoom In */
-                    else if (mCam.Zoom == .4f && !mControls.isYPressed(false))
-                        mCam.Zoom = mPrevZoom;
-
                     //Pause
                     if (mControls.isStartPressed(false) || Guide.IsVisible)
                         if (gameState == GameStates.In_Game)
@@ -518,9 +529,7 @@ namespace GravityShift
                     mDeathPanUpdates++;
 
                     if (mDeathPanUpdates == SCALING_FACTOR)
-                    {
                         mDeathState = DeathStates.Playing;
-                    }
                 }
             }
 
@@ -611,19 +620,15 @@ namespace GravityShift
 
             //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
-            {
                 if (gObject.CollisionType != XmlKeys.COLLECTABLE)
-                {
                     gObject.Draw(spriteBatch, gameTime);
-                }
-                
-            }
 
             //Draw all of our active animations
             if (shouldAnimate)
             {
                 for (int i = 0; i < mActiveAnimations.Count; i++)
                     mActiveAnimations.ElementAt(i).Value.Draw(spriteBatch, mActiveAnimations.ElementAt(i).Key);
+
                 if (mCollectableAnimation != null)
                 {
                     for (int i = 0; i < mCollectableLocations.Count; i++)

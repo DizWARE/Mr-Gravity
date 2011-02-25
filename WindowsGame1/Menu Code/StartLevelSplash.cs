@@ -27,8 +27,6 @@ namespace GravityShift
         private SpriteFont mQuartzSmall;
         private SpriteFont mQuartzLarge;
 
-        Level mLevel;
-
         #endregion
 
         #region Art
@@ -52,10 +50,8 @@ namespace GravityShift
          *
          * ContentManager content: the Content file used in the game.
          */
-        public void Load(ContentManager content, GraphicsDevice graphics, ref Level level)
+        public void Load(ContentManager content, GraphicsDevice graphics)
         {
-            mLevel = level;
-
             mContent = content;
 
             mScreenRect = graphics.Viewport.TitleSafeArea;
@@ -79,11 +75,9 @@ namespace GravityShift
          */
         public void Update(GameTime gameTime, ref GameStates gameState)
         {
-
             /* If the user selects one of the menu items */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                mLevel.mTimer = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
                 gameState = GameStates.In_Game;
@@ -99,7 +93,7 @@ namespace GravityShift
          * 
          * GraphicsDeviceManager graphics: The current graphics manager
          */
-        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)
+        public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Level level, Matrix scale)
         {
             spriteBatch.Begin(SpriteSortMode.Immediate,
                 BlendState.AlphaBlend,
@@ -116,7 +110,7 @@ namespace GravityShift
             spriteBatch.Draw(mTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White);
             spriteBatch.Draw(mTitle, new Rectangle(mScreenRect.Center.X - (int)(mTitle.Width * mSize[0]) / 2, mScreenRect.Top, (int)(mTitle.Width * mSize[0]), (int)(mTitle.Height * mSize[1])), Color.White);
 
-            string request = "Goals for " + mLevel.Name + ":";
+            string request = "Goals for " + level.Name + ":";
 
             Vector2 stringSize = mQuartzLarge.MeasureString(request);
             spriteBatch.DrawString(mQuartzLarge, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.DarkTurquoise);
@@ -132,17 +126,17 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the collectable goals for the level */
-            request = "0 / " + mLevel.NumCollectable.ToString();
+            request =  " < " + (level.NumCollectable*.8).ToString() + " / " + level.NumCollectable.ToString();
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
 
-            request = (mLevel.NumCollectable*.8).ToString()  + " / " + mLevel.NumCollectable.ToString();
+            request = " > " + (level.NumCollectable*.8).ToString()  + " / " + level.NumCollectable.ToString();
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
 
-            request = mLevel.NumCollectable.ToString() + " / " + mLevel.NumCollectable.ToString();
+            request = level.NumCollectable.ToString() + " / " + level.NumCollectable.ToString();
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - stringSize.X / 2, mHeight), Color.White);
@@ -171,17 +165,17 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the timer goals for the level */
-            request = "> " + (mLevel.IdealTime * 1.4).ToString() + " seconds";
+            request = "> " + (level.IdealTime * 1.2).ToString() + " seconds";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
 
-            request = "<" + (mLevel.IdealTime * 1.2).ToString() + " seconds";
+            request = "<= " + (level.IdealTime * 1.2).ToString() + " seconds";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
 
-            request = request = "<" + (mLevel.IdealTime).ToString() + " seconds";
+            request = request = "< " + (level.IdealTime).ToString() + " seconds";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - stringSize.X / 2, mHeight), Color.White);
@@ -210,12 +204,12 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the death goals for the level */
-            request = " 2 deaths";
+            request = " > 2 deaths";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
 
-            request = " 1 death";
+            request = " <= 2 death";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
