@@ -111,10 +111,12 @@ namespace GravityShift
             mBack = new Texture2D[2];
 
             mLevels = new List<LevelInfo>();
+
+            string LEVEL_LIST = "..\\..\\..\\Content\\Levels\\Info\\LevelList.xml";
 #if XBOX360
-            CheckForSave();
+            mLevelInfo = XElement.Load(LEVEL_LIST.Remove(0,8));
 #else
-            mLevelInfo = XElement.Load("..\\..\\..\\Content\\Levels\\Info\\LevelList.xml");
+            mLevelInfo = XElement.Load(LEVEL_LIST);
 #endif
 
             mDeviceSelected = false;
