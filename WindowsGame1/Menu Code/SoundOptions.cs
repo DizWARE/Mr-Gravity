@@ -165,11 +165,11 @@ namespace GravityShift
                 {
                     if (mMuted)
                     {
-                        spriteBatch.Draw(mMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mMute.Height * mSize[1]), (int)(mMute.Width * mSize[0]), (int)(mMute.Height * mSize[1])), Color.White);
+                        spriteBatch.Draw(mMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mMute.Height * mSize[1]) - (int)(mTexture.Height * mSize[1] - mMute.Height * mSize[1]) / 2, (int)(mMute.Width * mSize[0]), (int)(mMute.Height * mSize[1])), Color.White);
                     }
                     else
                     {
-                        spriteBatch.Draw(mUnMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mUnMute.Height * mSize[1]), (int)(mUnMute.Width * mSize[0]), (int)(mUnMute.Height * mSize[1])), Color.White);
+                        spriteBatch.Draw(mUnMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mUnMute.Height * mSize[1]) - (int)(mTexture.Height * mSize[1] - mUnMute.Height * mSize[1]) / 2, (int)(mUnMute.Width * mSize[0]), (int)(mUnMute.Height * mSize[1])), Color.White);
                     }
                 }
             }
@@ -202,11 +202,11 @@ namespace GravityShift
                 {
                     if (mMuted)
                     {
-                        spriteBatch.Draw(mMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mMute.Height * mSize[1]), (int)(mMute.Width * mSize[0]), (int)(mMute.Height * mSize[1])), Color.White);
+                        spriteBatch.Draw(mMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mMute.Height * mSize[1]) - (int)(mTexture.Height * mSize[1] - mMute.Height * mSize[1]) / 2, (int)(mMute.Width * mSize[0]), (int)(mMute.Height * mSize[1])), Color.White);
                     }
                     else
                     {
-                        spriteBatch.Draw(mUnMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mUnMute.Height * mSize[1]), (int)(mUnMute.Width * mSize[0]), (int)(mUnMute.Height * mSize[1])), Color.White);
+                        spriteBatch.Draw(mUnMute, new Rectangle(center.X + (int)(mTexture.Width * mSize[0]) / 2, center.Y - (int)(mUnMute.Height * mSize[1]) - (int)(mTexture.Height * mSize[1] - mUnMute.Height * mSize[1]) / 2, (int)(mUnMute.Width * mSize[0]), (int)(mUnMute.Height * mSize[1])), Color.White);
                     }
                 }
                     
