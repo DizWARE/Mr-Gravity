@@ -82,20 +82,11 @@ namespace GravityShift.Import_Code
         /// <returns>A vector2 with the players start position(or -100,-100 if none is provided)</returns>
         public void GetPlayerStart(Level level)
         {
+            level.CollectableCount = 0;
             foreach (EntityInfo entity in mEntities)
             {
                 if (entity.mType == XmlKeys.PLAYER_LOCATION && entity.mName == XmlKeys.PLAYER_START)
-                {
                     level.StartingPoint = GridSpace.GetDrawingCoord(entity.mLocation);
-                    if (entity.mProperties.ContainsKey(XmlKeys.IDEAL_TIME))
-                        level.IdealTime = int.Parse(entity.mProperties[XmlKeys.IDEAL_TIME]);
-                    else
-                        level.IdealTime = 400;
-                }
-                if (entity.mType == XmlKeys.STATIC_OBJECT && entity.mCollisionType == XmlKeys.COLLECTABLE)
-                {
-                    level.CollectableCount++;
-                }
             }
         } 
 

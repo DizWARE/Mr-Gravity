@@ -125,26 +125,7 @@ Content\Images\Walls\Orange.xnb
 Content\Images\Walls\Pink.xnb
 Content\Images\Walls\Purple.xnb
 Content\Images\Walls\Yellow.xnb
-Content\Levels\Thumbnail\BlackHoleMagic.xnb
-Content\Levels\Thumbnail\Chambers.xnb
-Content\Levels\Thumbnail\DK.xnb
-Content\Levels\Thumbnail\Face.xnb
-Content\Levels\Thumbnail\MainMenu.xnb
-Content\Levels\Thumbnail\Maze.xnb
-Content\Levels\Thumbnail\New Level.xnb
-Content\Levels\Thumbnail\Rails.xnb
-Content\Levels\Thumbnail\Retro.xnb
-Content\Levels\Thumbnail\Sky is Falling.xnb
-Content\Levels\Thumbnail\Test.xnb
-Content\Levels\Thumbnail\TriggerHappy.xnb
 Content\Images\AnimatedSprites\NoAnimation.xnb
-Content\Levels\Thumbnail\Close Call.xnb
-Content\Levels\Thumbnail\Compartments.xnb
-Content\Levels\Thumbnail\Corners.xnb
-Content\Levels\Thumbnail\Hazards.xnb
-Content\Levels\Thumbnail\Moving Hazard.xnb
-Content\Levels\Thumbnail\Space Invaders.xnb
-Content\Levels\Thumbnail\X Trio.xnb
 Content\Images\Menu\backgroundSquares1.xnb
 Content\Images\Menu\Mr_Gravity.xnb
 Content\Images\Menu\Main\ContinueSelected.xnb
@@ -165,16 +146,6 @@ Content\Images\Player\Sad2.xnb
 Content\Images\Player\Smile.xnb
 Content\Images\Player\Surprise.xnb
 Content\Images\Player\Worry.xnb
-Content\Levels\Thumbnail\Avoidance.xnb
-Content\Levels\Thumbnail\Choosing Sides.xnb
-Content\Levels\Thumbnail\Copycat.xnb
-Content\Levels\Thumbnail\Friction Is Your Friend.xnb
-Content\Levels\Thumbnail\Guards.xnb
-Content\Levels\Thumbnail\Intertwined.xnb
-Content\Levels\Thumbnail\Labyrinth.xnb
-Content\Levels\Thumbnail\Trap Em.xnb
-Content\Levels\Thumbnail\Uniform.xnb
-Content\Levels\Thumbnail\You Shall Not Pass.xnb
 Content\fonts\QuartzSmall.xnb
 Content\fonts\QuartzSmaller.xnb
 Content\fonts\Kootenay.xnb
@@ -207,12 +178,6 @@ Content\Images\AnimatedSprites\RedDiamond.xnb
 Content\Images\AnimatedSprites\Star.xnb
 Content\Images\AnimatedSprites\YellowDiamond.xnb
 Content\Images\AnimatedSprites\YellowStar.xnb
-Content\Levels\Thumbnail\AutomatedRails.xnb
-Content\Levels\Thumbnail\Corridors.xnb
-Content\Levels\Thumbnail\Cramped.xnb
-Content\Levels\Thumbnail\Dropping In.xnb
-Content\Levels\Thumbnail\Rail Reversal.xnb
-Content\Levels\Thumbnail\Tortoise and Hare.xnb
 Content\Levels\BlackHoleMagic.xml
 Content\Levels\Chambers.xml
 Content\Levels\CloseCall.xml
@@ -254,3 +219,19 @@ Content\Levels\Cramped.xml
 Content\Levels\Dropping In.xml
 Content\Levels\Rail Reversal.xml
 Content\Levels\Tortoise and Hare.xml
+Content\Levels\Anything Goes.xml
+Content\Levels\Ball Pit.xml
+Content\Levels\Black Holes.xml
+Content\Levels\Chaotic.xml
+Content\Levels\Full Circle.xml
+Content\Levels\Into The Fire.xml
+Content\Levels\Invisi-Wall.xml
+Content\Levels\Moving Platforms.xml
+Content\Levels\Nort.xml
+Content\Levels\Rail Jam.xml
+Content\Levels\Space Wars.xml
+Content\Levels\Stepping Stones.xml
+Content\Levels\Symmetry.xml
+Content\Levels\Take Me To Safety.xml
+Content\Levels\Up Is Down.xml
+Content\Levels\Warped.xml

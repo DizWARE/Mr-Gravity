@@ -25,6 +25,7 @@ namespace GravityShift
     /// </summary>
     class LevelSelect
     {
+        //struct needed for serializing on xbox
         public struct SaveGameData
         {
             public XElement savedata;
@@ -70,9 +71,11 @@ namespace GravityShift
         bool mTrialMode;
         public bool TrialMode { get { return mTrialMode; } set { mTrialMode = value; } }
 
+        //record whether we have asked for a storage device already
         bool mDeviceSelected;
         public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
 
+        //store the storage device we are using, and the container within it.
         StorageDevice device;
         StorageContainer container;
 
@@ -88,7 +91,6 @@ namespace GravityShift
             mLevels = new List<LevelChoice>();
 #if XBOX360
             LEVEL_LIST = LEVEL_LIST.Remove(0, 8);
-            TRIAL_LEVEL_LIST = TRIAL_LEVEL_LIST.Remove(0, 8);
 #endif
 
             mLevelInfo = XElement.Load(LEVEL_LIST);
@@ -100,7 +102,16 @@ namespace GravityShift
 
 
         /// <summary>
+        /// Checks if a save file for the game already exists - and loads it if so.
+        /// Meant to be used solely on XBOX360.  Should be used as soon as we know what
+        /// PlayerIndex the "gamer" is using (IE right after the title screen).
         /// 
+        /// Note: if a save game does not exist the constructor for this class should have
+        /// filled in the default values (0 stars, all but the first locked - on xbox our default xml file
+        /// should always have the default values - we cannot save information to that file as it is a binary xnb file
+        /// that can't be changed at run time)
+        /// 
+        /// Do not call this until we know the PlayerIndex the player is using!
         /// </summary>
         public void CheckForSave(PlayerIndex player)
         {
@@ -115,7 +126,7 @@ namespace GravityShift
                 mDeviceSelected = true;
             }
 
-            result = device.BeginOpenContainer("GravityShift", null, null);
+            result = device.BeginOpenContainer("Mr Gravity", null, null);
             result.AsyncWaitHandle.WaitOne();
             container = device.EndOpenContainer(result);
             result.AsyncWaitHandle.Close();
@@ -161,6 +172,12 @@ namespace GravityShift
 
         /// <summary>
         /// Saves level unlock and scoring information
+        /// 
+        /// PC saving is straightforward - but xDoc.Save() will not work on xbox360.
+        /// Instead we use the built in XmlSerializer class to serialize an element out to an xml file.
+        /// We build our Xelement like normal - but instead of saving that directly using XDocument.Save()
+        /// we place this XElement into a struct, and use XmlSerializer to serialize the data out into a storage
+        /// device on the xbox.
         /// </summary>
         /// 
         public void Save(PlayerIndex player) 
@@ -255,14 +272,20 @@ namespace GravityShift
 
         /// <summary>
         /// Resets all levels to be locked (except the first level) and resets all scores to 0
+        /// 
+        /// This should be changed a bit for our new world structure.
+        /// 
+        /// Perhaps on xbox360 we can simply just reload the default xml file here (which is guaranteed to have
+        /// default values within it if including it in the project in the proper state), and then save the game
+        /// so the storage container contains the reset values as well.
+        /// 
+        /// Additionally... I am not sure why this returns a level....
         /// </summary>
         /// <returns>The first level</returns>
         public Level Reset()
         {
             foreach (LevelChoice l in mLevels)
-            {
                 l.Reset(false);
-            }
 
             mLevels[0].Reset(true);
 
@@ -591,6 +614,8 @@ namespace GravityShift
 
         /// <summary>
         /// Export an XElement of this level choice
+        /// 
+        /// TODO: change additional XElements for new worldSelect
         /// </summary>
         /// 
         public XElement Export()

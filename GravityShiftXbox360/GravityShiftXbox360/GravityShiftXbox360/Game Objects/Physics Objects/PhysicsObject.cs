@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
 using GravityShift.MISC_Code;
+using GravityShift.Game_Objects.Static_Objects;
 
 namespace GravityShift
 {
@@ -53,8 +54,6 @@ namespace GravityShift
         /// number of pixels that the player can intersect the hazard without dying
         /// </summary>
         private const float HAZARDFORGIVENESS = 12.0f;
-
-        public bool collidedLastFrame = false;
 
         /// <summary>
         /// Directional force on this object
@@ -338,14 +337,53 @@ namespace GravityShift
         public virtual bool IsCollidingCircleAndBox(GameObject otherObject)
         {   
             BoundingSphere test1 = new BoundingSphere(
-                new Vector3(BoundingBox.Center.X,BoundingBox.Center.Y,0f),this.BoundingBox.Width/2);
+                new Vector3(BoundingBox.Center.X,BoundingBox.Center.Y,0f),(this.BoundingBox.Width/2)-1);
+
+            BoundingSphere hazTest = new BoundingSphere(
+                new Vector3(BoundingBox.Center.X,BoundingBox.Center.Y,0f),(this.BoundingBox.Width/2)-HAZARDFORGIVENESS);
+
+            BoundingBox test2 = new BoundingBox(
+                new Vector3(otherObject.BoundingBox.X, otherObject.BoundingBox.Y, 0f),
+                new Vector3(otherObject.BoundingBox.X + otherObject.BoundingBox.Width, otherObject.BoundingBox.Y + otherObject.BoundingBox.Height, 0f));
+            
+            // if player has not collided with a hazard deeper than HAZARDFORGIVENESS pixels, do not handle the collision
+            if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+            {
+                return hazTest.Intersects(test2);
+            }
+
+            return test1.Intersects(test2);
+            
+        }
+        /// <summary>
+        /// Returns true if the physics objects are colliding with each other
+        /// square = this
+        /// Currently not used
+        /// </summary>
+        /// <param name="otherObject">The other object to test against</param>
+        /// <returns>True if they are colliding with each other; False otherwise</returns>
+        public virtual bool IsCollidingBoxAndCircle(GameObject otherObject)
+        {
+            BoundingSphere test1 = new BoundingSphere(
+                new Vector3(otherObject.BoundingBox.Center.X, otherObject.BoundingBox.Center.Y, 0f), (otherObject.BoundingBox.Width / 2)-1);
+
+            BoundingSphere hazTest = new BoundingSphere(
+                new Vector3(otherObject.BoundingBox.Center.X, otherObject.BoundingBox.Center.Y, 0f), (otherObject.BoundingBox.Width / 2)- HAZARDFORGIVENESS);
 
             BoundingBox test2 = new BoundingBox(
                 new Vector3(BoundingBox.X, BoundingBox.Y, 0f),
                 new Vector3(BoundingBox.X + BoundingBox.Width, BoundingBox.Y + BoundingBox.Height, 0f));
 
+            // if player has not collided with a hazard deeper than HAZARDFORGIVENESS pixels, do not handle the collision
+            if (((this is Player) && (otherObject.CollisionType == XmlKeys.HAZARDOUS)) ||
+                ((this.CollisionType == XmlKeys.HAZARDOUS) && (otherObject is Player)))
+            {
+                return hazTest.Intersects(test2);
+            }
+
             return test1.Intersects(test2);
-            
+
         }
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
@@ -400,14 +438,21 @@ namespace GravityShift
                 HandleCollisions(objList.First());
                 return;
             }
-
+            
             float maxCollisionDepth = 0.0f;
             GameObject maxObject = null;
+
+            List<StaticObject> wallList = new List<StaticObject>();
 
             foreach (GameObject gameObj in objList)
             {
                 if (gameObj.CollisionType == XmlKeys.COLLECTABLE)
                     continue;
+
+                if (gameObj is StaticObject)
+                {
+                    wallList.Add((StaticObject)gameObj);
+                }
 
                 if (gameObj is StaticObject)
                 {
@@ -468,6 +513,11 @@ namespace GravityShift
                     }
                 }
             }//End foreach
+            if (wallList.Count > 1)
+            {
+                HandleCollideBoxAndBox(maxObject);
+                return;
+            }
             if (maxObject != null)
             {
                 HandleCollisions(maxObject);
@@ -663,6 +713,7 @@ namespace GravityShift
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
 
+                
                 // normal of the collision
                 Vector2 N = centerDiff;
                 N.Normalize();
@@ -691,7 +742,7 @@ namespace GravityShift
                     this.mVelocity.X = vafn * N.X + vaft * T.X;
                 else
                     this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
-
+                
                 // place the Y pos just so it is not colliding.
                 if (!mIsRail)
                     mPosition += add;
