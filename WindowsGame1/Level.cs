@@ -759,18 +759,22 @@ namespace GravityShift
                                 mRemoveCollected.Add(obj);
                                 mCollectableLocations.Remove(obj.mPosition);
                             }
+
+                            GameSound.playerCol_collectable.Play(0.2f, 0f, 0f);
                             collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
                             collectibleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
-                            // Particle Effects.
-                            Vector2 one = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
-                            Vector2 two = new Vector2(physObj.mPosition.X + 32, physObj.mPosition.Y + 32);
-                            Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
-                            wallEngine.EmitterLocation = midpoint;
-                            wallEngine.Update(10);
+                            // Particle Effects (don't work).
+                            //Vector2 one = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            //Vector2 two = new Vector2(physObj.mPosition.X + 32, physObj.mPosition.Y + 32);
+                            //Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                            //wallEngine.EmitterLocation = midpoint;
+                            //wallEngine.Update(10);
+                            GameSound.playerCol_hazard.Play();
+
 
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
@@ -812,7 +816,7 @@ namespace GravityShift
                                     wallEngine.Update(10);
 
                                     // play wall collision sound
-                                    GameSound.playerCol_wall.Play();
+                                    GameSound.playerCol_wall.Play(0.5f, 0f, 0f);
 
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;
@@ -839,7 +843,7 @@ namespace GravityShift
                                     wallEngine.Update(10);
 
                                     // play wall collision sound
-                                    GameSound.playerCol_wall.Play();
+                                    GameSound.playerCol_wall.Play(0.5f, 0f, 0f);
 
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;

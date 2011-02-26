@@ -99,13 +99,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SoundEffects\playerCol_hazard.wav">
-      <Name>playerCol_hazard</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="SoundEffects\playerCol_wall.wav">
-      <Name>playerCol_wall</Name>
+    <Compile Include="SoundEffects\playerCol_wall_old.wav">
+      <Name>playerCol_wall_old</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
@@ -536,13 +531,6 @@
       <Name>AppleGray</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="SoundEffects\playerCol_collectable.wav">
-      <Name>playerCol_collectable</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1062,8 +1050,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SoundEffects\playerCol_wall02.wav">
-      <Name>playerCol_wall02</Name>
+    <Compile Include="SoundEffects\playerCol_collectable2.wav">
+      <Name>playerCol_collectable2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SoundEffects\playerCol_wall.wav">
+      <Name>playerCol_wall</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SoundEffects\playerCol_hazard.wav">
+      <Name>playerCol_hazard</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SoundEffects\playerCol_collectable.wav">
+      <Name>playerCol_collectable</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
