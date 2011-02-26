@@ -152,7 +152,7 @@ namespace GravityShift
                 mDeviceSelected = true;
             }
 
-            result = device.BeginOpenContainer("GravityShift", null, null);
+            result = device.BeginOpenContainer("Mr Gravity", null, null);
             result.AsyncWaitHandle.WaitOne();
             container = device.EndOpenContainer(result);
             result.AsyncWaitHandle.Close();
@@ -300,7 +300,7 @@ namespace GravityShift
             mCurrentWorld = 0;
             mCurrentIndex = 1;
 
-            //UnlockWorld(0);
+            UnlockWorld(0);
             UpdateStarCount();
         }
 
@@ -324,7 +324,7 @@ namespace GravityShift
         public void UnlockWorld(int world)
         {
 #if XBOX360
-            if(!this.TrialMode && world > 0)
+            if(!this.TrialMode)
 #endif
             for (int i = 0; i < 6; i++)
                 mLevels[world * 6 + i].Unlock();
@@ -518,7 +518,7 @@ namespace GravityShift
                 null,
                 scale);
 
-            spriteBatch.Draw(mBackground, mScreenRect, Color.White);
+            spriteBatch.Draw(mBackground, mGraphics.GraphicsDevice.Viewport.Bounds, Color.White);
 
             DrawTitleBar(spriteBatch);
             DrawInfoBar(spriteBatch);
