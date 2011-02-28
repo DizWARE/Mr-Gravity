@@ -43,8 +43,33 @@ namespace GravityShift
         /* Music */
         private static SoundEffect menuMusic_titleSource;
         public static SoundEffectInstance menuMusic_title;
+
         private static SoundEffect music_level00Source;
         public static SoundEffectInstance music_level00;
+
+        private static SoundEffect music_level01Source;
+        public static SoundEffectInstance music_level01;
+
+        private static SoundEffect music_level02Source;
+        public static SoundEffectInstance music_level02;
+
+        private static SoundEffect music_level03Source;
+        public static SoundEffectInstance music_level03;
+
+        private static SoundEffect music_level04Source;
+        public static SoundEffectInstance music_level04;
+
+        private static SoundEffect music_level05Source;
+        public static SoundEffectInstance music_level05;
+
+        private static SoundEffect music_level06Source;
+        public static SoundEffectInstance music_level06;
+
+        private static SoundEffect music_level07Source;
+        public static SoundEffectInstance music_level07;
+
+        private static SoundEffect music_level08Source;
+        public static SoundEffectInstance music_level08;
 
         public static SoundEffectInstance gameMusic_generic;
 
@@ -87,7 +112,7 @@ namespace GravityShift
             level_stageVictory.Volume = volume;
 
             /* Music */
-            menuMusic_titleSource = content.Load<SoundEffect>("Music\\menuMusic_title");
+            menuMusic_titleSource = content.Load<SoundEffect>("Music\\music_level03");
             menuMusic_title = menuMusic_titleSource.CreateInstance();
             menuMusic_title.IsLooped = true;
             menuMusic_title.Volume = volume;
@@ -96,6 +121,46 @@ namespace GravityShift
             music_level00 =  music_level00Source.CreateInstance();
             music_level00.IsLooped = true;
             music_level00.Volume = volume;
+
+            music_level01Source = content.Load<SoundEffect>("Music\\music_level01");
+            music_level01 = music_level01Source.CreateInstance();
+            music_level01.IsLooped = true;
+            music_level01.Volume = volume;
+
+            music_level02Source = content.Load<SoundEffect>("Music\\music_level02");
+            music_level02 = music_level02Source.CreateInstance();
+            music_level02.IsLooped = true;
+            music_level02.Volume = volume;
+
+            music_level03Source = content.Load<SoundEffect>("Music\\music_level03");
+            music_level03 = music_level03Source.CreateInstance();
+            music_level03.IsLooped = true;
+            music_level03.Volume = volume;
+
+            music_level04Source = content.Load<SoundEffect>("Music\\music_level04");
+            music_level04 = music_level04Source.CreateInstance();
+            music_level04.IsLooped = true;
+            music_level04.Volume = volume;
+
+            music_level05Source = content.Load<SoundEffect>("Music\\music_level05");
+            music_level05 = music_level05Source.CreateInstance();
+            music_level05.IsLooped = true;
+            music_level05.Volume = volume;
+
+            music_level06Source = content.Load<SoundEffect>("Music\\music_level06");
+            music_level06 = music_level06Source.CreateInstance();
+            music_level06.IsLooped = true;
+            music_level06.Volume = volume;
+
+            music_level07Source = content.Load<SoundEffect>("Music\\music_level07");
+            music_level07 = music_level07Source.CreateInstance();
+            music_level07.IsLooped = true;
+            music_level07.Volume = volume;
+
+            music_level08Source = content.Load<SoundEffect>("Music\\music_level08");
+            music_level08 = music_level08Source.CreateInstance();
+            music_level08.IsLooped = true;
+            music_level08.Volume = volume;
         }
 
         public static void SetGeneric(SoundEffectInstance generic)
@@ -109,6 +174,14 @@ namespace GravityShift
             level_stageVictory.Stop();
             menuMusic_title.Stop();
             music_level00.Stop();
+            music_level01.Stop();
+            music_level02.Stop();
+            music_level03.Stop();
+            music_level04.Stop();
+            music_level05.Stop();
+            music_level06.Stop();
+            music_level07.Stop();
+            music_level08.Stop();
 
             if (gameMusic_generic != null)
                 gameMusic_generic.Stop();
