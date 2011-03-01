@@ -5467,10 +5467,10 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1468</ID>
+      <ID>1469</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="16" Y="11" />
+      <Location X="16" Y="12" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -5479,6 +5479,7 @@
         <Height>3</Height>
         <Shape>Square</Shape>
         <MusicFile>music_level00</MusicFile>
+        <Loop>True</Loop>
       </Properties>
     </Entity>
   </Entities>

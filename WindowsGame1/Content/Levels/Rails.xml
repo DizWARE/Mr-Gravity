@@ -2826,10 +2826,10 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1804</ID>
+      <ID>1805</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="3" />
+      <Location X="2" Y="3" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>

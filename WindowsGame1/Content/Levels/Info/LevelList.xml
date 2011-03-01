@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Face</Name>
@@ -19,22 +19,22 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>X Trio</Name>
-    <Unlocked>False</Unlocked>
-    <GoalTime>8</GoalTime>
-    <GoalCollectable>48</GoalCollectable>
+    <Name>Snake</Name>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+    <GoalCollectable>0</GoalCollectable>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Maze</Name>
-    <Unlocked>False</Unlocked>
-    <GoalTime>16</GoalTime>
-    <GoalCollectable>79</GoalCollectable>
+    <Name>Colors</Name>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+    <GoalCollectable>0</GoalCollectable>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
@@ -199,22 +199,22 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>None</Name>
+    <Name>Out Of Nowhere</Name>
     <Unlocked>False</Unlocked>
-    <GoalTime>0</GoalTime>
-    <GoalCollectable>0</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>None</Name>
+    <Name>They Are Everywhere</Name>
     <Unlocked>False</Unlocked>
-    <GoalTime>0</GoalTime>
-    <GoalCollectable>0</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+    <GoalCollectable>0</GoalCollectable>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -244,7 +244,7 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>Space Invaders</Name>
+    <Name>Space Intruders</Name>
     <Unlocked>False</Unlocked>
     <GoalTime>0</GoalTime>
     <GoalCollectable>12</GoalCollectable>
