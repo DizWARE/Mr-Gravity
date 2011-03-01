@@ -91,7 +91,7 @@ namespace GravityShift
             menuSound_select = content.Load<SoundEffect>("SoundEffects\\menuSound_select");
         
             /* Player Collision */
-            playerCol_wall = content.Load<SoundEffect>("SoundEffects\\playerCol_wall02");
+            playerCol_wall = content.Load<SoundEffect>("SoundEffects\\playerCol_wall");
             playerCol_hazard = content.Load<SoundEffect>("SoundEffects\\playerCol_hazard");
             playerCol_collectable = content.Load<SoundEffect>("SoundEffects\\playerCol_collectable");
             playerSound_respawn = content.Load<SoundEffect>("SoundEffects\\playerSound_respawn");
