@@ -125,7 +125,11 @@ namespace GravityShift
                 {
                     gameState = GameStates.New_Level_Selection;
                     level.Reset();
-                    mCurrent = 0;
+                    mCurrent = 1;
+
+                    for (int i = 0; i < NUM_OPTIONS; i++)
+                        mItems[i] = mUnselItems[i];
+                    mItems[mCurrent] = mSelItems[mCurrent];
                 }
                 /* Back */
                 else if (mCurrent == 1)

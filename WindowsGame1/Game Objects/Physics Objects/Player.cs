@@ -102,7 +102,7 @@ namespace GravityShift
                 mCurrentTexture = PlayerFaces.FromString("Smile");
 
             //SHIFT: Down
-            if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
+            if ((mControls.isAPressed(false) || mControls.isDownPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Down)
             {
                 GameSound.level_gravityShiftDown.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Down;
@@ -112,7 +112,7 @@ namespace GravityShift
             }
 
             //SHIFT: Up
-            else if (mControls.isUpPressed(false) && mEnvironment.GravityDirection != GravityDirections.Up)
+            else if ((mControls.isYPressed(false) || mControls.isUpPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Up)
             {
                 GameSound.level_gravityShiftUp.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Up;
@@ -121,7 +121,7 @@ namespace GravityShift
             }
 
             //SHIFT: Left
-            else if (mControls.isLeftPressed(false) && mEnvironment.GravityDirection != GravityDirections.Left)
+            else if ((mControls.isXPressed(false) || mControls.isLeftPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Left)
             {
                 GameSound.level_gravityShiftLeft.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Left;
@@ -130,7 +130,7 @@ namespace GravityShift
             }
 
             //SHIFT: Right
-            else if (mControls.isRightPressed(false) && mEnvironment.GravityDirection != GravityDirections.Right)
+            else if ((mControls.isBPressed(false) || mControls.isRightPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Right)
             {
                 GameSound.level_gravityShiftRight.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Right;

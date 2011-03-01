@@ -187,7 +187,6 @@ namespace GravityShift
             mScoring.Load(Content, mGraphics.GraphicsDevice);
             mPause.Load(Content);
             GameSound.Load(Content);
-            //mLevelSelect.Load(Content, mGraphics.GraphicsDevice);
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
             mCurrentLevel.Load(Content);
 
@@ -196,7 +195,7 @@ namespace GravityShift
             mResetConfirm.Load(Content);
             mController.Load(Content);
             mSoundOptions.Load(Content);
-            mStartLevelSplash.Load(Content, GraphicsDevice, ref mCurrentLevel);
+            mStartLevelSplash.Load(Content, GraphicsDevice);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -223,19 +222,10 @@ namespace GravityShift
         protected override void OnExiting(object sender, EventArgs args)
         {
 #if XBOX360
-
-            //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
-
+            mWorldSelect.Save();
 #else
-           // mLevelSelect.Save(PlayerIndex.One);
+            mWorldSelect.Save();
 #endif
-            //if (mControls.controlScheme() == ControlSchemes.Gamepad)
-            //    if (Guide.IsTrialMode && !Guide.IsVisible)
-            //        if (Gamer.SignedInGamers[(int)((ControllerControl)mControls).ControllerIndex] != null)
-            //            if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
-            //                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
-            //                    Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
-
         }
 
         /// <summary>
@@ -246,8 +236,6 @@ namespace GravityShift
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
-            //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
 
             if (mCurrentState == GameStates.Credits)
                 mCredits.Update(gameTime, ref mCurrentState);
@@ -277,11 +265,10 @@ namespace GravityShift
 #if XBOX360
                 if (!mCheckedForSave)
                 {
-                    mLevelSelect.CheckForSave(((ControllerControl)mControls).ControllerIndex);
+                    mWorldSelect.CheckForSave();
                     mCheckedForSave = true;
                 }
 #endif
-                //mLevelSelect.Save(((ControllerControl)mControls).ControllerIndex);
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
 
@@ -304,7 +291,7 @@ namespace GravityShift
                     if (GameSound.menuMusic_title.State != SoundState.Playing)
                         GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                mWorldSelect.UpdateStarCount();
+                //mWorldSelect.UpdateStarCount();
                 
                 mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
@@ -331,38 +318,34 @@ namespace GravityShift
 
                 mWorldSelect.Reset();
 
-                mCurrentState = GameStates.Level_Selection;
-
-                mWorldSelect.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
-
+                mCurrentState = GameStates.Options;
             }
             else if (mCurrentState == GameStates.Pause)
-            {
                 mPause.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
-            }
             else if (mCurrentState == GameStates.Controls)
-            {
                 mController.Update(gameTime, ref mCurrentState);
-            }
             else if (mCurrentState == GameStates.SoundOptions)
-            {
                 mSoundOptions.Update(gameTime, ref mCurrentState);
-            }
             else if (mCurrentState == GameStates.Unlock)
             {
+                //Update the stars in level
+                //Update star count
+                mCurrentLevel.UpdateStars();
+                mWorldSelect.UpdateStarCount();
+
                 mSequence = VICTORY_DURATION;
                 mCurrentState = GameStates.Victory;
             }
             else if (mCurrentState == GameStates.Next_Level)
             {
-                Level tempLevel = mWorldSelect.NextLevel();
+              /*  Level tempLevel = mWorldSelect.NextLevel();
                 if (tempLevel != null && !tempLevel.Name.Equals(mCurrentLevel.Name))
                 {
                     mCurrentLevel = tempLevel;
                     mCurrentLevel.Load(Content);
                     mCurrentState = GameStates.In_Game;
                 }
-                else
+                else*/
                     mCurrentState = GameStates.Level_Selection;
             }
             else if (mCurrentState == GameStates.Victory)
@@ -390,9 +373,7 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Exit)
             {
                 if (Guide.IsTrialMode)
-                {
                     mCurrentState = GameStates.TrialExit;
-                }
                 else
                     mCurrentState = GameStates.WaitingToExit;
             }
@@ -411,9 +392,7 @@ namespace GravityShift
                 if (!Guide.IsVisible)
                 {
                     if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
-                    {
                         mCurrentState = GameStates.WaitingToExit;
-                    }
                     else
                         mCurrentState = GameStates.ShowMarketplace;
                 }
@@ -530,7 +509,7 @@ namespace GravityShift
             else if (mCurrentState == GameStates.StartLevelSplash)
             {
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
-                mStartLevelSplash.Draw(mSpriteBatch, mGraphics, scale);
+                mStartLevelSplash.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
             }
                 
             base.Draw(gameTime);
