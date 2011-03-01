@@ -239,7 +239,7 @@ namespace GravityLevelEditor
                 FormClosingEventArgs f = (FormClosingEventArgs)e;
                 result = MessageBox.Show("Do you want to save?", "Quit", MessageBoxButtons.YesNoCancel);
                 if (result == DialogResult.Yes)
-                    mData.Level.Save(GetImage());
+                    mData.Level.Save();
 
                 if (result == DialogResult.Cancel)
                     f.Cancel = true;
@@ -262,22 +262,7 @@ namespace GravityLevelEditor
          */
         private void Save(object sender, EventArgs e)
         {
-            mData.Level.Save(GetImage());
-        }
-
-        private Bitmap GetImage()
-        {
-            Point imageSize = GridSpace.GetPixelCoord(mData.Level.Size);
-            Bitmap image = new Bitmap(imageSize.X, imageSize.Y);
-
-            Graphics g = Graphics.FromImage(image);
-            mData.Level.Draw(g);
-
-            Bitmap result = new Bitmap(300, 300);
-            g = Graphics.FromImage((Image)result);
-            g.DrawImage(image, 0, 0, 300, 300);
-
-            return result;
+            mData.Level.Save();
         }
 
         /*
@@ -295,7 +280,7 @@ namespace GravityLevelEditor
         {
             DialogResult result = MessageBox.Show("Do you want to save?", "New", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
-                mData.Level.Save(GetImage());
+                mData.Level.Save();
 
             if (result != DialogResult.Cancel)
             {
@@ -330,7 +315,7 @@ namespace GravityLevelEditor
         {
             DialogResult result = MessageBox.Show("Do you want to save?", "Open", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
-                mData.Level.Save(GetImage());
+                mData.Level.Save();
 
             if (result != DialogResult.Cancel)
             {
@@ -375,7 +360,7 @@ namespace GravityLevelEditor
          */
         private void Play(object sender, EventArgs e)
         {
-            mData.Level.Save(GetImage());
+            mData.Level.Save();
 
             Process game = new Process();
 
