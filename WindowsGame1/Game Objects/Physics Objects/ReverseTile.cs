@@ -57,7 +57,7 @@ namespace GravityShift
             if (mBeingAnimated)
             {
                 mAnimationTexture.Update((float)gametime.ElapsedGameTime.TotalSeconds);
-                if (mAnimationTexture.Frame == mAnimationTexture.LastFrame)
+                if (mAnimationTexture.Frame == 0 && mAnimationTexture.PreviousFrame == mAnimationTexture.LastFrame - 1)
                     mBeingAnimated = false;
             }
         }

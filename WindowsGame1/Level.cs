@@ -130,6 +130,7 @@ namespace GravityShift
         ContentManager mContent;
 
         Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
+        bool mUseVert = true;
         List<Vector2> mCollectableLocations;
         AnimatedSprite mCollectableAnimation = null;
 
@@ -461,24 +462,18 @@ namespace GravityShift
                         if (!mHasRespawned) break;
                     }
 
+                    //Update wall animations
                     for(int i = 0; i < mActiveAnimations.Count; i++)
                     {
                         KeyValuePair<Vector2, AnimatedSprite> current = mActiveAnimations.ElementAt(i);
                         current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                        if (current.Value.Frame == current.Value.LastFrame)
-                        {
+                        if (current.Value.Frame == 0 && current.Value.PreviousFrame == current.Value.LastFrame - 1)
                             mActiveAnimations.Remove(current.Key); 
-                        }
                     }
 
+                    //Update collectable animations
                     if (mCollectableAnimation != null)
-                    {
                         mCollectableAnimation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                        if (mCollectableAnimation.Frame == mCollectableAnimation.LastFrame)
-                        {
-                            mCollectableAnimation.Reset();
-                        }
-                    }
 
                     //Check to see if we collected anything
                     if (mRemoveCollected.Count > 0)
@@ -868,22 +863,40 @@ namespace GravityShift
             switch (concatName)
             {
                 case "Green":
-                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f); 
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "GreenVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "GreenHor", 4, 0.15f);
+                    mUseVert = !mUseVert; 
                     break;
                 case "Pink":
-                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "PinkVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "PinkHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Blue":
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "BlueVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "BlueHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Yellow":
-                    newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "YellowVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "YellowHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Purple":
-                    newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "PurpleVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "PurpleHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Orange":
-                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "OrangeVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "OrangeHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "GreenDiamond":
                     newAnimation.Load(mContent, "GreenDiamond", 3, 0.225f);
@@ -902,15 +915,6 @@ namespace GravityShift
                     break;
                 case "YellowDiamond":
                     newAnimation.Load(mContent, "YellowDiamond", 3, 0.225f);
-                    break;
-                case "YellowStar":
-                    newAnimation.Load(mContent, "YellowStar", 1, 0.5f);
-                    break;
-                case "OrangeStar":
-                    newAnimation.Load(mContent, "OrangeStar", 1, 0.5f);
-                    break;
-                case "Star":
-                    newAnimation.Load(mContent, "Star", 1, 0.5f);
                     break;
                 case "BlueGem":
                     newAnimation.Load(mContent, "BlueGem", 6, 0.15f);
