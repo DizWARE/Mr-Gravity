@@ -24,8 +24,8 @@
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>0</GoalCollectable>
-    <GoalTime>15</GoalTime>
+    <GoalCollectable>48</GoalCollectable>
+    <GoalTime>8</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Colors</Name>
