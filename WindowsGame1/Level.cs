@@ -889,24 +889,23 @@ namespace GravityShift
                 case "Orange":
                     newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
                     break;
-                    //TODO: Change to animations once those are added to content folder
                 case "GreenDiamond":
-                    newAnimation.Load(mContent, "GreenDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "GreenDiamond", 3, 0.225f);
                     break;
                 case "BlueDiamond":
-                    newAnimation.Load(mContent, "BlueDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "BlueDiamond", 3, 0.225f);
                     break;
                 case "OrangeDiamond":
-                    newAnimation.Load(mContent, "OrangeDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "OrangeDiamond", 3, 0.225f);
                     break;
                 case "PinkDiamond":
-                    newAnimation.Load(mContent, "PinkDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "PinkDiamond", 3, 0.225f);
                     break;
                 case "PurpleDiamond":
-                    newAnimation.Load(mContent, "PurpleDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "PurpleDiamond", 3, 0.225f);
                     break;
                 case "YellowDiamond":
-                    newAnimation.Load(mContent, "YellowDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "YellowDiamond", 3, 0.225f);
                     break;
                 case "YellowStar":
                     newAnimation.Load(mContent, "YellowStar", 1, 0.5f);
@@ -918,10 +917,22 @@ namespace GravityShift
                     newAnimation.Load(mContent, "Star", 1, 0.5f);
                     break;
                 case "BlueGem":
-                    newAnimation.Load(mContent, "BlueGem", 1, 0.5f);
+                    newAnimation.Load(mContent, "BlueGem", 6, 0.15f);
+                    break;
+                case "OrangeGem":
+                    newAnimation.Load(mContent, "OrangeGem", 6, 0.15f);
+                    break;
+                case "PinkGem":
+                    newAnimation.Load(mContent, "PinkGem", 6, 0.15f);
                     break;
                 case "PurpleGem":
-                    newAnimation.Load(mContent, "PurpleGem", 1, 0.5f);
+                    newAnimation.Load(mContent, "PurpleGem", 6, 0.15f);
+                    break;
+                case "GreenGem":
+                    newAnimation.Load(mContent, "GreenGem", 6, 0.15f);
+                    break;
+                case "YellowGem":
+                    newAnimation.Load(mContent, "YellowGem", 6, 0.15f);
                     break;
                 default:
                     newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);

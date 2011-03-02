@@ -421,4 +421,76 @@
     <Texture>NonHazards\YellowDiamond</Texture>
     <Properties />
   </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BlueGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\BlueGem</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>GreenGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\GreenGem</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>OrangeGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\OrangeGem</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PinkGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PinkGem</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PurpleGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PurpleGem</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>YellowGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\YellowGem</Texture>
+    <Properties>
+      <Shape>Square</Shape>
+    </Properties>
+  </Entity>
 </Entities>

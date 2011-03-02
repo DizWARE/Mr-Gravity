@@ -1125,16 +1125,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>199</ID>
-      <Name>PlayerStart</Name>
-      <Type>Level Positions</Type>
-      <Location X="16" Y="11" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>PlayerPositions\PlayerStart</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>240</ID>
       <Name>Blue</Name>
       <Type>Walls</Type>
@@ -5480,6 +5470,18 @@
         <Shape>Square</Shape>
         <MusicFile>music_level00</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1535</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="16" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>12</IdealTime>
       </Properties>
     </Entity>
   </Entities>
