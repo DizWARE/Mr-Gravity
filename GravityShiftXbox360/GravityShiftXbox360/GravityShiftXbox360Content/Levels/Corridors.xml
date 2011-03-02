@@ -2064,480 +2064,480 @@
     </Entity>
     <Entity>
       <ID>596</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="1" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>597</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="0" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>599</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="3" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>600</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="38" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>601</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="38" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>602</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="34" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>603</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="34" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>604</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="38" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>605</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="34" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>606</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="30" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>607</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>608</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>609</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>610</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>611</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>612</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>613</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="30" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>614</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>615</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>616</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>617</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>618</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>619</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>621</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="30" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>622</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="34" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>623</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="38" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>624</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="30" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>625</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>626</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="26" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>627</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>628</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="22" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>629</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>630</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="18" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>631</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>632</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="14" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>633</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>634</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="10" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>635</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="6" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>636</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="2" Y="2" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
       <ID>637</ID>
-      <Name>PurpleGem</Name>
+      <Name>PurpleDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="2" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\PurpleGem</Texture>
+      <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties>
         <Shape>Circle</Shape>
       </Properties>

@@ -2781,6 +2781,106 @@
       <Type>Static Objects</Type>
       <Location X="35" Y="15" />
       <CollisionType>Collectable</CollisionType>
+	  <Paintable>True</Paintable>
+      <Texture>NonHazards\PurpleDiamond</Texture>
+      <Properties />
+    </Entity>
+	<Entity>
+      <ID>1726</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="3" Y="3" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>4</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1727</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="8" Y="3" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>4</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1728</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="14" Y="1" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>2</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1729</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="33" Y="14" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>3</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1802</ID>
+      <Name>RailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="24" Y="14" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>8</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1803</ID>
+      <Name>RailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="12" Y="14" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>11</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1805</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="2" Y="3" />
+      <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties />

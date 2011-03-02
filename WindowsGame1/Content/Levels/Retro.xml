@@ -6578,19 +6578,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>967</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="16" Y="15" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>968</ID>
       <Name>CircleRed</Name>
       <Type>Physics Objects</Type>
@@ -6621,45 +6608,6 @@
       <Name>CircleRed</Name>
       <Type>Physics Objects</Type>
       <Location X="13" Y="16" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>971</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="13" Y="15" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>972</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="17" Y="12" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedCircle</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>973</ID>
-      <Name>CircleRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="12" Y="12" />
       <CollisionType>Hazardous</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Hazards\RedCircle</Texture>
@@ -8221,36 +8169,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1799</ID>
-      <Name>SawRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="23" Y="6" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>0.8</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1800</ID>
-      <Name>SawRed</Name>
-      <Type>Physics Objects</Type>
-      <Location X="6" Y="6" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>0.8</Mass>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1801</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="14" Y="24" />
+      <Location X="15" Y="24" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -8258,7 +8180,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level03</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>

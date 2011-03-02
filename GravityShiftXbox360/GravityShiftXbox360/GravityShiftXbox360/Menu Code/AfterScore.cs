@@ -150,7 +150,7 @@ namespace GravityShift
             /* If the user selects one of the menu items */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                GravityShift.Level.TIMER = 0;
+                level.mTimer = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
                 /* Next Level */
@@ -247,19 +247,6 @@ namespace GravityShift
                 spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - ((int)(mItems[i].Width * mSize[0]) / 2), (int)currentLocation.Y, (int)(mItems[i].Width * mSize[0]), (int)(mItems[i].Height * mSize[1])), Color.White);
                 currentLocation.Y += (int)(mItems[i].Height * mSize[1]);
             }
-
-            //spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[0].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.Y - mItems[0].Height,
-                //mItems[0].Width, mItems[0].Height), Color.White);
-            //spriteBatch.Draw(mItems[1], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[1].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.Y,
-                //mItems[1].Width, mItems[1].Height), Color.White);
-            //spriteBatch.Draw(mItems[2], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[2].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[2].Height - 200,
-                //mItems[2].Width, mItems[2].Height), Color.White);
-            //spriteBatch.Draw(mItems[3], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[3].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[3].Height - 125,
-                //mItems[3].Width, mItems[3].Height), Color.White);
 
             spriteBatch.End();
         }

@@ -419,7 +419,7 @@ namespace GravityLevelEditor
          * in this level as <name>.xml.
          * 
          */
-        public void Save(Bitmap image)
+        public void Save()
         {
             string currentDirectory = "..\\..\\..\\..\\WindowsGame1\\Content\\Levels\\";
             DirectoryInfo d = new DirectoryInfo(currentDirectory);
@@ -454,9 +454,6 @@ namespace GravityLevelEditor
 
             xDoc.Save(currentDirectory + this.Name + XmlKeys.XML);
 
-
-            image.Save(currentDirectory + "\\Thumbnail\\" + this.Name + ".png");
-            image.Dispose();
             MessageBox.Show(this.Name + ".xml saved correctly");
         }
 

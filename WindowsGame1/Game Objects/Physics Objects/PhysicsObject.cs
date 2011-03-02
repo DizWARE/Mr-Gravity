@@ -327,6 +327,20 @@ namespace GravityShift
 
             return !Equals(otherObject) && mBoundingBox.Intersects(otherObject.mBoundingBox);
         }
+
+        /// <summary>
+        /// Returns true if the physics objects are colliding with each other
+        /// (only good for 2 boxes)
+        /// </summary>
+        /// <param name="otherObject">The other object to test against</param>
+        /// <returns>True if they are colliding with each other; False otherwise</returns>
+        public virtual bool IsCollidingBoxAndBoxAnimate(GameObject otherObject)
+        {
+            Rectangle animateArea = this.mBoundingBox;
+            animateArea.Inflate(2, 2);
+            return !Equals(otherObject) && animateArea.Intersects(otherObject.mBoundingBox);
+        }
+
         /// <summary>
         /// Returns true if the physics objects are colliding with each other
         /// Circle = this

@@ -1107,22 +1107,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1520</ID>
-      <Name>Music</Name>
-      <Type>Triggers</Type>
-      <Location X="17" Y="17" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
-        <Loop>True</Loop>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1599</ID>
       <Name>PurpleGem</Name>
       <Type>Static Objects</Type>
@@ -1324,6 +1308,22 @@
       <Texture>NonHazards\PurpleGem</Texture>
       <Properties>
         <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1617</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="17" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level06</MusicFile>
+        <Loop>True</Loop>
       </Properties>
     </Entity>
   </Entities>

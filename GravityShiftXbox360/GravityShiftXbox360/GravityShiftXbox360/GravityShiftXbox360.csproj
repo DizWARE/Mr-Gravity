@@ -123,6 +123,7 @@
     <Compile Include="Menu Code\MainMenu.cs" />
     <Compile Include="Menu Code\Menu.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />
+    <Compile Include="Menu Code\StartLevelSplash.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="MISC Code\GameStates.cs" />
     <Compile Include="MISC Code\GravityDirections.cs" />
@@ -137,6 +138,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Menu Code\Scoring.cs" />
     <Compile Include="Menu Code\Title.cs" />
+    <Compile Include="ResetConfirm.cs" />
+    <Compile Include="WorldSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GravityShiftXbox360Content\GravityShiftXbox360Content.contentproj">
@@ -145,7 +148,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AngryNewton.png" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
     <Content Include="Laugh.png" />

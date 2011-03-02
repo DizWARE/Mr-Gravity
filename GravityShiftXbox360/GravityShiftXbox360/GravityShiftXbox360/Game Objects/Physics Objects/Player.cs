@@ -30,6 +30,11 @@ namespace GravityShift
         public int mNumLives = 5;
         public bool mIsAlive = true;
 
+        public int NumLives
+        {
+            get { return mNumLives; }
+        }
+
         //Player rotation values for outer circle (current, goal, and speed)
         private float mRotation;
         private float mGoalRotation;
@@ -77,7 +82,7 @@ namespace GravityShift
 
             PlayerFaces.Load(content);
 
-            mCurrentTexture = PlayerFaces.SMILE;
+            mCurrentTexture = PlayerFaces.FromString("Smile");
             mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
         }
         /// <summary>
@@ -92,12 +97,12 @@ namespace GravityShift
                 StopRumble();
 
             if (Math.Abs(mVelocity.X) >= 15 || Math.Abs(mVelocity.Y) >= 15)
-                mCurrentTexture = PlayerFaces.SURPRISE;
+                mCurrentTexture = PlayerFaces.FromString("Surprise");
             else if (!mRumble) 
-                mCurrentTexture = PlayerFaces.SMILE;
+                mCurrentTexture = PlayerFaces.FromString("Smile");
 
             //SHIFT: Down
-            if (mControls.isDownPressed(false) && mEnvironment.GravityDirection != GravityDirections.Down)
+            if ((mControls.isAPressed(false) || mControls.isDownPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Down)
             {
                 GameSound.level_gravityShiftDown.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Down;
@@ -107,7 +112,7 @@ namespace GravityShift
             }
 
             //SHIFT: Up
-            else if (mControls.isUpPressed(false) && mEnvironment.GravityDirection != GravityDirections.Up)
+            else if ((mControls.isYPressed(false) || mControls.isUpPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Up)
             {
                 GameSound.level_gravityShiftUp.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Up;
@@ -116,7 +121,7 @@ namespace GravityShift
             }
 
             //SHIFT: Left
-            else if (mControls.isLeftPressed(false) && mEnvironment.GravityDirection != GravityDirections.Left)
+            else if ((mControls.isXPressed(false) || mControls.isLeftPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Left)
             {
                 GameSound.level_gravityShiftLeft.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Left;
@@ -125,7 +130,7 @@ namespace GravityShift
             }
 
             //SHIFT: Right
-            else if (mControls.isRightPressed(false) && mEnvironment.GravityDirection != GravityDirections.Right)
+            else if ((mControls.isBPressed(false) || mControls.isRightPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Right)
             {
                 GameSound.level_gravityShiftRight.Play(GameSound.volume * 0.75f, 0.0f, 0.0f);
                 mEnvironment.GravityDirection = GravityDirections.Right;
@@ -188,7 +193,7 @@ namespace GravityShift
             mRumble = true;
 
             setFaceStraight();
-            mCurrentTexture = PlayerFaces.DEAD2;
+            mCurrentTexture = PlayerFaces.FromString("Dead2");
 
             StartRumble();
 
@@ -253,7 +258,7 @@ namespace GravityShift
                     mRumble = false;
                     GamePad.SetVibration(current, 0.0f, 0.0f);
                     elapsedTime = 0.0;
-                    mCurrentTexture = PlayerFaces.SMILE;
+                    mCurrentTexture = PlayerFaces.FromString("Smile");
                 }
             }
         }
@@ -264,7 +269,7 @@ namespace GravityShift
 
             mRotation = mRotationDown;
             mGoalRotation = mRotation;
-            mCurrentTexture = PlayerFaces.SMILE;
+            mCurrentTexture = PlayerFaces.FromString("Smile");
         }
 
         /// <summary>

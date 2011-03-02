@@ -3,54 +3,54 @@
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>1</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>15</GoalCollectable>
     <GoalTime>8</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>1</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>18</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>X Trio</Name>
+    <Name>Snake</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
-    <GoalCollectable>48</GoalCollectable>
-    <GoalTime>8</GoalTime>
+    <Timerstar>1</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>2</Deathstar>
+    <GoalCollectable>0</GoalCollectable>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Maze</Name>
+    <Name>Colors</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
-    <GoalCollectable>79</GoalCollectable>
-    <GoalTime>16</GoalTime>
+    <Timerstar>1</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
+    <GoalCollectable>0</GoalCollectable>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>8</GoalCollectable>
     <GoalTime>8</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Corners</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>1</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>2</Deathstar>
     <GoalCollectable>13</GoalCollectable>
     <GoalTime>10</GoalTime>
   </LevelData>
@@ -199,22 +199,22 @@
     <GoalTime>20</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>None</Name>
+    <Name>Out Of Nowhere</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>0</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>None</Name>
+    <Name>They Are Everywhere</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>0</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -244,7 +244,7 @@
     <GoalTime>0</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Space Invaders</Name>
+    <Name>Space Intruders</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
