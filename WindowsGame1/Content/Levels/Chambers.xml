@@ -5484,5 +5484,50 @@
         <IdealTime>12</IdealTime>
       </Properties>
     </Entity>
+    <Entity>
+      <ID>1536</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>1</Width>
+        <Height>1</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1537</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="26" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1538</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="23" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>

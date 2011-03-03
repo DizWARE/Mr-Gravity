@@ -127,16 +127,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1065</ID>
-      <Name>Hazard</Name>
-      <Type>Walls</Type>
-      <Location X="7" Y="3" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Hazards\RedSquare</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>1066</ID>
       <Name>Hazard</Name>
       <Type>Walls</Type>
@@ -829,6 +819,16 @@
         <MusicFile>music_level06</MusicFile>
         <Loop>True</Loop>
       </Properties>
+    </Entity>
+    <Entity>
+      <ID>1988</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="3" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
     </Entity>
   </Entities>
 </Level>
