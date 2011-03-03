@@ -49,19 +49,29 @@ namespace GravityShift
         }
 
 
-        public void Update(GameTime gametime, ref GameStates states, PhysicsEnvironment env)
+        public void Update(GameTime gametime, ref GameStates states, Level mainMenuLevel)
         {
+            PhysicsEnvironment env = mainMenuLevel.Environment;
             if (mControls.isBackPressed(false) || mControls.isBPressed(false))
                 states = GameStates.Main_Menu;
 
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-                if (mCurrentChoice == MenuChoices.Volume) 
+                if (mCurrentChoice == MenuChoices.Volume)
+                {
                     states = GameStates.SoundOptions;
-                if (mCurrentChoice == MenuChoices.Controls) 
+                    mainMenuLevel.Load();
+                }
+                if (mCurrentChoice == MenuChoices.Controls)
+                {
                     states = GameStates.Controls;
+                    mainMenuLevel.Load();
+                }
                 if (mCurrentChoice == MenuChoices.Reset)
+                {
                     states = GameStates.ResetConfirm;
+                    mainMenuLevel.Load();
+                }
                 if (mCurrentChoice == MenuChoices.Back)
                     states = GameStates.Main_Menu;
 

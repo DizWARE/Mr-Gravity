@@ -290,6 +290,12 @@ namespace GravityShift
             mCollectableLocations = new List<Vector2>();
         }
 
+        public void Load()
+        {
+            Load(mContent);
+        }
+
+
         /// <summary>
         /// Loads the level from the content manager
         /// </summary>
@@ -309,13 +315,13 @@ namespace GravityShift
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
             PlayerEnd playerEnd = importer.GetPlayerEnd();
-            if(playerEnd != null)
+            if (playerEnd != null)
                 mObjects.Add(playerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
             mRails = importer.GetRails();
-            
+
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
@@ -412,6 +418,7 @@ namespace GravityShift
             else { mDeathStar = 1; }
         }
 
+
         /// <summary>
         /// Updates the level's progress
         /// </summary>
@@ -446,6 +453,10 @@ namespace GravityShift
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
 
+                            if (pObject is Player)
+                            {
+                                ((Player)pObject).CurrentTime = (int)mTimer;
+                            } 
                             pObject.Update(gameTime);
 
                             // Update zoom based on players velocity                 
@@ -675,6 +686,11 @@ namespace GravityShift
             mRemoveCollected.Clear();
             mTrigger.Clear();
             mTimer = 0;
+            if (mPlayer != null)
+            {
+                mPlayer.ResetIdle((int)mTimer, mPhysicsEnvironment.GravityDirection);
+            }
+            
 
             ResetScores();
         }

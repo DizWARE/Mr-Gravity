@@ -242,7 +242,7 @@ namespace GravityShift
 
             if (mCurrentState == GameStates.Options)
             {
-                mOptions.Update(gameTime, ref mCurrentState, mMainMenuLevel.Environment);
+                mOptions.Update(gameTime, ref mCurrentState, mMainMenuLevel);
                 mMainMenuLevel.Update(gameTime, ref mCurrentState);
             }
 
@@ -276,7 +276,7 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel.Environment);
+                mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel);
                 mMainMenuLevel.Update(gameTime, ref mCurrentState);
                 
             }
