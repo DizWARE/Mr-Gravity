@@ -2037,10 +2037,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>2118</ID>
+      <ID>2196</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="10" />
+      <Location X="1" Y="11" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>

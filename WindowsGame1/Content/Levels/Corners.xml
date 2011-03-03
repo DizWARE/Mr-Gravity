@@ -193,7 +193,7 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>400</IdealTime>
+        <IdealTime>15</IdealTime>
       </Properties>
     </Entity>
     <Entity>
@@ -1063,134 +1063,235 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1561</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1562</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1563</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1564</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="6" Y="9" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1565</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="4" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1566</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1567</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1568</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="13" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1569</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="12" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1570</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="13" Y="13" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1571</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="12" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1572</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="12" Y="2" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1573</ID>
-      <Name>OrangeDiamond</Name>
+      <ID>1652</ID>
+      <Name>OrangeGem</Name>
       <Type>Static Objects</Type>
       <Location X="5" Y="1" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1653</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="2" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1654</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1655</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1656</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1657</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1658</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1659</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1660</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1661</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1662</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1663</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1664</ID>
+      <Name>OrangeGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\OrangeGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1665</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="11" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1666</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="3" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1667</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="0" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1668</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="3" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>2</Width>
+        <Height>2</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1669</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
     </Entity>
   </Entities>
 </Level>

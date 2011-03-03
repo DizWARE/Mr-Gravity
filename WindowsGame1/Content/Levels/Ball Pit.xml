@@ -1173,5 +1173,20 @@
         <Loop>True</Loop>
       </Properties>
     </Entity>
+    <Entity>
+      <ID>949</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>14</Width>
+        <Height>15</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Sad2</PlayerFace>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>

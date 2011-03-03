@@ -1443,234 +1443,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>944</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="1" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>945</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="1" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>946</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="6" Y="4" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>948</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>949</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="13" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>950</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="13" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>951</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="8" Y="7" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>952</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>953</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>954</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="5" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>955</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="9" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>956</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>957</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="9" Y="11" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>958</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="13" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>959</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="9" Y="18" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>960</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="12" Y="18" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>961</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="16" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>962</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="9" Y="15" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>963</ID>
-      <Name>GreenDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="13" Y="14" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\GreenDiamond</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1025</ID>
       <Name>Yellow</Name>
       <Type>Walls</Type>
@@ -1731,16 +1503,242 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1031</ID>
+      <ID>1110</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="1" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1111</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="1" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1112</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1113</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1114</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1115</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1116</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1117</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1119</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1120</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1121</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1122</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1123</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1124</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1125</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="16" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1126</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1127</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="18" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1128</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="18" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1129</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1143</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="12" Y="1" />
+      <Location X="13" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
       <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
         <Shape>Square</Shape>
         <MusicFile>music_level01</MusicFile>
         <Loop>True</Loop>

@@ -32,8 +32,8 @@ namespace GravityShift
         }
 
         private const int NAME_REGION = 0;
-        private const int STARS_REGION = 1;
-        private const int TIMER_REGION = 2;
+        private const int STARS_REGION = 2;
+        private const int TIMER_REGION = 1;
         private const int DEATH_REGION = 3;
 
         private const int BACK = 0;
