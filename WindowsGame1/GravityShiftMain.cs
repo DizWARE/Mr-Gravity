@@ -523,8 +523,22 @@ namespace GravityShift
             Rectangle mScreenRect = mGraphics.GraphicsDevice.Viewport.TitleSafeArea;
             mSpriteBatch.Begin();
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Right, mScreenRect.Height / 10), Color.White);
-            mSpriteBatch.DrawString(mQuartz, "Timer: " + mCurrentLevel.Timer, new Vector2(mScreenRect.Left + mScreenRect.Width / 10, mScreenRect.Top), Color.DarkTurquoise);
-            mSpriteBatch.DrawString(mQuartz, "Collected: " + mCurrentLevel.NumCollected + "/" + mCurrentLevel.NumCollectable, new Vector2(mScreenRect.Left + mScreenRect.Width / 3, mScreenRect.Top), Color.DarkTurquoise);
+
+            Vector2 placement = new Vector2(mScreenRect.Left + mScreenRect.Width / 10, mScreenRect.Top);
+            
+            //TIMER
+            string timerString = "Timer: ";
+            float timerLength = mQuartz.MeasureString(timerString).Length();
+            float timeLength = mQuartz.MeasureString("999    ").Length();
+            mSpriteBatch.DrawString(mQuartz, timerString + mCurrentLevel.Timer, placement, Color.DarkTurquoise);
+
+            //COLLECTED
+            placement.X += timerLength + timeLength;
+            string collectedString = "Collected: ";
+            string collectString = mCurrentLevel.NumCollected + "/" + mCurrentLevel.NumCollectable;
+            float collectedLength = mQuartz.MeasureString(collectedString).Length();
+            float collectLength = mQuartz.MeasureString("99/99    ").Length();
+            mSpriteBatch.DrawString(mQuartz, collectedString + collectString, placement, Color.DarkTurquoise);
 
             mSpriteBatch.Draw(mLives[mCurrentLevel.NumLives], new Vector2(mScreenRect.Right - mLives[0].Width * 2, mScreenRect.Top), Color.White);
 
