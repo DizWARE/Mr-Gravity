@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
   <Name>Black Holes</Name>
   <Size X="25" Y="15" />
@@ -1106,7 +1106,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level01</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>
@@ -1124,6 +1124,18 @@
         <Shape>Square</Shape>
         <MusicFile>music_level00</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1487</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="1" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>15</IdealTime>
       </Properties>
     </Entity>
   </Entities>

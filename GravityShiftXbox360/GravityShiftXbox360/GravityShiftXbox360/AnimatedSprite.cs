@@ -18,7 +18,9 @@ namespace GravityShift
     {
         /* Number of frames the animation has */
         private int mFrameCount;
-        public int LastFrame { get { return mFrameCount - 1; } }
+        public int LastFrame { get { return mFrameCount; } }
+
+        public int PreviousFrame;
 
         /* Frames Per Second */
         private float mFPS;
@@ -61,6 +63,8 @@ namespace GravityShift
             /* If enough has passed, update the frame */
             if (mElapsed > mFPS)
             {
+                PreviousFrame = mFrame;
+
                 mFrame++;
 
                 mFrame = mFrame % mFrameCount;

@@ -92,7 +92,7 @@ namespace GravityShift
         public string LevelLocation { get { return mLevelLocation; } set { mLevelLocation = "..\\..\\..\\Content\\Levels\\" + value; } }        
         private string mLevelLocation = "..\\..\\..\\Content\\Levels\\DefaultLevel.xml";
 
-        private bool mCheckedForSave = false;
+        private bool mCheckedForSave;
 
         public GravityShiftMain()
         {
@@ -110,6 +110,8 @@ namespace GravityShift
                 mControls = new KeyboardControl();
 
             mGraphics.GraphicsProfile = GraphicsProfile.Reach;
+
+            mCheckedForSave = false;
 
 #endif
         }
@@ -242,7 +244,7 @@ namespace GravityShift
 
             if (mCurrentState == GameStates.Options)
             {
-                mOptions.Update(gameTime, ref mCurrentState, mMainMenuLevel.Environment);
+                mOptions.Update(gameTime, ref mCurrentState, mMainMenuLevel);
                 mMainMenuLevel.Update(gameTime, ref mCurrentState);
             }
 
@@ -262,13 +264,14 @@ namespace GravityShift
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Main_Menu)
             {
-#if XBOX360
                 if (!mCheckedForSave)
                 {
+#if XBOX360
                     mWorldSelect.CheckForSave();
                     mCheckedForSave = true;
-                }
+                
 #endif
+                }
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
 
@@ -276,7 +279,7 @@ namespace GravityShift
                 if (GameSound.menuMusic_title.State != SoundState.Playing)
                     GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel.Environment);
+                mMainMenu.Update(gameTime,ref mCurrentState, mMainMenuLevel);
                 mMainMenuLevel.Update(gameTime, ref mCurrentState);
                 
             }

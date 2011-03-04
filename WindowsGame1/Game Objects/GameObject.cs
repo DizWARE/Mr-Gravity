@@ -42,8 +42,8 @@ namespace GravityShift
         public Rectangle mBoundingBox;
         public Vector2 mVelocity;
 
-        private bool mBeingAnimated;
-        private AnimatedSprite mAnimationTexture;
+        //private bool mBeingAnimated;
+        //private AnimatedSprite mAnimationTexture;
 
         protected bool mIsSquare;
         public bool IsSquare { get { return mIsSquare; } }
@@ -151,7 +151,7 @@ namespace GravityShift
             try
             {   mTexture = content.Load<Texture2D>(name);   }
             catch (Exception ex)
-            {   mTexture = content.Load<Texture2D>("Images\\error");    }
+            { string err = ex.ToString(); mTexture = content.Load<Texture2D>("Images\\error"); }
 
             // pixel perfect stuff (may need to remove)
             mSpriteImageData = new Color[mTexture.Width * mTexture.Height];

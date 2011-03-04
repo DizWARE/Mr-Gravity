@@ -13,7 +13,7 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>400</IdealTime>
+        <IdealTime>8</IdealTime>
       </Properties>
     </Entity>
     <Entity>
@@ -890,7 +890,7 @@
       <ID>348</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="8" />
+      <Location X="1" Y="7" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -898,7 +898,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level07</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>
