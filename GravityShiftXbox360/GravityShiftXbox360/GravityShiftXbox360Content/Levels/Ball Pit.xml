@@ -1138,22 +1138,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>801</ID>
-      <Name>Music</Name>
-      <Type>Triggers</Type>
-      <Location X="16" Y="9" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
-        <Loop>True</Loop>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>868</ID>
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
@@ -1172,6 +1156,37 @@
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
       <Properties />
+    </Entity>
+    <Entity>
+      <ID>870</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="16" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level06</MusicFile>
+        <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>949</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>14</Width>
+        <Height>15</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Sad2</PlayerFace>
+      </Properties>
     </Entity>
   </Entities>
 </Level>

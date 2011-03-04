@@ -103,7 +103,6 @@
     <Compile Include="Game Objects\Physics Objects\PhysicsObject.cs" />
     <Compile Include="Game Objects\Physics Objects\Player.cs" />
     <Compile Include="Game Objects\Physics Objects\ReverseTile.cs" />
-    <Compile Include="Game Objects\Static Objects\Collectable.cs" />
     <Compile Include="Game Objects\Static Objects\PlayerEnd.cs" />
     <Compile Include="Game Objects\Static Objects\StaticObject.cs" />
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
@@ -119,7 +118,6 @@
     <Compile Include="Import Code\Importer.cs" />
     <Compile Include="Import Code\XmlKeys.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="LevelSelect.cs" />
     <Compile Include="Menu Code\MainMenu.cs" />
     <Compile Include="Menu Code\Menu.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />

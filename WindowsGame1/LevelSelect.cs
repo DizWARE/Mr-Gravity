@@ -581,6 +581,7 @@ namespace GravityShift
                     }
                     catch (IOException e)
                     {
+                        string err = e.ToString();
                         filestream = new FileStream(LevelSelect.LEVEL_THUMBS_DIRECTORY + "..\\..\\..\\Content\\Images\\Error.png", FileMode.Open);
                     }
                     mThumbnail = Texture2D.FromStream(graphics, filestream);

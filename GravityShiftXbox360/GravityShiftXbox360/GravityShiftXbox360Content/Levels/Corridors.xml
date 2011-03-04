@@ -13,7 +13,7 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>22</IdealTime>
+        <IdealTime>13</IdealTime>
       </Properties>
     </Entity>
     <Entity>
@@ -28,7 +28,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level04</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>

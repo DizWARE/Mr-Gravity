@@ -353,7 +353,7 @@
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerStart</Texture>
       <Properties>
-        <IdealTime>400</IdealTime>
+        <IdealTime>15</IdealTime>
       </Properties>
     </Entity>
     <Entity>
@@ -2664,7 +2664,7 @@
       <ID>1818</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="18" Y="1" />
+      <Location X="17" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -2672,8 +2672,68 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level04</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1819</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="18" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>1</Width>
+        <Height>1</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1820</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="16" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>1</Width>
+        <Height>1</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1821</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="6" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1822</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="0" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>1</Width>
+        <Height>1</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Angry</PlayerFace>
       </Properties>
     </Entity>
   </Entities>

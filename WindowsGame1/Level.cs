@@ -107,7 +107,7 @@ namespace GravityShift
         public static Camera mCam;
 
         /* Tracks the previous zoom of the camera */
-        private float mPrevZoom = 0.75f;
+        //private float mPrevZoom = 0.75f;
 
         /* Timer variable */
         public double mTimer;
@@ -205,7 +205,7 @@ namespace GravityShift
 
         #region HUD
 
-        private Texture2D mHUDTrans;
+        //private Texture2D mHUDTrans;
 //        private Texture2D[] mDirections;
         public static int mNumCollected;
         public static int mNumCollectable;
@@ -291,6 +291,15 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Reloads the content in this level
+        /// </summary>
+        public void Reload()
+        {
+            Load(mContent);
+        }
+
+
+        /// <summary>
         /// Loads the level from the content manager
         /// </summary>
         /// <param name="content">Content Manager to load from</param>
@@ -309,13 +318,13 @@ namespace GravityShift
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
             PlayerEnd playerEnd = importer.GetPlayerEnd();
-            if(playerEnd != null)
+            if (playerEnd != null)
                 mObjects.Add(playerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
             mRails = importer.GetRails();
-            
+
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
@@ -412,6 +421,7 @@ namespace GravityShift
             else { mDeathStar = 1; }
         }
 
+
         /// <summary>
         /// Updates the level's progress
         /// </summary>
@@ -446,6 +456,10 @@ namespace GravityShift
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
 
+                            if (pObject is Player)
+                            {
+                                ((Player)pObject).CurrentTime = (int)mTimer;
+                            } 
                             pObject.Update(gameTime);
 
                             // Update zoom based on players velocity                 
@@ -675,6 +689,11 @@ namespace GravityShift
             mRemoveCollected.Clear();
             mTrigger.Clear();
             mTimer = 0;
+            if (mPlayer != null)
+            {
+                mPlayer.ResetIdle((int)mTimer, mPhysicsEnvironment.GravityDirection);
+            }
+            
 
             ResetScores();
         }

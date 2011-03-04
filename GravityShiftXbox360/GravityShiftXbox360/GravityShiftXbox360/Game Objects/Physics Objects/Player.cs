@@ -35,6 +35,20 @@ namespace GravityShift
             get { return mNumLives; }
         }
 
+        //***Idle animation information***//
+        private GravityDirections mPreviousDirection;
+        private int mPreviousChange;
+        public int PreviousChange
+        {
+            set { mPreviousChange = value; }
+        }
+
+        private int mCurrentTime;
+        public int CurrentTime
+        {
+            set { mCurrentTime = value; }
+        }
+
         //Player rotation values for outer circle (current, goal, and speed)
         private float mRotation;
         private float mGoalRotation;
@@ -53,9 +67,9 @@ namespace GravityShift
         private float mFaceRotationLeft = (float)(-Math.PI / 8.0);
 
         public Texture2D mCurrentTexture;
-        public Texture2D mCurrentTexture1;
+        //public Texture2D mCurrentTexture1;
 
-        public Texture2D playerBase;
+        //public Texture2D playerBase;
 
         private bool mRumble = false;
         private double elapsedTime = 0.0;
@@ -84,7 +98,45 @@ namespace GravityShift
 
             mCurrentTexture = PlayerFaces.FromString("Smile");
             mSize = new Vector2(mCurrentTexture.Width, mCurrentTexture.Height);
+            mPreviousDirection = GravityDirections.Down;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gameTime"></param>
+        public Texture2D CheckForIdle()
+        {
+            if (mPreviousDirection != mEnvironment.GravityDirection)
+            {
+                mPreviousDirection = mEnvironment.GravityDirection;
+                mPreviousChange = mCurrentTime;
+            }
+            else
+            {
+                if ((mCurrentTime - mPreviousChange) > 7)
+                {
+                    return PlayerFaces.FromString("Sad");
+                }
+
+                if ((mCurrentTime - mPreviousChange) > 3)
+                {
+                    return PlayerFaces.FromString("Bored");
+                }
+            }
+
+            return PlayerFaces.FromString("Smile");
+
+        }
+
+        public void ResetIdle(int mTimer, GravityDirections mDirection)
+        {
+            mCurrentTime = mTimer;
+            mPreviousChange = mTimer;
+            mPreviousDirection = mDirection;
+        }
+
+
         /// <summary>
         /// Updates the player location and the player controls
         /// </summary>
@@ -98,8 +150,8 @@ namespace GravityShift
 
             if (Math.Abs(mVelocity.X) >= 15 || Math.Abs(mVelocity.Y) >= 15)
                 mCurrentTexture = PlayerFaces.FromString("Surprise");
-            else if (!mRumble) 
-                mCurrentTexture = PlayerFaces.FromString("Smile");
+            else if (!mRumble)
+                mCurrentTexture = CheckForIdle();
 
             //SHIFT: Down
             if ((mControls.isAPressed(false) || mControls.isDownPressed(false)) && mEnvironment.GravityDirection != GravityDirections.Down)

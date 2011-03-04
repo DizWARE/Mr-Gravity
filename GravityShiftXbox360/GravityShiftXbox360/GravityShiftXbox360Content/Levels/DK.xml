@@ -2555,234 +2555,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1068</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="28" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1069</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="27" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1070</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="26" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1071</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="6" Y="27" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1072</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="8" Y="27" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1073</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="10" Y="27" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1074</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="16" Y="24" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1075</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="17" Y="24" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1076</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="18" Y="24" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1077</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="22" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1078</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="21" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1079</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="2" Y="20" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1080</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="20" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1081</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="19" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1082</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="2" Y="19" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1083</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="2" Y="18" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1084</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="18" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1085</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="16" Y="18" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1086</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="15" Y="18" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1159</ID>
       <Name>RailSawY</Name>
       <Type>Physics Objects</Type>
@@ -2858,174 +2630,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1441</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="18" Y="12" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1442</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="17" Y="12" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1443</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1444</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="3" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1445</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="5" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1446</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1447</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="9" Y="10" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1448</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1449</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="7" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1450</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1451</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="5" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1452</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="6" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1453</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="7" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1454</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="11" Y="8" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1591</ID>
       <Name>RailSawX</Name>
       <Type>Physics Objects</Type>
@@ -3053,90 +2657,6 @@
         <Mass>1</Mass>
         <Rail>X</Rail>
         <Length>6</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1729</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="14" Y="14" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1730</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="16" Y="14" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1731</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="18" Y="14" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1732</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="1" Y="16" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1733</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="2" Y="13" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1734</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="2" Y="14" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1735</ID>
-      <Name>OrangeStar</Name>
-      <Type>Static Objects</Type>
-      <Location X="2" Y="15" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeStar</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
       </Properties>
     </Entity>
     <Entity>
@@ -3363,7 +2883,7 @@
       <ID>1826</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="3" Y="28" />
+      <Location X="3" Y="27" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -3371,8 +2891,488 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level03</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1905</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1906</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1907</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1908</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1909</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1910</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1911</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1912</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="18" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1913</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="17" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1914</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1915</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1916</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1917</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1918</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1919</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1920</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1921</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1922</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="16" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1923</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1924</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1925</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="18" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1926</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="18" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1927</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="18" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1928</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="22" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1929</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="21" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1930</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="18" Y="24" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1931</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="17" Y="24" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1932</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="24" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1933</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="20" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1934</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="19" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1935</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="18" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1936</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="18" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1937</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="19" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1938</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="20" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1939</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="28" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1940</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="27" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1941</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="1" Y="26" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1942</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="27" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1943</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="27" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1944</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="27" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Square</Shape>
       </Properties>
     </Entity>
   </Entities>
