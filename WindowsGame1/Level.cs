@@ -107,7 +107,7 @@ namespace GravityShift
         public static Camera mCam;
 
         /* Tracks the previous zoom of the camera */
-        private float mPrevZoom = 0.75f;
+        //private float mPrevZoom = 0.75f;
 
         /* Timer variable */
         public double mTimer;
@@ -205,7 +205,7 @@ namespace GravityShift
 
         #region HUD
 
-        private Texture2D mHUDTrans;
+        //private Texture2D mHUDTrans;
 //        private Texture2D[] mDirections;
         public static int mNumCollected;
         public static int mNumCollectable;
@@ -290,7 +290,10 @@ namespace GravityShift
             mCollectableLocations = new List<Vector2>();
         }
 
-        public void Load()
+        /// <summary>
+        /// Reloads the content in this level
+        /// </summary>
+        public void Reload()
         {
             Load(mContent);
         }

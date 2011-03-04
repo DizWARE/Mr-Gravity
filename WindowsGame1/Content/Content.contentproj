@@ -360,26 +360,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\NonHazards\BlueGem.png">
-      <Name>BlueGem</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\GreenDiamond.png">
-      <Name>GreenDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\OrangeStar.png">
-      <Name>OrangeStar</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\PurpleGem.png">
-      <Name>PurpleGem</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\NonHazards\YellowStar.png">
       <Name>YellowStar</Name>
       <Importer>TextureImporter</Importer>
@@ -578,13 +558,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\NonHazards\Star.png">
-      <Name>Star</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\Backgrounds\Blank.png">
@@ -954,33 +927,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\AnimatedSprites\YellowDiamond.png">
-      <Name>YellowDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\NonHazards\BlueDiamond.png">
-      <Name>BlueDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\OrangeDiamond.png">
-      <Name>OrangeDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\PinkDiamond.png">
-      <Name>PinkDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\PurpleDiamond.png">
-      <Name>PurpleDiamond</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\NonHazards\YellowDiamond.png">
       <Name>YellowDiamond</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

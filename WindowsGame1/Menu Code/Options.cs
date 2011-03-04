@@ -60,17 +60,17 @@ namespace GravityShift
                 if (mCurrentChoice == MenuChoices.Volume)
                 {
                     states = GameStates.SoundOptions;
-                    mainMenuLevel.Load();
+                    mainMenuLevel.Reload();
                 }
                 if (mCurrentChoice == MenuChoices.Controls)
                 {
                     states = GameStates.Controls;
-                    mainMenuLevel.Load();
+                    mainMenuLevel.Reload();
                 }
                 if (mCurrentChoice == MenuChoices.Reset)
                 {
                     states = GameStates.ResetConfirm;
-                    mainMenuLevel.Load();
+                    mainMenuLevel.Reload();
                 }
                 if (mCurrentChoice == MenuChoices.Back)
                     states = GameStates.Main_Menu;

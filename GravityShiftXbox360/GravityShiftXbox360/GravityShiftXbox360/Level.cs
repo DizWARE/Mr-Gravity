@@ -107,7 +107,7 @@ namespace GravityShift
         public static Camera mCam;
 
         /* Tracks the previous zoom of the camera */
-        private float mPrevZoom = 0.75f;
+        //private float mPrevZoom = 0.75f;
 
         /* Timer variable */
         public double mTimer;
@@ -130,6 +130,7 @@ namespace GravityShift
         ContentManager mContent;
 
         Dictionary<Vector2, AnimatedSprite> mActiveAnimations;
+        bool mUseVert = true;
         List<Vector2> mCollectableLocations;
         AnimatedSprite mCollectableAnimation = null;
 
@@ -204,7 +205,7 @@ namespace GravityShift
 
         #region HUD
 
-        private Texture2D mHUDTrans;
+        //private Texture2D mHUDTrans;
 //        private Texture2D[] mDirections;
         public static int mNumCollected;
         public static int mNumCollectable;
@@ -290,6 +291,15 @@ namespace GravityShift
         }
 
         /// <summary>
+        /// Reloads the content in this level
+        /// </summary>
+        public void Reload()
+        {
+            Load(mContent);
+        }
+
+
+        /// <summary>
         /// Loads the level from the content manager
         /// </summary>
         /// <param name="content">Content Manager to load from</param>
@@ -308,13 +318,13 @@ namespace GravityShift
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
             PlayerEnd playerEnd = importer.GetPlayerEnd();
-            if(playerEnd != null)
+            if (playerEnd != null)
                 mObjects.Add(playerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
             mRails = importer.GetRails();
-            
+
             mTrigger.AddRange(importer.GetTriggers());
 
             PrepareCollisionMatrix();
@@ -411,6 +421,7 @@ namespace GravityShift
             else { mDeathStar = 1; }
         }
 
+
         /// <summary>
         /// Updates the level's progress
         /// </summary>
@@ -445,6 +456,10 @@ namespace GravityShift
                             pObject.FixForBounds((int)Size.X, (int)Size.Y);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
 
+                            if (pObject is Player)
+                            {
+                                ((Player)pObject).CurrentTime = (int)mTimer;
+                            } 
                             pObject.Update(gameTime);
 
                             // Update zoom based on players velocity                 
@@ -461,24 +476,18 @@ namespace GravityShift
                         if (!mHasRespawned) break;
                     }
 
+                    //Update wall animations
                     for(int i = 0; i < mActiveAnimations.Count; i++)
                     {
                         KeyValuePair<Vector2, AnimatedSprite> current = mActiveAnimations.ElementAt(i);
                         current.Value.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                        if (current.Value.Frame == current.Value.LastFrame)
-                        {
+                        if (current.Value.Frame == 0 && current.Value.PreviousFrame == current.Value.LastFrame - 1)
                             mActiveAnimations.Remove(current.Key); 
-                        }
                     }
 
+                    //Update collectable animations
                     if (mCollectableAnimation != null)
-                    {
                         mCollectableAnimation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
-                        if (mCollectableAnimation.Frame == mCollectableAnimation.LastFrame)
-                        {
-                            mCollectableAnimation.Reset();
-                        }
-                    }
 
                     //Check to see if we collected anything
                     if (mRemoveCollected.Count > 0)
@@ -680,6 +689,11 @@ namespace GravityShift
             mRemoveCollected.Clear();
             mTrigger.Clear();
             mTimer = 0;
+            if (mPlayer != null)
+            {
+                mPlayer.ResetIdle((int)mTimer, mPhysicsEnvironment.GravityDirection);
+            }
+            
 
             ResetScores();
         }
@@ -759,18 +773,22 @@ namespace GravityShift
                                 mRemoveCollected.Add(obj);
                                 mCollectableLocations.Remove(obj.mPosition);
                             }
+
+                            GameSound.playerCol_collectable.Play(0.2f, 0f, 0f);
                             collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
                             collectibleEngine.Update(10);
                         }
                         //If player hits a hazard
                         else if (collided && ((physObj is Player) && obj.CollisionType == XmlKeys.HAZARDOUS || (obj is Player) && physObj.CollisionType == XmlKeys.HAZARDOUS))
                         {
-                            // Particle Effects.
-                            Vector2 one = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
-                            Vector2 two = new Vector2(physObj.mPosition.X + 32, physObj.mPosition.Y + 32);
-                            Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
-                            wallEngine.EmitterLocation = midpoint;
-                            wallEngine.Update(10);
+                            // Particle Effects (don't work).
+                            //Vector2 one = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
+                            //Vector2 two = new Vector2(physObj.mPosition.X + 32, physObj.mPosition.Y + 32);
+                            //Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
+                            //wallEngine.EmitterLocation = midpoint;
+                            //wallEngine.Update(10);
+                            GameSound.playerCol_hazard.Play();
+
 
                             if (physObj is Player) physObj.Kill();
                             else ((Player)obj).Kill();
@@ -812,7 +830,7 @@ namespace GravityShift
                                     wallEngine.Update(10);
 
                                     // play wall collision sound
-                                    GameSound.playerCol_wall.Play();
+                                    GameSound.playerCol_wall.Play(0.5f, 0f, 0f);
 
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;
@@ -839,7 +857,7 @@ namespace GravityShift
                                     wallEngine.Update(10);
 
                                     // play wall collision sound
-                                    GameSound.playerCol_wall.Play();
+                                    GameSound.playerCol_wall.Play(0.5f, 0f, 0f);
 
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;
@@ -868,56 +886,76 @@ namespace GravityShift
             switch (concatName)
             {
                 case "Green":
-                    newAnimation.Load(mContent, "GreenPulse", 4, 0.15f); 
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "GreenVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "GreenHor", 4, 0.15f);
+                    mUseVert = !mUseVert; 
                     break;
                 case "Pink":
-                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "PinkVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "PinkHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Blue":
-                    newAnimation.Load(mContent, "YellowLabyrinth", 5, 0.1f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "BlueVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "BlueHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Yellow":
-                    newAnimation.Load(mContent, "YellowScan", 7, 0.08f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "YellowVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "YellowHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Purple":
-                    newAnimation.Load(mContent, "GreenPulse", 4, 0.1f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "PurpleVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "PurpleHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
                 case "Orange":
-                    newAnimation.Load(mContent, "PinkWarp", 4, 0.15f);
+                    if(mUseVert)
+                        newAnimation.Load(mContent, "OrangeVert", 4, 0.15f);
+                    else newAnimation.Load(mContent, "OrangeHor", 4, 0.15f);
+                    mUseVert = !mUseVert;
                     break;
-                    //TODO: Change to animations once those are added to content folder
                 case "GreenDiamond":
-                    newAnimation.Load(mContent, "GreenDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "GreenDiamond", 3, 0.225f);
                     break;
                 case "BlueDiamond":
-                    newAnimation.Load(mContent, "BlueDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "BlueDiamond", 3, 0.225f);
                     break;
                 case "OrangeDiamond":
-                    newAnimation.Load(mContent, "OrangeDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "OrangeDiamond", 3, 0.225f);
                     break;
                 case "PinkDiamond":
-                    newAnimation.Load(mContent, "PinkDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "PinkDiamond", 3, 0.225f);
                     break;
                 case "PurpleDiamond":
-                    newAnimation.Load(mContent, "PurpleDiamond", 3, 0.5f);
+                    newAnimation.Load(mContent, "PurpleDiamond", 3, 0.225f);
                     break;
                 case "YellowDiamond":
-                    newAnimation.Load(mContent, "YellowDiamond", 3, 0.5f);
-                    break;
-                case "YellowStar":
-                    newAnimation.Load(mContent, "YellowStar", 1, 0.5f);
-                    break;
-                case "OrangeStar":
-                    newAnimation.Load(mContent, "OrangeStar", 1, 0.5f);
-                    break;
-                case "Star":
-                    newAnimation.Load(mContent, "Star", 1, 0.5f);
+                    newAnimation.Load(mContent, "YellowDiamond", 3, 0.225f);
                     break;
                 case "BlueGem":
-                    newAnimation.Load(mContent, "BlueGem", 1, 0.5f);
+                    newAnimation.Load(mContent, "BlueGem", 6, 0.15f);
+                    break;
+                case "OrangeGem":
+                    newAnimation.Load(mContent, "OrangeGem", 6, 0.15f);
+                    break;
+                case "PinkGem":
+                    newAnimation.Load(mContent, "PinkGem", 6, 0.15f);
                     break;
                 case "PurpleGem":
-                    newAnimation.Load(mContent, "PurpleGem", 1, 0.5f);
+                    newAnimation.Load(mContent, "PurpleGem", 6, 0.15f);
+                    break;
+                case "GreenGem":
+                    newAnimation.Load(mContent, "GreenGem", 6, 0.15f);
+                    break;
+                case "YellowGem":
+                    newAnimation.Load(mContent, "YellowGem", 6, 0.15f);
                     break;
                 default:
                     newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);

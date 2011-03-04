@@ -16,10 +16,10 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>18</GoalCollectable>
-    <GoalTime>8</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>X Trio</Name>
+    <Name>Snake</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
@@ -28,13 +28,13 @@
     <GoalTime>8</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Maze</Name>
+    <Name>Colors</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>79</GoalCollectable>
-    <GoalTime>16</GoalTime>
+    <GoalCollectable>0</GoalCollectable>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
@@ -133,7 +133,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>19</GoalCollectable>
-    <GoalTime>16</GoalTime>
+    <GoalTime>20</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Trap Em</Name>
@@ -169,7 +169,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>40</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Choosing Sides</Name>
@@ -178,7 +178,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>42</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Intertwined</Name>
@@ -196,25 +196,25 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>16</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>20</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>None</Name>
+    <Name>Out Of Nowhere</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>15</GoalTime>
+  </LevelData>
+  <LevelData>
+    <Name>They Are Everywhere</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>0</GoalCollectable>
-    <GoalTime>0</GoalTime>
-  </LevelData>
-  <LevelData>
-    <Name>None</Name>
-    <Unlocked>False</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
-    <GoalCollectable>0</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -244,7 +244,7 @@
     <GoalTime>0</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Space Invaders</Name>
+    <Name>Space Intruders</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
@@ -259,7 +259,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>14</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>2</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Space Wars</Name>
@@ -268,7 +268,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>17</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Tortoise and Hare</Name>
@@ -277,7 +277,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>19</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>2</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Full Circle</Name>
@@ -286,7 +286,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>10</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>6</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Labyrinth</Name>
@@ -304,7 +304,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>111</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Rails</Name>
@@ -313,7 +313,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>28</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>30</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Close Call</Name>
@@ -331,7 +331,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>9</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>28</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Dropping In</Name>
@@ -340,7 +340,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>15</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Ball Pit</Name>
@@ -349,7 +349,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>5</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Symmetry</Name>
@@ -358,7 +358,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>167</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>3</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
@@ -367,7 +367,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>119</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>120</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Stepping Stones</Name>
@@ -376,7 +376,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>17</GoalCollectable>
-    <GoalTime>0</GoalTime>
+    <GoalTime>4</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Chaotic</Name>

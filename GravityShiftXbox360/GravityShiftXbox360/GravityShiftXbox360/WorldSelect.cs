@@ -25,15 +25,23 @@ namespace GravityShift
     /// </summary>
     class WorldSelect
     {
+
+        public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
+
         //struct needed for serializing on xbox
         public struct SaveGameData
         {
-            public XElement savedata;
+            private XElement saveData;
+            public XElement SaveData
+            {
+                get { return saveData; }
+                set { saveData = value; }
+            }
         }
 
         private const int NAME_REGION = 0;
-        private const int STARS_REGION = 1;
-        private const int TIMER_REGION = 2;
+        private const int STARS_REGION = 2;
+        private const int TIMER_REGION = 1;
         private const int DEATH_REGION = 3;
 
         private const int BACK = 0;
@@ -78,7 +86,7 @@ namespace GravityShift
         Texture2D mTitle;
         Texture2D mStar;
         Texture2D mLock;
-        Texture2D mSelection;
+        //Texture2D mSelection;
 
         int mCurrentIndex = 1;
         int mCurrentWorld = 0;
@@ -167,7 +175,7 @@ namespace GravityShift
             stream = container.CreateFile("LevelList.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(SaveGameData));
             SaveGameData data = new SaveGameData();
-            data.savedata = xLevels;
+            data.SaveData = xLevels;
             serializer.Serialize(stream, data);
             stream.Close();
             container.Dispose();
@@ -214,7 +222,7 @@ namespace GravityShift
                 SaveGameData data = (SaveGameData)serializer.Deserialize(stream);
                 stream.Close();
                 int i = 0;
-                foreach (XElement xLevels in data.savedata.Elements())
+                foreach (XElement xLevels in data.SaveData.Elements())
                 {
                     foreach (XElement xLevelData in xLevels.Elements())
                     {
@@ -328,9 +336,6 @@ namespace GravityShift
 #endif
             for (int i = 0; i < 6; i++)
                 mLevels[world * 6 + i].Unlock();
-#if XBOX360
-            else;                
-#endif
         }
 
         /// <summary>
@@ -724,7 +729,7 @@ namespace GravityShift
             foreach (XElement element in levelInfo.Elements())
             {
                 if (element.Name == XmlKeys.LEVEL_NAME)
-                    mLevel = new Level(LevelSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml",
+                    mLevel = new Level(WorldSelect.LEVEL_DIRECTORY + element.Value.ToString() + ".xml",
                         controls, graphics.GraphicsDevice.Viewport);
                 if (element.Name == XmlKeys.TIMERSTAR)
                     mTimeStars = mLevel.TimerStar = Convert.ToInt32(element.Value);

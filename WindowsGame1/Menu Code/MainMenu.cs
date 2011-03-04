@@ -63,7 +63,7 @@ namespace GravityShift
                 if (mCurrentChoice == MenuChoices.StartGame)
                 {
                     states = GameStates.Level_Selection;
-                    mainMenuLevel.Load();
+                    mainMenuLevel.Reload();
                 }
                 if (mCurrentChoice == MenuChoices.Exit)
                     states = GameStates.Exit;
@@ -72,7 +72,7 @@ namespace GravityShift
                 if (mCurrentChoice == MenuChoices.Credits)
                 {
                     states = GameStates.Credits;
-                    mainMenuLevel.Load();
+                    mainMenuLevel.Reload();
                 }
                 env.GravityDirection = GravityDirections.Down;
             }

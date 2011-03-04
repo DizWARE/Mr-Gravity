@@ -35,12 +35,14 @@ namespace GravityShift
             get { return mNumLives; }
         }
 
+        //***Idle animation information***//
         private GravityDirections mPreviousDirection;
         private int mPreviousChange;
         public int PreviousChange
         {
             set { mPreviousChange = value; }
         }
+
         private int mCurrentTime;
         public int CurrentTime
         {
@@ -65,9 +67,9 @@ namespace GravityShift
         private float mFaceRotationLeft = (float)(-Math.PI / 8.0);
 
         public Texture2D mCurrentTexture;
-        public Texture2D mCurrentTexture1;
+        //public Texture2D mCurrentTexture1;
 
-        public Texture2D playerBase;
+        //public Texture2D playerBase;
 
         private bool mRumble = false;
         private double elapsedTime = 0.0;
