@@ -258,7 +258,7 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Walls\Pink</Texture>
+    <Texture>Walls\Blue</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
@@ -278,7 +278,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>2</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -293,7 +293,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>1</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -334,8 +334,8 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <XForce>50</XForce>
-      <YForce>0</YForce>
+      <XForce>-20</XForce>
+      <YForce>-10</YForce>
     </Properties>
   </Entity>
   <Entity>
@@ -443,7 +443,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>7</Length>
+      <Length>3</Length>
       <Reverse>Tile</Reverse>
     </Properties>
   </Entity>
@@ -459,7 +459,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>1</Length>
+      <Length>3</Length>
       <Reverse>Tile</Reverse>
     </Properties>
   </Entity>
