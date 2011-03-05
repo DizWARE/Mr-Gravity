@@ -473,16 +473,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Menu\Main\SoundSelected.png">
-      <Name>SoundSelected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Menu\Main\SoundUnselected.png">
-      <Name>SoundUnselected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Menu\Main\UnMute.png">
       <Name>UnMute</Name>
       <Importer>TextureImporter</Importer>
@@ -702,16 +692,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Menu\Main\ContinueSelected.png">
-      <Name>ContinueSelected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Menu\Main\ContinueUnselected.png">
-      <Name>ContinueUnselected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Menu\Main\CreditsSelected.png">
       <Name>CreditsSelected</Name>
       <Importer>TextureImporter</Importer>
@@ -1130,6 +1110,196 @@
   <ItemGroup>
     <Compile Include="Images\AnimatedSprites\YellowStar.png">
       <Name>YellowStar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\LevelSelect\1Blue.png">
+      <Name>1Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\1Green.png">
+      <Name>1Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\1Orange.png">
+      <Name>1Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\1Purple.png">
+      <Name>1Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\1Unselected.png">
+      <Name>1Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\2Blue.png">
+      <Name>2Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\2Green.png">
+      <Name>2Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\2Orange.png">
+      <Name>2Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\2Purple.png">
+      <Name>2Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\2Unselected.png">
+      <Name>2Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\3Blue.png">
+      <Name>3Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\3Green.png">
+      <Name>3Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\3Orange.png">
+      <Name>3Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\3Purple.png">
+      <Name>3Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\3Unselected.png">
+      <Name>3Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\4Blue.png">
+      <Name>4Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\4Green.png">
+      <Name>4Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\4Orange.png">
+      <Name>4Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\4Purple.png">
+      <Name>4Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\4Unselected.png">
+      <Name>4Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\5Blue.png">
+      <Name>5Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\5Green.png">
+      <Name>5Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\5Orange.png">
+      <Name>5Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\5Purple.png">
+      <Name>5Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\5Unselected.png">
+      <Name>5Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\6Blue.png">
+      <Name>6Blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\6Green.png">
+      <Name>6Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\6Orange.png">
+      <Name>6Orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\6Purple.png">
+      <Name>6Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\6Unselected.png">
+      <Name>6Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\Main\SoundSelected.png">
+      <Name>SoundSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\Main\SoundUnselected.png">
+      <Name>SoundUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\Main\PlaySelected.png">
+      <Name>PlaySelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\Main\PlayUnselected.png">
+      <Name>PlayUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\Main\ContinueSelected.png">
+      <Name>ContinueSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\Main\ContinueUnselected.png">
+      <Name>ContinueUnselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
