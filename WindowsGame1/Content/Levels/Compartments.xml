@@ -906,7 +906,7 @@
       <ID>415</ID>
       <Name>BlueDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="3" Y="1" />
+      <Location X="2" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\BlueDiamond</Texture>
