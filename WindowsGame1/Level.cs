@@ -135,6 +135,7 @@ namespace GravityShift
         AnimatedSprite mCollectableAnimation = null;
 
         Player mPlayer;
+        PlayerEnd mPlayerEnd;
 
         private PhysicsEnvironment mPhysicsEnvironment;
         public PhysicsEnvironment Environment
@@ -317,9 +318,9 @@ namespace GravityShift
             mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
-            PlayerEnd playerEnd = importer.GetPlayerEnd();
-            if (playerEnd != null)
-                mObjects.Add(playerEnd);
+            mPlayerEnd = importer.GetPlayerEnd();
+            if (mPlayerEnd != null)
+                mObjects.Add(mPlayerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
@@ -435,6 +436,9 @@ namespace GravityShift
                 if (mDeathState == DeathStates.Playing)
                 {
                     mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
+                    
+                    if (mPlayerEnd != null)
+                        mPlayerEnd.UpdateFace(mTimer);
 
                     foreach (GameObject gObject in mObjects)
                     {
@@ -693,6 +697,11 @@ namespace GravityShift
             {
                 mPlayer.ResetIdle((int)mTimer, mPhysicsEnvironment.GravityDirection);
             }
+
+            if (mPlayerEnd != null)
+            {
+                mPlayerEnd.UpdateFace(mTimer);
+            }
             
 
             ResetScores();
@@ -752,6 +761,7 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             mPlayer.mCurrentTexture = PlayerFaces.FromString("Laugh");
+                            mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlHappy");
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
