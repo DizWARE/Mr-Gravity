@@ -42,13 +42,13 @@ namespace GravityShift
         public void UpdateFace(double time)
         {
             mTimer = time;
-            if (mTimer%4 < 3.5)// Eyes open for 3.5 seconds, .5 closed (looks like a blink)
+            if (mTimer%4 < 2.5)// Eyes open for 3.5 seconds, .5 closed 
             {
-                mCurrentTexture = PlayerFaces.FromString("GirlSmile");
+                mCurrentTexture = PlayerFaces.FromString("GirlSmile2");
             }
             else
             {
-                mCurrentTexture = PlayerFaces.FromString("GirlCalm");
+                mCurrentTexture = PlayerFaces.FromString("GirlSmile");
             }
         }
 

@@ -761,7 +761,7 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             mPlayer.mCurrentTexture = PlayerFaces.FromString("Laugh");
-                            mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlHappy");
+                            mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlLaugh3");
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
