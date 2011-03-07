@@ -800,8 +800,16 @@ namespace GravityShift
                             GameSound.playerCol_hazard.Play();
 
 
-                            if (physObj is Player) physObj.Kill();
-                            else ((Player)obj).Kill();
+                            if (physObj is Player)
+                            {
+                                physObj.Kill();
+                                mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlSad");
+                            }
+                            else
+                            {
+                                ((Player)obj).Kill();
+                                mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlSad");
+                            }
 
                             //Get difference of two positions
                             mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0), mCam.Position);
