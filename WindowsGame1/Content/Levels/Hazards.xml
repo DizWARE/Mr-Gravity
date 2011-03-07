@@ -728,5 +728,35 @@
       <Texture>Walls\Orange</Texture>
       <Properties />
     </Entity>
+    <Entity>
+      <ID>713</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>714</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="6" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>

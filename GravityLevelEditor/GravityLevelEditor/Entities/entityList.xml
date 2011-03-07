@@ -248,7 +248,7 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>15</Length>
+      <Length>2</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -263,7 +263,7 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>2</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -350,7 +350,7 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <MusicFile>music_level07</MusicFile>
+      <MusicFile>music_level01</MusicFile>
       <Loop>True</Loop>
     </Properties>
   </Entity>
@@ -396,7 +396,7 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <PlayerFace>Angry</PlayerFace>
+      <PlayerFace>Worry</PlayerFace>
     </Properties>
   </Entity>
   <Entity>
