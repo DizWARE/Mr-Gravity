@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityShiftXbox360", "GravityShiftXbox360\GravityShiftXbox360\GravityShiftXbox360.csproj", "{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mr. Gravity", "GravityShiftXbox360\GravityShiftXbox360\Mr. Gravity.csproj", "{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "GravityShiftXbox360Content", "GravityShiftXbox360\GravityShiftXbox360Content\GravityShiftXbox360Content.contentproj", "{EF4D7ABD-121E-4CEC-858C-0502A2EB253C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mr. Gravity Content", "GravityShiftXbox360\GravityShiftXbox360Content\Mr. Gravity Content.contentproj", "{EF4D7ABD-121E-4CEC-858C-0502A2EB253C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

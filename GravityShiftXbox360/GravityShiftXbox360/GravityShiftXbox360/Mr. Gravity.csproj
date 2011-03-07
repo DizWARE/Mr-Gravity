@@ -140,9 +140,10 @@
     <Compile Include="WorldSelect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GravityShiftXbox360Content\GravityShiftXbox360Content.contentproj">
-      <Name>GravityShiftXbox360Content</Name>
+    <ProjectReference Include="..\GravityShiftXbox360Content\Mr. Gravity Content.contentproj">
+      <Name>Mr. Gravity Content %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{EF4D7ABD-121E-4CEC-858C-0502A2EB253C}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
