@@ -135,6 +135,7 @@ namespace GravityShift
         AnimatedSprite mCollectableAnimation = null;
 
         Player mPlayer;
+        PlayerEnd mPlayerEnd;
 
         private PhysicsEnvironment mPhysicsEnvironment;
         public PhysicsEnvironment Environment
@@ -317,9 +318,9 @@ namespace GravityShift
             mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
-            PlayerEnd playerEnd = importer.GetPlayerEnd();
-            if (playerEnd != null)
-                mObjects.Add(playerEnd);
+            mPlayerEnd = importer.GetPlayerEnd();
+            if (mPlayerEnd != null)
+                mObjects.Add(mPlayerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
@@ -435,6 +436,9 @@ namespace GravityShift
                 if (mDeathState == DeathStates.Playing)
                 {
                     mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
+                    
+                    if (mPlayerEnd != null)
+                        mPlayerEnd.UpdateFace(mTimer);
 
                     foreach (GameObject gObject in mObjects)
                     {
@@ -693,6 +697,11 @@ namespace GravityShift
             {
                 mPlayer.ResetIdle((int)mTimer, mPhysicsEnvironment.GravityDirection);
             }
+
+            if (mPlayerEnd != null)
+            {
+                mPlayerEnd.UpdateFace(mTimer);
+            }
             
 
             ResetScores();
@@ -752,6 +761,7 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             mPlayer.mCurrentTexture = PlayerFaces.FromString("Laugh");
+                            mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlLaugh3");
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
@@ -790,8 +800,16 @@ namespace GravityShift
                             GameSound.playerCol_hazard.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
 
 
-                            if (physObj is Player) physObj.Kill();
-                            else ((Player)obj).Kill();
+                            if (physObj is Player)
+                            {
+                                physObj.Kill();
+                                mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlSad");
+                            }
+                            else
+                            {
+                                ((Player)obj).Kill();
+                                mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlSad");
+                            }
 
                             //Get difference of two positions
                             mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0), mCam.Position);

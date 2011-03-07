@@ -118,6 +118,126 @@
   </Entity>
   <Entity>
     <ID>0</ID>
+    <Name>PinkDiamond</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PinkDiamond</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>OrangeDiamond</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\OrangeDiamond</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PurpleDiamond</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PurpleDiamond</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>YellowDiamond</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\YellowDiamond</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>GreenGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\GreenGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>BlueGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\BlueGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PinkGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PinkGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>OrangeGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\OrangeGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PurpleGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\PurpleGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>YellowGem</Name>
+    <Type>Static Objects</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Collectable</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>NonHazards\YellowGem</Texture>
+    <Properties>
+      <Shape>Circle</Shape>
+    </Properties>
+  </Entity>
+  <Entity>
+    <ID>0</ID>
     <Name>RailX</Name>
     <Type>Physics Objects</Type>
     <Location X="-100" Y="-100" />
@@ -128,7 +248,7 @@
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>15</Length>
+      <Length>2</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -138,12 +258,12 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Walls\Pink</Texture>
+    <Texture>Walls\Blue</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>2</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -158,7 +278,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>2</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -173,7 +293,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>1</Length>
+      <Length>3</Length>
     </Properties>
   </Entity>
   <Entity>
@@ -214,8 +334,8 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <XForce>50</XForce>
-      <YForce>0</YForce>
+      <XForce>-20</XForce>
+      <YForce>-10</YForce>
     </Properties>
   </Entity>
   <Entity>
@@ -230,7 +350,7 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <MusicFile>music_level07</MusicFile>
+      <MusicFile>music_level01</MusicFile>
       <Loop>True</Loop>
     </Properties>
   </Entity>
@@ -276,7 +396,7 @@
       <Width>3</Width>
       <Height>3</Height>
       <Shape>Square</Shape>
-      <PlayerFace>Angry</PlayerFace>
+      <PlayerFace>Worry</PlayerFace>
     </Properties>
   </Entity>
   <Entity>
@@ -323,7 +443,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>X</Rail>
-      <Length>7</Length>
+      <Length>3</Length>
       <Reverse>Tile</Reverse>
     </Properties>
   </Entity>
@@ -339,7 +459,7 @@
       <Shape>Circle</Shape>
       <Mass>1</Mass>
       <Rail>Y</Rail>
-      <Length>1</Length>
+      <Length>3</Length>
       <Reverse>Tile</Reverse>
     </Properties>
   </Entity>
@@ -380,117 +500,5 @@
     <Paintable>True</Paintable>
     <Texture>InvisibleObjects\InvisibleBlock</Texture>
     <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>OrangeDiamond</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\OrangeDiamond</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>PinkDiamond</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\PinkDiamond</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>PurpleDiamond</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\PurpleDiamond</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>YellowDiamond</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\YellowDiamond</Texture>
-    <Properties />
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>BlueGem</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\BlueGem</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>GreenGem</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\GreenGem</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>OrangeGem</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\OrangeGem</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>PinkGem</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\PinkGem</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>PurpleGem</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\PurpleGem</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
-  </Entity>
-  <Entity>
-    <ID>0</ID>
-    <Name>YellowGem</Name>
-    <Type>Static Objects</Type>
-    <Location X="-100" Y="-100" />
-    <CollisionType>Collectable</CollisionType>
-    <Paintable>True</Paintable>
-    <Texture>NonHazards\YellowGem</Texture>
-    <Properties>
-      <Shape>Square</Shape>
-    </Properties>
   </Entity>
 </Entities>

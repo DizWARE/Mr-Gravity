@@ -1314,7 +1314,7 @@
       <ID>1617</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="17" Y="17" />
+      <Location X="16" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -1322,8 +1322,173 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level06</MusicFile>
+        <MusicFile>music_level04</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1696</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1697</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="12" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1698</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="6" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1699</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="2" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1700</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="2" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1701</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="7" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1702</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="12" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1703</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="14" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1704</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="15" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1705</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="17" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1706</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
       </Properties>
     </Entity>
   </Entities>
