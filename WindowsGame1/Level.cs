@@ -784,7 +784,7 @@ namespace GravityShift
                                 mCollectableLocations.Remove(obj.mPosition);
                             }
 
-                            GameSound.playerCol_collectable.Play(0.2f, 0f, 0f);
+                            GameSound.playerCol_collectable.Play(GameSound.volume * 0.8f, 0f, 0f);
                             collectibleEngine.EmitterLocation = new Vector2(obj.mPosition.X + 32, obj.mPosition.Y + 32);
                             collectibleEngine.Update(10);
                         }
@@ -797,7 +797,7 @@ namespace GravityShift
                             //Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                             //wallEngine.EmitterLocation = midpoint;
                             //wallEngine.Update(10);
-                            GameSound.playerCol_hazard.Play();
+                            GameSound.playerCol_hazard.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
 
 
                             if (physObj is Player)
@@ -848,7 +848,7 @@ namespace GravityShift
                                     wallEngine.Update(10);
 
                                     // play wall collision sound
-                                    GameSound.playerCol_wall.Play(0.5f, 0f, 0f);
+                                    GameSound.playerCol_wall.Play(GameSound.volume * 0.8f, 0f, 0f);
 
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;
@@ -875,7 +875,7 @@ namespace GravityShift
                                     wallEngine.Update(10);
 
                                     // play wall collision sound
-                                    GameSound.playerCol_wall.Play(0.5f, 0f, 0f);
+                                    GameSound.playerCol_wall.Play(GameSound.volume * 0.8f, 0f, 0f);
 
                                     lastCollided[1] = lastCollided[0];
                                     lastCollided[0] = cObject;

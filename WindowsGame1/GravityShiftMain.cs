@@ -239,6 +239,30 @@ namespace GravityShift
         {
             base.Update(gameTime);
 
+#if XBOX360
+            SignedInGamer player = Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex];
+            if (player != null)
+            {
+                if (Guide.IsTrialMode)
+                {
+                    player.Presence.PresenceMode = GamerPresenceMode.TutorialMode;
+                }
+                else if (mCurrentState == GameStates.In_Game)
+                {
+                    player.Presence.PresenceMode = GamerPresenceMode.PuzzleMode;
+                }
+                else if (mCurrentState == GameStates.Pause)
+                {
+                    player.Presence.PresenceMode = GamerPresenceMode.Paused;
+                }
+                else
+                {
+                    player.Presence.PresenceMode = GamerPresenceMode.AtMenu;
+                }
+
+            }
+#endif
+
             if (mCurrentState == GameStates.Credits)
                 mCredits.Update(gameTime, ref mCurrentState);
 
