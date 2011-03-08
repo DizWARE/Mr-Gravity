@@ -64,13 +64,6 @@ namespace GravityShift
         Rectangle[] mLevelRegions;
         Rectangle[] mInfoRegions;
 
-        Texture2D[,] mSelected;
-        Texture2D[] mUnselected;
-
-        Random rand;
-
-        int number;
-
         string[] mWorlds = 
         { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck" };
         int mLongestName;
@@ -136,9 +129,6 @@ namespace GravityShift
 
             mDeviceSelected = false;
 
-            rand = new Random();
-
-            number = rand.Next(4);
         }
 
         /// <summary>
@@ -292,9 +282,6 @@ namespace GravityShift
             mLevelRegions = new Rectangle[6];
             mInfoRegions = new Rectangle[4];
 
-            mSelected = new Texture2D[6,4];
-            mUnselected = new Texture2D[6];
-
             //Create 6 regions for image icons. The x direction is split into 3rds, which that region is 2/3rds of that area
             for (int i = 0; i < mLevelRegions.Length; i++)
             {
@@ -345,7 +332,7 @@ namespace GravityShift
         public void UnlockWorld(int world)
         {
 #if XBOX360
-            if(!this.TrialMode)
+            if(!this.TrialMode || world == 0)
 #endif
             for (int i = 0; i < 6; i++)
                 mLevels[world * 6 + i].Unlock();
@@ -386,38 +373,6 @@ namespace GravityShift
             mLock = content.Load<Texture2D>("Images/Lock/locked1a");
 
             mFont = content.Load<SpriteFont>("Fonts/QuartzSmaller");
-
-            mSelected[0, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Blue");
-            mSelected[0, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Green");
-            mSelected[0, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Orange");
-            mSelected[0, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Purple");
-            mSelected[1, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/2Blue");
-            mSelected[1, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/2Green");
-            mSelected[1, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/2Orange");
-            mSelected[1, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/2Purple");
-            mSelected[2, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/3Blue");
-            mSelected[2, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/3Green");
-            mSelected[2, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/3Orange");
-            mSelected[2, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/3Purple");
-            mSelected[3, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/4Blue");
-            mSelected[3, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/4Green");
-            mSelected[3, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/4Orange");
-            mSelected[3, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/4Purple");
-            mSelected[4, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/5Blue");
-            mSelected[4, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/5Green");
-            mSelected[4, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/5Orange");
-            mSelected[4, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/5Purple");
-            mSelected[5, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Blue");
-            mSelected[5, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Green");
-            mSelected[5, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Orange");
-            mSelected[5, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Purple");
-
-            mUnselected[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Unselected");
-            mUnselected[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/2Unselected");
-            mUnselected[2] = content.Load<Texture2D>("Images/Menu/LevelSelect/3Unselected");
-            mUnselected[3] = content.Load<Texture2D>("Images/Menu/LevelSelect/4Unselected");
-            mUnselected[4] = content.Load<Texture2D>("Images/Menu/LevelSelect/5Unselected");
-            mUnselected[5] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Unselected");
 
             mLongestName = 0;
             foreach (string name in mWorlds)
@@ -501,8 +456,6 @@ namespace GravityShift
             //Down Button
             if (mControls.isDownPressed(false))
             {
-                number = rand.Next(4);
-
                 if (mCurrentIndex > BACK && mCurrentIndex < 4)
                     mCurrentIndex += 3;
                 else if (mCurrentIndex == BACK)
@@ -516,8 +469,6 @@ namespace GravityShift
             //Up Button
             if (mControls.isUpPressed(false))
             {
-                number = rand.Next(4);
-
                 if (mCurrentIndex > 3)
                     mCurrentIndex -= 3;
                 else if (mCurrentIndex == BACK)
@@ -529,8 +480,6 @@ namespace GravityShift
             //Left Pressed
             if (mControls.isLeftPressed(false))
             {
-                number = rand.Next(4);
-
                 mCurrentIndex--;
                 if (mCurrentIndex == PREVIOUS && mCurrentWorld == 0)
                     mCurrentIndex--;
@@ -539,8 +488,6 @@ namespace GravityShift
             //Right Pressed
             if (mControls.isRightPressed(false))
             {
-                number = rand.Next(4);
-
                 mCurrentIndex++;
                 if (mCurrentIndex == NEXT && mCurrentWorld == NUM_OF_WORLDS - 1)
                     mCurrentIndex++;
@@ -717,14 +664,13 @@ namespace GravityShift
         private void DrawLevelPanel(SpriteBatch spriteBatch)
         {
             int i = 0;
-
             foreach (Rectangle rect in mLevelRegions)
             {
                 Vector2 size = mFont.MeasureString(mLevels[i + 6 * mCurrentWorld].Name);
                 if(i + 1 != mCurrentIndex)
-                    spriteBatch.Draw(mUnselected[i], rect, Color.White);
+                    spriteBatch.Draw(mBackground, rect, Color.Green);
                 else
-                    spriteBatch.Draw(mSelected[i,number], rect, Color.White);
+                    spriteBatch.Draw(mBackground, rect, Color.Blue);
                 spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Center.Y - size.Y / 2), Color.White);
 
                 if (!mLevels[i - 1 + 6 * mCurrentWorld].Unlocked)
