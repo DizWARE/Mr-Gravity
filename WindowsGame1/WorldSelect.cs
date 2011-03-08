@@ -137,8 +137,8 @@ namespace GravityShift
             mDeviceSelected = false;
 
             rand = new Random();
-
             number = rand.Next(4);
+
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace GravityShift
             mLevelRegions = new Rectangle[6];
             mInfoRegions = new Rectangle[4];
 
-            mSelected = new Texture2D[6,4];
+            mSelected = new Texture2D[6, 4];
             mUnselected = new Texture2D[6];
 
             //Create 6 regions for image icons. The x direction is split into 3rds, which that region is 2/3rds of that area
@@ -345,7 +345,7 @@ namespace GravityShift
         public void UnlockWorld(int world)
         {
 #if XBOX360
-            if(!this.TrialMode)
+            if(!this.TrialMode || world == 0)
 #endif
             for (int i = 0; i < 6; i++)
                 mLevels[world * 6 + i].Unlock();
@@ -411,7 +411,7 @@ namespace GravityShift
             mSelected[5, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Green");
             mSelected[5, 2] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Orange");
             mSelected[5, 3] = content.Load<Texture2D>("Images/Menu/LevelSelect/6Purple");
-
+            
             mUnselected[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Unselected");
             mUnselected[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/2Unselected");
             mUnselected[2] = content.Load<Texture2D>("Images/Menu/LevelSelect/3Unselected");
@@ -769,10 +769,10 @@ namespace GravityShift
             foreach (Rectangle rect in mLevelRegions)
             {
                 Vector2 size = mFont.MeasureString(mLevels[i + 6 * mCurrentWorld].Name);
-                if(i + 1 != mCurrentIndex)
+                if (i + 1 != mCurrentIndex)
                     spriteBatch.Draw(mUnselected[i], rect, Color.White);
                 else
-                    spriteBatch.Draw(mSelected[i,number], rect, Color.White);
+                    spriteBatch.Draw(mSelected[i, number], rect, Color.White);
                 spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Center.Y - size.Y / 2), Color.White);
 
                 if (!mLevels[i - 1 + 6 * mCurrentWorld].Unlocked)

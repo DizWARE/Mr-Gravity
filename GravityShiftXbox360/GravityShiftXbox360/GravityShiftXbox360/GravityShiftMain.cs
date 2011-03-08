@@ -548,65 +548,65 @@ namespace GravityShift
             mSpriteBatch.Begin();
            
             string goalString = "Goal: ";
-            float goalLength = mQuartz.MeasureString(goalString).Length();
+            Vector2 goalLength = mQuartz.MeasureString(goalString);
             
             /* TIMER */
             string timerString = "Timer: ";
             string timeString = mCurrentLevel.Timer.ToString();
             string timeGoal = mCurrentLevel.IdealTime.ToString();
-            float timerLength = mQuartz.MeasureString(timerString).Length();
-            float numberLength = mQuartz.MeasureString("99 ").Length();
+            Vector2 timerLength = mQuartz.MeasureString(timerString);
+            Vector2 numberLength = mQuartz.MeasureString("99 ");
 
             /* COLLECTED */
             string collectedString = "Collected: ";
             string collectString = mCurrentLevel.NumCollected.ToString();// + "/" + mCurrentLevel.NumCollectable;
             string collectGoal = mCurrentLevel.NumCollectable.ToString();
-            float collectedLength = mQuartz.MeasureString(collectedString).Length();
+            Vector2 collectedLength = mQuartz.MeasureString(collectedString);
 
             /* DEATHS */
             string livesString = "Lives: ";
             string liveString = mCurrentLevel.NumLives.ToString();
-            float livesLength = mQuartz.MeasureString(livesString + liveString).Length();
+            Vector2 livesLength = mQuartz.MeasureString(livesString + liveString);
 
             //Draw Timer
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, 
-                mScreenRect.Left + (int)timerLength + (int)numberLength, mScreenRect.Top + 90), Color.White);
+                (int)timerLength.X + (int)numberLength.X, (int)timerLength.Y + (int)numberLength.Y), Color.White);
             Vector2 placement = new Vector2(mScreenRect.Left, mScreenRect.Top);
 
             mSpriteBatch.DrawString(mQuartz, timerString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, timerString, placement, Color.SteelBlue);
-            mSpriteBatch.DrawString(mQuartz, timeString, new Vector2(placement.X + timerLength, placement.Y), Color.White);
-            placement.Y += 40;
+            mSpriteBatch.DrawString(mQuartz, timeString, new Vector2(placement.X + timerLength.X, placement.Y), Color.White);
+            placement.Y += timerLength.Y;
             mSpriteBatch.DrawString(mQuartz, goalString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, goalString, placement, Color.SteelBlue);
-            mSpriteBatch.DrawString(mQuartz, timeGoal, new Vector2(placement.X + timerLength, placement.Y), Color.White);
+            mSpriteBatch.DrawString(mQuartz, timeGoal, new Vector2(placement.X + timerLength.X, placement.Y), Color.White);
 
             //Draw collected
-            mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Right - (int)collectedLength - (int)numberLength, mScreenRect.Top,
-               mScreenRect.Right, mScreenRect.Top + 90), Color.White);
-            placement = new Vector2(mScreenRect.Right - collectedLength - numberLength, mScreenRect.Top);
+            mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Right - (int)collectedLength.X - (int)numberLength.X, mScreenRect.Top,
+               (int)collectedLength.X + (int)numberLength.X, (int)collectedLength.Y + (int)numberLength.Y), Color.White);
+            placement = new Vector2(mScreenRect.Right - collectedLength.X - numberLength.X, mScreenRect.Top);
 
             mSpriteBatch.DrawString(mQuartz, collectedString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, collectedString, placement, Color.SteelBlue);
-            mSpriteBatch.DrawString(mQuartz, collectString, new Vector2(placement.X + collectedLength, placement.Y), Color.White);
-            placement.Y += 40;
+            mSpriteBatch.DrawString(mQuartz, collectString, new Vector2(placement.X + collectedLength.X, placement.Y), Color.White);
+            placement.Y += collectedLength.Y;
             mSpriteBatch.DrawString(mQuartz, goalString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, goalString, placement, Color.SteelBlue);
-            mSpriteBatch.DrawString(mQuartz, collectGoal, new Vector2(placement.X + collectedLength, placement.Y), Color.White);
-            placement.Y += 60;
+            mSpriteBatch.DrawString(mQuartz, collectGoal, new Vector2(placement.X + collectedLength.X, placement.Y), Color.White);
+            placement.Y += goalLength.Y;
 
             //Draw deaths
-            int x1 = mScreenRect.Center.X - (int)(0.5f * (livesLength + numberLength)) - 10;
-            int y1 = mScreenRect.Bottom - 40;
-            int x2 = 200;//mScreenRect.Center.X + (int)(0.5f * (livesLength + numberLength)) + 10;
-            int y2 = mScreenRect.Bottom;
+            int x1 = mScreenRect.Center.X - (int)(0.5f * (livesLength.X + numberLength.X));
+            int y1 = mScreenRect.Bottom - (int)livesLength.Y;
+            int x2 = (int)livesLength.X + (int)numberLength.X;//mScreenRect.Center.X + (int)(0.5f * (livesLength + numberLength)) + 10;
+            int y2 = (int)livesLength.Y;
 
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(x1, y1, x2, y2), Color.White);
-            placement = new Vector2(mScreenRect.Center.X - (0.5f * (livesLength + numberLength)), mScreenRect.Bottom-45);
+            placement = new Vector2(mScreenRect.Center.X - (0.5f * (livesLength.X + numberLength.X)), mScreenRect.Bottom-(int)livesLength.Y);
 
             mSpriteBatch.DrawString(mQuartz, livesString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, livesString, placement, Color.SteelBlue);
-            mSpriteBatch.DrawString(mQuartz, liveString, new Vector2 (placement.X + livesLength, placement.Y), Color.White);
+            mSpriteBatch.DrawString(mQuartz, liveString, new Vector2 (placement.X + livesLength.X, placement.Y), Color.White);
 
             if (mCurrentLevel.NumLives <= 0)
             {
