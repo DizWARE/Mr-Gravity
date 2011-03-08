@@ -797,7 +797,7 @@ namespace GravityShift
                             //Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                             //wallEngine.EmitterLocation = midpoint;
                             //wallEngine.Update(10);
-                            GameSound.playerCol_hazard.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
+                            GameSound.playerSound_death.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
 
 
                             if (physObj is Player)
