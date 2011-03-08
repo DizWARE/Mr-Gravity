@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mr. Gravity", "GravityShiftXbox360\GravityShiftXbox360\Mr. Gravity.csproj", "{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mr. Gravity Content", "GravityShiftXbox360\GravityShiftXbox360Content\Mr. Gravity Content.contentproj", "{EF4D7ABD-121E-4CEC-858C-0502A2EB253C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Xbox 360 = Debug|Xbox 360
+		Release|Xbox 360 = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
+		{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{D62A9289-10BC-41EA-B9ED-FC229CD6CFFB}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
+		{EF4D7ABD-121E-4CEC-858C-0502A2EB253C}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{EF4D7ABD-121E-4CEC-858C-0502A2EB253C}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

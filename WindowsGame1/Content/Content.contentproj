@@ -1071,16 +1071,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Player\GirlCalmOld.png">
-      <Name>GirlCalmOld</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Player\GirlHappyOld.png">
-      <Name>GirlHappyOld</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Player\GirlLaugh.png">
       <Name>GirlLaugh</Name>
       <Importer>TextureImporter</Importer>
@@ -1103,11 +1093,6 @@
     </Compile>
     <Compile Include="Images\Player\GirlSmile2.png">
       <Name>GirlSmile2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Player\GirlSmileOld.png">
-      <Name>GirlSmileOld</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

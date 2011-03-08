@@ -332,7 +332,7 @@ namespace GravityShift
         public void UnlockWorld(int world)
         {
 #if XBOX360
-            if(!this.TrialMode)
+            if(!this.TrialMode || world == 0)
 #endif
             for (int i = 0; i < 6; i++)
                 mLevels[world * 6 + i].Unlock();
