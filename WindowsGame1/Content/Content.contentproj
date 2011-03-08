@@ -1125,16 +1125,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Player\GirlCalmOld.png">
-      <Name>GirlCalmOld</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Player\GirlHappyOld.png">
-      <Name>GirlHappyOld</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Player\GirlLaugh.png">
       <Name>GirlLaugh</Name>
       <Importer>TextureImporter</Importer>
@@ -1157,11 +1147,6 @@
     </Compile>
     <Compile Include="Images\Player\GirlSmile2.png">
       <Name>GirlSmile2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Player\GirlSmileOld.png">
-      <Name>GirlSmileOld</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -1351,9 +1336,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-  <Compile Include="Images\Player\GirlSmile.png">
+    <Compile Include="Images\Player\GirlSmile.png">
       <Name>GirlSmile</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\Menu\Main\ContinueSelected.png">
@@ -1365,7 +1350,7 @@
   <ItemGroup>
     <Compile Include="Images\Player\GirlLaugh3.png">
       <Name>GirlLaugh3</Name>
-	  <Importer>TextureImporter</Importer>
+      <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Images\Menu\Main\ContinueUnselected.png">
