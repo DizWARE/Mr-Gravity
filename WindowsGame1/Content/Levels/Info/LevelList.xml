@@ -3,18 +3,18 @@
   <LevelData>
     <Name>Face</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>15</GoalCollectable>
     <GoalTime>8</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>18</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
