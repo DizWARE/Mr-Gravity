@@ -773,7 +773,7 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[i], rect, Color.White);
                 else
                     spriteBatch.Draw(mSelected[i, number], rect, Color.White);
-                spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Center.Y - size.Y / 2), Color.White);
+                spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Top), Color.White);
 
                 if (!mLevels[i - 1 + 6 * mCurrentWorld].Unlocked)
                     spriteBatch.Draw(mLock, rect, Color.White);

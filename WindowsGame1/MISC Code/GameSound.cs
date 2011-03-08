@@ -24,7 +24,7 @@ namespace GravityShift
         
         /* Player And Collision */
         public static SoundEffect playerCol_wall;
-        public static SoundEffect playerCol_hazard;
+        public static SoundEffect playerSound_death;
         public static SoundEffect playerCol_collectable;
         public static SoundEffect playerSound_respawn;
 
@@ -92,7 +92,7 @@ namespace GravityShift
         
             /* Player Collision */
             playerCol_wall = content.Load<SoundEffect>("SoundEffects\\playerCol_wall");
-            playerCol_hazard = content.Load<SoundEffect>("SoundEffects\\playerCol_hazard");
+            playerSound_death = content.Load<SoundEffect>("SoundEffects\\playerSound_death");
             playerCol_collectable = content.Load<SoundEffect>("SoundEffects\\playerCol_collectable");
             playerSound_respawn = content.Load<SoundEffect>("SoundEffects\\playerSound_respawn");
 

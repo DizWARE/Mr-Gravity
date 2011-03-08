@@ -135,6 +135,7 @@ namespace GravityShift
         AnimatedSprite mCollectableAnimation = null;
 
         Player mPlayer;
+        PlayerEnd mPlayerEnd;
 
         private PhysicsEnvironment mPhysicsEnvironment;
         public PhysicsEnvironment Environment
@@ -317,9 +318,9 @@ namespace GravityShift
             mObjects.Add(mPlayer);
             mObjects.AddRange(importer.GetObjects(ref mPhysicsEnvironment));
 
-            PlayerEnd playerEnd = importer.GetPlayerEnd();
-            if (playerEnd != null)
-                mObjects.Add(playerEnd);
+            mPlayerEnd = importer.GetPlayerEnd();
+            if (mPlayerEnd != null)
+                mObjects.Add(mPlayerEnd);
 
             mObjects.AddRange(importer.GetWalls(this).Cast<GameObject>());
 
@@ -405,14 +406,14 @@ namespace GravityShift
         public void UpdateStars()
         {
             /* TIME -- 100%+, <120%, <140%, >140% */
-            if (mTimer < mIdealTime)
+            if (mTimer <= mIdealTime)
             { mTimerStar = 3; }
-            else if ((mTimer / mIdealTime) < 1.2) { mTimerStar = 2; }
+            else if ((mTimer / mIdealTime) <= 1.2) { mTimerStar = 2; }
             else { mTimerStar = 1; }
 
             /* COLLECTABLES -- 100%, >80%, >60%, <60% */
             if (NumCollected == NumCollectable) { mCollectionStar = 3; }
-            else if ((NumCollected / NumCollectable) > 0.8) { mCollectionStar = 2; }
+            else if ((NumCollected / NumCollectable) >= 0.8) { mCollectionStar = 2; }
             else { mCollectionStar = 1; }
 
             /* DEATHS -- 0, 1, 2-3, >3 */
@@ -435,6 +436,9 @@ namespace GravityShift
                 if (mDeathState == DeathStates.Playing)
                 {
                     mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
+                    
+                    if (mPlayerEnd != null)
+                        mPlayerEnd.UpdateFace(mTimer);
 
                     foreach (GameObject gObject in mObjects)
                     {
@@ -693,6 +697,11 @@ namespace GravityShift
             {
                 mPlayer.ResetIdle((int)mTimer, mPhysicsEnvironment.GravityDirection);
             }
+
+            if (mPlayerEnd != null)
+            {
+                mPlayerEnd.UpdateFace(mTimer);
+            }
             
 
             ResetScores();
@@ -752,6 +761,7 @@ namespace GravityShift
                         if (collided && obj is PlayerEnd && physObj is Player)
                         {
                             mPlayer.mCurrentTexture = PlayerFaces.FromString("Laugh");
+                            mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlLaugh3");
 
                             GameSound.StopOthersAndPlay(GameSound.level_stageVictory);
                             mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
@@ -787,11 +797,19 @@ namespace GravityShift
                             //Vector2 midpoint = new Vector2((one.X + two.X) / 2, (one.Y + two.Y) / 2);
                             //wallEngine.EmitterLocation = midpoint;
                             //wallEngine.Update(10);
-                            GameSound.playerCol_hazard.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
+                            GameSound.playerSound_death.Play(GameSound.volume * 0.8f, 0.0f, 0.0f);
 
 
-                            if (physObj is Player) physObj.Kill();
-                            else ((Player)obj).Kill();
+                            if (physObj is Player)
+                            {
+                                physObj.Kill();
+                                mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlSad");
+                            }
+                            else
+                            {
+                                ((Player)obj).Kill();
+                                mPlayerEnd.mCurrentTexture = PlayerFaces.FromString("GirlSad");
+                            }
 
                             //Get difference of two positions
                             mDeathPanLength = Vector3.Subtract(new Vector3(mPlayer.SpawnPoint.X - 275, mPlayer.SpawnPoint.Y - 100, 0), mCam.Position);

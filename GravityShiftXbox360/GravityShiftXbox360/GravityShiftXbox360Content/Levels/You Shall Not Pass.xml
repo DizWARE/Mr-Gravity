@@ -727,5 +727,20 @@
       <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties />
     </Entity>
+    <Entity>
+      <ID>1618</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="10" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>

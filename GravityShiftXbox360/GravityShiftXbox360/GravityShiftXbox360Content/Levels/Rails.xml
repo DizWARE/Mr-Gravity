@@ -2781,102 +2781,12 @@
       <Type>Static Objects</Type>
       <Location X="35" Y="15" />
       <CollisionType>Collectable</CollisionType>
-	  <Paintable>True</Paintable>
+      <Paintable>True</Paintable>
       <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties />
     </Entity>
-	<Entity>
-      <ID>1726</ID>
-      <Name>RailSawY</Name>
-      <Type>Physics Objects</Type>
-      <Location X="3" Y="3" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>4</Length>
-      </Properties>
-    </Entity>
     <Entity>
-      <ID>1727</ID>
-      <Name>RailSawY</Name>
-      <Type>Physics Objects</Type>
-      <Location X="8" Y="3" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>4</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1728</ID>
-      <Name>RailSawY</Name>
-      <Type>Physics Objects</Type>
-      <Location X="14" Y="1" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>Y</Rail>
-        <Length>2</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1729</ID>
-      <Name>RailSawY</Name>
-      <Type>Physics Objects</Type>
-      <Location X="33" Y="14" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>3</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1802</ID>
-      <Name>RailSawX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="24" Y="14" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>8</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1803</ID>
-      <Name>RailSawX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="12" Y="14" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>11</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1805</ID>
+      <ID>1924</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
       <Location X="2" Y="3" />
@@ -2884,6 +2794,246 @@
       <Paintable>True</Paintable>
       <Texture>NonHazards\PurpleDiamond</Texture>
       <Properties />
+    </Entity>
+    <Entity>
+      <ID>2003</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="35" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2005</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="35" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2006</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="24" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2007</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="18" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2008</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="15" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2009</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="17" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2011</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="20" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2012</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="5" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2013</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="10" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2014</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="14" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2015</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="21" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2016</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="30" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2018</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="23" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2019</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="26" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2020</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="29" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2021</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="32" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
     </Entity>
   </Entities>
 </Level>
