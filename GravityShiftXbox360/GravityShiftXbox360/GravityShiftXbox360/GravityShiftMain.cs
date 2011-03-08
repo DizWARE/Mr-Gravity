@@ -555,7 +555,7 @@ namespace GravityShift
             string timeString = mCurrentLevel.Timer.ToString();
             string timeGoal = mCurrentLevel.IdealTime.ToString();
             Vector2 timerLength = mQuartz.MeasureString(timerString);
-            Vector2 numberLength = mQuartz.MeasureString("99 ");
+            Vector2 numberLength = mQuartz.MeasureString("99   ");
 
             /* COLLECTED */
             string collectedString = "Collected: ";
