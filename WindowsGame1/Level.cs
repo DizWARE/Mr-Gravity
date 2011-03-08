@@ -406,14 +406,14 @@ namespace GravityShift
         public void UpdateStars()
         {
             /* TIME -- 100%+, <120%, <140%, >140% */
-            if (mTimer < mIdealTime)
+            if (mTimer <= mIdealTime)
             { mTimerStar = 3; }
-            else if ((mTimer / mIdealTime) < 1.2) { mTimerStar = 2; }
+            else if ((mTimer / mIdealTime) <= 1.2) { mTimerStar = 2; }
             else { mTimerStar = 1; }
 
             /* COLLECTABLES -- 100%, >80%, >60%, <60% */
             if (NumCollected == NumCollectable) { mCollectionStar = 3; }
-            else if ((NumCollected / NumCollectable) > 0.8) { mCollectionStar = 2; }
+            else if ((NumCollected / NumCollectable) >= 0.8) { mCollectionStar = 2; }
             else { mCollectionStar = 1; }
 
             /* DEATHS -- 0, 1, 2-3, >3 */

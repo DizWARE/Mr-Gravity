@@ -641,11 +641,11 @@ namespace GravityShift
                 spriteBatch.DrawString(mFont, "Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y), Color.White);
 
                 size = mFont.MeasureString("Goal: " + goalCollectables + " Collectables");
-                spriteBatch.DrawString(mFont, "Goal: " + goalCollectables + " Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y + 2*size.Y), Color.White);
+                spriteBatch.DrawString(mFont, "Goal: " + goalCollectables + " Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y + 2 * size.Y), Color.White);
 
                 for (int i = 0; i < starsCollectables; i++)
-                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[STARS_REGION].Center.X - starWidth/2 + i * mStar.Width, mInfoRegions[STARS_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-            
+                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[STARS_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[STARS_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
+
 
                 //Draw Time Info
                 size = mFont.MeasureString("Timer");
@@ -657,7 +657,7 @@ namespace GravityShift
 
                 for (int i = 0; i < starsTime; i++)
                     spriteBatch.Draw(mStar, new Vector2(mInfoRegions[TIMER_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[TIMER_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-            
+
 
                 //Draw Death Info
                 size = mFont.MeasureString("Death");
@@ -669,8 +669,56 @@ namespace GravityShift
 
                 //size = mFont.MeasureString("You have " + starsDeaths + " stars");
                 //spriteBatch.DrawString(mFont, "You have " + starsDeaths + " stars", new Vector2(mInfoRegions[DEATH_REGION].Center.X - size.X / 2, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-                for(int i = 0; i < starsDeaths; i ++)
+                for (int i = 0; i < starsDeaths; i++)
                     spriteBatch.Draw(mStar, new Vector2(mInfoRegions[DEATH_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
+            }
+            else
+            {
+                size = mFont.MeasureString("Name");
+                Vector2 position = new Vector2(mInfoRegions[NAME_REGION].Center.X - size.X / 2, mInfoRegions[NAME_REGION].Center.Y - size.Y / 2);
+
+                spriteBatch.DrawString(mFont, "Name", Vector2.Add(position, new Vector2(2, 2)), Color.LightBlue);
+                spriteBatch.DrawString(mFont, "Name", position, Color.White);
+
+                size = mFont.MeasureString(mWorlds[mCurrentWorld]);
+                position = Vector2.Add(position, new Vector2(0, size.Y + mPadding.Y));
+                position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+
+                spriteBatch.DrawString(mFont, mWorlds[mCurrentWorld], position, Color.White);
+
+                if (mLevels[0 + mCurrentWorld * 6].Unlocked)
+                {
+                    size = mFont.MeasureString("UNLOCKED");
+                    position = Vector2.Add(position, new Vector2(0, size.Y + 2*mPadding.Y));
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "UNLOCKED", position, Color.White);
+                    spriteBatch.DrawString(mFont, "UNLOCKED", Vector2.Add(position, new Vector2(2, 2)), Color.Green);
+                   
+                }
+                else
+                {
+                    size = mFont.MeasureString("LOCKED");
+                    position = Vector2.Add(position, new Vector2(0, size.Y + 2 * mPadding.Y));
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "LOCKED", position, Color.White);
+                    spriteBatch.DrawString(mFont, "LOCKED", Vector2.Add(position, new Vector2(2, 2)), Color.Red);
+                    
+                    position = Vector2.Add(position, new Vector2(0, size.Y + 2 * mPadding.Y));
+                    size = mFont.MeasureString("You need");
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "You need", position, Color.White);
+
+                    position = Vector2.Add(position, new Vector2(0, size.Y));
+                    size = mFont.MeasureString((45 * mCurrentWorld - mStarCount) + "");
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, (45 * mCurrentWorld - mStarCount) + "", position, Color.Red);
+
+                    position = Vector2.Add(position, new Vector2(0, size.Y));
+                    size = mFont.MeasureString("to unlock");
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "to unlock", position, Color.White);
+                    
+                }
             }
         }
 
