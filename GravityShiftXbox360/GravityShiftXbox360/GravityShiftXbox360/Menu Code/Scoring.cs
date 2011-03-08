@@ -220,11 +220,11 @@ namespace GravityShift
             spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
             spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + 20, topPadding), Color.White);
 
-            if (attempt[0] >= 1)
+            if (attempt[1] >= 1)
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength, topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
-            if (attempt[0] >= 2)
+            if (attempt[1] >= 2)
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength + (0.5f * (mStar.Width)), topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
-            if (attempt[0] == 3)
+            if (attempt[1] == 3)
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength + (0.5f * (2 * mStar.Width)), topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
 
             level.CollectionStar = attempt[1];
@@ -241,11 +241,11 @@ namespace GravityShift
             spriteBatch.DrawString(mQuartz, "" + (int)GravityShift.Level.mDeaths, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + 20, topPadding), Color.White);
            
             //Draw Stars
-            if (attempt[0] >= 1)
+            if (attempt[2] >= 1)
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength, topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
-            if (attempt[0] >= 2)
+            if (attempt[2] >= 2)
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength + (0.5f * (mStar.Width)), topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
-            if (attempt[0] == 3)
+            if (attempt[2] == 3)
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength + (0.5f * (2 * mStar.Width)), topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
 
             level.DeathStar = attempt[2];

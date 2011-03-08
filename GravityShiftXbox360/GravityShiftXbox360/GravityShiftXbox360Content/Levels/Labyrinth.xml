@@ -2521,8 +2521,53 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level00</MusicFile>
+        <MusicFile>music_level01</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>4960</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="19" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>4961</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="15" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>4962</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="21" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
       </Properties>
     </Entity>
   </Entities>
