@@ -360,7 +360,8 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            UnlockWorld(mStarCount / 45);
+            if(mStarCount / 30 <= NUM_OF_WORLDS)
+                UnlockWorld(mStarCount / 30);
         }
 
         /// <summary>
@@ -449,6 +450,9 @@ namespace GravityShift
         {
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
+
+                GameSound.menuSound_select.Play();
+
                 if (mCurrentIndex == BACK)
                     Exit(ref gameState);
                 else if (mCurrentIndex == PREVIOUS && mCurrentWorld > 0)
@@ -511,6 +515,8 @@ namespace GravityShift
                     mCurrentIndex = BACK;
                 else
                     mCurrentIndex = PREVIOUS;
+
+                GameSound.menuSound_rollover.Play();
             }
 
             //Up Button
@@ -524,6 +530,7 @@ namespace GravityShift
                     mCurrentIndex = PREVIOUS;
                 else
                     mCurrentIndex = BACK;
+                GameSound.menuSound_rollover.Play();
             }
 
             //Left Pressed
@@ -534,6 +541,8 @@ namespace GravityShift
                 mCurrentIndex--;
                 if (mCurrentIndex == PREVIOUS && mCurrentWorld == 0)
                     mCurrentIndex--;
+
+                GameSound.menuSound_rollover.Play();
             }
 
             //Right Pressed
@@ -544,6 +553,7 @@ namespace GravityShift
                 mCurrentIndex++;
                 if (mCurrentIndex == NEXT && mCurrentWorld == NUM_OF_WORLDS - 1)
                     mCurrentIndex++;
+                GameSound.menuSound_rollover.Play();
             }
 
             //Special cases
@@ -556,9 +566,15 @@ namespace GravityShift
 
             //Page flipping
             if (mControls.isLeftShoulderPressed(false) && mCurrentWorld > 0)
+            {
                 mCurrentWorld--;
+                GameSound.menuSound_select.Play();
+            }
             if (mControls.isRightShoulderPressed(false) && mCurrentWorld < NUM_OF_WORLDS - 1)
+            {
                 mCurrentWorld++;
+                GameSound.menuSound_select.Play();
+            }
         }
 
         /// <summary>
@@ -709,9 +725,9 @@ namespace GravityShift
                     spriteBatch.DrawString(mFont, "You need", position, Color.White);
 
                     position = Vector2.Add(position, new Vector2(0, size.Y));
-                    size = mFont.MeasureString((45 * mCurrentWorld - mStarCount) + "");
+                    size = mFont.MeasureString((30 * mCurrentWorld - mStarCount) + "");
                     position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-                    spriteBatch.DrawString(mFont, (45 * mCurrentWorld - mStarCount) + "", position, Color.Red);
+                    spriteBatch.DrawString(mFont, (30 * mCurrentWorld - mStarCount) + "", position, Color.Red);
 
                     position = Vector2.Add(position, new Vector2(0, size.Y));
                     size = mFont.MeasureString("to unlock");
