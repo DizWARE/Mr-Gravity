@@ -164,7 +164,7 @@
       <ID>476</ID>
       <Name>YellowDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="7" Y="4" />
+      <Location X="8" Y="4" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\YellowDiamond</Texture>
@@ -192,16 +192,6 @@
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerEnd</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>658</ID>
-      <Name>Blue</Name>
-      <Type>Walls</Type>
-      <Location X="4" Y="4" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
       <Properties />
     </Entity>
     <Entity>
@@ -239,16 +229,6 @@
       <Name>Blue</Name>
       <Type>Walls</Type>
       <Location X="8" Y="3" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Blue</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>663</ID>
-      <Name>Blue</Name>
-      <Type>Walls</Type>
-      <Location X="8" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Blue</Texture>
@@ -890,6 +870,36 @@
         <Height>3</Height>
         <Shape>Square</Shape>
         <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1027</ID>
+      <Name>RailX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="7" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>1</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1028</ID>
+      <Name>RailX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="4" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>1</Length>
       </Properties>
     </Entity>
   </Entities>

@@ -243,7 +243,7 @@
     <Location X="-100" Y="-100" />
     <CollisionType>Normal</CollisionType>
     <Paintable>False</Paintable>
-    <Texture>Walls\Pink</Texture>
+    <Texture>Walls\Blue</Texture>
     <Properties>
       <Shape>Square</Shape>
       <Mass>1</Mass>
