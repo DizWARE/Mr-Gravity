@@ -42,8 +42,8 @@ namespace GravityShift
             mTitles.Add("Technical Director", new string[] { "Tyler Robinson" });
             mTitles.Add("Character & Environmental Artist", new string[] { "Lukas Black" });
             mTitles.Add("Music & Sound", new string[] { "Steven Doxey", "Cuyler Stuwe", "Michelle MacArt" });
-            mTitles.Add("Graphics Team", new string[] { "Lukas Black", "Nate Bradford", "Jeremy Heintz" });
-            mTitles.Add("Technical Team", new string[] { "Casey Spencer", "Morgan Reynolds", "Tyler Robinson", "Curtis Taylor", "Kamron Egan", "Jeremy Heintz", "Nate Bradford" });
+            mTitles.Add("Graphics Team", new string[] { "Lukas Black", "Nate Bradford", "Jeremy Heintz", "Casey Spencer" });
+            mTitles.Add("Technical Team", new string[] { "Morgan Reynolds", "Tyler Robinson", "Casey Spencer", "Curtis Taylor", "Kamron Egan", "Jeremy Heintz", "Nate Bradford" });
         }
 
         /// <summary>
