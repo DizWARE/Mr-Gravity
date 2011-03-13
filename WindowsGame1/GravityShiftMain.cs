@@ -205,9 +205,13 @@ namespace GravityShift
             mQuartz = Content.Load<SpriteFont>("Fonts/QuartzLarge");
             mHUDTrans = Content.Load<Texture2D>("Images/HUD/HUDTrans");
 
-            mLives = new Texture2D[10];
-            for (int i = 0; i < mLives.Length; i++)
-                mLives[i] = Content.Load<Texture2D>("Images/HUD/NeonLifeCount" + i);
+            mLives = new Texture2D[6];
+            mLives[5] = Content.Load<Texture2D>("Images/Player/Laugh2");
+            mLives[4] = Content.Load<Texture2D>("Images/Player/Laugh");
+            mLives[3] = Content.Load<Texture2D>("Images/Player/Smile");
+            mLives[2] = Content.Load<Texture2D>("Images/Player/Surprise");
+            mLives[1] = Content.Load<Texture2D>("Images/Player/Worry");
+            mLives[0] = Content.Load<Texture2D>("Images/Player/Dead2");
     }
 
         /// <summary>
@@ -550,29 +554,31 @@ namespace GravityShift
             string goalString = "Goal: ";
             Vector2 goalLength = mQuartz.MeasureString(goalString);
             
-            /* TIMER */
+            /* TIMER VARIABLES*/
             string timerString = "Timer: ";
             string timeString = mCurrentLevel.Timer.ToString();
             string timeGoal = mCurrentLevel.IdealTime.ToString();
             Vector2 timerLength = mQuartz.MeasureString(timerString);
             Vector2 numberLength = mQuartz.MeasureString("99   ");
 
-            /* COLLECTED */
+            /* COLLECTED VARIABLES*/
             string collectedString = "Collected: ";
             string collectString = mCurrentLevel.NumCollected.ToString();// + "/" + mCurrentLevel.NumCollectable;
             string collectGoal = mCurrentLevel.NumCollectable.ToString();
             Vector2 collectedLength = mQuartz.MeasureString(collectedString);
 
-            /* DEATHS */
-            string livesString = "Lives: ";
-            string liveString = mCurrentLevel.NumLives.ToString();
-            Vector2 livesLength = mQuartz.MeasureString(livesString + liveString);
+            /* DEATHS VARIABLE*/
+            string livesString = "Lives:";
+            //int lives = mCurrentLevel.NumLives;
+            Vector2 livesLength = mQuartz.MeasureString(livesString);
 
             //Draw Timer
+
+            //HUDTrans block
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, 
                 (int)timerLength.X + (int)numberLength.X, (int)timerLength.Y + (int)numberLength.Y), Color.White);
-            Vector2 placement = new Vector2(mScreenRect.Left, mScreenRect.Top);
 
+            Vector2 placement = new Vector2(mScreenRect.Left + 10, mScreenRect.Top);
             mSpriteBatch.DrawString(mQuartz, timerString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, timerString, placement, Color.SteelBlue);
             mSpriteBatch.DrawString(mQuartz, timeString, new Vector2(placement.X + timerLength.X, placement.Y), Color.White);
@@ -582,10 +588,12 @@ namespace GravityShift
             mSpriteBatch.DrawString(mQuartz, timeGoal, new Vector2(placement.X + timerLength.X, placement.Y), Color.White);
 
             //Draw collected
+
+            //HUDTrans block
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Right - (int)collectedLength.X - (int)numberLength.X, mScreenRect.Top,
                (int)collectedLength.X + (int)numberLength.X, (int)collectedLength.Y + (int)numberLength.Y), Color.White);
+            
             placement = new Vector2(mScreenRect.Right - collectedLength.X - numberLength.X, mScreenRect.Top);
-
             mSpriteBatch.DrawString(mQuartz, collectedString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, collectedString, placement, Color.SteelBlue);
             mSpriteBatch.DrawString(mQuartz, collectString, new Vector2(placement.X + collectedLength.X, placement.Y), Color.White);
@@ -596,17 +604,55 @@ namespace GravityShift
             placement.Y += goalLength.Y;
 
             //Draw deaths
-            int x1 = mScreenRect.Center.X - (int)(0.5f * (livesLength.X + numberLength.X));
-            int y1 = mScreenRect.Bottom - (int)livesLength.Y;
-            int x2 = (int)livesLength.X + (int)numberLength.X;//mScreenRect.Center.X + (int)(0.5f * (livesLength + numberLength)) + 10;
-            int y2 = (int)livesLength.Y;
 
-            mSpriteBatch.Draw(mHUDTrans, new Rectangle(x1, y1, x2, y2), Color.White);
-            placement = new Vector2(mScreenRect.Center.X - (0.5f * (livesLength.X + numberLength.X)), mScreenRect.Bottom-(int)livesLength.Y);
+            //HUDTrans block
+            mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Bottom - (int)mLives[0].Height - 10,
+                (int)livesLength.X + (int)numberLength.X + 20, (int)livesLength.Y), Color.White);
+            
+            //Number lives
+            placement = new Vector2(mScreenRect.Left + 10, mScreenRect.Bottom - (int) mLives[0].Height - 10);
 
             mSpriteBatch.DrawString(mQuartz, livesString, new Vector2(placement.X - 1, placement.Y - 1), Color.White);
             mSpriteBatch.DrawString(mQuartz, livesString, placement, Color.SteelBlue);
-            mSpriteBatch.DrawString(mQuartz, liveString, new Vector2 (placement.X + livesLength.X, placement.Y), Color.White);
+
+            placement = new Vector2(mScreenRect.Left + livesLength.X, mScreenRect.Bottom - (int)mLives[0].Height - 10);
+            if (mCurrentLevel.NumLives == 5)
+            {
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + mLives[0].Width), (int) placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 3 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 4 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 5 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+            }
+            else if (mCurrentLevel.NumLives == 4)
+            {
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 3 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 4 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                
+            }
+            else if (mCurrentLevel.NumLives == 3)
+            {
+                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + 3 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                
+            }
+            else if (mCurrentLevel.NumLives == 2)
+            {
+                mSpriteBatch.Draw(mLives[2], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[2], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+            }
+            else if (mCurrentLevel.NumLives == 1)
+            {
+                mSpriteBatch.Draw(mLives[1], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+            }
+            else if (mCurrentLevel.NumLives == 0)
+            {
+                mSpriteBatch.Draw(mLives[0], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+            }
+
 
             if (mCurrentLevel.NumLives <= 0)
             {
