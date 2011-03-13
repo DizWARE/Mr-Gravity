@@ -607,7 +607,7 @@ namespace GravityShift
 
             //HUDTrans block
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Bottom - (int)mLives[0].Height - 10,
-                (int)livesLength.X + (int)numberLength.X + 20, (int)livesLength.Y), Color.White);
+                (int)livesLength.X + (int)mLives[0].Width * (mCurrentLevel.NumLives+1), (int)mLives[0].Height + 5), Color.White);
             
             //Number lives
             placement = new Vector2(mScreenRect.Left + 10, mScreenRect.Bottom - (int) mLives[0].Height - 10);
