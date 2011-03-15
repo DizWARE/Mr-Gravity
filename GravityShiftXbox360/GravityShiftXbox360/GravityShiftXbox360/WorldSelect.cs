@@ -466,7 +466,8 @@ namespace GravityShift
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
 
-                GameSound.menuSound_select.Play();
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_select.Play();
 
                 if (mCurrentIndex == BACK)
                     Exit(ref gameState);
@@ -531,7 +532,8 @@ namespace GravityShift
                 else
                     mCurrentIndex = PREVIOUS;
 
-                GameSound.menuSound_rollover.Play();
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Up Button
@@ -545,7 +547,9 @@ namespace GravityShift
                     mCurrentIndex = PREVIOUS;
                 else
                     mCurrentIndex = BACK;
-                GameSound.menuSound_rollover.Play();
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Left Pressed
@@ -557,7 +561,8 @@ namespace GravityShift
                 if (mCurrentIndex == PREVIOUS && mCurrentWorld == 0)
                     mCurrentIndex--;
 
-                GameSound.menuSound_rollover.Play();
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Right Pressed
@@ -568,7 +573,9 @@ namespace GravityShift
                 mCurrentIndex++;
                 if (mCurrentIndex == NEXT && mCurrentWorld == NUM_OF_WORLDS - 1)
                     mCurrentIndex++;
-                GameSound.menuSound_rollover.Play();
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Special cases
@@ -583,12 +590,16 @@ namespace GravityShift
             if (mControls.isLeftShoulderPressed(false) && mCurrentWorld > 0)
             {
                 mCurrentWorld--;
-                GameSound.menuSound_select.Play();
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_select.Play();
             }
             if (mControls.isRightShoulderPressed(false) && mCurrentWorld < NUM_OF_WORLDS - 1)
             {
                 mCurrentWorld++;
-                GameSound.menuSound_select.Play();
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_select.Play();
             }
         }
 
