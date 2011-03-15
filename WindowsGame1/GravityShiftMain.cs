@@ -607,7 +607,7 @@ namespace GravityShift
 
             //HUDTrans block
             mSpriteBatch.Draw(mHUDTrans, new Rectangle(mScreenRect.Left, mScreenRect.Bottom - (int)mLives[0].Height - 10,
-                (int)livesLength.X + (int)mLives[0].Width * (mCurrentLevel.NumLives+1), (int)mLives[0].Height + 5), Color.White);
+                (int)livesLength.X + (int)(mLives[0].Width * 0.75f) * (mCurrentLevel.NumLives+1), (int)mLives[0].Height + 5), Color.White);
             
             //Number lives
             placement = new Vector2(mScreenRect.Left + 10, mScreenRect.Bottom - (int) mLives[0].Height - 10);
@@ -618,39 +618,37 @@ namespace GravityShift
             placement = new Vector2(mScreenRect.Left + livesLength.X, mScreenRect.Bottom - (int)mLives[0].Height - 10);
             if (mCurrentLevel.NumLives == 5)
             {
-                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + mLives[0].Width), (int) placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 3 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 4 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 5 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + (mLives[0].Width * 0.75f)), (int) placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 2 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 3 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 4 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[5], new Rectangle((int)(placement.X + 5 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
             }
             else if (mCurrentLevel.NumLives == 4)
             {
-                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 3 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 4 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 2 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 3 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[4], new Rectangle((int)(placement.X + 4 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
             }
             else if (mCurrentLevel.NumLives == 3)
             {
-                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + 3 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                
+                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + 2 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[3], new Rectangle((int)(placement.X + 3 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
             }
             else if (mCurrentLevel.NumLives == 2)
             {
-                mSpriteBatch.Draw(mLives[2], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
-                mSpriteBatch.Draw(mLives[2], new Rectangle((int)(placement.X + 2 * mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[2], new Rectangle((int)(placement.X + (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
+                mSpriteBatch.Draw(mLives[2], new Rectangle((int)(placement.X + 2 * (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
             }
             else if (mCurrentLevel.NumLives == 1)
             {
-                mSpriteBatch.Draw(mLives[1], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[1], new Rectangle((int)(placement.X + (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
             }
             else if (mCurrentLevel.NumLives == 0)
             {
-                mSpriteBatch.Draw(mLives[0], new Rectangle((int)(placement.X + mLives[0].Width), (int)placement.Y, (int)(mLives[0].Width * 0.75f), (int)(mLives[0].Height * 0.75f)), Color.White);
+                mSpriteBatch.Draw(mLives[0], new Rectangle((int)(placement.X + (mLives[0].Width * 0.75f)), (int)placement.Y, (int)(mLives[0].Width * 0.6f), (int)(mLives[0].Height * 0.6f)), Color.White);
             }
 
 
