@@ -94,11 +94,14 @@ namespace GravityShift
 
         private bool mCheckedForSave;
 
+        private bool mShowedSignIn;
+
         public GravityShiftMain()
         {
             Components.Add(new GamerServicesComponent(this));
             mGraphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            mShowedSignIn = false;
 
 #if XBOX360
             mControls = new ControllerControl();
@@ -224,7 +227,15 @@ namespace GravityShift
         protected override void OnExiting(object sender, EventArgs args)
         {
 #if XBOX360
-            mWorldSelect.Save();
+            SignedInGamer player = Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex];
+            if (player != null)
+            {
+                if (!player.IsGuest)
+                {
+                    mWorldSelect.Save();
+                }
+            }
+            
 #else
             mWorldSelect.Save();
 #endif
@@ -288,14 +299,33 @@ namespace GravityShift
                 mCurrentLevel.Update(gameTime, ref mCurrentState);
             else if (mCurrentState == GameStates.Main_Menu)
             {
-                if (!mCheckedForSave)
-                {
 #if XBOX360
-                    mWorldSelect.CheckForSave();
-                    mCheckedForSave = true;
-                
-#endif
+                player = Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex];
+                if (!mShowedSignIn && (player == null))
+                {
+                    Guide.ShowSignIn(1, false);
+                    mCurrentState = GameStates.WaitingForSaveSignIn;
                 }
+                else
+                {
+                    mShowedSignIn = true;
+                }
+                if (!mCheckedForSave && mShowedSignIn)
+                {
+
+                    if ((player != null)  && !Guide.IsVisible)
+                    {
+                        if (!player.IsGuest)
+                        {
+                            mCheckedForSave = mWorldSelect.CheckForSave();
+                        }
+                        
+                    }
+
+                }
+#endif
+
+
                 //Check for mute
                 GameSound.menuMusic_title.Volume = GameSound.volume;
 
@@ -422,6 +452,14 @@ namespace GravityShift
                         mCurrentState = GameStates.WaitingToExit;
                     else
                         mCurrentState = GameStates.ShowMarketplace;
+                }
+            }
+            else if (mCurrentState == GameStates.WaitingForSaveSignIn)
+            {
+                if (!Guide.IsVisible)
+                {
+                    mShowedSignIn = true;
+                    mCurrentState = GameStates.Main_Menu;
                 }
             }
             else if (mCurrentState == GameStates.ShowMarketplace)

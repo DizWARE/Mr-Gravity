@@ -139,6 +139,8 @@ namespace GravityShift
             rand = new Random();
             number = rand.Next(4);
 
+            device = null;
+
         }
 
         /// <summary>
@@ -163,17 +165,18 @@ namespace GravityShift
             IAsyncResult result;
             if (!mDeviceSelected)
             {
-                result = StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, null, null);
-                result.AsyncWaitHandle.WaitOne();
-                device = StorageDevice.EndShowSelector(result);
-                result.AsyncWaitHandle.Close();
+                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
                 mDeviceSelected = true;
             }
 
+            if (device == null || !device.IsConnected)
+            {
+                return;
+            }
             result = device.BeginOpenContainer("Mr Gravity", null, null);
             result.AsyncWaitHandle.WaitOne();
             container = device.EndOpenContainer(result);
-            result.AsyncWaitHandle.Close();
+            
             //container.DeleteFile("TrialLevelList.xml");
             //container.DeleteFile("LevelList.xml");
 
@@ -189,10 +192,17 @@ namespace GravityShift
             serializer.Serialize(stream, data);
             stream.Close();
             container.Dispose();
+            result.AsyncWaitHandle.Close();
                
 #else
             xDoc.Save("..\\..\\..\\Content\\Levels\\Info\\LevelList.xml");
 #endif
+
+        }
+
+        void SelectDevice(IAsyncResult result)
+        {
+            device = StorageDevice.EndShowSelector(result);
 
         }
 
@@ -208,16 +218,19 @@ namespace GravityShift
         /// 
         /// Do not call this until we know the PlayerIndex the player is using!
         /// </summary>
-        public void CheckForSave()
+        public bool CheckForSave()
         {
+
             IAsyncResult result;
             if (!mDeviceSelected)
             {
-                result = StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, null, null);
-                result.AsyncWaitHandle.WaitOne();
-                device = StorageDevice.EndShowSelector(result);
-                result.AsyncWaitHandle.Close();
+                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
                 mDeviceSelected = true;
+            }
+
+            if (device == null || !device.IsConnected)
+            {
+                return false;
             }
 
             result = device.BeginOpenContainer("Mr Gravity", null, null);
@@ -257,6 +270,8 @@ namespace GravityShift
 
             }
             container.Dispose();
+
+            return true;
         }
 
         /// <summary>
