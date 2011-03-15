@@ -60,7 +60,7 @@
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>8</GoalCollectable>
+    <GoalCollectable>9</GoalCollectable>
     <GoalTime>6</GoalTime>
   </LevelData>
   <LevelData>
@@ -160,7 +160,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>24</GoalCollectable>
-    <GoalTime>16</GoalTime>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>That's My Name</Name>

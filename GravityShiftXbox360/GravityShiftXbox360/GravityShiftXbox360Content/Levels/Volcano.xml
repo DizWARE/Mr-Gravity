@@ -2942,7 +2942,7 @@
       <ID>1428</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
-      <Location X="1" Y="13" />
+      <Location X="2" Y="13" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -2950,8 +2950,248 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level07</MusicFile>
+        <MusicFile>music_level06</MusicFile>
         <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1507</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="7" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1508</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1509</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1510</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="11" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1511</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="12" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1512</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="14" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1513</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="29" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1514</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="27" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1515</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="26" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1516</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="24" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1517</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="23" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1518</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="21" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1519</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="20" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1520</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="15" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1521</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="20" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1522</ID>
+      <Name>PlayerFace</Name>
+      <Type>Triggers</Type>
+      <Location X="15" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <PlayerFace>Worry</PlayerFace>
       </Properties>
     </Entity>
   </Entities>

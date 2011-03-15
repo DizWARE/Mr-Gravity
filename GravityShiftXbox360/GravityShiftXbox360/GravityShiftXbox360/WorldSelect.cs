@@ -139,6 +139,8 @@ namespace GravityShift
             rand = new Random();
             number = rand.Next(4);
 
+            device = null;
+
         }
 
         /// <summary>
@@ -163,17 +165,18 @@ namespace GravityShift
             IAsyncResult result;
             if (!mDeviceSelected)
             {
-                result = StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, null, null);
-                result.AsyncWaitHandle.WaitOne();
-                device = StorageDevice.EndShowSelector(result);
-                result.AsyncWaitHandle.Close();
+                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
                 mDeviceSelected = true;
             }
 
+            if (device == null || !device.IsConnected)
+            {
+                return;
+            }
             result = device.BeginOpenContainer("Mr Gravity", null, null);
             result.AsyncWaitHandle.WaitOne();
             container = device.EndOpenContainer(result);
-            result.AsyncWaitHandle.Close();
+            
             //container.DeleteFile("TrialLevelList.xml");
             //container.DeleteFile("LevelList.xml");
 
@@ -189,10 +192,17 @@ namespace GravityShift
             serializer.Serialize(stream, data);
             stream.Close();
             container.Dispose();
+            result.AsyncWaitHandle.Close();
                
 #else
             xDoc.Save("..\\..\\..\\Content\\Levels\\Info\\LevelList.xml");
 #endif
+
+        }
+
+        void SelectDevice(IAsyncResult result)
+        {
+            device = StorageDevice.EndShowSelector(result);
 
         }
 
@@ -208,16 +218,19 @@ namespace GravityShift
         /// 
         /// Do not call this until we know the PlayerIndex the player is using!
         /// </summary>
-        public void CheckForSave()
+        public bool CheckForSave()
         {
+
             IAsyncResult result;
             if (!mDeviceSelected)
             {
-                result = StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, null, null);
-                result.AsyncWaitHandle.WaitOne();
-                device = StorageDevice.EndShowSelector(result);
-                result.AsyncWaitHandle.Close();
+                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
                 mDeviceSelected = true;
+            }
+
+            if (device == null || !device.IsConnected)
+            {
+                return false;
             }
 
             result = device.BeginOpenContainer("Mr Gravity", null, null);
@@ -257,6 +270,8 @@ namespace GravityShift
 
             }
             container.Dispose();
+
+            return true;
         }
 
         /// <summary>
@@ -360,7 +375,8 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            UnlockWorld(mStarCount / 45);
+            if(mStarCount / 30 <= NUM_OF_WORLDS)
+                UnlockWorld(mStarCount / 30);
         }
 
         /// <summary>
@@ -449,6 +465,10 @@ namespace GravityShift
         {
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_select.Play();
+
                 if (mCurrentIndex == BACK)
                     Exit(ref gameState);
                 else if (mCurrentIndex == PREVIOUS && mCurrentWorld > 0)
@@ -511,6 +531,9 @@ namespace GravityShift
                     mCurrentIndex = BACK;
                 else
                     mCurrentIndex = PREVIOUS;
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Up Button
@@ -524,6 +547,9 @@ namespace GravityShift
                     mCurrentIndex = PREVIOUS;
                 else
                     mCurrentIndex = BACK;
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Left Pressed
@@ -534,6 +560,9 @@ namespace GravityShift
                 mCurrentIndex--;
                 if (mCurrentIndex == PREVIOUS && mCurrentWorld == 0)
                     mCurrentIndex--;
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Right Pressed
@@ -544,6 +573,9 @@ namespace GravityShift
                 mCurrentIndex++;
                 if (mCurrentIndex == NEXT && mCurrentWorld == NUM_OF_WORLDS - 1)
                     mCurrentIndex++;
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_rollover.Play();
             }
 
             //Special cases
@@ -556,9 +588,19 @@ namespace GravityShift
 
             //Page flipping
             if (mControls.isLeftShoulderPressed(false) && mCurrentWorld > 0)
+            {
                 mCurrentWorld--;
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_select.Play();
+            }
             if (mControls.isRightShoulderPressed(false) && mCurrentWorld < NUM_OF_WORLDS - 1)
+            {
                 mCurrentWorld++;
+
+                if (GameSound.volume != 0)
+                    GameSound.menuSound_select.Play();
+            }
         }
 
         /// <summary>
@@ -641,11 +683,11 @@ namespace GravityShift
                 spriteBatch.DrawString(mFont, "Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y), Color.White);
 
                 size = mFont.MeasureString("Goal: " + goalCollectables + " Collectables");
-                spriteBatch.DrawString(mFont, "Goal: " + goalCollectables + " Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y + 2*size.Y), Color.White);
+                spriteBatch.DrawString(mFont, "Goal: " + goalCollectables + " Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y + 2 * size.Y), Color.White);
 
                 for (int i = 0; i < starsCollectables; i++)
-                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[STARS_REGION].Center.X - starWidth/2 + i * mStar.Width, mInfoRegions[STARS_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-            
+                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[STARS_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[STARS_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
+
 
                 //Draw Time Info
                 size = mFont.MeasureString("Timer");
@@ -657,7 +699,7 @@ namespace GravityShift
 
                 for (int i = 0; i < starsTime; i++)
                     spriteBatch.Draw(mStar, new Vector2(mInfoRegions[TIMER_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[TIMER_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-            
+
 
                 //Draw Death Info
                 size = mFont.MeasureString("Death");
@@ -669,8 +711,56 @@ namespace GravityShift
 
                 //size = mFont.MeasureString("You have " + starsDeaths + " stars");
                 //spriteBatch.DrawString(mFont, "You have " + starsDeaths + " stars", new Vector2(mInfoRegions[DEATH_REGION].Center.X - size.X / 2, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-                for(int i = 0; i < starsDeaths; i ++)
+                for (int i = 0; i < starsDeaths; i++)
                     spriteBatch.Draw(mStar, new Vector2(mInfoRegions[DEATH_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
+            }
+            else
+            {
+                size = mFont.MeasureString("Name");
+                Vector2 position = new Vector2(mInfoRegions[NAME_REGION].Center.X - size.X / 2, mInfoRegions[NAME_REGION].Center.Y - size.Y / 2);
+
+                spriteBatch.DrawString(mFont, "Name", Vector2.Add(position, new Vector2(2, 2)), Color.LightBlue);
+                spriteBatch.DrawString(mFont, "Name", position, Color.White);
+
+                size = mFont.MeasureString(mWorlds[mCurrentWorld]);
+                position = Vector2.Add(position, new Vector2(0, size.Y + mPadding.Y));
+                position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+
+                spriteBatch.DrawString(mFont, mWorlds[mCurrentWorld], position, Color.White);
+
+                if (mLevels[0 + mCurrentWorld * 6].Unlocked)
+                {
+                    size = mFont.MeasureString("UNLOCKED");
+                    position = Vector2.Add(position, new Vector2(0, size.Y + 2*mPadding.Y));
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "UNLOCKED", position, Color.White);
+                    spriteBatch.DrawString(mFont, "UNLOCKED", Vector2.Add(position, new Vector2(2, 2)), Color.Green);
+                   
+                }
+                else
+                {
+                    size = mFont.MeasureString("LOCKED");
+                    position = Vector2.Add(position, new Vector2(0, size.Y + 2 * mPadding.Y));
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "LOCKED", position, Color.White);
+                    spriteBatch.DrawString(mFont, "LOCKED", Vector2.Add(position, new Vector2(2, 2)), Color.Red);
+                    
+                    position = Vector2.Add(position, new Vector2(0, size.Y + 2 * mPadding.Y));
+                    size = mFont.MeasureString("You need");
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "You need", position, Color.White);
+
+                    position = Vector2.Add(position, new Vector2(0, size.Y));
+                    size = mFont.MeasureString((30 * mCurrentWorld - mStarCount) + "");
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, (30 * mCurrentWorld - mStarCount) + "", position, Color.Red);
+
+                    position = Vector2.Add(position, new Vector2(0, size.Y));
+                    size = mFont.MeasureString("to unlock");
+                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
+                    spriteBatch.DrawString(mFont, "to unlock", position, Color.White);
+                    
+                }
             }
         }
 
@@ -725,7 +815,7 @@ namespace GravityShift
                     spriteBatch.Draw(mUnselected[i], rect, Color.White);
                 else
                     spriteBatch.Draw(mSelected[i, number], rect, Color.White);
-                spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Center.Y - size.Y / 2), Color.White);
+                spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Top), Color.White);
 
                 if (!mLevels[i - 1 + 6 * mCurrentWorld].Unlocked)
                     spriteBatch.Draw(mLock, rect, Color.White);
