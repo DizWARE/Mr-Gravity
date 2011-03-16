@@ -158,8 +158,8 @@ namespace GravityShift
             Rectangle rightRectangle = GetRegion(MenuChoices.Options, mSelected[MenuChoices.Options]);
             Rectangle bottomRectangle = GetRegion(MenuChoices.StartGame, mSelected[MenuChoices.StartGame]);
 
-            Rectangle region = new Rectangle(leftRectangle.Left, topRectangle.Top, 
-                rightRectangle.Right - leftRectangle.Left,bottomRectangle.Bottom - topRectangle.Top);
+            Rectangle region = new Rectangle(leftRectangle.Right, topRectangle.Bottom, 
+                rightRectangle.Left - leftRectangle.Right,bottomRectangle.Top - topRectangle.Bottom);
             return region;           
         }
     }
