@@ -61,7 +61,7 @@ namespace GravityShift.Import_Code
             {
                 if (item.Name == XmlKeys.NAME)
                     level.Name = item.Value;
-                if (item.Name == XmlKeys.SIZE)
+                if (item.Name == XmlKeys.SIZE && !level.IsMainMenu)
                     level.Size = GridSpace.GetDrawingCoord(new Vector2(int.Parse(item.Attribute(XName.Get("X", "")).Value),
                         int.Parse(item.Attribute(XName.Get("Y", "")).Value)));
                 if (item.Name == XmlKeys.BACKGROUND)
@@ -71,7 +71,8 @@ namespace GravityShift.Import_Code
                         mEntities.Add(new EntityInfo(element));
             }
 
-            GetPlayerStart(level);
+            if(!level.IsMainMenu)
+                GetPlayerStart(level);
 
             return level;
         }

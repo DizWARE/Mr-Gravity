@@ -146,5 +146,21 @@ namespace GravityShift
                     viewport.TitleSafeArea.Center.Y + (int)(mTitle.Height * mSize[1]) / 2 - ((int)(texture.Height * mSize[1]) / 2), (int)(texture.Width * mSize[0]), (int)(texture.Height * mSize[1]));
             return new Rectangle();
         }
+
+        /// <summary>
+        /// Gets the rectangle between the menu options
+        /// </summary>
+        /// <returns>Rectangle between menu choices</returns>
+        public Rectangle GetInnerRegion()
+        {
+            Rectangle topRectangle = GetRegion(MenuChoices.Exit, mSelected[MenuChoices.Exit]);
+            Rectangle leftRectangle = GetRegion(MenuChoices.Credits, mSelected[MenuChoices.Credits]);
+            Rectangle rightRectangle = GetRegion(MenuChoices.Options, mSelected[MenuChoices.Options]);
+            Rectangle bottomRectangle = GetRegion(MenuChoices.StartGame, mSelected[MenuChoices.StartGame]);
+
+            Rectangle region = new Rectangle(leftRectangle.Left, topRectangle.Top, 
+                rightRectangle.Right - leftRectangle.Left,bottomRectangle.Bottom - topRectangle.Top);
+            return region;           
+        }
     }
 }
