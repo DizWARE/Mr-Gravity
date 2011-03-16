@@ -989,11 +989,11 @@ namespace GravityShift
 
         public static Level MainMenuLevel(string filepath, IControlScheme controls, Viewport viewport, Rectangle region)
         {
-            Level main = new Level(filepath,controls,viewport);
+            Level main = new Level(filepath, controls, viewport);
             main.isCameraFixed = true;
             main.shouldAnimate = false;
-            main.Size = new Vector2(region.Width*33/32, region.Height*7/8);
-            main.mStartingPoint = new Vector2(region.Width/2, region.Height/8);
+            main.Size = new Vector2(region.Width * 4 / 3, region.Height * 4 / 3);
+            main.mStartingPoint = new Vector2(region.Width * 11 / 18, region.Height / 4);
             return main;
         }
     }
