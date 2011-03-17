@@ -138,9 +138,8 @@ namespace GravityShift
 
             mTitle = new Title(mControls, mGraphics);
             mMainMenu = new MainMenu(mControls, mGraphics);
-            mMainMenuLevel = Level.MainMenuLevel("Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport);
-
-            mMenu = new Menu(mControls, mGraphics);
+           
+            //mMenu = new Menu(mControls, mGraphics);
             mScoring = new Scoring(mControls);
 
             mWorldSelect = new WorldSelect(mControls, mGraphics);
@@ -183,12 +182,14 @@ namespace GravityShift
 
             mTitle.Load(Content, mGraphics.GraphicsDevice);
 
-            mMainMenuLevel.Load(Content);
             mMainMenu.Load(Content);
+            mMainMenuLevel = Level.MainMenuLevel("Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport, mMainMenu.GetInnerRegion());
+
+            mMainMenuLevel.Load(Content);
             mCredits.Load(Content);
             mOptions.Load(Content);
 
-            mMenu.Load(Content, mGraphics.GraphicsDevice);
+            //mMenu.Load(Content, mGraphics.GraphicsDevice);
             mScoring.Load(Content, mGraphics.GraphicsDevice);
             mPause.Load(Content);
             GameSound.Load(Content);
