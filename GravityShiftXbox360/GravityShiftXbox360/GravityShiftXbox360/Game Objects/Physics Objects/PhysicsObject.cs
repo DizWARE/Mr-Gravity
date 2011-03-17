@@ -139,13 +139,23 @@ namespace GravityShift
         /// <summary>
         /// TEMP METHOD - WILL GIVE THE PLAYER THE ABILITY TO FALL FROM ONE END OF THE SCREEN TO THE OTHER
         /// </summary>
-        public void FixForBounds(int width, int height)
+        public void FixForBounds(int width, int height, bool isFixed)
         {
-            if (mPosition.X < 0) mPosition.X += width;
-            if (mPosition.Y < 0) mPosition.Y += height;
+            if (!isFixed)
+            {
+                if (mPosition.X < 0) mPosition.X += width;
+                if (mPosition.Y < 0) mPosition.Y += height;
 
-            mPosition.X %= width;
-            mPosition.Y %= height;
+                mPosition.X %= width;
+                mPosition.Y %= height;
+                return;
+            }
+
+            if (mPosition.X < 0) { mPosition.X = 0; mVelocity = new Vector2();}
+            if (mPosition.Y < 0) {mPosition.Y = 0; mVelocity = new Vector2();}
+            if (mPosition.X + this.mBoundingBox.Width > width) {mPosition.X = width - this.mBoundingBox.Width; mVelocity = new Vector2();}
+            if (mPosition.Y + this.mBoundingBox.Height > height) { mPosition.Y = height - this.mBoundingBox.Height; mVelocity = new Vector2(); }
+            
         }
 
         /// <summary>
@@ -696,26 +706,18 @@ namespace GravityShift
                 Point centerB = new Point();
                 if ((center.X < p[0].X) && (center.Y < p[0].Y))// top left corner
                 {
-                    // and no tile is above me or to the left!!!!!!!!!!!!!!!!!!!!!!!!!TODO
-                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[0];
                 }
                 else if ((center.X > p[1].X) && (center.Y < p[1].Y))// top right corner
                 {
-                    // and no tile is above me or to the right!!!!!!!!!!!!!!!!!!!!!!!!!TODO
-                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[1];
                 }
                 else if ((center.X > p[2].X) && (center.Y > p[2].Y))// bottom right corner
                 {
-                    // and no tile is below me or to the right!!!!!!!!!!!!!!!!!!!!!!!!!TODO
-                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[2];
                 }
                 else if ((center.X < p[3].X) && (center.Y > p[3].Y))// bottom left corner
                 {
-                    // and no tile is below me or to the left!!!!!!!!!!!!!!!!!!!!!!!!!TODO
-                    // else return HandleCollideBoxAndBox(otherObject);
                     centerB = p[3];
                 }
 
@@ -727,35 +729,7 @@ namespace GravityShift
                 centerDiff.Normalize();
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
 
-                
-                // normal of the collision
-                Vector2 N = centerDiff;
-                N.Normalize();
-                // tangent of the collision
-                Vector2 T = new Vector2(N.Y, -N.X);
-
-                float e = 0.9f;//0.9f; // elasticity of the collision
-
-                float vain = Vector2.Dot(this.mVelocity, N);
-                float vait = Vector2.Dot(this.mVelocity, T);
-
-                float vbin = Vector2.Dot(Vector2.Zero, N);
-                float vbit = Vector2.Dot(Vector2.Zero, T);
-
-                float vafn = ((e + 1.0f) * vbin + vain * (1 - e)) / 2;
-                float vbfn = ((e + 1.0f) * vain - vbin * (1 - e)) / 2;
-                float vaft = vait;
-                float vbft = vbit;
-
-                if (!mIsRail)
-                {
-                    this.mVelocity.X = vafn * N.X + vaft * T.X;
-                    this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
-                }
-                else if (mOriginalInfo.mProperties[XmlKeys.RAIL] == XmlKeys.RAIL_X)
-                    this.mVelocity.X = vafn * N.X + vaft * T.X;
-                else
-                    this.mVelocity.Y = vafn * N.Y + vaft * T.Y;
+                //Do not change velocity because we want an inelastic collision on corners.
 
                 // place the Y pos just so it is not colliding.
                 if (!mIsRail)

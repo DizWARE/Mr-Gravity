@@ -100,9 +100,14 @@ namespace GravityShift
         private float mDeathPanUpdates;
         private static float SCALING_FACTOR = 85;
 
+
         private bool isCameraFixed = false;
         private bool shouldAnimate = true;
 
+        public bool IsMainMenu
+        {
+            get { return isCameraFixed; }
+        }
         // Camera
         public static Camera mCam;
 
@@ -457,7 +462,7 @@ namespace GravityShift
                         {
                             PhysicsObject pObject = (PhysicsObject)gObject;
 
-                            pObject.FixForBounds((int)Size.X, (int)Size.Y);
+                            pObject.FixForBounds((int)Size.X, (int)Size.Y, isCameraFixed);
                             Vector2 oldPos = GridSpace.GetGridCoord(pObject.mPosition);
 
                             if (pObject is Player)
@@ -467,7 +472,7 @@ namespace GravityShift
                             pObject.Update(gameTime);
 
                             // Update zoom based on players velocity                 
-                            pObject.FixForBounds((int)Size.X, (int)Size.Y);
+                            pObject.FixForBounds((int)Size.X, (int)Size.Y, isCameraFixed);
                             UpdateCollisionMatrix(pObject, oldPos);
 
                             // handle collision right after you move
@@ -982,11 +987,13 @@ namespace GravityShift
             return newAnimation;
         }
 
-        public static Level MainMenuLevel(string filepath, IControlScheme controls, Viewport viewport)
+        public static Level MainMenuLevel(string filepath, IControlScheme controls, Viewport viewport, Rectangle region)
         {
-            Level main = new Level(filepath,controls,viewport);
+            Level main = new Level(filepath, controls, viewport);
             main.isCameraFixed = true;
             main.shouldAnimate = false;
+            main.Size = new Vector2(region.Width * 4 / 3, region.Height * 4 / 3);
+            main.mStartingPoint = new Vector2(region.Width * 11 / 18, region.Height / 4);
             return main;
         }
     }
