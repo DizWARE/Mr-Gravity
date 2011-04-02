@@ -44,10 +44,6 @@ namespace GravityShift
         private const int TIMER_REGION = 1;
         private const int DEATH_REGION = 3;
 
-        private const int BACK = 0;
-        private const int NEXT = 8;
-        private const int PREVIOUS = 7;
-
         private const int NUM_OF_WORLDS = 8;
 
         IControlScheme mControls;
@@ -57,12 +53,9 @@ namespace GravityShift
         Rectangle mScreenRect;
 
         Rectangle mTitleBar;
-        Rectangle mBottomBar;
-        Rectangle mInfoBar;
         Rectangle mLevelPanel;
 
         Rectangle[] mLevelRegions;
-        Rectangle[] mInfoRegions;
 
         Texture2D[,] mSelected;
         Texture2D[] mUnselected;
@@ -85,17 +78,17 @@ namespace GravityShift
         SpriteFont mFont;
 
         Texture2D[] mIcons;
-        Texture2D[] mBack;
-        Texture2D[] mPrevious;
-        Texture2D[] mNext;
+
+        Texture2D[][] mWorldBackground;
+        Texture2D[][] mWorldTitleBox;
 
         Texture2D mBackground;
         Texture2D mTitle;
         Texture2D mStar;
         Texture2D mLock;
-        //Texture2D mSelection;
+        Texture2D mTitleBackground;
 
-        int mCurrentIndex = 1;
+        int mCurrentIndex = 0;
         int mCurrentWorld = 0;
 
         /* Trial Mode Loading */
@@ -121,9 +114,6 @@ namespace GravityShift
             CreateRegions();
 
             mIcons = new Texture2D[6];
-            mNext = new Texture2D[2];
-            mPrevious = new Texture2D[2];
-            mBack = new Texture2D[2];
 
             mLevels = new List<LevelInfo>();
 
@@ -283,29 +273,21 @@ namespace GravityShift
 
             mPadding = new Vector2(mScreenRect.Width / 100, mScreenRect.Height / 100);
 
-            mLevelPanel = mInfoBar = mTitleBar = mBottomBar = new Rectangle();
+            mLevelPanel = mTitleBar = new Rectangle();
 
             //Title bar, bottom bar, and level panel is 2/3 the x size of the title safe area
-            mTitleBar.Width = mBottomBar.Width = mLevelPanel.Width = (3 * mScreenRect.Width) / 4;
-
-            //The properties panel is 1/3 the x size of the title safe area
-            mInfoBar.Width = mScreenRect.Width / 4;
-            mInfoBar.Height = mScreenRect.Height;
+            mTitleBar.Width = mLevelPanel.Width = mScreenRect.Width;
 
             //Set the bottom and title bar to 1/8 of the title safe y area. 
             //Set the level selection area to be 3/4 of the title safe y area
-            mLevelPanel.Height = mScreenRect.Height - 2 * (mBottomBar.Height = mTitleBar.Height = mScreenRect.Height / 8);
+            mLevelPanel.Height = mScreenRect.Height - (mTitleBar.Height = mScreenRect.Height / 8);
 
             //Sets the x and y location of all the regions
-            mLevelPanel.X = mBottomBar.X = mTitleBar.X = mScreenRect.Left;
-            mInfoBar.Y = mTitleBar.Y = mScreenRect.Top;
+            mLevelPanel.X = mTitleBar.X = mScreenRect.Left;
+            mTitleBar.Y = mScreenRect.Top;
             mLevelPanel.Y = mTitleBar.Y + mTitleBar.Height;
-            mBottomBar.Y = mLevelPanel.Y + mLevelPanel.Height;
-
-            mInfoBar.X = mLevelPanel.X + mLevelPanel.Width;
-
-            mLevelRegions = new Rectangle[6];
-            mInfoRegions = new Rectangle[4];
+            
+            mLevelRegions = new Rectangle[48];
 
             mSelected = new Texture2D[6, 4];
             mUnselected = new Texture2D[6];
@@ -313,16 +295,12 @@ namespace GravityShift
             //Create 6 regions for image icons. The x direction is split into 3rds, which that region is 2/3rds of that area
             for (int i = 0; i < mLevelRegions.Length; i++)
             {
-                int width = mLevelPanel.Width / 3;
-                int height = mLevelPanel.Height / 2;
-                mLevelRegions[i] = new Rectangle(mLevelPanel.Left + width * (i % 3), mLevelPanel.Top + height * (i / 3), width, height);
+                int width = mLevelPanel.Width / 7;
+                int height = mLevelPanel.Height / 4;
+                int xpadding = (i % 6) * width / 6;
+                int ypadding = ((i / 6) + 1) * height / 5;
+                mLevelRegions[i] = new Rectangle(mLevelPanel.Left + width * (i % 6) + xpadding, mLevelPanel.Top + height * (i/6) + ypadding, width, height);
             }
-
-            //Creates the regions for the Level information
-            mInfoRegions[NAME_REGION] = new Rectangle(mInfoBar.Left, mInfoBar.Top, mInfoBar.Width, mInfoBar.Height / 8);
-            for (int i = 1; i < mInfoRegions.Length; i++)
-                mInfoRegions[i] = new Rectangle(mInfoBar.Left, mInfoBar.Top + mInfoRegions[NAME_REGION].Height + ((i-1) * 7 * mInfoBar.Height / 24), 
-                    mInfoBar.Width, 7 * mInfoBar.Height / 24);
         }
 
         /// <summary>
@@ -387,19 +365,25 @@ namespace GravityShift
         {
             mContent = content;
 
-            mBack[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/Back");
-            mBack[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/BackSelect");
-
-            mPrevious[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/LeftArrow");
-            mPrevious[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/LeftArrowSelect");
-
-            mNext[0] = content.Load<Texture2D>("Images/Menu/LevelSelect/RightArrow");
-            mNext[1] = content.Load<Texture2D>("Images/Menu/LevelSelect/RightArrowSelect");
-
             mTitle = content.Load<Texture2D>("Images/Menu/SelectLevelSelected");
             mBackground = content.Load<Texture2D>("Images/Menu/backgroundSquares1");
             mStar = content.Load<Texture2D>("Images/NonHazards/YellowStar");
             mLock = content.Load<Texture2D>("Images/Lock/locked1a");
+            mTitleBackground = content.Load<Texture2D>("Images/Menu/LevelSelect/WorldTitle");
+
+            mWorldBackground = new Texture2D[8][];
+            mWorldTitleBox = new Texture2D[8][];
+            for (int i = 0; i < mWorldBackground.Length; i++)
+            {
+                mWorldBackground[i] = new Texture2D[2];
+                mWorldTitleBox[i] = new Texture2D[2];
+
+                mWorldBackground[i][0] = content.Load<Texture2D>("Images/Menu/LevelSelect/World" + (i + 1) + "Selected");
+                mWorldBackground[i][1] = content.Load<Texture2D>("Images/Menu/LevelSelect/World" + (i + 1) + "Unselected");
+
+                mWorldTitleBox[i][0] = content.Load<Texture2D>("Images/Menu/LevelSelect/World" + (i + 1) + "TitleSelected");
+                mWorldTitleBox[i][1] = content.Load<Texture2D>("Images/Menu/LevelSelect/World" + (i + 1) + "TitleUnselected");
+            }
 
             mFont = content.Load<SpriteFont>("Fonts/QuartzSmaller");
 
@@ -468,23 +452,16 @@ namespace GravityShift
 
                 if (GameSound.volume != 0)
                     GameSound.menuSound_select.Play();
-
-                if (mCurrentIndex == BACK)
-                    Exit(ref gameState);
-                else if (mCurrentIndex == PREVIOUS && mCurrentWorld > 0)
-                    mCurrentWorld--;
-                else if (mCurrentIndex == NEXT && mCurrentWorld < NUM_OF_WORLDS - 1)
-                    mCurrentWorld++;
-                else if(mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
+                if(mLevels[mCurrentWorld * 6 + mCurrentIndex].Unlocked)
                 {
-                   currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex-1].Level;
+                   currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex].Level;
                    currentLevel.Load(mContent);
-                   currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Time);
-                   currentLevel.CollectableCount = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Collection);
+                   currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Time);
+                   currentLevel.CollectableCount = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Collection);
                    
-                   currentLevel.TimerStar = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Time);
-                   currentLevel.CollectionStar = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Collection);
-                   currentLevel.DeathStar = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Death);
+                   currentLevel.TimerStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Time);
+                   currentLevel.CollectionStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Collection);
+                   currentLevel.DeathStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Death);
 
                    gameState = GameStates.StartLevelSplash;
                 }
@@ -523,14 +500,8 @@ namespace GravityShift
             {
                 number = rand.Next(4);
 
-                if (mCurrentIndex > BACK && mCurrentIndex < 4)
-                    mCurrentIndex += 3;
-                else if (mCurrentIndex == BACK)
-                    mCurrentIndex = 1;
-                else if (mCurrentIndex > 6)
-                    mCurrentIndex = BACK;
-                else
-                    mCurrentIndex = PREVIOUS;
+                if (mCurrentWorld < NUM_OF_WORLDS - 1)
+                    mCurrentWorld++;
 
                 if (GameSound.volume != 0)
                     GameSound.menuSound_rollover.Play();
@@ -541,12 +512,8 @@ namespace GravityShift
             {
                 number = rand.Next(4);
 
-                if (mCurrentIndex > 3)
-                    mCurrentIndex -= 3;
-                else if (mCurrentIndex == BACK)
-                    mCurrentIndex = PREVIOUS;
-                else
-                    mCurrentIndex = BACK;
+                if (mCurrentWorld > 0)
+                    mCurrentWorld--;
 
                 if (GameSound.volume != 0)
                     GameSound.menuSound_rollover.Play();
@@ -557,8 +524,7 @@ namespace GravityShift
             {
                 number = rand.Next(4);
 
-                mCurrentIndex--;
-                if (mCurrentIndex == PREVIOUS && mCurrentWorld == 0)
+                if (mCurrentIndex > 0)
                     mCurrentIndex--;
 
                 if (GameSound.volume != 0)
@@ -570,36 +536,11 @@ namespace GravityShift
             {
                 number = rand.Next(4);
 
-                mCurrentIndex++;
-                if (mCurrentIndex == NEXT && mCurrentWorld == NUM_OF_WORLDS - 1)
+                if (mCurrentIndex < 5)
                     mCurrentIndex++;
 
                 if (GameSound.volume != 0)
                     GameSound.menuSound_rollover.Play();
-            }
-
-            //Special cases
-            if (mCurrentIndex < BACK || (mCurrentIndex == PREVIOUS && mCurrentWorld == 0))
-                mCurrentIndex = NEXT;
-            if (mCurrentIndex == NEXT && mCurrentWorld == NUM_OF_WORLDS - 1)
-                mCurrentIndex = PREVIOUS;
-            if (mCurrentIndex > NEXT)
-                mCurrentIndex = BACK;
-
-            //Page flipping
-            if (mControls.isLeftShoulderPressed(false) && mCurrentWorld > 0)
-            {
-                mCurrentWorld--;
-
-                if (GameSound.volume != 0)
-                    GameSound.menuSound_select.Play();
-            }
-            if (mControls.isRightShoulderPressed(false) && mCurrentWorld < NUM_OF_WORLDS - 1)
-            {
-                mCurrentWorld++;
-
-                if (GameSound.volume != 0)
-                    GameSound.menuSound_select.Play();
             }
         }
 
@@ -620,10 +561,9 @@ namespace GravityShift
 
             spriteBatch.Draw(mBackground, mGraphics.GraphicsDevice.Viewport.Bounds, Color.White);
 
-            DrawTitleBar(spriteBatch);
-            DrawInfoBar(spriteBatch);
-            DrawBottomBar(spriteBatch);
+
             DrawLevelPanel(spriteBatch);
+            DrawTitleBar(spriteBatch);
 
             spriteBatch.End();
         }
@@ -633,17 +573,12 @@ namespace GravityShift
         /// </summary>
         /// <param name="spriteBatch"></param>
         private void DrawTitleBar(SpriteBatch spriteBatch)
-        {
-            float sizeRatio = (float)mBack[0].Width / mBack[0].Height;
-
-            Rectangle backButtonRegion = new Rectangle(mTitleBar.Left + (int)mPadding.X,mTitleBar.Top + (int)mPadding.Y,
-               (int)((mTitleBar.Height - 2 * mPadding.Y) * sizeRatio), (int)(mTitleBar.Height - 2 * mPadding.Y));
-            
-            
+        {     
             Rectangle titleRegion = new Rectangle(mTitleBar.Center.X - mTitleBar.Width/4, mTitleBar.Top + (int)mPadding.Y,
                 (int)((mTitleBar.Width/2 - 2 * mPadding.Y) ), (int)(mTitleBar.Height - 2 * mPadding.Y));
 
-            spriteBatch.Draw(mBack[Convert.ToInt32(mCurrentIndex == BACK)], backButtonRegion, Color.White);
+            spriteBatch.Draw(mTitleBackground, mTitleBar, Color.White);
+
             spriteBatch.Draw(mTitle, titleRegion, Color.White);
         }
 
@@ -653,151 +588,7 @@ namespace GravityShift
         /// <param name="spriteBatch"></param>
         private void DrawInfoBar(SpriteBatch spriteBatch)
         {
-            Vector2 size;
-
-            if (mCurrentIndex > BACK && mCurrentIndex < PREVIOUS)
-            {
-                size = mFont.MeasureString("Name");
-                //Draw Level Name - JUST TEMPLATE FOR NOW...NEED TO FIGURE OUT THE WHOLE NAME BUISNESS FIRST
-                spriteBatch.DrawString(mFont, "Name", new Vector2(mInfoRegions[NAME_REGION].Center.X - size.X / 2 + 2, mInfoRegions[NAME_REGION].Center.Y - size.Y / 2 + 2), Color.LightBlue);
-                spriteBatch.DrawString(mFont, "Name", new Vector2(mInfoRegions[NAME_REGION].Center.X - size.X / 2, mInfoRegions[NAME_REGION].Center.Y - size.Y / 2), Color.White);
-
-
-                size = mFont.MeasureString(mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Name);
-                spriteBatch.DrawString(mFont, mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Name, new Vector2(mInfoRegions[NAME_REGION].Center.X - size.X / 2, mInfoRegions[NAME_REGION].Bottom - size.Y), Color.White);
-
-
-                int goalCollectables = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Collection);
-                int goalTime = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Time);
-                int goalDeaths = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetGoal(LevelInfo.StarTypes.Death);
-
-                int starsCollectables = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Collection);
-                int starsTime = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Time);
-                int starsDeaths = mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].GetStar(LevelInfo.StarTypes.Death);
-
-                int starWidth = mStar.Width * 3;
-
-                //Draw Stars Info
-                size = mFont.MeasureString("Collectables");
-                spriteBatch.DrawString(mFont, "Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2 + 2, mInfoRegions[STARS_REGION].Top + mPadding.Y + 2), Color.LightBlue);
-                spriteBatch.DrawString(mFont, "Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y), Color.White);
-
-                size = mFont.MeasureString("Goal: " + goalCollectables + " Collectables");
-                spriteBatch.DrawString(mFont, "Goal: " + goalCollectables + " Collectables", new Vector2(mInfoRegions[STARS_REGION].Center.X - size.X / 2, mInfoRegions[STARS_REGION].Top + mPadding.Y + 2 * size.Y), Color.White);
-
-                for (int i = 0; i < starsCollectables; i++)
-                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[STARS_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[STARS_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-
-
-                //Draw Time Info
-                size = mFont.MeasureString("Timer");
-                spriteBatch.DrawString(mFont, "Timer", new Vector2(mInfoRegions[TIMER_REGION].Center.X - size.X / 2 + 2, mInfoRegions[TIMER_REGION].Top + mPadding.Y + 2), Color.LightBlue);
-                spriteBatch.DrawString(mFont, "Timer", new Vector2(mInfoRegions[TIMER_REGION].Center.X - size.X / 2, mInfoRegions[TIMER_REGION].Top + mPadding.Y), Color.White);
-
-                size = mFont.MeasureString("Goal: " + goalTime + " Seconds");
-                spriteBatch.DrawString(mFont, "Goal: " + goalTime + " Seconds", new Vector2(mInfoRegions[TIMER_REGION].Center.X - size.X / 2, mInfoRegions[TIMER_REGION].Top + mPadding.Y + 2 * size.Y), Color.White);
-
-                for (int i = 0; i < starsTime; i++)
-                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[TIMER_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[TIMER_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-
-
-                //Draw Death Info
-                size = mFont.MeasureString("Death");
-                spriteBatch.DrawString(mFont, "Death", new Vector2(mInfoRegions[DEATH_REGION].Center.X - size.X / 2 + 2, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 2), Color.LightBlue);
-                spriteBatch.DrawString(mFont, "Death", new Vector2(mInfoRegions[DEATH_REGION].Center.X - size.X / 2, mInfoRegions[DEATH_REGION].Top + mPadding.Y), Color.White);
-
-                size = mFont.MeasureString("Goal: " + goalDeaths + " Deaths");
-                spriteBatch.DrawString(mFont, "Goal: " + goalDeaths + " Deaths", new Vector2(mInfoRegions[DEATH_REGION].Center.X - size.X / 2, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 2 * size.Y), Color.White);
-
-                //size = mFont.MeasureString("You have " + starsDeaths + " stars");
-                //spriteBatch.DrawString(mFont, "You have " + starsDeaths + " stars", new Vector2(mInfoRegions[DEATH_REGION].Center.X - size.X / 2, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-                for (int i = 0; i < starsDeaths; i++)
-                    spriteBatch.Draw(mStar, new Vector2(mInfoRegions[DEATH_REGION].Center.X - starWidth / 2 + i * mStar.Width, mInfoRegions[DEATH_REGION].Top + mPadding.Y + 4 * size.Y), Color.White);
-            }
-            else
-            {
-                size = mFont.MeasureString("Name");
-                Vector2 position = new Vector2(mInfoRegions[NAME_REGION].Center.X - size.X / 2, mInfoRegions[NAME_REGION].Center.Y - size.Y / 2);
-
-                spriteBatch.DrawString(mFont, "Name", Vector2.Add(position, new Vector2(2, 2)), Color.LightBlue);
-                spriteBatch.DrawString(mFont, "Name", position, Color.White);
-
-                size = mFont.MeasureString(mWorlds[mCurrentWorld]);
-                position = Vector2.Add(position, new Vector2(0, size.Y + mPadding.Y));
-                position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-
-                spriteBatch.DrawString(mFont, mWorlds[mCurrentWorld], position, Color.White);
-
-                if (mLevels[0 + mCurrentWorld * 6].Unlocked)
-                {
-                    size = mFont.MeasureString("UNLOCKED");
-                    position = Vector2.Add(position, new Vector2(0, size.Y + 2*mPadding.Y));
-                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-                    spriteBatch.DrawString(mFont, "UNLOCKED", position, Color.White);
-                    spriteBatch.DrawString(mFont, "UNLOCKED", Vector2.Add(position, new Vector2(2, 2)), Color.Green);
-                   
-                }
-                else
-                {
-                    size = mFont.MeasureString("LOCKED");
-                    position = Vector2.Add(position, new Vector2(0, size.Y + 2 * mPadding.Y));
-                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-                    spriteBatch.DrawString(mFont, "LOCKED", position, Color.White);
-                    spriteBatch.DrawString(mFont, "LOCKED", Vector2.Add(position, new Vector2(2, 2)), Color.Red);
-                    
-                    position = Vector2.Add(position, new Vector2(0, size.Y + 2 * mPadding.Y));
-                    size = mFont.MeasureString("You need");
-                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-                    spriteBatch.DrawString(mFont, "You need", position, Color.White);
-
-                    position = Vector2.Add(position, new Vector2(0, size.Y));
-                    size = mFont.MeasureString((30 * mCurrentWorld - mStarCount) + "");
-                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-                    spriteBatch.DrawString(mFont, (30 * mCurrentWorld - mStarCount) + "", position, Color.Red);
-
-                    position = Vector2.Add(position, new Vector2(0, size.Y));
-                    size = mFont.MeasureString("to unlock");
-                    position.X = mInfoRegions[NAME_REGION].Center.X - size.X / 2;
-                    spriteBatch.DrawString(mFont, "to unlock", position, Color.White);
-                    
-                }
-            }
-        }
-
-        /// <summary>
-        /// Draws the bottom control bar
-        /// </summary>
-        /// <param name="spriteBatch"></param>
-        private void DrawBottomBar(SpriteBatch spriteBatch)
-        {            
-            /***Subject to change :)***/
-            Vector2 stringSize = mFont.MeasureString("-");
-            Rectangle worldRegion = new Rectangle(mBottomBar.Center.X - (int)(mLongestName/2),mBottomBar.Center.Y - (int)(stringSize.Y/2),
-                mLongestName, (int)stringSize.Y);
-
-            float sizeRatio = (float)mPrevious[0].Width/mPrevious[0].Height;
-            int height = (int)(5*mBottomBar.Height / 8 - mPadding.Y);
-
-            Rectangle previousRegion = new Rectangle(worldRegion.Left - (int)mPadding.X - (int)(height * sizeRatio), 
-                mBottomBar.Center.Y - height/2, (int)(height * sizeRatio),height);
-            Rectangle nextRegion = new Rectangle(worldRegion.Right + (int)mPadding.X, 
-                mBottomBar.Center.Y - height/2, (int)(height * sizeRatio),height);
-
-            spriteBatch.DrawString(mFont, mWorlds[mCurrentWorld],
-                new Vector2(worldRegion.Center.X - mFont.MeasureString(mWorlds[mCurrentWorld]).X / 2, worldRegion.Top), Color.White);
-
-            if(mCurrentWorld > 0)
-                spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], previousRegion, Color.White);
-            else
-                spriteBatch.Draw(mPrevious[Convert.ToInt32(mCurrentIndex == PREVIOUS)], previousRegion, Color.Gray);
-            if(mCurrentWorld == NUM_OF_WORLDS - 1)
-                spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], nextRegion, Color.Gray);
-            else
-                spriteBatch.Draw(mNext[Convert.ToInt32(mCurrentIndex == NEXT)], nextRegion, Color.White);
-
-
-            stringSize = mFont.MeasureString("Star Count: " + mStarCount);
-            spriteBatch.DrawString(mFont, "Star Count: " + mStarCount, new Vector2(mBottomBar.Right - stringSize.X, mBottomBar.Center.Y - stringSize.Y / 2), Color.White);
+            
         }
 
         /// <summary>
@@ -808,20 +599,41 @@ namespace GravityShift
         {
             int i = 0;
 
+            int shiftValue = 0;
+
+            while (mLevelRegions[mCurrentWorld * 6].Bottom - shiftValue > 15*(mLevelPanel.Top + mLevelPanel.Height)/16)
+                shiftValue += mLevelRegions[mCurrentWorld * 6].Height;
+
             foreach (Rectangle rect in mLevelRegions)
             {
-                Vector2 size = mFont.MeasureString(mLevels[i + 6 * mCurrentWorld].Name);
-                if (i + 1 != mCurrentIndex)
-                    spriteBatch.Draw(mUnselected[i], rect, Color.White);
-                else
-                    spriteBatch.Draw(mSelected[i, number], rect, Color.White);
-                spriteBatch.DrawString(mFont, mLevels[(i++) + 6 * mCurrentWorld].Name, new Vector2(rect.Center.X - size.X / 2, rect.Top), Color.White);
+                rect.Offset(0, -shiftValue);
 
-                if (!mLevels[i - 1 + 6 * mCurrentWorld].Unlocked)
+                if (i % 6 == 0)
+                {
+                    Rectangle background = new Rectangle(rect.Left,rect.Top,mLevelPanel.Right - rect.Left, rect.Bottom - rect.Top - 30);
+                    spriteBatch.Draw(mWorldBackground[i/6][Convert.ToInt32(i / 6 != mCurrentWorld)], background, Color.White);
+
+                    Vector2 worldText = mFont.MeasureString(mWorlds[i / 6]);
+                    Rectangle textBox = new Rectangle((int)(background.Center.X - mLongestName / 2 - mLongestName / 16), (int)(background.Top - worldText.Y - worldText.Y / 16), (int)(mLongestName + mLongestName / 8), (int)(worldText.Y + worldText.Y / 8));
+                    spriteBatch.Draw(mWorldTitleBox[i/6][Convert.ToInt32(i / 6 != mCurrentWorld)], textBox, Color.White);
+                    spriteBatch.DrawString(mFont, mWorlds[i / 6], new Vector2(textBox.Center.X - worldText.X/2,textBox.Center.Y - worldText.Y/2),Color.White);
+                }
+                
+                Vector2 size = mFont.MeasureString(mLevels[i].Name);
+                if (i%6 != mCurrentIndex || i/6 != mCurrentWorld)
+                    spriteBatch.Draw(mUnselected[i%6], rect, Color.White);
+                else
+                    spriteBatch.Draw(mSelected[i%6, number], rect, Color.White);
+                
+                spriteBatch.DrawString(mFont, mLevels[(i)].Name, new Vector2(rect.Center.X - size.X / 2, rect.Top), Color.White);                
+
+                if (!mLevels[i].Unlocked)
                     spriteBatch.Draw(mLock, rect, Color.White);
 
-                if (mLevels[i - 1 + 6 * mCurrentWorld].TenthStar())
-                    spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Top), Color.Green);
+                if (mLevels[i].TenthStar())
+                    spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Top), Color.Green);                
+
+                i++;
             }
         }
     }
