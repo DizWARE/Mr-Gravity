@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
   <Name>Space Intruders</Name>
   <Size X="20" Y="15" />
@@ -1246,7 +1246,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level03</MusicFile>
+        <MusicFile>music_level09</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>
