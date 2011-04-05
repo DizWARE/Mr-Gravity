@@ -95,6 +95,8 @@ namespace GravityShift
         int mCurrentIndex = 0;
         int mCurrentWorld = 0;
 
+        bool displayUnlockDialog = false;
+
         /* Trial Mode Loading */
         public bool TrialMode { get { return Guide.IsTrialMode; } }
 
@@ -341,6 +343,8 @@ namespace GravityShift
         /// <param name="world">The world.</param>
         public void UnlockWorld(int world)
         {
+            displayUnlockDialog = true;
+
 #if XBOX360
             if(!this.TrialMode || world == 0)
 #endif
@@ -357,8 +361,10 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            if(mStarCount / 30 <= NUM_OF_WORLDS)
+            if (mStarCount / 30 <= NUM_OF_WORLDS)
+            {
                 UnlockWorld(mStarCount / 30);
+            }
         }
 
         /// <summary>

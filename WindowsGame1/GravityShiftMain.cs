@@ -39,6 +39,8 @@ namespace GravityShift
 
         StartLevelSplash mStartLevelSplash;
 
+        PreScore mPreScore;
+
         MainMenu mMainMenu;
         Level mMainMenuLevel;
 
@@ -151,6 +153,8 @@ namespace GravityShift
             mResetConfirm = new ResetConfirm(mControls);
             mStartLevelSplash = new StartLevelSplash(mControls);
 
+            mPreScore = new PreScore(mControls);
+
             mController = new Controller(mControls, mGraphics);
             mSoundOptions = new SoundOptions(mControls, mGraphics);
 
@@ -198,6 +202,7 @@ namespace GravityShift
 
             mWorldSelect.Load(Content);
             mAfterScore.Load(Content, GraphicsDevice);
+            mPreScore.Load(Content, GraphicsDevice);
             mResetConfirm.Load(Content);
             mController.Load(Content);
             mSoundOptions.Load(Content);
@@ -415,7 +420,11 @@ namespace GravityShift
                 mSequence--;
 
                 if (mSequence <= 0)
-                    mCurrentState = GameStates.Score;
+                {   
+                    if (mCurrentLevel.CollectionStar == 3 || mCurrentLevel.DeathStar == 3 || 
+                        mCurrentLevel.TimerStar == 3) 
+                    mCurrentState = GameStates.PreScore;
+                }
             }
             else if (mCurrentState == GameStates.Death)
             {
@@ -496,6 +505,19 @@ namespace GravityShift
             {
                 mAfterScore.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
             }
+            else if (mCurrentState == GameStates.PreScore)
+            {
+                //Check for mute
+                GameSound.menuMusic_title.Volume = GameSound.volume;
+                GameSound.level_stageVictory.Volume = GameSound.volume * .75f;
+
+                //First play win, then menu
+                if (GameSound.level_stageVictory.State != SoundState.Playing)
+                    if (GameSound.menuMusic_title.State != SoundState.Playing)
+                        GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
+
+                mPreScore.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+            }
             else if (mCurrentState == GameStates.ResetConfirm)
             {
                 mResetConfirm.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
@@ -571,6 +593,11 @@ namespace GravityShift
             {
                 mScoring.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
                 mAfterScore.Draw(mSpriteBatch, mGraphics, scale);
+            }
+            else if (mCurrentState == GameStates.PreScore)
+            {
+                mScoring.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
+                mPreScore.Draw(mSpriteBatch, mGraphics, scale);
             }
             else if (mCurrentState == GameStates.ResetConfirm)
             {
