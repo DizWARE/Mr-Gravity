@@ -349,6 +349,7 @@ namespace GravityShift
         /// <param name="world">The world.</param>
         public void UnlockWorld(int world)
         {
+            if (world >= NUM_OF_WORLDS) return;
 #if XBOX360
             if(!this.TrialMode || world == 0)
 #endif
@@ -767,11 +768,6 @@ namespace GravityShift
             }
 
             DrawInfoBar(spriteBatch, shiftValue);
-        }
-
-        private void LoadLevel(Level currentLevel)
-        {
-            currentLevel.Load(mContent);
         }
     }
 
