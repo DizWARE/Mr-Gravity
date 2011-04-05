@@ -3,75 +3,45 @@
   <LevelData>
     <Name>Vampire</Name>
     <Unlocked>True</Unlocked>
-<<<<<<< HEAD
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
-=======
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
->>>>>>> upstream/master
     <GoalCollectable>2</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
-<<<<<<< HEAD
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
-=======
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
->>>>>>> upstream/master
     <GoalCollectable>18</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Teaser</Name>
     <Unlocked>True</Unlocked>
-<<<<<<< HEAD
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
-=======
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
->>>>>>> upstream/master
     <GoalCollectable>12</GoalCollectable>
     <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
     <Unlocked>True</Unlocked>
-<<<<<<< HEAD
-    <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
-    <Deathstar>3</Deathstar>
-=======
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
->>>>>>> upstream/master
     <GoalCollectable>8</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Corners</Name>
     <Unlocked>True</Unlocked>
-<<<<<<< HEAD
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
-=======
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
->>>>>>> upstream/master
     <GoalCollectable>13</GoalCollectable>
     <GoalTime>10</GoalTime>
   </LevelData>
@@ -86,11 +56,7 @@
   </LevelData>
   <LevelData>
     <Name>You Shall Not Pass</Name>
-<<<<<<< HEAD
-    <Unlocked>True</Unlocked>
-=======
     <Unlocked>False</Unlocked>
->>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -99,11 +65,7 @@
   </LevelData>
   <LevelData>
     <Name>Friction Is Your Friend</Name>
-<<<<<<< HEAD
-    <Unlocked>True</Unlocked>
-=======
     <Unlocked>False</Unlocked>
->>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -112,11 +74,7 @@
   </LevelData>
   <LevelData>
     <Name>Snake</Name>
-<<<<<<< HEAD
-    <Unlocked>True</Unlocked>
-=======
     <Unlocked>False</Unlocked>
->>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -125,11 +83,7 @@
   </LevelData>
   <LevelData>
     <Name>Guards</Name>
-<<<<<<< HEAD
-    <Unlocked>True</Unlocked>
-=======
     <Unlocked>False</Unlocked>
->>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -138,11 +92,7 @@
   </LevelData>
   <LevelData>
     <Name>Intertwined</Name>
-<<<<<<< HEAD
-    <Unlocked>True</Unlocked>
-=======
     <Unlocked>False</Unlocked>
->>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -151,11 +101,7 @@
   </LevelData>
   <LevelData>
     <Name>Up Is Down</Name>
-<<<<<<< HEAD
-    <Unlocked>True</Unlocked>
-=======
     <Unlocked>False</Unlocked>
->>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
