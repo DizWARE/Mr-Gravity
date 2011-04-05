@@ -76,6 +76,7 @@ namespace GravityShift
         Vector2 mPadding;
 
         SpriteFont mFont;
+        SpriteFont mFontBig;
 
         Texture2D[] mIcons;
 
@@ -87,6 +88,9 @@ namespace GravityShift
         Texture2D mStar;
         Texture2D mLock;
         Texture2D mTitleBackground;
+        
+        //TODO - MAKE OFFICIAL
+        Texture2D mLevelInfoBG;
 
         int mCurrentIndex = 0;
         int mCurrentWorld = 0;
@@ -368,8 +372,10 @@ namespace GravityShift
             mTitle = content.Load<Texture2D>("Images/Menu/SelectLevelSelected");
             mBackground = content.Load<Texture2D>("Images/Menu/backgroundSquares1");
             mStar = content.Load<Texture2D>("Images/NonHazards/YellowStar");
-            mLock = content.Load<Texture2D>("Images/Lock/locked1a");
+            mLock = content.Load<Texture2D>("Images/Menu/LevelSelect/LockedLevel");
             mTitleBackground = content.Load<Texture2D>("Images/Menu/LevelSelect/WorldTitle");
+
+            mLevelInfoBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LevelMenu");
 
             mWorldBackground = new Texture2D[8][];
             mWorldTitleBox = new Texture2D[8][];
@@ -386,6 +392,7 @@ namespace GravityShift
             }
 
             mFont = content.Load<SpriteFont>("Fonts/QuartzSmaller");
+            mFontBig = content.Load<SpriteFont>("Fonts/QuartzLarge");
 
             mSelected[0, 0] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Blue");
             mSelected[0, 1] = content.Load<Texture2D>("Images/Menu/LevelSelect/1Green");
@@ -561,7 +568,6 @@ namespace GravityShift
 
             spriteBatch.Draw(mBackground, mGraphics.GraphicsDevice.Viewport.Bounds, Color.White);
 
-
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
 
@@ -578,17 +584,88 @@ namespace GravityShift
                 (int)((mTitleBar.Width/2 - 2 * mPadding.Y) ), (int)(mTitleBar.Height - 2 * mPadding.Y));
 
             spriteBatch.Draw(mTitleBackground, mTitleBar, Color.White);
-
             spriteBatch.Draw(mTitle, titleRegion, Color.White);
+
+            Vector2 size = mFontBig.MeasureString(mStarCount+"");
+            spriteBatch.Draw(mStar, new Rectangle((int)(mTitleBar.Right - size.Y - mTitleBar.Width / 32), (int)(mTitleBar.Bottom - size.Y * 1.25f),(int)size.Y,(int)size.Y), Color.White);
+            spriteBatch.DrawString(mFont, "x", new Vector2(mTitleBar.Right - size.Y*1.25f - mTitleBar.Width / 32, mTitleBar.Bottom - size.Y), Color.White);
+            spriteBatch.DrawString(mFontBig, mStarCount+"", new Vector2(mTitleBar.Right - size.X - size.Y*1.25f - mTitleBar.Width / 32, mTitleBar.Bottom - size.Y*1.25f), Color.White);
+        
+            size = mFont.MeasureString("Press B to go Back");
+            spriteBatch.DrawString(mFont, "Press B to go Back", new Vector2(mTitleBar.Left + mTitleBar.Width / 128, mTitleBar.Bottom - size.Y - mTitleBar.Height / 6), Color.White);
         }
 
         /// <summary>
         /// Draw info bar on the right
         /// </summary>
         /// <param name="spriteBatch"></param>
-        private void DrawInfoBar(SpriteBatch spriteBatch)
+        private void DrawInfoBar(SpriteBatch spriteBatch, int shiftValue)
         {
+            if (!mLevels[mCurrentWorld * 6 + mCurrentIndex].Unlocked) return;
+
+            Rectangle infoBarLoc = mLevelRegions[mCurrentWorld * 6 + mCurrentIndex];
+            infoBarLoc.Offset(0,-shiftValue - (int)(infoBarLoc.Height*.04));
             
+            spriteBatch.Draw(mLevelInfoBG, infoBarLoc, Color.White);
+
+            string name = mLevels[mCurrentWorld * 6 + mCurrentIndex].Name;            
+
+            Vector2 size = mFont.MeasureString(name);
+
+
+            if (size.X > infoBarLoc.Width*15/16)
+            {
+                int spaceIndex = name.LastIndexOf(' ');
+
+                size = mFont.MeasureString(name.Substring(0, spaceIndex));
+                spriteBatch.DrawString(mFont, name.Substring(0,spaceIndex),
+                    new Vector2(infoBarLoc.Center.X - size.X / 2, infoBarLoc.Top + infoBarLoc.Height / 8 - size.Y * 11 / 16), Color.White);
+                
+                size = mFont.MeasureString(name.Substring(spaceIndex+1));
+                spriteBatch.DrawString(mFont, name.Substring(spaceIndex+1),
+                    new Vector2(infoBarLoc.Center.X - size.X / 2, infoBarLoc.Top + infoBarLoc.Height / 8 - size.Y * 1 / 16), Color.White);         
+            }
+            else
+                spriteBatch.DrawString(mFont, name, 
+                    new Vector2(infoBarLoc.Center.X - size.X/2, infoBarLoc.Top + infoBarLoc.Height/8 - size.Y*5/16), Color.White);
+            if (mLevels[mCurrentWorld * 6 + mCurrentIndex].StarCount() > 0)
+            {
+                size = mFont.MeasureString("Time:");
+                spriteBatch.DrawString(mFont, "Time:",
+                        new Vector2(infoBarLoc.Left + infoBarLoc.Width / 16, infoBarLoc.Top + infoBarLoc.Height * 5 / 16 - size.Y * 5 / 16), Color.White);
+
+                size = mFont.MeasureString("Gems:");
+                spriteBatch.DrawString(mFont, "Gems:",
+                        new Vector2(infoBarLoc.Left + infoBarLoc.Width / 16, infoBarLoc.Top + infoBarLoc.Height / 2 - size.Y * 5 / 16), Color.White);
+
+                size = mFont.MeasureString("Deaths:");
+                spriteBatch.DrawString(mFont, "Deaths:",
+                        new Vector2(infoBarLoc.Left + infoBarLoc.Width / 16, infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 5 / 16), Color.White);
+
+                double startXPos = infoBarLoc.Left + infoBarLoc.Width / 16 + size.X;
+
+
+                for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Time); i++)
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height * 5 / 16 - size.Y * 5 / 16),
+                        (int)size.Y, (int)size.Y), Color.White);
+
+                for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Collection); i++)
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height / 2 - size.Y * 5 / 16),
+                        (int)size.Y, (int)size.Y), Color.White);
+
+                for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Death); i++)
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 5 / 16),
+                        (int)size.Y, (int)size.Y), Color.White);
+            }
+            else
+            {
+                size = mFont.MeasureString("No Stars");
+                spriteBatch.DrawString(mFont, "No Stars",
+                       new Vector2(infoBarLoc.Center.X - size.X/2, infoBarLoc.Center.Y - size.Y/2), Color.White);            
+            }
         }
 
         /// <summary>
@@ -600,6 +677,7 @@ namespace GravityShift
             int i = 0;
 
             int shiftValue = 0;
+            bool drawNumbers = true;
 
             while (mLevelRegions[mCurrentWorld * 6].Bottom - shiftValue > 15*(mLevelPanel.Top + mLevelPanel.Height)/16)
                 shiftValue += mLevelRegions[mCurrentWorld * 6].Height;
@@ -608,33 +686,44 @@ namespace GravityShift
             {
                 rect.Offset(0, -shiftValue);
 
+                //Draws the background box and world title for this world if the current item drawing is the first item in the world
                 if (i % 6 == 0)
                 {
-                    Rectangle background = new Rectangle(rect.Left,rect.Top,mLevelPanel.Right - rect.Left, rect.Bottom - rect.Top - 30);
+                    Rectangle background = new Rectangle(rect.Left, rect.Top, mLevelPanel.Right - rect.Left, rect.Bottom - rect.Top - (int)((rect.Bottom - rect.Top)*.2f));
                     spriteBatch.Draw(mWorldBackground[i/6][Convert.ToInt32(i / 6 != mCurrentWorld)], background, Color.White);
 
                     Vector2 worldText = mFont.MeasureString(mWorlds[i / 6]);
                     Rectangle textBox = new Rectangle((int)(background.Center.X - mLongestName / 2 - mLongestName / 16), (int)(background.Top - worldText.Y - worldText.Y / 16), (int)(mLongestName + mLongestName / 8), (int)(worldText.Y + worldText.Y / 8));
                     spriteBatch.Draw(mWorldTitleBox[i/6][Convert.ToInt32(i / 6 != mCurrentWorld)], textBox, Color.White);
                     spriteBatch.DrawString(mFont, mWorlds[i / 6], new Vector2(textBox.Center.X - worldText.X/2,textBox.Center.Y - worldText.Y/2),Color.White);
-                }
+
+                    if (!mLevels[i].Unlocked)
+                    {
+                        spriteBatch.Draw(mLock, background, Color.White);
+
+                        drawNumbers = false;
+                        worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " to Unlock");
+                        spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " to Unlock", 
+                            new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
+                    }
                 
+                }
+
+                if (!drawNumbers) { i++; continue; }
+
                 Vector2 size = mFont.MeasureString(mLevels[i].Name);
                 if (i%6 != mCurrentIndex || i/6 != mCurrentWorld)
                     spriteBatch.Draw(mUnselected[i%6], rect, Color.White);
                 else
                     spriteBatch.Draw(mSelected[i%6, number], rect, Color.White);
                 
-                spriteBatch.DrawString(mFont, mLevels[(i)].Name, new Vector2(rect.Center.X - size.X / 2, rect.Top), Color.White);                
-
-                if (!mLevels[i].Unlocked)
-                    spriteBatch.Draw(mLock, rect, Color.White);
-
-                if (mLevels[i].TenthStar())
-                    spriteBatch.Draw(mStar, new Vector2(rect.Left, rect.Top), Color.Green);                
+                //if (mLevels[i].TenthStar())
+                //    spriteBatch.Draw(mStar, new Vector2(rect.Right-mStar.Width, rect.Top), Color.White);                
 
                 i++;
             }
+
+            DrawInfoBar(spriteBatch, shiftValue);
         }
     }
 
