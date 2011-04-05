@@ -17,6 +17,8 @@ using System.Xml.Serialization;
 using System.Xml.Linq;
 using GravityShift.Import_Code;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace GravityShift
 {
@@ -64,6 +66,11 @@ namespace GravityShift
 
         int number;
 
+        const int NONE = 0;
+        const int START_LOAD = 1;
+        const int LOADING = 2;
+        int mLoading = 0;
+
         string[] mWorlds = 
         { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck" };
         int mLongestName;
@@ -91,6 +98,7 @@ namespace GravityShift
         
         //TODO - MAKE OFFICIAL
         Texture2D mLevelInfoBG;
+        Texture2D mLoadingBG;
 
         int mCurrentIndex = 0;
         int mCurrentWorld = 0;
@@ -377,6 +385,8 @@ namespace GravityShift
 
             mLevelInfoBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LevelMenu");
 
+            mLoadingBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LoadingMenu");
+
             mWorldBackground = new Texture2D[8][];
             mWorldTitleBox = new Texture2D[8][];
             for (int i = 0; i < mWorldBackground.Length; i++)
@@ -444,6 +454,23 @@ namespace GravityShift
         /// <param name="currentLevel">Current level of the game</param>
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level currentLevel)
         {
+            if (mLoading == LOADING)
+            {
+                mLoading = NONE;
+                currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex].Level;
+
+                currentLevel.Load(mContent);
+
+                currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Time);
+                currentLevel.CollectableCount = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Collection);
+
+                currentLevel.TimerStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Time);
+                currentLevel.CollectionStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Collection);
+                currentLevel.DeathStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Death);
+
+                gameState = GameStates.StartLevelSplash;
+            }
+
             HandleAKey(ref gameState, ref currentLevel);
             HandleBKey(ref gameState);
             HandleDirectionKey();
@@ -456,22 +483,12 @@ namespace GravityShift
         {
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
-
                 if (GameSound.volume != 0)
                     GameSound.menuSound_select.Play();
-                if(mLevels[mCurrentWorld * 6 + mCurrentIndex].Unlocked)
-                {
-                   currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex].Level;
-                   currentLevel.Load(mContent);
-                   currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Time);
-                   currentLevel.CollectableCount = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Collection);
-                   
-                   currentLevel.TimerStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Time);
-                   currentLevel.CollectionStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Collection);
-                   currentLevel.DeathStar = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Death);
 
-                   gameState = GameStates.StartLevelSplash;
-                }
+                if(mLevels[mCurrentWorld * 6 + mCurrentIndex].Unlocked)
+                    mLoading = START_LOAD;
+                
 
                 //Handle level select
             }
@@ -571,6 +588,13 @@ namespace GravityShift
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
 
+            if (mLoading == START_LOAD)
+            {
+                spriteBatch.Draw(mLoadingBG, new Vector2(mScreenRect.Center.X - mLoadingBG.Width/2,
+                    mScreenRect.Center.Y - mLoadingBG.Height/2), Color.White);
+                
+                 mLoading = LOADING;
+            }
             spriteBatch.End();
         }
 
@@ -628,7 +652,7 @@ namespace GravityShift
             else
                 spriteBatch.DrawString(mFont, name, 
                     new Vector2(infoBarLoc.Center.X - size.X/2, infoBarLoc.Top + infoBarLoc.Height/8 - size.Y*5/16), Color.White);
-            if (mLevels[mCurrentWorld * 6 + mCurrentIndex].StarCount() > 0)
+            if (mLevels[mCurrentWorld * 6 + mCurrentIndex].StarCount() > 0 && !mLevels[mCurrentWorld * 6 + mCurrentIndex].TenthStar())
             {
                 size = mFont.MeasureString("Time:");
                 spriteBatch.DrawString(mFont, "Time:",
@@ -660,11 +684,30 @@ namespace GravityShift
                         (int)(infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 5 / 16),
                         (int)size.Y, (int)size.Y), Color.White);
             }
+            else if (mLevels[mCurrentWorld * 6 + mCurrentIndex].TenthStar())
+            {
+                size = mFont.MeasureString("All 10 stars");
+                spriteBatch.DrawString(mFont, "All 10 stars",
+                       new Vector2(infoBarLoc.Center.X - size.X / 2, infoBarLoc.Center.Y - size.Y / 2), Color.White);
+
+                for(int i = 0; i < 2; i++)
+                    for (int j = 0; j < 5; j++)
+                        spriteBatch.Draw(mStar, new Rectangle(infoBarLoc.Left + infoBarLoc.Width/4 +  j * infoBarLoc.Width / 10,
+                            (int)(infoBarLoc.Center.Y - size.Y - i * infoBarLoc.Height / 10), infoBarLoc.Width / 10, infoBarLoc.Height / 10), Color.White);
+
+
+                size = mFont.MeasureString("collected");
+                spriteBatch.DrawString(mFont, "collected",
+                       new Vector2(infoBarLoc.Center.X - size.X / 2, infoBarLoc.Center.Y + size.Y / 2), Color.White);
+            }
             else
             {
                 size = mFont.MeasureString("No Stars");
                 spriteBatch.DrawString(mFont, "No Stars",
-                       new Vector2(infoBarLoc.Center.X - size.X/2, infoBarLoc.Center.Y - size.Y/2), Color.White);            
+                       new Vector2(infoBarLoc.Center.X - size.X / 2, infoBarLoc.Center.Y - size.Y / 2), Color.White);
+                size = mFont.MeasureString("collected");
+                spriteBatch.DrawString(mFont, "collected",
+                       new Vector2(infoBarLoc.Center.X - size.X / 2, infoBarLoc.Center.Y + size.Y / 2), Color.White);
             }
         }
 
@@ -717,13 +760,18 @@ namespace GravityShift
                 else
                     spriteBatch.Draw(mSelected[i%6, number], rect, Color.White);
                 
-                //if (mLevels[i].TenthStar())
-                //    spriteBatch.Draw(mStar, new Vector2(rect.Right-mStar.Width, rect.Top), Color.White);                
+                if (mLevels[i].TenthStar())
+                    spriteBatch.Draw(mStar, new Vector2(rect.Right-mStar.Width, rect.Top), Color.White);                
 
                 i++;
             }
 
             DrawInfoBar(spriteBatch, shiftValue);
+        }
+
+        private void LoadLevel(Level currentLevel)
+        {
+            currentLevel.Load(mContent);
         }
     }
 
