@@ -1539,6 +1539,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Music\music_level07b.wav">
+      <Name>music_level07b</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Images\Menu\LevelSelect\LevelMenu.png">
       <Name>LevelMenu</Name>
       <Importer>TextureImporter</Importer>
