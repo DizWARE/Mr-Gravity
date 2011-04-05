@@ -113,19 +113,7 @@ namespace GravityShift
 //#else
 //                mSelect.Save(PlayerIndex.One);
 //#endif
-            }
-            else if (mControls.isAPressed(false))
-            {
-                level.mTimer = 0;
-
-                gameState = GameStates.Next_Level;
-//#if XBOX360
-//                mSelect.Save(((ControllerControl)mControls).ControllerIndex);
-//#else
-//                mSelect.Save(PlayerIndex.One);
-//#endif
-            }
-            
+            }            
         }
         /* GetRank
          * 
@@ -255,17 +243,9 @@ namespace GravityShift
                 spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
             }
                
-
-            string request = "Press A To Continue To Next Level";
+            string request = "Press Start To Access The Menu";
 
             Vector2 stringSize = mQuartz.MeasureString(request);
-
-            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) * 3), Color.SteelBlue);
-            spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2)  + 2, mScreenRect.Bottom - (stringSize.Y) * 3  + 2), Color.White);
-
-            request = "Press Start To Access The Menu";
-
-            stringSize = mQuartz.MeasureString(request);
 
             spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2), mScreenRect.Bottom - (stringSize.Y) * 2), Color.SteelBlue);
             spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - (stringSize.X / 2) + 2, mScreenRect.Bottom - (stringSize.Y) * 2 + 2), Color.White);
