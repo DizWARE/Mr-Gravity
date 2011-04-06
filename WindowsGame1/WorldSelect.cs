@@ -17,8 +17,6 @@ using System.Xml.Serialization;
 using System.Xml.Linq;
 using GravityShift.Import_Code;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace GravityShift
 {
@@ -646,7 +644,7 @@ namespace GravityShift
             Vector2 size = mFont.MeasureString(name);
 
             //If the size is too big, we need to arrange characters so that it looks pleasing
-            if (size.X > infoBarLoc.Width*15/16)
+            if (size.X > infoBarLoc.Width * 15 / 16 && name.Contains(' '))
             {
                 int spaceIndex = name.LastIndexOf(' ');
 
@@ -771,8 +769,8 @@ namespace GravityShift
                         spriteBatch.Draw(mLock, background, Color.White);
 
                         drawNumbers = false;
-                        worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " Stars to Unlock");
-                        spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " Stars to Unlock", 
+                        worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " more Stars to Unlock");
+                        spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " more Stars to Unlock", 
                             new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
                     }
                 
