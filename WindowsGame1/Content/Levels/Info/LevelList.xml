@@ -3,9 +3,9 @@
   <LevelData>
     <Name>Vampire</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>1</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>2</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
@@ -30,9 +30,9 @@
   <LevelData>
     <Name>Hazards</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>1</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>1</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>8</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
