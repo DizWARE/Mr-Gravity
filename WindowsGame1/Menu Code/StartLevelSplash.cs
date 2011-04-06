@@ -126,12 +126,12 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the collectable goals for the level */
-            request =  " < " + (level.NumCollectable*.8).ToString() + " / " + level.NumCollectable.ToString();
+            request =  " < " + (int)(level.NumCollectable*.8) + " / " + level.NumCollectable.ToString();
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
 
-            request = " > " + (level.NumCollectable*.8).ToString()  + " / " + level.NumCollectable.ToString();
+            request = " > " + (int)(level.NumCollectable*.8)  + " / " + level.NumCollectable.ToString();
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
@@ -165,17 +165,17 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the timer goals for the level */
-            request = "> " + (level.IdealTime * 1.2).ToString() + " seconds";
+            request = "> " + (int)(level.IdealTime * 1.2) + " seconds";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
 
-            request = "<= " + (level.IdealTime * 1.2).ToString() + " seconds";
+            request = "<= " + (int)(level.IdealTime * 1.2) + " seconds";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
 
-            request = request = "< " + (level.IdealTime).ToString() + " seconds";
+            request = request = "< " + (int)(level.IdealTime) + " seconds";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - stringSize.X / 2, mHeight), Color.White);

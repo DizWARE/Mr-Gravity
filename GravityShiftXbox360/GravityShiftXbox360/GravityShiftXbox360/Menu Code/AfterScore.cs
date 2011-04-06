@@ -30,7 +30,7 @@ namespace GravityShift
 
         private int mCurrent;
 
-        private const int NUM_OPTIONS = 4;
+        private const int NUM_OPTIONS = 3;
 
         #endregion
 
@@ -91,20 +91,17 @@ namespace GravityShift
 
             mTrans = content.Load<Texture2D>("Images/Menu/Pause/PausedTrans");
 
-            mSelItems[0] = mNextLevelSel;
+            mSelItems[0] = mSelectLevelSel;
             mSelItems[1] = mRestartSel;
-            mSelItems[2] = mSelectLevelSel;
-            mSelItems[3] = mMainMenuSel;
+            mSelItems[2] = mMainMenuSel;
 
-            mUnselItems[0] = mNextLevelUnsel;
+            mUnselItems[0] = mSelectLevelUnsel;
             mUnselItems[1] = mRestartUnsel;
-            mUnselItems[2] = mSelectLevelUnsel;
-            mUnselItems[3] = mMainMenuUnsel;
+            mUnselItems[2] = mMainMenuUnsel;
 
-            mItems[0] = mNextLevelSel;
+            mItems[0] = mSelectLevelSel;
             mItems[1] = mRestartUnsel;
-            mItems[2] = mSelectLevelUnsel;
-            mItems[3] = mMainMenuUnsel;
+            mItems[2] = mMainMenuUnsel;
         }
 
         /*
@@ -153,61 +150,43 @@ namespace GravityShift
                 level.mTimer = 0;
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
-                /* Next Level */
-                if (mCurrent == 0)
-                {
-                    /*Back To Level Selection*/
-                    gameState = GameStates.Next_Level;
-
-                    mCurrent = 0;
-
-                    mItems[0] = mNextLevelSel;
-                    mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
-
-                }
-                /* Restart Level */
-                else if (mCurrent == 1)
-                {
-
-                    /* Start the game*/
-                    gameState = GameStates.In_Game;
-                    level.Reset();
-                    level.Load(mContent);
-                    mCurrent = 0;
-
-                    mItems[0] = mNextLevelSel;
-                    mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
-                }
-
                 /* Level Select */
-                else if (mCurrent == 2)
+                if (mCurrent == 0)
                 {
                     /*Back To Level Selection*/
                     gameState = GameStates.Level_Selection;
 
                     mCurrent = 0;
 
-                    mItems[0] = mNextLevelSel;
+                    mItems[0] = mSelectLevelSel;
                     mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
+                    mItems[2] = mMainMenuUnsel;
+                }
+
+                /* Restart Level */
+                else if (mCurrent == 1)
+                {
+
+                    /* Start the game*/
+                    gameState = GameStates.StartLevelSplash;
+                    level.ResetAll();
+                    mCurrent = 0;
+
+                    mItems[0] = mSelectLevelSel;
+                    mItems[1] = mRestartUnsel;
+                    mItems[2] = mMainMenuUnsel;
                 }
 
                 /* Main Menu */
-                else if (mCurrent == 3)
+                else if (mCurrent == 2)
                 {
                     gameState = GameStates.Main_Menu;
 
                     mCurrent = 0;
 
-                    mItems[0] = mNextLevelSel;
+                    mItems[0] = mSelectLevelSel;
                     mItems[1] = mRestartUnsel;
-                    mItems[2] = mSelectLevelUnsel;
-                    mItems[3] = mMainMenuUnsel;
+                    mItems[2] = mMainMenuUnsel;
                 }
             }
         }
@@ -239,10 +218,10 @@ namespace GravityShift
 
             Vector2 currentLocation = new Vector2(mScreenRect.Left, mScreenRect.Top + (int)(mTitle.Height * mSize[1]));
             int height = mScreenRect.Height - (int)(mTitle.Height * mSize[1]);
-            height -= ((int)(mItems[0].Height * mSize[1]) + (int)(mItems[1].Height * mSize[1]) + (int)(mItems[2].Height * mSize[1]) + (int)(mItems[3].Height * mSize[1]));
+            height -= ((int)(mItems[0].Height * mSize[1]) + (int)(mItems[1].Height * mSize[1]) + (int)(mItems[2].Height * mSize[1]));
             height /= 2;
             currentLocation.Y += height;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < NUM_OPTIONS; i++)
             {
                 spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - ((int)(mItems[i].Width * mSize[0]) / 2), (int)currentLocation.Y, (int)(mItems[i].Width * mSize[0]), (int)(mItems[i].Height * mSize[1])), Color.White);
                 currentLocation.Y += (int)(mItems[i].Height * mSize[1]);

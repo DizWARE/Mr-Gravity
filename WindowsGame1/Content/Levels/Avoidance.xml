@@ -528,7 +528,7 @@
       <ID>173</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
-      <Location X="12" Y="4" />
+      <Location X="12" Y="1" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>

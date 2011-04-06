@@ -1518,7 +1518,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level07</MusicFile>
+        <MusicFile>music_level02</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>
@@ -1681,6 +1681,162 @@
       <Paintable>True</Paintable>
       <Texture>Walls\Green</Texture>
       <Properties />
+    </Entity>
+    <Entity>
+      <ID>1120</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1121</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="3" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1122</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="1" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1123</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="4" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1124</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1125</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1126</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1127</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1128</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="2" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1129</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="19" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1130</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="19" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1131</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="19" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1132</ID>
+      <Name>PinkGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="20" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\PinkGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
     </Entity>
   </Entities>
 </Level>
