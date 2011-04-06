@@ -730,7 +730,23 @@ namespace GravityShift
                 Vector2 add = Vector2.Multiply(centerDiff, delta);
 
                 //Do not change velocity because we want an inelastic collision on corners.
-
+                #region Corner magic
+                // the best I could do for the constraints i am given.
+                // Screw you people.
+                // Love, 
+                //  Curtis Taylor
+                if ((Environment.GravityDirection == GravityDirections.Down) ||
+                    (Environment.GravityDirection == GravityDirections.Up))
+                {
+                    mVelocity.X = 0f;
+                    mVelocity.Y *= .95f;
+                }
+                else
+                {
+                    mVelocity.X *= .95f;
+                    mVelocity.Y = 0f;
+                }
+                #endregion
                 // place the Y pos just so it is not colliding.
                 if (!mIsRail)
                     mPosition += add;
