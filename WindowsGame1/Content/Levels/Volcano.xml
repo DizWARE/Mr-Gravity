@@ -2730,13 +2730,13 @@
       <ID>1245</ID>
       <Name>Force</Name>
       <Type>Triggers</Type>
-      <Location X="15" Y="4" />
+      <Location X="16" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
       <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
+        <Width>1</Width>
+        <Height>1</Height>
         <Shape>Square</Shape>
         <XForce>-20</XForce>
         <YForce>-10</YForce>
@@ -2746,13 +2746,13 @@
       <ID>1254</ID>
       <Name>Force</Name>
       <Type>Triggers</Type>
-      <Location X="18" Y="4" />
+      <Location X="18" Y="6" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
       <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
+        <Width>1</Width>
+        <Height>1</Height>
         <Shape>Square</Shape>
         <XForce>-20</XForce>
         <YForce>-10</YForce>

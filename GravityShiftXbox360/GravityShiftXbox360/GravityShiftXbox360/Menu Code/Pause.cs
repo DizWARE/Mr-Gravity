@@ -31,6 +31,8 @@ namespace GravityShift
         IControlScheme mControls;
 
         private int mCurrent;
+        
+        private Texture2D mLoading;
 
         ContentManager mContent;
 
@@ -82,6 +84,8 @@ namespace GravityShift
             mMainMenuUnsel = content.Load<Texture2D>("Images/Menu/MainMenuUnselected");
             mRestartSel = content.Load<Texture2D>("Images/Menu/Score/RestartSelected");
             mRestartUnsel = content.Load<Texture2D>("Images/Menu/Score/RestartUnselected");
+
+            mLoading = content.Load<Texture2D>("Images/Menu/LevelSelect/LoadingMenu");
 
             mSelItems[0] = mResumeSel;
             mSelItems[1] = mRestartSel;
@@ -139,10 +143,8 @@ namespace GravityShift
                  /* Restart */
                  else if (mCurrent == 1)
                  {
-                     /* Start the game*/
-                     gameState = GameStates.In_Game;
-                     level.Reset();
-                     level.Load(mContent);
+                     level.ResetAll();
+                     gameState = GameStates.StartLevelSplash;
                      mCurrent = 0;
                  }
                  /* Select Level */
@@ -201,18 +203,7 @@ namespace GravityShift
                 spriteBatch.Draw(mItems[i], new Rectangle(mScreenRect.Center.X - ((int)(mItems[i].Width * mSize[0]) / 2), (int)currentLocation.Y, (int)(mItems[i].Width * mSize[0]), (int)(mItems[i].Height * mSize[1])), Color.White);
                 currentLocation.Y += (int)(mItems[i].Height * mSize[1]);
             }
-
-            /* Draw the pause options */
-            //spriteBatch.Draw(mItems[0], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[0].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[0].Height - 300,
-                //mItems[0].Width, mItems[0].Height), Color.White);
-            //spriteBatch.Draw(mItems[1], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[1].Width / 2),
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[1].Height - 200,
-                //mItems[1].Width, mItems[1].Height), Color.White);
-            //spriteBatch.Draw(mItems[2], new Rectangle(graphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - (mItems[2].Width / 2), 
-                //graphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - mItems[2].Height - 100, 
-                //mItems[2].Width, mItems[2].Height), Color.White);
-
+            
             spriteBatch.End();
         }
     }

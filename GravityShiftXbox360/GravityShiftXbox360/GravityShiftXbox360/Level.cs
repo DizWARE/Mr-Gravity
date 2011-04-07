@@ -304,6 +304,34 @@ namespace GravityShift
             Load(mContent);
         }
 
+        public void ResetAll()
+        {
+            mPlayer.Respawn();
+
+            mActiveAnimations.Clear();
+
+            mPhysicsEnvironment.GravityDirection = GravityDirections.Down;
+
+            foreach (GameObject gameObject in mObjects)
+                if (gameObject != mPlayer)
+                    gameObject.Respawn();
+
+            mPlayer.mNumLives = 5;
+            mPlayer.mIsAlive = true;
+            mNumCollected = 0;
+            mTimer = 0;
+
+            //Add the collected objects back to the object list
+            foreach (GameObject collected in mCollected)
+                mObjects.Add(collected);
+
+            //Reset the collision matrix
+            PrepareCollisionMatrix();
+
+            //Clear the collection lists
+            mCollected.Clear();
+            mRemoveCollected.Clear();
+        }
 
         /// <summary>
         /// Loads the level from the content manager
@@ -407,7 +435,7 @@ namespace GravityShift
 
             mCollisionMatrix[(int)position.Y][(int)position.X].Remove(obj);
         }
-
+        
         public void UpdateStars()
         {
             /* TIME -- 100%+, <120%, <140%, >140% */
@@ -418,7 +446,7 @@ namespace GravityShift
 
             /* COLLECTABLES -- 100%, >80%, >60%, <60% */
             if (NumCollected == NumCollectable) { mCollectionStar = 3; }
-            else if ((NumCollected / NumCollectable) >= 0.8) { mCollectionStar = 2; }
+            else if (((double)NumCollected / NumCollectable) >= 0.8) { mCollectionStar = 2; }
             else { mCollectionStar = 1; }
 
             /* DEATHS -- 0, 1, 2-3, >3 */
@@ -667,7 +695,7 @@ namespace GravityShift
         /// TODO - Reset all other objects as well
         /// </summary>
         /// <param name="player">Player object</param>
-        private void Respawn()
+        public void Respawn()
         {
             mPlayer.Respawn();
 

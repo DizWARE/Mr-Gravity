@@ -168,9 +168,8 @@ namespace GravityShift
                 {
 
                     /* Start the game*/
-                    gameState = GameStates.In_Game;
-                    level.Reset();
-                    level.Load(mContent);
+                    gameState = GameStates.StartLevelSplash;
+                    level.ResetAll();
                     mCurrent = 0;
 
                     mItems[0] = mSelectLevelSel;
