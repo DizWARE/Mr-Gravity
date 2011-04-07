@@ -17,8 +17,6 @@ using System.Xml.Serialization;
 using System.Xml.Linq;
 using GravityShift.Import_Code;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace GravityShift
 {
@@ -646,7 +644,7 @@ namespace GravityShift
             Vector2 size = mFont.MeasureString(name);
 
             //If the size is too big, we need to arrange characters so that it looks pleasing
-            if (size.X > infoBarLoc.Width*15/16)
+            if (size.X > infoBarLoc.Width * 15 / 16 && name.Contains(' '))
             {
                 int spaceIndex = name.LastIndexOf(' ');
 
