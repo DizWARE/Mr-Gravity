@@ -100,10 +100,17 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>That's My Name</Name>
     <Unlocked>False</Unlocked>
     <GoalTime>8</GoalTime>
     <GoalCollectable>34</GoalCollectable>
+=======
+    <Name>Warped</Name>
+    <Unlocked>False</Unlocked>
+    <GoalTime>6</GoalTime>
+    <GoalCollectable>5</GoalCollectable>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -163,10 +170,17 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
+<<<<<<< HEAD
     <Name>Warped</Name>
     <Unlocked>False</Unlocked>
     <GoalTime>6</GoalTime>
     <GoalCollectable>5</GoalCollectable>
+=======
+    <Name>That's My Name</Name>
+    <Unlocked>False</Unlocked>
+    <GoalTime>8</GoalTime>
+    <GoalCollectable>34</GoalCollectable>
+>>>>>>> upstream/master
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -210,11 +224,19 @@
   <LevelData>
     <Name>Take Me To Safety</Name>
     <Unlocked>False</Unlocked>
+<<<<<<< HEAD
     <GoalTime>4</GoalTime>
     <GoalCollectable>11</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+=======
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>10</GoalTime>
+>>>>>>> upstream/master
   </LevelData>
   <LevelData>
     <Name>Space Wars</Name>
@@ -314,6 +336,11 @@
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
+<<<<<<< HEAD
+=======
+    <GoalCollectable>20</GoalCollectable>
+    <GoalTime>25</GoalTime>
+>>>>>>> upstream/master
   </LevelData>
   <LevelData>
     <Name>Surfs Up</Name>
@@ -426,7 +453,11 @@
   <LevelData>
     <Name>Anything Goes</Name>
     <Unlocked>False</Unlocked>
+<<<<<<< HEAD
     <GoalTime>999</GoalTime>
+=======
+    <GoalTime>666</GoalTime>
+>>>>>>> upstream/master
     <GoalCollectable>119</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
