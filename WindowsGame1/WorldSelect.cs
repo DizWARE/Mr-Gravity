@@ -74,6 +74,7 @@ namespace GravityShift
         int mLongestName;
 
         int mStarCount = 0;
+        bool mWorldUnlocked = false;
 
         List<LevelInfo> mLevels;
         XElement mLevelInfo;
@@ -364,8 +365,11 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            if(mStarCount / 30 <= NUM_OF_WORLDS)
+            if (mStarCount / 30 <= NUM_OF_WORLDS)
+            {
+                mWorldUnlocked = true;
                 UnlockWorld(mStarCount / 30);
+            }
         }
 
         /// <summary>
@@ -588,6 +592,12 @@ namespace GravityShift
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
 
+            if (mWorldUnlocked)
+            {
+                Vector2 size = mFontBig.MeasureString("New World Unlocked");
+                spriteBatch.DrawString(mFontBig, "New World Unlocked", new Vector2(mScreenRect.Center.X - size.X/2, mScreenRect.Center.Y - size.Y/2), Color.White);
+                mWorldUnlocked = false;
+            }
             //Draw loading screen
             if (mLoading == START_LOAD)
             {
