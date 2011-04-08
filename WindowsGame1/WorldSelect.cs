@@ -377,6 +377,7 @@ namespace GravityShift
 
             mCurrentWorld = 0;
             mCurrentIndex = 1;
+            mLatestUnlocked = 0;
 
             UnlockWorld(0);
             UpdateStarCount();
