@@ -74,7 +74,11 @@ namespace GravityShift
         int mLongestName;
 
         int mStarCount = 0;
+
         bool mWorldUnlocked = false;
+        int mLatestUnlocked = 0;
+        int mUnlockedTimer = 0;
+        Texture2D mUnlockedDialog;
 
         List<LevelInfo> mLevels;
         XElement mLevelInfo;
@@ -329,19 +333,6 @@ namespace GravityShift
             UpdateStarCount();
         }
 
-        public Level NextLevel()
-        {
-            if (++mCurrentIndex > 6 && mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
-            {
-                mCurrentIndex = 1;
-                mCurrentWorld = (mCurrentWorld + 1) % 8;
-            }
-            else if (!mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
-                mCurrentIndex--;
-
-            return mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Level;
-        }
-
         /// <summary>
         /// Unlocks the given world
         /// </summary>
@@ -365,9 +356,10 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            if (mStarCount / 30 <= NUM_OF_WORLDS)
+            if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
             {
                 mWorldUnlocked = true;
+                mLatestUnlocked = mStarCount / 30;
                 UnlockWorld(mStarCount / 30);
             }
         }
@@ -389,6 +381,7 @@ namespace GravityShift
             mLevelInfoBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LevelMenu");
 
             mLoadingBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LoadingMenu");
+            mUnlockedDialog = content.Load<Texture2D>("Images/Menu/LevelSelect/WorldUnlocked");
 
             mWorldBackground = new Texture2D[8][];
             mWorldTitleBox = new Texture2D[8][];
@@ -445,6 +438,11 @@ namespace GravityShift
 
             foreach (XElement level in mLevelInfo.Elements())
                 mLevels.Add(new LevelInfo(level, content, mControls, mGraphics));
+            
+            for(int i = 0; i < 8; i++)
+                if(!mLevels[i*6].Unlocked)
+                {   mLatestUnlocked = i - 1; break; }
+
 
             UnlockWorld(0);
             UpdateStarCount();
@@ -592,12 +590,26 @@ namespace GravityShift
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
 
-            if (mWorldUnlocked)
+            if (mWorldUnlocked && mUnlockedTimer < 45)
             {
                 Vector2 size = mFontBig.MeasureString("New World Unlocked");
-                spriteBatch.DrawString(mFontBig, "New World Unlocked", new Vector2(mScreenRect.Center.X - size.X/2, mScreenRect.Center.Y - size.Y/2), Color.White);
+                /*spriteBatch.Draw(mLock, new Rectangle((int)(mScreenRect.Center.X - size.X / 2 - size.X/4), (int)(mScreenRect.Center.Y - size.Y / 2 - size.Y/2),
+                    (int)(size.X + size.X/2), (int)(size.Y + size.Y)), Color.White);
+
+                spriteBatch.DrawString(mFontBig, "New World Unlocked", new Vector2(mScreenRect.Center.X - size.X / 2 + 2,
+                    mScreenRect.Center.Y - size.Y / 2 + 2), Color.CornflowerBlue);
+                spriteBatch.DrawString(mFontBig, "New World Unlocked", new Vector2(mScreenRect.Center.X - size.X/2, 
+                    mScreenRect.Center.Y - size.Y/2), Color.White);*/
+                spriteBatch.Draw(mUnlockedDialog, new Rectangle((int)(mScreenRect.Center.X - size.X / 2 - size.X / 4), (int)(mScreenRect.Center.Y - 3*size.Y/2),
+                    (int)(size.X + size.X / 2), (int)(3*size.Y)), Color.White);
+                mUnlockedTimer++;
+            }
+            else if (mUnlockedTimer >= 45)
+            {
+                mUnlockedTimer = 0;
                 mWorldUnlocked = false;
             }
+
             //Draw loading screen
             if (mLoading == START_LOAD)
             {
