@@ -1104,7 +1104,7 @@
       <ID>3896</ID>
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="15" Y="3" />
+      <Location X="14" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
@@ -1124,7 +1124,7 @@
       <ID>3900</ID>
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="18" Y="6" />
+      <Location X="17" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
@@ -1144,7 +1144,7 @@
       <ID>3904</ID>
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="14" Y="9" />
+      <Location X="14" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
@@ -1154,7 +1154,7 @@
       <ID>3906</ID>
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="5" Y="9" />
+      <Location X="5" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
@@ -1174,7 +1174,7 @@
       <ID>3910</ID>
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="1" Y="6" />
+      <Location X="2" Y="6" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
@@ -1195,16 +1195,6 @@
       <Name>OrangeDiamond</Name>
       <Type>Static Objects</Type>
       <Location X="9" Y="3" />
-      <CollisionType>Collectable</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>NonHazards\OrangeDiamond</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3916</ID>
-      <Name>OrangeDiamond</Name>
-      <Type>Static Objects</Type>
-      <Location X="7" Y="3" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\OrangeDiamond</Texture>
