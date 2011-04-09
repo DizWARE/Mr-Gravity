@@ -643,13 +643,6 @@ namespace GravityShift
             if (mWorldUnlocked && mUnlockedTimer < 45)
             {
                 Vector2 size = mFontBig.MeasureString("New World Unlocked");
-                /*spriteBatch.Draw(mLock, new Rectangle((int)(mScreenRect.Center.X - size.X / 2 - size.X/4), (int)(mScreenRect.Center.Y - size.Y / 2 - size.Y/2),
-                    (int)(size.X + size.X/2), (int)(size.Y + size.Y)), Color.White);
-
-                spriteBatch.DrawString(mFontBig, "New World Unlocked", new Vector2(mScreenRect.Center.X - size.X / 2 + 2,
-                    mScreenRect.Center.Y - size.Y / 2 + 2), Color.CornflowerBlue);
-                spriteBatch.DrawString(mFontBig, "New World Unlocked", new Vector2(mScreenRect.Center.X - size.X/2, 
-                    mScreenRect.Center.Y - size.Y/2), Color.White);*/
                 spriteBatch.Draw(mUnlockedDialog, new Rectangle((int)(mScreenRect.Center.X - size.X / 2 - size.X / 4), (int)(mScreenRect.Center.Y - 3*size.Y/2),
                     (int)(size.X + size.X / 2), (int)(3*size.Y)), Color.White);
                 mUnlockedTimer++;
@@ -680,8 +673,11 @@ namespace GravityShift
             Rectangle titleRegion = new Rectangle(mTitleBar.Center.X - mTitleBar.Width / 4, mTitleBar.Top + (int)mPadding.Y,
                 (int)((mTitleBar.Width / 2 - 2 * mPadding.Y)), (int)(mTitleBar.Height - 2 * mPadding.Y));
 
+            Rectangle titleBackgroundRegion = new Rectangle(mGraphics.GraphicsDevice.Viewport.Bounds.X,
+                mGraphics.GraphicsDevice.Viewport.Y, mGraphics.GraphicsDevice.Viewport.Width, mTitleBar.Bottom - mGraphics.GraphicsDevice.Viewport.Y);
+
             //Draw the title and the title background
-            spriteBatch.Draw(mTitleBackground, mTitleBar, Color.White);
+            spriteBatch.Draw(mTitleBackground, titleBackgroundRegion, Color.White);
             spriteBatch.Draw(mTitle, titleRegion, Color.White);
 
             //Draw the star count
@@ -755,21 +751,21 @@ namespace GravityShift
 
                 //Stars for time
                 for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Time); i++)
-                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
-                        (int)(infoBarLoc.Top + infoBarLoc.Height * 5 / 16 - size.Y * 5 / 16),
-                        (int)size.Y, (int)size.Y), Color.White);
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + 3 * size.Y / 4 * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height * 5 / 16 - size.Y * 3 / 16),
+                        3 * (int)size.Y / 4, 3 * (int)size.Y / 4), Color.White);
 
                 //Stars for gems
                 for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Collection); i++)
-                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
-                        (int)(infoBarLoc.Top + infoBarLoc.Height / 2 - size.Y * 5 / 16),
-                        (int)size.Y, (int)size.Y), Color.White);
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + 3 * size.Y / 4 * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height / 2 - size.Y * 3 / 16),
+                        3 * (int)size.Y / 4, 3 * (int)size.Y / 4), Color.White);
 
                 //Stars for death
                 for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Death); i++)
-                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
-                        (int)(infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 5 / 16),
-                        (int)size.Y, (int)size.Y), Color.White);
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + 3 * size.Y / 4 * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 3 / 16),
+                        3 * (int)size.Y / 4, 3 * (int)size.Y / 4), Color.White);
             }
 
             //If it does have all 10
