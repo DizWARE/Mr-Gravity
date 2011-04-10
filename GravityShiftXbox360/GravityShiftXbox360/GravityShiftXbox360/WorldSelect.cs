@@ -75,6 +75,11 @@ namespace GravityShift
 
         int mStarCount = 0;
 
+        bool mWorldUnlocked = false;
+        int mLatestUnlocked = 0;
+        int mUnlockedTimer = 0;
+        Texture2D mUnlockedDialog;
+
         List<LevelInfo> mLevels;
         XElement mLevelInfo;
 
@@ -163,10 +168,18 @@ namespace GravityShift
 
 #if XBOX360
             IAsyncResult result;
-            if (!mDeviceSelected)
+            try 
             {
-                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
-                mDeviceSelected = true;
+                if (!mDeviceSelected)
+                {
+                    StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
+                    mDeviceSelected = true;
+                }
+            }
+            catch (Exception e)
+            {
+                string errTemp = e.ToString();
+                return;
             }
 
             if (device == null || !device.IsConnected)
@@ -228,19 +241,27 @@ namespace GravityShift
         /// </summary>
         public bool CheckForSave()
         {
-
             IAsyncResult result;
-            if (!mDeviceSelected && !Guide.IsVisible)
+            try
             {
-                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
-                mDeviceSelected = true;
+                if (!mDeviceSelected && !Guide.IsVisible)
+                {
+                    StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
+                    mDeviceSelected = true;
+                }
+            }
+            catch (Exception e)
+            {
+                string errTemp = e.ToString();
+                mDeviceSelected = false;
+                return false;
             }
 
-            //if (device == null || !device.IsConnected)
-            //{
+            if (device == null || !device.IsConnected)
+            {
             //mDeviceSelected = false;
-            //return false;
-            //}
+                return false;
+            }
 
             try
             {
@@ -320,6 +341,7 @@ namespace GravityShift
                 mDeviceSelected = false;
             }
 
+            this.UpdateStarCount();
             return true;
         }
 
@@ -372,22 +394,10 @@ namespace GravityShift
 
             mCurrentWorld = 0;
             mCurrentIndex = 1;
+            mLatestUnlocked = 0;
 
             UnlockWorld(0);
             UpdateStarCount();
-        }
-
-        public Level NextLevel()
-        {
-            if (++mCurrentIndex > 6 && mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
-            {
-                mCurrentIndex = 1;
-                mCurrentWorld = (mCurrentWorld + 1) % 8;
-            }
-            else if (!mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Unlocked)
-                mCurrentIndex--;
-
-            return mLevels[mCurrentWorld * 6 + mCurrentIndex - 1].Level;
         }
 
         /// <summary>
@@ -413,8 +423,12 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            if (mStarCount / 30 <= NUM_OF_WORLDS)
+            if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
+            {
+                mWorldUnlocked = true;
+                mLatestUnlocked = mStarCount / 30;
                 UnlockWorld(mStarCount / 30);
+            }
         }
 
         /// <summary>
@@ -434,6 +448,7 @@ namespace GravityShift
             mLevelInfoBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LevelMenu");
 
             mLoadingBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LoadingMenu");
+            mUnlockedDialog = content.Load<Texture2D>("Images/Menu/LevelSelect/WorldUnlocked");
 
             mWorldBackground = new Texture2D[8][];
             mWorldTitleBox = new Texture2D[8][];
@@ -490,6 +505,11 @@ namespace GravityShift
 
             foreach (XElement level in mLevelInfo.Elements())
                 mLevels.Add(new LevelInfo(level, content, mControls, mGraphics));
+            
+            for(int i = 0; i < 8; i++)
+                if(!mLevels[i*6].Unlocked)
+                {   mLatestUnlocked = i - 1; break; }
+
 
             UnlockWorld(0);
             UpdateStarCount();
@@ -637,6 +657,19 @@ namespace GravityShift
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
 
+            if (mWorldUnlocked && mUnlockedTimer < 45)
+            {
+                Vector2 size = mFontBig.MeasureString("New World Unlocked");
+                spriteBatch.Draw(mUnlockedDialog, new Rectangle((int)(mScreenRect.Center.X - size.X / 2 - size.X / 4), (int)(mScreenRect.Center.Y - 3*size.Y/2),
+                    (int)(size.X + size.X / 2), (int)(3*size.Y)), Color.White);
+                mUnlockedTimer++;
+            }
+            else if (mUnlockedTimer >= 45)
+            {
+                mUnlockedTimer = 0;
+                mWorldUnlocked = false;
+            }
+
             //Draw loading screen
             if (mLoading == START_LOAD)
             {
@@ -657,8 +690,11 @@ namespace GravityShift
             Rectangle titleRegion = new Rectangle(mTitleBar.Center.X - mTitleBar.Width / 4, mTitleBar.Top + (int)mPadding.Y,
                 (int)((mTitleBar.Width / 2 - 2 * mPadding.Y)), (int)(mTitleBar.Height - 2 * mPadding.Y));
 
+            Rectangle titleBackgroundRegion = new Rectangle(mGraphics.GraphicsDevice.Viewport.Bounds.X,
+                mGraphics.GraphicsDevice.Viewport.Y, mGraphics.GraphicsDevice.Viewport.Width, mTitleBar.Bottom - mGraphics.GraphicsDevice.Viewport.Y);
+
             //Draw the title and the title background
-            spriteBatch.Draw(mTitleBackground, mTitleBar, Color.White);
+            spriteBatch.Draw(mTitleBackground, titleBackgroundRegion, Color.White);
             spriteBatch.Draw(mTitle, titleRegion, Color.White);
 
             //Draw the star count
@@ -732,21 +768,21 @@ namespace GravityShift
 
                 //Stars for time
                 for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Time); i++)
-                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
-                        (int)(infoBarLoc.Top + infoBarLoc.Height * 5 / 16 - size.Y * 5 / 16),
-                        (int)size.Y, (int)size.Y), Color.White);
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + 3 * size.Y / 4 * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height * 5 / 16 - size.Y * 3 / 16),
+                        3 * (int)size.Y / 4, 3 * (int)size.Y / 4), Color.White);
 
                 //Stars for gems
                 for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Collection); i++)
-                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
-                        (int)(infoBarLoc.Top + infoBarLoc.Height / 2 - size.Y * 5 / 16),
-                        (int)size.Y, (int)size.Y), Color.White);
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + 3 * size.Y / 4 * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height / 2 - size.Y * 3 / 16),
+                        3 * (int)size.Y / 4, 3 * (int)size.Y / 4), Color.White);
 
                 //Stars for death
                 for (int i = 0; i < mLevels[mCurrentWorld * 6 + mCurrentIndex].GetStar(LevelInfo.StarTypes.Death); i++)
-                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + size.Y * i),
-                        (int)(infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 5 / 16),
-                        (int)size.Y, (int)size.Y), Color.White);
+                    spriteBatch.Draw(mStar, new Rectangle((int)(startXPos + 3 * size.Y / 4 * i),
+                        (int)(infoBarLoc.Top + infoBarLoc.Height * 11 / 16 - size.Y * 3 / 16),
+                        3 * (int)size.Y / 4, 3 * (int)size.Y / 4), Color.White);
             }
 
             //If it does have all 10

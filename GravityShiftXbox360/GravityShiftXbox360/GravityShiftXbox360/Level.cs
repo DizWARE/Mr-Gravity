@@ -157,7 +157,8 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine collectibleEngine;
         ParticleEngine wallEngine;
-        GameObject[] lastCollided;
+        //GameObject[] lastCollided;
+        GameObject lastCollided;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -288,10 +289,9 @@ namespace GravityShift
             wallEngine.colorScheme = "Blue";
 
 
-            lastCollided = new GameObject[2];
-            lastCollided[0] = lastCollided[1] = null;
-
- //           lastCollided = null;
+            //lastCollided = new GameObject[2];
+            //lastCollided[0] = lastCollided[1] = null;
+            lastCollided = null;
 
             mCollectableLocations = new List<Vector2>();
         }
@@ -770,11 +770,11 @@ namespace GravityShift
                         }
                         else if (!physObj.IsSquare && obj.IsSquare) // phys obj is circle
                         {
-                            collided = physObj.IsCollidingBoxAndBox(obj);
+                            collided = physObj.IsCollidingCircleAndBox(obj);
                         }
                         else if (physObj.IsSquare && !obj.IsSquare) //obj is circle 
                         {
-                            collided = physObj.IsCollidingBoxAndBox(obj);
+                            collided = physObj.IsCollidingBoxAndCircle(obj);
                         }
                         else // both circles
                         {
@@ -872,7 +872,8 @@ namespace GravityShift
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                //if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                if (cObject != lastCollided)
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
@@ -883,8 +884,9 @@ namespace GravityShift
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play(GameSound.volume * 0.8f, 0f, 0f);
 
-                                    lastCollided[1] = lastCollided[0];
-                                    lastCollided[0] = cObject;
+                                    //lastCollided[1] = lastCollided[0];
+                                    //lastCollided[0] = cObject;
+                                    lastCollided = cObject;
 
                                 }
                             }
@@ -899,7 +901,8 @@ namespace GravityShift
                                     mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                //if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                if (cObject != lastCollided)
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(cObject.mPosition.X + 32, cObject.mPosition.Y + 32);
@@ -910,8 +913,9 @@ namespace GravityShift
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play(GameSound.volume * 0.8f, 0f, 0f);
 
-                                    lastCollided[1] = lastCollided[0];
-                                    lastCollided[0] = cObject;
+                                    //lastCollided[1] = lastCollided[0];
+                                    //lastCollided[0] = cObject;
+                                    lastCollided = cObject;
 
                                 }
                             }

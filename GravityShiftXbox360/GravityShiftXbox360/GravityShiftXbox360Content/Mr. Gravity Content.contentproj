@@ -439,12 +439,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <Compile Include="music\menuMusic_title.wav">
+    <Compile Include="Music\menuMusic_title.wav">
       <Name>menuMusic_title</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level00.wav">
+    <Compile Include="Music\music_level00.wav">
       <Name>music_level00</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -694,42 +694,42 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="music\music_level01.wav">
+    <Compile Include="Music\music_level01.wav">
       <Name>music_level01</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level02.wav">
+    <Compile Include="Music\music_level02.wav">
       <Name>music_level02</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level03.wav">
+    <Compile Include="Music\music_level03.wav">
       <Name>music_level03</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level04.wav">
+    <Compile Include="Music\music_level04.wav">
       <Name>music_level04</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level05.wav">
+    <Compile Include="Music\music_level05.wav">
       <Name>music_level05</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level06.wav">
+    <Compile Include="Music\music_level06.wav">
       <Name>music_level06</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level07.wav">
+    <Compile Include="Music\music_level07.wav">
       <Name>music_level07</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level08.wav">
+    <Compile Include="Music\music_level08.wav">
       <Name>music_level08</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -1446,7 +1446,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="music\music_level09.wav">
+    <Compile Include="Music\music_level09.wav">
       <Name>music_level09</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -1637,6 +1637,20 @@
       <Name>WorldTitle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\LevelSelect\WorldUnlocked.png">
+      <Name>WorldUnlocked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Music\music_level07b.wav">
+      <Name>music_level07b</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
