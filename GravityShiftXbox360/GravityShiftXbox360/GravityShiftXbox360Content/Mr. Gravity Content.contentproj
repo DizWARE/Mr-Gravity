@@ -439,12 +439,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <Compile Include="music\menuMusic_title.wav">
+    <Compile Include="Music\menuMusic_title.wav">
       <Name>menuMusic_title</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level00.wav">
+    <Compile Include="Music\music_level00.wav">
       <Name>music_level00</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -694,42 +694,42 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="music\music_level01.wav">
+    <Compile Include="Music\music_level01.wav">
       <Name>music_level01</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level02.wav">
+    <Compile Include="Music\music_level02.wav">
       <Name>music_level02</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level03.wav">
+    <Compile Include="Music\music_level03.wav">
       <Name>music_level03</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level04.wav">
+    <Compile Include="Music\music_level04.wav">
       <Name>music_level04</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level05.wav">
+    <Compile Include="Music\music_level05.wav">
       <Name>music_level05</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level06.wav">
+    <Compile Include="Music\music_level06.wav">
       <Name>music_level06</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level07.wav">
+    <Compile Include="Music\music_level07.wav">
       <Name>music_level07</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="music\music_level08.wav">
+    <Compile Include="Music\music_level08.wav">
       <Name>music_level08</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -1446,8 +1446,209 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="music\music_level09.wav">
+    <Compile Include="Music\music_level09.wav">
       <Name>music_level09</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\LevelSelect\LevelMenu.png">
+      <Name>LevelMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\LevelMenuLocked.png">
+      <Name>LevelMenuLocked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\LoadingMenu.png">
+      <Name>LoadingMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\LockedLevel.PNG">
+      <Name>LockedLevel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World1Selected.PNG">
+      <Name>World1Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World1TitleSelected.png">
+      <Name>World1TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World1TitleUnselected.png">
+      <Name>World1TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World1Unselected.PNG">
+      <Name>World1Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World2Selected.PNG">
+      <Name>World2Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World2TitleSelected.png">
+      <Name>World2TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World2TitleUnselected.png">
+      <Name>World2TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World2Unselected.PNG">
+      <Name>World2Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World3Selected.PNG">
+      <Name>World3Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World3TitleSelected.png">
+      <Name>World3TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World3TitleUnselected.png">
+      <Name>World3TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World3Unselected.PNG">
+      <Name>World3Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World4Selected.PNG">
+      <Name>World4Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World4TitleSelected.png">
+      <Name>World4TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World4TitleUnselected.png">
+      <Name>World4TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World4Unselected.PNG">
+      <Name>World4Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World5Selected.PNG">
+      <Name>World5Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World5TitleSelected.png">
+      <Name>World5TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World5TitleUnselected.png">
+      <Name>World5TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World5Unselected.PNG">
+      <Name>World5Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World6Selected.PNG">
+      <Name>World6Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World6TitleSelected.png">
+      <Name>World6TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World6TitleUnselected.png">
+      <Name>World6TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World6Unselected.PNG">
+      <Name>World6Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World7Selected.PNG">
+      <Name>World7Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World7TitleSelected.png">
+      <Name>World7TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World7TitleUnselected.png">
+      <Name>World7TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World7Unselected.png">
+      <Name>World7Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World8Selected.PNG">
+      <Name>World8Selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World8TitleSelected.png">
+      <Name>World8TitleSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World8TitleUnselected.png">
+      <Name>World8TitleUnselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\World8Unselected.PNG">
+      <Name>World8Unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Images\Menu\LevelSelect\WorldTitle.PNG">
+      <Name>WorldTitle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\Menu\LevelSelect\WorldUnlocked.png">
+      <Name>WorldUnlocked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Music\music_level07b.wav">
+      <Name>music_level07b</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>

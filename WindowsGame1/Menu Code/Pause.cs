@@ -133,6 +133,16 @@ namespace GravityShift
                     mItems[mCurrent] = mSelItems[mCurrent];
                 }
             }
+            if (mControls.isBPressed(false) || mControls.isBackPressed(false))
+            {
+                mCurrent = 0;
+                gameState = GameStates.In_Game;
+
+                mItems[0] = mResumeSel;
+                mItems[1] = mRestartUnsel;
+                mItems[2] = mSelectLevelUnsel;
+                mItems[3] = mMainMenuUnsel;
+            }
             /* If the user selects a menu item */
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {

@@ -30,7 +30,7 @@ namespace GravityShift
         Title mTitle;
 
         //Instance of the Menu class
-        Menu mMenu;
+        //Menu mMenu;
 
         // Instance of the AfterScore class
         AfterScore mAfterScore;

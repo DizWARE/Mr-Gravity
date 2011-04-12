@@ -105,7 +105,7 @@ namespace GravityShift
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
 
-            if (mControls.isStartPressed(false))
+            if (mControls.isStartPressed(false) || mControls.isAPressed(false))
             {
                 gameState = GameStates.AfterScore;
 //#if XBOX360
@@ -243,7 +243,7 @@ namespace GravityShift
                 spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
             }
                
-            string request = "Press Start To Access The Menu";
+            string request = "Press Start or A To Access The Menu";
 
             Vector2 stringSize = mQuartz.MeasureString(request);
 

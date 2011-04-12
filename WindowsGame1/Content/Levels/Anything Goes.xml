@@ -3367,26 +3367,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>2419</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="15" Y="9" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>2421</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="9" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>2488</ID>
       <Name>Pink</Name>
       <Type>Walls</Type>
@@ -4485,136 +4465,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>3422</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="25" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3423</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="24" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3424</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="23" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3425</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="22" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3426</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="20" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3427</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="21" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3428</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="19" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3429</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="18" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3430</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="17" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3431</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="16" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3432</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="15" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3433</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3434</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>3502</ID>
       <Name>Pink</Name>
       <Type>Walls</Type>
@@ -4715,36 +4565,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>3578</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="9" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3792</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="1" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3793</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="2" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>3794</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
@@ -4755,50 +4575,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>3795</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="4" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3796</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="5" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>3797</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
       <Location X="13" Y="6" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3798</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="7" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3799</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="13" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>
@@ -5006,26 +4786,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>4078</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="8" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4079</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="7" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>4080</ID>
       <Name>Yellow</Name>
       <Type>Walls</Type>
@@ -5036,100 +4796,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>4081</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="5" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4082</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="4" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>4083</ID>
       <Name>Yellow</Name>
       <Type>Walls</Type>
       <Location X="30" Y="3" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4084</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="2" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4085</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="1" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4086</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="30" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4087</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="29" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4088</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="28" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4089</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="27" Y="0" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>4090</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="26" Y="0" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Yellow</Texture>
@@ -6939,6 +6609,411 @@
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Yellow</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5566</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5567</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="4" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5568</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5569</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="4" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5570</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="29" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5571</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="28" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5572</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="27" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5573</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="26" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5574</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="25" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5575</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5576</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5577</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5578</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5579</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5580</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5581</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5582</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5583</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5584</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5585</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5742</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="29" Y="21" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>5</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>5743</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="36" Y="22" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>3</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>5744</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="34" Y="19" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>2</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>5823</ID>
+      <Name>RailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="31" Y="26" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>4</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>5824</ID>
+      <Name>RailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="30" Y="22" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>2</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>5903</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5904</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="1" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5905</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="2" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5906</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="0" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5907</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="1" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5908</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="2" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5910</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="8" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5911</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="7" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5912</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5913</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5915</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="9" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5916</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="8" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5917</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="30" Y="7" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
       <Properties />
     </Entity>
   </Entities>

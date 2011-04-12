@@ -100,13 +100,13 @@
     <GoalTime>4</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>That's My Name</Name>
+    <Name>Warped</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>34</GoalCollectable>
-    <GoalTime>8</GoalTime>
+    <GoalCollectable>5</GoalCollectable>
+    <GoalTime>6</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Avoidance</Name>
@@ -163,13 +163,13 @@
     <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Warped</Name>
+    <Name>That's My Name</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>5</GoalCollectable>
-    <GoalTime>6</GoalTime>
+    <GoalCollectable>34</GoalCollectable>
+    <GoalTime>8</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Choosing Sides</Name>
@@ -214,7 +214,11 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>11</GoalCollectable>
+<<<<<<< HEAD
     <GoalTime>8</GoalTime>
+=======
+    <GoalTime>10</GoalTime>
+>>>>>>> upstream/master
   </LevelData>
   <LevelData>
     <Name>Space Wars</Name>
@@ -430,6 +434,6 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>119</GoalCollectable>
-    <GoalTime>999</GoalTime>
+    <GoalTime>666</GoalTime>
   </LevelData>
 </Levels>

@@ -157,7 +157,10 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine collectibleEngine;
         ParticleEngine wallEngine;
-        GameObject[] lastCollided;
+        GameObject lastCollided;
+
+        Particle[] backgroundParticles;
+        int backGroundParticleCount;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -287,11 +290,19 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
+            backGroundParticleCount = 500;
+            backgroundParticles = new Particle[backGroundParticleCount];
+            Random random = new Random();
+            for (int i = 0; i < backGroundParticleCount; i++)
+            {
+                Vector2 pos = new Vector2(random.Next(-mScreenRect.Width / 2,3 * mScreenRect.Width / 2),
+                    random.Next(-mScreenRect.Height / 2,3* mScreenRect.Height / 2));
+                backgroundParticles[i] = new Particle(content.Load<Texture2D>("Images/Particles/diamond"), pos, random);
+            }
 
-            lastCollided = new GameObject[2];
-            lastCollided[0] = lastCollided[1] = null;
-
- //           lastCollided = null;
+            //lastCollided = new GameObject[2];
+            //lastCollided[0] = lastCollided[1] = null;
+            lastCollided = null;
 
             mCollectableLocations = new List<Vector2>();
         }
@@ -465,7 +476,20 @@ namespace GravityShift
         {
             if (mPlayer.mIsAlive)// only update while player is alive
             {
+                
+                for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
+                {
+                    Random random = new Random();
+                    Vector2 randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
+                    backgroundParticles[i].Velocity = Vector2.Multiply(mPhysicsEnvironment.GravityForce, 5) + 
+                                               Vector2.Multiply(mPlayer.mVelocity,.25f) + backgroundParticles[i].Randomness;
+                    backgroundParticles[i].Update();
 
+                    Vector2 posDiff = mPlayer.Position - backgroundParticles[i].Position;
+                    if (posDiff.X < -mScreenRect.Width || posDiff.Y < -mScreenRect.Height || 
+                        posDiff.X > mScreenRect.Width|| posDiff.Y > mScreenRect.Height)
+                        backgroundParticles[i].Position = posDiff + mPlayer.Position;
+                }
                 if (mDeathState == DeathStates.Playing)
                 {
                     mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
@@ -620,7 +644,10 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation() * scale);
-
+            
+            for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
+                backgroundParticles[i].Draw(spriteBatch);
+            
             foreach (Trigger trigger in mTrigger)
                 trigger.Draw(spriteBatch, gameTime);
 
@@ -770,11 +797,11 @@ namespace GravityShift
                         }
                         else if (!physObj.IsSquare && obj.IsSquare) // phys obj is circle
                         {
-                            collided = physObj.IsCollidingBoxAndBox(obj);
+                            collided = physObj.IsCollidingCircleAndBox(obj);
                         }
                         else if (physObj.IsSquare && !obj.IsSquare) //obj is circle 
                         {
-                            collided = physObj.IsCollidingBoxAndBox(obj);
+                            collided = physObj.IsCollidingBoxAndCircle(obj);
                         }
                         else // both circles
                         {
@@ -872,7 +899,8 @@ namespace GravityShift
                                     mActiveAnimations.Add(animation.Key, GetAnimation(animation.Value));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                //if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                if (cObject != lastCollided)
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(animation.Key.X + 32, animation.Key.Y + 32);
@@ -883,8 +911,9 @@ namespace GravityShift
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play(GameSound.volume * 0.8f, 0f, 0f);
 
-                                    lastCollided[1] = lastCollided[0];
-                                    lastCollided[0] = cObject;
+                                    //lastCollided[1] = lastCollided[0];
+                                    //lastCollided[0] = cObject;
+                                    lastCollided = cObject;
 
                                 }
                             }
@@ -899,7 +928,8 @@ namespace GravityShift
                                     mActiveAnimations.Add(cObject.mPosition, GetAnimation(cObject.mName));
 
                                 // Particle Effects.
-                                if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                //if (cObject != lastCollided[0] && cObject != lastCollided[1])
+                                if (cObject != lastCollided)
                                 {
                                     Vector2 one = new Vector2(mPlayer.Position.X + 32, mPlayer.Position.Y + 32);
                                     Vector2 two = new Vector2(cObject.mPosition.X + 32, cObject.mPosition.Y + 32);
@@ -910,8 +940,9 @@ namespace GravityShift
                                     // play wall collision sound
                                     GameSound.playerCol_wall.Play(GameSound.volume * 0.8f, 0f, 0f);
 
-                                    lastCollided[1] = lastCollided[0];
-                                    lastCollided[0] = cObject;
+                                    //lastCollided[1] = lastCollided[0];
+                                    //lastCollided[0] = cObject;
+                                    lastCollided = cObject;
 
                                 }
                             }
