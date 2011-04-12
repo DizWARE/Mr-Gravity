@@ -31,7 +31,7 @@ namespace GravityShift
             Texture2D texture = textures[random.Next(textures.Count)];
             Vector2 position = EmitterLocation;
             
-            // Set velocity randomly from [-1.0, 1.0] is both x and y.
+            // Set velocity randomly from [-1.0, 1.0] in both x and y.
             Vector2 velocity = new Vector2(
                     1f * (float)(random.NextDouble() * 2 - 1),
                     1f * (float)(random.NextDouble() * 2 - 1));

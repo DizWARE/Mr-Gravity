@@ -157,8 +157,10 @@ namespace GravityShift
         // Particle Engine
         ParticleEngine collectibleEngine;
         ParticleEngine wallEngine;
-        //GameObject[] lastCollided;
         GameObject lastCollided;
+
+        Particle[] backgroundParticles;
+        int backGroundParticleCount;
 
         /* Title Safe Area */
         Rectangle mScreenRect;
@@ -288,6 +290,14 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
+            backGroundParticleCount = 1000;
+            backgroundParticles = new Particle[backGroundParticleCount];
+            Random random = new Random();
+            for (int i = 0; i < backGroundParticleCount; i++)
+            {
+                Vector2 pos = new Vector2(random.Next(-1000, 2500), random.Next(-1000, 2500));
+                backgroundParticles[i] = new Particle(content.Load<Texture2D>("Images/Particles/diamond"), pos, random);
+            }
 
             //lastCollided = new GameObject[2];
             //lastCollided[0] = lastCollided[1] = null;
@@ -466,6 +476,13 @@ namespace GravityShift
             if (mPlayer.mIsAlive)// only update while player is alive
             {
 
+                for (int i = 0; i < backGroundParticleCount; i++)
+                {
+                    Random random = new Random();
+                    Vector2 randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
+                    backgroundParticles[i].Velocity = mPlayer.mVelocity + backgroundParticles[i].Randomness / 25;
+                    backgroundParticles[i].Update();
+                }
                 if (mDeathState == DeathStates.Playing)
                 {
                     mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
@@ -620,7 +637,10 @@ namespace GravityShift
                 RasterizerState.CullCounterClockwise,
                 null,
                 mCam.get_transformation() * scale);
-
+            
+            for (int i = 0; i < backGroundParticleCount; i++)
+                backgroundParticles[i].Draw(spriteBatch);
+            
             foreach (Trigger trigger in mTrigger)
                 trigger.Draw(spriteBatch, gameTime);
 
