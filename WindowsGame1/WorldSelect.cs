@@ -168,10 +168,18 @@ namespace GravityShift
 
 #if XBOX360
             IAsyncResult result;
-            if (!mDeviceSelected)
+            try 
             {
-                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
-                mDeviceSelected = true;
+                if (!mDeviceSelected)
+                {
+                    StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
+                    mDeviceSelected = true;
+                }
+            }
+            catch (Exception e)
+            {
+                string errTemp = e.ToString();
+                return;
             }
 
             if (device == null || !device.IsConnected)
@@ -233,19 +241,27 @@ namespace GravityShift
         /// </summary>
         public bool CheckForSave()
         {
-
             IAsyncResult result;
-            if (!mDeviceSelected && !Guide.IsVisible)
+            try
             {
-                StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
-                mDeviceSelected = true;
+                if (!mDeviceSelected && !Guide.IsVisible)
+                {
+                    StorageDevice.BeginShowSelector(((ControllerControl)mControls).ControllerIndex, this.SelectDevice, null);
+                    mDeviceSelected = true;
+                }
+            }
+            catch (Exception e)
+            {
+                string errTemp = e.ToString();
+                mDeviceSelected = false;
+                return false;
             }
 
-            //if (device == null || !device.IsConnected)
-            //{
+            if (device == null || !device.IsConnected)
+            {
             //mDeviceSelected = false;
-            //return false;
-            //}
+                return false;
+            }
 
             try
             {
@@ -325,6 +341,7 @@ namespace GravityShift
                 mDeviceSelected = false;
             }
 
+            this.UpdateStarCount();
             return true;
         }
 

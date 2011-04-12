@@ -115,6 +115,7 @@
     <Compile Include="Import Code\Importer.cs" />
     <Compile Include="Import Code\XmlKeys.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="LevelSelect.cs" />
     <Compile Include="Menu Code\AfterScore.cs" />
     <Compile Include="Menu Code\Controller.cs" />
     <Compile Include="Menu Code\Credits.cs" />
