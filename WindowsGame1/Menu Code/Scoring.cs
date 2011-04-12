@@ -173,7 +173,7 @@ namespace GravityShift
 
             // TODO - CHANGE TO DYNAMIC PLACEMENT
 
-            float textLength = mQuartz.MeasureString("Collected:").Length();
+            float textLength = mQuartz.MeasureString("Deaths:").Length();
             float bufferLength = mQuartz.MeasureString("999/999  ").Length();
 
             int topPadding = mScreenRect.Top + mScreenRect.Height / 4;
@@ -204,8 +204,8 @@ namespace GravityShift
             
             topPadding += 65;
 
-            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 6), topPadding), Color.White);
-            spriteBatch.DrawString(mQuartz, "Collected:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
+            spriteBatch.DrawString(mQuartz, "Gems:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 6), topPadding), Color.White);
+            spriteBatch.DrawString(mQuartz, "Gems:", new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
             spriteBatch.DrawString(mQuartz, (int)GravityShift.Level.mNumCollected + " / " + GravityShift.Level.mNumCollectable, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + 20, topPadding), Color.White);
 
             if (attempt[1] >= 1)

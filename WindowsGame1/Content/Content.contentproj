@@ -504,6 +504,11 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <Compile Include="Fonts\QuartzEvenLarger.spritefont">
+      <Name>QuartzEvenLarger</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Levels\Chambers.xml">
       <Name>Chambers</Name>
       <Importer>XmlImporter</Importer>

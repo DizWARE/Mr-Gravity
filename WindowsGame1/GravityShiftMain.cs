@@ -420,10 +420,13 @@ namespace GravityShift
                 mSequence--;
 
                 if (mSequence <= 0)
-                {   
-                    if (mCurrentLevel.CollectionStar == 3 || mCurrentLevel.DeathStar == 3 || 
-                        mCurrentLevel.TimerStar == 3) 
-                    mCurrentState = GameStates.PreScore;
+                {
+                    if (mCurrentLevel.CollectionStar == 3 || mCurrentLevel.DeathStar == 3 ||
+                        mCurrentLevel.TimerStar == 3)
+                        mCurrentState = GameStates.PreScore;
+                    else
+                        mCurrentState = GameStates.Score;
+
                 }
             }
             else if (mCurrentState == GameStates.Death)
@@ -597,7 +600,7 @@ namespace GravityShift
             else if (mCurrentState == GameStates.PreScore)
             {
                 mScoring.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
-                mPreScore.Draw(mSpriteBatch, mGraphics, scale);
+                mPreScore.Draw(mSpriteBatch, mGraphics, scale, mCurrentLevel);
             }
             else if (mCurrentState == GameStates.ResetConfirm)
             {
