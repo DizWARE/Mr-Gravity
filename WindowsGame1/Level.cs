@@ -290,12 +290,13 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
-            backGroundParticleCount = 1000;
+            backGroundParticleCount = 500;
             backgroundParticles = new Particle[backGroundParticleCount];
             Random random = new Random();
             for (int i = 0; i < backGroundParticleCount; i++)
             {
-                Vector2 pos = new Vector2(random.Next(-1000, 2500), random.Next(-1000, 2500));
+                Vector2 pos = new Vector2(random.Next(-mScreenRect.Width / 2,3 * mScreenRect.Width / 2),
+                    random.Next(-mScreenRect.Height / 2,3* mScreenRect.Height / 2));
                 backgroundParticles[i] = new Particle(content.Load<Texture2D>("Images/Particles/diamond"), pos, random);
             }
 
@@ -475,13 +476,19 @@ namespace GravityShift
         {
             if (mPlayer.mIsAlive)// only update while player is alive
             {
-
-                for (int i = 0; i < backGroundParticleCount; i++)
+                
+                for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
                 {
                     Random random = new Random();
                     Vector2 randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
-                    backgroundParticles[i].Velocity = mPlayer.mVelocity + backgroundParticles[i].Randomness / 25;
+                    backgroundParticles[i].Velocity = Vector2.Multiply(mPhysicsEnvironment.GravityForce, 5) + 
+                                               Vector2.Multiply(mPlayer.mVelocity,.25f) + backgroundParticles[i].Randomness;
                     backgroundParticles[i].Update();
+
+                    Vector2 posDiff = mPlayer.Position - backgroundParticles[i].Position;
+                    if (posDiff.X < -mScreenRect.Width || posDiff.Y < -mScreenRect.Height || 
+                        posDiff.X > mScreenRect.Width|| posDiff.Y > mScreenRect.Height)
+                        backgroundParticles[i].Position = posDiff + mPlayer.Position;
                 }
                 if (mDeathState == DeathStates.Playing)
                 {
@@ -638,7 +645,7 @@ namespace GravityShift
                 null,
                 mCam.get_transformation() * scale);
             
-            for (int i = 0; i < backGroundParticleCount; i++)
+            for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
                 backgroundParticles[i].Draw(spriteBatch);
             
             foreach (Trigger trigger in mTrigger)
