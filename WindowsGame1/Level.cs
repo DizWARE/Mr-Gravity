@@ -14,6 +14,8 @@ using GravityShift.Game_Objects.Static_Objects.Triggers;
 using GravityShift.Import_Code;
 using GravityShift.MISC_Code;
 using GravityShift.Game_Objects.Static_Objects;
+using System.Threading;
+using System.ComponentModel;
 
 namespace GravityShift
 {
@@ -139,6 +141,9 @@ namespace GravityShift
         List<Vector2> mCollectableLocations;
         AnimatedSprite mCollectableAnimation = null;
 
+        AnimatedSprite mHazardAnimation = null;
+        AnimatedSprite mReverseHazardAnimation = null;
+
         Player mPlayer;
         PlayerEnd mPlayerEnd;
 
@@ -164,6 +169,7 @@ namespace GravityShift
 
         /* Title Safe Area */
         Rectangle mScreenRect;
+        Rectangle mBounds;
 
         /* Scoring Values */
         int mTimerStar;
@@ -204,6 +210,8 @@ namespace GravityShift
             }
         }
 
+        BackgroundWorker bw;
+
         /// <summary>
         /// Resets the Scores for this level to 0.
         /// </summary>
@@ -236,6 +244,7 @@ namespace GravityShift
 
             mCam = new Camera(viewport);
 
+            mBounds = viewport.Bounds;
             mScreenRect = viewport.TitleSafeArea;
 
             mRails = new List<EntityInfo>();
@@ -248,6 +257,9 @@ namespace GravityShift
             mPhysicsEnvironment = new PhysicsEnvironment();
 
             mTimerStar = mDeathStar = mTimerStar = 0;
+
+            bw = new BackgroundWorker { WorkerReportsProgress = true, WorkerSupportsCancellation = true };
+            bw.DoWork += UpdateParticles;
         }
 
         /// <summary>
@@ -290,14 +302,15 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
-            backGroundParticleCount = 500;
+            backGroundParticleCount = 1000;
             backgroundParticles = new Particle[backGroundParticleCount];
             Random random = new Random();
+            Texture2D particle = content.Load<Texture2D>("Images/Particles/diamond");
             for (int i = 0; i < backGroundParticleCount; i++)
             {
-                Vector2 pos = new Vector2(random.Next(-mScreenRect.Width / 2,3 * mScreenRect.Width / 2),
-                    random.Next(-mScreenRect.Height / 2,3* mScreenRect.Height / 2));
-                backgroundParticles[i] = new Particle(content.Load<Texture2D>("Images/Particles/diamond"), pos, random);
+                Vector2 pos = new Vector2(random.Next(-(int)(mBounds.Width + mSize.X) / 2, 3 * (int)(mBounds.Width + mSize.X) / 2),
+                    random.Next(-(int)(mBounds.Height + mSize.Y) / 2, 3 * (int)(mBounds.Height + mSize.Y) / 2));
+                backgroundParticles[i] = new Particle(particle, pos, random);
             }
 
             //lastCollided = new GameObject[2];
@@ -466,6 +479,23 @@ namespace GravityShift
             else { mDeathStar = 1; }
         }
 
+        public void UpdateParticles(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 0; i < backGroundParticleCount; i++)// && !IsMainMenu; i++)
+            {
+                Random random = new Random();
+                Vector2 randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
+                backgroundParticles[i].Velocity = Vector2.Multiply(mPhysicsEnvironment.GravityForce, 15) +
+                                           Vector2.Multiply(mPlayer.mVelocity, .25f) + backgroundParticles[i].Randomness;
+                backgroundParticles[i].Update();
+
+                Vector2 posDiff = mPlayer.Position - backgroundParticles[i].Position;
+                if (posDiff.X < -mBounds.Width || posDiff.Y < -mBounds.Height ||
+                    posDiff.X > mBounds.Width || posDiff.Y > mBounds.Height)
+                    backgroundParticles[i].Position = posDiff + mPlayer.Position;
+            }
+
+        }
 
         /// <summary>
         /// Updates the level's progress
@@ -476,20 +506,9 @@ namespace GravityShift
         {
             if (mPlayer.mIsAlive)// only update while player is alive
             {
+                if (!bw.IsBusy)
+                    bw.RunWorkerAsync();
                 
-                for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
-                {
-                    Random random = new Random();
-                    Vector2 randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
-                    backgroundParticles[i].Velocity = Vector2.Multiply(mPhysicsEnvironment.GravityForce, 5) + 
-                                               Vector2.Multiply(mPlayer.mVelocity,.25f) + backgroundParticles[i].Randomness;
-                    backgroundParticles[i].Update();
-
-                    Vector2 posDiff = mPlayer.Position - backgroundParticles[i].Position;
-                    if (posDiff.X < -mScreenRect.Width || posDiff.Y < -mScreenRect.Height || 
-                        posDiff.X > mScreenRect.Width|| posDiff.Y > mScreenRect.Height)
-                        backgroundParticles[i].Position = posDiff + mPlayer.Position;
-                }
                 if (mDeathState == DeathStates.Playing)
                 {
                     mTimer += (gameTime.ElapsedGameTime.TotalSeconds);
@@ -508,6 +527,21 @@ namespace GravityShift
                             if (!mCollectableLocations.Contains(gObject.mPosition))
                             {
                                 mCollectableLocations.Add(gObject.mPosition);
+                            }
+                        }
+                        if (gObject.CollisionType == XmlKeys.HAZARDOUS)
+                        {
+                            if (gObject is ReverseTile)
+                            {
+                                if (mReverseHazardAnimation == null)
+                                {
+                                    mReverseHazardAnimation = GetAnimation("ReverseMovingHazard");
+                                }
+                            }
+                            else if (gObject is MovingTile)
+                            {
+                                if (mHazardAnimation == null)
+                                    mHazardAnimation = GetAnimation("MovingHazard");
                             }
                         }
                         if (gObject is PhysicsObject)
@@ -549,6 +583,13 @@ namespace GravityShift
                     //Update collectable animations
                     if (mCollectableAnimation != null)
                         mCollectableAnimation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+                    //Update hazard animations
+                    if (mHazardAnimation != null)
+                        mHazardAnimation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+                    if (mReverseHazardAnimation != null)
+                        mReverseHazardAnimation.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
                     //Check to see if we collected anything
                     if (mRemoveCollected.Count > 0)
@@ -645,7 +686,7 @@ namespace GravityShift
                 null,
                 mCam.get_transformation() * scale);
             
-            for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
+            for (int i = 0; i < backGroundParticleCount; i++)// && !IsMainMenu; i++)
                 backgroundParticles[i].Draw(spriteBatch);
             
             foreach (Trigger trigger in mTrigger)
@@ -693,8 +734,32 @@ namespace GravityShift
 
             //Draw all of our game objects
             foreach (GameObject gObject in mObjects)
-                if (gObject.CollisionType != XmlKeys.COLLECTABLE)
+            {
+                if (gObject.CollisionType == XmlKeys.HAZARDOUS)
+                {
+                    if (gObject is ReverseTile)
+                    {
+                        if (mReverseHazardAnimation != null)
+                        {
+                            mReverseHazardAnimation.Draw(spriteBatch, gObject.mPosition);
+                        }
+                    }
+                    else if (gObject is MovingTile)
+                    {
+                        if (mHazardAnimation != null)
+                        {
+                            mHazardAnimation.Draw(spriteBatch, gObject.mPosition);
+                        }
+                    }
+                    else
+                    {
+                        gObject.Draw(spriteBatch, gameTime);
+                    }
+                }
+                else if (gObject.CollisionType != XmlKeys.COLLECTABLE)
                     gObject.Draw(spriteBatch, gameTime);
+
+            }
 
             //Draw all of our active animations
             if (shouldAnimate)
@@ -1038,6 +1103,12 @@ namespace GravityShift
                     break;
                 case "YellowGem":
                     newAnimation.Load(mContent, "YellowGem", 6, 0.15f);
+                    break;
+                case "MovingHazard":
+                    newAnimation.Load(mContent, "MovingHazard", 4, 0.15f);
+                    break;
+                case "ReverseMovingHazard":
+                    newAnimation.Load(mContent, "ReverseMovingHazard", 4, 0.15f);
                     break;
                 default:
                     newAnimation.Load(mContent, "NoAnimation", 1, 0.5f);
