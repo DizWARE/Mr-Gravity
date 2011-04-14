@@ -449,6 +449,9 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
+            if(mStarCount < 30)
+            { UnlockWorld(0); return; }
+
             if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
             {
                 mWorldUnlocked = true;
@@ -542,8 +545,6 @@ namespace GravityShift
                 if(!mLevels[i*6].Unlocked)
                 {   mLatestUnlocked = i - 1; break; }
 
-
-            UnlockWorld(0);
             UpdateStarCount();
         }
         /// <summary>
