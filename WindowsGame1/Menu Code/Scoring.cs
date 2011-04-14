@@ -102,7 +102,7 @@ namespace GravityShift
          *
          * GameTime gameTime: The current game time variable
          */
-        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
+        public void Update(GameTime gameTime, ref GameStates gameState, ref Level level, WorldSelect worldSelect)
         {
 
             if (mControls.isStartPressed(false) || mControls.isAPressed(false))

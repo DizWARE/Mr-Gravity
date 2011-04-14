@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 using GravityShift.Import_Code;
 using GravityShift.Game_Objects.Static_Objects.Triggers; 
 using GravityShift.MISC_Code;
+using System.Diagnostics;
 
 namespace GravityShift
 {
@@ -202,7 +203,7 @@ namespace GravityShift
 
             mWorldSelect.Load(Content);
             mAfterScore.Load(Content, GraphicsDevice);
-            mPreScore.Load(Content, GraphicsDevice);
+            mPreScore.Load(Content, GraphicsDevice, mWorldSelect);
             mResetConfirm.Load(Content);
             mController.Load(Content);
             mSoundOptions.Load(Content);
@@ -358,9 +359,9 @@ namespace GravityShift
                     if (GameSound.menuMusic_title.State != SoundState.Playing)
                         GameSound.StopOthersAndPlay(GameSound.menuMusic_title);
 
-                //mWorldSelect.UpdateStarCount();
+                mWorldSelect.UpdateStarCount();
                 
-                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel);
+                mScoring.Update(gameTime, ref mCurrentState, ref mCurrentLevel, mWorldSelect);
             }
             else if (mCurrentState == GameStates.Level_Selection)
             {
@@ -398,7 +399,7 @@ namespace GravityShift
                 //Update the stars in level
                 //Update star count
                 mCurrentLevel.UpdateStars();
-                mWorldSelect.UpdateStarCount();
+//                mWorldSelect.UpdateStarCount();
 
                 mSequence = VICTORY_DURATION;
                 mCurrentState = GameStates.Victory;
@@ -418,15 +419,17 @@ namespace GravityShift
             else if (mCurrentState == GameStates.Victory)
             {
                 mSequence--;
+                
+                Debug.WriteLine(mWorldSelect.getLevelDeath());
 
-                if (mSequence <= 0)
+                if (mSequence <= 0) 
                 {
-                    if (mCurrentLevel.CollectionStar == 3 || mCurrentLevel.DeathStar == 3 ||
-                        mCurrentLevel.TimerStar == 3)
+                    if ((mCurrentLevel.CollectionStar == 3 && (mWorldSelect.getLevelCollect()) != 3) ||
+                       (mCurrentLevel.DeathStar == 3 && (mWorldSelect.getLevelDeath() != 3)) ||
+                       (mCurrentLevel.TimerStar == 3 && (mWorldSelect.getLevelTime() != 3)))
                         mCurrentState = GameStates.PreScore;
                     else
                         mCurrentState = GameStates.Score;
-
                 }
             }
             else if (mCurrentState == GameStates.Death)

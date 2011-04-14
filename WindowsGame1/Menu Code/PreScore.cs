@@ -44,9 +44,17 @@ namespace GravityShift
         private bool upToScale;
         private bool pulse;
 
+        private WorldSelect mWorldSelect;
+
         public static  List<string> starList;
 
+        public LevelInfo mCurrentLevel;
+
+        double elapsedTime = 0.0;
+
         private string gemString, deathString, timeString;
+
+        float current;
 
         private bool mDoOnce;
 
@@ -63,11 +71,14 @@ namespace GravityShift
          *
          * ContentManager content: the Content file used in the game.
          */
-        public void Load(ContentManager content, GraphicsDevice graphics)
+        public void Load(ContentManager content, GraphicsDevice graphics, WorldSelect worldSelect)
         {
             mContent = content;
 
             mScreenRect = graphics.Viewport.TitleSafeArea;
+
+//            mCurrentLevel = new LevelInfo();
+            current = mScreenRect.Right;
 
             mTrans = content.Load<Texture2D>("Images/Menu/Pause/PausedTrans");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzEvenLarger");
@@ -79,7 +90,7 @@ namespace GravityShift
             topYCoord3 = mScreenRect.Center.Y - mQuartz.MeasureString("GEM CHALLENGE").Y * 2;
             bottomYCoord3 = mScreenRect.Center.Y + mQuartz.MeasureString("DEATH CHALLENGE").Y;
 
-            mScale = 0.0f;
+            mScale = 1.0f;
 
             pulse = false;
             upToScale = false;
@@ -92,6 +103,8 @@ namespace GravityShift
 
             starList = new List<string>();
             starList.Clear();
+
+            mWorldSelect = worldSelect;
         }
 
         /*
@@ -105,7 +118,9 @@ namespace GravityShift
          */
         public void Update(GameTime gameTime, ref GameStates gameState, ref Level level)
         {
-            if (mScale <= 1 && !upToScale)
+            elapsedTime += gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (mScale < 1 && !upToScale)
             {
                 mScale += 0.05f;
             }
@@ -123,13 +138,33 @@ namespace GravityShift
                     pulse = false;
             }
             /* If the user selects one of the menu items */
-            if (mControls.isAPressed(false) || mControls.isStartPressed(false))
+            if (mControls.isAPressed(false) || mControls.isStartPressed(false) || elapsedTime >= 3.0)
             {
                 GameSound.menuSound_select.Play(GameSound.volume, 0.0f, 0.0f);
 
                 /*Back To Level Selection*/
                 gameState = GameStates.Score;
+
+                reset();
             }
+        }
+
+        void reset()
+        {
+            pulse = false;
+            upToScale = false;
+
+            gemString = "GEM CHALLENGE!";
+            timeString = "TIME CHALLENGE!";
+            deathString = "DEATH CHALLENGE!";
+
+            mDoOnce = false;
+
+            starList.Clear();
+            current = mScreenRect.Right;
+
+            elapsedTime = 0.0;
+            mScale = 1.0f;
         }
 
         /*
@@ -152,20 +187,19 @@ namespace GravityShift
                 scale);
 
             float[] mSize = new float[2] { (float)mScreenRect.Width / (float)graphics.GraphicsDevice.Viewport.Width, (float)mScreenRect.Height / (float)graphics.GraphicsDevice.Viewport.Height };
-
             spriteBatch.Draw(mTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White);
 
             if (!mDoOnce)
             {
-                if (currentLevel.CollectionStar == 3)
+                if (currentLevel.CollectionStar == 3 && (mWorldSelect.getLevelCollect()) != 3)
                 {
                     starList.Add(gemString);
                 }
-                if (currentLevel.TimerStar == 3)
+                if (currentLevel.TimerStar == 3 && (mWorldSelect.getLevelTime()) != 3)
                 {
                     starList.Add(timeString);
                 }
-                if (currentLevel.DeathStar == 3)
+                if (currentLevel.DeathStar == 3 && (mWorldSelect.getLevelDeath()) != 3)
                 {
                     starList.Add(deathString);
                 }
@@ -174,27 +208,41 @@ namespace GravityShift
 
             if (starList.Count == 1)
             {
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(xCoord, centerYCoord), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(xCoord + 4, centerYCoord + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                if (current >= xCoord)
+                {
+                    current-= 100;
+                }
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current, centerYCoord), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current + 4, centerYCoord + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
             }
             else if (starList.Count == 2)
             {
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(xCoord, topYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(xCoord + 4, topYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                if (current >= xCoord)
+                {
+                    current -= 100;
+                }
 
-                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(xCoord, bottomYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(xCoord + 4, bottomYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current, topYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current + 4, topYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+
+                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current, bottomYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current + 4, bottomYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
             }
             else if (starList.Count == 3)
             {
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(xCoord, topYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(xCoord + 4, topYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                if (current >= xCoord)
+                {
+                    current -= 100;
+                }
 
-                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(xCoord, centerYCoord), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(xCoord + 4, centerYCoord + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current, topYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current + 4, topYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
 
-                spriteBatch.DrawString(mQuartz, starList[2], new Vector2(xCoord, bottomYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[2], new Vector2(xCoord + 4, bottomYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current, centerYCoord), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current + 4, centerYCoord + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+
+                spriteBatch.DrawString(mQuartz, starList[2], new Vector2(current, bottomYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[2], new Vector2(current + 4, bottomYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
             }
 
             spriteBatch.End();

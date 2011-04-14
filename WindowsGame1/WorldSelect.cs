@@ -26,7 +26,6 @@ namespace GravityShift
     /// </summary>
     class WorldSelect
     {
-
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
 
         //struct needed for serializing on xbox
@@ -400,6 +399,21 @@ namespace GravityShift
 
             UnlockWorld(0);
             UpdateStarCount();
+        }
+
+        public int getLevelTime()
+        {
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex].TimerStar;
+        }
+
+        public int getLevelCollect()
+        {
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex].CollectStar;
+        }
+
+        public int getLevelDeath()
+        {
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex].DeathStar;
         }
 
         /// <summary>
@@ -919,6 +933,31 @@ namespace GravityShift
         private int mDeathStars;
         private int mGoalTime;
         private int mGoalCollectable;
+
+        public int TimerStar
+        {
+            get
+            {
+                return mTimeStars;
+            }
+        }
+
+        public int CollectStar
+        {
+            get
+            {
+                return mCollectableStars;
+            }
+        }
+
+        public int DeathStar
+        {
+            get
+            {
+                return mDeathStars;
+            }
+        }
+
 
         public enum StarTypes { Death, Time, Collection }
 
