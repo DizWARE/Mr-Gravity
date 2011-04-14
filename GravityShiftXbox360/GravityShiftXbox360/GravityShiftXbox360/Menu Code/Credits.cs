@@ -17,6 +17,11 @@ namespace GravityShift
         Texture2D mBack;
         Texture2D mBackground;
 
+        Texture2D mSmile;
+        Texture2D mGirlSmile;
+        Texture2D mSad;
+        Texture2D mGirlSad;
+
         IControlScheme mControls;
         GraphicsDeviceManager mGraphics;
 
@@ -57,6 +62,11 @@ namespace GravityShift
             mFontBig = content.Load<SpriteFont>("Fonts\\QuartzLarge");
             mFontSmall = content.Load<SpriteFont>("Fonts\\QuartzSmall");
             mBackground = content.Load<Texture2D>("Images\\Menu\\backgroundSquares1");
+            mSmile = content.Load<Texture2D>("Images\\Player\\Smile");
+            mGirlSmile = content.Load<Texture2D>("Images\\Player\\GirlSmile");
+            mSad = content.Load<Texture2D>("Images\\Player\\Sad");
+            mGirlSad = content.Load<Texture2D>("Images\\Player\\GirlSad");
+
         }
 
         /// <summary>
@@ -95,8 +105,10 @@ namespace GravityShift
             spriteBatch.Draw(mBack, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Right - (int)(mBack.Width * mSize[0]) / 2,
                                                 mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom - (int)(mBack.Height * mSize[1]) / 2, (int)(mBack.Width * mSize[0]) / 2, (int)(mBack.Height * mSize[1]) / 2), Color.White);
 
+            spriteBatch.Draw(mSmile, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - mTitle.Width / 4 - mSmile.Width, (int)mTopY - mSmile.Height / 2, mSmile.Width, mSmile.Height), Color.White);
+            spriteBatch.Draw(mGirlSmile, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X + mTitle.Width / 4, (int)mTopY - mGirlSmile.Height / 2,mGirlSmile.Width, mGirlSmile.Height), Color.White);
             //Draw the game title before the words. Scrolls too
-            spriteBatch.Draw(mTitle, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - mTitle.Width / 4, (int)mTopY,mTitle.Width/2,mTitle.Height/2),
+            spriteBatch.Draw(mTitle, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - mTitle.Width / 4, (int)mTopY - mTitle.Height / 4,mTitle.Width/2,mTitle.Height/2),
                 Color.White);
 
             //Make room for the game title
@@ -121,8 +133,12 @@ namespace GravityShift
                 top += 100;
             }
 
+            spriteBatch.Draw(mSad, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - mSad.Width, top, mSad.Width, mSad.Height), Color.White);
+            spriteBatch.Draw(mGirlSad, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X, top, mGirlSad.Width, mGirlSad.Height), Color.White);
+
+
             //If bottom has been reached, reset to the top
-            if (top == mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top)
+            if (top <= mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top)
                 mTopY = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom;
             spriteBatch.End();
         }
