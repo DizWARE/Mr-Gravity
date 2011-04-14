@@ -237,7 +237,7 @@
   <LevelData>
     <Name>Space Intruders</Name>
     <Unlocked>False</Unlocked>
-    <GoalTime>6</GoalTime>
+    <GoalTime>18</GoalTime>
     <GoalCollectable>14</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
@@ -271,10 +271,10 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>Out Of Nowhere</Name>
+    <Name>Black Holes</Name>
     <Unlocked>False</Unlocked>
-    <GoalTime>14</GoalTime>
-    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>7</GoalTime>
+    <GoalCollectable>10</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -325,10 +325,10 @@
     <Deathstar>0</Deathstar>
   </LevelData>
   <LevelData>
-    <Name>Black Holes</Name>
+    <Name>Out Of Nowhere</Name>
     <Unlocked>False</Unlocked>
-    <GoalTime>7</GoalTime>
-    <GoalCollectable>10</GoalCollectable>
+    <GoalTime>12</GoalTime>
+    <GoalCollectable>11</GoalCollectable>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
