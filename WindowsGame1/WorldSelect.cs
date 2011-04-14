@@ -45,7 +45,7 @@ namespace GravityShift
         private const int TIMER_REGION = 1;
         private const int DEATH_REGION = 3;
 
-        private const int NUM_OF_WORLDS = 8;
+        private const int NUM_OF_WORLDS = 9;
 
         IControlScheme mControls;
         GraphicsDeviceManager mGraphics;
@@ -70,7 +70,7 @@ namespace GravityShift
         const int LOADING = 2;
         int mLoading = 0;
 
-        string[] mWorlds = { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck" };
+        string[] mWorlds = { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck", "UNNAMED - CONTEST" };
         int mLongestName;
 
         int mStarCount = 0;
@@ -847,15 +847,23 @@ namespace GravityShift
                     Rectangle textBox = new Rectangle((int)(background.Center.X - mLongestName / 2 - mLongestName / 16), (int)(background.Top - worldText.Y - worldText.Y / 16), (int)(mLongestName + mLongestName / 8), (int)(worldText.Y + worldText.Y / 8));
                     spriteBatch.Draw(mWorldTitleBox[i / 6][Convert.ToInt32(i / 6 != mCurrentWorld)], textBox, Color.White);
                     spriteBatch.DrawString(mFont, mWorlds[i / 6], new Vector2(textBox.Center.X - worldText.X / 2, textBox.Center.Y - worldText.Y / 2), Color.White);
-
-                    //If the world is not unlocked, than cover it up with the lock
-                    if (!mLevels[i].Unlocked)
+                    if (Guide.IsTrialMode)
                     {
                         spriteBatch.Draw(mLock, background, Color.White);
 
                         drawNumbers = false;
-                        worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " Stars to Unlock");
-                        spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " Stars to Unlock",
+                        worldText = mFontBig.MeasureString("World Locked: You need to buy the game to play");
+                        spriteBatch.DrawString(mFontBig, "World Locked: You need to buy the game to play",
+                            new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
+                    }
+                    //If the world is not unlocked, than cover it up with the lock
+                    else if (!mLevels[i].Unlocked)
+                    {
+                        spriteBatch.Draw(mLock, background, Color.White);
+
+                        drawNumbers = false;
+                        worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " more Stars to Unlock");
+                        spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " more Stars to Unlock",
                             new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
                     }
 

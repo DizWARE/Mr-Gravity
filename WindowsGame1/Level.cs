@@ -477,11 +477,11 @@ namespace GravityShift
             if (mPlayer.mIsAlive)// only update while player is alive
             {
                 
-                for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
+                for (int i = 0; i < backGroundParticleCount; i++)// && !IsMainMenu; i++)
                 {
                     Random random = new Random();
                     Vector2 randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
-                    backgroundParticles[i].Velocity = Vector2.Multiply(mPhysicsEnvironment.GravityForce, 5) + 
+                    backgroundParticles[i].Velocity = Vector2.Multiply(mPhysicsEnvironment.GravityForce, 15) + 
                                                Vector2.Multiply(mPlayer.mVelocity,.25f) + backgroundParticles[i].Randomness;
                     backgroundParticles[i].Update();
 
@@ -645,7 +645,7 @@ namespace GravityShift
                 null,
                 mCam.get_transformation() * scale);
             
-            for (int i = 0; i < backGroundParticleCount && !IsMainMenu; i++)
+            for (int i = 0; i < backGroundParticleCount; i++)// && !IsMainMenu; i++)
                 backgroundParticles[i].Draw(spriteBatch);
             
             foreach (Trigger trigger in mTrigger)
