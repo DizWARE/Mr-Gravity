@@ -1654,12 +1654,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\MovingHazard.PNG">
+    <Compile Include="Images\AnimatedSprites\MovingHazard.png">
       <Name>MovingHazard</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\AnimatedSprites\ReverseMovingHazard.PNG">
+    <Compile Include="Images\AnimatedSprites\ReverseMovingHazard.png">
       <Name>ReverseMovingHazard</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
