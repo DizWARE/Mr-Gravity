@@ -507,10 +507,7 @@ namespace GravityShift
             if (mPlayer.mIsAlive)// only update while player is alive
             {
                 if (!bw.IsBusy)
-                {
                     bw.RunWorkerAsync();
-                }
-                
                 
                 if (mDeathState == DeathStates.Playing)
                 {
