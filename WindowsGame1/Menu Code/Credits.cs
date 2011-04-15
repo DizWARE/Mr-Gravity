@@ -47,7 +47,7 @@ namespace GravityShift
 
             //Easily add names and titles here
             mTitles = new Dictionary<string, string[]>();
-            mTitles.Add("Angry Newton", new string[] { "Production" });
+            mTitles.Add("Angry Newton Production", new string[] { "", "Angry" });
             mTitles.Add("Developed At", new string[] { "University Of Utah; Senior EAE Capstone Class" });
             mTitles.Add("Executive Producer", new string[]{"Roger Altizer", "Dr. Bob Kessler"});
             mTitles.Add("Original Concept & Design", new string[] { "Tyler Robinson" });
@@ -62,7 +62,7 @@ namespace GravityShift
             mTitles.Add("Animations", new string[] { "Lukas Black", "Nate Bradford", "Jeremy Heintz", "Kamron Egan" });
             mTitles.Add("-Design & Development-", new string[] { "", "Bored" } );
             mTitles.Add("Character Design", new string[] { "Lukas Black" });
-            mTitles.Add("Level Design", new string[]{"Nate Bradford", "Curtis Taylor", "Jeremy Heintz", "Morgan Reynolds", "Steven Doxey"});
+            mTitles.Add("Level Design", new string[]{"Nate Bradford", "Curtis Taylor", "Jeremy Heintz", "Morgan Reynolds", "Steven Doxey", "Casey Spencer"});
             mTitles.Add("Game Mechanics", new string[] { "Tyler Robinson", "Curtis Taylor", "Morgan Reynolds" });
             mTitles.Add("-Music & Sound-", new string[] { "", "Worry" });
             mTitles.Add("Music Lead", new string[] { "Steven Doxey" });
@@ -104,7 +104,7 @@ namespace GravityShift
         {
             if (mControls.isAPressed(false) || mControls.isStartPressed(false) || mControls.isBackPressed(false) || mControls.isBPressed(false))
             { mTopY = mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom; states = GameStates.Main_Menu; }
-            mTopY -= 1.5f;
+            mTopY -= 1.25f;
 
             mBackgroundLevel.Update(gametime, ref states);
         }
@@ -149,7 +149,7 @@ namespace GravityShift
                 spriteBatch.DrawString(mFontBig, key, 
                     Vector2.Add(new Vector2(GetTextXLocation(key, true), top), new Vector2(2,2)), Color.SteelBlue);
 
-
+                //If the first item under this key is empty, then this is an image block. 
                 if (mTitles[key][0] == "")
                 {
                     spriteBatch.Draw(PlayerFaces.FromString(mTitles[key][1]), new Rectangle(GetTextXLocation(key, true) - 3*mSad.Width/2, top, mSad.Width, mSad.Height), Color.White);

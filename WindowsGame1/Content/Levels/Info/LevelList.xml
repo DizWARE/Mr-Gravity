@@ -424,13 +424,13 @@
     <GoalTime>120</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Anything Goes</Name>
+    <Name>Feeling Like Floating</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>119</GoalCollectable>
-    <GoalTime>666</GoalTime>
+    <GoalCollectable>12</GoalCollectable>
+    <GoalTime>30</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
