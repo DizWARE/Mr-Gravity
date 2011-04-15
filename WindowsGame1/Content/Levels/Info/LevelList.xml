@@ -56,7 +56,7 @@
   </LevelData>
   <LevelData>
     <Name>You Shall Not Pass</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -65,7 +65,7 @@
   </LevelData>
   <LevelData>
     <Name>Friction Is Your Friend</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -74,7 +74,7 @@
   </LevelData>
   <LevelData>
     <Name>Snake</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -83,7 +83,7 @@
   </LevelData>
   <LevelData>
     <Name>Guards</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -92,7 +92,7 @@
   </LevelData>
   <LevelData>
     <Name>Intertwined</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -101,7 +101,7 @@
   </LevelData>
   <LevelData>
     <Name>Warped</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -110,7 +110,7 @@
   </LevelData>
   <LevelData>
     <Name>Avoidance</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -119,7 +119,7 @@
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -128,7 +128,7 @@
   </LevelData>
   <LevelData>
     <Name>Labyrinth</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -137,7 +137,7 @@
   </LevelData>
   <LevelData>
     <Name>Chambers</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -146,7 +146,7 @@
   </LevelData>
   <LevelData>
     <Name>Trap Em</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -155,7 +155,7 @@
   </LevelData>
   <LevelData>
     <Name>Rail Jam</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -164,7 +164,7 @@
   </LevelData>
   <LevelData>
     <Name>That's My Name</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -173,7 +173,7 @@
   </LevelData>
   <LevelData>
     <Name>Choosing Sides</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -182,7 +182,7 @@
   </LevelData>
   <LevelData>
     <Name>Take Me To Safety</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -191,7 +191,7 @@
   </LevelData>
   <LevelData>
     <Name>Stepping Stones</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -200,7 +200,7 @@
   </LevelData>
   <LevelData>
     <Name>Up Is Down</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -209,7 +209,7 @@
   </LevelData>
   <LevelData>
     <Name>They Are Everywhere</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -218,7 +218,7 @@
   </LevelData>
   <LevelData>
     <Name>Space Wars</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -227,7 +227,7 @@
   </LevelData>
   <LevelData>
     <Name>Nort</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -236,7 +236,7 @@
   </LevelData>
   <LevelData>
     <Name>Space Intruders</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -245,7 +245,7 @@
   </LevelData>
   <LevelData>
     <Name>Retro</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -254,7 +254,7 @@
   </LevelData>
   <LevelData>
     <Name>DK</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -263,7 +263,7 @@
   </LevelData>
   <LevelData>
     <Name>Sky is Falling</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -272,7 +272,7 @@
   </LevelData>
   <LevelData>
     <Name>Black Holes</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -281,7 +281,7 @@
   </LevelData>
   <LevelData>
     <Name>Rails</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -290,7 +290,7 @@
   </LevelData>
   <LevelData>
     <Name>Full Circle</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -299,7 +299,7 @@
   </LevelData>
   <LevelData>
     <Name>Face</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -308,7 +308,7 @@
   </LevelData>
   <LevelData>
     <Name>Ice Cream</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -317,7 +317,7 @@
   </LevelData>
   <LevelData>
     <Name>Surfs Up</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -326,7 +326,7 @@
   </LevelData>
   <LevelData>
     <Name>Out Of Nowhere</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -335,7 +335,7 @@
   </LevelData>
   <LevelData>
     <Name>Symmetry</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -344,7 +344,7 @@
   </LevelData>
   <LevelData>
     <Name>Into The Fire</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -353,7 +353,7 @@
   </LevelData>
   <LevelData>
     <Name>Volcano</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -362,7 +362,7 @@
   </LevelData>
   <LevelData>
     <Name>Chaotic</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -371,7 +371,7 @@
   </LevelData>
   <LevelData>
     <Name>Rail Reversal</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -380,7 +380,7 @@
   </LevelData>
   <LevelData>
     <Name>Dropping In</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -389,7 +389,7 @@
   </LevelData>
   <LevelData>
     <Name>Cramped</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -398,7 +398,7 @@
   </LevelData>
   <LevelData>
     <Name>Ball Pit</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -407,7 +407,7 @@
   </LevelData>
   <LevelData>
     <Name>Close Call</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -416,7 +416,7 @@
   </LevelData>
   <LevelData>
     <Name>Spiral</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -425,7 +425,7 @@
   </LevelData>
   <LevelData>
     <Name>Feeling Like Floating</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -434,7 +434,7 @@
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
