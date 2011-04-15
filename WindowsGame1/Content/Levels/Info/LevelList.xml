@@ -3,60 +3,60 @@
   <LevelData>
     <Name>Teaser</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>12</GoalCollectable>
     <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>3</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>8</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>18</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Vampire</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>2</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Moving Platforms</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>1</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>37</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Corners</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>0</Timerstar>
-    <Collectionstar>0</Collectionstar>
-    <Deathstar>0</Deathstar>
+    <Timerstar>3</Timerstar>
+    <Collectionstar>2</Collectionstar>
+    <Deathstar>3</Deathstar>
     <GoalCollectable>13</GoalCollectable>
     <GoalTime>10</GoalTime>
   </LevelData>
   <LevelData>
     <Name>You Shall Not Pass</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -65,7 +65,7 @@
   </LevelData>
   <LevelData>
     <Name>Friction Is Your Friend</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -74,7 +74,7 @@
   </LevelData>
   <LevelData>
     <Name>Snake</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -83,7 +83,7 @@
   </LevelData>
   <LevelData>
     <Name>Guards</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -92,7 +92,7 @@
   </LevelData>
   <LevelData>
     <Name>Intertwined</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -101,7 +101,7 @@
   </LevelData>
   <LevelData>
     <Name>Warped</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -241,7 +241,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>14</GoalCollectable>
-    <GoalTime>6</GoalTime>
+    <GoalTime>18</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Retro</Name>
@@ -271,13 +271,13 @@
     <GoalTime>35</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Out Of Nowhere</Name>
+    <Name>Black Holes</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>11</GoalCollectable>
-    <GoalTime>14</GoalTime>
+    <GoalTime>7</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Rails</Name>
@@ -325,13 +325,13 @@
     <GoalTime>20</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Black Holes</Name>
+    <Name>Out Of Nowhere</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>10</GoalCollectable>
-    <GoalTime>7</GoalTime>
+    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Symmetry</Name>
