@@ -560,7 +560,10 @@ namespace GravityShift
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
             else if (mCurrentState == GameStates.Credits)
+            {
                 mCredits.Draw(gameTime, mSpriteBatch, scale);
+                mCredits.DrawLevel(mSpriteBatch, gameTime, scale);
+            }
             else if (mCurrentState == GameStates.Options)
             {
                 mOptions.Draw(gameTime, mSpriteBatch, scale);

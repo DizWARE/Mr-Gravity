@@ -1625,32 +1625,6 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\World9TitleSelected.png">
-      <Name>World9TitleSelected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\World9TitleUnselected.PNG">
-      <Name>World9TitleUnselected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\World9Selected.PNG">
-      <Name>World9Selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\AnimatedSprites\World9Unselected.png">
-      <Name>World9Unselected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.        Other similar extension points exist, see Microsoft.Common.targets.  <Target Name="BeforeBuild">  </Target>  <Target Name="AfterBuild">  </Target>  -->
 </Project>
