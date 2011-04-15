@@ -60,22 +60,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>3669</ID>
-      <Name>ReverseRailX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="5" Y="11" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>7</Length>
-        <Reverse>Tile</Reverse>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>3802</ID>
       <Name>Blue</Name>
       <Type>Walls</Type>
@@ -1384,22 +1368,6 @@
       <Paintable>True</Paintable>
       <Texture>Walls\Blue</Texture>
       <Properties />
-    </Entity>
-    <Entity>
-      <ID>3933</ID>
-      <Name>ReverseRailX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="14" Y="11" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties>
-        <Shape>Square</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>7</Length>
-        <Reverse>Tile</Reverse>
-      </Properties>
     </Entity>
     <Entity>
       <ID>3935</ID>
