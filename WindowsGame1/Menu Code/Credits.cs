@@ -62,7 +62,7 @@ namespace GravityShift
             mTitles.Add("Animations", new string[] { "Lukas Black", "Nate Bradford", "Jeremy Heintz", "Kamron Egan" });
             mTitles.Add("-Design & Development-", new string[] { "", "Bored" } );
             mTitles.Add("Character Design", new string[] { "Lukas Black" });
-            mTitles.Add("Level Design", new string[]{"Nate Bradford", "Curtis Taylor", "Jeremy Heintz", "Morgan Reynolds", "Steven Doxey"});
+            mTitles.Add("Level Design", new string[]{"Nate Bradford", "Curtis Taylor", "Jeremy Heintz", "Morgan Reynolds", "Steven Doxey", "Casey Spencer"});
             mTitles.Add("Game Mechanics", new string[] { "Tyler Robinson", "Curtis Taylor", "Morgan Reynolds" });
             mTitles.Add("-Music & Sound-", new string[] { "", "Worry" });
             mTitles.Add("Music Lead", new string[] { "Steven Doxey" });
