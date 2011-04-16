@@ -501,4 +501,21 @@
     <Texture>InvisibleObjects\InvisibleBlock</Texture>
     <Properties />
   </Entity>
+  <Entity>
+    <ID>0</ID>
+    <Name>PopUp</Name>
+    <Type>Triggers</Type>
+    <Location X="-100" Y="-100" />
+    <CollisionType>Normal</CollisionType>
+    <Paintable>True</Paintable>
+    <Texture>InvisibleObjects\Trigger</Texture>
+    <Properties>
+      <Width>3</Width>
+      <Height>3</Height>
+      <Shape>Square</Shape>
+      <PopupType>Text</PopupType>
+      <ImageFile>Error</ImageFile>
+      <Text>ChangeMe</Text>
+    </Properties>
+  </Entity>
 </Entities>
