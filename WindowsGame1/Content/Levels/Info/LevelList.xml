@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Teaser</Name>
@@ -119,6 +119,7 @@
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
+
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
@@ -160,7 +161,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>24</GoalCollectable>
-    <GoalTime>12</GoalTime>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
     <Name>That's My Name</Name>
@@ -178,7 +179,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>42</GoalCollectable>
-    <GoalTime>13</GoalTime>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Take Me To Safety</Name>
@@ -250,7 +251,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>121</GoalCollectable>
-    <GoalTime>4</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -313,7 +314,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>20</GoalCollectable>
-    <GoalTime>25</GoalTime>
+    <GoalTime>26</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Surfs Up</Name>
@@ -434,7 +435,7 @@
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>

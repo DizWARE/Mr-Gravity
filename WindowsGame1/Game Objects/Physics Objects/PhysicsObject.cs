@@ -739,11 +739,11 @@ namespace GravityShift
                     (Environment.GravityDirection == GravityDirections.Up))
                 {
                     mVelocity.X = 0f;
-                    mVelocity.Y *= .95f;
+                    mVelocity.Y *= .96f;
                 }
                 else
                 {
-                    mVelocity.X *= .95f;
+                    mVelocity.X *= .96f;
                     mVelocity.Y = 0f;
                 }
                 #endregion

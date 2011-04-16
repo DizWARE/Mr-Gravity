@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Level>
   <Name>Friction Is Your Friend</Name>
-  <Size X="12" Y="11" />
+  <Size X="11" Y="10" />
   <Background>Backgrounds\blank</Background>
   <Entities>
     <Entity>
@@ -288,7 +288,7 @@
       <ID>2847</ID>
       <Name>PlayerEnd</Name>
       <Type>Level Positions</Type>
-      <Location X="10" Y="9" />
+      <Location X="9" Y="4" />
       <CollisionType>Normal</CollisionType>
       <Paintable>False</Paintable>
       <Texture>PlayerPositions\PlayerEnd</Texture>
@@ -508,60 +508,20 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>3833</ID>
+      <ID>3917</ID>
       <Name>Pink</Name>
       <Type>Walls</Type>
-      <Location X="11" Y="8" />
+      <Location X="10" Y="8" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Pink</Texture>
       <Properties />
     </Entity>
     <Entity>
-      <ID>3834</ID>
+      <ID>3919</ID>
       <Name>Pink</Name>
       <Type>Walls</Type>
-      <Location X="10" Y="10" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Pink</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3913</ID>
-      <Name>Pink</Name>
-      <Type>Walls</Type>
-      <Location X="11" Y="7" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Pink</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3914</ID>
-      <Name>Pink</Name>
-      <Type>Walls</Type>
-      <Location X="11" Y="9" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Pink</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3915</ID>
-      <Name>Pink</Name>
-      <Type>Walls</Type>
-      <Location X="11" Y="10" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Pink</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>3916</ID>
-      <Name>Pink</Name>
-      <Type>Walls</Type>
-      <Location X="9" Y="10" />
+      <Location X="10" Y="9" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Pink</Texture>

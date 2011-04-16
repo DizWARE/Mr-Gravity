@@ -9,6 +9,9 @@ using GravityShift.Import_Code;
 
 namespace GravityShift.Game_Objects.Static_Objects.Triggers
 {
+    /// <summary>
+    /// Trigger that draws text or an image
+    /// </summary>
     class PopupTrigger : Trigger
     {
         private const string IMAGE_DIRECTORY = "Images\\";
