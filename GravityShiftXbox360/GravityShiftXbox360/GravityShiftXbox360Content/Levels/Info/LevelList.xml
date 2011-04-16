@@ -208,13 +208,13 @@
     <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Take Me To Safety</Name>
+    <Name>They Are Everywhere</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>11</GoalCollectable>
-    <GoalTime>10</GoalTime>
+    <GoalTime>4</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Space Wars</Name>
@@ -422,6 +422,15 @@
     <Deathstar>0</Deathstar>
     <GoalCollectable>23</GoalCollectable>
     <GoalTime>120</GoalTime>
+  </LevelData>
+  <LevelData>
+    <Name>Anything Goes</Name>
+    <Unlocked>False</Unlocked>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
+    <GoalCollectable>119</GoalCollectable>
+    <GoalTime>666</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>

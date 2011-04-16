@@ -26,7 +26,6 @@ namespace GravityShift
     /// </summary>
     class WorldSelect
     {
-
         public static string LEVEL_DIRECTORY = "..\\..\\..\\Content\\Levels\\";
 
         //struct needed for serializing on xbox
@@ -45,7 +44,7 @@ namespace GravityShift
         private const int TIMER_REGION = 1;
         private const int DEATH_REGION = 3;
 
-        private const int NUM_OF_WORLDS = 8;
+        private const int NUM_OF_WORLDS = 9;
 
         IControlScheme mControls;
         GraphicsDeviceManager mGraphics;
@@ -70,7 +69,7 @@ namespace GravityShift
         const int LOADING = 2;
         int mLoading = 0;
 
-        string[] mWorlds = { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck" };
+        string[] mWorlds = { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck", "UNNAMED - CONTEST" };
         int mLongestName;
 
         int mStarCount = 0;
@@ -106,12 +105,16 @@ namespace GravityShift
         int mCurrentIndex = 0;
         int mCurrentWorld = 0;
 
+        bool displayUnlockDialog = false;
+
         /* Trial Mode Loading */
         public bool TrialMode { get { return Guide.IsTrialMode; } }
 
         //record whether we have asked for a storage device already
         bool mDeviceSelected;
         public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
+
+        
 
         //store the storage device we are using, and the container within it.
         StorageDevice device;
@@ -134,17 +137,17 @@ namespace GravityShift
 
             string LEVEL_LIST = "..\\..\\..\\Content\\Levels\\Info\\LevelList.xml";
 #if XBOX360
-            mLevelInfo = XElement.Load(LEVEL_LIST.Remove(0,8));
+            mLevelInfo = XElement.Load(LEVEL_LIST.Remove(0,8));            
 #else
             mLevelInfo = XElement.Load(LEVEL_LIST);
 #endif
-
             mDeviceSelected = false;
 
             rand = new Random();
             number = rand.Next(4);
 
             device = null;
+
 
         }
 
@@ -368,7 +371,7 @@ namespace GravityShift
             mTitleBar.Y = mScreenRect.Top;
             mLevelPanel.Y = mTitleBar.Y + mTitleBar.Height;
 
-            mLevelRegions = new Rectangle[48];
+            mLevelRegions = new Rectangle[49];
 
             mSelected = new Texture2D[6, 4];
             mUnselected = new Texture2D[6];
@@ -380,6 +383,7 @@ namespace GravityShift
                 int height = mLevelPanel.Height / 4;
                 int xpadding = (i % 6) * width / 6;
                 int ypadding = ((i / 6) + 1) * height / 5;
+
                 mLevelRegions[i] = new Rectangle(mLevelPanel.Left + width * (i % 6) + xpadding, mLevelPanel.Top + height * (i / 6) + ypadding, width, height);
             }
         }
@@ -397,7 +401,23 @@ namespace GravityShift
             mLatestUnlocked = 0;
 
             UnlockWorld(0);
+
             UpdateStarCount();
+        }
+
+        public int getLevelTime()
+        {
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex].TimerStar;
+        }
+
+        public int getLevelCollect()
+        {
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex].CollectStar;
+        }
+
+        public int getLevelDeath()
+        {
+            return mLevels[mCurrentWorld * 6 + mCurrentIndex].DeathStar;
         }
 
         /// <summary>
@@ -407,6 +427,12 @@ namespace GravityShift
         public void UnlockWorld(int world)
         {
             if (world >= NUM_OF_WORLDS) return;
+
+            if (world == NUM_OF_WORLDS - 1 && mStarCount == 480)
+            {
+                mLevels[48].Unlock();
+                return;
+            }
 #if XBOX360
             if(!this.TrialMode || world == 0)
 #endif
@@ -423,11 +449,20 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
+            if(mStarCount < 30)
+            { UnlockWorld(0); return; }
+
             if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
             {
                 mWorldUnlocked = true;
                 mLatestUnlocked = mStarCount / 30;
                 UnlockWorld(mStarCount / 30);
+            }
+            else if (mStarCount >= 480 && mLatestUnlocked < 8)
+            {
+                mWorldUnlocked = true;
+                mLatestUnlocked = 8;
+                UnlockWorld(8);
             }
         }
 
@@ -450,8 +485,8 @@ namespace GravityShift
             mLoadingBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LoadingMenu");
             mUnlockedDialog = content.Load<Texture2D>("Images/Menu/LevelSelect/WorldUnlocked");
 
-            mWorldBackground = new Texture2D[8][];
-            mWorldTitleBox = new Texture2D[8][];
+            mWorldBackground = new Texture2D[9][];
+            mWorldTitleBox = new Texture2D[9][];
             for (int i = 0; i < mWorldBackground.Length; i++)
             {
                 mWorldBackground[i] = new Texture2D[2];
@@ -505,13 +540,11 @@ namespace GravityShift
 
             foreach (XElement level in mLevelInfo.Elements())
                 mLevels.Add(new LevelInfo(level, content, mControls, mGraphics));
-            
+
             for(int i = 0; i < 8; i++)
                 if(!mLevels[i*6].Unlocked)
                 {   mLatestUnlocked = i - 1; break; }
 
-
-            UnlockWorld(0);
             UpdateStarCount();
         }
         /// <summary>
@@ -635,6 +668,8 @@ namespace GravityShift
                 if (GameSound.volume != 0)
                     GameSound.menuSound_rollover.Play();
             }
+
+            if (mCurrentWorld == 8) mCurrentIndex = 0;
         }
 
         /// <summary>
@@ -847,16 +882,33 @@ namespace GravityShift
                     Rectangle textBox = new Rectangle((int)(background.Center.X - mLongestName / 2 - mLongestName / 16), (int)(background.Top - worldText.Y - worldText.Y / 16), (int)(mLongestName + mLongestName / 8), (int)(worldText.Y + worldText.Y / 8));
                     spriteBatch.Draw(mWorldTitleBox[i / 6][Convert.ToInt32(i / 6 != mCurrentWorld)], textBox, Color.White);
                     spriteBatch.DrawString(mFont, mWorlds[i / 6], new Vector2(textBox.Center.X - worldText.X / 2, textBox.Center.Y - worldText.Y / 2), Color.White);
-
-                    //If the world is not unlocked, than cover it up with the lock
-                    if (!mLevels[i].Unlocked)
+                    if (this.TrialMode)
                     {
                         spriteBatch.Draw(mLock, background, Color.White);
 
                         drawNumbers = false;
-                        worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " Stars to Unlock");
-                        spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " Stars to Unlock",
+                        worldText = mFontBig.MeasureString("World Locked: You need to buy the game to play");
+                        spriteBatch.DrawString(mFontBig, "World Locked: You need to buy the game to play",
                             new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
+                    }
+                    //If the world is not unlocked, than cover it up with the lock
+                    else if (!mLevels[i].Unlocked)
+                    {
+                        spriteBatch.Draw(mLock, background, Color.White);
+
+                        drawNumbers = false;
+                        if (i / 6 != 8)
+                        {
+                            worldText = mFontBig.MeasureString("World Locked: You need " + (i / 6 * 30 - mStarCount) + " more Stars to Unlock");
+                            spriteBatch.DrawString(mFontBig, "World Locked: You need " + (i / 6 * 30 - mStarCount) + " more Stars to Unlock",
+                                new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
+                        }
+                        else
+                        {
+                            worldText = mFontBig.MeasureString("World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock");
+                            spriteBatch.DrawString(mFontBig, "World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock",
+                                new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
+                        }
                     }
 
                 }
@@ -917,6 +969,31 @@ namespace GravityShift
         private int mDeathStars;
         private int mGoalTime;
         private int mGoalCollectable;
+
+        public int TimerStar
+        {
+            get
+            {
+                return mTimeStars;
+            }
+        }
+
+        public int CollectStar
+        {
+            get
+            {
+                return mCollectableStars;
+            }
+        }
+
+        public int DeathStar
+        {
+            get
+            {
+                return mDeathStars;
+            }
+        }
+
 
         public enum StarTypes { Death, Time, Collection }
 

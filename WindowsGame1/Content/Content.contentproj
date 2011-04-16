@@ -215,11 +215,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Images\Hazards\RedSquare.png">
-      <Name>RedSquare</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Hazards\YellowCircle.png">
       <Name>YellowCircle</Name>
       <Importer>TextureImporter</Importer>
@@ -1626,27 +1621,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\World9TitleSelected.png">
-      <Name>World9TitleSelected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\World9TitleUnselected.PNG">
-      <Name>World9TitleUnselected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Images\AnimatedSprites\World9Selected.PNG">
-      <Name>World9Selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\AnimatedSprites\World9Unselected.png">
-      <Name>World9Unselected</Name>
+    <Compile Include="Images\Hazards\RedSquare.png">
+      <Name>RedSquare</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
