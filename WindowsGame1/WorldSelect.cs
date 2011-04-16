@@ -433,6 +433,8 @@ namespace GravityShift
                 mLevels[48].Unlock();
                 return;
             }
+            else if (world == NUM_OF_WORLDS - 1)
+                return;
 #if XBOX360
             if(!this.TrialMode || world == 0)
 #endif

@@ -83,21 +83,21 @@ namespace GravityShift
             mTrans = content.Load<Texture2D>("Images/Menu/Pause/PausedTrans");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzEvenLarger");
 
-            xCoord = mScreenRect.Center.X - mQuartz.MeasureString("GEM CHALLENGE").X / 2;
-            centerYCoord = mScreenRect.Center.Y - mQuartz.MeasureString("TIME CHALLENGE").Y / 2;
-            topYCoord2 = mScreenRect.Center.Y - mQuartz.MeasureString("TIME CHALLENGE").Y;
-            bottomYCoord2 = mScreenRect.Center.Y + mQuartz.MeasureString("TIME CHALLENGE").Y;
-            topYCoord3 = mScreenRect.Center.Y - mQuartz.MeasureString("GEM CHALLENGE").Y * 2;
-            bottomYCoord3 = mScreenRect.Center.Y + mQuartz.MeasureString("DEATH CHALLENGE").Y;
+            xCoord = mScreenRect.Center.X - mQuartz.MeasureString("COMPLETED GEM CHALLENGE").X / 2;
+            centerYCoord = mScreenRect.Center.Y - mQuartz.MeasureString("COMPLETED TIME CHALLENGE").Y / 2;
+            topYCoord2 = mScreenRect.Center.Y - mQuartz.MeasureString("COMPLETED TIME CHALLENGE").Y;
+            bottomYCoord2 = mScreenRect.Center.Y + mQuartz.MeasureString("COMPLETED TIME CHALLENGE").Y;
+            topYCoord3 = mScreenRect.Center.Y - mQuartz.MeasureString("COMPLETED GEM CHALLENGE").Y * 2;
+            bottomYCoord3 = mScreenRect.Center.Y + mQuartz.MeasureString("COMPLETED DEATH CHALLENGE").Y;
 
             mScale = 1.0f;
 
             pulse = false;
             upToScale = false;
 
-            gemString = "GEM CHALLENGE!";
-            timeString = "TIME CHALLENGE!";
-            deathString = "DEATH CHALLENGE!";
+            gemString = "COMPLETED GEM CHALLENGE!";
+            timeString = "COMPLETED TIME CHALLENGE!";
+            deathString = "COMPLETED DEATH CHALLENGE!";
 
             mDoOnce = false;
 
@@ -154,9 +154,9 @@ namespace GravityShift
             pulse = false;
             upToScale = false;
 
-            gemString = "GEM CHALLENGE!";
-            timeString = "TIME CHALLENGE!";
-            deathString = "DEATH CHALLENGE!";
+            gemString = "COMPLETED GEM CHALLENGE!";
+            timeString = "COMPLETED TIME CHALLENGE!";
+            deathString = "COMPLETED DEATH CHALLENGE!";
 
             mDoOnce = false;
 
