@@ -12,18 +12,18 @@
   <LevelData>
     <Name>Hazards</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>8</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Compartments</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>18</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
@@ -39,9 +39,9 @@
   <LevelData>
     <Name>Moving Platforms</Name>
     <Unlocked>True</Unlocked>
-    <Timerstar>3</Timerstar>
-    <Collectionstar>3</Collectionstar>
-    <Deathstar>3</Deathstar>
+    <Timerstar>0</Timerstar>
+    <Collectionstar>0</Collectionstar>
+    <Deathstar>0</Deathstar>
     <GoalCollectable>37</GoalCollectable>
     <GoalTime>5</GoalTime>
   </LevelData>
@@ -56,7 +56,7 @@
   </LevelData>
   <LevelData>
     <Name>You Shall Not Pass</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -65,7 +65,7 @@
   </LevelData>
   <LevelData>
     <Name>Friction Is Your Friend</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -74,7 +74,7 @@
   </LevelData>
   <LevelData>
     <Name>Snake</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -83,7 +83,7 @@
   </LevelData>
   <LevelData>
     <Name>Guards</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -92,7 +92,7 @@
   </LevelData>
   <LevelData>
     <Name>Intertwined</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
@@ -101,7 +101,7 @@
   </LevelData>
   <LevelData>
     <Name>Warped</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
