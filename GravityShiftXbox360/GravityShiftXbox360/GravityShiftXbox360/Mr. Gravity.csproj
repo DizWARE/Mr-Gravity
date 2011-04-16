@@ -122,6 +122,7 @@
     <Compile Include="Menu Code\Menu.cs" />
     <Compile Include="Menu Code\Options.cs" />
     <Compile Include="Menu Code\Pause.cs" />
+    <Compile Include="Menu Code\PreScore.cs" />
     <Compile Include="Menu Code\Scoring.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />
     <Compile Include="Menu Code\StartLevelSplash.cs" />
