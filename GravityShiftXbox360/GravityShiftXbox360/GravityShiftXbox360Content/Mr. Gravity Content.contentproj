@@ -436,6 +436,7 @@
       <Name>QuartzEvenLarger</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <None Include="Levels\Info\LevelList.xml">
       <Name>LevelList</Name>
