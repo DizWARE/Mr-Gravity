@@ -1693,13 +1693,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Levels\LevelList.xml">
-      <Name>LevelList</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Levels\Feeling Like Floating.xml">
       <Name>Feeling Like Floating</Name>
       <Importer>XmlImporter</Importer>

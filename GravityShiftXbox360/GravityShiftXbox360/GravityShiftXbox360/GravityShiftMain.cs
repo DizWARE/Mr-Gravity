@@ -31,7 +31,7 @@ namespace GravityShift
         Title mTitle;
 
         //Instance of the Menu class
-        Menu mMenu;
+        //Menu mMenu;
 
         // Instance of the AfterScore class
         AfterScore mAfterScore;
@@ -560,7 +560,10 @@ namespace GravityShift
                 mMainMenuLevel.Draw(mSpriteBatch, gameTime, scale);
             }
             else if (mCurrentState == GameStates.Credits)
+            {
                 mCredits.Draw(gameTime, mSpriteBatch, scale);
+                mCredits.DrawLevel(mSpriteBatch, gameTime, scale);
+            }
             else if (mCurrentState == GameStates.Options)
             {
                 mOptions.Draw(gameTime, mSpriteBatch, scale);

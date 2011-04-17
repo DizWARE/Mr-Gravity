@@ -105,7 +105,7 @@ namespace GravityShift
         int mCurrentIndex = 0;
         int mCurrentWorld = 0;
 
-        bool displayUnlockDialog = false;
+        //bool displayUnlockDialog = false;
 
         /* Trial Mode Loading */
         public bool TrialMode { get { return Guide.IsTrialMode; } }
@@ -433,6 +433,8 @@ namespace GravityShift
                 mLevels[48].Unlock();
                 return;
             }
+            else if (world == NUM_OF_WORLDS - 1)
+                return;
 #if XBOX360
             if(!this.TrialMode || world == 0)
 #endif

@@ -160,7 +160,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>24</GoalCollectable>
-    <GoalTime>12</GoalTime>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
     <Name>That's My Name</Name>
@@ -178,7 +178,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>42</GoalCollectable>
-    <GoalTime>13</GoalTime>
+    <GoalTime>15</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Take Me To Safety</Name>
@@ -241,7 +241,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>14</GoalCollectable>
-    <GoalTime>6</GoalTime>
+    <GoalTime>18</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Retro</Name>
@@ -250,7 +250,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>121</GoalCollectable>
-    <GoalTime>4</GoalTime>
+    <GoalTime>5</GoalTime>
   </LevelData>
   <LevelData>
     <Name>DK</Name>
@@ -271,13 +271,13 @@
     <GoalTime>35</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Out Of Nowhere</Name>
+    <Name>Black Holes</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>11</GoalCollectable>
-    <GoalTime>14</GoalTime>
+    <GoalTime>7</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Rails</Name>
@@ -313,7 +313,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>20</GoalCollectable>
-    <GoalTime>25</GoalTime>
+    <GoalTime>26</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Surfs Up</Name>
@@ -325,13 +325,13 @@
     <GoalTime>20</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Black Holes</Name>
+    <Name>Out Of Nowhere</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>10</GoalCollectable>
-    <GoalTime>7</GoalTime>
+    <GoalCollectable>11</GoalCollectable>
+    <GoalTime>12</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Symmetry</Name>
@@ -424,17 +424,17 @@
     <GoalTime>120</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Anything Goes</Name>
+    <Name>Feeling Like Floating</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>119</GoalCollectable>
-    <GoalTime>666</GoalTime>
+    <GoalCollectable>12</GoalCollectable>
+    <GoalTime>30</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
-    <Unlocked>False</Unlocked>
+    <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>

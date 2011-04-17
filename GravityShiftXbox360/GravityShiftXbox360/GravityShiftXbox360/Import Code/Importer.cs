@@ -342,6 +342,11 @@ namespace GravityShift.Import_Code
                         PlayerFaceTrigger trigger = new PlayerFaceTrigger(mContent, entity);
                         triggers.Add(trigger);
                     }
+                    else if (entity.mName == "PopUp")
+                    {
+                        PopupTrigger trigger = new PopupTrigger(mContent, entity);
+                        triggers.Add(trigger);
+                    }
                     //Add trigger by name
                 }
             }
