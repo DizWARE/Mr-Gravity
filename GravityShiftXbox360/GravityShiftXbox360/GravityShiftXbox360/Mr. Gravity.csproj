@@ -108,6 +108,7 @@
     <Compile Include="Game Objects\Static Objects\Triggers\FXTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\MusicTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\PlayerFaceTrigger.cs" />
+    <Compile Include="Game Objects\Static Objects\Triggers\PopupTrigger.cs" />
     <Compile Include="Game Objects\Static Objects\Triggers\Trigger.cs" />
     <Compile Include="Game Objects\Static Objects\Wall.cs" />
     <Compile Include="GravityShiftMain.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Menu Code\Menu.cs" />
     <Compile Include="Menu Code\Options.cs" />
     <Compile Include="Menu Code\Pause.cs" />
+    <Compile Include="Menu Code\PreScore.cs" />
     <Compile Include="Menu Code\Scoring.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />
     <Compile Include="Menu Code\StartLevelSplash.cs" />
