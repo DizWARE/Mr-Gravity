@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
     <Name>Teaser</Name>
@@ -119,7 +119,6 @@
   </LevelData>
   <LevelData>
     <Name>Moving Hazard</Name>
-
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
@@ -435,7 +434,7 @@
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
-    <Unlocked>True</Unlocked>
+    <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
