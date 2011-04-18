@@ -397,13 +397,13 @@
     <GoalTime>22</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Ball Pit</Name>
+    <Name>Open Spaces</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>5</GoalCollectable>
-    <GoalTime>5</GoalTime>
+    <GoalCollectable>54</GoalCollectable>
+    <GoalTime>30</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Close Call</Name>

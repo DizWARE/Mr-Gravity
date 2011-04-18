@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Level>
   <Name>Feeling Like Floating</Name>
   <Size X="25" Y="20" />
@@ -1591,7 +1591,7 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>1153</ID>
+      <ID>1155</ID>
       <Name>Music</Name>
       <Type>Triggers</Type>
       <Location X="2" Y="1" />
