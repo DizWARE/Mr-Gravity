@@ -2950,7 +2950,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level06</MusicFile>
+        <MusicFile>music_level07</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>

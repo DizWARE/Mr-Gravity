@@ -8180,7 +8180,7 @@
         <Width>3</Width>
         <Height>3</Height>
         <Shape>Square</Shape>
-        <MusicFile>music_level09</MusicFile>
+        <MusicFile>music_level05</MusicFile>
         <Loop>True</Loop>
       </Properties>
     </Entity>
