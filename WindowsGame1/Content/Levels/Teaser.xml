@@ -3133,5 +3133,22 @@
         <Mass>1</Mass>
       </Properties>
     </Entity>
+    <Entity>
+      <ID>6909</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="13" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>1</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Anything red and spikey will kill you</Text>
+      </Properties>
+    </Entity>
   </Entities>
 </Level>
