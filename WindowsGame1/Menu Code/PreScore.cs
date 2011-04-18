@@ -203,6 +203,7 @@ namespace GravityShift
                 {
                     starList.Add(deathString);
                 }
+                GameSound.menuSound_woosh.Play(GameSound.volume, 0.0f, 0.0f);
                 mDoOnce = true;
             }
 
