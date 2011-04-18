@@ -338,17 +338,7 @@
       <ID>100</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
-      <Location X="16" Y="16" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>102</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="16" />
+      <Location X="15" Y="16" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>
@@ -1307,38 +1297,6 @@
       </Properties>
     </Entity>
     <Entity>
-      <ID>676</ID>
-      <Name>Force</Name>
-      <Type>Triggers</Type>
-      <Location X="7" Y="5" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <XForce>50</XForce>
-        <YForce>0</YForce>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>751</ID>
-      <Name>Force</Name>
-      <Type>Triggers</Type>
-      <Location X="19" Y="5" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <XForce>-50</XForce>
-        <YForce>0</YForce>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>819</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
@@ -1397,68 +1355,6 @@
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>
       <Properties />
-    </Entity>
-    <Entity>
-      <ID>1000</ID>
-      <Name>RailSawX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="8" Y="5" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>9</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1072</ID>
-      <Name>Force</Name>
-      <Type>Triggers</Type>
-      <Location X="19" Y="11" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <XForce>-50</XForce>
-        <YForce>0</YForce>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1073</ID>
-      <Name>RailSawX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="8" Y="11" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>9</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1074</ID>
-      <Name>Force</Name>
-      <Type>Triggers</Type>
-      <Location X="7" Y="11" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <XForce>50</XForce>
-        <YForce>0</YForce>
-      </Properties>
     </Entity>
     <Entity>
       <ID>1078</ID>
@@ -2241,20 +2137,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1159</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="17" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>1160</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
-      <Location X="16" Y="17" />
+      <Location X="15" Y="17" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>
@@ -2344,17 +2230,7 @@
       <ID>1171</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
-      <Location X="16" Y="19" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
-      <ID>1172</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="19" />
+      <Location X="15" Y="19" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>
@@ -2501,53 +2377,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1187</ID>
-      <Name>Force</Name>
-      <Type>Triggers</Type>
-      <Location X="19" Y="18" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <XForce>-50</XForce>
-        <YForce>0</YForce>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1188</ID>
-      <Name>RailSawX</Name>
-      <Type>Physics Objects</Type>
-      <Location X="8" Y="18" />
-      <CollisionType>Hazardous</CollisionType>
-      <Paintable>False</Paintable>
-      <Texture>Hazards\RedSaw</Texture>
-      <Properties>
-        <Shape>Circle</Shape>
-        <Mass>1</Mass>
-        <Rail>X</Rail>
-        <Length>9</Length>
-      </Properties>
-    </Entity>
-    <Entity>
-      <ID>1189</ID>
-      <Name>Force</Name>
-      <Type>Triggers</Type>
-      <Location X="7" Y="18" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>InvisibleObjects\Trigger</Texture>
-      <Properties>
-        <Width>3</Width>
-        <Height>3</Height>
-        <Shape>Square</Shape>
-        <XForce>50</XForce>
-        <YForce>0</YForce>
-      </Properties>
-    </Entity>
-    <Entity>
       <ID>1193</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
@@ -2688,20 +2517,10 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1207</ID>
-      <Name>Orange</Name>
-      <Type>Walls</Type>
-      <Location X="14" Y="20" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Orange</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>1208</ID>
       <Name>Orange</Name>
       <Type>Walls</Type>
-      <Location X="16" Y="20" />
+      <Location X="15" Y="20" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>Walls\Orange</Texture>
@@ -2973,7 +2792,7 @@
       <ID>1438</ID>
       <Name>BlueDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="1" Y="8" />
+      <Location X="3" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\BlueDiamond</Texture>
@@ -2985,7 +2804,7 @@
       <ID>1439</ID>
       <Name>BlueDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="18" Y="8" />
+      <Location X="16" Y="8" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\BlueDiamond</Texture>
@@ -3009,7 +2828,7 @@
       <ID>1441</ID>
       <Name>BlueDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="1" Y="15" />
+      <Location X="4" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\BlueDiamond</Texture>
@@ -3033,7 +2852,7 @@
       <ID>1443</ID>
       <Name>BlueDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="18" Y="15" />
+      <Location X="16" Y="15" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\BlueDiamond</Texture>
@@ -3045,7 +2864,7 @@
       <ID>1444</ID>
       <Name>BlueDiamond</Name>
       <Type>Static Objects</Type>
-      <Location X="18" Y="21" />
+      <Location X="16" Y="21" />
       <CollisionType>Collectable</CollisionType>
       <Paintable>True</Paintable>
       <Texture>NonHazards\BlueDiamond</Texture>
@@ -3149,7 +2968,7 @@
       <ID>1782</ID>
       <Name>PlayerFace</Name>
       <Type>Triggers</Type>
-      <Location X="15" Y="18" />
+      <Location X="14" Y="18" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -3164,7 +2983,7 @@
       <ID>1849</ID>
       <Name>PlayerFace</Name>
       <Type>Triggers</Type>
-      <Location X="15" Y="21" />
+      <Location X="14" Y="21" />
       <CollisionType>Normal</CollisionType>
       <Paintable>True</Paintable>
       <Texture>InvisibleObjects\Trigger</Texture>
@@ -3173,6 +2992,254 @@
         <Height>3</Height>
         <Shape>Square</Shape>
         <PlayerFace>Laugh</PlayerFace>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1932</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="6" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1933</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="4" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1938</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="2" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1939</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="0" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1940</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="18" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1941</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="16" Y="5" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1944</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="6" Y="11" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1946</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="4" Y="11" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1948</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="2" Y="11" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1950</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="0" Y="11" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1953</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="8" Y="11" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2032</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2033</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2034</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2035</ID>
+      <Name>Orange</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Orange</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>2114</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="9" Y="18" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2115</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="7" Y="18" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2116</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="5" Y="18" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2117</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="3" Y="18" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>2118</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="1" Y="18" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
       </Properties>
     </Entity>
   </Entities>

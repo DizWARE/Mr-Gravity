@@ -436,6 +436,7 @@
       <Name>QuartzEvenLarger</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <None Include="Levels\Info\LevelList.xml">
       <Name>LevelList</Name>
@@ -1690,13 +1691,6 @@
       <Name>World9Unselected</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Levels\LevelList.xml">
-      <Name>LevelList</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

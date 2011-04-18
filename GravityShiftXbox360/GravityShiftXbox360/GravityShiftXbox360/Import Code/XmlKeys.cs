@@ -36,6 +36,9 @@ namespace GravityShift.Import_Code
         public static string LOOP = "Loop";
         public static string PLAYER_FACE = "PlayerFace";
         public static string IDEAL_TIME = "IdealTime";
+        public static string POPUP_TYPE = "PopupType";
+        public static string IMAGE_FILE = "ImageFile";
+        public static string TEXT = "Text";
         
         //Names
         public static string WIDTH = "Width";
@@ -57,6 +60,8 @@ namespace GravityShift.Import_Code
         public static string COLLECTABLE = "Collectable";
         public static string HAZARDOUS = "Hazardous";
         public static string ERROR_TEXTURE = "Images/Error";
+        public static string POPUP_IMAGE = "Image";
+        public static string POPUP_TEXT = "Text";
 
         //Level Select Keys
         public static string LEVELS = "Levels";

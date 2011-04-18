@@ -55,6 +55,5 @@ namespace GravityShift.MISC_Code
         {
             return mFaces[faceName];
         }
-
     }
 }

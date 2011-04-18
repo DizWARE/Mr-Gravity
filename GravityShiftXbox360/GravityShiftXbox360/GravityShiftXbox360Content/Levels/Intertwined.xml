@@ -245,16 +245,6 @@
       <Properties />
     </Entity>
     <Entity>
-      <ID>1521</ID>
-      <Name>Yellow</Name>
-      <Type>Walls</Type>
-      <Location X="0" Y="10" />
-      <CollisionType>Normal</CollisionType>
-      <Paintable>True</Paintable>
-      <Texture>Walls\Yellow</Texture>
-      <Properties />
-    </Entity>
-    <Entity>
       <ID>1522</ID>
       <Name>Yellow</Name>
       <Type>Walls</Type>
@@ -864,6 +854,16 @@
         <Shape>Square</Shape>
         <PlayerFace>Worry</PlayerFace>
       </Properties>
+    </Entity>
+    <Entity>
+      <ID>2428</ID>
+      <Name>Yellow</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Yellow</Texture>
+      <Properties />
     </Entity>
   </Entities>
 </Level>

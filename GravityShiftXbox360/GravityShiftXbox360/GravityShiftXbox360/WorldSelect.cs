@@ -105,7 +105,7 @@ namespace GravityShift
         int mCurrentIndex = 0;
         int mCurrentWorld = 0;
 
-        bool displayUnlockDialog = false;
+        //bool displayUnlockDialog = false;
 
         /* Trial Mode Loading */
         public bool TrialMode { get { return Guide.IsTrialMode; } }
@@ -433,6 +433,8 @@ namespace GravityShift
                 mLevels[48].Unlock();
                 return;
             }
+            else if (world == NUM_OF_WORLDS - 1)
+                return;
 #if XBOX360
             if(!this.TrialMode || world == 0)
 #endif
@@ -692,7 +694,7 @@ namespace GravityShift
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
 
-            if (mWorldUnlocked && mUnlockedTimer < 45)
+            if (mWorldUnlocked && mUnlockedTimer < 45 && !TrialMode)
             {
                 Vector2 size = mFontBig.MeasureString("New World Unlocked");
                 spriteBatch.Draw(mUnlockedDialog, new Rectangle((int)(mScreenRect.Center.X - size.X / 2 - size.X / 4), (int)(mScreenRect.Center.Y - 3*size.Y/2),
@@ -882,7 +884,7 @@ namespace GravityShift
                     Rectangle textBox = new Rectangle((int)(background.Center.X - mLongestName / 2 - mLongestName / 16), (int)(background.Top - worldText.Y - worldText.Y / 16), (int)(mLongestName + mLongestName / 8), (int)(worldText.Y + worldText.Y / 8));
                     spriteBatch.Draw(mWorldTitleBox[i / 6][Convert.ToInt32(i / 6 != mCurrentWorld)], textBox, Color.White);
                     spriteBatch.DrawString(mFont, mWorlds[i / 6], new Vector2(textBox.Center.X - worldText.X / 2, textBox.Center.Y - worldText.Y / 2), Color.White);
-                    if (this.TrialMode)
+                    if (this.TrialMode && i != 0)
                     {
                         spriteBatch.Draw(mLock, background, Color.White);
 

@@ -286,8 +286,9 @@ namespace GravityShift
             if(mControls is ControllerControl)
             {
                 GamePad.SetVibration(((ControllerControl)mControls).ControllerIndex, 0.0f, 0.0f);
-                mRumble = false;
+                
             }
+            mRumble = false;
         }
 
         /// <summary>
