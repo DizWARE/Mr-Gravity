@@ -489,10 +489,16 @@ namespace GravityShift
                                            Vector2.Multiply(mPlayer.mVelocity, .25f) + backgroundParticles[i].Randomness;
                 backgroundParticles[i].Update();
 
-                Vector2 posDiff = mPlayer.Position - backgroundParticles[i].Position;
+                Vector2 posDiff;
+                Vector2 shiftValue;
+                if (!isCameraFixed)
+                    posDiff = (shiftValue = mPlayer.Position) - backgroundParticles[i].Position;
+                else
+                    posDiff = (shiftValue = new Vector2(mBounds.Center.X,mBounds.Center.Y)) - backgroundParticles[i].Position;
+
                 if (posDiff.X < -mBounds.Width || posDiff.Y < -mBounds.Height ||
                     posDiff.X > mBounds.Width || posDiff.Y > mBounds.Height)
-                    backgroundParticles[i].Position = posDiff + mPlayer.Position;
+                        backgroundParticles[i].Position = posDiff + shiftValue;
             }
 
         }
