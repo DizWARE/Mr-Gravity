@@ -190,15 +190,14 @@ namespace GravityShift
             mMainMenuLevel.Load(Content);
             mCredits.Load(Content);
             mOptions.Load(Content);
-
-            //mMenu.Load(Content, mGraphics.GraphicsDevice);
-            mScoring.Load(Content, mGraphics.GraphicsDevice);
+            
             mPause.Load(Content);
             GameSound.Load(Content);
             mCurrentLevel = new Level(mLevelLocation, mControls, GraphicsDevice.Viewport);
             mCurrentLevel.Load(Content);
 
             mWorldSelect.Load(Content);
+            mScoring.Load(Content, mGraphics.GraphicsDevice, mWorldSelect);
             mAfterScore.Load(Content, GraphicsDevice);
             mPreScore.Load(Content, GraphicsDevice, mWorldSelect);
             mResetConfirm.Load(Content);

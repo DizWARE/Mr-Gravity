@@ -28,6 +28,8 @@ namespace GravityShift
 
         IControlScheme mControls;
 
+        WorldSelect mWorldSelect;
+
         /* Keep track of the level */
         private static int[,] mLevel;
         private static int[,] mScore;
@@ -80,8 +82,9 @@ namespace GravityShift
          *
          * ContentManager content: the Content file used in the game.
          */
-        public void Load(ContentManager content, GraphicsDevice graphics)
+        public void Load(ContentManager content, GraphicsDevice graphics, WorldSelect worldSelect)
         {
+            mWorldSelect = worldSelect;
             mContent = content;
             mKootenay = content.Load<SpriteFont>("Fonts/Kootenay");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzLarge");
@@ -178,6 +181,7 @@ namespace GravityShift
 
             int topPadding = mScreenRect.Top + mScreenRect.Height / 4;
             int[] attempt = {level.TimerStar, level.CollectionStar, level.DeathStar};
+            int[] previous = { mWorldSelect.getLevelTime(), mWorldSelect.getLevelCollect(), mWorldSelect.getLevelDeath() };
             //attempt = GetRank((int)level.mTimer, (int)level.IdealTime, (int)GravityShift.Level.mNumCollected, (int)GravityShift.Level.mNumCollectable, (int)GravityShift.Level.mDeaths);
             spriteBatch.Draw(mBackground, new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height), Color.White);
             spriteBatch.Draw(mTitle, new Vector2(mScreenRect.Left + (mScreenRect.Width - mTitle.Width) / 2, mScreenRect.Top), Color.White);
@@ -196,10 +200,22 @@ namespace GravityShift
 
             level.TimerStar = attempt[0];
 
-            if (attempt[0] == 3)
+            if (previous[0] > attempt[0])
             {
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+
+            }
+            else if(attempt[0] < 3)
+            {
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+            }
+
+            else
+            {
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
             
             topPadding += 65;
@@ -216,11 +232,23 @@ namespace GravityShift
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength + (0.5f * (2 * mStar.Width)), topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
 
             level.CollectionStar = attempt[1];
-            if (attempt[1] == 3)
+            if (previous[1] > attempt[1])
             {
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
-            }       
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+
+            }
+            else if (attempt[1] < 3)
+            {
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+            }
+
+            else
+            {
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+            }   
             
             topPadding += 65;
 
@@ -237,10 +265,23 @@ namespace GravityShift
                 spriteBatch.Draw(mStar, new Vector2(mScreenRect.Left + (mScreenRect.Width / 6) + textLength + bufferLength + (0.5f * (2 * mStar.Width)), topPadding), null, Color.White, 0.0f, Vector2.Zero, 0.75f, SpriteEffects.None, 0.0f);
 
             level.DeathStar = attempt[2];
-            if (attempt[2] == 3)
+
+            if (previous[2] > attempt[2])
             {
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (4 * mScreenRect.Width / 6) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3 Stars", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3 Stars", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+
+            }
+            else if (attempt[2] < 3)
+            {
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+            }
+
+            else
+            {
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
                
             string request = "Press Start or A To Access The Menu";
