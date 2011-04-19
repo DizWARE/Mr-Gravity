@@ -929,6 +929,15 @@ namespace GravityShift
                 if (mLevels[i].TenthStar())
                     spriteBatch.Draw(mStar, new Vector2(rect.Right - mStar.Width, rect.Top), Color.White);
 
+                if (i == 48)
+                {
+                    size = mFontBig.MeasureString("CONTEST!!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!");
+                    spriteBatch.DrawString(mFontBig, "CONTEST!!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
+                        new Vector2(rect.Right + size.X/32, rect.Center.Y - 2*size.Y / 3), Color.White);
+                    spriteBatch.DrawString(mFontBig, "CONTEST!!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
+                       new Vector2(rect.Right + size.X / 32 + 2, rect.Center.Y - 2 * size.Y / 3 + 2), Color.CornflowerBlue);
+                }
+
                 i++;
             }
 
