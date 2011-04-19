@@ -165,7 +165,7 @@ namespace GravityShift
             height /= 2;
             currentLocation.Y += height * 2;
 
-            string request = "Are you sure you wish to reset? \n" + "      This cannot be reversed.";
+            string request = "Are you sure you wish to reset your save file? \n" + "                   All save data will be lost!";
 
             Vector2 stringSize = mQuartz.MeasureString(request);
             spriteBatch.DrawString(mQuartz, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mScreenRect.Center.Y), Color.White);
