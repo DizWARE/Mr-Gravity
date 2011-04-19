@@ -44,8 +44,8 @@ namespace GravityShift
         private static SoundEffect menuMusic_titleSource;
         public static SoundEffectInstance menuMusic_title;
 
-        private static SoundEffect music_level00Source;
-        public static SoundEffectInstance music_level00;
+        //private static SoundEffect music_level00Source;
+        //public static SoundEffectInstance music_level00;
 
         private static SoundEffect music_level01Source;
         public static SoundEffectInstance music_level01;
@@ -70,6 +70,9 @@ namespace GravityShift
 
         private static SoundEffect music_level08Source;
         public static SoundEffectInstance music_level08;
+
+        private static SoundEffect music_level09Source;
+        public static SoundEffectInstance music_level09;
 
         public static SoundEffectInstance gameMusic_generic;
 
@@ -112,15 +115,11 @@ namespace GravityShift
             level_stageVictory.Volume = volume;
 
             /* Music */
-            menuMusic_titleSource = content.Load<SoundEffect>("Music\\music_level03");
+            menuMusic_titleSource = content.Load<SoundEffect>("Music\\music_menu");
             menuMusic_title = menuMusic_titleSource.CreateInstance();
             menuMusic_title.IsLooped = true;
             menuMusic_title.Volume = volume;
             
-            music_level00Source = content.Load<SoundEffect>("Music\\music_level00");
-            music_level00 =  music_level00Source.CreateInstance();
-            music_level00.IsLooped = true;
-            music_level00.Volume = volume;
 
             music_level01Source = content.Load<SoundEffect>("Music\\music_level01");
             music_level01 = music_level01Source.CreateInstance();
@@ -146,12 +145,12 @@ namespace GravityShift
             music_level05 = music_level05Source.CreateInstance();
             music_level05.IsLooped = true;
             music_level05.Volume = volume;
-
+            
             music_level06Source = content.Load<SoundEffect>("Music\\music_level06");
             music_level06 = music_level06Source.CreateInstance();
             music_level06.IsLooped = true;
             music_level06.Volume = volume;
-
+            
             music_level07Source = content.Load<SoundEffect>("Music\\music_level07");
             music_level07 = music_level07Source.CreateInstance();
             music_level07.IsLooped = true;
@@ -161,6 +160,11 @@ namespace GravityShift
             music_level08 = music_level08Source.CreateInstance();
             music_level08.IsLooped = true;
             music_level08.Volume = volume;
+
+            music_level09Source = content.Load<SoundEffect>("Music\\music_level09");
+            music_level09 = music_level08Source.CreateInstance();
+            music_level09.IsLooped = true;
+            music_level09.Volume = volume;
         }
 
         public static void SetGeneric(SoundEffectInstance generic)
@@ -173,7 +177,7 @@ namespace GravityShift
             level_stageFail.Stop();
             level_stageVictory.Stop();
             menuMusic_title.Stop();
-            music_level00.Stop();
+
             music_level01.Stop();
             music_level02.Stop();
             music_level03.Stop();
@@ -182,6 +186,7 @@ namespace GravityShift
             music_level06.Stop();
             music_level07.Stop();
             music_level08.Stop();
+            music_level09.Stop();
 
             if (gameMusic_generic != null)
                 gameMusic_generic.Stop();
