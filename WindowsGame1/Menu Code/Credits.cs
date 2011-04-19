@@ -49,7 +49,7 @@ namespace GravityShift
             mTitles = new Dictionary<string, string[]>();
             mTitles.Add("Angry Newton Productions", new string[] { "", "Angry" });
             mTitles.Add("Developed At", new string[] { "University Of Utah; Senior EAE Capstone Class" });
-            mTitles.Add("Executive Producer", new string[]{"Roger Altizer", "Dr. Bob Kessler"});
+            mTitles.Add("Executive Producers", new string[]{"Roger Altizer", "Dr. Bob Kessler"});
             mTitles.Add("Original Concept & Design", new string[] { "Tyler Robinson" });
             mTitles.Add("Team Lead", new string[] { "Curtis Taylor" });
             mTitles.Add("-Programming-", new string[]{ "", "Surprise"});

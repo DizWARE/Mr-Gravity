@@ -908,9 +908,16 @@ namespace GravityShift
                         }
                         else
                         {
-                            worldText = mFontBig.MeasureString("World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock");
-                            spriteBatch.DrawString(mFontBig, "World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock",
+                            worldText = mFontBig.MeasureString("World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock\n");
+                                                                //"First to record beating this world will name this world");
+                            spriteBatch.DrawString(mFontBig, "World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock\n",
+                                                                //"First to record beating this world will name this world",
                                 new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
+                            worldText = mFontBig.MeasureString("Contest!!! First to beat this world gets to name it");
+                            spriteBatch.DrawString(mFontBig, "Contest!!! First to beat this world gets to name it",
+                                new Vector2(background.Center.X - worldText.X / 2, background.Center.Y), Color.White);
+                            spriteBatch.DrawString(mFontBig, "Contest!!! First to beat this world gets to name it",
+                                new Vector2(background.Center.X - worldText.X / 2 + 2, background.Center.Y + 2), Color.CornflowerBlue);
                         }
                     }
 
@@ -932,10 +939,10 @@ namespace GravityShift
 
                 if (i == 48)
                 {
-                    size = mFontBig.MeasureString("CONTEST!!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!");
-                    spriteBatch.DrawString(mFontBig, "CONTEST!!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
+                    size = mFontBig.MeasureString("CONTEST!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!");
+                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
                         new Vector2(rect.Right + size.X/32, rect.Center.Y - 2*size.Y / 3), Color.White);
-                    spriteBatch.DrawString(mFontBig, "CONTEST!!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
+                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
                        new Vector2(rect.Right + size.X / 32 + 2, rect.Center.Y - 2 * size.Y / 3 + 2), Color.CornflowerBlue);
                 }
 
