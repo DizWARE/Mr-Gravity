@@ -1,0 +1,6450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>Tutorial</Name>
+  <Size X="25" Y="82" />
+  <Background>Backgrounds\blank</Background>
+  <Entities>
+    <Entity>
+      <ID>3315</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="11" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>15</IdealTime>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>3802</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3803</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3804</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3805</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3806</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3807</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3808</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3809</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3810</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3811</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3812</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3813</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3814</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3815</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3816</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3817</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3818</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3819</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3820</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3821</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3822</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3823</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3824</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3825</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3826</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="0" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3827</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3828</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3829</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3830</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3831</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3832</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3833</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3834</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3835</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3836</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3837</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3838</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3839</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3840</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3841</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3842</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3843</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3844</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3845</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3846</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3847</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3848</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3849</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3850</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3851</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3852</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="3" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3853</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3854</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3855</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3856</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3857</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3858</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3859</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3897</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3898</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3899</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3900</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3901</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3902</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3903</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3904</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3907</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3908</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3909</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3910</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3911</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3912</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3915</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3916</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3917</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3918</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3919</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3920</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3921</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3922</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3923</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3924</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3925</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3926</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3927</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3928</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3929</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3930</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3931</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3932</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3936</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3937</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3938</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3939</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3940</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3941</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3942</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3943</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3944</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3945</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3946</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3947</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3948</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>3949</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4005</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4006</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4007</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4008</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4009</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4010</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4011</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4012</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4013</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4014</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4015</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4016</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4017</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4018</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4019</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4020</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4021</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4022</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4023</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4024</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4025</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4026</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4027</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4028</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4031</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4032</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4033</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4034</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4035</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4036</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4189</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4190</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4191</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="17" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4192</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4193</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="19" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4194</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4204</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4207</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="27" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4208</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="28" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4209</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="29" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4358</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4359</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="31" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4360</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="32" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4740</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="23" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4741</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4742</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4743</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4746</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="27" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4747</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="28" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4748</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="29" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4749</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4750</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="31" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>4751</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="32" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>5028</ID>
+      <Name>Music</Name>
+      <Type>Triggers</Type>
+      <Location X="11" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <MusicFile>music_level01</MusicFile>
+        <Loop>True</Loop>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>6805</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="13" Y="2" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>5</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Help me reach Mrs. Gravity by controlling the direction of gravity in my world</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>6887</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="16" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>21</Width>
+        <Height>10</Height>
+        <Shape>Square</Shape>
+        <PopupType>Image</PopupType>
+        <ImageFile>Menu/Main/XboxController</ImageFile>
+        <Text>ChangeMe</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>6888</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>6909</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>5</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Anything red and spikey will kill you</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>6913</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>6915</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>6917</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>6999</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7000</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7001</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="18" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7082</ID>
+      <Name>SawRed</Name>
+      <Type>Physics Objects</Type>
+      <Location X="5" Y="17" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>7163</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7164</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="1" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7165</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7166</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7167</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="20" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7168</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="21" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7252</ID>
+      <Name>Hazard</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="17" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Hazards\RedSquare</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7414</ID>
+      <Name>RailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="19" Y="16" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>1</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>7495</ID>
+      <Name>RailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="12" Y="17" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>2</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>7578</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7579</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7580</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7581</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7582</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7583</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7584</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7585</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7586</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7587</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7588</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7589</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7590</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7591</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7592</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7593</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7594</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7595</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7596</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7597</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="22" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7599</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="23" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7600</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="24" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7601</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="25" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7602</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7603</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7604</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7605</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7606</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7607</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7608</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7609</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7610</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7611</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7612</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7613</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7614</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7615</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7616</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7617</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7618</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7619</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7620</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7621</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="26" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7670</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7671</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="31" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7672</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="32" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7673</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="33" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7674</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7675</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7676</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7677</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7678</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7679</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7680</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7681</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7682</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7683</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7684</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7685</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7686</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7687</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7688</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7689</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7690</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7691</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7692</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7693</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="30" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7699</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7700</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7701</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7702</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7703</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7704</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7705</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7706</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7707</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7708</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7709</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7710</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7711</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7712</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7713</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7714</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7715</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7716</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7717</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7766</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="33" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7767</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>7770</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="17" Y="28" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>5</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Be careful, some objects are reversed</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>7852</ID>
+      <Name>ReverseRailSawX</Name>
+      <Type>Physics Objects</Type>
+      <Location X="11" Y="31" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>X</Rail>
+        <Length>12</Length>
+        <Reverse>Tile</Reverse>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>7933</ID>
+      <Name>ReverseRailSawY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="5" Y="31" />
+      <CollisionType>Hazardous</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Hazards\RedSaw</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>2</Length>
+        <Reverse>Tile</Reverse>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8094</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="33" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8095</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="34" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8096</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="35" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8097</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="36" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8098</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="37" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8099</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8100</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="39" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8181</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="8" Y="36" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>5</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Find all of the gems to get 3 stars</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8183</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="40" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8184</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8185</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8186</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8187</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8188</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8189</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8190</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8191</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8192</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8193</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8194</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8195</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8196</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8197</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8198</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8199</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8200</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8201</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8202</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8203</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8204</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8205</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8206</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="39" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8207</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="40" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8208</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8209</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8210</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8211</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8212</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8213</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8214</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8215</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8216</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8217</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8218</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8219</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8220</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8221</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8222</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8223</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8224</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8225</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8226</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8227</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8228</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8272</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="29" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8273</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="28" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8362</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="37" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8363</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="17" Y="37" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8365</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="19" Y="37" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8366</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="21" Y="37" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8367</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="23" Y="37" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8448</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="35" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8449</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="36" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8450</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="37" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8451</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="38" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8452</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="39" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8453</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="40" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8454</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8455</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="42" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8456</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="43" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8537</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="37" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8618</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="44" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8619</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="45" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8620</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8621</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8622</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="48" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8623</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="49" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8624</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8625</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8626</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8627</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="48" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8628</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="49" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8629</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8630</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8631</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8634</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8635</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8636</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8637</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8638</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8639</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8640</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8641</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8642</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8643</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8644</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8645</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8646</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8647</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8648</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8649</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8650</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8651</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8652</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8653</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8654</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8655</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8656</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8657</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8658</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8659</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8660</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8661</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8662</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8664</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8666</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8667</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8711</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="43" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8712</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="44" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8713</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="45" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8714</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8715</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8716</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="48" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8717</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="49" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8718</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8721</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="52" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8722</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="53" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8726</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8729</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8730</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8731</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8732</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8733</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8734</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8735</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8736</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8737</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8738</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8739</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8740</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8741</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8742</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8743</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8744</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8745</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8746</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8747</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8748</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8755</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8761</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="51" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8763</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="52" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>5</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Warp to other sides of the level</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>8765</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="43" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8766</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="44" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8767</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="45" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8768</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="46" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8769</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8770</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="48" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8771</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="49" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8772</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8776</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="54" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8777</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8778</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="55" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8779</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="56" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8780</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="57" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8781</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8782</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8783</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8784</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8785</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8786</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8787</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8788</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8789</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8790</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8791</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8792</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8793</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8794</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8795</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8796</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8797</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8798</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8799</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8800</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="50" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8801</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="57" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8802</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="55" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8803</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="56" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8804</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="70" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8805</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="71" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8806</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="72" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8807</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="73" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8808</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="74" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8977</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="71" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8978</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="72" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8979</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="73" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8980</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="74" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8981</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="75" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8982</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="76" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8983</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="77" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8984</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="78" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8985</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="79" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8986</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="80" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8987</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="75" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8988</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="76" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8989</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="77" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8990</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="78" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8991</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="79" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8992</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="80" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8993</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8994</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8995</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8996</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8997</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8998</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>8999</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9000</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9001</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9002</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9003</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9004</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9005</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9006</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9007</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9008</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9009</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9010</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9011</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9012</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9013</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9014</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9016</ID>
+      <Name>BlackHole</Name>
+      <Type>Triggers</Type>
+      <Location X="12" Y="44" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>3</Width>
+        <Height>3</Height>
+        <Shape>Square</Shape>
+        <Force>3</Force>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9018</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="19" Y="44" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>5</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Black Holes throw you off</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9020</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9021</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="41" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9022</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9023</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="47" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9025</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9026</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9027</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="81" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9112</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="56" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>4</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Finish within the goal time to get 3 stars</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9323</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="72" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9324</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="72" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9325</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="72" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9326</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="72" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9327</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="72" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9328</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="73" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9329</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="74" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9330</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="75" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9332</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="76" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9333</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="77" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9334</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="78" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9335</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="79" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9336</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="79" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9337</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="79" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9338</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="79" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9339</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="79" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9340</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="78" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9343</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="77" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9344</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="76" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9346</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="75" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9347</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="74" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9348</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="73" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9354</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="76" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9355</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="77" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9356</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="77" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9357</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="77" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9358</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="76" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9359</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="74" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9360</ID>
+      <Name>YellowDiamond</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="74" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\YellowDiamond</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9445</ID>
+      <Name>PlayerEnd</Name>
+      <Type>Level Positions</Type>
+      <Location X="1" Y="80" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerEnd</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9571</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="17" Y="64" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>4</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Complete the level without dying and get 3 stars</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9583</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="68" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>20</Width>
+        <Height>4</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>You also get a bonus star for getting all 9 stars.</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9594</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="20" Y="73" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>25</Width>
+        <Height>20</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>Good Luck... You'll need it</Text>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>9675</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9676</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9677</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9678</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9679</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9680</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9681</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9682</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9683</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9684</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9685</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9686</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9687</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9688</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9689</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9690</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9691</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9692</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9693</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9694</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9695</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="59" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9696</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="60" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9697</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="61" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9698</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9699</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9700</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9701</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9702</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9703</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9704</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9705</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9706</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9707</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9708</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9709</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9713</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9714</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9715</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9716</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9717</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9718</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9719</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="1" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9720</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9721</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="63" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9722</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="64" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9723</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="65" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9724</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9725</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="58" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9726</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="59" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9727</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="60" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9728</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="61" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9729</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="62" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9730</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="63" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9731</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="64" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9732</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="65" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9733</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9734</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="23" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9735</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="22" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9736</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="21" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9737</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="20" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9738</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="19" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9739</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="18" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9740</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9741</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9742</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9743</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9744</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9745</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9746</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9747</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9748</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9749</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9750</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9751</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9752</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="66" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9754</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="67" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9755</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="68" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9769</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="0" Y="69" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9770</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="67" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9771</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="68" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9773</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="24" Y="69" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>9774</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="69" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>20</Width>
+        <Height>4</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>You can complete the challenges by doing multiple runs.</Text>
+      </Properties>
+    </Entity>
+  </Entities>
+</Level>

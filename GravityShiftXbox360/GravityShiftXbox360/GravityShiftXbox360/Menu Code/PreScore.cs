@@ -48,8 +48,6 @@ namespace GravityShift
 
         public static  List<string> starList;
 
-        //public LevelInfo mCurrentLevel;
-
         double elapsedTime = 0.0;
 
         private string gemString, deathString, timeString;
@@ -203,6 +201,7 @@ namespace GravityShift
                 {
                     starList.Add(deathString);
                 }
+                GameSound.menuSound_woosh.Play(GameSound.volume, 0.0f, 0.0f);
                 mDoOnce = true;
             }
 

@@ -302,7 +302,7 @@ namespace GravityShift
             wallEngine = new ParticleEngine(textures, new Vector2(400, 240), 20);
             wallEngine.colorScheme = "Blue";
 
-            backGroundParticleCount = 1000;
+            backGroundParticleCount = 500;
             backgroundParticles = new Particle[backGroundParticleCount];
             Random random = new Random();
             Texture2D particle = content.Load<Texture2D>("Images/Particles/diamond");
