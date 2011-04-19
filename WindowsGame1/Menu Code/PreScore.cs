@@ -48,8 +48,6 @@ namespace GravityShift
 
         public static  List<string> starList;
 
-        public LevelInfo mCurrentLevel;
-
         double elapsedTime = 0.0;
 
         private string gemString, deathString, timeString;

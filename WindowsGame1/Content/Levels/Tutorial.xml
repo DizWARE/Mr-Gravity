@@ -5599,7 +5599,7 @@
         <Shape>Square</Shape>
         <PopupType>Text</PopupType>
         <ImageFile>Error</ImageFile>
-        <Text>You also get a bonus star for getting all 9 stars</Text>
+        <Text>You also get a bonus star for getting all 9 stars.</Text>
       </Properties>
     </Entity>
     <Entity>
@@ -6428,6 +6428,23 @@
       <Paintable>True</Paintable>
       <Texture>Walls\Blue</Texture>
       <Properties />
+    </Entity>
+    <Entity>
+      <ID>9774</ID>
+      <Name>PopUp</Name>
+      <Type>Triggers</Type>
+      <Location X="9" Y="69" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>InvisibleObjects\Trigger</Texture>
+      <Properties>
+        <Width>20</Width>
+        <Height>4</Height>
+        <Shape>Square</Shape>
+        <PopupType>Text</PopupType>
+        <ImageFile>Error</ImageFile>
+        <Text>You can complete the challenges by doing multiple runs.</Text>
+      </Properties>
     </Entity>
   </Entities>
 </Level>

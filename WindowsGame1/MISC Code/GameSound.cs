@@ -45,7 +45,6 @@ namespace GravityShift
         private static SoundEffect menuMusic_titleSource;
         public static SoundEffectInstance menuMusic_title;
 
-        private static SoundEffect music_level00Source;
         public static SoundEffectInstance music_level00;
 
         private static SoundEffect music_level01Source;
