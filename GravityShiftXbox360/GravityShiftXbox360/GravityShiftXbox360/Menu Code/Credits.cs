@@ -49,7 +49,7 @@ namespace GravityShift
             mTitles = new Dictionary<string, string[]>();
             mTitles.Add("Angry Newton Productions", new string[] { "", "Angry" });
             mTitles.Add("Developed At", new string[] { "University Of Utah; Senior EAE Capstone Class" });
-            mTitles.Add("Executive Producer", new string[]{"Roger Altizer", "Dr. Bob Kessler"});
+            mTitles.Add("Executive Producers", new string[]{"Roger Altizer", "Dr. Bob Kessler"});
             mTitles.Add("Original Concept & Design", new string[] { "Tyler Robinson" });
             mTitles.Add("Team Lead", new string[] { "Curtis Taylor" });
             mTitles.Add("-Programming-", new string[]{ "", "Surprise"});
@@ -70,7 +70,8 @@ namespace GravityShift
             mTitles.Add("Sound FX Lead", new string[] { "Steven Doxey" });
             mTitles.Add("Sound FX Composers", new string[] { "Michelle MacArt", "Tyler Robinson", "Morgan Reynolds" });
             mTitles.Add("-Find Us-", new string[] { "", "Laugh2" });
-            mTitles.Add("Our Official Website", new string[] { "TBD" });
+            mTitles.Add("Our Official Website", new string[] { "http://www.mrgravity.com" });
+            mTitles.Add("Our Email(Email here for Contest)", new string[] { "angrynewtondevelopers@live.com" });
             mTitles.Add("EAE Website", new string[] { "http://eae.utah.edu" });
             mTitles.Add("Like us on Facebook", new string[] { "http://www.facebook.com/", "Search Mr. Gravity" });
             mTitles.Add("Follow us on Twitter", new string[] { "http://www.twitter.com/AngryNewton", "Or @AngryNewton"});
@@ -163,6 +164,7 @@ namespace GravityShift
                 {
                     top += 40;
                     spriteBatch.DrawString(mFontSmall, name, new Vector2(GetTextXLocation(name, false), top), Color.White);
+                    spriteBatch.DrawString(mFontSmall, name, new Vector2(GetTextXLocation(name, false)+2, top+2), Color.DimGray);
                 }
                 //Clear spacing between headers
                 top += 100;
