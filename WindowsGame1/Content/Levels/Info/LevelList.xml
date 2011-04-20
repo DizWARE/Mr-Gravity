@@ -403,7 +403,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>54</GoalCollectable>
-    <GoalTime>30</GoalTime>
+    <GoalTime>120</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Close Call</Name>
@@ -430,7 +430,7 @@
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
     <GoalCollectable>12</GoalCollectable>
-    <GoalTime>30</GoalTime>
+    <GoalTime>40</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Anything Goes</Name>
