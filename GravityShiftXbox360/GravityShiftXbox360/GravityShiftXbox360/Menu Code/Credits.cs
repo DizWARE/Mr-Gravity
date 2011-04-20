@@ -47,7 +47,7 @@ namespace GravityShift
 
             //Easily add names and titles here
             mTitles = new Dictionary<string, string[]>();
-            mTitles.Add("Angry Newton Production", new string[] { "", "Angry" });
+            mTitles.Add("Angry Newton Productions", new string[] { "", "Angry" });
             mTitles.Add("Developed At", new string[] { "University Of Utah; Senior EAE Capstone Class" });
             mTitles.Add("Executive Producer", new string[]{"Roger Altizer", "Dr. Bob Kessler"});
             mTitles.Add("Original Concept & Design", new string[] { "Tyler Robinson" });
@@ -59,17 +59,17 @@ namespace GravityShift
             mTitles.Add("-Art-", new string[] { "", "Laugh" });
             mTitles.Add("Lead Artist", new string[] { "Lukas Black" });
             mTitles.Add("Artists", new string[] { "Nate Bradford", "Jeremy Heintz", "Casey Spencer" });
-            mTitles.Add("Animations", new string[] { "Lukas Black", "Nate Bradford", "Jeremy Heintz", "Kamron Egan" });
+            mTitles.Add("Animators", new string[] { "Lukas Black", "Nate Bradford", "Jeremy Heintz", "Kamron Egan" });
             mTitles.Add("-Design & Development-", new string[] { "", "Bored" } );
-            mTitles.Add("Character Design", new string[] { "Lukas Black" });
-            mTitles.Add("Level Design", new string[]{"Nate Bradford", "Curtis Taylor", "Jeremy Heintz", "Morgan Reynolds", "Steven Doxey", "Casey Spencer"});
+            mTitles.Add("Character Designer", new string[] { "Lukas Black" });
+            mTitles.Add("Level Designers", new string[]{"Nate Bradford", "Curtis Taylor", "Jeremy Heintz", "Morgan Reynolds", "Steven Doxey", "Casey Spencer"});
             mTitles.Add("Game Mechanics", new string[] { "Tyler Robinson", "Curtis Taylor", "Morgan Reynolds" });
             mTitles.Add("-Music & Sound-", new string[] { "", "Worry" });
             mTitles.Add("Music Lead", new string[] { "Steven Doxey" });
-            mTitles.Add("Music", new string[] { "Michelle MacArt", "Cuyler Stuwe" });
+            mTitles.Add("Musicians", new string[] { "Michelle MacArt", "Cuyler Stuwe" });
             mTitles.Add("Sound FX Lead", new string[] { "Steven Doxey" });
-            mTitles.Add("Sound FX", new string[] { "Michelle MacArt", "Tyler Robinson", "Morgan Reynolds" });
-            mTitles.Add("Find Us", new string[] { "", "Laugh2" });
+            mTitles.Add("Sound FX Composers", new string[] { "Michelle MacArt", "Tyler Robinson", "Morgan Reynolds" });
+            mTitles.Add("-Find Us-", new string[] { "", "Laugh2" });
             mTitles.Add("Our Official Website", new string[] { "TBD" });
             mTitles.Add("EAE Website", new string[] { "http://eae.utah.edu" });
             mTitles.Add("Like us on Facebook", new string[] { "http://www.facebook.com/", "Search Mr. Gravity" });

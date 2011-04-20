@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Levels>
   <LevelData>
-    <Name>Teaser</Name>
+    <Name>Tutorial</Name>
     <Unlocked>True</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>12</GoalCollectable>
-    <GoalTime>15</GoalTime>
+    <GoalCollectable>35</GoalCollectable>
+    <GoalTime>999</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Hazards</Name>
@@ -397,13 +397,13 @@
     <GoalTime>22</GoalTime>
   </LevelData>
   <LevelData>
-    <Name>Ball Pit</Name>
+    <Name>Open Spaces</Name>
     <Unlocked>False</Unlocked>
     <Timerstar>0</Timerstar>
     <Collectionstar>0</Collectionstar>
     <Deathstar>0</Deathstar>
-    <GoalCollectable>5</GoalCollectable>
-    <GoalTime>5</GoalTime>
+    <GoalCollectable>54</GoalCollectable>
+    <GoalTime>30</GoalTime>
   </LevelData>
   <LevelData>
     <Name>Close Call</Name>

@@ -21,6 +21,7 @@ namespace GravityShift
         /* Menu */
         public static SoundEffect menuSound_rollover;
         public static SoundEffect menuSound_select;
+        public static SoundEffect menuSound_woosh;
         
         /* Player And Collision */
         public static SoundEffect playerCol_wall;
@@ -44,8 +45,7 @@ namespace GravityShift
         private static SoundEffect menuMusic_titleSource;
         public static SoundEffectInstance menuMusic_title;
 
-        //private static SoundEffect music_level00Source;
-        //public static SoundEffectInstance music_level00;
+        public static SoundEffectInstance music_level00;
 
         private static SoundEffect music_level01Source;
         public static SoundEffectInstance music_level01;
@@ -92,6 +92,9 @@ namespace GravityShift
             /* Menu */
             menuSound_rollover = content.Load<SoundEffect>("SoundEffects\\menuSound_rollover");
             menuSound_select = content.Load<SoundEffect>("SoundEffects\\menuSound_select");
+            menuSound_woosh = content.Load<SoundEffect>("SoundEffects\\menuSound_woosh");
+
+
         
             /* Player Collision */
             playerCol_wall = content.Load<SoundEffect>("SoundEffects\\playerCol_wall");
