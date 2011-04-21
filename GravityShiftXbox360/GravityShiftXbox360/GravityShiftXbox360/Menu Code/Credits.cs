@@ -23,6 +23,9 @@ namespace GravityShift
         Texture2D mSad;
         Texture2D mGirlSad;
 
+        Texture2D mEAE;
+        Texture2D mULogo;
+
         Level mBackgroundLevel;
 
         IControlScheme mControls;
@@ -44,7 +47,6 @@ namespace GravityShift
             mBackgroundLevel = Level.MainMenuLevel("Content\\Levels\\MainMenu.xml", mControls, mGraphics.GraphicsDevice.Viewport, mGraphics.GraphicsDevice.Viewport.Bounds);
             mBackgroundLevel.StartingPoint = new Vector2(mGraphics.GraphicsDevice.Viewport.Bounds.Center.X + mGraphics.GraphicsDevice.Viewport.Bounds.Center.X * .2f,
                                                         mGraphics.GraphicsDevice.Viewport.Bounds.Center.Y + mGraphics.GraphicsDevice.Viewport.Bounds.Center.Y * .1f);
-
             //Easily add names and titles here
             mTitles = new Dictionary<string, string[]>();
             mTitles.Add("Angry Newton Productions", new string[] { "", "Angry" });
@@ -92,7 +94,8 @@ namespace GravityShift
             mGirlSmile = content.Load<Texture2D>("Images\\Player\\GirlSmile");
             mSad = content.Load<Texture2D>("Images\\Player\\Sad");
             mGirlSad = content.Load<Texture2D>("Images\\Player\\GirlSad");
-
+            mEAE = content.Load<Texture2D>("Images\\Menu\\Credits\\EAEIconRounded");
+            mULogo = content.Load<Texture2D>("Images\\Menu\\Credits\\Primary-University-Logo");
             mBackgroundLevel.Load(content);
         }
 
@@ -171,9 +174,18 @@ namespace GravityShift
                 
             }
 
+            spriteBatch.Draw(mULogo, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - 175, top, 125, 100),
+                 Color.White);
+
+            spriteBatch.Draw(mEAE, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X-25, top, 200, 100),
+                Color.White);
+            top += 200;
+
             spriteBatch.Draw(mSad, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X - mSad.Width, top, mSad.Width, mSad.Height), Color.White);
             spriteBatch.Draw(mGirlSad, new Rectangle(mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Center.X, top, mGirlSad.Width, mGirlSad.Height), Color.White);
 
+            
+            
 
             //If bottom has been reached, reset to the top
             if (top+mSad.Height <= mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Top)

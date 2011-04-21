@@ -436,10 +436,10 @@ namespace GravityShift
             else if (world == NUM_OF_WORLDS - 1)
                 return;
 #if XBOX360
-            if(!this.TrialMode || world == 0)
+            //if(!this.TrialMode || world == 0)
 #endif
-            for (int i = 0; i < 6; i++)
-                mLevels[world * 6 + i].Unlock();
+            for (int i = 0; i < (world * 6 + 6); i++)
+                mLevels[i].Unlock();
         }
 
         /// <summary>
@@ -451,20 +451,23 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            if(mStarCount < 30)
-            { UnlockWorld(0); return; }
+            if (!this.TrialMode)
+            {
+                if (mStarCount < 30)
+                { UnlockWorld(0); return; }
 
-            if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
-            {
-                mWorldUnlocked = true;
-                mLatestUnlocked = mStarCount / 30;
-                UnlockWorld(mStarCount / 30);
-            }
-            else if (mStarCount >= 480 && mLatestUnlocked < 8)
-            {
-                mWorldUnlocked = true;
-                mLatestUnlocked = 8;
-                UnlockWorld(8);
+                if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
+                {
+                    mWorldUnlocked = true;
+                    mLatestUnlocked = mStarCount / 30;
+                    UnlockWorld(mStarCount / 30);
+                }
+                else if (mStarCount >= 480 && mLatestUnlocked < 8)
+                {
+                    mWorldUnlocked = true;
+                    mLatestUnlocked = 8;
+                    UnlockWorld(8);
+                }
             }
         }
 
@@ -578,6 +581,8 @@ namespace GravityShift
             HandleAKey(ref gameState, ref currentLevel);
             HandleBKey(ref gameState);
             HandleDirectionKey();
+
+            this.UpdateStarCount();
         }
 
         /// <summary>
