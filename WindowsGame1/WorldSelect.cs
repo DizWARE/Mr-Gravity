@@ -455,8 +455,12 @@ namespace GravityShift
             if (!this.TrialMode)
             {
                 if (mStarCount < 30)
-                { UnlockWorld(0); return; }
-
+                {
+                    if(loaded == false)
+                        loaded = true;
+                    UnlockWorld(0);
+                    return; 
+                }
                 if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30,7))) < NUM_OF_WORLDS - 2)
                 {
                     mWorldUnlocked = true;
