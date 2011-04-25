@@ -118,46 +118,46 @@ namespace GravityShift
 
             mHeight += (mQuartzLarge.LineSpacing + mQuartzSmall.LineSpacing);
 
-            request = "Collectables:";
+            request = "Gems:";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 3, mHeight), Color.DarkTurquoise);
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.DarkTurquoise);
 
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the collectable goals for the level */
-            request =  " < " + (int)(level.NumCollectable*.8) + " / " + level.NumCollectable.ToString();
+            request = " 0 - " + ((int)(level.NumCollectable * .8) - 1) + " gems";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
-
-            request = " > " + (int)(level.NumCollectable*.8)  + " / " + level.NumCollectable.ToString();
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
+            request = (int)(level.NumCollectable * .8) + " - " + (level.NumCollectable - 1).ToString() + " gems";
+            
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
 
-            request = level.NumCollectable.ToString() + " / " + level.NumCollectable.ToString();
+            request = level.NumCollectable.ToString() + " gems";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - stringSize.X / 2, mHeight), Color.White);
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
 
             mHeight += mQuartzSmall.LineSpacing;
 
             /* 1 Star */
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - mStar.Width / 2, mHeight), Color.White);
 
             /* 2 Star */
             spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mStar.Width, mHeight), Color.White);
             spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X, mHeight), Color.White);
 
             /* 3 Star */
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - mStar.Width, mHeight), Color.White);
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5, mHeight), Color.White);
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 + mStar.Width, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - 3*mStar.Width/2, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - mStar.Width / 2, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 + mStar.Width / 2, mHeight), Color.White);
 
             mHeight += (mStar.Height + mQuartzSmall.LineSpacing);
 
-            request = "Timer:";
+            request = "Time in seconds:";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.DarkTurquoise);
@@ -165,34 +165,37 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the timer goals for the level */
-            request = "> " + (int)(level.IdealTime * 1.2) + " seconds";
+            request = "Over " + (int)(level.IdealTime * 1.2) + " secs";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
 
-            request = "<= " + (int)(level.IdealTime * 1.2) + " seconds";
+            if((int)(level.IdealTime + 1) != (int)(level.IdealTime * 1.2))
+                request = (int)(level.IdealTime + 1) + " - " + (int)(level.IdealTime * 1.2) + " secs";
+            else
+                request = (int)(level.IdealTime * 1.2) + " secs";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
 
-            request = request = "< " + (int)(level.IdealTime) + " seconds";
+            request = (int)(level.IdealTime) +" secs";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - stringSize.X / 2, mHeight), Color.White);
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
 
             mHeight += mQuartzSmall.LineSpacing;
 
             /* 1 Star */
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - mStar.Width / 2, mHeight), Color.White);
 
             /* 2 Star */
             spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mStar.Width, mHeight), Color.White);
             spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X, mHeight), Color.White);
 
             /* 3 Star */
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - mStar.Width, mHeight), Color.White);
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5, mHeight), Color.White);
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 + mStar.Width, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - 3 * mStar.Width / 2, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - mStar.Width / 2, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 + mStar.Width / 2, mHeight), Color.White);
 
             mHeight += (mStar.Height + mQuartzSmall.LineSpacing);
 
@@ -204,33 +207,33 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the death goals for the level */
-            request = " > 2 deaths";
+            request = " 3 - 5 Deaths";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4 - stringSize.X / 2, mHeight), Color.White);
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
 
-            request = " <= 2 death";
+            request = " 1 - 2 Deaths";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - stringSize.X / 2, mHeight), Color.White);
 
-            request = " 0 deaths";
+            request = " 0 Deaths";
 
             stringSize = mQuartzSmall.MeasureString(request);
-            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - stringSize.X / 2, mHeight), Color.White);
+            spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
 
             mHeight += mQuartzSmall.LineSpacing;
             /* 1 Star */
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 4, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - mStar.Width / 2, mHeight), Color.White);
 
             /* 2 Star */
             spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X - mStar.Width, mHeight), Color.White);
             spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X, mHeight), Color.White);
 
             /* 3 Star */
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 - mStar.Width, mHeight), Color.White);
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5, mHeight), Color.White);
-            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 5 + mStar.Width, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - 3 * mStar.Width / 2, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 - mStar.Width / 2, mHeight), Color.White);
+            spriteBatch.Draw(mStar, new Vector2(mScreenRect.Center.X + mScreenRect.Width / 3 + mStar.Width / 2, mHeight), Color.White);
 
             spriteBatch.End();
         }
