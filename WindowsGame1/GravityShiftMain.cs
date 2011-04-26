@@ -128,7 +128,7 @@ namespace GravityShift
         protected override void Initialize()
         {
             //COMMENT OUT AFTER TESTING TRIAL MODE
-            //Guide.SimulateTrialMode = true;
+            Guide.SimulateTrialMode = true;
 
             mGraphics.PreferredBackBufferWidth = 1280;
             mGraphics.PreferredBackBufferHeight = 720;
@@ -445,9 +445,11 @@ namespace GravityShift
             }
             else if (mCurrentState == GameStates.Exit)
             {
+#if XBOX360
                 if (Guide.IsTrialMode)
                     mCurrentState = GameStates.TrialExit;
                 else
+#endif
                     mCurrentState = GameStates.WaitingToExit;
             }
             else if (mCurrentState == GameStates.TrialExit)
@@ -496,7 +498,14 @@ namespace GravityShift
             else if (mCurrentState == GameStates.WaitForMarketplace)
             {
                 if (!Guide.IsVisible)
-                    mCurrentState = GameStates.WaitingToExit;
+                    if (!Guide.IsTrialMode)
+                    {
+                        mCurrentState = GameStates.Main_Menu;
+                    }
+                    else
+                    {
+                        mCurrentState = GameStates.WaitingToExit;
+                    }
             }
             else if (mCurrentState == GameStates.WaitingToExit)
             {
