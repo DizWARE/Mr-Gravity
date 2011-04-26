@@ -597,6 +597,23 @@ namespace GravityShift
 
                 if (mLevels[mCurrentWorld * 6 + mCurrentIndex].Unlocked)
                     mLoading = START_LOAD;
+#if XBOX360
+                else if (TrialMode)
+                {
+                    if (!Guide.IsVisible)
+                    {
+                        SignedInGamer gamer = Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex];
+
+                        if (gamer != null && !gamer.IsGuest && gamer.IsSignedInToLive)
+                        {
+                            if (gamer.Privileges.AllowPurchaseContent)
+                            {
+                                Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+                            }
+                        }
+                    }
+                }
+#endif
 
 
                 //Handle level select
