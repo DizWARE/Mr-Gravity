@@ -114,7 +114,7 @@ namespace GravityShift
         bool mDeviceSelected;
         public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
 
-        
+        private bool loaded;
 
         //store the storage device we are using, and the container within it.
         StorageDevice device;
@@ -147,6 +147,7 @@ namespace GravityShift
             number = rand.Next(4);
 
             device = null;
+            loaded = false;
 
 
         }
@@ -428,7 +429,7 @@ namespace GravityShift
         {
             if (world >= NUM_OF_WORLDS) return;
 
-            if (world == NUM_OF_WORLDS - 1 && mStarCount == 480)
+            if (world == NUM_OF_WORLDS - 1 && mStarCount >= 480)
             {
                 mLevels[48].Unlock();
                 return;
@@ -454,19 +455,27 @@ namespace GravityShift
             if (!this.TrialMode)
             {
                 if (mStarCount < 30)
-                { UnlockWorld(0); return; }
-
-                if (mStarCount / 30 <= NUM_OF_WORLDS && mLatestUnlocked < mStarCount / 30)
                 {
-                    mWorldUnlocked = true;
-                    mLatestUnlocked = mStarCount / 30;
-                    UnlockWorld(mStarCount / 30);
+                    if(loaded == false)
+                        loaded = true;
+                    UnlockWorld(0);
+                    return; 
                 }
-                else if (mStarCount >= 480 && mLatestUnlocked < 8)
+                if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30,7))) < NUM_OF_WORLDS - 2)
                 {
                     mWorldUnlocked = true;
-                    mLatestUnlocked = 8;
-                    UnlockWorld(8);
+                    UnlockWorld(mLatestUnlocked);
+                }
+                else if (mStarCount >= 480 && mLatestUnlocked < NUM_OF_WORLDS - 1)
+                {
+                    mWorldUnlocked = true;
+                    mLatestUnlocked = NUM_OF_WORLDS - 1;
+                    UnlockWorld(mLatestUnlocked);
+                }
+                else if (!loaded)
+                {
+                    mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7));
+                    loaded = true;
                 }
             }
         }
@@ -855,8 +864,8 @@ namespace GravityShift
                 //Draw 10 stars in 2 rows of 5
                 for (int i = 0; i < 2; i++)
                     for (int j = 0; j < 5; j++)
-                        spriteBatch.Draw(mStar, new Rectangle(infoBarLoc.Left + infoBarLoc.Width / 4 + j * infoBarLoc.Width / 10,
-                            (int)(infoBarLoc.Center.Y - size.Y - i * infoBarLoc.Height / 10), infoBarLoc.Width / 10, infoBarLoc.Height / 10), Color.White);
+                        spriteBatch.Draw(mStar, new Rectangle(infoBarLoc.Left + 5*infoBarLoc.Width / 16 + j * infoBarLoc.Width / 12,
+                            (int)(infoBarLoc.Center.Y- size.Y + size.Y/5 - i * infoBarLoc.Height / 12), infoBarLoc.Width / 12, infoBarLoc.Height / 12), Color.White);
 
 
                 size = mFont.MeasureString("collected");

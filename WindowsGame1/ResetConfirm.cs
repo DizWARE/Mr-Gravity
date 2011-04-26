@@ -138,6 +138,8 @@ namespace GravityShift
 
                 }
             }
+            if (mControls.isBPressed(false) || mControls.isBackPressed(false))
+                gameState = GameStates.Options;
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDeviceManager graphics, Matrix scale)

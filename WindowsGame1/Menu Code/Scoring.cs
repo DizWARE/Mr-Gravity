@@ -202,20 +202,20 @@ namespace GravityShift
 
             if (previous[0] > attempt[0])
             {
-                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
 
             }
             else if(attempt[0] < 3)
             {
-                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
 
             else
             {
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
             
             topPadding += 65;
@@ -234,20 +234,20 @@ namespace GravityShift
             level.CollectionStar = attempt[1];
             if (previous[1] > attempt[1])
             {
-                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
 
             }
             else if (attempt[1] < 3)
             {
-                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
 
             else
             {
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }   
             
             topPadding += 65;
@@ -268,20 +268,20 @@ namespace GravityShift
 
             if (previous[2] > attempt[2])
             {
-                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3 Stars", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3 Stars", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Your Best: " + previous[0] + "/3", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
 
             }
             else if (attempt[2] < 3)
             {
-                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Best So Far!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
 
             else
             {
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16), topPadding), Color.White);
-                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (9 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16), topPadding), Color.White);
+                spriteBatch.DrawString(mQuartz, "Perfect!", new Vector2(mScreenRect.Left + (11 * mScreenRect.Width / 16) + 1, topPadding + 1), Color.SteelBlue);
             }
                
             string request = "Press Start or A To Access The Menu";

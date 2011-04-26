@@ -81,7 +81,7 @@ namespace GravityShift
             mTrans = content.Load<Texture2D>("Images/Menu/Pause/PausedTrans");
             mQuartz = content.Load<SpriteFont>("Fonts/QuartzEvenLarger");
 
-            xCoord = mScreenRect.Center.X - mQuartz.MeasureString("COMPLETED GEM CHALLENGE").X / 2;
+            xCoord = mScreenRect.Center.X - mQuartz.MeasureString("COMPLETED DEATH CHALLENGE").X / 2;
             centerYCoord = mScreenRect.Center.Y - mQuartz.MeasureString("COMPLETED TIME CHALLENGE").Y / 2;
             topYCoord2 = mScreenRect.Center.Y - mQuartz.MeasureString("COMPLETED TIME CHALLENGE").Y;
             bottomYCoord2 = mScreenRect.Center.Y + mQuartz.MeasureString("COMPLETED TIME CHALLENGE").Y;
@@ -185,7 +185,7 @@ namespace GravityShift
                 scale);
 
             float[] mSize = new float[2] { (float)mScreenRect.Width / (float)graphics.GraphicsDevice.Viewport.Width, (float)mScreenRect.Height / (float)graphics.GraphicsDevice.Viewport.Height };
-            spriteBatch.Draw(mTrans, new Rectangle(mScreenRect.Left, mScreenRect.Top, mScreenRect.Width, mScreenRect.Height), Color.White);
+            spriteBatch.Draw(mTrans, graphics.GraphicsDevice.Viewport.Bounds, Color.White);
 
             if (!mDoOnce)
             {
@@ -218,11 +218,11 @@ namespace GravityShift
             {
                 if (current >= xCoord)
                 {
-                    current -= 100;
+                    current -= 66;
                 }
 
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current, topYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current + 4, topYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current - 33, topYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current - 33 + 4, topYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
 
                 spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current, bottomYCoord2), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
                 spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current + 4, bottomYCoord2 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
@@ -231,14 +231,14 @@ namespace GravityShift
             {
                 if (current >= xCoord)
                 {
-                    current -= 100;
+                    current -= 33;
                 }
 
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current, topYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current + 4, topYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current - 66, topYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[0], new Vector2(current - 66 + 4, topYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
 
-                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current, centerYCoord), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
-                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current + 4, centerYCoord + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current - 33, centerYCoord), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(mQuartz, starList[1], new Vector2(current - 33 + 4, centerYCoord + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
 
                 spriteBatch.DrawString(mQuartz, starList[2], new Vector2(current, bottomYCoord3), Color.White, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);
                 spriteBatch.DrawString(mQuartz, starList[2], new Vector2(current + 4, bottomYCoord3 + 4), Color.SteelBlue, 0.0f, Vector2.Zero, mScale, SpriteEffects.None, 0.0f);

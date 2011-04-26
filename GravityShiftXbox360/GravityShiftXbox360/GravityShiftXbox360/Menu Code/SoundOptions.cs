@@ -85,6 +85,8 @@ namespace GravityShift
                     mMuted = !mMuted;
                 }
             }
+            if (mControls.isBPressed(false) || mControls.isBackPressed(false))
+                states = GameStates.Options;
 
             if (mMuted)
             {
