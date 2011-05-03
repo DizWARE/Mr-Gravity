@@ -108,13 +108,23 @@ namespace GravityShift
         //bool displayUnlockDialog = false;
 
         /* Trial Mode Loading */
-        public bool TrialMode { get { return Guide.IsTrialMode; } }
+        public bool TrialMode 
+        { 
+            get {
+#if XBOX360
+                return Guide.IsTrialMode; 
+#else 
+                return false;
+#endif
+            } 
+        }
 
         //record whether we have asked for a storage device already
         bool mDeviceSelected;
         public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
 
         private bool loaded;
+        private bool wasTrial;
 
         //store the storage device we are using, and the container within it.
         StorageDevice device;
@@ -456,12 +466,12 @@ namespace GravityShift
             {
                 if (mStarCount < 30)
                 {
-                    if(loaded == false)
+                    if (loaded == false)
                         loaded = true;
                     UnlockWorld(0);
-                    return; 
+                    return;
                 }
-                if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30,7))) < NUM_OF_WORLDS - 2)
+                if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7))) < NUM_OF_WORLDS - 2)
                 {
                     mWorldUnlocked = true;
                     UnlockWorld(mLatestUnlocked);
@@ -475,9 +485,13 @@ namespace GravityShift
                 else if (!loaded)
                 {
                     mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7));
+                    if (wasTrial)
+                        UnlockWorld(mLatestUnlocked);
                     loaded = true;
                 }
             }
+            else
+                wasTrial = true;
         }
 
         /// <summary>
@@ -574,7 +588,7 @@ namespace GravityShift
             {
                 mLoading = NONE;
                 currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex].Level;
-
+                if (currentLevel != null) currentLevel.Dispose();
                 currentLevel.Load(mContent);
 
                 currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Time);
@@ -970,10 +984,10 @@ namespace GravityShift
 
                 if (i == 48)
                 {
-                    size = mFontBig.MeasureString("CONTEST!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!");
-                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
+                    size = mFontBig.MeasureString("CONTEST!!! Beat this world, Record it, and\nsend it to us to get a chance to name it!!");
+                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Beat this world, Record it, and\nsend it to us get a chance to to name it!!",
                         new Vector2(rect.Right + size.X/32, rect.Center.Y - 2*size.Y / 3), Color.White);
-                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Record yourself beating this level, and\nsend it to us, to have this world named after you!",
+                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Beat this world, Record it, and\nsend it to us get a chance to to name it!!",
                        new Vector2(rect.Right + size.X / 32 + 2, rect.Center.Y - 2 * size.Y / 3 + 2), Color.CornflowerBlue);
                 }
 
