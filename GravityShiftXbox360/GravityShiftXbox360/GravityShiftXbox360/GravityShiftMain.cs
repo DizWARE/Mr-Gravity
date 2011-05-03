@@ -128,7 +128,7 @@ namespace GravityShift
         protected override void Initialize()
         {
             //COMMENT OUT AFTER TESTING TRIAL MODE
-            Guide.SimulateTrialMode = true;
+            //Guide.SimulateTrialMode = true;
 
             mGraphics.PreferredBackBufferWidth = 1280;
             mGraphics.PreferredBackBufferHeight = 720;

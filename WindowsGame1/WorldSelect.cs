@@ -587,8 +587,8 @@ namespace GravityShift
             if (mLoading == LOADING)
             {
                 mLoading = NONE;
-                currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex].Level;
                 if (currentLevel != null) currentLevel.Dispose();
+                currentLevel = mLevels[mCurrentWorld * 6 + mCurrentIndex].Level;
                 currentLevel.Load(mContent);
 
                 currentLevel.IdealTime = mLevels[mCurrentWorld * 6 + mCurrentIndex].GetGoal(LevelInfo.StarTypes.Time);

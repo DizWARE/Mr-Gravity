@@ -258,7 +258,7 @@ namespace GravityShift
 
             mTimerStar = mDeathStar = mTimerStar = 0;
 
-            bw = new BackgroundWorker { WorkerReportsProgress = true, WorkerSupportsCancellation = true };
+            bw = new BackgroundWorker { WorkerReportsProgress = false, WorkerSupportsCancellation = false };
             bw.DoWork += UpdateParticles;
         }
 
@@ -266,11 +266,33 @@ namespace GravityShift
         {
             this.mActiveAnimations.Clear();
             this.backgroundParticles = null;
+            int temp = this.mObjects.Capacity;
             this.mObjects.Clear();
+            this.mObjects.TrimExcess();
             this.mCollisionMatrix = null;
             this.mTrigger.Clear();
-            bw.Dispose();
+            this.mTrigger.TrimExcess();
+            this.collectibleEngine = null;
+            this.wallEngine = null;
+            this.mContent = null;
+            if (this.mCollectableLocations != null)
+            {
+                this.mCollectableLocations.Clear();
+                this.mCollectableLocations.TrimExcess();
+            }
+            if (this.mRailLeft != null)
+            {
+                this.mRailLeft.Dispose();
+                this.mRailRight.Dispose();
+                this.mRailBottom.Dispose();
+                this.mRailHor.Dispose();
+                this.mRailVert.Dispose();
+                this.mRailTop.Dispose();
+            }
+            //mRailLeft.Dispose();
+            //bw.Dispose();
             System.GC.Collect();
+
         }
 
         /// <summary>
