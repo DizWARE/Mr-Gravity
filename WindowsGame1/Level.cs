@@ -267,6 +267,10 @@ namespace GravityShift
             this.mActiveAnimations.Clear();
             this.backgroundParticles = null;
             this.mObjects.Clear();
+            this.mCollisionMatrix = null;
+            this.mTrigger.Clear();
+            bw.Dispose();
+            System.GC.Collect();
         }
 
         /// <summary>
