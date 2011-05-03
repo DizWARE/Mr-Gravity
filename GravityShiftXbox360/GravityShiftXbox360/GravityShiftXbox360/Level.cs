@@ -262,6 +262,13 @@ namespace GravityShift
             bw.DoWork += UpdateParticles;
         }
 
+        public void Dispose()
+        {
+            this.mActiveAnimations.Clear();
+            this.backgroundParticles = null;
+            this.mObjects.Clear();
+        }
+
         /// <summary>
         /// Loads the level from the content manager
         /// </summary>
