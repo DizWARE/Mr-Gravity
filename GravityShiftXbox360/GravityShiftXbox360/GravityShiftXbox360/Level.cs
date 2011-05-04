@@ -280,17 +280,6 @@ namespace GravityShift
                 this.mCollectableLocations.Clear();
                 this.mCollectableLocations.TrimExcess();
             }
-            if (this.mRailLeft != null)
-            {
-                this.mRailLeft.Dispose();
-                this.mRailRight.Dispose();
-                this.mRailBottom.Dispose();
-                this.mRailHor.Dispose();
-                this.mRailVert.Dispose();
-                this.mRailTop.Dispose();
-            }
-            //mRailLeft.Dispose();
-            //bw.Dispose();
             System.GC.Collect();
 
         }
