@@ -471,7 +471,7 @@ namespace GravityShift
                     UnlockWorld(0);
                     return;
                 }
-                if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7))) < NUM_OF_WORLDS - 2)
+                if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 8))) < NUM_OF_WORLDS - 1)
                 {
                     mWorldUnlocked = true;
                     UnlockWorld(mLatestUnlocked);
@@ -485,8 +485,8 @@ namespace GravityShift
                 else if (!loaded)
                 {
                     mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7));
-                    if (wasTrial)
-                        UnlockWorld(mLatestUnlocked);
+                    
+                    UnlockWorld(mLatestUnlocked);
                     loaded = true;
                 }
             }
