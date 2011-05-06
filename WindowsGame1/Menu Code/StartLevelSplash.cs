@@ -126,11 +126,18 @@ namespace GravityShift
             mHeight += mQuartzSmall.LineSpacing;
 
             /* Print the collectable goals for the level */
-            request = " 0 - " + ((int)(level.NumCollectable * .8) - 1) + " gems";
+            if ((int)(level.NumCollectable * .8) - 1 != 0)
+                request = " 0 - " + ((int)(level.NumCollectable * .8) - 1) + " gems";
+            else
+                request = " 0 gems";
 
             stringSize = mQuartzSmall.MeasureString(request);
             spriteBatch.DrawString(mQuartzSmall, request, new Vector2(mScreenRect.Center.X - mScreenRect.Width / 3 - stringSize.X / 2, mHeight), Color.White);
-            request = (int)(level.NumCollectable * .8) + " - " + (level.NumCollectable - 1).ToString() + " gems";
+
+            if ((level.NumCollectable - 1) != (int)(level.NumCollectable * .8))
+                request = (int)(level.NumCollectable * .8) + " - " + (level.NumCollectable - 1).ToString() + " gems";
+            else
+                request = (int)(level.NumCollectable * .8) + " gems";
             
 
             stringSize = mQuartzSmall.MeasureString(request);
