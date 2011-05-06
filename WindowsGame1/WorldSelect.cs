@@ -77,6 +77,11 @@ namespace GravityShift
         bool mWorldUnlocked = false;
         int mLatestUnlocked = 0;
         int mUnlockedTimer = 0;
+
+        bool mHasBeatFinal = false;
+        bool mShowCongrats = false;
+        Texture2D mLastCongrats;
+
         Texture2D mUnlockedDialog;
 
         List<LevelInfo> mLevels;
@@ -464,6 +469,12 @@ namespace GravityShift
 
             if (!this.TrialMode)
             {
+                if (!mHasBeatFinal && mStarCount > 480)
+                {
+                    mHasBeatFinal = true;
+                    mShowCongrats = true;
+                }
+
                 if (mStarCount < 30)
                 {
                     if (loaded == false)
@@ -512,6 +523,7 @@ namespace GravityShift
 
             mLoadingBG = content.Load<Texture2D>("Images/Menu/LevelSelect/LoadingMenu");
             mUnlockedDialog = content.Load<Texture2D>("Images/Menu/LevelSelect/WorldUnlocked");
+            mLastCongrats = content.Load<Texture2D>("Images/Menu/LevelSelect/LastLevelCongrats");
 
             mWorldBackground = new Texture2D[9][];
             mWorldTitleBox = new Texture2D[9][];
@@ -615,6 +627,9 @@ namespace GravityShift
         {
             if (mControls.isAPressed(false) || mControls.isStartPressed(false))
             {
+                if (mShowCongrats)
+                { mShowCongrats = false; return; }
+
                 if (GameSound.volume != 0)
                     GameSound.menuSound_select.Play();
 
@@ -650,7 +665,12 @@ namespace GravityShift
         private void HandleBKey(ref GameStates gameState)
         {
             if (mControls.isBPressed(false) || mControls.isBackPressed(false))
+            {
+                if (mShowCongrats)
+                { mShowCongrats = false; return; }
+
                 Exit(ref gameState);
+            }
         }
 
 
@@ -669,6 +689,9 @@ namespace GravityShift
         /// </summary>
         private void HandleDirectionKey()
         {
+            if (mShowCongrats)
+            { return; }
+
             //Down Button
             if (mControls.isDownPressed(false))
             {
@@ -739,6 +762,12 @@ namespace GravityShift
 
             DrawLevelPanel(spriteBatch);
             DrawTitleBar(spriteBatch);
+
+            if (mShowCongrats)
+            {
+                mWorldUnlocked = false;
+                spriteBatch.Draw(mLastCongrats, new Vector2(mScreenRect.Center.X - mLastCongrats.Width / 2, mScreenRect.Center.Y - mLastCongrats.Height / 2), Color.White);
+            }
 
             if (mWorldUnlocked && mUnlockedTimer < 45 && !TrialMode)
             {
