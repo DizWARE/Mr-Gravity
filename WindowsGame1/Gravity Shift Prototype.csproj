@@ -134,10 +134,12 @@
     <Compile Include="LevelSelect.cs" />
     <Compile Include="Menu Code\MainMenu.cs" />
     <Compile Include="Menu Code\PreScore.cs" />
+    <Compile Include="Menu Code\PurchaseScreenSplash.cs" />
     <Compile Include="Menu Code\Scoring.cs" />
     <Compile Include="Menu Code\SoundOptions.cs" />
     <Compile Include="Menu Code\StartLevelSplash.cs" />
     <Compile Include="Menu Code\Title.cs" />
+    <Compile Include="Menu Code\WorldPurchaseSplash.cs" />
     <Compile Include="MISC Code\GameSound.cs" />
     <Compile Include="ControlScheme.cs" />
     <Compile Include="Game Objects\GameObject.cs" />

@@ -60,6 +60,9 @@ namespace GravityShift
         Controller mController;
 
         SoundOptions mSoundOptions;
+
+        PurchaseScreenSplash mPurchaseScreenSplash;
+        WorldPurchaseSplash mWorldPurchaseScreenSplash;
 		
         private GameStates mCurrentState = GameStates.Title;
 
@@ -155,6 +158,8 @@ namespace GravityShift
 
             mController = new Controller(mControls, mGraphics);
             mSoundOptions = new SoundOptions(mControls, mGraphics);
+            mPurchaseScreenSplash = new PurchaseScreenSplash(mControls, mGraphics);
+            mWorldPurchaseScreenSplash = new WorldPurchaseSplash(mControls, mGraphics);
 
             mSpriteBatch = new SpriteBatch(mGraphics.GraphicsDevice);
             base.Initialize();
@@ -204,6 +209,8 @@ namespace GravityShift
             mController.Load(Content);
             mSoundOptions.Load(Content);
             mStartLevelSplash.Load(Content, GraphicsDevice);
+            mPurchaseScreenSplash.Load(Content, GraphicsDevice);
+            mWorldPurchaseScreenSplash.Load(Content, GraphicsDevice);
             // Create a new SpriteBatch, which can be used to draw textures.
             mSpriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -447,10 +454,18 @@ namespace GravityShift
             {
 #if XBOX360
                 if (Guide.IsTrialMode)
-                    mCurrentState = GameStates.TrialExit;
+                    mCurrentState = GameStates.PurchaseScreen;
                 else
 #endif
                     mCurrentState = GameStates.WaitingToExit;
+            }
+            else if (mCurrentState == GameStates.PurchaseScreen)
+            {
+                mPurchaseScreenSplash.Update(gameTime, ref mCurrentState);
+            }
+            else if (mCurrentState == GameStates.WorldPurchaseScreen)
+            {
+                mWorldPurchaseScreenSplash.Update(gameTime, ref mCurrentState);
             }
             else if (mCurrentState == GameStates.TrialExit)
             {
@@ -462,6 +477,16 @@ namespace GravityShift
                 else
                     mCurrentState = GameStates.ShowMarketplace;
             }
+            else if (mCurrentState == GameStates.WorldPurchase)
+            {
+                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
+                {
+                    Guide.ShowSignIn(1, true);
+                    mCurrentState = GameStates.WorldWaitingForSignIn;
+                }
+                else
+                    mCurrentState = GameStates.WorldShowMarketplace;
+            }
             else if (mCurrentState == GameStates.WaitingForSignIn)
             {
                 if (!Guide.IsVisible)
@@ -470,6 +495,16 @@ namespace GravityShift
                         mCurrentState = GameStates.WaitingToExit;
                     else
                         mCurrentState = GameStates.ShowMarketplace;
+                }
+            }
+            else if (mCurrentState == GameStates.WorldWaitingForSignIn)
+            {
+                if (!Guide.IsVisible)
+                {
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex] == null)
+                        mCurrentState = GameStates.Level_Selection;
+                    else
+                        mCurrentState = GameStates.WorldShowMarketplace;
                 }
             }
             else if (mCurrentState == GameStates.WaitingForSaveSignIn)
@@ -495,6 +530,21 @@ namespace GravityShift
                 else
                     mCurrentState = GameStates.WaitingToExit;
             }
+            else if (mCurrentState == GameStates.WorldShowMarketplace)
+            {
+                if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].IsSignedInToLive)
+                {
+                    if (Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex].Privileges.AllowPurchaseContent)
+                    {
+                        Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
+                        mCurrentState = GameStates.WorldWaitForMarketplace;
+                    }
+                    else
+                        mCurrentState = GameStates.Level_Selection;
+                }
+                else
+                    mCurrentState = GameStates.WaitingToExit;
+            }
             else if (mCurrentState == GameStates.WaitForMarketplace)
             {
                 if (!Guide.IsVisible)
@@ -506,6 +556,11 @@ namespace GravityShift
                     {
                         mCurrentState = GameStates.WaitingToExit;
                     }
+            }
+            else if (mCurrentState == GameStates.WorldWaitForMarketplace)
+            {
+                if (!Guide.IsVisible)
+                    mCurrentState = GameStates.Level_Selection;
             }
             else if (mCurrentState == GameStates.WaitingToExit)
             {
@@ -621,6 +676,14 @@ namespace GravityShift
             {
                 mCurrentLevel.Draw(mSpriteBatch, gameTime, scale);
                 mStartLevelSplash.Draw(mSpriteBatch, mGraphics, mCurrentLevel, scale);
+            }
+            else if (mCurrentState == GameStates.PurchaseScreen)
+            {
+                mPurchaseScreenSplash.Draw(mSpriteBatch, gameTime, scale);
+            }
+            else if (mCurrentState == GameStates.WorldPurchaseScreen)
+            {
+                mWorldPurchaseScreenSplash.Draw(mSpriteBatch, gameTime, scale);
             }
                 
             base.Draw(gameTime);
