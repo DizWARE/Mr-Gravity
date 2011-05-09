@@ -129,7 +129,7 @@ namespace GravityShift
         public bool DeviceSelected { get { return mDeviceSelected; } set { mDeviceSelected = value; } }
 
         private bool loaded;
-        private bool wasTrial;
+        //private bool wasTrial;
 
         //store the storage device we are using, and the container within it.
         StorageDevice device;
@@ -482,10 +482,23 @@ namespace GravityShift
                     UnlockWorld(0);
                     return;
                 }
-                if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 8))) < NUM_OF_WORLDS - 1)
+                if (!loaded)
                 {
-                    mWorldUnlocked = true;
+                    mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7));
+
                     UnlockWorld(mLatestUnlocked);
+                    loaded = true;
+                }
+                else if (mLatestUnlocked < 7)
+                {
+                    if (loaded && mLatestUnlocked < mStarCount / 30 && (mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7))) < NUM_OF_WORLDS - 1)
+                    {
+
+                        mWorldUnlocked = true;
+                        UnlockWorld(mLatestUnlocked);
+                        if (mLatestUnlocked == 8)
+                            return;
+                    }
                 }
                 else if (mStarCount >= 480 && mLatestUnlocked < NUM_OF_WORLDS - 1)
                 {
@@ -493,16 +506,8 @@ namespace GravityShift
                     mLatestUnlocked = NUM_OF_WORLDS - 1;
                     UnlockWorld(mLatestUnlocked);
                 }
-                else if (!loaded)
-                {
-                    mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7));
-                    
-                    UnlockWorld(mLatestUnlocked);
-                    loaded = true;
-                }
             }
-            else
-                wasTrial = true;
+
         }
 
         /// <summary>
@@ -638,18 +643,7 @@ namespace GravityShift
 #if XBOX360
                 else if (TrialMode)
                 {
-                    if (!Guide.IsVisible)
-                    {
-                        SignedInGamer gamer = Gamer.SignedInGamers[((ControllerControl)mControls).ControllerIndex];
-
-                        if (gamer != null && !gamer.IsGuest && gamer.IsSignedInToLive)
-                        {
-                            if (gamer.Privileges.AllowPurchaseContent)
-                            {
-                                Guide.ShowMarketplace(((ControllerControl)mControls).ControllerIndex);
-                            }
-                        }
-                    }
+                    gameState = GameStates.WorldPurchaseScreen;
                 }
 #endif
 
