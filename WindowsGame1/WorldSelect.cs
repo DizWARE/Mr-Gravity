@@ -69,7 +69,7 @@ namespace GravityShift
         const int LOADING = 2;
         int mLoading = 0;
 
-        string[] mWorlds = { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck", "UNNAMED - CONTEST" };
+        string[] mWorlds = { "The Ropes", "Rail Shark", "Free Motion", "Two-Sides", "Old School", "Putting it Together", "Insanity", "Good Luck", "Jamba Geoff Jam" };
         int mLongestName;
 
         int mStarCount = 0;
@@ -976,16 +976,9 @@ namespace GravityShift
                         }
                         else
                         {
-                            worldText = mFontBig.MeasureString("World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock\n");
-                                                                //"First to record beating this world will name this world");
-                            spriteBatch.DrawString(mFontBig, "World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock\n",
-                                                                //"First to record beating this world will name this world",
+                            worldText = mFontBig.MeasureString("World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock");
+                            spriteBatch.DrawString(mFontBig, "World Locked: You need " + (480 - mStarCount) + " more Stars to Unlock",
                                 new Vector2(background.Center.X - worldText.X / 2, background.Center.Y - worldText.Y / 2), Color.White);
-                            worldText = mFontBig.MeasureString("Contest!!! First to beat this world gets to name it");
-                            spriteBatch.DrawString(mFontBig, "Contest!!! First to beat this world gets to name it",
-                                new Vector2(background.Center.X - worldText.X / 2, background.Center.Y), Color.White);
-                            spriteBatch.DrawString(mFontBig, "Contest!!! First to beat this world gets to name it",
-                                new Vector2(background.Center.X - worldText.X / 2 + 2, background.Center.Y + 2), Color.CornflowerBlue);
                         }
                     }
 
@@ -1007,10 +1000,10 @@ namespace GravityShift
 
                 if (i == 48)
                 {
-                    size = mFontBig.MeasureString("CONTEST!!! Beat this world, Record it, and\nsend it to us to get a chance to name it!!");
-                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Beat this world, Record it, and\nsend it to us get a chance to to name it!!",
+                    size = mFontBig.MeasureString("Congrats Travis, for winning the Naming Contest!!");
+                    spriteBatch.DrawString(mFontBig, "Congrats Travis, for winning the Naming Contest!!",
                         new Vector2(rect.Right + size.X/32, rect.Center.Y - 2*size.Y / 3), Color.White);
-                    spriteBatch.DrawString(mFontBig, "CONTEST!!! Beat this world, Record it, and\nsend it to us get a chance to to name it!!",
+                    spriteBatch.DrawString(mFontBig, "Congrats Travis, for winning the Naming Contest!!",
                        new Vector2(rect.Right + size.X / 32 + 2, rect.Center.Y - 2 * size.Y / 3 + 2), Color.CornflowerBlue);
                 }
 
