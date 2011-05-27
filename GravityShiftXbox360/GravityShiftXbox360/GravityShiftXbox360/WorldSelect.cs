@@ -452,7 +452,7 @@ namespace GravityShift
             else if (world == NUM_OF_WORLDS - 1)
                 return;
 #if XBOX360
-            //if(!this.TrialMode || world == 0)
+            //if(!this.TrialMode || world < 2)
 #endif
             for (int i = 0; i < (world * 6 + 6); i++)
                 mLevels[i].Unlock();
@@ -467,7 +467,7 @@ namespace GravityShift
             foreach (LevelInfo level in mLevels)
                 mStarCount += level.StarCount();
 
-            if (!this.TrialMode)
+            if (!this.TrialMode || mLatestUnlocked < 1)
             {
                 if (!mHasBeatFinal && mStarCount > 480)
                 {
@@ -953,7 +953,7 @@ namespace GravityShift
                     Rectangle textBox = new Rectangle((int)(background.Center.X - mLongestName / 2 - mLongestName / 16), (int)(background.Top - worldText.Y - worldText.Y / 16), (int)(mLongestName + mLongestName / 8), (int)(worldText.Y + worldText.Y / 8));
                     spriteBatch.Draw(mWorldTitleBox[i / 6][Convert.ToInt32(i / 6 != mCurrentWorld)], textBox, Color.White);
                     spriteBatch.DrawString(mFont, mWorlds[i / 6], new Vector2(textBox.Center.X - worldText.X / 2, textBox.Center.Y - worldText.Y / 2), Color.White);
-                    if (this.TrialMode && i != 0)
+                    if (this.TrialMode && i > 6)
                     {
                         spriteBatch.Draw(mLock, background, Color.White);
 
