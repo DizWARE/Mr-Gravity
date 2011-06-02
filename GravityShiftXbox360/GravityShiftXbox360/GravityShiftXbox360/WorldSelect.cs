@@ -486,7 +486,8 @@ namespace GravityShift
                 {
                     mLatestUnlocked = Math.Max(mLatestUnlocked, Math.Min(mStarCount / 30, 7));
 
-                    UnlockWorld(mLatestUnlocked);
+                    if (!TrialMode || mLatestUnlocked < 1)
+                        UnlockWorld(mLatestUnlocked);
                     loaded = true;
                 }
                 else if (mLatestUnlocked < 7)
