@@ -1,13 +1,8 @@
-WindowsGame1/bin/*
-WindowsGame1/obj/*
-WindowsGame1/Content/bin/*
-WindowsGame1/Content/obj/*
-WindowsGame1/Gravity Shift Prototype.csproj.Debug.cachefile
-Gravity Shift Prototype.suo
-GravityLevelEditor/GravityLevelEditor/bin/*
-GravityLevelEditor/GravityLevelEditor/obj/*
-WindowsGame1/Gravity Shift Prototype.csproj.Release.cachefile
-GravityShiftXbox360/GravityShiftXbox360/GravityShiftXbox360/bin/*
-GravityShiftXbox360/GravityShiftXbox360/GravityShiftXbox360/obj/*
-GravityShiftXbox360/GravityShiftXbox360/GravityShiftXbox360Content/bin/*
-GravityShiftXbox360/GravityShiftXbox360/GravityShiftXbox360Content/obj/*
+*.suo
+*.cachefile
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
