@@ -164,7 +164,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isLeftPressed(bool held)
+        public bool IsLeftPressed(bool held)
         {
             return IsPressed(Keys.Left, held);
         }
@@ -177,7 +177,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isRightPressed(bool held)
+        public bool IsRightPressed(bool held)
         {
             return IsPressed(Keys.Right, held);
         }
@@ -190,7 +190,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isDownPressed(bool held)
+        public bool IsDownPressed(bool held)
         {
             return IsPressed(Keys.Down, held);
         }
@@ -203,7 +203,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isUpPressed(bool held)
+        public bool IsUpPressed(bool held)
         {
             return IsPressed(Keys.Up, held);
         }
@@ -216,7 +216,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isAPressed(bool held)
+        public bool IsAPressed(bool held)
         {
             return IsPressed(Keys.A, held);
         }
@@ -229,7 +229,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isBPressed(bool held)
+        public bool IsBPressed(bool held)
         {
             return IsPressed(Keys.B, held);
         }
@@ -242,7 +242,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isXPressed(bool held)
+        public bool IsXPressed(bool held)
         {
             return IsPressed(Keys.X, held);
         }
@@ -255,7 +255,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isYPressed(bool held)
+        public bool IsYPressed(bool held)
         {
             return IsPressed(Keys.Y, held);
         }
@@ -268,7 +268,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isRightTriggerPressed(bool held)
+        public bool IsRightTriggerPressed(bool held)
         {
             return IsPressed(Keys.PageDown, held);
         }
@@ -281,7 +281,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isLeftTriggerPressed(bool held)
+        public bool IsLeftTriggerPressed(bool held)
         {
             return IsPressed(Keys.PageUp, held);
         }
@@ -294,7 +294,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isRightShoulderPressed(bool held)
+        public bool IsRightShoulderPressed(bool held)
         {
             return IsPressed(Keys.OemPlus, held);
         }
@@ -307,7 +307,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isLeftShoulderPressed(bool held)
+        public bool IsLeftShoulderPressed(bool held)
         {
             return IsPressed(Keys.OemMinus, held);
         }
@@ -320,7 +320,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isStartPressed(bool held)
+        public bool IsStartPressed(bool held)
         {
             return IsPressed(Keys.Enter, held);
         }
@@ -333,7 +333,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isBackPressed(bool held)
+        public bool IsBackPressed(bool held)
         {
             return IsPressed(Keys.Escape, held);
         }
@@ -346,7 +346,7 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isHomePressed(bool held)
+        public bool IsHomePressed(bool held)
         {
             return IsPressed(Keys.Home, held);
         }
@@ -357,7 +357,7 @@ namespace MrGravity
         /// <returns>
         /// Returns the Scheme for these controls. The enum for this is under ControlSchemes
         /// </returns>
-        public ControlSchemes controlScheme()
+        public ControlSchemes ControlScheme()
         {
             return ControlSchemes.Keyboard;
         }
@@ -384,18 +384,18 @@ namespace MrGravity
         /// <returns>
         ///   <c>true</c> if the specified button is pressed; otherwise, <c>false</c>.
         /// </returns>
-        private bool isPressed(Buttons button, bool held)
+        private bool IsPressed(Buttons button, bool held)
         {
             var pressed = false;
             if (!_mControllerIndexSet)
             {
-                if (GamePad.GetState(PlayerIndex.One).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.One);
-                if (GamePad.GetState(PlayerIndex.Two).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Two);
-                if (GamePad.GetState(PlayerIndex.Three).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Three);
-                if (GamePad.GetState(PlayerIndex.Four).IsConnected) pressed = pressed || isPressed(button, held, PlayerIndex.Four);
+                if (GamePad.GetState(PlayerIndex.One).IsConnected) pressed = pressed || IsPressed(button, held, PlayerIndex.One);
+                if (GamePad.GetState(PlayerIndex.Two).IsConnected) pressed = pressed || IsPressed(button, held, PlayerIndex.Two);
+                if (GamePad.GetState(PlayerIndex.Three).IsConnected) pressed = pressed || IsPressed(button, held, PlayerIndex.Three);
+                if (GamePad.GetState(PlayerIndex.Four).IsConnected) pressed = pressed || IsPressed(button, held, PlayerIndex.Four);
                 if(pressed) _mControllerIndexSet = true;
             }
-            else pressed = pressed || isPressed(button, held, ControllerIndex);
+            else pressed = pressed || IsPressed(button, held, ControllerIndex);
             return pressed;
         }
 
@@ -408,7 +408,7 @@ namespace MrGravity
         /// <returns>
         /// True if the given button has been pressed; False otherwise
         /// </returns>
-        private bool isPressed(Buttons button, bool held, PlayerIndex playerIndex)
+        private bool IsPressed(Buttons button, bool held, PlayerIndex playerIndex)
         {
             GamePadState state = GamePad.GetState(playerIndex);
             
@@ -433,14 +433,14 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isLeftPressed(bool held)
+        public bool IsLeftPressed(bool held)
         {
             var isLeftPressed = GamePad.GetState(ControllerIndex).DPad.Left == ButtonState.Pressed;
             var isUpPressed = _pressedButtons.Contains(Buttons.DPadUp);
             var isDownPressed = _pressedButtons.Contains(Buttons.DPadDown);
 
             if (!isLeftPressed && _pressedButtons.Contains(Buttons.DPadLeft)) _pressedButtons.Remove(Buttons.DPadLeft);
-            else if (!isUpPressed && !isDownPressed && isLeftPressed) return ((isPressed(Buttons.DPadLeft, held, ControllerIndex)));
+            else if (!isUpPressed && !isDownPressed && isLeftPressed) return ((IsPressed(Buttons.DPadLeft, held, ControllerIndex)));
             else if (!isUpPressed && !isDownPressed) return (LeftThumbStickIsLeft(held));
             return false;
         }
@@ -453,14 +453,14 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isRightPressed(bool held)
+        public bool IsRightPressed(bool held)
         {
             var isRightPressed = GamePad.GetState(ControllerIndex).DPad.Right == ButtonState.Pressed;
             var isUpPressed = _pressedButtons.Contains(Buttons.DPadUp);
             var isDownPressed = _pressedButtons.Contains(Buttons.DPadDown);
 
             if (!isRightPressed && _pressedButtons.Contains(Buttons.DPadRight)) _pressedButtons.Remove(Buttons.DPadRight);
-            else if (!isUpPressed && !isDownPressed && isRightPressed) return ((isPressed(Buttons.DPadRight, held, ControllerIndex)));
+            else if (!isUpPressed && !isDownPressed && isRightPressed) return ((IsPressed(Buttons.DPadRight, held, ControllerIndex)));
             else if (!isUpPressed && !isDownPressed) return (LeftThumbStickIsRight(held));
 
             return false;
@@ -474,14 +474,14 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isDownPressed(bool held)
+        public bool IsDownPressed(bool held)
         {
             var isDownPressed = GamePad.GetState(ControllerIndex).DPad.Down == ButtonState.Pressed;
             var isLeftPressed = _pressedButtons.Contains(Buttons.DPadLeft);
             var isRightPressed = _pressedButtons.Contains(Buttons.DPadRight);
 
             if (!isDownPressed && _pressedButtons.Contains(Buttons.DPadDown)) _pressedButtons.Remove(Buttons.DPadDown);
-            else if (!isLeftPressed && !isRightPressed && isDownPressed) return ((isPressed(Buttons.DPadDown, held, ControllerIndex)));
+            else if (!isLeftPressed && !isRightPressed && isDownPressed) return ((IsPressed(Buttons.DPadDown, held, ControllerIndex)));
             else if (!isLeftPressed && !isRightPressed) return (LeftThumbStickIsDown(held));
             return false;
         }
@@ -494,14 +494,14 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isUpPressed(bool held)
+        public bool IsUpPressed(bool held)
         {
             var isUpPressed = GamePad.GetState(ControllerIndex).DPad.Up == ButtonState.Pressed;
             var isLeftPressed = _pressedButtons.Contains(Buttons.DPadLeft);
             var isRightPressed = _pressedButtons.Contains(Buttons.DPadRight);
 
             if (!isUpPressed && _pressedButtons.Contains(Buttons.DPadUp)) _pressedButtons.Remove(Buttons.DPadUp);
-            else if (!isLeftPressed && !isRightPressed && isUpPressed) return ((isPressed(Buttons.DPadUp, held, ControllerIndex)));
+            else if (!isLeftPressed && !isRightPressed && isUpPressed) return ((IsPressed(Buttons.DPadUp, held, ControllerIndex)));
             else if (!isLeftPressed && !isRightPressed) return (LeftThumbStickIsUp(held));
             return false;
         }
@@ -605,9 +605,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isAPressed(bool held)
+        public bool IsAPressed(bool held)
         {
-            return isPressed(Buttons.A, held);
+            return IsPressed(Buttons.A, held);
         }
 
         /// <summary>
@@ -618,9 +618,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isBPressed(bool held)
+        public bool IsBPressed(bool held)
         {
-            return isPressed(Buttons.B, held);
+            return IsPressed(Buttons.B, held);
         }
 
         /// <summary>
@@ -631,9 +631,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isXPressed(bool held)
+        public bool IsXPressed(bool held)
         {
-            return isPressed(Buttons.X, held);
+            return IsPressed(Buttons.X, held);
         }
         
         /// <summary>
@@ -644,9 +644,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isYPressed(bool held)
+        public bool IsYPressed(bool held)
         {
-            return isPressed(Buttons.Y, held);
+            return IsPressed(Buttons.Y, held);
         }
 
         /// <summary>
@@ -657,9 +657,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isRightTriggerPressed(bool held)
+        public bool IsRightTriggerPressed(bool held)
         {
-            return isPressed(Buttons.RightTrigger, held);
+            return IsPressed(Buttons.RightTrigger, held);
         }
 
         /// <summary>
@@ -670,9 +670,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isLeftTriggerPressed(bool held)
+        public bool IsLeftTriggerPressed(bool held)
         {
-            return isPressed(Buttons.LeftTrigger, held);
+            return IsPressed(Buttons.LeftTrigger, held);
         }
 
         /// <summary>
@@ -683,9 +683,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isRightShoulderPressed(bool held)
+        public bool IsRightShoulderPressed(bool held)
         {
-            return isPressed(Buttons.RightShoulder, held);
+            return IsPressed(Buttons.RightShoulder, held);
         }
 
         /// <summary>
@@ -696,9 +696,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isLeftShoulderPressed(bool held)
+        public bool IsLeftShoulderPressed(bool held)
         {
-            return isPressed(Buttons.LeftShoulder, held);
+            return IsPressed(Buttons.LeftShoulder, held);
         }
 
 
@@ -710,9 +710,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isStartPressed(bool held)
+        public bool IsStartPressed(bool held)
         {
-            return isPressed(Buttons.Start, held);
+            return IsPressed(Buttons.Start, held);
         }
 
         /// <summary>
@@ -723,9 +723,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isBackPressed(bool held)
+        public bool IsBackPressed(bool held)
         {
-            return isPressed(Buttons.Back, held);
+            return IsPressed(Buttons.Back, held);
         }
 
         /// <summary>
@@ -736,9 +736,9 @@ namespace MrGravity
         /// <returns>
         /// True if it has been pressed; false otherwise
         /// </returns>
-        public bool isHomePressed(bool held)
+        public bool IsHomePressed(bool held)
         {
-            return isPressed(Buttons.BigButton, held);
+            return IsPressed(Buttons.BigButton, held);
         }
 
 
@@ -746,7 +746,7 @@ namespace MrGravity
         /// Gets the type of control scheme this is
         /// </summary>
         /// <returns>Returns the Scheme for these controls. The enum for this is under ControlSchemes</returns>
-        public ControlSchemes controlScheme()
+        public ControlSchemes ControlScheme()
         {
             return ControlSchemes.Gamepad;
         }
