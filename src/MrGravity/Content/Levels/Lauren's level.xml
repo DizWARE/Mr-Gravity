@@ -1,0 +1,2207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Name>Lauren's level</Name>
+  <Size X="30" Y="30" />
+  <Background>Backgrounds\blank</Background>
+  <Entities>
+    <Entity>
+      <ID>79</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>80</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>81</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>82</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>83</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>84</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>85</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>87</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>94</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>175</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>176</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>180</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>181</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>182</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>183</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>184</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>185</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>186</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>199</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>200</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>201</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>203</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>204</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>206</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>207</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>209</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>290</ID>
+      <Name>PlayerStart</Name>
+      <Type>Level Positions</Type>
+      <Location X="5" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerStart</Texture>
+      <Properties>
+        <IdealTime>15</IdealTime>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>371</ID>
+      <Name>PlayerEnd</Name>
+      <Type>Level Positions</Type>
+      <Location X="13" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>PlayerPositions\PlayerEnd</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>532</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>533</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>534</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>535</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>536</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>537</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>538</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>539</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>540</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>541</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>542</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>543</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>544</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>545</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>546</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>547</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>548</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>549</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>550</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>551</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>552</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>553</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>554</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>555</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>556</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>557</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>558</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>559</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>560</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>561</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>562</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>563</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>564</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>565</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>566</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>567</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>568</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>569</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>570</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>571</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>572</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>573</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>574</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>575</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>576</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>577</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>578</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>579</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>580</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>581</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>582</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="3" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>587</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="4" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>588</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>589</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>590</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>591</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>592</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>593</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>594</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>595</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>596</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>597</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>598</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>599</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>600</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>601</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>602</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>603</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>604</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>605</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>606</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>607</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>608</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>609</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>610</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>611</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="15" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>612</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="14" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>613</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>614</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="13" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>616</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>617</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>618</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>621</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="11" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>622</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="12" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>623</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="10" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>624</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>625</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>626</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>627</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>628</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>629</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="6" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>630</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="7" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>631</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="8" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>632</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="9" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>633</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="16" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>634</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="15" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>635</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="14" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>636</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="13" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>637</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="12" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>638</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="11" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>639</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="10" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>640</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="9" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>641</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="8" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>642</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="7" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>643</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="6" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>644</ID>
+      <Name>GreenGem</Name>
+      <Type>Static Objects</Type>
+      <Location X="5" Y="5" />
+      <CollisionType>Collectable</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>NonHazards\GreenGem</Texture>
+      <Properties>
+        <Shape>Circle</Shape>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>807</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>808</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>809</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>810</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>812</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>813</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>814</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>817</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>898</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>899</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>900</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>901</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>902</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>903</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>904</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>905</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>906</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>907</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>908</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>909</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>910</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="2" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>911</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>912</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>913</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>914</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>915</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>916</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>917</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>918</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>919</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>920</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>921</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>922</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>923</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>924</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>927</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="15" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>931</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="14" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>937</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="13" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>938</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="12" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>939</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="11" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>940</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>941</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="9" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>942</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="8" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>943</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="7" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>944</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>945</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="5" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>946</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>947</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="16" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>948</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="15" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>949</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="14" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>950</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>951</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="12" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>952</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="11" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>953</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="10" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>954</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="9" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>955</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="8" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>956</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="7" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>957</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="6" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>958</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="5" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>959</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="4" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>960</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="3" Y="4" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1287</ID>
+      <Name>Blue</Name>
+      <Type>Walls</Type>
+      <Location X="17" Y="16" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties />
+    </Entity>
+    <Entity>
+      <ID>1368</ID>
+      <Name>RailY</Name>
+      <Type>Physics Objects</Type>
+      <Location X="15" Y="10" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>False</Paintable>
+      <Texture>Walls\Blue</Texture>
+      <Properties>
+        <Shape>Square</Shape>
+        <Mass>1</Mass>
+        <Rail>Y</Rail>
+        <Length>3</Length>
+      </Properties>
+    </Entity>
+    <Entity>
+      <ID>1531</ID>
+      <Name>Purple</Name>
+      <Type>Walls</Type>
+      <Location X="13" Y="6" />
+      <CollisionType>Normal</CollisionType>
+      <Paintable>True</Paintable>
+      <Texture>Walls\Purple</Texture>
+      <Properties />
+    </Entity>
+  </Entities>
+</Level>
