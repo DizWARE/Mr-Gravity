@@ -1,8 +1,9 @@
-*.suo
 *.cachefile
 *.suo
 *.user
+
 _ReSharper.*
+
 bin
 obj
 packages
