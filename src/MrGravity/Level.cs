@@ -478,7 +478,7 @@ namespace MrGravity
                 var random = new Random();
                 var randomness = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1));
                 _backgroundParticles[i].Velocity = Vector2.Multiply(_mPhysicsEnvironment.GravityForce, 15) +
-                                           Vector2.Multiply(_mPlayer.MVelocity, .25f) + _backgroundParticles[i].Randomness;
+                                           Vector2.Multiply(_mPlayer.Velocity, .25f) + _backgroundParticles[i].Randomness;
                 _backgroundParticles[i].Update();
 
                 Vector2 posDiff;

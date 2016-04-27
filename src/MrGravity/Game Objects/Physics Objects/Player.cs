@@ -134,7 +134,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
             if (_mRumble)
                 StopRumble();
 
-            if (Math.Abs(MVelocity.X) >= 15 || Math.Abs(MVelocity.Y) >= 15)
+            if (Math.Abs(Velocity.X) >= 15 || Math.Abs(Velocity.Y) >= 15)
                 MCurrentTexture = PlayerFaces.FromString("Surprise");
             else if (!_mRumble)
                 MCurrentTexture = CheckForIdle();

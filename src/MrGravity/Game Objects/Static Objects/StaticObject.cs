@@ -21,12 +21,15 @@ namespace MrGravity.Game_Objects.Static_Objects
         public StaticObject(ContentManager content, float friction, EntityInfo entity)
             : base(content, friction, entity)
         {
-            MVelocity = Vector2.Zero;
+            Velocity = Vector2.Zero;
         }
 
+        /// <summary>
+        ///     Default Constructor.
+        /// </summary>
         public StaticObject()
         {
-            // TODO: Complete member initialization
+            
         }
     }
 }

@@ -25,10 +25,13 @@ namespace MrGravity.Game_Objects.Static_Objects.Triggers
             if (entity.MProperties.ContainsKey(XmlKeys.Height)) MSize.Y = int.Parse(entity.MProperties[XmlKeys.Height]);
 
             MSize = GridSpace.GetDrawingCoord(MSize);
-            MBoundingBox.X -= (int)MSize.X / 2;
-            MBoundingBox.Y -= (int)MSize.Y / 2;
-            MBoundingBox.Width = (int)MSize.X;
-            MBoundingBox.Height = (int)MSize.Y;
+            var boundingBox = BoundingBox;
+            boundingBox.X -= (int)MSize.X / 2;
+            boundingBox.Y -= (int)MSize.Y / 2;
+            boundingBox.Width = (int)MSize.X;
+            boundingBox.Height = (int)MSize.Y;
+
+            BoundingBox = boundingBox;
         }
 
         /// <summary>

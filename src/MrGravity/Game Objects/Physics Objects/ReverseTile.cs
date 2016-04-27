@@ -41,7 +41,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
         {
             UpdateVelocities();
             MPrevPos = MPosition;
-            MPosition = Vector2.Add(MPosition, -MVelocity);
+            MPosition = Vector2.Add(MPosition, -Velocity);
             UpdateBoundingBoxes();
 
             if (BeingAnimated)

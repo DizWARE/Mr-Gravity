@@ -32,7 +32,7 @@ namespace MrGravity.Game_Objects.Static_Objects.Triggers
             {
                 if(gObj is PhysicsObject)
                 {
-                    var isColliding = MBoundingBox.Intersects(gObj.BoundingBox);
+                    var isColliding = BoundingBox.Intersects(gObj.BoundingBox);
                     var pObj = (PhysicsObject)gObj;
 
                     if (!_affectedObjects.Contains(pObj) && isColliding)

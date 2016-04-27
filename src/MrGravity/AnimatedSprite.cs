@@ -41,7 +41,7 @@ namespace MrGravity
         /// <summary>
         /// Update function - self explanatory
         /// </summary>
-        /// <param name="elapsed">elapsed time - if calling in GravityShiftMain use (float)gameTime.ElapsedGameTime.TotalSeconds</param>
+        /// <param name="elapsed">elapsed time - if calling in MrGravityMain use (float)gameTime.ElapsedGameTime.TotalSeconds</param>
         public void Update(float elapsed)
         {
             _mElapsed += elapsed;

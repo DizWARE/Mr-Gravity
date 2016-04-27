@@ -26,12 +26,11 @@ namespace MrGravity.Game_Objects
 
         private readonly Vector2 _mInitialPosition;
 
-        protected EntityInfo MOriginalInfo;
-        public EntityInfo OriginalInfo { get { return MOriginalInfo; } set { MOriginalInfo = value; } }
+        public EntityInfo OriginalInfo { get; set; }
 
-        protected Texture2D MTexture;
-        public Rectangle MBoundingBox;
-        public Vector2 MVelocity;
+        protected Texture2D Texture { get; set; }
+        
+        public Vector2 Velocity;
 
         //private bool mBeingAnimated;
         //private AnimatedSprite mAnimationTexture;
@@ -65,7 +64,7 @@ namespace MrGravity.Game_Objects
             MFriction = friction;
             MIsSquare = !entity.MProperties.ContainsKey("Shape") || entity.MProperties["Shape"] == "Square";
             MCollisionType = entity.MCollisionType;
-            MOriginalInfo = entity;
+            OriginalInfo = entity;
 
             Load(content, MName);
 
@@ -73,9 +72,9 @@ namespace MrGravity.Game_Objects
 
             MPosition = GridSpace.GetDrawingCoord(entity.MLocation);
             _mInitialPosition = MPosition;
-            MSize = new Vector2(MTexture.Width, MTexture.Height);
+            MSize = new Vector2(Texture.Width, Texture.Height);
 
-            MBoundingBox = new Rectangle((int)MPosition.X, (int)MPosition.Y, (int)MSize.X, (int)MSize.Y);
+            BoundingBox = new Rectangle((int)MPosition.X, (int)MPosition.Y, (int)MSize.X, (int)MSize.Y);
         }
 
 
@@ -102,11 +101,7 @@ namespace MrGravity.Game_Objects
         /// <summary>
         /// Gets the bounding box of this object
         /// </summary>
-        public Rectangle BoundingBox
-        {
-            get { return MBoundingBox; }
-            set { MBoundingBox = value; }
-        }
+        public Rectangle BoundingBox { get; set; }
 
         /// <summary>
         /// Checks to see if the other object is equal to this object
@@ -137,13 +132,13 @@ namespace MrGravity.Game_Objects
         {
 
             try
-            {   MTexture = content.Load<Texture2D>(name);   }
+            {   Texture = content.Load<Texture2D>(name);   }
             catch (Exception ex)
-            { var err = ex.ToString(); MTexture = content.Load<Texture2D>("Images\\error"); }
+            { var err = ex.ToString(); Texture = content.Load<Texture2D>("Images\\error"); }
 
             // pixel perfect stuff (may need to remove)
-            MSpriteImageData = new Color[MTexture.Width * MTexture.Height];
-            MTexture.GetData(MSpriteImageData);
+            MSpriteImageData = new Color[Texture.Width * Texture.Height];
+            Texture.GetData(MSpriteImageData);
             //////////////////////////////////////
         }
 
@@ -154,7 +149,7 @@ namespace MrGravity.Game_Objects
         /// <param name="gametime">The current gametime</param>
         public virtual void Draw(SpriteBatch canvas, GameTime gametime)
         {
-            canvas.Draw(MTexture, MBoundingBox, new Rectangle(0, 0, (int)MSize.X, (int)MSize.Y), Color.White);
+            canvas.Draw(Texture, BoundingBox, new Rectangle(0, 0, (int)MSize.X, (int)MSize.Y), Color.White);
         }
         
     }

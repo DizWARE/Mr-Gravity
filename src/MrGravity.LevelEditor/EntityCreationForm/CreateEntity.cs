@@ -348,7 +348,7 @@ namespace MrGravity.LevelEditor.EntityCreationForm
                 entityList = XDocument.Load(
                     directoryInfo.GetDirectories("Entities")[0].FullName + "\\" + "entityList.xml");
             }
-            catch (IOException exception) { return; }
+            catch (IOException) { return; }
 
             foreach (var e in entityList.Elements())
             {

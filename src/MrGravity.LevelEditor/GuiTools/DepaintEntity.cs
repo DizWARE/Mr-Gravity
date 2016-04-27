@@ -51,7 +51,7 @@ namespace MrGravity.LevelEditor.GuiTools
                     _mPrevious = gridPosition;
                     panel.Invalidate(panel.DisplayRectangle);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     //If the tile is empty, fail silently
                 } 

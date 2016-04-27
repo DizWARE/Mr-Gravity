@@ -56,8 +56,8 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// </summary>
         public Vector2 ObjectVelocity
         {
-            get { return MVelocity;  }
-            set { MVelocity = value; }
+            get { return Velocity;  }
+            set { Velocity = value; }
         }
 
         /// <summary>
@@ -72,20 +72,20 @@ namespace MrGravity.Game_Objects.Physics_Objects
             :base(content, friction, entity)
         {
             MEnvironment = environment;
-            MVelocity = new Vector2(0, 0);
-            _mOriginalPosition = MOriginalInfo.MLocation;
-            IsRail = MOriginalInfo.MProperties.ContainsKey(XmlKeys.Rail);
+            Velocity = new Vector2(0, 0);
+            _mOriginalPosition = OriginalInfo.MLocation;
+            IsRail = OriginalInfo.MProperties.ContainsKey(XmlKeys.Rail);
 
             if (IsRail)
-                if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+                if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
                 {
-                    _mHiBound = GridSpace.GetDrawingCoord(_mOriginalPosition).X + (int.Parse(MOriginalInfo.MProperties[XmlKeys.Length]) * 64);
+                    _mHiBound = GridSpace.GetDrawingCoord(_mOriginalPosition).X + (int.Parse(OriginalInfo.MProperties[XmlKeys.Length]) * 64);
                     _mLowBound = GridSpace.GetDrawingCoord(_mOriginalPosition).X;
                     _mAxis = GridSpace.GetDrawingCoord(_mOriginalPosition).Y;
                 }
                 else
                 {
-                    _mHiBound = GridSpace.GetDrawingCoord(_mOriginalPosition).Y + (int.Parse(MOriginalInfo.MProperties[XmlKeys.Length]) * 64);
+                    _mHiBound = GridSpace.GetDrawingCoord(_mOriginalPosition).Y + (int.Parse(OriginalInfo.MProperties[XmlKeys.Length]) * 64);
                     _mLowBound = GridSpace.GetDrawingCoord(_mOriginalPosition).Y;
                     _mAxis = GridSpace.GetDrawingCoord(_mOriginalPosition).X;
                 }
@@ -103,7 +103,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
         {
             base.Respawn();
             UpdateBoundingBoxes();
-            MVelocity = Vector2.Zero;
+            Velocity = Vector2.Zero;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// <param name="force">Force to apply</param>
         public void ApplyImmediateForce(Vector2 force)
         {
-            MVelocity = Vector2.Add(force, MVelocity);
+            Velocity = Vector2.Add(force, Velocity);
         }
 
         /// <summary>
@@ -139,10 +139,10 @@ namespace MrGravity.Game_Objects.Physics_Objects
                 return;
             }
 
-            if (MPosition.X < 0) { MPosition.X = 0; MVelocity = new Vector2();}
-            if (MPosition.Y < 0) {MPosition.Y = 0; MVelocity = new Vector2();}
-            if (MPosition.X + MBoundingBox.Width > width) {MPosition.X = width - MBoundingBox.Width; MVelocity = new Vector2();}
-            if (MPosition.Y + MBoundingBox.Height > height) { MPosition.Y = height - MBoundingBox.Height; MVelocity = new Vector2(); }
+            if (MPosition.X < 0) { MPosition.X = 0; Velocity = new Vector2();}
+            if (MPosition.Y < 0) {MPosition.Y = 0; Velocity = new Vector2();}
+            if (MPosition.X + BoundingBox.Width > width) {MPosition.X = width - BoundingBox.Width; Velocity = new Vector2();}
+            if (MPosition.Y + BoundingBox.Height > height) { MPosition.Y = height - BoundingBox.Height; Velocity = new Vector2(); }
             
         }
 
@@ -168,14 +168,14 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// </summary>
         private void EnforceTerminalVelocity()
         {
-            if (MVelocity.X > MEnvironment.TerminalSpeed)
-                MVelocity.X = MEnvironment.TerminalSpeed;
-            if (MVelocity.X < -MEnvironment.TerminalSpeed)
-                MVelocity.X = -MEnvironment.TerminalSpeed;
-            if (MVelocity.Y > MEnvironment.TerminalSpeed)
-                MVelocity.Y = MEnvironment.TerminalSpeed;
-            if (MVelocity.Y < -MEnvironment.TerminalSpeed)
-                MVelocity.Y = -MEnvironment.TerminalSpeed;
+            if (Velocity.X > MEnvironment.TerminalSpeed)
+                Velocity.X = MEnvironment.TerminalSpeed;
+            if (Velocity.X < -MEnvironment.TerminalSpeed)
+                Velocity.X = -MEnvironment.TerminalSpeed;
+            if (Velocity.Y > MEnvironment.TerminalSpeed)
+                Velocity.Y = MEnvironment.TerminalSpeed;
+            if (Velocity.Y < -MEnvironment.TerminalSpeed)
+                Velocity.Y = -MEnvironment.TerminalSpeed;
         }
 
         /// <summary>
@@ -183,18 +183,18 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// </summary>
         private void EnforceRailBounds()
         {
-            if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+            if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
             {
 
                 if (MPosition.X > _mHiBound)
                 {
                     MPosition.X = _mHiBound;
-                    MVelocity = Vector2.Zero;
+                    Velocity = Vector2.Zero;
                 }
                 else if (MPosition.X < _mLowBound)
                 {
                     MPosition.X = _mLowBound;
-                    MVelocity = Vector2.Zero;
+                    Velocity = Vector2.Zero;
                 }
                 MPosition.Y = _mAxis;
             }
@@ -203,12 +203,12 @@ namespace MrGravity.Game_Objects.Physics_Objects
                 if (MPosition.Y > _mHiBound)
                 {
                     MPosition.Y = _mHiBound;
-                    MVelocity = Vector2.Zero;
+                    Velocity = Vector2.Zero;
                 }
                 else if (MPosition.Y < _mLowBound)
                 {
                     MPosition.Y = _mLowBound;
-                    MVelocity = Vector2.Zero;
+                    Velocity = Vector2.Zero;
                 }
                 MPosition.X = _mAxis;
             }
@@ -219,7 +219,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// </summary>
         public void UpdateBoundingBoxes()
         {
-            MBoundingBox = new Rectangle((int)MPosition.X, (int)MPosition.Y, (int)MSize.X, (int)MSize.Y);
+            BoundingBox = new Rectangle((int)MPosition.X, (int)MPosition.Y, (int)MSize.X, (int)MSize.Y);
         }
 
         /// <summary>
@@ -229,20 +229,20 @@ namespace MrGravity.Game_Objects.Physics_Objects
         {
             if (IsRail)
             {
-                if(MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
-                    MVelocity.X += (MEnvironment.GravityForce.X / MMass) + _mAdditionalForces.X;
-                else if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailY)
-                    MVelocity.Y += (MEnvironment.GravityForce.Y / MMass) + _mAdditionalForces.Y;
+                if(OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+                    Velocity.X += (MEnvironment.GravityForce.X / MMass) + _mAdditionalForces.X;
+                else if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailY)
+                    Velocity.Y += (MEnvironment.GravityForce.Y / MMass) + _mAdditionalForces.Y;
             }
             else
             {
-                MVelocity = Vector2.Add(MVelocity, Vector2.Divide(MEnvironment.GravityForce, MMass));
-                MVelocity = Vector2.Add(MVelocity, _mAdditionalForces); 
+                Velocity = Vector2.Add(Velocity, Vector2.Divide(MEnvironment.GravityForce, MMass));
+                Velocity = Vector2.Add(Velocity, _mAdditionalForces); 
             }
 
             //Force erosion on the resistive forces(friction/wind resistance)
             ChangeGravityForceDirection(MEnvironment.GravityDirection); 
-            MVelocity = Vector2.Multiply(MVelocity, _mResistiveForce);
+            Velocity = Vector2.Multiply(Velocity, _mResistiveForce);
             EnforceTerminalVelocity();
 
             if (IsRail)
@@ -257,7 +257,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
         {
             UpdateVelocities();
             MPrevPos = MPosition;
-            MPosition = Vector2.Add(MPosition, MVelocity);
+            MPosition = Vector2.Add(MPosition, Velocity);
             UpdateBoundingBoxes();
         }
 
@@ -323,7 +323,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
                     return false;
             }
 
-            return !Equals(otherObject) && MBoundingBox.Intersects(otherObject.MBoundingBox);
+            return !Equals(otherObject) && BoundingBox.Intersects(otherObject.BoundingBox);
         }
 
         /// <summary>
@@ -334,9 +334,9 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// <returns>True if they are colliding with each other; False otherwise</returns>
         public virtual bool IsCollidingBoxAndBoxAnimate(GameObject otherObject)
         {
-            var animateArea = MBoundingBox;
+            var animateArea = BoundingBox;
             animateArea.Inflate(2, 2);
-            return !Equals(otherObject) && animateArea.Intersects(otherObject.MBoundingBox);
+            return !Equals(otherObject) && animateArea.Intersects(otherObject.BoundingBox);
         }
 
         /// <summary>
@@ -404,10 +404,10 @@ namespace MrGravity.Game_Objects.Physics_Objects
         /// <returns>True if they are colliding with each other; False otherwise</returns>
         public virtual bool IsCollidingCircleandCircle(GameObject otherObject)
         {
-            var radiusA = MBoundingBox.Width/2;
-            var radiusB = otherObject.MBoundingBox.Width/2;
-            Point centerPosA = MBoundingBox.Center;
-            Point centerPosB = otherObject.MBoundingBox.Center;
+            var radiusA = BoundingBox.Width/2;
+            var radiusB = otherObject.BoundingBox.Width/2;
+            Point centerPosA = BoundingBox.Center;
+            Point centerPosB = otherObject.BoundingBox.Center;
             var centers = new Vector2(centerPosA.X - centerPosB.X, centerPosA.Y - centerPosB.Y);
 
              // if player has not collided with a hazard deeper than HAZARDFORGIVENESS pixels, do not handle the collision
@@ -559,11 +559,11 @@ namespace MrGravity.Game_Objects.Physics_Objects
             {
 
                 //Reset Y Velocity to 0
-                MVelocity.Y = 0;
+                Velocity.Y = 0;
 
-                if (!IsRail || (IsRail && !(MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailY)))
+                if (!IsRail || (IsRail && !(OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailY)))
                     // reduce x velocity for friction
-                    MVelocity.X *= otherObject.MFriction;
+                    Velocity.X *= otherObject.MFriction;
 
                 // place the Y pos just so it is not colliding.
                 MPosition.Y += colDepth.Y;
@@ -572,11 +572,11 @@ namespace MrGravity.Game_Objects.Physics_Objects
             {
 
                 //Reset X Velocity to 0
-                MVelocity.X = 0;
+                Velocity.X = 0;
 
-                if (!IsRail || (IsRail && !(MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)))
+                if (!IsRail || (IsRail && !(OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)))
                     // reduce Y velocity for friction
-                    MVelocity.Y *= otherObject.MFriction;
+                    Velocity.Y *= otherObject.MFriction;
 
                 // place the X pos just so it is not colliding.
                 MPosition.X += colDepth.X;
@@ -601,15 +601,15 @@ namespace MrGravity.Game_Objects.Physics_Objects
             if (otherObject.CollisionType == XmlKeys.Collectable || CollisionType == XmlKeys.Collectable && !(otherObject is StaticObject))
                 return 1;
             
-            Point centerA = MBoundingBox.Center;
+            Point centerA = BoundingBox.Center;
             Point centerB = otherObject.BoundingBox.Center;
 
             var colDepth = GetCollitionDepth(otherObject);
 
             var centerDiff = new Vector2(centerA.X - centerB.X, centerA.Y - centerB.Y);
 
-            float radiusA = MBoundingBox.Width / 2;
-            float radiusB = otherObject.MBoundingBox.Width / 2;
+            float radiusA = BoundingBox.Width / 2;
+            float radiusB = otherObject.BoundingBox.Width / 2;
 
             var delta = (radiusA + radiusB) - centerDiff.Length();
             centerDiff.Normalize();
@@ -622,7 +622,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
             {
                 if (!IsRail)
                     MPosition += add / 2;
-                else if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+                else if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
                     MPosition.X += add.X / 2;
                 else
                     MPosition.Y += add.Y / 2;
@@ -639,7 +639,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
                 // do not move a static object
                 if(!IsRail)
                     MPosition += add;
-                else if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+                else if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
                     MPosition.X += add.X;
                 else
                     MPosition.Y += add.Y;
@@ -671,11 +671,11 @@ namespace MrGravity.Game_Objects.Physics_Objects
             // get points of square
             var p = new Point[4];
             // top left
-            p[0] = new Point(otherObject.MBoundingBox.X,otherObject.MBoundingBox.Y);
+            p[0] = new Point(otherObject.BoundingBox.X,otherObject.BoundingBox.Y);
             // top right
-            p[1] = new Point(otherObject.MBoundingBox.X + otherObject.MBoundingBox.Width, p[0].Y);
+            p[1] = new Point(otherObject.BoundingBox.X + otherObject.BoundingBox.Width, p[0].Y);
             // bottom right
-            p[2] = new Point(p[1].X, otherObject.MBoundingBox.Y + otherObject.MBoundingBox.Height);
+            p[2] = new Point(p[1].X, otherObject.BoundingBox.Y + otherObject.BoundingBox.Height);
             // bottom left
             p[3] = new Point(p[0].X, p[2].Y);
 
@@ -688,7 +688,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
                 return HandleCollideBoxAndBox(otherObject);
             }
             // treat like circle/point collision
-            Point centerA = MBoundingBox.Center;
+            Point centerA = BoundingBox.Center;
             var centerB = new Point();
             if ((center.X < p[0].X) && (center.Y < p[0].Y))// top left corner
             {
@@ -709,7 +709,7 @@ namespace MrGravity.Game_Objects.Physics_Objects
 
             var centerDiff = new Vector2(centerA.X - centerB.X, centerA.Y - centerB.Y);
 
-            float radiusA = MBoundingBox.Width / 2;
+            float radiusA = BoundingBox.Width / 2;
 
             var delta = (radiusA) - centerDiff.Length();
             centerDiff.Normalize();
@@ -724,19 +724,19 @@ namespace MrGravity.Game_Objects.Physics_Objects
             if ((Environment.GravityDirection == GravityDirections.Down) ||
                 (Environment.GravityDirection == GravityDirections.Up))
             {
-                MVelocity.X = 0f;
-                MVelocity.Y *= .96f;
+                Velocity.X = 0f;
+                Velocity.Y *= .96f;
             }
             else
             {
-                MVelocity.X *= .96f;
-                MVelocity.Y = 0f;
+                Velocity.X *= .96f;
+                Velocity.Y = 0f;
             }
             #endregion
             // place the Y pos just so it is not colliding.
             if (!IsRail)
                 MPosition += add;
-            else if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+            else if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
                 MPosition.X += add.X;
             else
                 MPosition.Y += add.Y;
@@ -816,14 +816,14 @@ namespace MrGravity.Game_Objects.Physics_Objects
 
             var e = 0.9f;//0.9f; // elasticity of the collision
 
-            var vain = Vector2.Dot(MVelocity, n);
-            var vait = Vector2.Dot(MVelocity, T);
+            var vain = Vector2.Dot(Velocity, n);
+            var vait = Vector2.Dot(Velocity, T);
 
             float vbin, vbit;
             if (otherObject is PhysicsObject)
             {
-                vbin = Vector2.Dot(((PhysicsObject)otherObject).MVelocity, n);
-                vbit = Vector2.Dot(((PhysicsObject)otherObject).MVelocity, T);
+                vbin = Vector2.Dot(((PhysicsObject)otherObject).Velocity, n);
+                vbit = Vector2.Dot(((PhysicsObject)otherObject).Velocity, T);
             }
             else
             {
@@ -838,26 +838,26 @@ namespace MrGravity.Game_Objects.Physics_Objects
 
             if (!IsRail)
             {
-                MVelocity.X = vafn * n.X + vaft * T.X;
-                MVelocity.Y = vafn * n.Y + vaft * T.Y;
+                Velocity.X = vafn * n.X + vaft * T.X;
+                Velocity.Y = vafn * n.Y + vaft * T.Y;
             }
-            else if (MOriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
-                MVelocity.X = vafn * n.X + vaft * T.X;
+            else if (OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
+                Velocity.X = vafn * n.X + vaft * T.X;
             else
-                MVelocity.Y = vafn * n.Y + vaft * T.Y;
+                Velocity.Y = vafn * n.Y + vaft * T.Y;
 
 
             if (otherObject is PhysicsObject)
             {
                 if (!((PhysicsObject)otherObject).IsRail)
                 {
-                    ((PhysicsObject)otherObject).MVelocity.X = vbfn * n.X + vbft * T.X;
-                    ((PhysicsObject)otherObject).MVelocity.Y = vbfn * n.Y + vbft * T.Y;
+                    ((PhysicsObject)otherObject).Velocity.X = vbfn * n.X + vbft * T.X;
+                    ((PhysicsObject)otherObject).Velocity.Y = vbfn * n.Y + vbft * T.Y;
                 }
                 else if (otherObject.OriginalInfo.MProperties[XmlKeys.Rail] == XmlKeys.RailX)
-                    ((PhysicsObject)otherObject).MVelocity.X = vbfn * n.X + vbft * T.X;
+                    ((PhysicsObject)otherObject).Velocity.X = vbfn * n.X + vbft * T.X;
                 else
-                    ((PhysicsObject)otherObject).MVelocity.Y = vbfn * n.Y + vbft * T.Y;
+                    ((PhysicsObject)otherObject).Velocity.Y = vbfn * n.Y + vbft * T.Y;
             }
         }
 

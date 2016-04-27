@@ -25,7 +25,7 @@ namespace MrGravity.LevelEditor.GuiTools
                 data.Level.RemoveEntity(data.SelectedEntities, true);
                 data.SelectedEntities.Clear();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //If the tile is empty, fail silently
             }  

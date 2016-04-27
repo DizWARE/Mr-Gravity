@@ -126,7 +126,7 @@ namespace MrGravity.LevelEditor
                 {
                     currentDirectory = d.FullName + "\\" + el.Value + XmlKeys.Png;
                     try { Texture = Image.FromFile(currentDirectory); Texture.Tag = el.Value; }
-                    catch (Exception ex) { MessageBox.Show("File " + currentDirectory + " could not be found."); }
+                    catch (Exception) { MessageBox.Show("File " + currentDirectory + " could not be found."); }
                     
                 }
                 if (el.Name == XmlKeys.Properties)

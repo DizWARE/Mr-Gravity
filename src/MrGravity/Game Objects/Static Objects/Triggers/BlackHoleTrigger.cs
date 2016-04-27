@@ -48,7 +48,7 @@ namespace MrGravity.Game_Objects.Static_Objects.Triggers
         {
             foreach(var gObj in objects)
             {
-                if (!MBoundingBox.Intersects(gObj.BoundingBox)) continue;
+                if (!BoundingBox.Intersects(gObj.BoundingBox)) continue;
 
                 if (gObj is Player && player.MCurrentTexture != PlayerFaces.FromString("Dead2")) 
                     player.MCurrentTexture = PlayerFaces.FromString("Worry");
@@ -76,8 +76,8 @@ namespace MrGravity.Game_Objects.Static_Objects.Triggers
                         _mForce * (1 / pObj.Mass) / distance * (float)Math.Sin(degrees));
                    
                     //Imediately add this to the objects velocity so that we don't have lingering force additions left over
-                    pObj.MVelocity = new Vector2(Math.Min(newForce.X + pObj.MVelocity.X, pObj.Environment.TerminalSpeed), 
-                            Math.Min(newForce.Y + pObj.MVelocity.Y, pObj.Environment.TerminalSpeed));
+                    pObj.Velocity = new Vector2(Math.Min(newForce.X + pObj.Velocity.X, pObj.Environment.TerminalSpeed), 
+                            Math.Min(newForce.Y + pObj.Velocity.Y, pObj.Environment.TerminalSpeed));
                 }
             }
         }

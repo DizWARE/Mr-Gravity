@@ -179,7 +179,7 @@
     <Compile Include="Game Objects\Static Objects\PlayerEnd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="GravityShiftMain.cs" />
+    <Compile Include="MrGravityMain.cs" />
     <Compile Include="Game Objects\Static Objects\StaticObject.cs" />
     <Compile Include="Game Objects\Static Objects\Tile.cs" />
     <Compile Include="ResetConfirm.cs" />

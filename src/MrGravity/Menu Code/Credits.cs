@@ -103,8 +103,15 @@ namespace MrGravity.Menu_Code
         /// <param name="states">State of the current game</param>
         public void Update(GameTime gametime, ref GameStates states)
         {
-            if (_mControls.IsAPressed(false) || _mControls.IsStartPressed(false) || _mControls.IsBackPressed(false) || _mControls.IsBPressed(false))
-            { _mTopY = _mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom; states = GameStates.MainMenu; }
+            if (_mControls.IsAPressed(false) || 
+                _mControls.IsStartPressed(false) || 
+                _mControls.IsBackPressed(false) ||
+                _mControls.IsBPressed(false))
+            {
+                _mTopY = _mGraphics.GraphicsDevice.Viewport.TitleSafeArea.Bottom;
+                states = GameStates.MainMenu;
+            }
+
             _mTopY -= 1.25f;
 
             _mBackgroundLevel.Update(gametime, ref states);

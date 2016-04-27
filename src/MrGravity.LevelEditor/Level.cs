@@ -85,7 +85,7 @@ namespace MrGravity.LevelEditor
                 if (el.Name == XmlKeys.Background)
                 {
                     try { Background = Image.FromFile(d.FullName + "\\" + el.Value + XmlKeys.Png); }
-                    catch (Exception ex) { Background = Image.FromFile(d.FullName + "\\errorBG" + XmlKeys.Png); }
+                    catch (Exception) { Background = Image.FromFile(d.FullName + "\\errorBG" + XmlKeys.Png); }
                     Background.Tag = el.Value;
                 }
                 if (el.Name == XmlKeys.Entities)

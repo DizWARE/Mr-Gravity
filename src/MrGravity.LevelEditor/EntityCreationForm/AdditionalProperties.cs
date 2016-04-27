@@ -74,7 +74,7 @@ namespace MrGravity.LevelEditor.EntityCreationForm
                 tb_name.Text = _mPreviousKey = "New";
                 tb_value.Text = "Property";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Property already defined!", "Error", MessageBoxButtons.OK);
             }

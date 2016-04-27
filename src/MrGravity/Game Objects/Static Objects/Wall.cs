@@ -33,7 +33,7 @@ namespace MrGravity.Game_Objects.Static_Objects
             MPosition = walls[0].MPosition;
             MSize = Vector2.Subtract(Vector2.Add(walls[walls.Count - 1].MPosition,GridSpace.Size), MPosition);
 
-            MBoundingBox = new Rectangle((int)MPosition.X, (int)MPosition.Y, (int)MSize.X, (int)MSize.Y);
+            BoundingBox = new Rectangle((int)MPosition.X, (int)MPosition.Y, (int)MSize.X, (int)MSize.Y);
         }
 
         /// <summary>

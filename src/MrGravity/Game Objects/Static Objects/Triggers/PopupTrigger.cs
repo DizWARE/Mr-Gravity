@@ -49,7 +49,7 @@ namespace MrGravity.Game_Objects.Static_Objects.Triggers
             if (_hasEntered)
             {
                 if (_isImage)
-                    canvas.Draw(MTexture, new Vector2(MPosition.X - MTexture.Width / 2, MPosition.Y - MTexture.Height / 2), Color.White);
+                    canvas.Draw(Texture, new Vector2(MPosition.X - Texture.Width / 2, MPosition.Y - Texture.Height / 2), Color.White);
                 else
                 {
                     Vector2 size = _mFont.MeasureString(_mText);

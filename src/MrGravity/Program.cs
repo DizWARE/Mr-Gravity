@@ -1,3 +1,5 @@
+using MrGravity.MISC_Code;
+
 namespace MrGravity
 {
     public static class Program
@@ -7,12 +9,15 @@ namespace MrGravity
         /// </summary>
         public static void Main(string[] args)
         {
-            using (var game = new GravityShiftMain())
+            using (var game = new MrGravityMain())
             {
                 if (args.Length > 0)
-                { game.LevelLocation = args[0]; game.DisableMenu(); }
+                {
+                    game.LevelLocation = args[0];
+                    game.CurrentState = GameStates.InGame;
+                }
+
                 game.Run();
-                
             }
         }
     }

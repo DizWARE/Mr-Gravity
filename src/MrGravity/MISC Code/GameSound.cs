@@ -70,7 +70,7 @@ namespace MrGravity.MISC_Code
          *
          * Similar to a loadContent function. This function loads and 
          * initializes sounds used in the class.  Called from
-         * GravityShiftMain.LoadContent
+         * MrGravityMain.LoadContent
          *
          * ContentManager content: the Content file used in the game.
          */
